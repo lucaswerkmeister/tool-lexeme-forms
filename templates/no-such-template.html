@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block title %}Unknown template – {{ super() }}{% endblock title %}
+{% block main %}
+  <div class="alert alert-danger" role="alert">
+    <strong>The template {{ template_name }} does not exist.</strong>
+    <a href="/" class="btn btn-primary">Return to index</a>
+  </div>
+{% endblock main %} 

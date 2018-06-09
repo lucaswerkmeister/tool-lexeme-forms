@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block main %}
+  <h1 lang="{{ template.language_code }}">{{ template.label }}</h1>
+  <form method="post" lang="{{ template.language_code }}">
+    <dl>
+      {% for form in template.forms %}
+      <dt>{{ form.label }}</dt>
+      <dd>{{ form.example | example2input }}</dd>
+      {% endfor %}
+    </dl>
+    <button class="btn btn-primary">{{ template.submit }}</button>
+  </form>
+{% endblock main %}
