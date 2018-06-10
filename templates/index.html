@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block main %}
+<h1>Wikidata Lexeme Forms</h1>
+<ul>
+  {% for template_name, template in templates.items() %}
+  <li lang="{{ template.language_code }}"><a href="{{ url_for('process_template', template_name=template_name) }}">{{ template.label }}</a></li>
+  {% endfor %}
+</ul>
+{% endblock main %}

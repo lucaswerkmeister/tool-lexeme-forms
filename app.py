@@ -11,7 +11,10 @@ def example2input(example):
 
 @app.route('/')
 def index():
-    return 'Hello World!'
+    return flask.render_template(
+        'index.html',
+        templates=templates,
+    )
 
 @app.route('/<template_name>/', methods=['GET', 'POST'])
 def process_template(template_name):
