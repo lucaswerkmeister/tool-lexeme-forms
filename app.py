@@ -1,5 +1,6 @@
 import flask
 import json
+import mwapi
 import mwoauth
 import mwoauth.flask
 import os
@@ -51,7 +52,11 @@ def process_template(template_name):
     template = templates[template_name]
 
     if flask.request.method == 'POST':
-        return flask.Response(build_lexeme(template, flask.request.form), mimetype='application/json')
+        lexeme_json = build_lexeme(template, flask.request.form)
+        if 'oauth' in app.config:
+            return submit_lexeme(template, lexeme_json)
+        else:
+            return flask.Response(lexeme_json, mimetype='application/json')
     else:
         return flask.render_template(
             'template.html',
@@ -77,3 +82,20 @@ def build_lexeme(template, form_data):
             )
         ]
     })
+
+def submit_lexeme(template, lexeme_data):
+    if 'test' in template:
+        host = 'test.wikidata.org'
+    else:
+        host = 'www.wikidata.org'
+    session = flask_mwoauth.mwapi_session(
+        host=host,
+    )
+    token = session.get(action='query', meta='tokens')['query']['tokens']['csrftoken']
+    response = session.get(
+        action='wbeditentity',
+        new='lexeme',
+        data=lexeme_data,
+        token=token,
+    )
+    return flask.redirect('http://' + host + '/entity/' + response['entity']['id'], code=303)
