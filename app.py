@@ -1,9 +1,18 @@
 import flask
 import json
+import os
 import re
+import yaml
 from templates import templates
 
 app = flask.Flask(__name__)
+
+__dir__ = os.path.dirname(__file__)
+try:
+    with open(os.path.join(__dir__, 'config.yaml')) as config_file:
+        app.config.update(yaml.safe_load(config_file))
+except FileNotFoundError:
+    print('config.yaml file not found, assuming local development setup')
 
 @app.template_filter('example2input')
 def example2input(example):
