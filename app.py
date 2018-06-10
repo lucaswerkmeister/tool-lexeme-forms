@@ -7,7 +7,16 @@ app = flask.Flask(__name__)
 
 @app.template_filter('example2input')
 def example2input(example):
-    return flask.Markup(re.sub(r'\[(.*)\]', r'<input type="text" name="form_representation" required placeholder="\1">', example))
+    match = re.match(r'^(.*)\[(.*)\](.*)$', example)
+    if match:
+        (prefix, placeholder, suffix) = match.groups()
+        return (flask.Markup.escape(prefix) +
+                flask.Markup(r'<input type="text" name="form_representation" required placeholder="') +
+                flask.Markup.escape(placeholder) +
+                flask.Markup(r'">') +
+                flask.Markup.escape(suffix))
+    else:
+        raise Exception('Invalid template: missing [placeholder]: ' + example)
 
 @app.route('/')
 def index():
