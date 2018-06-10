@@ -1,5 +1,7 @@
 import flask
 import json
+import mwoauth
+import mwoauth.flask
 import os
 import re
 import yaml
@@ -11,6 +13,11 @@ __dir__ = os.path.dirname(__file__)
 try:
     with open(os.path.join(__dir__, 'config.yaml')) as config_file:
         app.config.update(yaml.safe_load(config_file))
+        flask_mwoauth = mwoauth.flask.MWOAuth(
+            'https://www.wikidata.org',
+            mwoauth.ConsumerToken(app.config['oauth']['consumer_key'], app.config['oauth']['consumer_secret'])
+        )
+        app.register_blueprint(flask_mwoauth.bp)
 except FileNotFoundError:
     print('config.yaml file not found, assuming local development setup')
 
@@ -34,7 +41,6 @@ def index():
         templates=templates,
     )
 
-@app.route('/<template_name>/', methods=['GET', 'POST'])
 def process_template(template_name):
     if template_name not in templates:
         return flask.render_template(
@@ -51,6 +57,9 @@ def process_template(template_name):
             'template.html',
             template=template,
         )
+if 'oauth' in app.config:
+    process_template = mwoauth.flask.authorized(process_template)
+process_template = app.route('/<template_name>/', methods=['GET', 'POST'])(process_template)
 
 def build_lexeme(template, form_data):
     lang = template['language_code']
