@@ -23,8 +23,9 @@ try:
 except FileNotFoundError:
     print('config.yaml file not found, assuming local development setup')
 
-@app.template_filter('example2input')
-def example2input(example):
+@app.template_filter('form2input')
+def form2input(form):
+    example = form['example']
     match = re.match(r'^(.*)\[(.*)\](.*)$', example)
     if match:
         (prefix, placeholder, suffix) = match.groups()

@@ -6,7 +6,7 @@
     <dl>
       {% for form in template.forms %}
       <dt>{{ form.label }}</dt>
-      <dd>{{ form.example | example2input }}</dd>
+      <dd>{{ form | form2input }}</dd>
       {% endfor %}
     </dl>
     <button class="btn btn-primary">{{ translations.create }}</button>
