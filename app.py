@@ -1,3 +1,4 @@
+import copy
 import flask
 import json
 import mwapi
@@ -32,7 +33,9 @@ def form2input(form):
         return (flask.Markup.escape(prefix) +
                 flask.Markup(r'<input type="text" name="form_representation" required placeholder="') +
                 flask.Markup.escape(placeholder) +
-                flask.Markup(r'">') +
+                flask.Markup(r'"') +
+                (flask.Markup(r' value="') + flask.Markup.escape(form['value']) + flask.Markup(r'"') if 'value' in form else flask.Markup('')) +
+                flask.Markup(r'>') +
                 flask.Markup.escape(suffix))
     else:
         raise Exception('Invalid template: missing [placeholder]: ' + example)
@@ -54,6 +57,12 @@ def process_template(template_name):
     template = templates[template_name]
 
     if flask.request.method == 'POST':
+        form_data = flask.request.form
+
+        repeat_form = process_duplicates(template, form_data)
+        if repeat_form:
+            return repeat_form
+
         lexeme_data = build_lexeme(template, form_data)
 
         if 'oauth' in app.config:
@@ -69,6 +78,48 @@ def process_template(template_name):
 if 'oauth' in app.config:
     process_template = mwoauth.flask.authorized(process_template)
 process_template = app.route('/<template_name>/', methods=['GET', 'POST'])(process_template)
+
+def process_duplicates(template, form_data):
+    if 'no_duplicate' in form_data:
+        return None
+
+    duplicates = find_duplicates(template, form_data)
+    if duplicates:
+        return flask.render_template(
+            'template.html',
+            template=add_form_data_to_template(form_data, template),
+            translations=translations[template['language_code']],
+            duplicates=duplicates,
+        )
+    else:
+        return None
+
+def find_duplicates(template, form_data):
+    if 'test' in template:
+        session = mwapi.Session('https://test.wikidata.org')
+    else:
+        session = mwapi.Session('https://www.wikidata.org')
+    lemma = form_data['form_representation']
+    language = template['language_code']
+    response = session.get(
+        action='wbsearchentities',
+        search=lemma,
+        language=language,
+        uselang=language, # for the result descriptions
+        type='lexeme',
+        limit=50,
+    )
+    matches = []
+    for result in response['search']:
+        if result['label'] == lemma:
+            matches.append({'id': result['id'], 'uri': result['concepturi'], 'label': result['label'], 'description': result['description']})
+    return matches
+
+def add_form_data_to_template(form_data, template):
+    template = copy.deepcopy(template)
+    for (form_representation, form) in zip(form_data.getlist('form_representation'), template['forms']):
+        form['value'] = form_representation
+    return template
 
 def build_lexeme(template, form_data):
     lang = template['language_code']

@@ -2,6 +2,17 @@
 {% block main_tag_attributes %}{{ super() }} lang="{{ template.language_code }}"{% endblock main_tag_attributes %}
 {% block main %}
   <h1>{{ template.label }}</h1>
+  {% if duplicates %}
+  <div class="alert alert-warning">
+    {{ translations.duplicates_warning }}
+    <ul>
+    {% for duplicate in duplicates %}
+    <li><a href="{{ duplicate.uri }}">{{ duplicate.label }} ({{ duplicate.id }})</a>, {{ duplicate.description }}</li>
+    {% endfor %}
+    </ul>
+    {{ translations.duplicates_instructions }}
+  </div>
+  {% endif %}
   <form method="post">
     <dl>
       {% for form in template.forms %}
@@ -9,6 +20,12 @@
       <dd>{{ form | form2input }}</dd>
       {% endfor %}
     </dl>
+    {% if duplicates %}
+    <label>
+      <input type="checkbox" name="no_duplicate">
+      {{ translations.no_duplicate }}
+    </label>
+    {% endif %}
     <button class="btn btn-primary">{{ translations.create }}</button>
   </form>
 {% endblock main %}
