@@ -140,18 +140,18 @@ def build_lexeme(template, form_data):
 
 def submit_lexeme(template, lexeme_data):
     if 'test' in template:
-        host = 'test.wikidata.org'
+        host = 'https://test.wikidata.org'
     else:
-        host = 'www.wikidata.org'
+        host = 'https://www.wikidata.org'
     session = flask_mwoauth.mwapi_session(
         host=host,
     )
 
     token = session.get(action='query', meta='tokens')['query']['tokens']['csrftoken']
-    response = session.get(
+    response = session.post(
         action='wbeditentity',
         new='lexeme',
         data=lexeme_data,
         token=token,
     )
-    return flask.redirect('http://' + host + '/entity/' + response['entity']['id'], code=303)
+    return flask.redirect(host + '/entity/' + response['entity']['id'], code=303)
