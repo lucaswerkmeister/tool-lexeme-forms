@@ -55,6 +55,7 @@ def process_template(template_name):
 
     if flask.request.method == 'POST':
         lexeme_data = build_lexeme(template, form_data)
+
         if 'oauth' in app.config:
             return submit_lexeme(template, lexeme_data)
         else:
@@ -94,6 +95,7 @@ def submit_lexeme(template, lexeme_data):
     session = flask_mwoauth.mwapi_session(
         host=host,
     )
+
     token = session.get(action='query', meta='tokens')['query']['tokens']['csrftoken']
     response = session.get(
         action='wbeditentity',
