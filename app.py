@@ -54,11 +54,11 @@ def process_template(template_name):
     template = templates[template_name]
 
     if flask.request.method == 'POST':
-        lexeme_json = build_lexeme(template, flask.request.form)
+        lexeme_data = build_lexeme(template, form_data)
         if 'oauth' in app.config:
-            return submit_lexeme(template, lexeme_json)
+            return submit_lexeme(template, lexeme_data)
         else:
-            return flask.Response(lexeme_json, mimetype='application/json')
+            return flask.Response(lexeme_data, mimetype='application/json')
     else:
         return flask.render_template(
             'template.html',
