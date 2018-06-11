@@ -7,6 +7,7 @@ import os
 import re
 import yaml
 from templates import templates
+from translations import translations
 
 app = flask.Flask(__name__)
 
@@ -61,6 +62,7 @@ def process_template(template_name):
         return flask.render_template(
             'template.html',
             template=template,
+            translations=translations[template['language_code']],
         )
 if 'oauth' in app.config:
     process_template = mwoauth.flask.authorized(process_template)

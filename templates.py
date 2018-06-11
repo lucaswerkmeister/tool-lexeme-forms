@@ -66,7 +66,6 @@ templates = {
                 }
             ],
         },
-        'submit': 'Anlegen',
     },
     'german-noun-feminine': {
         'label': 'Deutsches Substantiv (Femininum)',
@@ -135,7 +134,6 @@ templates = {
                 }
             ],
         },
-        'submit': 'Anlegen',
     },
     'german-noun-neuter': {
         'label': 'Deutsches Substantiv (Neutrum)',
@@ -204,7 +202,6 @@ templates = {
                 }
             ],
         },
-        'submit': 'Anlegen',
     },
     'german-noun-masculine-test': {
         'test': True,
@@ -274,6 +271,5 @@ templates = {
                 }
             ],
         },
-        'submit': 'Anlegen',
     },
 }
