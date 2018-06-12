@@ -11,4 +11,10 @@ translations = {
         'duplicates_instructions': 'Wenn du sicher bist, dass es unterschiedliche Lexeme sind, kreuze das Kästchen am Ende des Formulars an.',
         'no_duplicate': 'Dies ist kein Duplikat eines existierenden Lexems.',
     },
+    'la': {
+        'create': 'Facere',
+        'duplicates_warning': 'Sequentia verba aequum lemma aequa linguaque habent:',
+        'duplicates_instructions': 'Si certus es differentes sunt, designa sic conclusio paginae.',
+        'no_duplicate': 'Non duplex verbi existendi est.',
+    },
 }

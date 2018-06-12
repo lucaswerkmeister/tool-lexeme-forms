@@ -205,6 +205,240 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+    ('latin-noun-masculine', {
+        'label': 'nomen Latinum (masculinum)',
+        'language_item_id': 'Q397',
+        'language_code': 'la',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'nominativus singularis',
+                'example': 'Id est [puer].',
+                'grammatical_features_item_ids': ['Q131105', 'Q110786'],
+            },
+            {
+                'label': 'genitivus singularis',
+                'example': 'Proprietas [pueri].',
+                'grammatical_features_item_ids': ['Q146233', 'Q110786'],
+            },
+            {
+                'label': 'dativus singularis',
+                'example': 'Pater [puero] favet.',
+                'grammatical_features_item_ids': ['Q145599', 'Q110786'],
+            },
+            {
+                'label': 'accusativus singularis',
+                'example': 'Puella ad [puerum] adit.',
+                'grammatical_features_item_ids': ['Q146078', 'Q110786'],
+            },
+            {
+                'label': 'ablativus singularis',
+                'example': 'Puella cum [puero] ludet.',
+                'grammatical_features_item_ids': ['Q156986', 'Q110786'],
+            },
+            {
+                'label': 'nominativus pluralis',
+                'example': 'Id sunt [pueri].',
+                'grammatical_features_item_ids': ['Q131105', 'Q146786'],
+            },
+            {
+                'label': 'genitivus pluralis',
+                'example': 'Proprietas [puerorum].',
+                'grammatical_features_item_ids': ['Q146233', 'Q146786'],
+            },
+            {
+                'label': 'dativus pluralis',
+                'example': 'Pater [pueris] favet.',
+                'grammatical_features_item_ids': ['Q145599', 'Q146786'],
+            },
+            {
+                'label': 'accusativus pluralis',
+                'example': 'Puella ad [pueros] adit.',
+                'grammatical_features_item_ids': ['Q146078', 'Q146786'],
+            },
+            {
+                'label': 'ablativus pluralis',
+                'example': 'Puella cum [pueris] ludet.',
+                'grammatical_features_item_ids': ['Q156986', 'Q146786'],
+            },
+       ],
+        'claims': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q499327',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
+    ('latin-noun-feminine', {
+        'label': 'nomen Latinum (femininum)',
+        'language_item_id': 'Q397',
+        'language_code': 'la',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'nominativus singularis',
+                'example': 'Id est [puella].',
+                'grammatical_features_item_ids': ['Q131105', 'Q110786'],
+            },
+            {
+                'label': 'genitivus singularis',
+                'example': 'Proprietas [puellae].',
+                'grammatical_features_item_ids': ['Q146233', 'Q110786'],
+            },
+            {
+                'label': 'dativus singularis',
+                'example': 'Mater [puellae] favet.',
+                'grammatical_features_item_ids': ['Q145599', 'Q110786'],
+            },
+            {
+                'label': 'accusativus singularis',
+                'example': 'Puer ad [puellam] adit.',
+                'grammatical_features_item_ids': ['Q146078', 'Q110786'],
+            },
+            {
+                'label': 'ablativus singularis',
+                'example': 'Puer cum [puella] ludet.',
+                'grammatical_features_item_ids': ['Q156986', 'Q110786'],
+            },
+            {
+                'label': 'nominativus pluralis',
+                'example': 'Id sunt [puellae].',
+                'grammatical_features_item_ids': ['Q131105', 'Q146786'],
+            },
+            {
+                'label': 'genitivus pluralis',
+                'example': 'Proprietas [puellarum].',
+                'grammatical_features_item_ids': ['Q146233', 'Q146786'],
+            },
+            {
+                'label': 'dativus pluralis',
+                'example': 'Mater [puellis] favet.',
+                'grammatical_features_item_ids': ['Q145599', 'Q146786'],
+            },
+            {
+                'label': 'accusativus pluralis',
+                'example': 'Puer ad [puellas] adit.',
+                'grammatical_features_item_ids': ['Q146078', 'Q146786'],
+            },
+            {
+                'label': 'ablativus pluralis',
+                'example': 'Puer cum [puellis] ludet.',
+                'grammatical_features_item_ids': ['Q156986', 'Q146786'],
+            },
+       ],
+        'claims': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q1775415',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
+    ('latin-noun-neuter', {
+        'label': 'nomen Latinum (neutrum)',
+        'language_item_id': 'Q397',
+        'language_code': 'la',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'nominativus singularis',
+                'example': 'Id est [forum].',
+                'grammatical_features_item_ids': ['Q131105', 'Q110786'],
+            },
+            {
+                'label': 'genitivus singularis',
+                'example': 'Proprietas [fori].',
+                'grammatical_features_item_ids': ['Q146233', 'Q110786'],
+            },
+            {
+                'label': 'dativus singularis',
+                'example': 'Pater [foro] favet.',
+                'grammatical_features_item_ids': ['Q145599', 'Q110786'],
+            },
+            {
+                'label': 'accusativus singularis',
+                'example': 'Puer ad [forum] adit.',
+                'grammatical_features_item_ids': ['Q146078', 'Q110786'],
+            },
+            {
+                'label': 'ablativus singularis',
+                'example': 'Puer cum [foro] ludet.',
+                'grammatical_features_item_ids': ['Q156986', 'Q110786'],
+            },
+            {
+                'label': 'nominativus pluralis',
+                'example': 'Id sunt [fora].',
+                'grammatical_features_item_ids': ['Q131105', 'Q146786'],
+            },
+            {
+                'label': 'genitivus pluralis',
+                'example': 'Proprietas [fororum].',
+                'grammatical_features_item_ids': ['Q146233', 'Q146786'],
+            },
+            {
+                'label': 'dativus pluralis',
+                'example': 'Pater [foris] favet.',
+                'grammatical_features_item_ids': ['Q145599', 'Q146786'],
+            },
+            {
+                'label': 'accusativus pluralis',
+                'example': 'Puer ad [fora] adit.',
+                'grammatical_features_item_ids': ['Q146078', 'Q146786'],
+            },
+            {
+                'label': 'ablativus pluralis',
+                'example': 'Puer cum [foris] ludet.',
+                'grammatical_features_item_ids': ['Q156986', 'Q146786'],
+            },
+       ],
+        'claims': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q1775461',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
     ('german-noun-neuter-test', {
         'test': True,
         'label': 'Deutsches Substantiv (Neutrum), test.wikidata.org',
