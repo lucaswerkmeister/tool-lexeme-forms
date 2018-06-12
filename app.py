@@ -6,11 +6,14 @@ import mwoauth
 import os
 import re
 import requests_oauthlib
+import toolforge
 import yaml
 from templates import templates
 from translations import translations
 
 app = flask.Flask(__name__)
+
+app.before_request(toolforge.redirect_to_https)
 
 __dir__ = os.path.dirname(__file__)
 try:
