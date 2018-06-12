@@ -205,56 +205,56 @@ templates = collections.OrderedDict([
             ],
         },
     }),
-    ('german-noun-masculine-test', {
+    ('german-noun-neuter-test', {
         'test': True,
-        'label': 'Deutsches Substantiv (Maskulinum), test.wikidata.org',
+        'label': 'Deutsches Substantiv (Neutrum), test.wikidata.org',
         'language_item_id': 'Q348',
         'language_code': 'de',
         'lexical_category_item_id': 'Q92595',
         'forms': [
             {
                 'label': 'Nominativ singular',
-                'example': 'Das ist der [Hund].',
+                'example': 'Das ist das [Kind].',
                 'grammatical_features_item_ids': ['Q163012', 'Q163014'],
             },
             {
                 'label': 'Genitiv singular',
-                'example': 'Das Eigentum des [Hundes].',
+                'example': 'Das Eigentum des [Kindes].',
                 'grammatical_features_item_ids': ['Q163013', 'Q163014'],
             },
             {
                 'label': 'Dativ singular',
-                'example': 'Das gehört dem [Hund].',
+                'example': 'Das gehört dem [Kind].',
                 'grammatical_features_item_ids': ['Q163016', 'Q163014'],
             },
             {
                 'label': 'Akkusativ singular',
-                'example': 'Ich mag den [Hund].',
+                'example': 'Ich mag das [Kind].',
                 'grammatical_features_item_ids': ['Q163017', 'Q163014'],
             },
             {
                 'label': 'Nominativ plural',
-                'example': 'Das sind die [Hunde].',
+                'example': 'Das sind die [Kinder].',
                 'grammatical_features_item_ids': ['Q163012', 'Q160570'],
             },
             {
                 'label': 'Genitiv plural',
-                'example': 'Das Eigentum der [Hunde].',
+                'example': 'Das Eigentum der [Kinder].',
                 'grammatical_features_item_ids': ['Q163013', 'Q160570'],
             },
             {
                 'label': 'Dativ plural',
-                'example': 'Das gehört den [Hunden].',
+                'example': 'Das gehört den [Kindern].',
                 'grammatical_features_item_ids': ['Q163016', 'Q160570'],
             },
             {
                 'label': 'Akkusativ plural',
-                'example': 'Ich mag die [Hunde].',
+                'example': 'Ich mag die [Kinder].',
                 'grammatical_features_item_ids': ['Q163017', 'Q160570'],
             },
         ],
         'claims': {
-            'P5185': [
+            'P73601': [
                 {
                     'mainsnak': {
                         'snaktype': 'value',
@@ -264,7 +264,7 @@ templates = collections.OrderedDict([
                             'type': 'wikibase-entityid',
                             'value': {
                                 'entity-type': 'item',
-                                'id': 'Q165755',
+                                'id': 'Q163008',
                             },
                         },
                     },
