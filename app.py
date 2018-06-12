@@ -3,9 +3,9 @@ import flask
 import json
 import mwapi
 import mwoauth
-import mwoauth.flask
 import os
 import re
+import requests_oauthlib
 import yaml
 from templates import templates
 from translations import translations
@@ -16,10 +16,7 @@ __dir__ = os.path.dirname(__file__)
 try:
     with open(os.path.join(__dir__, 'config.yaml')) as config_file:
         app.config.update(yaml.safe_load(config_file))
-        flask_mwoauth = mwoauth.flask.MWOAuth(
-            'https://www.wikidata.org',
-            mwoauth.ConsumerToken(app.config['oauth']['consumer_key'], app.config['oauth']['consumer_secret'])
-        )
+        consumer_token = mwoauth.ConsumerToken(app.config['oauth']['consumer_key'], app.config['oauth']['consumer_secret'])
 except FileNotFoundError:
     print('config.yaml file not found, assuming local development setup')
 
@@ -55,7 +52,7 @@ def process_template(template_name):
         )
 
     if 'oauth' in app.config and 'mwoauth_access_token' not in flask.session:
-        (redirect, request_token) = mwoauth.initiate('https://www.wikidata.org/w/index.php', flask_mwoauth.consumer_token)
+        (redirect, request_token) = mwoauth.initiate('https://www.wikidata.org/w/index.php', consumer_token)
         flask.session['oauth_request_token'] = dict(zip(request_token._fields, request_token))
         flask.session['oauth_template_name'] = template_name
         return flask.redirect(redirect)
@@ -84,7 +81,7 @@ def process_template(template_name):
 
 @app.route('/mwoauth/callback')
 def oauth_callback():
-    access_token = mwoauth.complete('https://www.wikidata.org/w/index.php', flask_mwoauth.consumer_token, mwoauth.RequestToken(**flask.session['oauth_request_token']), flask.request.query_string)
+    access_token = mwoauth.complete('https://www.wikidata.org/w/index.php', consumer_token, mwoauth.RequestToken(**flask.session['oauth_request_token']), flask.request.query_string)
     flask.session['mwoauth_access_token'] = dict(zip(access_token._fields, access_token))
     return flask.redirect(flask.url_for('process_template', template_name=flask.session['oauth_template_name']))
 
@@ -152,8 +149,9 @@ def submit_lexeme(template, lexeme_data):
         host = 'https://test.wikidata.org'
     else:
         host = 'https://www.wikidata.org'
-    session = flask_mwoauth.mwapi_session(
+    session = mwapi.Session(
         host=host,
+        auth=generate_auth(),
     )
 
     token = session.get(action='query', meta='tokens')['query']['tokens']['csrftoken']
@@ -164,3 +162,12 @@ def submit_lexeme(template, lexeme_data):
         token=token,
     )
     return flask.redirect(host + '/entity/' + response['entity']['id'], code=303)
+
+def generate_auth():
+    access_token = mwoauth.AccessToken(**flask.session['mwoauth_access_token'])
+    return requests_oauthlib.OAuth1(
+        client_key=consumer_token.key,
+        client_secret=consumer_token.secret,
+        resource_owner_key=access_token.key,
+        resource_owner_secret=access_token.secret,
+    )
