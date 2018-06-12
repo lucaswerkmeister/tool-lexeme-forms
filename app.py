@@ -5,6 +5,7 @@ import mwapi
 import mwoauth
 import os
 import re
+import requests
 import requests_oauthlib
 import toolforge
 import yaml
@@ -14,6 +15,9 @@ from translations import translations
 app = flask.Flask(__name__)
 
 app.before_request(toolforge.redirect_to_https)
+
+toolforge.set_user_agent('lexeme-forms', email='mail@lucaswerkmeister.de')
+user_agent = requests.utils.default_user_agent()
 
 __dir__ = os.path.dirname(__file__)
 try:
@@ -55,7 +59,7 @@ def process_template(template_name):
         )
 
     if 'oauth' in app.config and 'oauth_access_token' not in flask.session:
-        (redirect, request_token) = mwoauth.initiate('https://www.wikidata.org/w/index.php', consumer_token)
+        (redirect, request_token) = mwoauth.initiate('https://www.wikidata.org/w/index.php', consumer_token, user_agent=user_agent)
         flask.session['oauth_request_token'] = dict(zip(request_token._fields, request_token))
         flask.session['oauth_template_name'] = template_name
         return flask.redirect(redirect)
@@ -84,7 +88,7 @@ def process_template(template_name):
 
 @app.route('/oauth/callback')
 def oauth_callback():
-    access_token = mwoauth.complete('https://www.wikidata.org/w/index.php', consumer_token, mwoauth.RequestToken(**flask.session['oauth_request_token']), flask.request.query_string)
+    access_token = mwoauth.complete('https://www.wikidata.org/w/index.php', consumer_token, mwoauth.RequestToken(**flask.session['oauth_request_token']), flask.request.query_string, user_agent=user_agent)
     flask.session['oauth_access_token'] = dict(zip(access_token._fields, access_token))
     return flask.redirect(flask.url_for('process_template', template_name=flask.session['oauth_template_name']))
 
@@ -105,9 +109,14 @@ def process_duplicates(template, form_data):
 
 def find_duplicates(template, form_data):
     if 'test' in template:
-        session = mwapi.Session('https://test.wikidata.org')
+        host = 'https://test.wikidata.org'
     else:
-        session = mwapi.Session('https://www.wikidata.org')
+        host = 'https://www.wikidata.org'
+    session = mwapi.Session(
+        host,
+        user_agent=user_agent,
+    )
+
     lemma = form_data['form_representation']
     language = template['language_code']
     response = session.get(
@@ -155,6 +164,7 @@ def submit_lexeme(template, lexeme_data):
     session = mwapi.Session(
         host=host,
         auth=generate_auth(),
+        user_agent=user_agent,
     )
 
     token = session.get(action='query', meta='tokens')['query']['tokens']['csrftoken']

@@ -4,3 +4,4 @@ mwoauth
 mwapi
 requests_oauthlib
 toolforge
+requests
