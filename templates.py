@@ -2,7 +2,7 @@ import collections
 
 templates = collections.OrderedDict([
     ('german-noun-masculine', {
-        'label': 'Deutsches Substantiv (Maskulinum)',
+        'label': 'deutsches Substantiv (Maskulinum)',
         'language_item_id': 'Q188',
         'language_code': 'de',
         'lexical_category_item_id': 'Q1084',
@@ -70,7 +70,7 @@ templates = collections.OrderedDict([
         },
     }),
     ('german-noun-feminine', {
-        'label': 'Deutsches Substantiv (Femininum)',
+        'label': 'deutsches Substantiv (Femininum)',
         'language_item_id': 'Q188',
         'language_code': 'de',
         'lexical_category_item_id': 'Q1084',
@@ -138,7 +138,7 @@ templates = collections.OrderedDict([
         },
     }),
     ('german-noun-neuter', {
-        'label': 'Deutsches Substantiv (Neutrum)',
+        'label': 'deutsches Substantiv (Neutrum)',
         'language_item_id': 'Q188',
         'language_code': 'de',
         'lexical_category_item_id': 'Q1084',
@@ -441,7 +441,7 @@ templates = collections.OrderedDict([
     }),
     ('german-noun-neuter-test', {
         'test': True,
-        'label': 'Deutsches Substantiv (Neutrum), test.wikidata.org',
+        'label': 'deutsches Substantiv (Neutrum), test.wikidata.org',
         'language_item_id': 'Q348',
         'language_code': 'de',
         'lexical_category_item_id': 'Q92595',
