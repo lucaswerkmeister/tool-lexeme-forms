@@ -51,7 +51,7 @@ def process_template(template_name):
             template_name=template_name,
         )
 
-    if 'oauth' in app.config and 'mwoauth_access_token' not in flask.session:
+    if 'oauth' in app.config and 'oauth_access_token' not in flask.session:
         (redirect, request_token) = mwoauth.initiate('https://www.wikidata.org/w/index.php', consumer_token)
         flask.session['oauth_request_token'] = dict(zip(request_token._fields, request_token))
         flask.session['oauth_template_name'] = template_name
@@ -79,10 +79,10 @@ def process_template(template_name):
             translations=translations[template['language_code']],
         )
 
-@app.route('/mwoauth/callback')
+@app.route('/oauth/callback')
 def oauth_callback():
     access_token = mwoauth.complete('https://www.wikidata.org/w/index.php', consumer_token, mwoauth.RequestToken(**flask.session['oauth_request_token']), flask.request.query_string)
-    flask.session['mwoauth_access_token'] = dict(zip(access_token._fields, access_token))
+    flask.session['oauth_access_token'] = dict(zip(access_token._fields, access_token))
     return flask.redirect(flask.url_for('process_template', template_name=flask.session['oauth_template_name']))
 
 def process_duplicates(template, form_data):
@@ -164,7 +164,7 @@ def submit_lexeme(template, lexeme_data):
     return flask.redirect(host + '/entity/' + response['entity']['id'], code=303)
 
 def generate_auth():
-    access_token = mwoauth.AccessToken(**flask.session['mwoauth_access_token'])
+    access_token = mwoauth.AccessToken(**flask.session['oauth_access_token'])
     return requests_oauthlib.OAuth1(
         client_key=consumer_token.key,
         client_secret=consumer_token.secret,
