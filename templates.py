@@ -1,5 +1,7 @@
-templates = {
-    'german-noun-masculine': {
+import collections
+
+templates = collections.OrderedDict([
+    ('german-noun-masculine', {
         'label': 'Deutsches Substantiv (Maskulinum)',
         'language_item_id': 'Q188',
         'language_code': 'de',
@@ -66,8 +68,8 @@ templates = {
                 }
             ],
         },
-    },
-    'german-noun-feminine': {
+    }),
+    ('german-noun-feminine', {
         'label': 'Deutsches Substantiv (Femininum)',
         'language_item_id': 'Q188',
         'language_code': 'de',
@@ -134,8 +136,8 @@ templates = {
                 }
             ],
         },
-    },
-    'german-noun-neuter': {
+    }),
+    ('german-noun-neuter', {
         'label': 'Deutsches Substantiv (Neutrum)',
         'language_item_id': 'Q188',
         'language_code': 'de',
@@ -202,8 +204,8 @@ templates = {
                 }
             ],
         },
-    },
-    'german-noun-masculine-test': {
+    }),
+    ('german-noun-masculine-test', {
         'test': True,
         'label': 'Deutsches Substantiv (Maskulinum), test.wikidata.org',
         'language_item_id': 'Q348',
@@ -271,5 +273,5 @@ templates = {
                 }
             ],
         },
-    },
-}
+    }),
+])
