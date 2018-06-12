@@ -20,7 +20,6 @@ try:
             'https://www.wikidata.org',
             mwoauth.ConsumerToken(app.config['oauth']['consumer_key'], app.config['oauth']['consumer_secret'])
         )
-        app.register_blueprint(flask_mwoauth.bp)
 except FileNotFoundError:
     print('config.yaml file not found, assuming local development setup')
 
@@ -47,12 +46,19 @@ def index():
         templates=templates,
     )
 
+@app.route('/template/<template_name>/', methods=['GET', 'POST'])
 def process_template(template_name):
     if template_name not in templates:
         return flask.render_template(
             'no-such-template.html',
             template_name=template_name,
         )
+
+    if 'oauth' in app.config and 'mwoauth_access_token' not in flask.session:
+        (redirect, request_token) = mwoauth.initiate('https://www.wikidata.org/w/index.php', flask_mwoauth.consumer_token)
+        flask.session['oauth_request_token'] = dict(zip(request_token._fields, request_token))
+        flask.session['oauth_template_name'] = template_name
+        return flask.redirect(redirect)
 
     template = templates[template_name]
 
@@ -75,9 +81,12 @@ def process_template(template_name):
             template=template,
             translations=translations[template['language_code']],
         )
-if 'oauth' in app.config:
-    process_template = mwoauth.flask.authorized(process_template)
-process_template = app.route('/<template_name>/', methods=['GET', 'POST'])(process_template)
+
+@app.route('/mwoauth/callback')
+def oauth_callback():
+    access_token = mwoauth.complete('https://www.wikidata.org/w/index.php', flask_mwoauth.consumer_token, mwoauth.RequestToken(**flask.session['oauth_request_token']), flask.request.query_string)
+    flask.session['mwoauth_access_token'] = dict(zip(access_token._fields, access_token))
+    return flask.redirect(flask.url_for('process_template', template_name=flask.session['oauth_template_name']))
 
 def process_duplicates(template, form_data):
     if 'no_duplicate' in form_data:
