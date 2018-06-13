@@ -8,42 +8,42 @@ templates = collections.OrderedDict([
         'lexical_category_item_id': 'Q1084',
         'forms': [
             {
-                'label': 'Nominativ singular',
+                'label': 'Nominativ Singular',
                 'example': 'Das ist der [Hund].',
                 'grammatical_features_item_ids': ['Q131105', 'Q110786'],
             },
             {
-                'label': 'Genitiv singular',
+                'label': 'Genitiv Singular',
                 'example': 'Das Eigentum des [Hundes].',
                 'grammatical_features_item_ids': ['Q146233', 'Q110786'],
             },
             {
-                'label': 'Dativ singular',
+                'label': 'Dativ Singular',
                 'example': 'Das gehört dem [Hund].',
                 'grammatical_features_item_ids': ['Q145599', 'Q110786'],
             },
             {
-                'label': 'Akkusativ singular',
+                'label': 'Akkusativ Singular',
                 'example': 'Ich mag den [Hund].',
                 'grammatical_features_item_ids': ['Q146078', 'Q110786'],
             },
             {
-                'label': 'Nominativ plural',
+                'label': 'Nominativ Plural',
                 'example': 'Das sind die [Hunde].',
                 'grammatical_features_item_ids': ['Q131105', 'Q146786'],
             },
             {
-                'label': 'Genitiv plural',
+                'label': 'Genitiv Plural',
                 'example': 'Das Eigentum der [Hunde].',
                 'grammatical_features_item_ids': ['Q146233', 'Q146786'],
             },
             {
-                'label': 'Dativ plural',
+                'label': 'Dativ Plural',
                 'example': 'Das gehört den [Hunden].',
                 'grammatical_features_item_ids': ['Q145599', 'Q146786'],
             },
             {
-                'label': 'Akkusativ plural',
+                'label': 'Akkusativ Plural',
                 'example': 'Ich mag die [Hunde].',
                 'grammatical_features_item_ids': ['Q146078', 'Q146786'],
             },
@@ -76,42 +76,42 @@ templates = collections.OrderedDict([
         'lexical_category_item_id': 'Q1084',
         'forms': [
             {
-                'label': 'Nominativ singular',
+                'label': 'Nominativ Singular',
                 'example': 'Das ist die [Katze].',
                 'grammatical_features_item_ids': ['Q131105', 'Q110786'],
             },
             {
-                'label': 'Genitiv singular',
+                'label': 'Genitiv Singular',
                 'example': 'Das Eigentum der [Katze].',
                 'grammatical_features_item_ids': ['Q146233', 'Q110786'],
             },
             {
-                'label': 'Dativ singular',
+                'label': 'Dativ Singular',
                 'example': 'Das gehört der [Katze].',
                 'grammatical_features_item_ids': ['Q145599', 'Q110786'],
             },
             {
-                'label': 'Akkusativ singular',
+                'label': 'Akkusativ Singular',
                 'example': 'Ich mag die [Katze].',
                 'grammatical_features_item_ids': ['Q146078', 'Q110786'],
             },
             {
-                'label': 'Nominativ plural',
+                'label': 'Nominativ Plural',
                 'example': 'Das sind die [Katzen].',
                 'grammatical_features_item_ids': ['Q131105', 'Q146786'],
             },
             {
-                'label': 'Genitiv plural',
+                'label': 'Genitiv Plural',
                 'example': 'Das Eigentum der [Katzen].',
                 'grammatical_features_item_ids': ['Q146233', 'Q146786'],
             },
             {
-                'label': 'Dativ plural',
+                'label': 'Dativ Plural',
                 'example': 'Das gehört den [Katzen].',
                 'grammatical_features_item_ids': ['Q145599', 'Q146786'],
             },
             {
-                'label': 'Akkusativ plural',
+                'label': 'Akkusativ Plural',
                 'example': 'Ich mag die [Katzen].',
                 'grammatical_features_item_ids': ['Q146078', 'Q146786'],
             },
@@ -144,42 +144,42 @@ templates = collections.OrderedDict([
         'lexical_category_item_id': 'Q1084',
         'forms': [
             {
-                'label': 'Nominativ singular',
+                'label': 'Nominativ Singular',
                 'example': 'Das ist das [Kind].',
                 'grammatical_features_item_ids': ['Q131105', 'Q110786'],
             },
             {
-                'label': 'Genitiv singular',
+                'label': 'Genitiv Singular',
                 'example': 'Das Eigentum des [Kindes].',
                 'grammatical_features_item_ids': ['Q146233', 'Q110786'],
             },
             {
-                'label': 'Dativ singular',
+                'label': 'Dativ Singular',
                 'example': 'Das gehört dem [Kind].',
                 'grammatical_features_item_ids': ['Q145599', 'Q110786'],
             },
             {
-                'label': 'Akkusativ singular',
+                'label': 'Akkusativ Singular',
                 'example': 'Ich mag das [Kind].',
                 'grammatical_features_item_ids': ['Q146078', 'Q110786'],
             },
             {
-                'label': 'Nominativ plural',
+                'label': 'Nominativ Plural',
                 'example': 'Das sind die [Kinder].',
                 'grammatical_features_item_ids': ['Q131105', 'Q146786'],
             },
             {
-                'label': 'Genitiv plural',
+                'label': 'Genitiv Plural',
                 'example': 'Das Eigentum der [Kinder].',
                 'grammatical_features_item_ids': ['Q146233', 'Q146786'],
             },
             {
-                'label': 'Dativ plural',
+                'label': 'Dativ Plural',
                 'example': 'Das gehört den [Kindern].',
                 'grammatical_features_item_ids': ['Q145599', 'Q146786'],
             },
             {
-                'label': 'Akkusativ plural',
+                'label': 'Akkusativ Plural',
                 'example': 'Ich mag die [Kinder].',
                 'grammatical_features_item_ids': ['Q146078', 'Q146786'],
             },
@@ -477,42 +477,42 @@ templates = collections.OrderedDict([
         'lexical_category_item_id': 'Q92595',
         'forms': [
             {
-                'label': 'Nominativ singular',
+                'label': 'Nominativ Singular',
                 'example': 'Das ist das [Kind].',
                 'grammatical_features_item_ids': ['Q163012', 'Q163014'],
             },
             {
-                'label': 'Genitiv singular',
+                'label': 'Genitiv Singular',
                 'example': 'Das Eigentum des [Kindes].',
                 'grammatical_features_item_ids': ['Q163013', 'Q163014'],
             },
             {
-                'label': 'Dativ singular',
+                'label': 'Dativ Singular',
                 'example': 'Das gehört dem [Kind].',
                 'grammatical_features_item_ids': ['Q163016', 'Q163014'],
             },
             {
-                'label': 'Akkusativ singular',
+                'label': 'Akkusativ Singular',
                 'example': 'Ich mag das [Kind].',
                 'grammatical_features_item_ids': ['Q163017', 'Q163014'],
             },
             {
-                'label': 'Nominativ plural',
+                'label': 'Nominativ Plural',
                 'example': 'Das sind die [Kinder].',
                 'grammatical_features_item_ids': ['Q163012', 'Q160570'],
             },
             {
-                'label': 'Genitiv plural',
+                'label': 'Genitiv Plural',
                 'example': 'Das Eigentum der [Kinder].',
                 'grammatical_features_item_ids': ['Q163013', 'Q160570'],
             },
             {
-                'label': 'Dativ plural',
+                'label': 'Dativ Plural',
                 'example': 'Das gehört den [Kindern].',
                 'grammatical_features_item_ids': ['Q163016', 'Q160570'],
             },
             {
-                'label': 'Akkusativ plural',
+                'label': 'Akkusativ Plural',
                 'example': 'Ich mag die [Kinder].',
                 'grammatical_features_item_ids': ['Q163017', 'Q160570'],
             },
