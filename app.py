@@ -129,7 +129,7 @@ def find_duplicates(template, form_data):
     )
     matches = []
     for result in response['search']:
-        if result['label'] == lemma:
+        if result['label'] == lemma and result['match']['language'] == language:
             matches.append({'id': result['id'], 'uri': result['concepturi'], 'label': result['label'], 'description': result['description']})
     return matches
 
