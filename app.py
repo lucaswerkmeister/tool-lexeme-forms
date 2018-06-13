@@ -131,7 +131,7 @@ def find_duplicates(template, form_data):
         user_agent=user_agent,
     )
 
-    lemma = form_data['form_representation']
+    lemma = get_lemma(form_data)
     language = template['language_code']
     response = session.get(
         action='wbsearchentities',
@@ -147,6 +147,12 @@ def find_duplicates(template, form_data):
             matches.append({'id': result['id'], 'uri': result['concepturi'], 'label': result['label'], 'description': result['description']})
     return matches
 
+def get_lemma(form_data):
+    for form_representation in form_data.getlist('form_representation'):
+        if form_representation is not '':
+            return form_representation
+    flask.abort(400)
+
 def add_form_data_to_template(form_data, template):
     template = copy.deepcopy(template)
     for (form_representation, form) in zip(form_data.getlist('form_representation'), template['forms']):
@@ -157,7 +163,7 @@ def build_lexeme(template, form_data):
     lang = template['language_code']
     return json.dumps({
         'type': 'lexeme',
-        'lemmas': {lang: {'language': lang, 'value': form_data['form_representation']}},
+        'lemmas': {lang: {'language': lang, 'value': get_lemma(form_data)}},
         'language': template['language_item_id'],
         'lexicalCategory': template['lexical_category_item_id'],
         'claims': template['claims'],
