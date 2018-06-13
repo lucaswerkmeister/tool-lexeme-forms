@@ -28,7 +28,7 @@ try:
 except FileNotFoundError:
     print('config.yaml file not found, assuming local development setup')
 
-@app.template_filter('form2input')
+@app.template_filter()
 @jinja2.contextfilter
 def form2input(context, form):
     example = form['example']
