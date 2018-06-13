@@ -52,17 +52,13 @@ def index():
 
 @app.route('/template/<template_name>/', methods=['GET', 'POST'])
 def process_template(template_name):
-    if template_name not in templates:
-        return flask.render_template(
-            'no-such-template.html',
-            template_name=template_name,
-        )
+    response = if_no_such_template_redirect(template_name)
+    if response:
+        return response
 
-    if 'oauth' in app.config and 'oauth_access_token' not in flask.session:
-        (redirect, request_token) = mwoauth.initiate('https://www.wikidata.org/w/index.php', consumer_token, user_agent=user_agent)
-        flask.session['oauth_request_token'] = dict(zip(request_token._fields, request_token))
-        flask.session['oauth_template_name'] = template_name
-        return flask.redirect(redirect)
+    response = if_needs_oauth_redirect()
+    if response:
+        return response
 
     template = templates[template_name]
 
@@ -86,11 +82,29 @@ def process_template(template_name):
             translations=translations[template['language_code']],
         )
 
+def if_no_such_template_redirect(template_name):
+    if template_name not in templates:
+        return flask.render_template(
+            'no-such-template.html',
+            template_name=template_name,
+        )
+    else:
+        return None
+
+def if_needs_oauth_redirect():
+    if 'oauth' in app.config and 'oauth_access_token' not in flask.session:
+        (redirect, request_token) = mwoauth.initiate('https://www.wikidata.org/w/index.php', consumer_token, user_agent=user_agent)
+        flask.session['oauth_request_token'] = dict(zip(request_token._fields, request_token))
+        flask.session['oauth_redirect_target'] = flask.request.path
+        return flask.redirect(redirect)
+    else:
+        return None
+
 @app.route('/oauth/callback')
 def oauth_callback():
     access_token = mwoauth.complete('https://www.wikidata.org/w/index.php', consumer_token, mwoauth.RequestToken(**flask.session['oauth_request_token']), flask.request.query_string, user_agent=user_agent)
     flask.session['oauth_access_token'] = dict(zip(access_token._fields, access_token))
-    return flask.redirect(flask.url_for('process_template', template_name=flask.session['oauth_template_name']))
+    return flask.redirect(flask.session['oauth_redirect_target'])
 
 def process_duplicates(template, form_data):
     if 'no_duplicate' in form_data:
