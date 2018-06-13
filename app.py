@@ -65,9 +65,9 @@ def process_template(template_name):
     if flask.request.method == 'POST':
         form_data = flask.request.form
 
-        repeat_form = process_duplicates(template, form_data)
-        if repeat_form:
-            return repeat_form
+        response = if_has_duplicates_redirect(template, form_data)
+        if response:
+            return response
 
         lexeme_data = build_lexeme(template, form_data)
 
@@ -106,7 +106,7 @@ def oauth_callback():
     flask.session['oauth_access_token'] = dict(zip(access_token._fields, access_token))
     return flask.redirect(flask.session['oauth_redirect_target'])
 
-def process_duplicates(template, form_data):
+def if_has_duplicates_redirect(template, form_data):
     if 'no_duplicate' in form_data:
         return None
 
