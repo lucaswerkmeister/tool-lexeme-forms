@@ -22,6 +22,7 @@
   </div>
   {% endif %}
   <form method="post">
+    <input name="_csrf_token" type="hidden" value="{{ csrf_token() }}">
     <dl>
       {% for form in template.forms %}
       <dt>{{ form.label }}</dt>

@@ -5,9 +5,11 @@ import json
 import mwapi
 import mwoauth
 import os
+import random
 import re
 import requests
 import requests_oauthlib
+import string
 import toolforge
 import yaml
 from templates import templates
@@ -16,6 +18,13 @@ from translations import translations
 app = flask.Flask(__name__)
 
 app.before_request(toolforge.redirect_to_https)
+
+@app.before_request
+def csrf_protect():
+    if 'oauth' in app.config and flask.request.method == 'POST':
+        token = flask.session.pop('_csrf_token', None)
+        if not token or token != flask.request.form.get('_csrf_token'):
+            flask.abort(403)
 
 toolforge.set_user_agent('lexeme-forms', email='mail@lucaswerkmeister.de')
 user_agent = requests.utils.default_user_agent()
@@ -45,6 +54,14 @@ def form2input(context, form):
                 flask.Markup.escape(suffix))
     else:
         raise Exception('Invalid template: missing [placeholder]: ' + example)
+
+@app.template_global()
+def csrf_token():
+    if 'oauth' not in app.config:
+        return ''
+    if '_csrf_token' not in flask.session:
+        flask.session['_csrf_token'] = ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(64))
+    return flask.session['_csrf_token']
 
 @app.route('/')
 def index():
