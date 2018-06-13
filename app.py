@@ -1,5 +1,6 @@
 import copy
 import flask
+import jinja2
 import json
 import mwapi
 import mwoauth
@@ -28,15 +29,17 @@ except FileNotFoundError:
     print('config.yaml file not found, assuming local development setup')
 
 @app.template_filter('form2input')
-def form2input(form):
+@jinja2.contextfilter
+def form2input(context, form):
     example = form['example']
     match = re.match(r'^(.*)\[(.*)\](.*)$', example)
     if match:
         (prefix, placeholder, suffix) = match.groups()
         return (flask.Markup.escape(prefix) +
-                flask.Markup(r'<input type="text" name="form_representation" required placeholder="') +
+                flask.Markup(r'<input type="text" name="form_representation" placeholder="') +
                 flask.Markup.escape(placeholder) +
                 flask.Markup(r'"') +
+                (flask.Markup(r' required') if 'advanced' not in context else flask.Markup('')) +
                 (flask.Markup(r' value="') + flask.Markup.escape(form['value']) + flask.Markup(r'"') if 'value' in form else flask.Markup('')) +
                 flask.Markup(r'>') +
                 flask.Markup.escape(suffix))
@@ -52,6 +55,10 @@ def index():
 
 @app.route('/template/<template_name>/', methods=['GET', 'POST'])
 def process_template(template_name):
+    return process_template_advanced(template_name=template_name, advanced=False)
+
+@app.route('/template/<template_name>/advanced/', methods=['GET', 'POST'])
+def process_template_advanced(template_name, advanced=True):
     response = if_no_such_template_redirect(template_name)
     if response:
         return response
@@ -79,7 +86,9 @@ def process_template(template_name):
         return flask.render_template(
             'template.html',
             template=template,
+            template_name=template_name,
             translations=translations[template['language_code']],
+            advanced=advanced,
         )
 
 def if_no_such_template_redirect(template_name):

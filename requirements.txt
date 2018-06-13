@@ -5,3 +5,4 @@ mwapi
 requests_oauthlib
 toolforge
 requests
+jinja2

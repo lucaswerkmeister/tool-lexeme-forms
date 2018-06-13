@@ -2,6 +2,14 @@
 {% block main_tag_attributes %}{{ super() }} lang="{{ template.language_code }}"{% endblock main_tag_attributes %}
 {% block main %}
   <h1>{{ template.label }}</h1>
+  {% if advanced %}
+  <div class="alert alert-primary">
+    {{ translations.advanced_general }}
+    <ul>
+      <li>{{ translations.advanced_partial_forms }}</li>
+    </ul>
+  </div>
+  {% endif %}
   {% if duplicates %}
   <div class="alert alert-warning">
     {{ translations.duplicates_warning }}
@@ -26,6 +34,9 @@
       {{ translations.no_duplicate }}
     </label>
     {% endif %}
-    <button class="btn btn-primary">{{ translations.create }}</button>
+    <button class="btn btn-{% if not advanced %}primary{% else %}danger{% endif %}">{{ translations.create }}</button>
+    {% if not advanced %}
+    <a href="{{ url_for('process_template_advanced', template_name=template_name) }}" class="btn btn-secondary">{{ translations.advanced }}</a>
+    {% endif %}
   </form>
 {% endblock main %}
