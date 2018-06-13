@@ -173,6 +173,7 @@ def build_lexeme(template, form_data):
                     form_data.getlist('form_representation'),
                     map(lambda form: form['grammatical_features_item_ids'], template['forms'])
             )
+            if form_representation is not ''
         ]
     })
 
