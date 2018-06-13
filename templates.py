@@ -237,6 +237,11 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q156986', 'Q110786'],
             },
             {
+                'label': 'vocativus singularis',
+                'example': 'Et tu, [puer]?',
+                'grammatical_features_item_ids': ['Q185077', 'Q110786'],
+            },
+            {
                 'label': 'nominativus pluralis',
                 'example': 'Id sunt [pueri].',
                 'grammatical_features_item_ids': ['Q131105', 'Q146786'],
@@ -260,6 +265,11 @@ templates = collections.OrderedDict([
                 'label': 'ablativus pluralis',
                 'example': 'Puella cum [pueris] ludet.',
                 'grammatical_features_item_ids': ['Q156986', 'Q146786'],
+            },
+            {
+                'label': 'vocativus pluralis',
+                'example': 'Et vos, [pueri]?',
+                'grammatical_features_item_ids': ['Q185077', 'Q146786'],
             },
        ],
         'claims': {
@@ -315,6 +325,11 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q156986', 'Q110786'],
             },
             {
+                'label': 'vocativus singularis',
+                'example': 'Et tu, [puella]?',
+                'grammatical_features_item_ids': ['Q185077', 'Q110786'],
+            },
+            {
                 'label': 'nominativus pluralis',
                 'example': 'Id sunt [puellae].',
                 'grammatical_features_item_ids': ['Q131105', 'Q146786'],
@@ -338,6 +353,11 @@ templates = collections.OrderedDict([
                 'label': 'ablativus pluralis',
                 'example': 'Puer cum [puellis] ludet.',
                 'grammatical_features_item_ids': ['Q156986', 'Q146786'],
+            },
+            {
+                'label': 'vocativus pluralis',
+                'example': 'Et vos, [puellae]?',
+                'grammatical_features_item_ids': ['Q185077', 'Q146786'],
             },
        ],
         'claims': {
@@ -393,6 +413,11 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q156986', 'Q110786'],
             },
             {
+                'label': 'vocativus singularis',
+                'example': 'Et tu, [forum]?',
+                'grammatical_features_item_ids': ['Q185077', 'Q110786'],
+            },
+            {
                 'label': 'nominativus pluralis',
                 'example': 'Id sunt [fora].',
                 'grammatical_features_item_ids': ['Q131105', 'Q146786'],
@@ -416,6 +441,11 @@ templates = collections.OrderedDict([
                 'label': 'ablativus pluralis',
                 'example': 'Puer cum [foris] ludet.',
                 'grammatical_features_item_ids': ['Q156986', 'Q146786'],
+            },
+            {
+                'label': 'vocativus pluralis',
+                'example': 'Et vos, [fora]?',
+                'grammatical_features_item_ids': ['Q185077', 'Q146786'],
             },
        ],
         'claims': {
