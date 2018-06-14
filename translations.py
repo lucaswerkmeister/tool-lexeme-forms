@@ -6,7 +6,9 @@ translations = {
         'no_duplicate': 'This is not a duplicate of an existing lexeme.',
         'advanced': 'Advanced',
         'advanced_general': 'You are in “advanced” mode.',
+        'advanced_lexeme_id': 'You can enter a lexeme ID to add forms to an existing lexeme instead of creating a new one. Leave any forms that already exist on the lexeme blank, otherwise they will be duplicated!',
         'advanced_partial_forms': 'You can leave some forms blank so that they will not be added. Make sure you’re not accidentally leaving out any forms!',
+        'lexeme_id': 'Lexeme ID',
     },
     'de': {
         'create': 'Anlegen',
@@ -15,7 +17,9 @@ translations = {
         'no_duplicate': 'Dies ist kein Duplikat eines existierenden Lexems.',
         'advanced': 'Erweitert',
         'advanced_general': 'Du befindest dich im „erweiterten“ Modus.',
+        'advanced_lexeme_id': 'Du kannst eine Lexem-ID eingeben, um Formen zu einem bestehenden Lexem hinzuzufügen, anstatt ein neues zu erstellen. Lass alle Formen, die das Lexem bereits hat, leer, sonst werden sie dupliziert!',
         'advanced_partial_forms': 'Du kannst einige Formen leer lassen, so dass sie nicht hinzugefügt werden. Stelle sicher, dass du nicht aus Versehen welche weglässt!',
+        'lexeme_id': 'Lexem-ID',
     },
     'la': {
         'create': 'Facere',
@@ -24,6 +28,8 @@ translations = {
         'no_duplicate': 'Non duplex verbi existendi est.',
         'advanced': 'Modus amplificatus',
         'advanced_general': 'In modo amplificatum es.',
+        'advanced_lexeme_id': 'Posses significare numerum verbi, ut formae ad id verbum addentur. Amitte formas qui id verbo exstant aut duplicis formas facies!',
         'advanced_partial_forms': 'Posses omittere aliqui formas, ut non addentur. Cave erroribus!',
+        'lexeme_id': 'Numerus verbi',
     },
 }

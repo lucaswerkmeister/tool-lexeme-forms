@@ -6,6 +6,7 @@
   <div class="alert alert-primary">
     {{ translations.advanced_general }}
     <ul>
+      <li>{{ translations.advanced_lexeme_id }}</li>
       <li>{{ translations.advanced_partial_forms }}</li>
     </ul>
   </div>
@@ -23,6 +24,12 @@
   {% endif %}
   <form method="post">
     <input name="_csrf_token" type="hidden" value="{{ csrf_token() }}">
+    {% if advanced %}
+    <label>
+      {{ translations.lexeme_id }}
+      <input name="lexeme_id" pattern="^L[1-9][0-9]*$" placeholder="L123">
+    </label>
+    {% endif %}
     <dl>
       {% for form in template.forms %}
       <dt>{{ form.label }}</dt>

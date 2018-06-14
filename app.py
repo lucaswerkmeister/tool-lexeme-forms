@@ -187,12 +187,8 @@ def add_form_data_to_template(form_data, template):
 
 def build_lexeme(template, form_data):
     lang = template['language_code']
-    return {
+    lexeme_data = {
         'type': 'lexeme',
-        'lemmas': {lang: {'language': lang, 'value': get_lemma(form_data)}},
-        'language': template['language_item_id'],
-        'lexicalCategory': template['lexical_category_item_id'],
-        'claims': template['claims'],
         'forms': [
             {'add': '', 'representations': {lang: {'language': lang, 'value': form_representation}}, 'grammaticalFeatures': grammaticalFeatures, 'claims': []}
             for (form_representation, grammaticalFeatures) in zip(
@@ -202,6 +198,17 @@ def build_lexeme(template, form_data):
             if form_representation is not ''
         ]
     }
+    lexeme_id = form_data.get('lexeme_id', '')
+    if lexeme_id:
+        lexeme_data['id'] = lexeme_id
+    else:
+        lexeme_data.update({
+            'lemmas': {lang: {'language': lang, 'value': get_lemma(form_data)}},
+            'language': template['language_item_id'],
+            'lexicalCategory': template['lexical_category_item_id'],
+            'claims': template['claims'],
+        })
+    return lexeme_data
 
 def submit_lexeme(template, lexeme_data):
     if 'test' in template:
@@ -215,11 +222,12 @@ def submit_lexeme(template, lexeme_data):
     )
 
     token = session.get(action='query', meta='tokens')['query']['tokens']['csrftoken']
+    selector = {'id': lexeme_data['id']} if 'id' in lexeme_data else {'new': 'lexeme'}
     response = session.post(
         action='wbeditentity',
-        new='lexeme',
         data=json.dumps(lexeme_data),
         token=token,
+        **selector
     )
     return flask.redirect(host + '/entity/' + response['entity']['id'], code=303)
 
