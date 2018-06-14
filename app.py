@@ -98,7 +98,7 @@ def process_template_advanced(template_name, advanced=True):
         if 'oauth' in app.config:
             return submit_lexeme(template, lexeme_data)
         else:
-            return flask.Response(lexeme_data, mimetype='application/json')
+            return flask.Response(json.dumps(lexeme_data), mimetype='application/json')
     else:
         return flask.render_template(
             'template.html',
@@ -187,7 +187,7 @@ def add_form_data_to_template(form_data, template):
 
 def build_lexeme(template, form_data):
     lang = template['language_code']
-    return json.dumps({
+    return {
         'type': 'lexeme',
         'lemmas': {lang: {'language': lang, 'value': get_lemma(form_data)}},
         'language': template['language_item_id'],
@@ -201,7 +201,7 @@ def build_lexeme(template, form_data):
             )
             if form_representation is not ''
         ]
-    })
+    }
 
 def submit_lexeme(template, lexeme_data):
     if 'test' in template:
@@ -218,7 +218,7 @@ def submit_lexeme(template, lexeme_data):
     response = session.post(
         action='wbeditentity',
         new='lexeme',
-        data=lexeme_data,
+        data=json.dumps(lexeme_data),
         token=token,
     )
     return flask.redirect(host + '/entity/' + response['entity']['id'], code=303)
