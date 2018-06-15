@@ -21,7 +21,7 @@ app.before_request(toolforge.redirect_to_https)
 
 @app.before_request
 def csrf_protect():
-    if 'oauth' in app.config and flask.request.method == 'POST':
+    if flask.request.method == 'POST':
         token = flask.session.pop('_csrf_token', None)
         if not token or token != flask.request.form.get('_csrf_token'):
             flask.abort(403)
@@ -36,6 +36,7 @@ try:
         consumer_token = mwoauth.ConsumerToken(app.config['oauth']['consumer_key'], app.config['oauth']['consumer_secret'])
 except FileNotFoundError:
     print('config.yaml file not found, assuming local development setup')
+    app.secret_key = 'fake'
 
 @app.template_filter()
 @jinja2.contextfilter
@@ -57,8 +58,6 @@ def form2input(context, form):
 
 @app.template_global()
 def csrf_token():
-    if 'oauth' not in app.config:
-        return ''
     if '_csrf_token' not in flask.session:
         flask.session['_csrf_token'] = ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(64))
     return flask.session['_csrf_token']
