@@ -19,13 +19,6 @@ app = flask.Flask(__name__)
 
 app.before_request(toolforge.redirect_to_https)
 
-@app.before_request
-def csrf_protect():
-    if flask.request.method == 'POST':
-        token = flask.session.pop('_csrf_token', None)
-        if not token or token != flask.request.form.get('_csrf_token'):
-            flask.abort(403)
-
 toolforge.set_user_agent('lexeme-forms', email='mail@lucaswerkmeister.de')
 user_agent = requests.utils.default_user_agent()
 
@@ -89,6 +82,10 @@ def process_template_advanced(template_name, advanced=True):
         form_data = flask.request.form
 
         response = if_has_duplicates_redirect(template, form_data)
+        if response:
+            return response
+
+        response = if_needs_csrf_redirect(template, form_data)
         if response:
             return response
 
@@ -183,6 +180,18 @@ def add_form_data_to_template(form_data, template):
     for (form_representation, form) in zip(form_data.getlist('form_representation'), template['forms']):
         form['value'] = form_representation
     return template
+
+def if_needs_csrf_redirect(template, form_data):
+    token = flask.session.pop('_csrf_token', None)
+    if not token or token != form_data.get('_csrf_token'):
+        return flask.render_template(
+            'template.html',
+            template=add_form_data_to_template(form_data, template),
+            translations=translations[template['language_code']],
+            csrf_error=True,
+        )
+    else:
+        return None
 
 def build_lexeme(template, form_data):
     lang = template['language_code']

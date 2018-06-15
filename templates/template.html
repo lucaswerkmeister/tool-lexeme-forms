@@ -11,6 +11,11 @@
     </ul>
   </div>
   {% endif %}
+  {% if csrf_error %}
+  <div class="alert alert-warning">
+    {{ translations.csrf_warning | safe }}
+  </div>
+  {% endif %}
   {% if duplicates %}
   <div class="alert alert-warning">
     {{ translations.duplicates_warning }}
