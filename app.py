@@ -81,11 +81,11 @@ def process_template_advanced(template_name, advanced=True):
     if flask.request.method == 'POST':
         form_data = flask.request.form
 
-        response = if_has_duplicates_redirect(template, form_data)
+        response = if_has_duplicates_redirect(template, template_name, advanced, form_data)
         if response:
             return response
 
-        response = if_needs_csrf_redirect(template, form_data)
+        response = if_needs_csrf_redirect(template, template_name, advanced, form_data)
         if response:
             return response
 
@@ -128,7 +128,7 @@ def oauth_callback():
     flask.session['oauth_access_token'] = dict(zip(access_token._fields, access_token))
     return flask.redirect(flask.session['oauth_redirect_target'])
 
-def if_has_duplicates_redirect(template, form_data):
+def if_has_duplicates_redirect(template, template_name, advanced, form_data):
     if 'no_duplicate' in form_data:
         return None
 
@@ -137,7 +137,9 @@ def if_has_duplicates_redirect(template, form_data):
         return flask.render_template(
             'template.html',
             template=add_form_data_to_template(form_data, template),
+            template_name=template_name,
             translations=translations[template['language_code']],
+            advanced=advanced,
             duplicates=duplicates,
         )
     else:
@@ -181,13 +183,15 @@ def add_form_data_to_template(form_data, template):
         form['value'] = form_representation
     return template
 
-def if_needs_csrf_redirect(template, form_data):
+def if_needs_csrf_redirect(template, template_name, advanced, form_data):
     token = flask.session.pop('_csrf_token', None)
     if not token or token != form_data.get('_csrf_token'):
         return flask.render_template(
             'template.html',
             template=add_form_data_to_template(form_data, template),
+            template_name=template_name,
             translations=translations[template['language_code']],
+            advanced=advanced,
             csrf_error=True,
         )
     else:
