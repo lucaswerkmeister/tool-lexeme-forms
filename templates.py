@@ -205,6 +205,54 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+    ('german-noun-pluraletantum', {
+        'label': 'deutsches Substantiv (Pluraletantum, kein Genus)',
+        'language_item_id': 'Q188',
+        'language_code': 'de',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'Nominativ Plural',
+                'example': 'Das sind die [Großeltern].',
+                'grammatical_features_item_ids': ['Q131105', 'Q146786'],
+            },
+            {
+                'label': 'Genitiv Plural',
+                'example': 'Das Eigentum der [Großeltern].',
+                'grammatical_features_item_ids': ['Q146233', 'Q146786'],
+            },
+            {
+                'label': 'Dativ Plural',
+                'example': 'Das gehört den [Großeltern].',
+                'grammatical_features_item_ids': ['Q145599', 'Q146786'],
+            },
+            {
+                'label': 'Akkusativ Plural',
+                'example': 'Ich mag die [Großeltern].',
+                'grammatical_features_item_ids': ['Q146078', 'Q146786'],
+            },
+       ],
+        'claims': {
+            'P31': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P31',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q138246',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
     ('latin-noun-masculine', {
         'label': 'nomen Latinum (masculinum)',
         'language_item_id': 'Q397',
