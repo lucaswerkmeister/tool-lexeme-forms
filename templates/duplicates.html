@@ -1,0 +1,11 @@
+{% if duplicates %}
+<div class="alert alert-warning">
+  {{ translations.duplicates_warning }}
+  <ul>
+    {% for duplicate in duplicates %}
+    <li><a href="{{ duplicate.uri }}">{{ duplicate.label }} ({{ duplicate.id }})</a>, {{ duplicate.description }}</li>
+    {% endfor %}
+  </ul>
+  {{ translations.duplicates_instructions }}
+</div>
+{% endif %}

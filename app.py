@@ -49,6 +49,14 @@ def form2input(context, form):
     else:
         raise Exception('Invalid template: missing [placeholder]: ' + example)
 
+@app.template_filter()
+def render_duplicates(duplicates, language_code):
+    return flask.render_template(
+        'duplicates.html',
+        duplicates=duplicates,
+        translations=translations[language_code],
+    )
+
 @app.template_global()
 def csrf_token():
     if '_csrf_token' not in flask.session:
