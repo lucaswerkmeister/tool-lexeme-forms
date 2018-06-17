@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block main_tag_attributes %}{{ super() }} lang="{{ template.language_code }}"{% endblock main_tag_attributes %}
+{% block main_tag_attributes %}{{ super() }} lang="{{ template.language_code }}" data-template='{{ template | tojson }}'{% endblock main_tag_attributes %}
 {% block main %}
   <h1>{{ template.label }}</h1>
   {% if advanced %}
