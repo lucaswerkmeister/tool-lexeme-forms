@@ -42,7 +42,7 @@ def form2input(context, form):
                 flask.Markup(r'<input type="text" name="form_representation" placeholder="') +
                 flask.Markup.escape(placeholder) +
                 flask.Markup(r'"') +
-                (flask.Markup(r' required') if 'advanced' not in context else flask.Markup('')) +
+                (flask.Markup(r' required') if not context['advanced'] else flask.Markup('')) +
                 (flask.Markup(r' value="') + flask.Markup.escape(form['value']) + flask.Markup(r'"') if 'value' in form else flask.Markup('')) +
                 flask.Markup(r'>') +
                 flask.Markup.escape(suffix))
