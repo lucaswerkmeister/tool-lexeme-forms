@@ -153,36 +153,42 @@ def if_has_duplicates_redirect(template, template_name, advanced, form_data):
         return None
 
 def find_duplicates(template, form_data):
-    if 'test' in template:
-        host = 'https://test.wikidata.org'
-    else:
-        host = 'https://www.wikidata.org'
-    session = mwapi.Session(
-        host,
-        user_agent=user_agent,
-    )
-
+    wiki = 'test' if 'test' in template else 'www'
+    language_code = template['language_code']
     lemma = get_lemma(form_data)
-    language = template['language_code']
-    response = session.get(
-        action='wbsearchentities',
-        search=lemma,
-        language=language,
-        uselang=language, # for the result descriptions
-        type='lexeme',
-        limit=50,
-    )
-    matches = []
-    for result in response['search']:
-        if result['label'] == lemma and result['match']['language'] == language:
-            matches.append({'id': result['id'], 'uri': result['concepturi'], 'label': result['label'], 'description': result['description']})
-    return matches
+    return get_duplicates(wiki, language_code, lemma)
 
 def get_lemma(form_data):
     for form_representation in form_data.getlist('form_representation'):
         if form_representation is not '':
             return form_representation
     flask.abort(400)
+
+@app.route('/api/v1/duplicates/<any(www,test):wiki>/<language_code>/<path:lemma>')
+def get_duplicates(wiki, language_code, lemma):
+    host = 'https://' + wiki + '.wikidata.org'
+    session = mwapi.Session(
+        host,
+        user_agent=user_agent,
+    )
+
+    response = session.get(
+        action='wbsearchentities',
+        search=lemma,
+        language=language_code,
+        uselang=language_code, # for the result descriptions
+        type='lexeme',
+        limit=50,
+    )
+    matches = []
+    for result in response['search']:
+        if result['label'] == lemma and result['match']['language'] == language_code:
+            matches.append({'id': result['id'], 'uri': result['concepturi'], 'label': result['label'], 'description': result['description']})
+
+    if flask.request.endpoint == 'get_duplicates':
+        return flask.Response(json.dumps(matches), mimetype='application/json')
+    else:
+        return matches
 
 def add_form_data_to_template(form_data, template):
     template = copy.deepcopy(template)
