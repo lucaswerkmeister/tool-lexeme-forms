@@ -55,6 +55,13 @@ def csrf_token():
         flask.session['_csrf_token'] = ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(64))
     return flask.session['_csrf_token']
 
+@app.template_global()
+def template_group(template):
+    group = template['language_code']
+    if 'test' in template:
+        group += ', test.wikidata.org'
+    return group
+
 @app.route('/')
 def index():
     return flask.render_template(

@@ -3,7 +3,17 @@
 <h1>Wikidata Lexeme Forms</h1>
 <ul>
   {% for template_name, template in templates.items() %}
-  <li lang="{{ template.language_code }}"><a href="{{ url_for('process_template', template_name=template_name) }}">{{ template.label }}</a></li>
+  {% set group = template_group(template) %}
+  {% if not(loop.previtem and template_group(loop.previtem[1]) == group) %}
+  <li>
+    {{ group }}
+    <ul>
+      {% endif %}
+      <li lang="{{ template.language_code }}"><a href="{{ url_for('process_template', template_name=template_name) }}">{{ template.label }}</a></li>
+      {% if not(loop.nextitem and template_group(loop.nextitem[1]) == group) %}
+    </ul>
+  </li>
+  {% endif %}
   {% endfor %}
 </ul>
 {% endblock main %}
