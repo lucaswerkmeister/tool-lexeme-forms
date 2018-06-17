@@ -194,7 +194,10 @@ def get_duplicates(wiki, language_code, lemma):
             matches.append({'id': result['id'], 'uri': result['concepturi'], 'label': result['label'], 'description': result['description']})
 
     if flask.request.endpoint == 'get_duplicates':
-        return flask.Response(json.dumps(matches), mimetype='application/json')
+        if flask.request.accept_mimetypes.accept_html:
+            return render_duplicates(matches, language_code)
+        else:
+            return flask.Response(json.dumps(matches), mimetype='application/json')
     else:
         return matches
 
