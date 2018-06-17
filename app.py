@@ -201,6 +201,14 @@ def get_duplicates(wiki, language_code, lemma):
     else:
         return matches
 
+@app.route('/api/v1/no_duplicate/<language_code>')
+@app.template_global()
+def render_no_duplicate(language_code):
+    return flask.render_template(
+        'no_duplicate.html',
+        translations=translations[language_code]
+    )
+
 def add_form_data_to_template(form_data, template):
     template = copy.deepcopy(template)
     for (form_representation, form) in zip(form_data.getlist('form_representation'), template['forms']):

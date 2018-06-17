@@ -32,10 +32,7 @@
       {% endfor %}
     </dl>
     {% if duplicates %}
-    <label style="display: block">
-      <input type="checkbox" name="no_duplicate">
-      {{ translations.no_duplicate }}
-    </label>
+    {{ render_no_duplicate(template.language_code) | safe }}
     {% endif %}
     <button class="btn btn-{% if not advanced %}primary{% else %}danger{% endif %}">{{ translations.create }}</button>
     {% if not advanced %}
