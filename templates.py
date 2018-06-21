@@ -528,6 +528,25 @@ templates = collections.OrderedDict([
                 'label': 'Nominativ Singular',
                 'example': 'Das ist das [Kind].',
                 'grammatical_features_item_ids': ['Q163012', 'Q163014'],
+                'claims': {
+                    'P82': [
+                        {
+                            'mainsnak': {
+                                'snaktype': 'value',
+                                'property': 'P82',
+                                'datavalue': {
+                                    'type': 'wikibase-entityid',
+                                    'value': {
+                                        'entity-type': 'item',
+                                        'id': 'Q1249',
+                                    },
+                                },
+                            },
+                            'type': 'statement',
+                            'rank': 'normal',
+                        }
+                    ],
+                },
             },
             {
                 'label': 'Genitiv Singular',
@@ -538,6 +557,25 @@ templates = collections.OrderedDict([
                 'label': 'Dativ Singular',
                 'example': 'Das gehört dem [Kind].',
                 'grammatical_features_item_ids': ['Q163016', 'Q163014'],
+                'claims': {
+                    'P82': [
+                        {
+                            'mainsnak': {
+                                'snaktype': 'value',
+                                'property': 'P82',
+                                'datavalue': {
+                                    'type': 'wikibase-entityid',
+                                    'value': {
+                                        'entity-type': 'item',
+                                        'id': 'Q74568',
+                                    },
+                                },
+                            },
+                            'type': 'statement',
+                            'rank': 'normal',
+                        }
+                    ],
+                },
             },
             {
                 'label': 'Akkusativ Singular',

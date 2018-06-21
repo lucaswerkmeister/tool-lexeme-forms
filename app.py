@@ -234,10 +234,15 @@ def build_lexeme(template, form_data):
     lexeme_data = {
         'type': 'lexeme',
         'forms': [
-            {'add': '', 'representations': {lang: {'language': lang, 'value': form_representation}}, 'grammaticalFeatures': grammaticalFeatures, 'claims': []}
-            for (form_representation, grammaticalFeatures) in zip(
+            {
+                'add': '',
+                'representations': {lang: {'language': lang, 'value': form_representation}},
+                'grammaticalFeatures': form['grammatical_features_item_ids'],
+                'claims': form.get('claims', {})
+            }
+            for (form_representation, form) in zip(
                     form_data.getlist('form_representation'),
-                    map(lambda form: form['grammatical_features_item_ids'], template['forms'])
+                    template['forms'],
             )
             if form_representation is not ''
         ]
@@ -273,7 +278,32 @@ def submit_lexeme(template, lexeme_data):
         token=token,
         **selector
     )
-    return flask.redirect(host + '/entity/' + response['entity']['id'], code=303)
+    lexeme_id = response['entity']['id']
+    revid = response['entity']['lastrevid']
+
+    # wbeditentity does not support statements for forms yet, add them afterwards
+    # TODO once wbeditentity *does* support it, this will create duplicate statements :(
+    if 'id' not in lexeme_data:
+        for form_index, form_data in enumerate(lexeme_data['forms']):
+            if form_data['claims']:
+                for statementlist in form_data['claims'].values():
+                    for statement in statementlist:
+                        mainsnak = statement['mainsnak']
+                        session.post(
+                            action='wbcreateclaim',
+                            entity=lexeme_id + '-F' + str(form_index + 1),
+                            snaktype=mainsnak['snaktype'],
+                            property=mainsnak['property'],
+                            value=json.dumps(mainsnak['datavalue']['value']),
+                            token=token,
+                            baserevid=revid,
+                        )
+    else:
+        # we don’t know which form IDs to edit on the existing lexeme :(
+        # TODO inform the user
+        pass
+
+    return flask.redirect(host + '/entity/' + lexeme_id, code=303)
 
 def generate_auth():
     access_token = mwoauth.AccessToken(**flask.session['oauth_access_token'])
