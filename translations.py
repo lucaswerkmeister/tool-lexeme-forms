@@ -35,4 +35,16 @@ translations = {
         'advanced_partial_forms': 'Posses omittere aliqui formas, ut non addentur. Cave erroribus!',
         'lexeme_id': 'Numerus verbi',
     },
+    'pl': {
+        'create': 'Utwórz',
+        'csrf_warning': 'Niestety przetworzenie tego żądania było niemożliwe (ochrona CSRF). Proszę spróbować przesłać formularz ponownie.',
+        'duplicates_warning': 'Następujące istniejące leksemy mają tę samą formę kanoniczną i kod języka jak ten, który próbujesz utworzyć:',
+        'duplicates_instructions': 'Jeśli masz pewność, że one są różne, zaznacz kratkę u dołu formularza.',
+        'no_duplicate': 'To nie jest duplikat istniejącego leksemu.',
+        'advanced': 'Zaawansowane',
+        'advanced_general': 'Jesteś w trybie “zaawansowanym”.',
+        'advanced_lexeme_id': 'Możesz podać ID leksemu by dodać formy do istniejącego leksemu, zamiast tworzyć nowy leksem. Formy, które już istnieją, pozostaw puste, w przeciwnym wypadku zostaną one powielone!',
+        'advanced_partial_forms': 'Możesz zostawić niektóre formy puste, dzięki czemu nie zostaną one dodane. Upewnij się, że przypadkowo nie pominąłeś żadnej formy!',
+        'lexeme_id': 'ID leksemu',
+    },
 }

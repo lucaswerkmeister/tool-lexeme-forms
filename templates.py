@@ -517,6 +517,84 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+    ('polish-noun', {
+        'label': 'polski rzeczownik',
+        'language_item_id': 'Q809',
+        'language_code': 'pl',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'Liczba pojedyncza, mianownik',
+                'example': 'To jest [rzeczownik].',
+                'grammatical_features_item_ids': ['Q131105', 'Q110786'],
+            },
+            {
+                'label': 'Liczba pojedyncza, dopełniacz',
+                'example': 'Wśród nas nie ma [rzeczownika].',
+                'grammatical_features_item_ids': ['Q146233', 'Q110786'],
+            },
+            {
+                'label': 'Liczba pojedyncza, celownik',
+                'example': 'Przyglądam się [rzeczownikowi].',
+                'grammatical_features_item_ids': ['Q145599', 'Q110786'],
+            },
+            {
+                'label': 'Liczba pojedyncza, biernik',
+                'example': 'Widzę [rzeczownik].',
+                'grammatical_features_item_ids': ['Q146078', 'Q110786'],
+            },
+            {
+                'label': 'Liczba pojedyncza, narzędnik',
+                'example': 'Idę z [rzeczownikiem].',
+                'grammatical_features_item_ids': ['Q192997', 'Q110786'],
+            },
+            {
+                'label': 'Liczba pojedyncza, miejscownik',
+                'example': 'Myślę o [rzeczowniku].',
+                'grammatical_features_item_ids': ['Q202142', 'Q110786'],
+            },
+            {
+                'label': 'Liczba pojedyncza, wołacz',
+                'example': '[rzeczowniku]',
+                'grammatical_features_item_ids': ['Q185077', 'Q110786'],
+            },
+            {
+                'label': 'Liczba mnoga, mianownik',
+                'example': 'To są [rzeczowniki].',
+                'grammatical_features_item_ids': ['Q131105', 'Q146786'],
+            },
+            {
+                'label': 'Liczba mnoga, dopełniacz',
+                'example': 'Wśród nas nie ma [rzeczowników].',
+                'grammatical_features_item_ids': ['Q146233', 'Q146786'],
+            },
+            {
+                'label': 'Liczba mnoga, celownik',
+                'example': 'Przyglądam się [rzeczownikom].',
+                'grammatical_features_item_ids': ['Q145599', 'Q146786'],
+            },
+            {
+                'label': 'Liczba mnoga, biernik',
+                'example': 'Widzę [rzeczowniki].',
+                'grammatical_features_item_ids': ['Q146078', 'Q146786'],
+            },
+            {
+                'label': 'Liczba mnoga, narzędnik',
+                'example': 'Idę z [rzeczownikami].',
+                'grammatical_features_item_ids': ['Q192997', 'Q146786'],
+            },
+            {
+                'label': 'Liczba mnoga, miejscownik',
+                'example': 'Myślę o [rzeczownikach].',
+                'grammatical_features_item_ids': ['Q202142', 'Q146786'],
+            },
+            {
+                'label': 'Liczba mnoga, wołacz',
+                'example': '[rzeczowniki]',
+                'grammatical_features_item_ids': ['Q185077', 'Q146786'],
+            },
+        ],
+    }),
     ('german-noun-neuter-test', {
         'test': True,
         'label': 'deutsches Substantiv (Neutrum), test.wikidata.org',
