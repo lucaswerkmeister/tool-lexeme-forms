@@ -250,7 +250,7 @@ def build_lexeme(template, form_data):
             'lemmas': {lang: {'language': lang, 'value': get_lemma(form_data)}},
             'language': template['language_item_id'],
             'lexicalCategory': template['lexical_category_item_id'],
-            'claims': template['claims'],
+            'claims': template.get('claims', {}),
         })
     return lexeme_data
 
