@@ -41,7 +41,7 @@ translations = {
     # translations by User:KaMan, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Polish
     'pl': {
         'create': 'Utwórz',
-        'csrf_warning': 'Niestety przetworzenie tego żądania było niemożliwe (ochrona CSRF). Proszę spróbować przesłać formularz ponownie.',
+        'csrf_warning': 'Niestety przetworzenie tego żądania było niemożliwe (ochrona <abbr title="Cross-site request forgery">CSRF</abbr>). Proszę spróbować przesłać formularz ponownie.',
         'duplicates_warning': 'Następujące istniejące leksemy mają tę samą formę kanoniczną i kod języka jak ten, który próbujesz utworzyć:',
         'duplicates_instructions': 'Jeśli masz pewność, że one są różne, zaznacz kratkę u dołu formularza.',
         'no_duplicate': 'To nie jest duplikat istniejącego leksemu.',
