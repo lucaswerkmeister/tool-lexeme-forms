@@ -1,6 +1,7 @@
 import collections
 
 templates = collections.OrderedDict([
+    # template by Lucas Werkmeister
     ('german-noun-masculine', {
         'label': 'deutsches Substantiv (Maskulinum)',
         'language_item_id': 'Q188',
@@ -69,6 +70,7 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+    # template by Lucas Werkmeister
     ('german-noun-feminine', {
         'label': 'deutsches Substantiv (Femininum)',
         'language_item_id': 'Q188',
@@ -137,6 +139,7 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+    # template by Lucas Werkmeister
     ('german-noun-neuter', {
         'label': 'deutsches Substantiv (Neutrum)',
         'language_item_id': 'Q188',
@@ -205,6 +208,7 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+    # template by Lucas Werkmeister
     ('german-noun-pluraletantum', {
         'label': 'deutsches Substantiv (Pluraletantum, kein Genus)',
         'language_item_id': 'Q188',
@@ -253,6 +257,7 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+    # template by Lucas Werkmeister
     ('latin-noun-masculine', {
         'label': 'nomen Latinum (masculinum)',
         'language_item_id': 'Q397',
@@ -341,6 +346,7 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+    # template by Lucas Werkmeister
     ('latin-noun-feminine', {
         'label': 'nomen Latinum (femininum)',
         'language_item_id': 'Q397',
@@ -429,6 +435,7 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+    # template by Lucas Werkmeister
     ('latin-noun-neuter', {
         'label': 'nomen Latinum (neutrum)',
         'language_item_id': 'Q397',
@@ -517,6 +524,7 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+    # template by User:KaMan, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Polish
     ('polish-noun', {
         'label': 'polski rzeczownik',
         'language_item_id': 'Q809',
@@ -595,6 +603,7 @@ templates = collections.OrderedDict([
             },
         ],
     }),
+    # template by Lucas Werkmeister
     ('german-noun-neuter-test', {
         'test': True,
         'label': 'deutsches Substantiv (Neutrum), test.wikidata.org',

@@ -40,6 +40,6 @@ If you want, you can do this inside some virtualenv too.
 
 ## License
 
-The content of this repository is released under the AGPL v3 as provided in the LICENSE file that accompanied this code.
-
-By submitting a “pull request” or otherwise contributing to this repository, you agree to license your contribution under the license mentioned above.
+The code in this repository is released under the AGPL v3,
+the translations and templates under CC BY-SA 3.0.
+See the LICENSE file for details.

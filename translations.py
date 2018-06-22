@@ -1,4 +1,5 @@
 translations = {
+    # messages by Lucas Werkmeister
     'en': {
         'create': 'Create',
         'csrf_warning': 'Sorry, we couldn’t process this request (<abbr title="Cross-site request forgery">CSRF</abbr> protection failed). Please try submitting the form again.',
@@ -11,6 +12,7 @@ translations = {
         'advanced_partial_forms': 'You can leave some forms blank so that they will not be added. Make sure you’re not accidentally leaving out any forms!',
         'lexeme_id': 'Lexeme ID',
     },
+    # translations by Lucas Werkmeister
     'de': {
         'create': 'Anlegen',
         'csrf_warning': 'Entschuldigung, wir konnten diese Anfrage nicht verarbeiten (<abbr title="Cross-site request forgery">CSRF</abbr>-Schutz schlug fehl). Bitte versuche, das Formular nochmal abzuschicken.',
@@ -23,6 +25,7 @@ translations = {
         'advanced_partial_forms': 'Du kannst einige Formen leer lassen, so dass sie nicht hinzugefügt werden. Stelle sicher, dass du nicht aus Versehen welche weglässt!',
         'lexeme_id': 'Lexem-ID',
     },
+    # translations by Lucas Werkmeister
     'la': {
         'create': 'Facere',
         'csrf_warning': 'Excusa, error accidit. Quaeso, repete.',
@@ -35,6 +38,7 @@ translations = {
         'advanced_partial_forms': 'Posses omittere aliqui formas, ut non addentur. Cave erroribus!',
         'lexeme_id': 'Numerus verbi',
     },
+    # translations by User:KaMan, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Polish
     'pl': {
         'create': 'Utwórz',
         'csrf_warning': 'Niestety przetworzenie tego żądania było niemożliwe (ochrona CSRF). Proszę spróbować przesłać formularz ponownie.',
