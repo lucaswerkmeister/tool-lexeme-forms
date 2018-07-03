@@ -526,7 +526,7 @@ templates = collections.OrderedDict([
     }),
     # template by User:KaMan, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Polish
     ('polish-noun', {
-        'label': 'polski rzeczownik',
+        'label': 'polski rzeczownik, prosta odmiana bez wariantów w żadnym z przypadków',
         'language_item_id': 'Q809',
         'language_code': 'pl',
         'lexical_category_item_id': 'Q1084',
