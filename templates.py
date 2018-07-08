@@ -792,6 +792,225 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+    # template by User:KaMan, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Polish
+    ('polish-noun-with-potential-plural-forms', {
+        'label': 'polski rzeczownik, potencjalna liczba mnoga',
+        'language_item_id': 'Q809',
+        'language_code': 'pl',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'mianownik, liczba pojedyncza',
+                'example': 'To jest [językoznawstwo].',
+                'grammatical_features_item_ids': ['Q131105', 'Q110786'],
+            },
+            {
+                'label': 'dopełniacz, liczba pojedyncza',
+                'example': 'Wśród nas nie ma [językoznawstwa].',
+                'grammatical_features_item_ids': ['Q146233', 'Q110786'],
+            },
+            {
+                'label': 'celownik, liczba pojedyncza',
+                'example': 'Przyglądam się [językoznawstwu].',
+                'grammatical_features_item_ids': ['Q145599', 'Q110786'],
+            },
+            {
+                'label': 'biernik, liczba pojedyncza',
+                'example': 'Widzę [językoznawstwo].',
+                'grammatical_features_item_ids': ['Q146078', 'Q110786'],
+            },
+            {
+                'label': 'narzędnik, liczba pojedyncza',
+                'example': 'Idę z [językoznawstwem].',
+                'grammatical_features_item_ids': ['Q192997', 'Q110786'],
+            },
+            {
+                'label': 'miejscownik, liczba pojedyncza',
+                'example': 'Myślę o [językoznawstwie].',
+                'grammatical_features_item_ids': ['Q202142', 'Q110786'],
+            },
+            {
+                'label': 'wołacz, liczba pojedyncza',
+                'example': '[językoznawstwo]',
+                'grammatical_features_item_ids': ['Q185077', 'Q110786'],
+            },
+            {
+                'label': 'mianownik, liczba mnoga, forma potencjalna',
+                'example': 'To są [językoznawstwa].',
+                'grammatical_features_item_ids': ['Q131105', 'Q146786'],
+                'claims': {
+                    'P31': [
+                        {
+                            'mainsnak': {
+                                'snaktype': 'value',
+                                'property': 'P31',
+                                'datatype': 'wikibase-item',
+                                'datavalue': {
+                                    'type': 'wikibase-entityid',
+                                    'value': {
+                                        'entity-type': 'item',
+                                        'id': 'Q54944750',
+                                    },
+                                },
+                            },
+                            'type': 'statement',
+                            'rank': 'normal',
+                        }
+                    ]
+                },
+            },
+            {
+                'label': 'dopełniacz, liczba mnoga, forma potencjalna',
+                'example': 'Wśród nas nie ma [językoznawstw].',
+                'grammatical_features_item_ids': ['Q146233', 'Q146786'],
+                'claims': {
+                    'P31': [
+                        {
+                            'mainsnak': {
+                                'snaktype': 'value',
+                                'property': 'P31',
+                                'datatype': 'wikibase-item',
+                                'datavalue': {
+                                    'type': 'wikibase-entityid',
+                                    'value': {
+                                        'entity-type': 'item',
+                                        'id': 'Q54948374',
+                                    },
+                                },
+                            },
+                            'type': 'statement',
+                            'rank': 'normal',
+                        }
+                    ]
+                },
+            },
+            {
+                'label': 'celownik, liczba mnoga, forma potencjalna',
+                'example': 'Przyglądam się [językoznawstwom].',
+                'grammatical_features_item_ids': ['Q145599', 'Q146786'],
+                'claims': {
+                    'P31': [
+                        {
+                            'mainsnak': {
+                                'snaktype': 'value',
+                                'property': 'P31',
+                                'datatype': 'wikibase-item',
+                                'datavalue': {
+                                    'type': 'wikibase-entityid',
+                                    'value': {
+                                        'entity-type': 'item',
+                                        'id': 'Q54948374',
+                                    },
+                                },
+                            },
+                            'type': 'statement',
+                            'rank': 'normal',
+                        }
+                    ]
+                },
+            },
+            {
+                'label': 'biernik, liczba mnoga, forma potencjalna',
+                'example': 'Widzę [językoznawstwa].',
+                'grammatical_features_item_ids': ['Q146078', 'Q146786'],
+                'claims': {
+                    'P31': [
+                        {
+                            'mainsnak': {
+                                'snaktype': 'value',
+                                'property': 'P31',
+                                'datatype': 'wikibase-item',
+                                'datavalue': {
+                                    'type': 'wikibase-entityid',
+                                    'value': {
+                                        'entity-type': 'item',
+                                        'id': 'Q54948374',
+                                    },
+                                },
+                            },
+                            'type': 'statement',
+                            'rank': 'normal',
+                        }
+                    ]
+                },
+            },
+            {
+                'label': 'narzędnik, liczba mnoga, forma potencjalna',
+                'example': 'Idę z [językoznawstwami].',
+                'grammatical_features_item_ids': ['Q192997', 'Q146786'],
+                'claims': {
+                    'P31': [
+                        {
+                            'mainsnak': {
+                                'snaktype': 'value',
+                                'property': 'P31',
+                                'datatype': 'wikibase-item',
+                                'datavalue': {
+                                    'type': 'wikibase-entityid',
+                                    'value': {
+                                        'entity-type': 'item',
+                                        'id': 'Q54948374',
+                                    },
+                                },
+                            },
+                            'type': 'statement',
+                            'rank': 'normal',
+                        }
+                    ]
+                },
+            },
+            {
+                'label': 'miejscownik, liczba mnoga, forma potencjalna',
+                'example': 'Myślę o [językoznawstwach].',
+                'grammatical_features_item_ids': ['Q202142', 'Q146786'],
+                'claims': {
+                    'P31': [
+                        {
+                            'mainsnak': {
+                                'snaktype': 'value',
+                                'property': 'P31',
+                                'datatype': 'wikibase-item',
+                                'datavalue': {
+                                    'type': 'wikibase-entityid',
+                                    'value': {
+                                        'entity-type': 'item',
+                                        'id': 'Q54948374',
+                                    },
+                                },
+                            },
+                            'type': 'statement',
+                            'rank': 'normal',
+                        }
+                    ]
+                },
+            },
+            {
+                'label': 'wołacz, liczba mnoga, forma potencjalna',
+                'example': '[językoznawstwa]',
+                'grammatical_features_item_ids': ['Q185077', 'Q146786'],
+                'claims': {
+                    'P31': [
+                        {
+                            'mainsnak': {
+                                'snaktype': 'value',
+                                'property': 'P31',
+                                'datatype': 'wikibase-item',
+                                'datavalue': {
+                                    'type': 'wikibase-entityid',
+                                    'value': {
+                                        'entity-type': 'item',
+                                        'id': 'Q54948374',
+                                    },
+                                },
+                            },
+                            'type': 'statement',
+                            'rank': 'normal',
+                        }
+                    ]
+                },
+            },
+        ],
+    }),
     # template by Lucas Werkmeister
     ('german-noun-neuter-test', {
         'test': True,
