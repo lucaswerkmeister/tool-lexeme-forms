@@ -603,6 +603,195 @@ templates = collections.OrderedDict([
             },
         ],
     }),
+    # template by User:KaMan, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Polish
+    ('polish-noun-masculine-personal-with-depreciative-forms', {
+        'label': 'polski rzeczownik, rodzaj męskoosobowy z formami ndepr. i depr. w M. i W. lm',
+        'language_item_id': 'Q809',
+        'language_code': 'pl',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'mianownik, liczba pojedyncza',
+                'example': 'To jest [robotnik].',
+                'grammatical_features_item_ids': ['Q131105', 'Q110786'],
+            },
+            {
+                'label': 'dopełniacz, liczba pojedyncza',
+                'example': 'Wśród nas nie ma [robotnika].',
+                'grammatical_features_item_ids': ['Q146223', 'Q110786'],
+            },
+            {
+                'label': 'celownik, liczba pojedyncza',
+                'example': 'Przyglądam się [robotnikowi].',
+                'grammatical_features_item_ids': ['Q145599', 'Q110786'],
+            },
+            {
+                'label': 'biernik, liczba pojedyncza',
+                'example': 'Widzę [robotnika].',
+                'grammatical_features_item_ids': ['Q146078', 'Q110786'],
+            },
+            {
+                'label': 'narzędnik, liczba pojedyncza',
+                'example': 'Idę z [robotnikiem].',
+                'grammatical_features_item_ids': ['Q192997', 'Q110786'],
+            },
+            {
+                'label': 'miejscownik, liczba pojedyncza',
+                'example': 'Myślę o [robotniku].',
+                'grammatical_features_item_ids': ['Q202142', 'Q110786'],
+            },
+            {
+                'label': 'wołacz, liczba pojedyncza',
+                'example': '[robotniku]',
+                'grammatical_features_item_ids': ['Q185077', 'Q110786'],
+            },
+            {
+                'label': 'mianownik, liczba mnoga, forma niedeprecjatywna',
+                'example': 'To są ci [robotnicy].',
+                'grammatical_features_item_ids': ['Q131105', 'Q146786'],
+                'claims': {
+                    'P31': [
+                        {
+                            'mainsnak': {
+                                'snaktype': 'value',
+                                'property': 'P31',
+                                'datatype': 'wikibase-item',
+                                'datavalue': {
+                                    'type': 'wikibase-entityid',
+                                    'value': {
+                                        'entity-type': 'item',
+                                        'id': 'Q54948995',
+                                    },
+                                },
+                            },
+                            'type': 'statement',
+                            'rank': 'normal',
+                        }
+                    ]
+                },
+            },
+            {
+                'label': 'mianownik, liczba mnoga, forma deprecjatywna',
+                'example': 'To są te [robotniki].',
+                'grammatical_features_item_ids': ['Q131105', 'Q146786'],
+                'claims': {
+                    'P31': [
+                        {
+                            'mainsnak': {
+                                'snaktype': 'value',
+                                'property': 'P31',
+                                'datatype': 'wikibase-item',
+                                'datavalue': {
+                                    'type': 'wikibase-entityid',
+                                    'value': {
+                                        'entity-type': 'item',
+                                        'id': 'Q54948374',
+                                    },
+                                },
+                            },
+                            'type': 'statement',
+                            'rank': 'normal',
+                        }
+                    ]
+                },
+            },
+            {
+                'label': 'dopełniacz, liczba mnoga',
+                'example': 'Wśród nas nie ma [robotników].',
+                'grammatical_features_item_ids': ['Q146223', 'Q146786'],
+            },
+            {
+                'label': 'celownik, liczba mnoga',
+                'example': 'Przyglądam się [robotnikom].',
+                'grammatical_features_item_ids': ['Q145599', 'Q146786'],
+            },
+            {
+                'label': 'biernik, liczba mnoga',
+                'example': 'Widzę [robotników].',
+                'grammatical_features_item_ids': ['Q146078', 'Q146786'],
+            },
+            {
+                'label': 'narzędnik, liczba mnoga',
+                'example': 'Idę z [robotnikami].',
+                'grammatical_features_item_ids': ['Q192997', 'Q146786'],
+            },
+            {
+                'label': 'miejscownik, liczba mnoga',
+                'example': 'Myślę o [robotnikach].',
+                'grammatical_features_item_ids': ['Q202142', 'Q146786'],
+            },
+            {
+                'label': 'wołacz, liczba mnoga, forma niedeprecjatywna',
+                'example': 'ci [robotnicy]',
+                'grammatical_features_item_ids': ['Q185077', 'Q146786'],
+                'claims': {
+                    'P31': [
+                        {
+                            'mainsnak': {
+                                'snaktype': 'value',
+                                'property': 'P31',
+                                'datatype': 'wikibase-item',
+                                'datavalue': {
+                                    'type': 'wikibase-entityid',
+                                    'value': {
+                                        'entity-type': 'item',
+                                        'id': 'Q54948995',
+                                    },
+                                },
+                            },
+                            'type': 'statement',
+                            'rank': 'normal',
+                        }
+                    ]
+                },
+            },
+            {
+                'label': 'wołacz, liczba mnoga, forma deprecjatywna',
+                'example': 'te [robotniki]',
+                'grammatical_features_item_ids': ['Q185077', 'Q146786'],
+                'claims': {
+                    'P31': [
+                        {
+                            'mainsnak': {
+                                'snaktype': 'value',
+                                'property': 'P31',
+                                'datatype': 'wikibase-item',
+                                'datavalue': {
+                                    'type': 'wikibase-entityid',
+                                    'value': {
+                                        'entity-type': 'item',
+                                        'id': 'Q54948374',
+                                    },
+                                },
+                            },
+                            'type': 'statement',
+                            'rank': 'normal',
+                        }
+                    ]
+                },
+            },
+        ],
+        'claims': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q27918551',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
     # template by Lucas Werkmeister
     ('german-noun-neuter-test', {
         'test': True,
