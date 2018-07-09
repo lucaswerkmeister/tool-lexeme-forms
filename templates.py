@@ -618,7 +618,7 @@ templates = collections.OrderedDict([
             {
                 'label': 'dopełniacz, liczba pojedyncza',
                 'example': 'Wśród nas nie ma [robotnika].',
-                'grammatical_features_item_ids': ['Q146223', 'Q110786'],
+                'grammatical_features_item_ids': ['Q146233', 'Q110786'],
             },
             {
                 'label': 'celownik, liczba pojedyncza',
@@ -698,7 +698,7 @@ templates = collections.OrderedDict([
             {
                 'label': 'dopełniacz, liczba mnoga',
                 'example': 'Wśród nas nie ma [robotników].',
-                'grammatical_features_item_ids': ['Q146223', 'Q146786'],
+                'grammatical_features_item_ids': ['Q146233', 'Q146786'],
             },
             {
                 'label': 'celownik, liczba mnoga',
