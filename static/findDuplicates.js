@@ -2,7 +2,8 @@ document.addEventListener('DOMContentLoaded', function() {
     'use strict';
 
     const template = JSON.parse(document.getElementsByTagName('main')[0].dataset.template),
-          baseUrl = document.querySelector('link[rel=index]').href;
+          baseUrl = document.querySelector('link[rel=index]').href,
+          lemmaInput = document.querySelector('input[name=form_representation]');
 
     function removeElementById(id) {
         const element = document.getElementById(id);
@@ -11,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    document.querySelector('input[name=form_representation]').addEventListener('change', e => {
+    function checkDuplicates(e) {
         removeElementById('duplicates-warning');
         removeElementById('no-duplicate');
 
@@ -42,5 +43,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 noDuplicate.outerHTML = noDuplicateHtml;
             });
         });
-    });
+    }
+
+    const checkDebounced = _.debounce(checkDuplicates, 500);
+    lemmaInput.addEventListener('input', checkDebounced);
+    lemmaInput.addEventListener('change', checkDebounced.flush);
 });
