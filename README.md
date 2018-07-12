@@ -16,9 +16,13 @@ webservice --backend=kubernetes python start
 ```
 If it’s acting up, try the same command with `restart` instead of `start`.
 
-To update the service, run the following commands:
+To update the service, run the following commands after becoming the tool account:
 ```
 source ~/www/python/venv/bin/activate
+cd ~/www/python/src
+git fetch
+git diff @{u} # inspect changes
+git merge --ff-only @{u}
 pip3 install -r requirements.txt
 webservice --backend=kubernetes python restart
 ```
