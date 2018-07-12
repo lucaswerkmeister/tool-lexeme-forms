@@ -258,6 +258,25 @@ templates = collections.OrderedDict([
         },
     }),
     # template by Lucas Werkmeister
+    ('english-noun', {
+        'label': 'English noun',
+        'language_item_id': 'Q1860',
+        'language_code': 'en',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'singular',
+                'example': 'This is the [dog].',
+                'grammatical_features_item_ids': ['Q110786'],
+            },
+            {
+                'label': 'plural',
+                'example': 'These are the [dogs].',
+                'grammatical_features_item_ids': ['Q146786'],
+            },
+        ],
+    }),
+    # template by Lucas Werkmeister
     ('latin-noun-masculine', {
         'label': 'nomen Latinum (masculinum)',
         'language_item_id': 'Q397',
