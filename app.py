@@ -33,7 +33,7 @@ except FileNotFoundError:
 
 @app.template_filter()
 @jinja2.contextfilter
-def form2input(context, form):
+def form2input(context, form, first=False):
     example = form['example']
     match = re.match(r'^(.*)\[(.*)\](.*)$', example)
     if match:
@@ -43,6 +43,7 @@ def form2input(context, form):
                 flask.Markup.escape(placeholder) +
                 flask.Markup(r'"') +
                 (flask.Markup(r' required') if not context['advanced'] else flask.Markup('')) +
+                (flask.Markup(r' autofocus') if first else flask.Markup('')) +
                 (flask.Markup(r' value="') + flask.Markup.escape(form['value']) + flask.Markup(r'"') if 'value' in form else flask.Markup('')) +
                 flask.Markup(r'>') +
                 flask.Markup.escape(suffix))

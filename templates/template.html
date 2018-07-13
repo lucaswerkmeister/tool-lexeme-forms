@@ -33,7 +33,7 @@
     <dl>
       {% for form in template.forms %}
       <dt>{{ form.label }}</dt>
-      <dd>{{ form | form2input }}</dd>
+      <dd>{{ form | form2input(loop.first) }}</dd>
       {% endfor %}
     </dl>
     {% if duplicates %}
