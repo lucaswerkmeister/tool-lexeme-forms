@@ -893,7 +893,7 @@ templates = collections.OrderedDict([
                                     'type': 'wikibase-entityid',
                                     'value': {
                                         'entity-type': 'item',
-                                        'id': 'Q54948374',
+                                        'id': 'Q54944750',
                                     },
                                 },
                             },
@@ -918,7 +918,7 @@ templates = collections.OrderedDict([
                                     'type': 'wikibase-entityid',
                                     'value': {
                                         'entity-type': 'item',
-                                        'id': 'Q54948374',
+                                        'id': 'Q54944750',
                                     },
                                 },
                             },
@@ -943,7 +943,7 @@ templates = collections.OrderedDict([
                                     'type': 'wikibase-entityid',
                                     'value': {
                                         'entity-type': 'item',
-                                        'id': 'Q54948374',
+                                        'id': 'Q54944750',
                                     },
                                 },
                             },
@@ -968,7 +968,7 @@ templates = collections.OrderedDict([
                                     'type': 'wikibase-entityid',
                                     'value': {
                                         'entity-type': 'item',
-                                        'id': 'Q54948374',
+                                        'id': 'Q54944750',
                                     },
                                 },
                             },
@@ -993,7 +993,7 @@ templates = collections.OrderedDict([
                                     'type': 'wikibase-entityid',
                                     'value': {
                                         'entity-type': 'item',
-                                        'id': 'Q54948374',
+                                        'id': 'Q54944750',
                                     },
                                 },
                             },
@@ -1018,7 +1018,7 @@ templates = collections.OrderedDict([
                                     'type': 'wikibase-entityid',
                                     'value': {
                                         'entity-type': 'item',
-                                        'id': 'Q54948374',
+                                        'id': 'Q54944750',
                                     },
                                 },
                             },
