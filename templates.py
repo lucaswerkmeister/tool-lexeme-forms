@@ -276,6 +276,84 @@ templates = collections.OrderedDict([
             },
         ],
     }),
+    # template by User:Djiboun, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/French
+    ('french-noun-masculine', {
+        'label': 'nom commun masculin en français',
+        'language_item_id': 'Q150',
+        'language_code': 'fr',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'singulier',
+                'example': 'Voici un [chien].',
+                'grammatical_features_item_ids': ['Q110786'],
+            },
+            {
+                'label': 'pluriel',
+                'example': 'Voici des [chiens].',
+                'grammatical_features_item_ids': ['Q146786'],
+            },
+        ],
+        'claims': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q499327',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
+    # template by User:Djiboun, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/French
+    ('french-noun-feminine', {
+        'label': 'nom commun féminin en français',
+        'language_item_id': 'Q150',
+        'language_code': 'fr',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'singulier',
+                'example': 'Voici une [chienne].',
+                'grammatical_features_item_ids': ['Q110786'],
+            },
+            {
+                'label': 'pluriel',
+                'example': 'Voici des [chiennes].',
+                'grammatical_features_item_ids': ['Q146786'],
+            },
+        ],
+        'claims': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q1775415',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
     # template by Lucas Werkmeister
     ('latin-noun-masculine', {
         'label': 'nomen Latinum (masculinum)',

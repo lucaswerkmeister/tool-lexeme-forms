@@ -25,6 +25,19 @@ translations = {
         'advanced_partial_forms': 'Du kannst einige Formen leer lassen, so dass sie nicht hinzugefügt werden. Stelle sicher, dass du nicht aus Versehen welche weglässt!',
         'lexeme_id': 'Lexem-ID',
     },
+    # translations by User:Djiboun, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/French
+    'fr': {
+        'create': 'Créer',
+        'csrf_warning': 'Désolé, cette requête n\'a pas pu être traitée (la protection anti-<abbr title="Cross-site request forgery">CSRF</abbr> a échoué). Essayez de renvoyer le formulaire.',
+        'duplicates_warning': 'Les lexèmes suivants possèdent déjà un lemme et un code de langue identiques à celui que vous souhaitez créer :',
+        'duplicates_instructions': 'Si vous êtes certains qu\'ils sont différents, cochez la case située en fin de formulaire.',
+        'no_duplicate': 'Ceci n\'est pas le doublon d\'un lexème existant.',
+        'advanced': 'Avancé',
+        'advanced_general': 'Vous êtes dans le mode "avancé".',
+        'advanced_lexeme_id': 'Au lieu de créer un nouveau lexème, vous pouvez entrer l\'identifiant d\'un lexème existant pour y ajouter des formes supplémentaires. Laissez les cases vides pour les formes déjà existantes afin d\'éviter de créer des doublons !',
+        'advanced_partial_forms': 'Vous pouvez laisser des cases vides pour empêcher la création des formes associées. Assurez-vous de ne pas oublier accidentellement l\'une des formes !',
+        'lexeme_id': 'Identifiant',
+    },
     # translations by Lucas Werkmeister
     'la': {
         'create': 'Facere',
