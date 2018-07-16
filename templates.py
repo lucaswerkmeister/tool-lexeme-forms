@@ -502,6 +502,113 @@ templates = collections.OrderedDict([
             },
         ],
     }),
+    # template by User:Sannita, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Italian
+    ('italian-noun-feminine', {
+        'label': 'sostantivo femminile italiano',
+        'language_item_id': 'Q652',
+        'language_code': 'it',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'singolare',
+                'example': 'Questa è una [rosa].',
+                'grammatical_features_item_ids': ['Q110786'],
+            },
+            {
+                'label': 'plurale',
+                'example': 'Queste sono delle [rose].',
+                'grammatical_features_item_ids': ['Q146786'],
+            },
+        ],
+        'claims': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q1775415',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
+    # template by User:Sannita, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Italian
+    ('italian-noun-masculine', {
+        'label': 'sostantivo maschile italiano',
+        'language_item_id': 'Q652',
+        'language_code': 'it',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'singolare',
+                'example': 'Questo è un [cane].',
+                'grammatical_features_item_ids': ['Q110786'],
+            },
+            {
+                'label': 'plurale',
+                'example': 'Questi sono dei [cani].',
+                'grammatical_features_item_ids': ['Q146786'],
+            },
+        ],
+        'claims': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q499327',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
+    # template by User:Sannita, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Italian
+    ('italian-adjective', {
+        'label': 'aggettivo qualificativo italiano',
+        'language_item_id': 'Q652',
+        'language_code': 'it',
+        'lexical_category_item_id': 'Q34698',
+        'forms': [
+            {
+                'label': 'maschile singolare',
+                'example': 'Il panino è [buono].',
+                'grammatical_features_item_ids': ['Q499327', 'Q110786'],
+            },
+            {
+                'label': 'maschile plurale',
+                'example': 'I panini sono [buoni].',
+                'grammatical_features_item_ids': ['Q499327', 'Q146786'],
+            },
+            {
+                'label': 'femminile singolare',
+                'example': 'La maestra è [buona].',
+                'grammatical_features_item_ids': ['Q1775415', 'Q110786'],
+            },
+            {
+                'label': 'femminile plurale',
+                'example': 'Le maestre sono [buone].',
+                'grammatical_features_item_ids': ['Q1775415', 'Q146786'],
+            },
+        ],
+    }),
     # template by Lucas Werkmeister
     ('latin-noun-masculine', {
         'label': 'nomen Latinum (masculinum)',

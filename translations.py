@@ -51,6 +51,19 @@ translations = {
         'advanced_partial_forms': 'Voit jättää jotkin taivutusmuodoista tyhjiksi. Varmista kuitenkin, että ne ovat tyhjiä tarkoituksella eivätkä vahingossa.',
         'lexeme_id': 'Lekseemi-tunniste'
     },
+    # translations by User:Sannita, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Italian
+    'it': {
+        'create': 'Crea il lessema!',
+        'csrf_warning': 'Ops, non è possibile salvare la pagina (errore: <abbr title="Cross-site request forgery">CSRF</abbr> protection failed). Per favore, riprova.',
+        'duplicates_warning': 'Attenzione, i seguenti lessemi hanno lo stesso lemma e codice linguistico di quello che hai appena tentato di creare:',
+        'duplicates_instructions': 'Se sei sicuro che siano diversi, spunta la casella alla fine di questo modulo.',
+        'no_duplicate': 'Questo NON è un duplicato di un lessema esistente.',
+        'advanced': 'Avanzate',
+        'advanced_general': 'Ti trovi nella modalità “avanzata”.',
+        'advanced_lexeme_id': 'Puoi inserire un ID di un lessema esistente per aggiungere le forme mancanti, anziché crearne uno nuovo. NON inserire le forme già esistenti, altrimenti creerai un doppione!',
+        'advanced_partial_forms': 'Se lasci un campo vuoto, non verrà creata nessuna forma. Assicurati di creare tutte le forme necessarie!',
+        'lexeme_id': 'identificatore',
+    },
     # translations by Lucas Werkmeister
     'la': {
         'create': 'Facere',
