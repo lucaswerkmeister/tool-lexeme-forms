@@ -38,6 +38,19 @@ translations = {
         'advanced_partial_forms': 'Vous pouvez laisser des cases vides pour empêcher la création des formes associées. Assurez-vous de ne pas oublier accidentellement l\'une des formes !',
         'lexeme_id': 'Identifiant',
     },
+    # translations by User:Shinnin, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Finnish
+    'fi': {
+        'create': 'Julkaise',
+        'csrf_warning': 'Anteeksi, pyynnön käsittely ei onnistunut (<abbr title="Cross-site request forgery">CSRF</abbr> suojaus epäonnistui). Yritä tallentaa kaavake uudestaan, kiitos.',
+        'duplicates_warning': 'Seuraavilla lekseemeillä on sama lemma ja kieli kuin sillä, jota yrität luoda:',
+        'duplicates_instructions': 'Jos olet varma, että ne ovat eri lekseemeitä, laita rasti kaavakkeen lopussa olevaan laatikkoon.',
+        'no_duplicate': 'Tämä ei ole kaksoiskappale olemassa olevasta lekseemistä.',
+        'advanced': 'Laajenna',
+        'advanced_general': 'Olet laajennetussa muokkaustilassa.',
+        'advanced_lexeme_id': 'Uuden lekseemin luomisen lisäksi voit muokata jo olemassa olevaa lekseemiä syöttämällä sen tunnisteen. Jätä lekseemissä jo olevat taivutusmuodot tyhjiksi, muuten ne tuplaantuvat.',
+        'advanced_partial_forms': 'Voit jättää jotkin taivutusmuodoista tyhjiksi. Varmista kuitenkin, että ne ovat tyhjiä tarkoituksella eivätkä vahingossa.',
+        'lexeme_id': 'Lekseemi-tunniste'
+    },
     # translations by Lucas Werkmeister
     'la': {
         'create': 'Facere',

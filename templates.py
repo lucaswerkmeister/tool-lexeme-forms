@@ -354,6 +354,125 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+    # template by User:Shinnin, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Finnish
+    ('finnish-noun', {
+        'label': 'suomen kielen substantiivi',
+        'language_item_id': 'Q1412',
+        'language_code': 'fi',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'yksikön nominatiivi',
+                'example': 'Tämä on [koira].',
+                'grammatical_features_item_ids': ['Q110786', 'Q131105'],
+            },
+            {
+                'label': 'monikon nominatiivi',
+                'example': 'Nämä [koirat].',
+                'grammatical_features_item_ids': ['Q146786', 'Q131105'],
+            },
+            {
+                'label': 'yksikön genetiivi',
+                'example': 'Tämän [koiran].',
+                'grammatical_features_item_ids': ['Q110786', 'Q146233'],
+            },
+            {
+                'label': 'monikon genetiivi',
+                'example': 'Näiden [koirien].',
+                'grammatical_features_item_ids': ['Q146786', 'Q146233'],
+            },
+            {
+                'label': 'yksikön partitiivi',
+                'example': 'Tätä [koiraa].',
+                'grammatical_features_item_ids': ['Q110786', 'Q857325'],
+            },
+            {
+                'label': 'monikon partitiivi',
+                'example': 'Näitä [koiria].',
+                'grammatical_features_item_ids': ['Q146786', 'Q857325'],
+            },
+            {
+                'label': 'yksikön essiivi',
+                'example': 'Tällaisena [koirana].',
+                'grammatical_features_item_ids': ['Q110786', 'Q148465'],
+            },
+            {
+                'label': 'monikon essiivi',
+                'example': 'Tällaisina [koirina].',
+                'grammatical_features_item_ids': ['Q146786', 'Q148465'],
+            },
+            {
+                'label': 'yksikön translatiivi',
+                'example': 'Yhdeksi [koiraksi].',
+                'grammatical_features_item_ids': ['Q110786', 'Q950170'],
+            },
+            {
+                'label': 'monikon translatiivi',
+                'example': 'Moniksi [koiriksi].',
+                'grammatical_features_item_ids': ['Q146786', 'Q950170'],
+            },
+            {
+                'label': 'yksikön inessiivi',
+                'example': 'Tässä [koirassa].',
+                'grammatical_features_item_ids': ['Q110786', 'Q282031'],
+            },
+            {
+                'label': 'monikon inessiivi',
+                'example': 'Näissä [koirissa].',
+                'grammatical_features_item_ids': ['Q146786', 'Q282031'],
+            },
+            {
+                'label': 'yksikön elatiivi',
+                'example': 'Tästä [koirasta].',
+                'grammatical_features_item_ids': ['Q110786', 'Q394253'],
+            },
+            {
+                'label': 'monikon elatiivi',
+                'example': 'Näistä [koirista].',
+                'grammatical_features_item_ids': ['Q146786', 'Q394253'],
+            },
+            {
+                'label': 'yksikön illatiivi',
+                'example': 'Tähän [koiraan].',
+                'grammatical_features_item_ids': ['Q110786', 'Q474668'],
+            },
+            {
+                'label': 'monikon illatiivi',
+                'example': 'Näihin [koiriin].',
+                'grammatical_features_item_ids': ['Q146786', 'Q474668'],
+            },
+            {
+                'label': 'yksikön adessiivi',
+                'example': 'Tällä [koiralla].',
+                'grammatical_features_item_ids': ['Q110786', 'Q281954'],
+            },
+            {
+                'label': 'monikon adessiivi',
+                'example': 'Näillä [koirilla].',
+                'grammatical_features_item_ids': ['Q146786', 'Q281954'],
+            },
+            {
+                'label': 'yksikön ablatiivi',
+                'example': 'Tältä [koiralta].',
+                'grammatical_features_item_ids': ['Q110786', 'Q156986'],
+            },
+            {
+                'label': 'monikon ablatiivi',
+                'example': 'Näiltä [koirilta].',
+                'grammatical_features_item_ids': ['Q146786', 'Q156986'],
+            },
+            {
+                'label': 'yksikön allatiivi',
+                'example': 'Tälle [koiralle].',
+                'grammatical_features_item_ids': ['Q110786', 'Q655020'],
+            },
+            {
+                'label': 'monikon allatiivi',
+                'example': 'Näille [koirille].',
+                'grammatical_features_item_ids': ['Q146786', 'Q655020'],
+            },
+        ],
+    }),
     # template by Lucas Werkmeister
     ('latin-noun-masculine', {
         'label': 'nomen Latinum (masculinum)',
