@@ -876,6 +876,153 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+    # template by User:Njardarlogar, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Norwegian_Nynorsk
+    ('nynorsk-noun-feminine', {
+        'label': 'nynorsk hokjønnssubstantiv',
+        'language_item_id': 'Q25164',
+        'language_code': 'nn',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'ubunde eintal',
+                'example': 'Dette er ei [liste].',
+                'grammatical_features_item_ids': ['Q110786', 'Q53997857'],
+            },
+            {
+                'label': 'bunde eintal',
+                'example': 'Dette er [lista].',
+                'grammatical_features_item_ids': ['Q110786', 'Q53997851'],
+            },
+            {
+                'label': 'ubunde fleirtal',
+                'example': 'Dette er nokre [lister].',
+                'grammatical_features_item_ids': ['Q146786', 'Q53997857'],
+            },
+            {
+                'label': 'bunde fleirtal',
+                'example': 'Dette er [listene].',
+                'grammatical_features_item_ids': ['Q146786', 'Q53997851'],
+            },
+        ],
+        'claims': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q1775415',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
+    # template by User:Njardarlogar, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Norwegian_Nynorsk
+    ('nynorsk-noun-masculine', {
+        'label': 'nynorsk hankjønnssubstantiv',
+        'language_item_id': 'Q25164',
+        'language_code': 'nn',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'ubunde eintal',
+                'example': 'Dette er ein [båt].',
+                'grammatical_features_item_ids': ['Q110786', 'Q53997857'],
+            },
+            {
+                'label': 'bunde eintal',
+                'example': 'Dette er [båten].',
+                'grammatical_features_item_ids': ['Q110786', 'Q53997851'],
+            },
+            {
+                'label': 'ubunde fleirtal',
+                'example': 'Dette er nokre [båtar].',
+                'grammatical_features_item_ids': ['Q146786', 'Q53997857'],
+            },
+            {
+                'label': 'bunde fleirtal',
+                'example': 'Dette er [båtane].',
+                'grammatical_features_item_ids': ['Q146786', 'Q53997851'],
+            },
+        ],
+        'claims': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q499327',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
+    # template by User:Njardarlogar, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Norwegian_Nynorsk
+    ('nynorsk-noun-neuter', {
+        'label': 'nynorsk inkjekjønnssubstantiv',
+        'language_item_id': 'Q25164',
+        'language_code': 'nn',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'ubunde eintal',
+                'example': 'Dette er eit [hus].',
+                'grammatical_features_item_ids': ['Q110786', 'Q53997857'],
+            },
+            {
+                'label': 'bunde eintal',
+                'example': 'Dette er [huset].',
+                'grammatical_features_item_ids': ['Q110786', 'Q53997851'],
+            },
+            {
+                'label': 'ubunde fleirtal',
+                'example': 'Dette er nokre [hus].',
+                'grammatical_features_item_ids': ['Q146786', 'Q53997857'],
+            },
+            {
+                'label': 'bunde fleirtal',
+                'example': 'Dette er [husa].',
+                'grammatical_features_item_ids': ['Q146786', 'Q53997851'],
+            },
+        ],
+        'claims': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q1775461',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
     # template by User:KaMan, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Polish
     ('polish-noun', {
         'label': 'polski rzeczownik, prosta odmiana bez wariantów w żadnym z przypadków',

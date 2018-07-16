@@ -77,6 +77,19 @@ translations = {
         'advanced_partial_forms': 'Posses omittere aliqui formas, ut non addentur. Cave erroribus!',
         'lexeme_id': 'Numerus verbi',
     },
+    # translations by User:Njardarlogar, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Norwegian_Nynorsk
+    'nn': {
+        'create': 'Opprett',
+        'csrf_warning': 'Førespurnaden kunne ikkje handsamast av di <abbr title="Cross-site request forgery">CSRF</abbr>-vernet mislukkast. Freist gjerne om att.',
+        'duplicates_warning': 'Desse leksema finst frå før og har det samme lemmaet og den same språkkoden som leksemet du held på å oppretta.',
+        'duplicates_instructions': 'Om du er viss på at dei er ulike, hak av boksen på botnen av skjemaet.',
+        'no_duplicate': 'Dette er ikkje eit duplikat av eit leksem som finst frå før.',
+        'advanced': 'Avansert',
+        'advanced_general': 'Du er i avansert modus.',
+        'advanced_lexeme_id': 'Du kan skriva inn ID-en til eit leksem som alt finst i staden for å oppretta eit nytt eit. La alle formene som alt er opppførte på leksemsida vera tomme, elles vert dei dupliserte.',
+        'advanced_partial_forms': 'Du kan la nokre felt vera tomme slik at dei ikkje vert lagde til. Gjer deg viss på at du ikkje gløymer å skriva inn nokre av formene som skal vera med.',
+        'lexeme_id': 'Leksem-ID',
+    },
     # translations by User:KaMan, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Polish
     'pl': {
         'create': 'Utwórz',
