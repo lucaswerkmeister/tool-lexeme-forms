@@ -12,6 +12,19 @@ translations = {
         'advanced_partial_forms': 'You can leave some forms blank so that they will not be added. Make sure you’re not accidentally leaving out any forms!',
         'lexeme_id': 'Lexeme ID',
     },
+    # translations by User:Oriciu, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Asturian
+    'ast': {
+        'create': 'Crear',
+        'csrf_warning': 'Sentímoslo, nun pudimos procesar la solicitú (falló la protección escontra <abbr title="Cross-site request forgery">CSRF</abbr>). Tenta volver a unviar el formulariu.',
+        'duplicates_warning': 'Los lexemes siguientes tienen yá un llema y códigu d\'idioma iguales que\'l que tentes crear:',
+        'duplicates_instructions': 'Si tas seguru de que son distintos, marca\'l caxellu d\'abaxo del formulariu.',
+        'no_duplicate': 'Esti lexema nun ye un duplicáu d\'otru esistente.',
+        'advanced': 'Avanzao',
+        'advanced_general': 'Tas en mou «avanzáu».',
+        'advanced_lexeme_id': 'En llugar de crear un lexema nuevu, puedes escribir un identificador de lexema p\'añadir formes al mesmu. ¡Dexa en blancu les formes del lexema que yá existan, o crearás duplicaos!',
+        'advanced_partial_forms': 'Puedes dexar en blancu delles formes pa que nun s\'añadan. ¡Asegúrate de nun escaecer nenguna forma accidentalmente!',
+        'lexeme_id': 'Identificador',
+    },
     # translations by Lucas Werkmeister
     'de': {
         'create': 'Anlegen',
