@@ -354,6 +354,35 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+    # template by User:Djiboun, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/French
+    ('french-adjective', {
+        'label': 'adjectif en français',
+        'language_item_id': 'Q150',
+        'language_code': 'fr',
+        'lexical_category_item_id': 'Q34698',
+        'forms': [
+            {
+                'label': 'masculin singulier',
+                'example': 'Un arbre [vert].',
+                'grammatical_features_item_ids': ['Q499327', 'Q110786'],
+            },
+            {
+                'label': 'masculin pluriel',
+                'example': 'Des arbres [verts].',
+                'grammatical_features_item_ids': ['Q499327', 'Q146786'],
+            },
+            {
+                'label': 'féminin singulier',
+                'example': 'Une plante [verte].',
+                'grammatical_features_item_ids': ['Q1775415', 'Q110786'],
+            },
+            {
+                'label': 'féminin pluriel',
+                'example': 'Des plantes [vertes].',
+                'grammatical_features_item_ids': ['Q1775415', 'Q146786'],
+            },
+        ],
+    }),
     # template by User:Shinnin, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Finnish
     ('finnish-noun', {
         'label': 'suomen kielen substantiivi',
