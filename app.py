@@ -147,6 +147,8 @@ def oauth_callback():
 def if_has_duplicates_redirect(template, template_name, advanced, form_data):
     if 'no_duplicate' in form_data:
         return None
+    if 'lexeme_id' in form_data and form_data['lexeme_id']:
+        return None
 
     duplicates = find_duplicates(template, form_data)
     if duplicates:
