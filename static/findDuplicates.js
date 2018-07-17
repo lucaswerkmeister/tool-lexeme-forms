@@ -3,7 +3,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const template = JSON.parse(document.getElementsByTagName('main')[0].dataset.template),
           baseUrl = document.querySelector('link[rel=index]').href,
-          lemmaInput = document.querySelector('input[name=form_representation]');
+          lemmaInput = document.querySelector('input[name=form_representation]'),
+          lexemeIdInput = document.querySelector('input[name=lexeme_id]');
 
     function removeElementById(id) {
         const element = document.getElementById(id);
@@ -18,6 +19,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const lemma = e.target.value;
         if (lemma === '') {
+            return;
+        }
+
+        if (lexemeIdInput && lexemeIdInput.value) {
             return;
         }
 
