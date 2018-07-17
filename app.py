@@ -174,6 +174,13 @@ def get_lemma(form_data):
     flask.abort(400)
 
 @app.route('/api/v1/duplicates/<any(www,test):wiki>/<language_code>/<path:lemma>')
+def get_duplicates_api(wiki, language_code, lemma):
+    matches = get_duplicates(wiki, language_code, lemma)
+    if flask.request.accept_mimetypes.accept_html:
+        return render_duplicates(matches, language_code)
+    else:
+        return flask.Response(json.dumps(matches), mimetype='application/json')
+
 def get_duplicates(wiki, language_code, lemma):
     host = 'https://' + wiki + '.wikidata.org'
     session = mwapi.Session(
@@ -194,13 +201,7 @@ def get_duplicates(wiki, language_code, lemma):
         if result['label'] == lemma and result['match']['language'] == language_code:
             matches.append({'id': result['id'], 'uri': result['concepturi'], 'label': result['label'], 'description': result['description']})
 
-    if flask.request.endpoint == 'get_duplicates':
-        if flask.request.accept_mimetypes.accept_html:
-            return render_duplicates(matches, language_code)
-        else:
-            return flask.Response(json.dumps(matches), mimetype='application/json')
-    else:
-        return matches
+    return matches
 
 @app.route('/api/v1/no_duplicate/<language_code>')
 @app.template_global()
