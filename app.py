@@ -215,6 +215,8 @@ def add_form_data_to_template(form_data, template):
     template = copy.deepcopy(template)
     for (form_representation, form) in zip(form_data.getlist('form_representation'), template['forms']):
         form['value'] = form_representation
+    if 'lexeme_id' in form_data:
+        template['lexeme_id'] = form_data['lexeme_id']
     return template
 
 def if_needs_csrf_redirect(template, template_name, advanced, form_data):
