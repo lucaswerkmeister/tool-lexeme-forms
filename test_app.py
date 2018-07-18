@@ -41,3 +41,11 @@ def test_csrf_token_load():
     with lexeme_forms.app.test_request_context() as context:
         context.session['_csrf_token'] = 'test token'
         assert lexeme_forms.csrf_token() == 'test token'
+
+def test_template_group():
+    group = lexeme_forms.template_group({'language_code': 'de'})
+    assert group == 'de'
+
+def test_template_group_test():
+    group = lexeme_forms.template_group({'language_code': 'de', 'test': True})
+    assert group == 'de, test.wikidata.org'
