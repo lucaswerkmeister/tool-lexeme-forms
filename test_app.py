@@ -26,3 +26,18 @@ def test_form2input_invalid():
     with pytest.raises(Exception) as excinfo:
         markup = lexeme_forms.form2input({'advanced': True}, {'example': 'No placeholder.'})
     assert 'missing [placeholder]' in str(excinfo.value)
+
+def test_csrf_token_generate():
+    with lexeme_forms.app.test_request_context():
+        token = lexeme_forms.csrf_token()
+        assert token != ''
+
+def test_csrf_token_save():
+    with lexeme_forms.app.test_request_context() as context:
+        token = lexeme_forms.csrf_token()
+        assert token == context.session['_csrf_token']
+
+def test_csrf_token_load():
+    with lexeme_forms.app.test_request_context() as context:
+        context.session['_csrf_token'] = 'test token'
+        assert lexeme_forms.csrf_token() == 'test token'
