@@ -1,3 +1,5 @@
+import flask
+import mwoauth
 import pytest
 
 import app as lexeme_forms
@@ -49,3 +51,80 @@ def test_template_group():
 def test_template_group_test():
     group = lexeme_forms.template_group({'language_code': 'de', 'test': True})
     assert group == 'de, test.wikidata.org'
+
+def test_if_no_such_template_redirect_known_template():
+    assert lexeme_forms.if_no_such_template_redirect('english-noun') is None
+
+def test_if_no_such_template_redirect_unknown_template():
+    template_name = 'no-such-template'
+    with lexeme_forms.app.test_request_context():
+        response = lexeme_forms.if_no_such_template_redirect(template_name)
+    assert response is not None
+    assert type(response) is str
+    assert 'alert' in response
+    assert template_name in response
+
+def test_if_needs_oauth_redirect_not_configured(monkeypatch):
+    monkeypatch.delitem(lexeme_forms.app.config, 'oauth', raising=False)
+    assert lexeme_forms.if_needs_oauth_redirect() is None
+
+def test_if_needs_oauth_redirect_logged_in(monkeypatch):
+    monkeypatch.setitem(lexeme_forms.app.config, 'oauth', {})
+    with lexeme_forms.app.test_request_context() as context:
+        context.session['oauth_access_token'] = 'test token'
+        assert lexeme_forms.if_needs_oauth_redirect() is None
+
+def test_if_needs_oauth_redirect_not_logged_in(monkeypatch):
+    monkeypatch.setitem(lexeme_forms.app.config, 'oauth', {})
+    monkeypatch.setattr(lexeme_forms, 'consumer_token', mwoauth.ConsumerToken('test key', 'test secret'), raising=False)
+    monkeypatch.setattr(mwoauth, 'initiate', lambda mw_uri, consumer_token, user_agent: ('test redirect', mwoauth.RequestToken('test key', 'test secret')))
+    with lexeme_forms.app.test_request_context() as context:
+        response = lexeme_forms.if_needs_oauth_redirect()
+    assert response is not None
+    assert str(response.status_code).startswith('3')
+
+def test_if_has_duplicates_redirect_checkbox_checked():
+    assert lexeme_forms.if_has_duplicates_redirect({}, {}, False, {'no_duplicate': True}) is None
+
+def test_if_has_duplicates_redirect_lexeme_id_specified():
+    assert lexeme_forms.if_has_duplicates_redirect({}, {}, False, {'lexeme_id': 'L123'}) is None
+
+def test_if_has_duplicates_redirect_lexeme_id_blank(monkeypatch):
+    monkeypatch.setattr(lexeme_forms, 'find_duplicates', lambda template, form_data: ['duplicate'])
+    monkeypatch.setattr(lexeme_forms, 'add_form_data_to_template', lambda form_data, template: True)
+    monkeypatch.setattr(flask, 'render_template', lambda template_file_name, **kwargs: True)
+    assert lexeme_forms.if_has_duplicates_redirect({'language_code': 'en'}, {}, False, {'lexeme_id': ''}) is not None
+
+def test_if_has_duplicates_redirect_some_duplicates(monkeypatch):
+    monkeypatch.setattr(lexeme_forms, 'find_duplicates', lambda template, form_data: ['duplicate'])
+    monkeypatch.setattr(lexeme_forms, 'add_form_data_to_template', lambda form_data, template: True)
+    monkeypatch.setattr(flask, 'render_template', lambda template_file_name, **kwargs: 'rendered duplicates')
+    assert lexeme_forms.if_has_duplicates_redirect({'language_code': 'en'}, {}, False, {}) == 'rendered duplicates'
+
+def test_if_has_duplicates_redirect_no_duplicates(monkeypatch):
+    monkeypatch.setattr(lexeme_forms, 'find_duplicates', lambda template, form_data: [])
+    assert lexeme_forms.if_has_duplicates_redirect({}, {}, False, {}) is None
+
+def test_if_needs_csrf_redirect_no_token(monkeypatch):
+    monkeypatch.setattr(lexeme_forms, 'add_form_data_to_template', lambda form_data, template: True)
+    monkeypatch.setattr(flask, 'render_template', lambda template_file_name, **kwargs: 'rendered template')
+    with lexeme_forms.app.test_request_context():
+        response = lexeme_forms.if_needs_csrf_redirect({'language_code': 'en'}, 'template name', False, {})
+    assert response == 'rendered template'
+    # TODO instead of monkeypatching, assert that form_data is correctly preserved (possibly in separate test)
+
+def test_if_needs_csrf_redirect_wrong_token(monkeypatch):
+    monkeypatch.setattr(lexeme_forms, 'add_form_data_to_template', lambda form_data, template: True)
+    monkeypatch.setattr(flask, 'render_template', lambda template_file_name, **kwargs: 'rendered template')
+    with lexeme_forms.app.test_request_context() as context:
+        context.session['_csrf_token'] = 'token 1'
+        response = lexeme_forms.if_needs_csrf_redirect({'language_code': 'en'}, 'template name', False, {'_csrf_token': 'token 2'})
+    assert response == 'rendered template'
+
+def test_if_needs_csrf_redirect_correct_token(monkeypatch):
+    monkeypatch.setattr(lexeme_forms, 'add_form_data_to_template', lambda form_data, template: True)
+    monkeypatch.setattr(flask, 'render_template', lambda template_file_name, **kwargs: 'rendered template')
+    with lexeme_forms.app.test_request_context() as context:
+        context.session['_csrf_token'] = 'token'
+        response = lexeme_forms.if_needs_csrf_redirect({'language_code': 'en'}, 'template name', False, {'_csrf_token': 'token'})
+    assert response is None
