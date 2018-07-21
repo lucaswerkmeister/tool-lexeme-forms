@@ -1,6 +1,7 @@
 import flask
 import mwoauth
 import pytest
+import werkzeug
 
 import app as lexeme_forms
 
@@ -128,3 +129,166 @@ def test_if_needs_csrf_redirect_correct_token(monkeypatch):
         context.session['_csrf_token'] = 'token'
         response = lexeme_forms.if_needs_csrf_redirect({'language_code': 'en'}, 'template name', False, {'_csrf_token': 'token'})
     assert response is None
+
+def test_build_lexeme():
+    template = {
+        'language_item_id': 'Q1860',
+        'language_code': 'en',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'grammatical_features_item_ids': ['Q110786'],
+            },
+            {
+                'grammatical_features_item_ids': ['Q146786'],
+            },
+        ],
+    }
+    form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', 'noun'), ('form_representation', 'nouns')])
+    lexeme_data = lexeme_forms.build_lexeme(template, form_data)
+    assert lexeme_data == {
+        'type': 'lexeme',
+        'forms': [
+            {
+                'add': '',
+                'representations': {'en': {'language': 'en', 'value': 'noun'}},
+                'grammaticalFeatures': ['Q110786'],
+                'claims': {},
+            },
+            {
+                'add': '',
+                'representations': {'en': {'language': 'en', 'value': 'nouns'}},
+                'grammaticalFeatures': ['Q146786'],
+                'claims': {},
+            },
+        ],
+        'lemmas': {'en': {'language': 'en', 'value': 'noun'}},
+        'language': 'Q1860',
+        'lexicalCategory': 'Q1084',
+        'claims': {},
+    }
+
+def test_build_lexeme_with_empty_lexeme_id():
+    template = {
+        'language_item_id': 'Q1860',
+        'language_code': 'en',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'grammatical_features_item_ids': ['Q110786'],
+            },
+        ],
+    }
+    form_data = werkzeug.datastructures.ImmutableMultiDict([('lexeme_id', ''), ('form_representation', 'noun')])
+    lexeme_data = lexeme_forms.build_lexeme(template, form_data)
+    assert lexeme_data == {
+        'type': 'lexeme',
+        'forms': [
+            {
+                'add': '',
+                'representations': {'en': {'language': 'en', 'value': 'noun'}},
+                'grammaticalFeatures': ['Q110786'],
+                'claims': {},
+            },
+        ],
+        'lemmas': {'en': {'language': 'en', 'value': 'noun'}},
+        'language': 'Q1860',
+        'lexicalCategory': 'Q1084',
+        'claims': {},
+    }
+
+def test_build_lexeme_with_nonempty_lexeme_id():
+    template = {
+        'language_item_id': 'Q1860',
+        'language_code': 'en',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'grammatical_features_item_ids': ['Q110786'],
+            },
+        ],
+    }
+    form_data = werkzeug.datastructures.ImmutableMultiDict([('lexeme_id', 'L123'), ('form_representation', 'noun')])
+    lexeme_data = lexeme_forms.build_lexeme(template, form_data)
+    assert lexeme_data == {
+        'type': 'lexeme',
+        'forms': [
+            {
+                'add': '',
+                'representations': {'en': {'language': 'en', 'value': 'noun'}},
+                'grammaticalFeatures': ['Q110786'],
+                'claims': {},
+            },
+        ],
+        'id': 'L123',
+    }
+
+def test_build_lexeme_blank_form():
+    template = {
+        'language_item_id': 'Q1860',
+        'language_code': 'en',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'grammatical_features_item_ids': ['Q110786'],
+            },
+            {
+                'grammatical_features_item_ids': ['Q146786'],
+            },
+        ],
+    }
+    form_data = werkzeug.datastructures.ImmutableMultiDict([('lexeme_id', 'L123'), ('form_representation', ''), ('form_representation', 'nouns')])
+    lexeme_data = lexeme_forms.build_lexeme(template, form_data)
+    assert lexeme_data == {
+        'type': 'lexeme',
+        'forms': [
+            {
+                'add': '',
+                'representations': {'en': {'language': 'en', 'value': 'nouns'}},
+                'grammaticalFeatures': ['Q146786'],
+                'claims': {},
+            },
+        ],
+        'id': 'L123',
+    }
+
+def test_build_lexeme_with_claims():
+    template = {
+        'language_item_id': 'Q1860',
+        'language_code': 'en',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'grammatical_features_item_ids': ['Q110786'],
+                'claims': 'singular test claims',
+            },
+            {
+                'grammatical_features_item_ids': ['Q146786'],
+                'claims': 'plural test claims',
+            },
+        ],
+        'claims': 'lexeme test claims',
+    }
+    form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', 'noun'), ('form_representation', 'nouns')])
+    lexeme_data = lexeme_forms.build_lexeme(template, form_data)
+    assert lexeme_data == {
+        'type': 'lexeme',
+        'forms': [
+            {
+                'add': '',
+                'representations': {'en': {'language': 'en', 'value': 'noun'}},
+                'grammaticalFeatures': ['Q110786'],
+                'claims': 'singular test claims',
+            },
+            {
+                'add': '',
+                'representations': {'en': {'language': 'en', 'value': 'nouns'}},
+                'grammaticalFeatures': ['Q146786'],
+                'claims': 'plural test claims',
+            },
+        ],
+        'lemmas': {'en': {'language': 'en', 'value': 'noun'}},
+        'language': 'Q1860',
+        'lexicalCategory': 'Q1084',
+        'claims': 'lexeme test claims',
+    }
