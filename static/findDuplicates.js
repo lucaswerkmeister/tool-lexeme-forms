@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
         removeElementById('duplicates-warning');
         removeElementById('no-duplicate');
 
-        const lemma = e.target.value;
+        const lemma = e.target.value.split('/', 1)[0];
         if (lemma === '') {
             return;
         }
