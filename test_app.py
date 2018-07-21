@@ -106,6 +106,21 @@ def test_if_has_duplicates_redirect_no_duplicates(monkeypatch):
     monkeypatch.setattr(lexeme_forms, 'find_duplicates', lambda template, form_data: [])
     assert lexeme_forms.if_has_duplicates_redirect({}, {}, False, {}) is None
 
+def test_get_lemma_first_form_representation():
+    form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', 'noun'), ('form_representation', 'nouns')])
+    lemma = lexeme_forms.get_lemma(form_data)
+    assert lemma == 'noun'
+
+def test_get_lemma_second_form_representation():
+    form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', ''), ('form_representation', 'nouns')])
+    lemma = lexeme_forms.get_lemma(form_data)
+    assert lemma == 'nouns'
+
+def test_get_lemma_no_form_representation():
+    form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', ''), ('form_representation', '')])
+    lemma = lexeme_forms.get_lemma(form_data)
+    assert lemma is None
+
 def test_if_needs_csrf_redirect_no_token(monkeypatch):
     monkeypatch.setattr(lexeme_forms, 'add_form_data_to_template', lambda form_data, template: True)
     monkeypatch.setattr(flask, 'render_template', lambda template_file_name, **kwargs: 'rendered template')
