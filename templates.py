@@ -15,12 +15,12 @@ templates = collections.OrderedDict([
             },
             {
                 'label': 'Genitiv Singular',
-                'example': 'Das Eigentum des [Hundes].',
+                'example': 'Das Eigentum des [Hunds/Hundes].',
                 'grammatical_features_item_ids': ['Q146233', 'Q110786'],
             },
             {
                 'label': 'Dativ Singular',
-                'example': 'Das gehört dem [Hund].',
+                'example': 'Das gehört dem [Hund/Hunde].',
                 'grammatical_features_item_ids': ['Q145599', 'Q110786'],
             },
             {
@@ -153,12 +153,12 @@ templates = collections.OrderedDict([
             },
             {
                 'label': 'Genitiv Singular',
-                'example': 'Das Eigentum des [Kindes].',
+                'example': 'Das Eigentum des [Kindes/Kinds].',
                 'grammatical_features_item_ids': ['Q146233', 'Q110786'],
             },
             {
                 'label': 'Dativ Singular',
-                'example': 'Das gehört dem [Kind].',
+                'example': 'Das gehört dem [Kind/Kinde].',
                 'grammatical_features_item_ids': ['Q145599', 'Q110786'],
             },
             {
