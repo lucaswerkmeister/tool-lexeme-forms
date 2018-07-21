@@ -167,13 +167,16 @@ def find_duplicates(template, form_data):
     wiki = 'test' if 'test' in template else 'www'
     language_code = template['language_code']
     lemma = get_lemma(form_data)
-    return get_duplicates(wiki, language_code, lemma)
+    if lemma:
+        return get_duplicates(wiki, language_code, lemma)
+    else:
+        flask.abort(400)
 
 def get_lemma(form_data):
     for form_representation in form_data.getlist('form_representation'):
         if form_representation is not '':
             return form_representation
-    flask.abort(400)
+    return None
 
 @app.route('/api/v1/duplicates/<any(www,test):wiki>/<language_code>/<path:lemma>')
 def get_duplicates_api(wiki, language_code, lemma):
@@ -257,8 +260,11 @@ def build_lexeme(template, form_data):
     if lexeme_id:
         lexeme_data['id'] = lexeme_id
     else:
+        lemma = get_lemma(form_data)
+        if lemma is None:
+            flask.abort(400)
         lexeme_data.update({
-            'lemmas': {lang: {'language': lang, 'value': get_lemma(form_data)}},
+            'lemmas': {lang: {'language': lang, 'value': lemma}},
             'language': template['language_item_id'],
             'lexicalCategory': template['lexical_category_item_id'],
             'claims': template.get('claims', {}),
