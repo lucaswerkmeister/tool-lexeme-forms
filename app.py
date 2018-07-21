@@ -174,8 +174,9 @@ def find_duplicates(template, form_data):
 
 def get_lemma(form_data):
     for form_representation in form_data.getlist('form_representation'):
-        if form_representation is not '':
-            return form_representation
+        for form_representation_variant in form_representation.split('/'):
+            if form_representation_variant is not '':
+                return form_representation_variant
     return None
 
 @app.route('/api/v1/duplicates/<any(www,test):wiki>/<language_code>/<path:lemma>')
@@ -240,21 +241,23 @@ def if_needs_csrf_redirect(template, template_name, advanced, form_data):
 
 def build_lexeme(template, form_data):
     lang = template['language_code']
-    lexeme_data = {
-        'type': 'lexeme',
-        'forms': [
-            {
+    forms = []
+    form_representations = form_data.getlist('form_representation')
+    for form_representation, form in zip(form_representations, template['forms']):
+        if not form_representation:
+            continue
+        for form_representation_variant in form_representation.split('/'):
+            if not form_representation_variant:
+                flask.abort(400)
+            forms.append({
                 'add': '',
-                'representations': {lang: {'language': lang, 'value': form_representation}},
+                'representations': {lang: {'language': lang, 'value': form_representation_variant}},
                 'grammaticalFeatures': form['grammatical_features_item_ids'],
                 'claims': form.get('claims', {})
-            }
-            for (form_representation, form) in zip(
-                    form_data.getlist('form_representation'),
-                    template['forms'],
-            )
-            if form_representation is not ''
-        ]
+            })
+    lexeme_data = {
+        'type': 'lexeme',
+        'forms': forms,
     }
     lexeme_id = form_data.get('lexeme_id', '')
     if lexeme_id:

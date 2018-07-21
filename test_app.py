@@ -307,3 +307,59 @@ def test_build_lexeme_with_claims():
         'lexicalCategory': 'Q1084',
         'claims': 'lexeme test claims',
     }
+
+def test_build_lexeme_with_variants():
+    template = {
+        'language_item_id': 'Q1860',
+        'language_code': 'en',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'grammatical_features_item_ids': ['Q110786'],
+            },
+            {
+                'grammatical_features_item_ids': ['Q146786'],
+            },
+        ],
+    }
+    form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', 'noun/NOUN'), ('form_representation', 'nouns/NOUNS/nounS')])
+    lexeme_data = lexeme_forms.build_lexeme(template, form_data)
+    assert lexeme_data == {
+        'type': 'lexeme',
+        'forms': [
+            {
+                'add': '',
+                'representations': {'en': {'language': 'en', 'value': 'noun'}},
+                'grammaticalFeatures': ['Q110786'],
+                'claims': {},
+            },
+            {
+                'add': '',
+                'representations': {'en': {'language': 'en', 'value': 'NOUN'}},
+                'grammaticalFeatures': ['Q110786'],
+                'claims': {},
+            },
+            {
+                'add': '',
+                'representations': {'en': {'language': 'en', 'value': 'nouns'}},
+                'grammaticalFeatures': ['Q146786'],
+                'claims': {},
+            },
+            {
+                'add': '',
+                'representations': {'en': {'language': 'en', 'value': 'NOUNS'}},
+                'grammaticalFeatures': ['Q146786'],
+                'claims': {},
+            },
+            {
+                'add': '',
+                'representations': {'en': {'language': 'en', 'value': 'nounS'}},
+                'grammaticalFeatures': ['Q146786'],
+                'claims': {},
+            },
+        ],
+        'lemmas': {'en': {'language': 'en', 'value': 'noun'}},
+        'language': 'Q1860',
+        'lexicalCategory': 'Q1084',
+        'claims': {},
+    }
