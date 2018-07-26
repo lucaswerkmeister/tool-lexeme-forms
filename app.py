@@ -297,7 +297,7 @@ def submit_lexeme(template, lexeme_data):
     lexeme_id = response['entity']['id']
     revid = response['entity']['lastrevid']
 
-    # wbeditentity does not support statements for forms yet, add them afterwards
+    # wbeditentity does not support statements for forms yet, add them afterwards (T194732)
     # TODO once wbeditentity *does* support it, this will create duplicate statements :(
     if 'id' not in lexeme_data:
         for form_index, form_data in enumerate(lexeme_data['forms']):
