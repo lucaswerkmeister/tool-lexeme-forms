@@ -145,6 +145,55 @@ def test_if_needs_csrf_redirect_correct_token(monkeypatch):
         response = lexeme_forms.if_needs_csrf_redirect({'language_code': 'en'}, 'template name', False, {'_csrf_token': 'token'})
     assert response is None
 
+def test_add_form_data_to_template():
+    form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', 'noun'), ('form_representation', 'nouns')])
+    template = {
+        'forms': [
+            {
+                'label': 'singular',
+                'example': 'One [thing].',
+                'grammatical_features_item_ids': ['Q110786'],
+            },
+            {
+                'label': 'plural',
+                'example': 'Two [things]',
+                'grammatical_features_item_ids': ['Q146786'],
+            },
+        ],
+        'other_data': 'preserve',
+    }
+    new_template = lexeme_forms.add_form_data_to_template(form_data, template)
+    assert new_template == {
+        'forms': [
+            {
+                'label': 'singular',
+                'example': 'One [thing].',
+                'grammatical_features_item_ids': ['Q110786'],
+                'value': 'noun',
+            },
+            {
+                'label': 'plural',
+                'example': 'Two [things]',
+                'grammatical_features_item_ids': ['Q146786'],
+                'value': 'nouns',
+            },
+        ],
+        'other_data': 'preserve',
+    }
+
+def test_add_form_data_to_template_lexeme_id():
+    form_data = werkzeug.datastructures.ImmutableMultiDict([('lexeme_id', 'L123')])
+    template = {'forms': []}
+    new_template = lexeme_forms.add_form_data_to_template(form_data, template)
+    assert new_template['lexeme_id'] == 'L123'
+
+def test_add_form_data_to_template_no_template_modification():
+    form_data = werkzeug.datastructures.ImmutableMultiDict([('lexeme_id', 'L123')])
+    template = {'forms': []}
+    new_template = lexeme_forms.add_form_data_to_template(form_data, template)
+    assert template is not new_template
+    assert 'lexeme_id' not in template
+
 def test_build_lexeme():
     template = {
         'language_item_id': 'Q1860',
