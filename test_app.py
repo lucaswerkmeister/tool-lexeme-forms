@@ -1,4 +1,5 @@
 import flask
+import json
 import mwoauth
 import pytest
 import werkzeug
@@ -120,6 +121,34 @@ def test_get_lemma_no_form_representation():
     form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', ''), ('form_representation', '')])
     lemma = lexeme_forms.get_lemma(form_data)
     assert lemma is None
+
+def test_get_duplicates_api_json(monkeypatch):
+    duplicates = [{'id': 'L1', 'uri': 'http://www.wikidata.org/wiki/Lexeme:L1', 'label': 'lemma', 'description': 'a lexeme'}]
+    monkeypatch.setattr(lexeme_forms, 'get_duplicates', lambda wiki, language_code, lemma: duplicates)
+    with lexeme_forms.app.test_client() as client:
+        response = client.get('/api/v1/duplicates/www/en/lemma')
+    assert response.content_type == 'application/json'
+    assert json.loads(response.get_data(as_text=True)) == duplicates
+
+def test_get_duplicates_api_html(monkeypatch):
+    duplicates = [{'id': 'L1', 'uri': 'http://www.wikidata.org/wiki/Lexeme:L1', 'label': 'test lemma', 'description': 'a test lexeme'}]
+    monkeypatch.setattr(lexeme_forms, 'get_duplicates', lambda wiki, language_code, lemma: duplicates)
+    with lexeme_forms.app.test_client() as client:
+        response = client.get('/api/v1/duplicates/www/de/lemma', headers={'Accept': 'text/html'})
+    assert response.content_type == 'text/html; charset=utf-8'
+    response_text = response.get_data(as_text=True)
+    assert 'haben das gleiche Lemma' in response_text
+    assert 'kreuze das Kästchen' in response_text
+    assert 'test lemma' in response_text
+    assert 'a test lexeme' in response_text
+
+def test_get_duplicates_api_html_empty(monkeypatch):
+    duplicates = []
+    monkeypatch.setattr(lexeme_forms, 'get_duplicates', lambda wiki, language_code, lemma: duplicates)
+    with lexeme_forms.app.test_client() as client:
+        response = client.get('/api/v1/duplicates/www/de/lemma', headers={'Accept': 'text/html'})
+    assert response.content_type == 'text/html; charset=utf-8'
+    assert response.get_data(as_text=True) == ''
 
 def test_if_needs_csrf_redirect_no_token(monkeypatch):
     monkeypatch.setattr(lexeme_forms, 'add_form_data_to_template', lambda form_data, template: True)
