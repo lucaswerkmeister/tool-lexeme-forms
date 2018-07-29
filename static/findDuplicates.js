@@ -53,4 +53,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const checkDebounced = _.debounce(checkDuplicates, 500);
     lemmaInput.addEventListener('input', checkDebounced);
     lemmaInput.addEventListener('change', checkDebounced.flush);
+
+    checkDuplicates({ target: lemmaInput });
 });
