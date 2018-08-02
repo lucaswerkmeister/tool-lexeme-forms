@@ -1659,6 +1659,332 @@ templates = collections.OrderedDict([
             },
         ],
     }),
+    # template by User:Infovarius, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Russian
+    ('russian-noun-masculine', {
+        'label': 'русское существительное, мужской род',
+        'language_item_id': 'Q7737',
+        'language_code': 'ru',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'ед.ч. им.п.',
+                'example': 'Это [дом].',
+                'grammatical_features_item_ids': ['Q131105', 'Q110786'],
+            },
+            {
+                'label': 'ед.ч. род.п.',
+                'example': 'Нет [дома].',
+                'grammatical_features_item_ids': ['Q146233', 'Q110786'],
+            },
+            {
+                'label': 'ед.ч. дат.п.',
+                'example': 'Дать [дому].',
+                'grammatical_features_item_ids': ['Q145599', 'Q110786'],
+            },
+            {
+                'label': 'ед.ч. вин.п.',
+                'example': 'Вижу [дом].',
+                'grammatical_features_item_ids': ['Q146078', 'Q110786'],
+            },
+            {
+                'label': 'ед.ч. твор.п.',
+                'example': 'Руковожу [домом].',
+                'grammatical_features_item_ids': ['Q192997', 'Q110786'],
+            },
+            {
+                'label': 'ед.ч. предл.п.',
+                'example': 'Говорить о [доме].',
+                'grammatical_features_item_ids': ['Q2114906', 'Q110786'],
+            },
+            {
+                'label': 'мн.ч. им.п.',
+                'example': 'Это разные [дома].',
+                'grammatical_features_item_ids': ['Q131105', 'Q146786'],
+            },
+            {
+                'label': 'мн.ч. род.п.',
+                'example': 'Нет разных [домов].',
+                'grammatical_features_item_ids': ['Q146233', 'Q146786'],
+            },
+            {
+                'label': 'мн.ч. дат.п.',
+                'example': 'Дать разным [домам].',
+                'grammatical_features_item_ids': ['Q145599', 'Q146786'],
+            },
+            {
+                'label': 'мн.ч. вин.п.',
+                'example': 'Вижу разные (разных) [дома].',
+                'grammatical_features_item_ids': ['Q146078', 'Q146786'],
+            },
+            {
+                'label': 'мн.ч. твор.п.',
+                'example': 'Руковожу разными [домами].',
+                'grammatical_features_item_ids': ['Q192997', 'Q146786'],
+            },
+            {
+                'label': 'мн.ч. предл.п.',
+                'example': 'Говорить о разных [домах].',
+                'grammatical_features_item_ids': ['Q2114906', 'Q146786'],
+            },
+        ],
+        'claims': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q499327',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
+    # template by User:Infovarius, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Russian
+    ('russian-noun-feminine', {
+        'label': 'русское существительное, женский род',
+        'language_item_id': 'Q7737',
+        'language_code': 'ru',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'ед.ч. им.п.',
+                'example': 'Это [собака].',
+                'grammatical_features_item_ids': ['Q131105', 'Q110786'],
+            },
+            {
+                'label': 'ед.ч. род.п.',
+                'example': 'Нет [собаки].',
+                'grammatical_features_item_ids': ['Q146233', 'Q110786'],
+            },
+            {
+                'label': 'ед.ч. дат.п.',
+                'example': 'Дать [собаке].',
+                'grammatical_features_item_ids': ['Q145599', 'Q110786'],
+            },
+            {
+                'label': 'ед.ч. вин.п.',
+                'example': 'Вижу [собаку].',
+                'grammatical_features_item_ids': ['Q146078', 'Q110786'],
+            },
+            {
+                'label': 'ед.ч. твор.п.',
+                'example': 'Руковожу [собакой].',
+                'grammatical_features_item_ids': ['Q192997', 'Q110786'],
+            },
+            {
+                'label': 'ед.ч. предл.п.',
+                'example': 'Говорить о [собаке].',
+                'grammatical_features_item_ids': ['Q2114906', 'Q110786'],
+            },
+            {
+                'label': 'мн.ч. им.п.',
+                'example': 'Это разные [собаки].',
+                'grammatical_features_item_ids': ['Q131105', 'Q146786'],
+            },
+            {
+                'label': 'мн.ч. род.п.',
+                'example': 'Нет разных [собак].',
+                'grammatical_features_item_ids': ['Q146233', 'Q146786'],
+            },
+            {
+                'label': 'мн.ч. дат.п.',
+                'example': 'Дать разным [собакам].',
+                'grammatical_features_item_ids': ['Q145599', 'Q146786'],
+            },
+            {
+                'label': 'мн.ч. вин.п.',
+                'example': 'Вижу разных (разные) [собак].',
+                'grammatical_features_item_ids': ['Q146078', 'Q146786'],
+            },
+            {
+                'label': 'мн.ч. твор.п.',
+                'example': 'Руковожу разными [собаками].',
+                'grammatical_features_item_ids': ['Q192997', 'Q146786'],
+            },
+            {
+                'label': 'мн.ч. предл.п.',
+                'example': 'Говорить о разных [собаках].',
+                'grammatical_features_item_ids': ['Q2114906', 'Q146786'],
+            },
+        ],
+        'claims': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q1775415',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
+    # template by User:Infovarius, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Russian
+    ('russian-noun-neuter', {
+        'label': 'русское существительное, мужской род',
+        'language_item_id': 'Q7737',
+        'language_code': 'ru',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'ед.ч. им.п.',
+                'example': 'Это [облако].',
+                'grammatical_features_item_ids': ['Q131105', 'Q110786'],
+            },
+            {
+                'label': 'ед.ч. род.п.',
+                'example': 'Нет [облака].',
+                'grammatical_features_item_ids': ['Q146233', 'Q110786'],
+            },
+            {
+                'label': 'ед.ч. дат.п.',
+                'example': 'Дать [облаку].',
+                'grammatical_features_item_ids': ['Q145599', 'Q110786'],
+            },
+            {
+                'label': 'ед.ч. вин.п.',
+                'example': 'Вижу [облако].',
+                'grammatical_features_item_ids': ['Q146078', 'Q110786'],
+            },
+            {
+                'label': 'ед.ч. твор.п.',
+                'example': 'Руковожу [облаком].',
+                'grammatical_features_item_ids': ['Q192997', 'Q110786'],
+            },
+            {
+                'label': 'ед.ч. предл.п.',
+                'example': 'Говорить о(б) [облаке].',
+                'grammatical_features_item_ids': ['Q2114906', 'Q110786'],
+            },
+            {
+                'label': 'мн.ч. им.п.',
+                'example': 'Это разные [облака].',
+                'grammatical_features_item_ids': ['Q131105', 'Q146786'],
+            },
+            {
+                'label': 'мн.ч. род.п.',
+                'example': 'Нет разных [облаков].',
+                'grammatical_features_item_ids': ['Q146233', 'Q146786'],
+            },
+            {
+                'label': 'мн.ч. дат.п.',
+                'example': 'Дать разным [облакам].',
+                'grammatical_features_item_ids': ['Q145599', 'Q146786'],
+            },
+            {
+                'label': 'мн.ч. вин.п.',
+                'example': 'Вижу разные (разных) [облака].',
+                'grammatical_features_item_ids': ['Q146078', 'Q146786'],
+            },
+            {
+                'label': 'мн.ч. твор.п.',
+                'example': 'Руковожу разными [облаками].',
+                'grammatical_features_item_ids': ['Q192997', 'Q146786'],
+            },
+            {
+                'label': 'мн.ч. предл.п.',
+                'example': 'Говорить о(б) [облаках].',
+                'grammatical_features_item_ids': ['Q2114906', 'Q146786'],
+            },
+        ],
+        'claims': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q1775461',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
+    # template by User:Infovarius, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Russian
+    ('russian-noun-pluraletantum', {
+        'label': 'имя существительное (Pluralia tantum, без рода)',
+        'language_item_id': 'Q7737',
+        'language_code': 'ru',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'мн.ч. им.п.',
+                'example': 'Это [ножницы].',
+                'grammatical_features_item_ids': ['Q131105', 'Q146786'],
+            },
+            {
+                'label': 'мн.ч. род.п.',
+                'example': 'Нет [ножниц].',
+                'grammatical_features_item_ids': ['Q146233', 'Q146786'],
+            },
+            {
+                'label': 'мн.ч. дат.п.',
+                'example': 'Дать [ножницам].',
+                'grammatical_features_item_ids': ['Q145599', 'Q146786'],
+            },
+            {
+                'label': 'мн.ч. вин.п.',
+                'example': 'Вижу [ножницы].',
+                'grammatical_features_item_ids': ['Q146078', 'Q146786'],
+            },
+            {
+                'label': 'мн.ч. твор.п.',
+                'example': 'Руковожу [ножницами].',
+                'grammatical_features_item_ids': ['Q192997', 'Q146786'],
+            },
+            {
+                'label': 'мн.ч. предл.п.',
+                'example': 'Говорить о [ножницах].',
+                'grammatical_features_item_ids': ['Q2114906', 'Q146786'],
+            },
+        ],
+        'claims': {
+            'P31': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P31',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q138246',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
     # template by Lucas Werkmeister
     ('german-noun-neuter-test', {
         'test': True,

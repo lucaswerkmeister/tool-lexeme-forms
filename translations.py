@@ -129,4 +129,17 @@ translations = {
         'advanced_partial_forms': 'Możesz zostawić niektóre formy puste, dzięki czemu nie zostaną one dodane. Upewnij się, że przypadkowo nie pominąłeś żadnej formy!',
         'lexeme_id': 'ID leksemu',
     },
+    # translations by User:Infovarius, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Russian
+    'ru': {
+        'create': 'Создать',
+        'csrf_warning': 'Извините, запрос не получился (<abbr title="Cross-site request forgery">CSRF</abbr> ошибка защиты). Пожалуйста, попробуйте отправить форму снова.',
+        'duplicates_warning': 'Следующие лексемы имеют такие же лемму и язык, что и создаваемая вами:',
+        'duplicates_instructions': 'Если вы уверены, что они отличаются, отметьте галочкой внизу формы.',
+        'no_duplicate': 'Это не дубликат существующей лексемы',
+        'advanced': 'Расширенные настройки',
+        'advanced_general': 'Вы в “продвинутом” режиме.',
+        'advanced_lexeme_id': 'Вы можете ввести ID лексемы, чтобы добавить формы в неё вместо создания новой лексемы. Оставьте формы, которые уже существуют, незаполненными, иначе они будут добавлены повторно!',
+        'advanced_partial_forms': 'Вы можете оставить некоторые формы пустыми, чтобы они не были добавлены. Убедитесь, что вы не сделали этого случайно!',
+        'lexeme_id': 'ID лексемы',
+    },
 }
