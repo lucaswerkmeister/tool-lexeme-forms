@@ -425,113 +425,6 @@ templates = collections.OrderedDict([
             },
         ],
     }),
-    # template by User:Djiboun, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/French
-    ('french-noun-masculine', {
-        'label': 'nom commun masculin en français',
-        'language_item_id': 'Q150',
-        'language_code': 'fr',
-        'lexical_category_item_id': 'Q1084',
-        'forms': [
-            {
-                'label': 'singulier',
-                'example': 'Voici un [chien].',
-                'grammatical_features_item_ids': ['Q110786'],
-            },
-            {
-                'label': 'pluriel',
-                'example': 'Voici des [chiens].',
-                'grammatical_features_item_ids': ['Q146786'],
-            },
-        ],
-        'claims': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q499327',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
-    }),
-    # template by User:Djiboun, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/French
-    ('french-noun-feminine', {
-        'label': 'nom commun féminin en français',
-        'language_item_id': 'Q150',
-        'language_code': 'fr',
-        'lexical_category_item_id': 'Q1084',
-        'forms': [
-            {
-                'label': 'singulier',
-                'example': 'Voici une [chienne].',
-                'grammatical_features_item_ids': ['Q110786'],
-            },
-            {
-                'label': 'pluriel',
-                'example': 'Voici des [chiennes].',
-                'grammatical_features_item_ids': ['Q146786'],
-            },
-        ],
-        'claims': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q1775415',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
-    }),
-    # template by User:Djiboun, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/French
-    ('french-adjective', {
-        'label': 'adjectif en français',
-        'language_item_id': 'Q150',
-        'language_code': 'fr',
-        'lexical_category_item_id': 'Q34698',
-        'forms': [
-            {
-                'label': 'masculin singulier',
-                'example': 'Un arbre [vert].',
-                'grammatical_features_item_ids': ['Q499327', 'Q110786'],
-            },
-            {
-                'label': 'masculin pluriel',
-                'example': 'Des arbres [verts].',
-                'grammatical_features_item_ids': ['Q499327', 'Q146786'],
-            },
-            {
-                'label': 'féminin singulier',
-                'example': 'Une plante [verte].',
-                'grammatical_features_item_ids': ['Q1775415', 'Q110786'],
-            },
-            {
-                'label': 'féminin pluriel',
-                'example': 'Des plantes [vertes].',
-                'grammatical_features_item_ids': ['Q1775415', 'Q146786'],
-            },
-        ],
-    }),
     # template by User:Shinnin, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Finnish
     ('finnish-noun', {
         'label': 'suomen kielen substantiivi',
@@ -648,6 +541,113 @@ templates = collections.OrderedDict([
                 'label': 'monikon allatiivi',
                 'example': 'Näille [koirille].',
                 'grammatical_features_item_ids': ['Q146786', 'Q655020'],
+            },
+        ],
+    }),
+    # template by User:Djiboun, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/French
+    ('french-noun-masculine', {
+        'label': 'nom commun masculin en français',
+        'language_item_id': 'Q150',
+        'language_code': 'fr',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'singulier',
+                'example': 'Voici un [chien].',
+                'grammatical_features_item_ids': ['Q110786'],
+            },
+            {
+                'label': 'pluriel',
+                'example': 'Voici des [chiens].',
+                'grammatical_features_item_ids': ['Q146786'],
+            },
+        ],
+        'claims': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q499327',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
+    # template by User:Djiboun, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/French
+    ('french-noun-feminine', {
+        'label': 'nom commun féminin en français',
+        'language_item_id': 'Q150',
+        'language_code': 'fr',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'singulier',
+                'example': 'Voici une [chienne].',
+                'grammatical_features_item_ids': ['Q110786'],
+            },
+            {
+                'label': 'pluriel',
+                'example': 'Voici des [chiennes].',
+                'grammatical_features_item_ids': ['Q146786'],
+            },
+        ],
+        'claims': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q1775415',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
+    # template by User:Djiboun, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/French
+    ('french-adjective', {
+        'label': 'adjectif en français',
+        'language_item_id': 'Q150',
+        'language_code': 'fr',
+        'lexical_category_item_id': 'Q34698',
+        'forms': [
+            {
+                'label': 'masculin singulier',
+                'example': 'Un arbre [vert].',
+                'grammatical_features_item_ids': ['Q499327', 'Q110786'],
+            },
+            {
+                'label': 'masculin pluriel',
+                'example': 'Des arbres [verts].',
+                'grammatical_features_item_ids': ['Q499327', 'Q146786'],
+            },
+            {
+                'label': 'féminin singulier',
+                'example': 'Une plante [verte].',
+                'grammatical_features_item_ids': ['Q1775415', 'Q110786'],
+            },
+            {
+                'label': 'féminin pluriel',
+                'example': 'Des plantes [vertes].',
+                'grammatical_features_item_ids': ['Q1775415', 'Q146786'],
             },
         ],
     }),
