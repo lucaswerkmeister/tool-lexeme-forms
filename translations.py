@@ -38,6 +38,19 @@ translations = {
         'advanced_partial_forms': 'Du kannst einige Formen leer lassen, so dass sie nicht hinzugefügt werden. Stelle sicher, dass du nicht aus Versehen welche weglässt!',
         'lexeme_id': 'Lexem-ID',
     },
+    # template by User:Reosarevok, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Estonian
+    'et': {
+        'create': 'Loo',
+        'csrf_warning': 'Vabandust, taotluse töötlemine ebaõnnestus (<abbr title="Cross-site request forgery">CSRFi</abbr> vastane kaitse ebaõnnestus). Palun proovi vorm uuesti saata.',
+        'duplicates_warning': 'Nendel olemasolevatel lekseemidel on sama lemma ja keel kui lekseemil, mida sa tahad luua:',
+        'duplicates_instructions': 'Kui sa oled kindel, et nad on erinevad, märgi vormi lõpus olev märkeruut.',
+        'no_duplicate': 'See lekseem pole sama kui olemasolevad lekseemid.',
+        'advanced': 'Laienda',
+        'advanced_general': 'Oled laiendatud režiimis',
+        'advanced_lexeme_id': 'Saad sisestada olemasoleva lekseemi ID, et lisada rohkem vorme. Jäta tühjaks need vormid, mis on juba lekseemis olemas, vastasel juhul lisatakse need duplikaatidena.',
+        'advanced_partial_forms': 'Saad vormid tühjaks jätta, et neid ei lisataks. Kontrolli aga, et sa ei jätnud mõnda vormi kogemata tühjaks!',
+        'lexeme_id': 'Lekseemi ID',
+    },
     # translations by User:Djiboun, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/French
     'fr': {
         'create': 'Créer',

@@ -276,6 +276,155 @@ templates = collections.OrderedDict([
             },
         ],
     }),
+    # template by User:Reosarevok, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Estonian
+    ('estonian-noun', {
+        'label':     "eesti keele nimisõna",
+        'language_item_id': 'Q9072',
+        'language_code': 'et',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'ainsuse nimetav',
+                'example': 'See [auto].',
+                'grammatical_features_item_ids': ['Q110786', 'Q131105'],
+            },
+            {
+                'label': 'mitmuse nimetav',
+                'example': 'Need [autod].',
+                'grammatical_features_item_ids': ['Q146786', 'Q131105'],
+            },
+            {
+                'label': 'ainsuse omastav',
+                'example': 'Selle [auto].',
+                'grammatical_features_item_ids': ['Q110786', 'Q146233'],
+            },
+            {
+                'label': 'mitmuse omastav',
+                'example': 'Nende [autode].',
+                'grammatical_features_item_ids': ['Q146786', 'Q146233'],
+            },
+            {
+                'label': 'ainsuse osastav',
+                'example': 'Seda [autot].',
+                'grammatical_features_item_ids': ['Q110786', 'Q857325'],
+            },
+            {
+                'label': 'mitmuse osastav',
+                'example': 'Neid [autosid].',
+                'grammatical_features_item_ids': ['Q146786', 'Q857325'],
+            },
+            {
+                'label': 'ainsuse sisseütlev',
+                'example': 'Sellesse [autosse].',
+                'grammatical_features_item_ids': ['Q110786', 'Q474668'],
+            },
+            {
+                'label': 'mitmuse sisseütlev',
+                'example': 'Nendesse [autodesse].',
+                'grammatical_features_item_ids': ['Q146786', 'Q474668'],
+            },
+            {
+                'label': 'ainsuse seesütlev',
+                'example': 'Selles [autos].',
+                'grammatical_features_item_ids': ['Q110786', 'Q282031'],
+            },
+            {
+                'label': 'mitmuse seesütlev',
+                'example': 'Nendes [autodes].',
+                'grammatical_features_item_ids': ['Q146786', 'Q282031'],
+            },
+            {
+                'label': 'ainsuse seestütlev',
+                'example': 'Sellest [autost].',
+                'grammatical_features_item_ids': ['Q110786', 'Q394253'],
+            },
+            {
+                'label': 'mitmuse seestütlev',
+                'example': 'Nendest [autodest].',
+                'grammatical_features_item_ids': ['Q146786', 'Q394253'],
+            },
+            {
+                'label': 'ainsuse alaleütlev',
+                'example': 'Sellele [autole].',
+                'grammatical_features_item_ids': ['Q110786', 'Q655020'],
+            },
+            {
+                'label': 'mitmuse alaleütlev',
+                'example': 'Nendele [autodele].',
+                'grammatical_features_item_ids': ['Q146786', 'Q655020'],
+            },
+            {
+                'label': 'ainsuse alalütlev',
+                'example': 'Sellel [autol].',
+                'grammatical_features_item_ids': ['Q110786', 'Q281954'],
+            },
+            {
+                'label': 'mitmuse alalütlev',
+                'example': 'Nendel [autodel].',
+                'grammatical_features_item_ids': ['Q146786', 'Q281954'],
+            },
+            {
+                'label': 'ainsuse alaltütlev',
+                'example': 'Sellelt [autolt].',
+                'grammatical_features_item_ids': ['Q110786', 'Q156986'],
+            },
+            {
+                'label': 'mitmuse alaltütlev',
+                'example': 'Nendelt [autodelt].',
+                'grammatical_features_item_ids': ['Q146786', 'Q156986'],
+            },
+            {
+                'label': 'ainsuse saav',
+                'example': 'Selleks [autoks].',
+                'grammatical_features_item_ids': ['Q110786', 'Q950170'],
+            },
+            {
+                'label': 'mitmuse saav',
+                'example': 'Nendeks [autodeks].',
+                'grammatical_features_item_ids': ['Q146786', 'Q950170'],
+            },
+            {
+                'label': 'ainsuse rajav',
+                'example': 'Selle [autoni].',
+                'grammatical_features_item_ids': ['Q110786', 'Q747019'],
+            },
+            {
+                'label': 'mitmuse rajav',
+                'example': 'Nende [autodeni].',
+                'grammatical_features_item_ids': ['Q146786', 'Q747019'],
+            },
+            {
+                'label': 'ainsuse olev',
+                'example': 'Selle [autona].',
+                'grammatical_features_item_ids': ['Q110786', 'Q148465'],
+            },
+            {
+                'label': 'mitmuse olev',
+                'example': 'Nende [autodena].',
+                'grammatical_features_item_ids': ['Q146786', 'Q148465'],
+            },
+            {
+                'label': 'ainsuse ilmaütlev',
+                'example': 'Selle [autota].',
+                'grammatical_features_item_ids': ['Q110786', 'Q319822'],
+            },
+            {
+                'label': 'mitmuse ilmaütlev',
+                'example': 'Nende [autodeta].',
+                'grammatical_features_item_ids': ['Q146786', 'Q319822'],
+            },
+            {
+                'label': 'ainsuse kaasaütlev',
+                'example': 'Selle [autoga].',
+                'grammatical_features_item_ids': ['Q110786', 'Q838581'],
+            },
+            {
+                'label': 'mitmuse kaasaütlev',
+                'example': 'Nende [autodega].',
+                'grammatical_features_item_ids': ['Q146786', 'Q838581'],
+            },
+        ],
+    }),
     # template by User:Djiboun, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/French
     ('french-noun-masculine', {
         'label': 'nom commun masculin en français',
