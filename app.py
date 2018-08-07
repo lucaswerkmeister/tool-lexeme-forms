@@ -183,6 +183,8 @@ def get_lemma(form_data):
 @app.route('/api/v1/duplicates/<any(www,test):wiki>/<language_code>/<path:lemma>')
 def get_duplicates_api(wiki, language_code, lemma):
     matches = get_duplicates(wiki, language_code, lemma)
+    if not matches:
+        return flask.Response(status=204)
     if flask.request.accept_mimetypes.accept_html:
         return render_duplicates(matches, language_code)
     else:
