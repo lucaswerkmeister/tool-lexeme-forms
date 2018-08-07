@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             const url = `${baseUrl}api/v1/no_duplicate/${template.language_code}`;
-            fetch(url, init).then(response => response.text()).then(noDuplicateHtml => {
+            return fetch(url, init).then(response => response.text()).then(noDuplicateHtml => {
                 const duplicatesWarning = document.createElement('div');
                 document.querySelector('form').insertAdjacentElement('beforebegin', duplicatesWarning);
                 duplicatesWarning.outerHTML = duplicatesWarningHtml;
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.querySelector('form dl').insertAdjacentElement('afterend', noDuplicate);
                 noDuplicate.outerHTML = noDuplicateHtml;
             });
-        });
+        }).catch(console.error);
     }
 
     const checkDebounced = _.debounce(checkDuplicates, 500);
