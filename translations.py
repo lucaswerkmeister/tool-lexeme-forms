@@ -51,6 +51,19 @@ translations = {
         'advanced_partial_forms': 'Vi povas lasi iujn formojn malplenaj por ke ili ne aldoniĝos. Certiĝu, ke vi hazarde ne lasas iun formojn!',
         'lexeme_id': 'Leksema identifikilo',
     },
+    # translations by User:Andreasmperu, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Spanish
+    'es': {
+        'create': 'Crear',
+        'csrf_warning': 'Lo siento, esta solicitud no pudo ser procesada (<abbr title="Cross-site request forgery">CSRF</abbr> protection failed). Por favor, intenta enviar el formulario nuevamente.',
+        'duplicates_warning': 'Los lexemas siguientes ya tienen un lema y un código lingüístico idéntico a aquel que estás intentado crear:',
+        'duplicates_instructions': 'Si estás seguro que son distintos, revisa la casilla situada al final de este formulario.',
+        'no_duplicate': 'Este no es un duplicado de un lexema existente.',
+        'advanced': 'Avanzado',
+        'advanced_general': 'Estás en el modo "avanzado".',
+        'advanced_lexeme_id': 'En lugar de crear un nuevo lexema, puedes ingresar el identificador de un lexema existente para añadir las formas faltantes. Deja en blanco las formas ya existentes en el lexema; de lo contrario, ¡se creará un duplicado!',
+        'advanced_partial_forms': 'Puedes dejar algunas formas en blanco para evitar que sean añadidas. ¡Asegúrate de crear todas las formas necesarias!',
+        'lexeme_id': 'Identificador de lexema',
+    },
     # template by User:Reosarevok, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Estonian
     'et': {
         'create': 'Loo',
