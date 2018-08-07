@@ -38,6 +38,19 @@ translations = {
         'advanced_partial_forms': 'Du kannst einige Formen leer lassen, so dass sie nicht hinzugefügt werden. Stelle sicher, dass du nicht aus Versehen welche weglässt!',
         'lexeme_id': 'Lexem-ID',
     },
+    # translations by User:Jens Ohlig, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Esperanto
+    'eo': {
+        'create': 'Krei',
+        'csrf_warning': 'Pardonu, ni ne povis procesi ĉi tiun peton (protekto kontraŭ <abbr title="Cross-site request forgery">CSRF</abbr> malsucesis). Bonvolu provi submeti la formularon denove.',
+        'duplicates_warning': 'La jenaj ekzistantaj leksemoj havas saman lemo kaj lingva kodo kiel tiu kiun vi provis krei:',
+        'duplicates_instructions': 'Se vi certas, ke ili estas malsamaj, marku la markobutonon ĉe la malsupro de la formo.',
+        'no_duplicate': 'Ĉi tiu ne estas duplikato de ekzistanta leksemo.',
+        'advanced': 'Altnivela reĝimo',
+        'advanced_general': 'Vi estas en “altnivela” reĝimo.',
+        'advanced_lexeme_id': 'Vi povas enmeti lekseman identifikilon por aldoni formojn al ekzistanta leksemo anstataŭ krei novan leksemon. Lasu formojn kiuj jam ekzistas pri tio leksemo malplenajn, alie la formoj estos duobligitaj!',
+        'advanced_partial_forms': 'Vi povas lasi iujn formojn malplenaj por ke ili ne aldoniĝos. Certiĝu, ke vi hazarde ne lasas iun formojn!',
+        'lexeme_id': 'Leksema identifikilo',
+    },
     # template by User:Reosarevok, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Estonian
     'et': {
         'create': 'Loo',
