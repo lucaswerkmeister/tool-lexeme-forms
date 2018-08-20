@@ -276,6 +276,113 @@ templates = collections.OrderedDict([
             },
         ],
     }),
+    # template by User:Andreasmperu, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Spanish
+    ('spanish-noun-masculine', {
+        'label': "sustantivo masculino en español",
+        'language_item_id': 'Q1321',
+        'language_code': 'es',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': "singular",
+                'example': 'Este es un [libro].',
+                'grammatical_features_item_ids': ['Q110786'],
+            },
+            {
+                'label': 'plural',
+                'example': 'Estos son unos [libros].',
+                'grammatical_features_item_ids': ['Q146786'],
+            },
+        ],
+        'claims': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q499327',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
+    # template by User:Andreasmperu, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Spanish
+    ('spanish-noun-feminine', {
+        'label': "sustantivo femenino en español",
+        'language_item_id': 'Q1321',
+        'language_code': 'es',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': "singular",
+                'example': 'Esta es una [manzana].',
+                'grammatical_features_item_ids': ['Q110786'],
+            },
+            {
+                'label': 'plural',
+                'example': 'Estas son unas [manzanas].',
+                'grammatical_features_item_ids': ['Q146786'],
+            },
+        ],
+        'claims': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q499327',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
+    # template by User:Andreasmperu, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Spanish
+    ('spanish-adjective', {
+        'label': "adjetivo en español",
+        'language_item_id': 'Q1321',
+        'language_code': 'es',
+        'lexical_category_item_id': 'Q34698',
+        'forms': [
+            {
+                'label': 'masculino singular',
+                'example': 'Un pantalón [negro].',
+                'grammatical_features_item_ids': ['Q499327', 'Q110786'],
+            },
+            {
+                'label': 'masculino plural',
+                'example': 'Unos pantalones [negros].',
+                'grammatical_features_item_ids': ['Q499327', 'Q146786'],
+            },
+            {
+                'label': 'femenino singular',
+                'example': 'Una falda [negra].',
+                'grammatical_features_item_ids': ['Q1775415', 'Q110786'],
+            },
+            {
+                'label': 'femenino plural',
+                'example': 'Unas faldas [negras].',
+                'grammatical_features_item_ids': ['Q1775415', 'Q146786'],
+            },
+        ],
+    }),
     # template by User:Reosarevok, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Estonian
     ('estonian-noun', {
         'label':     "eesti keele nimisõna",
