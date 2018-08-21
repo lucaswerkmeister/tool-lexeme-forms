@@ -1944,9 +1944,9 @@ templates = collections.OrderedDict([
             ],
         },
     }),
-    # template by User:Infovarius, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Russian
+    # template by User:Infovarius and others, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Russian
     ('russian-noun-neuter', {
-        'label': 'русское существительное, мужской род',
+        'label': 'русское существительное, средний род',
         'language_item_id': 'Q7737',
         'language_code': 'ru',
         'lexical_category_item_id': 'Q1084',
