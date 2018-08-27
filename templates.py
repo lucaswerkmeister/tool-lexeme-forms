@@ -1,6 +1,84 @@
 import collections
 
 templates = collections.OrderedDict([
+    # template by User:Oriciu, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Asturian
+    ('asturian-noun-masculine', {
+        'label': 'nome común masculín asturianu',
+        'language_item_id': 'Q29507',
+        'language_code': 'ast',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'singular',
+                'example': 'Esti ye un [perru].',
+                'grammatical_features_item_ids': ['Q110786'],
+            },
+            {
+                'label': 'plural',
+                'example': 'Estos son unos [perros].',
+                'grammatical_features_item_ids': ['Q146786'],
+            },
+        ],
+        'claims': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q499327',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
+    # template by User:Oriciu, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Asturian
+    ('asturian-noun-feminine', {
+        'label': 'nome común femenín asturianu',
+        'language_item_id': 'Q29507',
+        'language_code': 'ast',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'singular',
+                'example': 'Esta ye una [perra].',
+                'grammatical_features_item_ids': ['Q110786'],
+            },
+            {
+                'label': 'plural',
+                'example': 'Estes son unes [perres].',
+                'grammatical_features_item_ids': ['Q146786'],
+            },
+        ],
+        'claims': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q1775415',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
     # template by Lucas Werkmeister
     ('german-noun-masculine', {
         'label': 'deutsches Substantiv (Maskulinum)',
