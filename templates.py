@@ -354,6 +354,78 @@ templates = collections.OrderedDict([
             },
         ],
     }),
+    # template by User:ArthurPSmith, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/English
+    ('english-adverb', {
+        'label': 'English adverb',
+        'language_item_id': 'Q1860',
+        'language_code': 'en',
+        'lexical_category_item_id': 'Q380057',
+        'forms': [
+            {
+                'label': 'lexeme',
+                'example': 'We walked [slowly].',
+                'grammatical_features_item_ids': [],
+            },
+        ],
+    }),
+    # template by User:ArthurPSmith, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/English
+    ('english-adjective', {
+        'label': 'English adjective',
+        'language_item_id': 'Q1860',
+        'language_code': 'en',
+        'lexical_category_item_id': 'Q34698',
+        'forms': [
+            {
+                'label': 'positive',
+                'example': 'This is a [good] dog.',
+                'grammatical_features_item_ids': ['Q3482678'],
+            },
+            {
+                'label': 'comparative',
+                'example': 'This is a [better] dog than yours.',
+                'grammatical_features_item_ids': ['Q14169499'],
+            },
+            {
+                'label': 'superlative',
+                'example': 'This is the [best] dog I\'ve ever seen.',
+                'grammatical_features_item_ids': ['Q1817208'],
+            },
+        ],
+    }),
+    # template by User:ArthurPSmith, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/English
+    ('english-verb', {
+        'label': 'English verb',
+        'language_item_id': 'Q1860',
+        'language_code': 'en',
+        'lexical_category_item_id': 'Q24905',
+        'forms': [
+            {
+                'label': 'present',
+                'example': 'They [sing] every day.',
+                'grammatical_features_item_ids': ['Q3910936'],
+            },
+            {
+                'label': 'third-person singular',
+                'example': 'He [sings] every day.',
+                'grammatical_features_item_ids': ['Q3910936', 'Q51929447'],
+            },
+            {
+                'label': 'simple past',
+                'example': 'He [sang] every day last week.',
+                'grammatical_features_item_ids': ['Q1392475'],
+            },
+            {
+                'label': 'present participle',
+                'example': 'They are [singing] right now.',
+                'grammatical_features_item_ids': ['Q13923816'],
+            },
+            {
+                'label': 'past participle',
+                'example': 'We have [sung] for hours.',
+                'grammatical_features_item_ids': ['Q1230649'],
+            },
+        ],
+    }),
     # template by User:Andreasmperu, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Spanish
     ('spanish-noun-masculine', {
         'label': "sustantivo masculino en español",
