@@ -417,7 +417,7 @@ templates = collections.OrderedDict([
             {
                 'label': 'present participle',
                 'example': 'They are [singing] right now.',
-                'grammatical_features_item_ids': ['Q13923816'],
+                'grammatical_features_item_ids': ['Q10345583'],
             },
             {
                 'label': 'past participle',
