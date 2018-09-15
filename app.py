@@ -113,10 +113,9 @@ def process_template_advanced(template_name, advanced=True):
         return response
 
     template = templates[template_name]
+    form_data = flask.request.form
 
-    if flask.request.method == 'POST':
-        form_data = flask.request.form
-
+    if flask.request.method == 'POST' and flask.request.referrer == current_url():
         response = if_has_duplicates_redirect(template, template_name, advanced, form_data)
         if response:
             return response
@@ -134,7 +133,7 @@ def process_template_advanced(template_name, advanced=True):
     else:
         return flask.render_template(
             'template.html',
-            template=template,
+            template=add_form_data_to_template(form_data, template),
             template_name=template_name,
             translations=translations[template['language_code']],
             advanced=advanced,
