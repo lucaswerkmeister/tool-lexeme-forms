@@ -72,6 +72,25 @@ def template_group(template):
         group += ', test.wikidata.org'
     return group
 
+@app.template_filter()
+def user_link(user_name):
+    return (flask.Markup(r'<a href="https://www.wikidata.org/wiki/User:') +
+            flask.Markup.escape(user_name.replace(' ', '_')) +
+            flask.Markup(r'">') +
+            flask.Markup(r'<bdi>') +
+            flask.Markup.escape(user_name) +
+            flask.Markup(r'</bdi>') +
+            flask.Markup(r'</a>'))
+
+@app.template_global()
+def render_oauth_username():
+    identity = identify()
+    if identity is None:
+        return flask.Markup(r'')
+    return (flask.Markup(r'<span class="navbar-text">Logged in as ') +
+            user_link(identity['username']) +
+            flask.Markup(r'</span>'))
+
 @app.route('/')
 def index():
     return flask.render_template(
@@ -330,4 +349,14 @@ def generate_auth():
         client_secret=consumer_token.secret,
         resource_owner_key=access_token.key,
         resource_owner_secret=access_token.secret,
+    )
+
+def identify():
+    if 'oauth_access_token' not in flask.session:
+        return None
+    access_token = mwoauth.AccessToken(**flask.session['oauth_access_token'])
+    return mwoauth.identify(
+        'https://www.wikidata.org/w/index.php',
+        consumer_token,
+        access_token,
     )
