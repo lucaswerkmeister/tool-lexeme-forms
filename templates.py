@@ -336,6 +336,155 @@ templates = collections.OrderedDict([
         },
     }),
     # template by Lucas Werkmeister
+    ('german-verb', {
+        'label': 'deutsches Verb',
+        'language_item_id': 'Q188',
+        'language_code': 'de',
+        'lexical_category_item_id': 'Q24905',
+        'forms': [
+            {
+                'label': 'Infinitiv',
+                'example': '[tragen]',
+                'grammatical_features_item_ids': ['Q179230'],
+            },
+            {
+                'label': '1. Person Singular Präsens',
+                'example': 'Ich [trage] heute.',
+                'grammatical_features_item_ids': ['Q21714344', 'Q110786', 'Q682111', 'Q192613', 'Q1317831'],
+            },
+            {
+                'label': '2. Person Singular Präsens',
+                'example': 'Du [trägst] heute.',
+                'grammatical_features_item_ids': ['Q51929049', 'Q110786', 'Q682111', 'Q192613', 'Q1317831'],
+            },
+            {
+                'label': '3. Person Singular Präsens',
+                'example': 'Er/sie/es [trägt] heute.',
+                'grammatical_features_item_ids': ['Q51929074', 'Q110786', 'Q682111', 'Q192613', 'Q1317831'],
+            },
+            {
+                'label': '1. Person Plural Präsens',
+                'example': 'Wir [tragen] heute.',
+                'grammatical_features_item_ids': ['Q21714344', 'Q146786', 'Q682111', 'Q192613', 'Q1317831'],
+            },
+            {
+                'label': '2. Person Plural Präsens',
+                'example': 'Ihr [tragt] heute.',
+                'grammatical_features_item_ids': ['Q51929049', 'Q146786', 'Q682111', 'Q192613', 'Q1317831'],
+            },
+            {
+                'label': '3. Person Plural Präsens',
+                'example': 'Sie [tragen] heute.',
+                'grammatical_features_item_ids': ['Q51929074', 'Q146786', 'Q682111', 'Q192613', 'Q1317831'],
+            },
+            {
+                'label': '1. Person Singular Präteritum',
+                'example': 'Ich [trug] gestern.',
+                'grammatical_features_item_ids': ['Q21714344', 'Q110786', 'Q682111', 'Q442485', 'Q1317831'],
+            },
+            {
+                'label': '2. Person Singular Präteritum',
+                'example': 'Du [trugst] gestern.',
+                'grammatical_features_item_ids': ['Q51929049', 'Q110786', 'Q682111', 'Q442485', 'Q1317831'],
+            },
+            {
+                'label': '3. Person Singular Präteritum',
+                'example': 'Er/sie/es [trug] gestern.',
+                'grammatical_features_item_ids': ['Q51929074', 'Q110786', 'Q682111', 'Q442485', 'Q1317831'],
+            },
+            {
+                'label': '1. Person Plural Präteritum',
+                'example': 'Wir [trugen] gestern.',
+                'grammatical_features_item_ids': ['Q21714344', 'Q146786', 'Q682111', 'Q442485', 'Q1317831'],
+            },
+            {
+                'label': '2. Person Plural Präteritum',
+                'example': 'Ihr [trugt] gestern.',
+                'grammatical_features_item_ids': ['Q51929049', 'Q146786', 'Q682111', 'Q442485', 'Q1317831'],
+            },
+            {
+                'label': '3. Person Plural Präteritum',
+                'example': 'Sie [trugen] gestern.',
+                'grammatical_features_item_ids': ['Q51929074', 'Q146786', 'Q682111', 'Q442485', 'Q1317831'],
+            },
+            {
+                'label': '1. Person Singular Konjunktiv I',
+                'example': 'Angenommen, ich [trage].',
+                'grammatical_features_item_ids': ['Q21714344', 'Q110786', 'Q55685962', 'Q192613', 'Q1317831'],
+            },
+            {
+                'label': '2. Person Singular Konjunktiv I',
+                'example': 'Angenommen, du [tragest].',
+                'grammatical_features_item_ids': ['Q51929049', 'Q110786', 'Q55685962', 'Q192613', 'Q1317831'],
+            },
+            {
+                'label': '3. Person Singular Konjunktiv I',
+                'example': 'Angenommen, er/sie/es [trage].',
+                'grammatical_features_item_ids': ['Q51929074', 'Q110786', 'Q55685962', 'Q192613', 'Q1317831'],
+            },
+            {
+                'label': '1. Person Plural Konjunktiv I',
+                'example': 'Angenommen, wir [tragen].',
+                'grammatical_features_item_ids': ['Q21714344', 'Q146786', 'Q55685962', 'Q192613', 'Q1317831'],
+            },
+            {
+                'label': '2. Person Plural Konjunktiv I',
+                'example': 'Angenommen, ihr [traget].',
+                'grammatical_features_item_ids': ['Q51929049', 'Q146786', 'Q55685962', 'Q192613', 'Q1317831'],
+            },
+            {
+                'label': '3. Person Plural Konjunktiv I',
+                'example': 'Angenommen, sie [tragen].',
+                'grammatical_features_item_ids': ['Q51929074', 'Q146786', 'Q55685962', 'Q192613', 'Q1317831'],
+            },
+            {
+                'label': '1. Person Singular Konjunktiv II',
+                'example': 'Ich dachte, ich [trüge].',
+                'grammatical_features_item_ids': ['Q21714344', 'Q110786', 'Q54671845', 'Q442485', 'Q1317831'],
+            },
+            {
+                'label': '2. Person Singular Konjunktiv II',
+                'example': 'Ich dachte, du [trügest/trügst].',
+                'grammatical_features_item_ids': ['Q51929049', 'Q110786', 'Q54671845', 'Q442485', 'Q1317831'],
+            },
+            {
+                'label': '3. Person Singular Konjunktiv II',
+                'example': 'Ich dachte, er/sie/es [trüge].',
+                'grammatical_features_item_ids': ['Q51929074', 'Q110786', 'Q54671845', 'Q442485', 'Q1317831'],
+            },
+            {
+                'label': '1. Person Plural Konjunktiv II',
+                'example': 'Ich dachte, wir [trügen].',
+                'grammatical_features_item_ids': ['Q21714344', 'Q146786', 'Q54671845', 'Q442485', 'Q1317831'],
+            },
+            {
+                'label': '2. Person Plural Konjunktiv II',
+                'example': 'Ich dachte, ihr [trüget/trügt].',
+                'grammatical_features_item_ids': ['Q51929049', 'Q146786', 'Q54671845', 'Q442485', 'Q1317831'],
+            },
+            {
+                'label': '3. Person Plural Konjunktiv II',
+                'example': 'Ich dachte, sie [trügen].',
+                'grammatical_features_item_ids': ['Q51929074', 'Q146786', 'Q54671845', 'Q442485', 'Q1317831'],
+            },
+            {
+                'label': '2. Person Singular Imperativ',
+                'example': 'He du da, [trag/trage]!',
+                'grammatical_features_item_ids': ['Q51929049', 'Q110786', 'Q22716', 'Q192613', 'Q1317831'],
+            },
+            {
+                'label': '2. Person Plural Imperativ',
+                'example': 'He ihr da, [tragt]!',
+                'grammatical_features_item_ids': ['Q51929049', 'Q146786', 'Q22716', 'Q192613', 'Q1317831'],
+            },
+            {
+                'label': 'Partizip II',
+                'example': 'Ich werde [getragen].',
+                'grammatical_features_item_ids': ['Q1230649'],
+            },
+        ],
+    }),
+    # template by Lucas Werkmeister
     ('english-noun', {
         'label': 'English noun',
         'language_item_id': 'Q1860',
