@@ -223,6 +223,21 @@ def test_add_form_data_to_template_no_template_modification():
     assert template is not new_template
     assert 'lexeme_id' not in template
 
+def test_current_url_index():
+    with lexeme_forms.app.test_request_context('/'):
+        current_url = lexeme_forms.current_url()
+        assert current_url == '/'
+
+def test_current_url_template():
+    with lexeme_forms.app.test_request_context('/template/foo/'):
+        current_url = lexeme_forms.current_url()
+        assert current_url == '/template/foo/'
+
+def test_current_url_template_advanced():
+    with lexeme_forms.app.test_request_context('/template/foo/advanced/'):
+        current_url = lexeme_forms.current_url()
+        assert current_url == '/template/foo/advanced/'
+
 def test_build_lexeme():
     template = {
         'language_item_id': 'Q1860',

@@ -153,7 +153,7 @@ def if_needs_oauth_redirect():
     if 'oauth' in app.config and 'oauth_access_token' not in flask.session:
         (redirect, request_token) = mwoauth.initiate('https://www.wikidata.org/w/index.php', consumer_token, user_agent=user_agent)
         flask.session['oauth_request_token'] = dict(zip(request_token._fields, request_token))
-        flask.session['oauth_redirect_target'] = flask.url_for(flask.request.endpoint, **flask.request.view_args)
+        flask.session['oauth_redirect_target'] = current_url()
         return flask.redirect(redirect)
     else:
         return None
@@ -260,6 +260,9 @@ def if_needs_csrf_redirect(template, template_name, advanced, form_data):
         )
     else:
         return None
+
+def current_url():
+    return flask.url_for(flask.request.endpoint, **flask.request.view_args)
 
 def build_lexeme(template, form_data):
     lang = template['language_code']
