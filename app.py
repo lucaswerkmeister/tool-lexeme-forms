@@ -261,7 +261,7 @@ def if_needs_csrf_redirect(template, template_name, advanced, form_data):
         return None
 
 def current_url():
-    return flask.url_for(flask.request.endpoint, **flask.request.view_args)
+    return flask.url_for(flask.request.endpoint, _external=True, **flask.request.view_args)
 
 def build_lexeme(template, form_data):
     lang = template['language_code']

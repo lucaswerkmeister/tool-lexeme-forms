@@ -226,17 +226,17 @@ def test_add_form_data_to_template_no_template_modification():
 def test_current_url_index():
     with lexeme_forms.app.test_request_context('/'):
         current_url = lexeme_forms.current_url()
-        assert current_url == '/'
+        assert current_url == 'http://localhost/'
 
 def test_current_url_template():
     with lexeme_forms.app.test_request_context('/template/foo/'):
         current_url = lexeme_forms.current_url()
-        assert current_url == '/template/foo/'
+        assert current_url == 'http://localhost/template/foo/'
 
 def test_current_url_template_advanced():
     with lexeme_forms.app.test_request_context('/template/foo/advanced/'):
         current_url = lexeme_forms.current_url()
-        assert current_url == '/template/foo/advanced/'
+        assert current_url == 'http://localhost/template/foo/advanced/'
 
 def test_build_lexeme():
     template = {
