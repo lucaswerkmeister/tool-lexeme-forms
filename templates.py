@@ -79,6 +79,458 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+    # template by User:Lexicolover, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Czech
+    ('czech-noun-masculine-animate', {
+        'label': 'České podstatné jméno (rod mužský životný)',
+        'language_item_id': 'Q9056',
+        'language_code': 'cs',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': '1. pád, jednotné číslo',
+                'example': 'To je můj [pes].',
+                'grammatical_features_item_ids': ['Q131105', 'Q110786'],
+            },
+            {
+                'label': '2. pád, jednotné číslo',
+                'example': 'Má strach z mého [psa].',
+                'grammatical_features_item_ids': ['Q146233', 'Q110786'],
+            },
+            {
+                'label': '3. pád, jednotné číslo',
+                'example': 'Dej to mému [psu/psovi].',
+                'grammatical_features_item_ids': ['Q145599', 'Q110786'],
+            },
+            {
+                'label': '4. pád, jednotné číslo',
+                'example': 'Vidím jednoho [psa].',
+                'grammatical_features_item_ids': ['Q146078', 'Q110786'],
+            },
+            {
+                'label': '5. pád, jednotné číslo',
+                'example': 'Kam kráčíš, [pse]?',
+                'grammatical_features_item_ids': ['Q185077', 'Q110786'],
+            },
+            {
+                'label': '6. pád, jednotné číslo',
+                'example': 'Pověz mi něco o tvém [psu/psovi].',
+                'grammatical_features_item_ids': ['Q202142', 'Q110786'],
+            },
+            {
+                'label': '7. pád, jednotné číslo',
+                'example': 'Seznámil jsem se s tvým [psem].',
+                'grammatical_features_item_ids': ['Q192997', 'Q110786'],
+            },
+            {
+                'label': '1. pád, množné číslo',
+                'example': 'To jsou moji [psi/psové].',
+                'grammatical_features_item_ids': ['Q131105', 'Q146786'],
+            },
+            {
+                'label': '2. pád, množné číslo',
+                'example': 'Má strach z mých [psů].',
+                'grammatical_features_item_ids': ['Q146233', 'Q146786'],
+            },
+            {
+                'label': '3. pád, množné číslo',
+                'example': 'Dej to mým [psům].',
+                'grammatical_features_item_ids': ['Q145599', 'Q146786'],
+            },
+            {
+                'label': '4. pád, množné číslo',
+                'example': 'Vidím dva [psy].',
+                'grammatical_features_item_ids': ['Q146078', 'Q146786'],
+            },
+            {
+                'label': '5. pád, množné číslo',
+                'example': 'Kam kráčíte, [psi/psové]?',
+                'grammatical_features_item_ids': ['Q185077', 'Q146786'],
+            },
+            {
+                'label': '6. pád, množné číslo',
+                'example': 'Pověz mi něco o tvých [psech].',
+                'grammatical_features_item_ids': ['Q202142', 'Q146786'],
+            },
+            {
+                'label': '7. pád, množné číslo',
+                'example': 'Seznámil jsem se s tvými [psy].',
+                'grammatical_features_item_ids': ['Q192997', 'Q146786'],
+            },
+        ],
+        'claims': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q499327',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                },
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q54020116',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
+    # template by User:Lexicolover, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Czech
+    ('czech-noun-masculine-inanimate', {
+        'label': 'České podstatné jméno (rod mužský neživotný)',
+        'language_item_id': 'Q9056',
+        'language_code': 'cs',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': '1. pád, jednotné číslo',
+                'example': 'To je můj [hrad].',
+                'grammatical_features_item_ids': ['Q131105', 'Q110786'],
+            },
+            {
+                'label': '2. pád, jednotné číslo',
+                'example': 'Má strach z mého [hradu].',
+                'grammatical_features_item_ids': ['Q146233', 'Q110786'],
+            },
+            {
+                'label': '3. pád, jednotné číslo',
+                'example': 'Dej to k mému [hradu].',
+                'grammatical_features_item_ids': ['Q145599', 'Q110786'],
+            },
+            {
+                'label': '4. pád, jednotné číslo',
+                'example': 'Vidím jeden [hrad].',
+                'grammatical_features_item_ids': ['Q146078', 'Q110786'],
+            },
+            {
+                'label': '5. pád, jednotné číslo',
+                'example': 'Kam směřuješ, [hrade]?',
+                'grammatical_features_item_ids': ['Q185077', 'Q110786'],
+            },
+            {
+                'label': '6. pád, jednotné číslo',
+                'example': 'Pověz mi něco o svém [hradu/hradě].',
+                'grammatical_features_item_ids': ['Q202142', 'Q110786'],
+            },
+            {
+                'label': '7. pád, jednotné číslo',
+                'example': 'Seznámil jsem se s tvým [hradem].',
+                'grammatical_features_item_ids': ['Q192997', 'Q110786'],
+            },
+            {
+                'label': '1. pád, množné číslo',
+                'example': 'To jsou mé [hrady].',
+                'grammatical_features_item_ids': ['Q131105', 'Q146786'],
+            },
+            {
+                'label': '2. pád, množné číslo',
+                'example': 'Má strach z mých [hradů].',
+                'grammatical_features_item_ids': ['Q146233', 'Q146786'],
+            },
+            {
+                'label': '3. pád, množné číslo',
+                'example': 'Dej to k mým [hradům].',
+                'grammatical_features_item_ids': ['Q145599', 'Q146786'],
+            },
+            {
+                'label': '4. pád, množné číslo',
+                'example': 'Vidím dva [hrady].',
+                'grammatical_features_item_ids': ['Q146078', 'Q146786'],
+            },
+            {
+                'label': '5. pád, množné číslo',
+                'example': 'Kam směřujete, [hrady]?',
+                'grammatical_features_item_ids': ['Q185077', 'Q146786'],
+            },
+            {
+                'label': '6. pád, množné číslo',
+                'example': 'Pověz mi něco o svých [hradech].',
+                'grammatical_features_item_ids': ['Q202142', 'Q146786'],
+            },
+            {
+                'label': '7. pád, množné číslo',
+                'example': 'Seznámil jsem se s tvými [hrady].',
+                'grammatical_features_item_ids': ['Q192997', 'Q146786'],
+            },
+        ],
+        'claims': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q499327',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                },
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q54020181',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
+    # template by User:Lexicolover, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Czech
+    ('czech-noun-feminine', {
+        'label': 'České podstatné jméno (rod ženský)',
+        'language_item_id': 'Q9056',
+        'language_code': 'cs',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': '1. pád, jednotné číslo',
+                'example': 'To je má [žena].',
+                'grammatical_features_item_ids': ['Q131105', 'Q110786'],
+            },
+            {
+                'label': '2. pád, jednotné číslo',
+                'example': 'Má strach z mé [ženy].',
+                'grammatical_features_item_ids': ['Q146233', 'Q110786'],
+            },
+            {
+                'label': '3. pád, jednotné číslo',
+                'example': 'Dej to mé [ženě].',
+                'grammatical_features_item_ids': ['Q145599', 'Q110786'],
+            },
+            {
+                'label': '4. pád, jednotné číslo',
+                'example': 'Vidím jednu [ženu].',
+                'grammatical_features_item_ids': ['Q146078', 'Q110786'],
+            },
+            {
+                'label': '5. pád, jednotné číslo',
+                'example': 'Kam kráčíš, [ženo]?',
+                'grammatical_features_item_ids': ['Q185077', 'Q110786'],
+            },
+            {
+                'label': '6. pád, jednotné číslo',
+                'example': 'Pověz mi něco o tvé [ženě].',
+                'grammatical_features_item_ids': ['Q202142', 'Q110786'],
+            },
+            {
+                'label': '7. pád, jednotné číslo',
+                'example': 'Seznámil jsem se s tvou [ženou].',
+                'grammatical_features_item_ids': ['Q192997', 'Q110786'],
+            },
+            {
+                'label': '1. pád, množné číslo',
+                'example': 'To jsou mé [ženy].',
+                'grammatical_features_item_ids': ['Q131105', 'Q146786'],
+            },
+            {
+                'label': '2. pád, množné číslo',
+                'example': 'Má strach z mých [žen].',
+                'grammatical_features_item_ids': ['Q146233', 'Q146786'],
+            },
+            {
+                'label': '3. pád, množné číslo',
+                'example': 'Dej to mým [ženám].',
+                'grammatical_features_item_ids': ['Q145599', 'Q146786'],
+            },
+            {
+                'label': '4. pád, množné číslo',
+                'example': 'Vidím dvě [ženy].',
+                'grammatical_features_item_ids': ['Q146078', 'Q146786'],
+            },
+            {
+                'label': '5. pád, množné číslo',
+                'example': 'Kam kráčíte, [ženy]?',
+                'grammatical_features_item_ids': ['Q185077', 'Q146786'],
+            },
+            {
+                'label': '6. pád, množné číslo',
+                'example': 'Pověz mi něco o tvých [ženách].',
+                'grammatical_features_item_ids': ['Q202142', 'Q146786'],
+            },
+            {
+                'label': '7. pád, množné číslo',
+                'example': 'Seznámil jsem se s tvými [ženami].',
+                'grammatical_features_item_ids': ['Q192997', 'Q146786'],
+            },
+        ],
+        'claims': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q1775415',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
+    # template by User:Lexicolover, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Czech
+    ('czech-noun-neuter', {
+        'label': 'České podstatné jméno (rod střední)',
+        'language_item_id': 'Q9056',
+        'language_code': 'cs',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': '1. pád, jednotné číslo',
+                'example': 'To je mé [kuře].',
+                'grammatical_features_item_ids': ['Q131105', 'Q110786'],
+            },
+            {
+                'label': '2. pád, jednotné číslo',
+                'example': 'Má strach z mého [kuřete].',
+                'grammatical_features_item_ids': ['Q146233', 'Q110786'],
+            },
+            {
+                'label': '3. pád, jednotné číslo',
+                'example': 'Dej to mému [kuřeti].',
+                'grammatical_features_item_ids': ['Q145599', 'Q110786'],
+            },
+            {
+                'label': '4. pád, jednotné číslo',
+                'example': 'Vidím jedno [kuře].',
+                'grammatical_features_item_ids': ['Q146078', 'Q110786'],
+            },
+            {
+                'label': '5. pád, jednotné číslo',
+                'example': 'Kam kráčíš, [kuře]?',
+                'grammatical_features_item_ids': ['Q185077', 'Q110786'],
+            },
+            {
+                'label': '6. pád, jednotné číslo',
+                'example': 'Pověz mi něco o tvém [kuřeti].',
+                'grammatical_features_item_ids': ['Q202142', 'Q110786'],
+            },
+            {
+                'label': '7. pád, jednotné číslo',
+                'example': 'Seznámil jsem se s tvým [kuřetem].',
+                'grammatical_features_item_ids': ['Q192997', 'Q110786'],
+            },
+            {
+                'label': '1. pád, množné číslo',
+                'example': 'To jsou má [kuřata].',
+                'grammatical_features_item_ids': ['Q131105', 'Q146786'],
+            },
+            {
+                'label': '2. pád, množné číslo',
+                'example': 'Má strach z mých [kuřat].',
+                'grammatical_features_item_ids': ['Q146233', 'Q146786'],
+            },
+            {
+                'label': '3. pád, množné číslo',
+                'example': 'Dej to mým [kuřatům].',
+                'grammatical_features_item_ids': ['Q145599', 'Q146786'],
+            },
+            {
+                'label': '4. pád, množné číslo',
+                'example': 'Vidím dvě [kuřata].',
+                'grammatical_features_item_ids': ['Q146078', 'Q146786'],
+            },
+            {
+                'label': '5. pád, množné číslo',
+                'example': 'Kam kráčíte, [kuřata]?',
+                'grammatical_features_item_ids': ['Q185077', 'Q146786'],
+            },
+            {
+                'label': '6. pád, množné číslo',
+                'example': 'Pověz mi něco o tvých [kuřatech].',
+                'grammatical_features_item_ids': ['Q202142', 'Q146786'],
+            },
+            {
+                'label': '7. pád, množné číslo',
+                'example': 'Seznámil jsem se s tvými [kuřaty].',
+                'grammatical_features_item_ids': ['Q192997', 'Q146786'],
+            },
+        ],
+        'claims': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q1775461',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
+    # template by User:Lexicolover, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Czech
+    ('czech-adverb', {
+        'label': 'České příslovce',
+        'language_item_id': 'Q9056',
+        'language_code': 'cs',
+        'lexical_category_item_id': 'Q380057',
+        'forms': [
+            {
+                'label': 'pozitiv (1. stupeň)',
+                'example': 'Udělal jsi to [dobře].',
+                'grammatical_features_item_ids': ['Q3482678'],
+            },
+            {
+                'label': 'komparativ (2. stupeň)',
+                'example': 'Udělal jsi to [lépe] než já.',
+                'grammatical_features_item_ids': ['Q14169499'],
+            },
+            {
+                'label': 'superlativ (3. stupeň)',
+                'example': 'Udělal jsi to ze všech [nejlépe].',
+                'grammatical_features_item_ids': ['Q1817208'],
+            },
+        ],
+    }),
     # template by Lucas Werkmeister
     ('german-noun-masculine', {
         'label': 'deutsches Substantiv (Maskulinum)',
