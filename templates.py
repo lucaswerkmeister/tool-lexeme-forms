@@ -1027,6 +1027,35 @@ templates = collections.OrderedDict([
             },
         ],
     }),
+    # template by User:KaMan and User:Jens Ohlig, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Esperanto
+    ('esperanto-noun', {
+        'label': 'esperanta substantivo',
+        'language_item_id': 'Q143',
+        'language_code': 'eo',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'ununombro, nominativo',
+                'example': 'Ĉi tio estas [substantivo].',
+                'grammatical_features_item_ids': ['Q131105', 'Q110786'],
+            },
+            {
+                'label': 'ununombro, akuzativo',
+                'example': 'Mi ŝatas tiun [substantivon].',
+                'grammatical_features_item_ids': ['Q146078', 'Q110786'],
+            },
+            {
+                'label': 'multenombro, nominativo',
+                'example': 'Ĉi tiuj estas [substantivoj].',
+                'grammatical_features_item_ids': ['Q131105', 'Q146786'],
+            },
+            {
+                'label': 'multenombro, akuzativo',
+                'example': 'Mi ŝatas tiujn [substantivojn].',
+                'grammatical_features_item_ids': ['Q146078', 'Q146786'],
+            },
+        ],
+    }),
     # template by User:Andreasmperu, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Spanish
     ('spanish-noun-masculine', {
         'label': "sustantivo masculino en español",
