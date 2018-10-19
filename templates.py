@@ -81,7 +81,7 @@ templates = collections.OrderedDict([
     }),
     # template by User:Lexicolover, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Czech
     ('czech-noun-masculine-animate', {
-        'label': 'České podstatné jméno (rod mužský životný)',
+        'label': 'české podstatné jméno (rod mužský životný)',
         'language_item_id': 'Q9056',
         'language_code': 'cs',
         'lexical_category_item_id': 'Q1084',
@@ -196,7 +196,7 @@ templates = collections.OrderedDict([
     }),
     # template by User:Lexicolover, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Czech
     ('czech-noun-masculine-inanimate', {
-        'label': 'České podstatné jméno (rod mužský neživotný)',
+        'label': 'české podstatné jméno (rod mužský neživotný)',
         'language_item_id': 'Q9056',
         'language_code': 'cs',
         'lexical_category_item_id': 'Q1084',
@@ -311,7 +311,7 @@ templates = collections.OrderedDict([
     }),
     # template by User:Lexicolover, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Czech
     ('czech-noun-feminine', {
-        'label': 'České podstatné jméno (rod ženský)',
+        'label': 'české podstatné jméno (rod ženský)',
         'language_item_id': 'Q9056',
         'language_code': 'cs',
         'lexical_category_item_id': 'Q1084',
@@ -410,7 +410,7 @@ templates = collections.OrderedDict([
     }),
     # template by User:Lexicolover, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Czech
     ('czech-noun-neuter', {
-        'label': 'České podstatné jméno (rod střední)',
+        'label': 'české podstatné jméno (rod střední)',
         'language_item_id': 'Q9056',
         'language_code': 'cs',
         'lexical_category_item_id': 'Q1084',
@@ -509,7 +509,7 @@ templates = collections.OrderedDict([
     }),
     # template by User:Lexicolover, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Czech
     ('czech-adverb', {
-        'label': 'České příslovce',
+        'label': 'české příslovce',
         'language_item_id': 'Q9056',
         'language_code': 'cs',
         'lexical_category_item_id': 'Q380057',
