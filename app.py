@@ -325,28 +325,6 @@ def submit_lexeme(template, lexeme_data):
     lexeme_id = response['entity']['id']
     revid = response['entity']['lastrevid']
 
-    # wbeditentity does not support statements for forms yet, add them afterwards (T194732)
-    # TODO once wbeditentity *does* support it, this will create duplicate statements :(
-    if 'id' not in lexeme_data:
-        for form_index, form_data in enumerate(lexeme_data['forms']):
-            if form_data['claims']:
-                for statementlist in form_data['claims'].values():
-                    for statement in statementlist:
-                        mainsnak = statement['mainsnak']
-                        session.post(
-                            action='wbcreateclaim',
-                            entity=lexeme_id + '-F' + str(form_index + 1),
-                            snaktype=mainsnak['snaktype'],
-                            property=mainsnak['property'],
-                            value=json.dumps(mainsnak['datavalue']['value']),
-                            token=token,
-                            baserevid=revid,
-                        )
-    else:
-        # we don’t know which form IDs to edit on the existing lexeme :(
-        # TODO inform the user
-        pass
-
     return flask.redirect(host + '/entity/' + lexeme_id, code=303)
 
 def generate_auth():
