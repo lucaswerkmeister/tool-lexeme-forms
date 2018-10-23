@@ -1058,13 +1058,13 @@ templates = collections.OrderedDict([
     }),
     # template by User:Andreasmperu, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Spanish
     ('spanish-noun-masculine', {
-        'label': "sustantivo masculino en español",
+        'label': 'sustantivo masculino en español',
         'language_item_id': 'Q1321',
         'language_code': 'es',
         'lexical_category_item_id': 'Q1084',
         'forms': [
             {
-                'label': "singular",
+                'label': 'singular',
                 'example': 'Este es un [libro].',
                 'grammatical_features_item_ids': ['Q110786'],
             },
@@ -1097,13 +1097,13 @@ templates = collections.OrderedDict([
     }),
     # template by User:Andreasmperu, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Spanish
     ('spanish-noun-feminine', {
-        'label': "sustantivo femenino en español",
+        'label': 'sustantivo femenino en español',
         'language_item_id': 'Q1321',
         'language_code': 'es',
         'lexical_category_item_id': 'Q1084',
         'forms': [
             {
-                'label': "singular",
+                'label': 'singular',
                 'example': 'Esta es una [manzana].',
                 'grammatical_features_item_ids': ['Q110786'],
             },
@@ -1136,7 +1136,7 @@ templates = collections.OrderedDict([
     }),
     # template by User:Andreasmperu, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Spanish
     ('spanish-adjective', {
-        'label': "adjetivo en español",
+        'label': 'adjetivo en español',
         'language_item_id': 'Q1321',
         'language_code': 'es',
         'lexical_category_item_id': 'Q34698',
@@ -1165,7 +1165,7 @@ templates = collections.OrderedDict([
     }),
     # template by User:Reosarevok, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Estonian
     ('estonian-noun', {
-        'label':     "eesti keele nimisõna",
+        'label': 'eesti keele nimisõna',
         'language_item_id': 'Q9072',
         'language_code': 'et',
         'lexical_category_item_id': 'Q1084',
