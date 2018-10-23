@@ -2872,6 +2872,144 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+    # template by User:Vesihiisi, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Swedish
+    ('swedish-noun-common', {
+        'label': 'svenskt substantiv (utrum)',
+        'language_item_id': 'Q9027',
+        'language_code': 'sv',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'nominativ singular, obestämd',
+                'example': 'Det här är en [bil].',
+                'grammatical_features_item_ids': ['Q131105', 'Q110786', 'Q53997857'],
+            },
+            {
+                'label': 'nominativ singular, bestämd',
+                'example': 'Den nya [bilen].',
+                'grammatical_features_item_ids': ['Q131105', 'Q110786', 'Q53997851'],
+            },
+            {
+                'label': 'nominativ plural, obestämd',
+                'example': 'Jag ser flera [bilar].',
+                'grammatical_features_item_ids': ['Q131105', 'Q146786', 'Q53997857'],
+            },
+            {
+                'label': 'nominativ plural, bestämd',
+                'example': 'De nya [bilarna].',
+                'grammatical_features_item_ids': ['Q131105', 'Q146786', 'Q53997851'],
+            },
+            {
+                'label': 'genitiv singular, obestämd',
+                'example': 'En [bils] utseende.',
+                'grammatical_features_item_ids': ['Q146233', 'Q110786', 'Q53997857'],
+            },
+            {
+                'label': 'genitiv singular, bestämd',
+                'example': 'Den här [bilens] utseende.',
+                'grammatical_features_item_ids': ['Q146233', 'Q110786', 'Q53997851'],
+            },
+            {
+                'label': 'genitiv plural, obestämd',
+                'example': 'Många [bilars] utseende.',
+                'grammatical_features_item_ids': ['Q146233', 'Q146786', 'Q53997857'],
+            },
+            {
+                'label': 'genitiv plural, bestämd',
+                'example': 'De här [bilarnas] utseende',
+                'grammatical_features_item_ids': ['Q146233', 'Q146786', 'Q53997851'],
+            },
+        ],
+        'claims': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q1305037',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
+    # template by User:Vesihiisi, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Swedish
+    ('swedish-noun-neuter', {
+        'label': 'svenskt substantiv (neutrum)',
+        'language_item_id': 'Q9027',
+        'language_code': 'sv',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'nominativ singular, obestämd',
+                'example': 'Det här är ett [bord].',
+                'grammatical_features_item_ids': ['Q131105', 'Q110786', 'Q53997857'],
+            },
+            {
+                'label': 'nominativ singular, bestämd',
+                'example': 'Det nya [bordet].',
+                'grammatical_features_item_ids': ['Q131105', 'Q110786', 'Q53997851'],
+            },
+            {
+                'label': 'nominativ plural, obestämd',
+                'example': 'Jag ser flera [bord].',
+                'grammatical_features_item_ids': ['Q131105', 'Q146786', 'Q53997857'],
+            },
+            {
+                'label': 'nominativ plural, bestämd',
+                'example': 'De nya [borden].',
+                'grammatical_features_item_ids': ['Q131105', 'Q146786', 'Q53997851'],
+            },
+            {
+                'label': 'genitiv singular, obestämd',
+                'example': 'Ett [bords] utseende.',
+                'grammatical_features_item_ids': ['Q146233', 'Q110786', 'Q53997857'],
+            },
+            {
+                'label': 'genitiv singular, bestämd',
+                'example': 'Det här [bordets] utseende.',
+                'grammatical_features_item_ids': ['Q146233', 'Q110786', 'Q53997851'],
+            },
+            {
+                'label': 'genitiv plural, obestämd',
+                'example': 'Många [bords] utseende.',
+                'grammatical_features_item_ids': ['Q146233', 'Q146786', 'Q53997857'],
+            },
+            {
+                'label': 'genitiv plural, bestämd',
+                'example': 'De här [bordens] utseende',
+                'grammatical_features_item_ids': ['Q146233', 'Q146786', 'Q53997851'],
+            },
+        ],
+        'claims': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q1775461',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
     # template by Lucas Werkmeister
     ('german-noun-neuter-test', {
         'test': True,

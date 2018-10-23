@@ -181,4 +181,17 @@ translations = {
         'advanced_partial_forms': 'Вы можете оставить некоторые формы пустыми, чтобы они не были добавлены. Убедитесь, что вы не сделали этого случайно!',
         'lexeme_id': 'ID лексемы',
     },
+    # translations by User:Vesihiisi, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Swedish
+    'sv': {
+        'create': 'Skapa',
+        'csrf_warning': 'Din begäran kunde inte utföras på grund av ett <abbr title="Cross-site request forgery">CSRF</abbr>-fel. Var god försök igen.',
+        'duplicates_warning': 'Dessa befintliga lexem har samma lemma och språkkod som lexemet du försöker skapa:',
+        'duplicates_instructions': 'Om du är säker på att de är olika, markera i kryssrutan längst ner i formuläret.',
+        'no_duplicate': 'Duplicerar ej ett befintligt lexem.',
+        'advanced': 'Avancerat läge',
+        'advanced_general': 'Du är nu i avancerat läge',
+        'advanced_lexeme_id': 'Här kan du skriva in ett lexem-ID för att lägga till former till ett befintligt lexem istället för att skapa ett nytt. För att undvika att redan befintliga former dupliceras, lämna dessa fält tomma.',
+        'advanced_partial_forms': 'Du kan lämna vissa fält tomma; dessa former kommer då inte att läggas till. Försäkra dig dock om att du inte lämnar några fält tomma av misstag!',
+        'lexeme_id': 'Lexem-ID',
+    },
 }
