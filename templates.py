@@ -2916,7 +2916,7 @@ templates = collections.OrderedDict([
             },
             {
                 'label': 'genitiv plural, bestämd',
-                'example': 'De här [bilarnas] utseende',
+                'example': 'De här [bilarnas] utseende.',
                 'grammatical_features_item_ids': ['Q146233', 'Q146786', 'Q53997851'],
             },
         ],
@@ -2985,7 +2985,7 @@ templates = collections.OrderedDict([
             },
             {
                 'label': 'genitiv plural, bestämd',
-                'example': 'De här [bordens] utseende',
+                'example': 'De här [bordens] utseende.',
                 'grammatical_features_item_ids': ['Q146233', 'Q146786', 'Q53997851'],
             },
         ],
