@@ -3119,3 +3119,6 @@ templates = collections.OrderedDict([
         },
     }),
 ])
+
+for template_name, template in templates.items():
+    template['template_name'] = template_name

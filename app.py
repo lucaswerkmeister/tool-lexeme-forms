@@ -116,11 +116,11 @@ def process_template_advanced(template_name, advanced=True):
     form_data = flask.request.form
 
     if flask.request.method == 'POST' and flask.request.referrer == current_url():
-        response = if_has_duplicates_redirect(template, template_name, advanced, form_data)
+        response = if_has_duplicates_redirect(template, advanced, form_data)
         if response:
             return response
 
-        response = if_needs_csrf_redirect(template, template_name, advanced, form_data)
+        response = if_needs_csrf_redirect(template, advanced, form_data)
         if response:
             return response
 
@@ -134,7 +134,6 @@ def process_template_advanced(template_name, advanced=True):
         return flask.render_template(
             'template.html',
             template=add_form_data_to_template(form_data, template),
-            template_name=template_name,
             translations=translations[template['language_code']],
             advanced=advanced,
         )
@@ -163,7 +162,7 @@ def oauth_callback():
     flask.session['oauth_access_token'] = dict(zip(access_token._fields, access_token))
     return flask.redirect(flask.session['oauth_redirect_target'])
 
-def if_has_duplicates_redirect(template, template_name, advanced, form_data):
+def if_has_duplicates_redirect(template, advanced, form_data):
     if 'no_duplicate' in form_data:
         return None
     if 'lexeme_id' in form_data and form_data['lexeme_id']:
@@ -174,7 +173,6 @@ def if_has_duplicates_redirect(template, template_name, advanced, form_data):
         return flask.render_template(
             'template.html',
             template=add_form_data_to_template(form_data, template),
-            template_name=template_name,
             translations=translations[template['language_code']],
             advanced=advanced,
             duplicates=duplicates,
@@ -246,13 +244,12 @@ def add_form_data_to_template(form_data, template):
         template['lexeme_id'] = form_data['lexeme_id']
     return template
 
-def if_needs_csrf_redirect(template, template_name, advanced, form_data):
+def if_needs_csrf_redirect(template, advanced, form_data):
     token = flask.session.pop('_csrf_token', None)
     if not token or token != form_data.get('_csrf_token'):
         return flask.render_template(
             'template.html',
             template=add_form_data_to_template(form_data, template),
-            template_name=template_name,
             translations=translations[template['language_code']],
             advanced=advanced,
             csrf_error=True,

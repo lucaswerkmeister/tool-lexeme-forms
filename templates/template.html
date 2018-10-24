@@ -41,7 +41,7 @@
     {% endif %}
     <button class="btn btn-{% if not advanced %}primary{% else %}danger{% endif %}">{{ translations.create }}</button>
     {% if not advanced %}
-    <button formnovalidate formaction="{{ url_for('process_template_advanced', template_name=template_name) }}" class="btn btn-secondary">{{ translations.advanced }}</button>
+    <button formnovalidate formaction="{{ url_for('process_template_advanced', template_name=template.template_name) }}" class="btn btn-secondary">{{ translations.advanced }}</button>
     {% endif %}
   </form>
 {% endblock main %}

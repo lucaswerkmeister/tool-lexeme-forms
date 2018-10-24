@@ -86,26 +86,26 @@ def test_if_needs_oauth_redirect_not_logged_in(monkeypatch):
     assert str(response.status_code).startswith('3')
 
 def test_if_has_duplicates_redirect_checkbox_checked():
-    assert lexeme_forms.if_has_duplicates_redirect({}, {}, False, {'no_duplicate': True}) is None
+    assert lexeme_forms.if_has_duplicates_redirect({}, False, {'no_duplicate': True}) is None
 
 def test_if_has_duplicates_redirect_lexeme_id_specified():
-    assert lexeme_forms.if_has_duplicates_redirect({}, {}, False, {'lexeme_id': 'L123'}) is None
+    assert lexeme_forms.if_has_duplicates_redirect({}, False, {'lexeme_id': 'L123'}) is None
 
 def test_if_has_duplicates_redirect_lexeme_id_blank(monkeypatch):
     monkeypatch.setattr(lexeme_forms, 'find_duplicates', lambda template, form_data: ['duplicate'])
     monkeypatch.setattr(lexeme_forms, 'add_form_data_to_template', lambda form_data, template: True)
     monkeypatch.setattr(flask, 'render_template', lambda template_file_name, **kwargs: True)
-    assert lexeme_forms.if_has_duplicates_redirect({'language_code': 'en'}, {}, False, {'lexeme_id': ''}) is not None
+    assert lexeme_forms.if_has_duplicates_redirect(minimal_template, False, {'lexeme_id': ''}) is not None
 
 def test_if_has_duplicates_redirect_some_duplicates(monkeypatch):
     monkeypatch.setattr(lexeme_forms, 'find_duplicates', lambda template, form_data: ['duplicate'])
     monkeypatch.setattr(lexeme_forms, 'add_form_data_to_template', lambda form_data, template: True)
     monkeypatch.setattr(flask, 'render_template', lambda template_file_name, **kwargs: 'rendered duplicates')
-    assert lexeme_forms.if_has_duplicates_redirect({'language_code': 'en'}, {}, False, {}) == 'rendered duplicates'
+    assert lexeme_forms.if_has_duplicates_redirect(minimal_template, False, {}) == 'rendered duplicates'
 
 def test_if_has_duplicates_redirect_no_duplicates(monkeypatch):
     monkeypatch.setattr(lexeme_forms, 'find_duplicates', lambda template, form_data: [])
-    assert lexeme_forms.if_has_duplicates_redirect({}, {}, False, {}) is None
+    assert lexeme_forms.if_has_duplicates_redirect({}, False, {}) is None
 
 def test_get_lemma_first_form_representation():
     form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', 'noun'), ('form_representation', 'nouns')])
@@ -150,11 +150,16 @@ def test_get_duplicates_api_html_empty(monkeypatch):
     assert response.content_type == 'text/html; charset=utf-8'
     assert response.get_data(as_text=True) == ''
 
+minimal_template = {
+    'template_name': 'minimal-template',
+    'language_code': 'en',
+}
+
 def test_if_needs_csrf_redirect_no_token(monkeypatch):
     monkeypatch.setattr(lexeme_forms, 'add_form_data_to_template', lambda form_data, template: True)
     monkeypatch.setattr(flask, 'render_template', lambda template_file_name, **kwargs: 'rendered template')
     with lexeme_forms.app.test_request_context():
-        response = lexeme_forms.if_needs_csrf_redirect({'language_code': 'en'}, 'template name', False, {})
+        response = lexeme_forms.if_needs_csrf_redirect(minimal_template, False, {})
     assert response == 'rendered template'
     # TODO instead of monkeypatching, assert that form_data is correctly preserved (possibly in separate test)
 
@@ -163,7 +168,7 @@ def test_if_needs_csrf_redirect_wrong_token(monkeypatch):
     monkeypatch.setattr(flask, 'render_template', lambda template_file_name, **kwargs: 'rendered template')
     with lexeme_forms.app.test_request_context() as context:
         context.session['_csrf_token'] = 'token 1'
-        response = lexeme_forms.if_needs_csrf_redirect({'language_code': 'en'}, 'template name', False, {'_csrf_token': 'token 2'})
+        response = lexeme_forms.if_needs_csrf_redirect(minimal_template, False, {'_csrf_token': 'token 2'})
     assert response == 'rendered template'
 
 def test_if_needs_csrf_redirect_correct_token(monkeypatch):
@@ -171,7 +176,7 @@ def test_if_needs_csrf_redirect_correct_token(monkeypatch):
     monkeypatch.setattr(flask, 'render_template', lambda template_file_name, **kwargs: 'rendered template')
     with lexeme_forms.app.test_request_context() as context:
         context.session['_csrf_token'] = 'token'
-        response = lexeme_forms.if_needs_csrf_redirect({'language_code': 'en'}, 'template name', False, {'_csrf_token': 'token'})
+        response = lexeme_forms.if_needs_csrf_redirect(minimal_template, False, {'_csrf_token': 'token'})
     assert response is None
 
 def test_add_form_data_to_template():
