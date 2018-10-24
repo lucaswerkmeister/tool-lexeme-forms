@@ -311,11 +311,20 @@ def submit_lexeme(template, lexeme_data):
         user_agent=user_agent,
     )
 
+    template_name = template['template_name']
+    url = current_url()
+    if url.startswith('https://tools.wmflabs.org/'):
+        relative = url[len('https://tools.wmflabs.org/'):]
+        summary = '[[toolforge:%s|%s]]' % (relative, template_name)
+    else:
+        summary = template_name
+
     token = session.get(action='query', meta='tokens')['query']['tokens']['csrftoken']
     selector = {'id': lexeme_data['id']} if 'id' in lexeme_data else {'new': 'lexeme'}
     response = session.post(
         action='wbeditentity',
         data=json.dumps(lexeme_data),
+        summary=summary,
         token=token,
         **selector
     )
