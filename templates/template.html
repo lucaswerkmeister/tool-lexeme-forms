@@ -9,16 +9,16 @@
   <h1>{{ template.label }}</h1>
   {% if advanced %}
   <div class="alert alert-primary">
-    {{ translations.advanced_general }}
+    {{ message( 'advanced_general' ) }}
     <ul>
-      <li>{{ translations.advanced_lexeme_id }}</li>
-      <li>{{ translations.advanced_partial_forms }}</li>
+      <li>{{ message( 'advanced_lexeme_id' ) }}</li>
+      <li>{{ message( 'advanced_partial_forms' ) }}</li>
     </ul>
   </div>
   {% endif %}
   {% if csrf_error %}
   <div class="alert alert-warning">
-    {{ translations.csrf_warning | safe }}
+    {{ message( 'csrf_warning' ) }}
   </div>
   {% endif %}
   {{ duplicates | render_duplicates(template.language_code) | safe }}
@@ -26,7 +26,7 @@
     <input name="_csrf_token" type="hidden" value="{{ csrf_token() }}">
     {% if advanced %}
     <label>
-      {{ translations.lexeme_id }}
+      {{ message( 'lexeme_id' ) }}
       <input name="lexeme_id" pattern="^L[1-9][0-9]*$" placeholder="L123" {% if template.lexeme_id %}value="{{ template.lexeme_id }}"{% endif %}>
     </label>
     {% endif %}
@@ -39,9 +39,9 @@
     {% if duplicates %}
     {{ render_no_duplicate(template.language_code) | safe }}
     {% endif %}
-    <button class="btn btn-{% if not advanced %}primary{% else %}danger{% endif %}">{{ translations.create }}</button>
+    <button class="btn btn-{% if not advanced %}primary{% else %}danger{% endif %}">{{ message( 'create' ) }}</button>
     {% if not advanced %}
-    <button formnovalidate formaction="{{ url_for('process_template_advanced', template_name=template.template_name) }}" class="btn btn-secondary">{{ translations.advanced }}</button>
+    <button formnovalidate formaction="{{ url_for('process_template_advanced', template_name=template.template_name) }}" class="btn btn-secondary">{{ message( 'advanced' ) }}</button>
     {% endif %}
   </form>
 {% endblock main %}

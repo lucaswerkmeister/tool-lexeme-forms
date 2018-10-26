@@ -56,7 +56,6 @@ def render_duplicates(duplicates, language_code):
     return flask.render_template(
         'duplicates.html',
         duplicates=duplicates,
-        translations=translations[language_code],
     )
 
 @app.template_global()
@@ -91,6 +90,12 @@ def render_oauth_username():
             user_link(identity['username']) +
             flask.Markup(r'</span>'))
 
+@app.template_global()
+def message(message_code):
+    language_code = flask.g.language_code
+    text = translations[language_code][message_code]
+    return flask.Markup(text)
+
 @app.route('/')
 def index():
     return flask.render_template(
@@ -113,6 +118,7 @@ def process_template_advanced(template_name, advanced=True):
         return response
 
     template = templates[template_name]
+    flask.g.language_code = template['language_code']
     form_data = flask.request.form
 
     if flask.request.method == 'POST' and flask.request.referrer == current_url():
@@ -134,7 +140,6 @@ def process_template_advanced(template_name, advanced=True):
         return flask.render_template(
             'template.html',
             template=add_form_data_to_template(form_data, template),
-            translations=translations[template['language_code']],
             advanced=advanced,
         )
 
@@ -173,7 +178,6 @@ def if_has_duplicates_redirect(template, advanced, form_data):
         return flask.render_template(
             'template.html',
             template=add_form_data_to_template(form_data, template),
-            translations=translations[template['language_code']],
             advanced=advanced,
             duplicates=duplicates,
         )
@@ -198,6 +202,7 @@ def get_lemma(form_data):
 
 @app.route('/api/v1/duplicates/<any(www,test):wiki>/<language_code>/<path:lemma>')
 def get_duplicates_api(wiki, language_code, lemma):
+    flask.g.language_code = language_code
     matches = get_duplicates(wiki, language_code, lemma)
     if not matches:
         return flask.Response(status=204)
@@ -231,9 +236,9 @@ def get_duplicates(wiki, language_code, lemma):
 @app.route('/api/v1/no_duplicate/<language_code>')
 @app.template_global()
 def render_no_duplicate(language_code):
+    flask.g.language_code = language_code
     return flask.render_template(
         'no_duplicate.html',
-        translations=translations[language_code]
     )
 
 def add_form_data_to_template(form_data, template):
@@ -250,7 +255,6 @@ def if_needs_csrf_redirect(template, advanced, form_data):
         return flask.render_template(
             'template.html',
             template=add_form_data_to_template(form_data, template),
-            translations=translations[template['language_code']],
             advanced=advanced,
             csrf_error=True,
         )
