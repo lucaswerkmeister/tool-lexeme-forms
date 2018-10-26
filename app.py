@@ -241,6 +241,13 @@ def render_no_duplicate(language_code):
         'no_duplicate.html',
     )
 
+@app.route('/api/v1/advanced_partial_forms_hint/<language_code>')
+def render_advanced_partial_forms_hint(language_code):
+    flask.g.language_code = language_code
+    return flask.render_template(
+        'advanced_partial_forms_hint.html',
+    )
+
 def add_form_data_to_template(form_data, template):
     template = copy.deepcopy(template)
     for (form_representation, form) in zip(form_data.getlist('form_representation'), template['forms']):

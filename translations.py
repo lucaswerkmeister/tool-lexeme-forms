@@ -11,6 +11,7 @@ translations = {
         'advanced_lexeme_id': 'You can enter a lexeme ID to add forms to an existing lexeme instead of creating a new one. Leave any forms that already exist on the lexeme blank, otherwise they will be duplicated!',
         'advanced_partial_forms': 'You can leave some forms blank so that they will not be added. Make sure you’re not accidentally leaving out any forms!',
         'lexeme_id': 'Lexeme ID',
+        'advanced_partial_forms_hint': 'To create lexemes with some forms missing, switch to advanced mode.',
     },
     # translations by User:Oriciu, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Asturian
     'ast': {
