@@ -51,6 +51,7 @@ translations = {
         'advanced_lexeme_id': 'Du kannst eine Lexem-ID eingeben, um Formen zu einem bestehenden Lexem hinzuzufügen, anstatt ein neues zu erstellen. Lass alle Formen, die das Lexem bereits hat, leer, sonst werden sie dupliziert!',
         'advanced_partial_forms': 'Du kannst einige Formen leer lassen, so dass sie nicht hinzugefügt werden. Stelle sicher, dass du nicht aus Versehen welche weglässt!',
         'lexeme_id': 'Lexem-ID',
+        'advanced_partial_forms_hint': 'Um Lexeme zu erstellen, denen einige Formen fehlen, wechsle in den erweiterten Modus.',
     },
     # translations by User:Jens Ohlig, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Esperanto
     'eo': {
