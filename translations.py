@@ -38,6 +38,7 @@ translations = {
         'advanced_lexeme_id': 'Zde můžete zadat ID lexému, ke kterému chcete přidat chybějící tvary, namísto vytvoření nového. Veškeré tvary, které jsou již u lexému vyplněné, nechte prázdné, jinak budou vytvořeny jako duplicitní!',
         'advanced_partial_forms': 'Některé tvary můžete nechat prázdné a tyto pak nebudou přidány do lexému. Ujistěte se, že omylem nevynecháte některý tvar!',
         'lexeme_id': 'ID lexému',
+        'advanced_partial_forms_hint': 'Chcete-li vytvořit lexém bez některých tvarů, přepněte do pokročilého režimu.',
     },
     # translations by Lucas Werkmeister
     'de': {
