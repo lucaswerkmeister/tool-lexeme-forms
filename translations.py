@@ -143,6 +143,7 @@ translations = {
         'advanced_lexeme_id': 'Posses significare numerum verbi, ut formae ad id verbum addentur. Amitte formas qui id verbo exstant aut duplicis formas facies!',
         'advanced_partial_forms': 'Posses omittere aliqui formas, ut non addentur. Cave erroribus!',
         'lexeme_id': 'Numerus verbi',
+        'advanced_partial_forms_hint': 'Ut facere verbi quae aliqui formas desunt, adi modo amplificatum.',
     },
     # translations by User:Njardarlogar, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Norwegian_Nynorsk
     'nn': {
