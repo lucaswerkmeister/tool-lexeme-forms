@@ -93,7 +93,7 @@ def render_oauth_username():
 @app.template_global()
 def message(message_code):
     language_code = flask.g.language_code
-    text = translations[language_code][message_code]
+    text = translations[language_code].get(message_code, translations['en'][message_code])
     return flask.Markup(text)
 
 @app.route('/')
