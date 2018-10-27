@@ -173,6 +173,7 @@ translations = {
         'advanced_lexeme_id': 'Możesz podać ID leksemu by dodać formy do istniejącego leksemu, zamiast tworzyć nowy leksem. Formy, które już istnieją, pozostaw puste, w przeciwnym wypadku zostaną one powielone!',
         'advanced_partial_forms': 'Możesz zostawić niektóre formy puste, dzięki czemu nie zostaną one dodane. Upewnij się, że przypadkowo nie pominąłeś żadnej formy!',
         'lexeme_id': 'ID leksemu',
+        'advanced_partial_forms_hint': 'Aby utworzyć leksemy z pominięciem niektórych form, przełącz się na tryb zaawansowany.',
     },
     # translations by User:Infovarius, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Russian
     'ru': {
