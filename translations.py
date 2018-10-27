@@ -200,5 +200,6 @@ translations = {
         'advanced_lexeme_id': 'Här kan du skriva in ett lexem-ID för att lägga till former till ett befintligt lexem istället för att skapa ett nytt. För att undvika att redan befintliga former dupliceras, lämna dessa fält tomma.',
         'advanced_partial_forms': 'Du kan lämna vissa fält tomma; dessa former kommer då inte att läggas till. Försäkra dig dock om att du inte lämnar några fält tomma av misstag!',
         'lexeme_id': 'Lexem-ID',
+        'advanced_partial_forms_hint': 'För att skapa lexem utan att fylla i alla fält, byt till avancerat läge.',
     },
 }
