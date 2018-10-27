@@ -66,6 +66,7 @@ translations = {
         'advanced_lexeme_id': 'Vi povas enmeti lekseman identifikilon por aldoni formojn al ekzistanta leksemo anstataŭ krei novan leksemon. Lasu formojn kiuj jam ekzistas pri tio leksemo malplenajn, alie la formoj estos duobligitaj!',
         'advanced_partial_forms': 'Vi povas lasi iujn formojn malplenaj por ke ili ne aldoniĝos. Certiĝu, ke vi hazarde ne lasas iun formojn!',
         'lexeme_id': 'Leksema identifikilo',
+        'advanced_partial_forms_hint': 'Por krei leksemojn kun mankantaj formoj, ŝanĝu al altnivela reĝimo.',
     },
     # translations by User:Andreasmperu, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Spanish
     'es': {
