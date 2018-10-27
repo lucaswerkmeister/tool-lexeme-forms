@@ -132,6 +132,7 @@ translations = {
         'advanced_lexeme_id': 'Puoi inserire un ID di un lessema esistente per aggiungere le forme mancanti, anziché crearne uno nuovo. NON inserire le forme già esistenti, altrimenti creerai un doppione!',
         'advanced_partial_forms': 'Se lasci un campo vuoto, non verrà creata nessuna forma. Assicurati di creare tutte le forme necessarie!',
         'lexeme_id': 'identificatore',
+        'advanced_partial_forms_hint': 'Se vuoi creare dei lessemi privi di alcune forme, passa alla modalità avanzata.',
     },
     # translations by Lucas Werkmeister
     'la': {
