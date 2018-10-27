@@ -105,6 +105,7 @@ translations = {
         'advanced_lexeme_id': 'Au lieu de créer un nouveau lexème, vous pouvez entrer l\'identifiant d\'un lexème existant pour y ajouter des formes supplémentaires. Laissez les cases vides pour les formes déjà existantes afin d\'éviter de créer des doublons !',
         'advanced_partial_forms': 'Vous pouvez laisser des cases vides pour empêcher la création des formes associées. Assurez-vous de ne pas oublier accidentellement l\'une des formes !',
         'lexeme_id': 'Identifiant',
+        'advanced_partial_forms_hint': 'Pour créer des lexèmes en laissant certaines formes non renseignées, passez en mode avancé',
     },
     # translations by User:Shinnin, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Finnish
     'fi': {
