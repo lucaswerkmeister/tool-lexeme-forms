@@ -3149,6 +3149,367 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+    # template by User:Tohaomg, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Ukrainian
+    ('ukrainian-noun-masculine', {
+        'label': 'український іменник, чоловічий рід',
+        'language_item_id': 'Q8798',
+        'language_code': 'uk',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'однина, називний відмінок',
+                'example': 'Це [будинок].',
+                'grammatical_features_item_ids': ['Q110786', 'Q131105'],
+            },
+            {
+                'label': 'однина, родовий відмінок',
+                'example': 'Це відноситься до [будинка].',
+                'grammatical_features_item_ids': ['Q110786', 'Q146233'],
+            },
+            {
+                'label': 'однина, давальний відмінок',
+                'example': 'Це належить [будинку].',
+                'grammatical_features_item_ids': ['Q110786', 'Q145599'],
+            },
+            {
+                'label': 'однина, знахідний відмінок',
+                'example': 'Я бачу [будинок].',
+                'grammatical_features_item_ids': ['Q110786', 'Q146078'],
+            },
+            {
+                'label': 'однина, орудний відмінок',
+                'example': 'Я керую цим [будинком].',
+                'grammatical_features_item_ids': ['Q110786', 'Q192997'],
+            },
+            {
+                'label': 'однина, місцевий відмінок',
+                'example': 'Воно знаходиться в [будинку].',
+                'grammatical_features_item_ids': ['Q110786', 'Q202142'],
+            },
+            {
+                'label': 'однина, кличний відмінок',
+                'example': 'Привіт, [будинку].',
+                'grammatical_features_item_ids': ['Q110786', 'Q185077'],
+            },
+            {
+                'label': 'множина, називний відмінок',
+                'example': 'Це [будинки].',
+                'grammatical_features_item_ids': ['Q146786', 'Q131105'],
+            },
+            {
+                'label': 'множина, родовий відмінок',
+                'example': 'Це відноситься до [будинків].',
+                'grammatical_features_item_ids': ['Q146786', 'Q146233'],
+            },
+            {
+                'label': 'множина, давальний відмінок',
+                'example': 'Це належить [будинкам].',
+                'grammatical_features_item_ids': ['Q146786', 'Q145599'],
+            },
+            {
+                'label': 'множина, знахідний відмінок',
+                'example': 'Я бачу [будинки].',
+                'grammatical_features_item_ids': ['Q146786', 'Q146078'],
+            },
+            {
+                'label': 'множина, орудний відмінок',
+                'example': 'Я керую цими [будинками].',
+                'grammatical_features_item_ids': ['Q146786', 'Q192997'],
+            },
+            {
+                'label': 'множина, місцевий відмінок',
+                'example': 'Вони знаходиться в [будинках].',
+                'grammatical_features_item_ids': ['Q146786', 'Q202142'],
+            },
+            {
+                'label': 'множина, кличний відмінок',
+                'example': 'Привіт, [будинки].',
+                'grammatical_features_item_ids': ['Q146786', 'Q185077'],
+            },
+        ],
+        'claims': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q499327',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
+    # template by User:Tohaomg, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Ukrainian
+    ('ukrainian-noun-feminine', {
+        'label': 'український іменник, жіночий рід',
+        'language_item_id': 'Q8798',
+        'language_code': 'uk',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'однина, називний відмінок',
+                'example': 'Це [будівля].',
+                'grammatical_features_item_ids': ['Q110786', 'Q131105'],
+            },
+            {
+                'label': 'однина, родовий відмінок',
+                'example': 'Це відноситься до [будівлі].',
+                'grammatical_features_item_ids': ['Q110786', 'Q146233'],
+            },
+            {
+                'label': 'однина, давальний відмінок',
+                'example': 'Це належить [будівлі].',
+                'grammatical_features_item_ids': ['Q110786', 'Q145599'],
+            },
+            {
+                'label': 'однина, знахідний відмінок',
+                'example': 'Я бачу [будівлю].',
+                'grammatical_features_item_ids': ['Q110786', 'Q146078'],
+            },
+            {
+                'label': 'однина, орудний відмінок',
+                'example': 'Я керую цією [будівлею].',
+                'grammatical_features_item_ids': ['Q110786', 'Q192997'],
+            },
+            {
+                'label': 'однина, місцевий відмінок',
+                'example': 'Воно знаходиться в [будівлі].',
+                'grammatical_features_item_ids': ['Q110786', 'Q202142'],
+            },
+            {
+                'label': 'однина, кличний відмінок',
+                'example': 'Привіт, [будівле].',
+                'grammatical_features_item_ids': ['Q110786', 'Q185077'],
+            },
+            {
+                'label': 'множина, називний відмінок',
+                'example': 'Це [будівлі].',
+                'grammatical_features_item_ids': ['Q146786', 'Q131105'],
+            },
+            {
+                'label': 'множина, родовий відмінок',
+                'example': 'Це відноситься до [будівель].',
+                'grammatical_features_item_ids': ['Q146786', 'Q146233'],
+            },
+            {
+                'label': 'множина, давальний відмінок',
+                'example': 'Це належить [будівлям].',
+                'grammatical_features_item_ids': ['Q146786', 'Q145599'],
+            },
+            {
+                'label': 'множина, знахідний відмінок',
+                'example': 'Я бачу [будівлі].',
+                'grammatical_features_item_ids': ['Q146786', 'Q146078'],
+            },
+            {
+                'label': 'множина, орудний відмінок',
+                'example': 'Я керую цими [будівлями].',
+                'grammatical_features_item_ids': ['Q146786', 'Q192997'],
+            },
+            {
+                'label': 'множина, місцевий відмінок',
+                'example': 'Вони знаходиться в [будівлях].',
+                'grammatical_features_item_ids': ['Q146786', 'Q202142'],
+            },
+            {
+                'label': 'множина, кличний відмінок',
+                'example': 'Привіт, [будівлі].',
+                'grammatical_features_item_ids': ['Q146786', 'Q185077'],
+            },
+        ],
+        'claims': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q1775415',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
+    # template by User:Tohaomg, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Ukrainian
+    ('ukrainian-noun-neuter', {
+        'label': 'український іменник, середній рід',
+        'language_item_id': 'Q8798',
+        'language_code': 'uk',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'однина, називний відмінок',
+                'example': 'Це [серце].',
+                'grammatical_features_item_ids': ['Q110786', 'Q131105'],
+            },
+            {
+                'label': 'однина, родовий відмінок',
+                'example': 'Це відноситься до [серця].',
+                'grammatical_features_item_ids': ['Q110786', 'Q146233'],
+            },
+            {
+                'label': 'однина, давальний відмінок',
+                'example': 'Це належить [серцю].',
+                'grammatical_features_item_ids': ['Q110786', 'Q145599'],
+            },
+            {
+                'label': 'однина, знахідний відмінок',
+                'example': 'Я бачу [серце].',
+                'grammatical_features_item_ids': ['Q110786', 'Q146078'],
+            },
+            {
+                'label': 'однина, орудний відмінок',
+                'example': 'Я живу із цим [серцем].',
+                'grammatical_features_item_ids': ['Q110786', 'Q192997'],
+            },
+            {
+                'label': 'однина, місцевий відмінок',
+                'example': 'Воно знаходиться в [серці].',
+                'grammatical_features_item_ids': ['Q110786', 'Q202142'],
+            },
+            {
+                'label': 'однина, кличний відмінок',
+                'example': 'Привіт, [серцю].',
+                'grammatical_features_item_ids': ['Q110786', 'Q185077'],
+            },
+            {
+                'label': 'множина, називний відмінок',
+                'example': 'Це [серця].',
+                'grammatical_features_item_ids': ['Q146786', 'Q131105'],
+            },
+            {
+                'label': 'множина, родовий відмінок',
+                'example': 'Це відноситься до [сердець].',
+                'grammatical_features_item_ids': ['Q146786', 'Q146233'],
+            },
+            {
+                'label': 'множина, давальний відмінок',
+                'example': 'Це належить [серцям].',
+                'grammatical_features_item_ids': ['Q146786', 'Q145599'],
+            },
+            {
+                'label': 'множина, знахідний відмінок',
+                'example': 'Я бачу [серця].',
+                'grammatical_features_item_ids': ['Q146786', 'Q146078'],
+            },
+            {
+                'label': 'множина, орудний відмінок',
+                'example': 'Кохання між цими [серцями].',
+                'grammatical_features_item_ids': ['Q146786', 'Q192997'],
+            },
+            {
+                'label': 'множина, місцевий відмінок',
+                'example': 'Вони знаходиться в [серцях].',
+                'grammatical_features_item_ids': ['Q146786', 'Q202142'],
+            },
+            {
+                'label': 'множина, кличний відмінок',
+                'example': 'Привіт, [серця].',
+                'grammatical_features_item_ids': ['Q146786', 'Q185077'],
+            },
+        ],
+        'claims': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q1775461',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
+    # template by User:Tohaomg, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Ukrainian
+    ('ukrainian-noun-pluraletantum', {
+        'label': 'український іменник, тільки множина (pluralia tantum)',
+        'language_item_id': 'Q8798',
+        'language_code': 'uk',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'називний відмінок',
+                'example': 'Це [ножиці].',
+                'grammatical_features_item_ids': ['Q131105'],
+            },
+            {
+                'label': 'родовий відмінок',
+                'example': 'Ніде нема [ножиць].',
+                'grammatical_features_item_ids': ['Q146233'],
+            },
+            {
+                'label': 'давальний відмінок',
+                'example': 'Віддати це [ножицям].',
+                'grammatical_features_item_ids': ['Q145599'],
+            },
+            {
+                'label': 'знахідний відмінок',
+                'example': 'Я бачу [ножиці].',
+                'grammatical_features_item_ids': ['Q146078'],
+            },
+            {
+                'label': 'орудний відмінок',
+                'example': 'Я користуюсь цими [ножицями].',
+                'grammatical_features_item_ids': ['Q192997'],
+            },
+            {
+                'label': 'місцевий відмінок',
+                'example': 'Папір застряг в [ножицях].',
+                'grammatical_features_item_ids': ['Q202142'],
+            },
+            {
+                'label': 'кличний відмінок',
+                'example': 'Привіт, [ножиці].',
+                'grammatical_features_item_ids': ['Q185077'],
+            },
+        ],
+        'claims': {
+            'P31': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P31',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q138246',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
     # template by Lucas Werkmeister
     ('german-noun-neuter-test', {
         'test': True,
