@@ -26,6 +26,8 @@ git merge --ff-only @{u}
 pip3 install -r requirements.txt
 webservice --backend=kubernetes python restart
 ```
+However, the `venv` and `pip3` parts are only necessary when new packages are required –
+if only `templates.py` and/or `translations.py` were updated, you can skip those.
 
 ## Local development setup
 
