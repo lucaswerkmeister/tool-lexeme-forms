@@ -46,6 +46,7 @@ def form2input(context, form, first=False):
                 (flask.Markup(r' required') if not context['advanced'] else flask.Markup('')) +
                 (flask.Markup(r' autofocus') if first else flask.Markup('')) +
                 (flask.Markup(r' value="') + flask.Markup.escape(form['value']) + flask.Markup(r'"') if 'value' in form else flask.Markup('')) +
+                flask.Markup(r' spellcheck="true"') +
                 flask.Markup(r'>') +
                 flask.Markup.escape(suffix))
     else:
