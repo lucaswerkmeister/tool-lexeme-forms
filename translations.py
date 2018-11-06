@@ -121,6 +121,20 @@ translations = {
         'advanced_partial_forms': 'Voit jättää jotkin taivutusmuodoista tyhjiksi. Varmista kuitenkin, että ne ovat tyhjiä tarkoituksella eivätkä vahingossa.',
         'lexeme_id': 'Lekseemi-tunniste'
     },
+    # translations by User:Emptyfear, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Armenian
+    'hy': {
+        'create': 'Ստեղծել',
+        'csrf_warning': 'Ցավոք, հարցումը հնարավոր չէ իրականացնել (<abbr title="Cross-site request forgery">CSRF</abbr> պաշտպանությունը ձախողվեց)։ Փորձեք ձևաթուղթը կրկին պահպանել։',
+        'duplicates_warning': 'Հետևյալ լեքսեմներն ունեն նույն լեման և լեզվական կոդը, որոնք դուք ցանկանում եք ստեղծել:',
+        'duplicates_instructions': 'Եթե համոզված եք, որ դրանք տարբեր են՝ տես ձևաթղթի ներքևի նշասալիկը։',
+        'no_duplicate': 'Սա առկա լեմայի կրկնօրինակ չէ։',
+        'advanced': 'Ընդլայնված',
+        'advanced_general': 'Դուք ընդլայնված տարբերակում եք',
+        'advanced_lexeme_id': 'Նոր լեքսեմ ստեղծելու փոխարեն՝ կարող եք ID֊ն նշել՝ արդեն գոյություն ունեցող լեքսեմին ձևեր ավելացնելու համար։ Արդեն գոյություն ունեցող լեքսեմի ձևերը դատարկ թողեք, թե չէ կկրկնօրինակվեն։',
+        'advanced_partial_forms': 'Դուք կարող եք որոշ ձևեր դատարկ թողնել․ դրանք չեն ավելացվի։',
+        'lexeme_id': 'Լեքսեմի ID',
+        'advanced_partial_forms_hint': 'Որոշ ձևերի բացակայությամբ լեքսեմներ ստեղծելու համար՝ գնացեք ընդլայնված տարբերակ։',
+    },
     # translations by User:Sannita, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Italian
     'it': {
         'create': 'Crea il lessema!',

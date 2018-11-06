@@ -1538,6 +1538,149 @@ templates = collections.OrderedDict([
             },
         ],
     }),
+    # template by User:Emptyfear, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Armenian
+    ('armenian-noun', {
+        'label': 'հայերեն գոյական',
+        'language_item_id': 'Q8785',
+        'language_code': 'hy',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'եզ․ թիվ, ուղղ․ հոլով',
+                'example': 'Սա [փողոց] է։',
+                'grammatical_features_item_ids': ['Q131105', 'Q110786'],
+            },
+            {
+                'label': 'եզ․ թիվ, սեռ․ հոլով',
+                'example': '[Փողոցի] նշանակությունը։',
+                'grammatical_features_item_ids': ['Q146233', 'Q110786'],
+            },
+            {
+                'label': 'եզ․ թիվ, տր․ հոլով',
+                'example': '[Փողոցին] նայել։',
+                'grammatical_features_item_ids': ['Q145599', 'Q110786'],
+            },
+            {
+                'label': 'եզ․ թիվ, հայց․ հոլով',
+                'example': 'Տեսնում եմ [փողոց]։',
+                'grammatical_features_item_ids': ['Q146078', 'Q110786'],
+            },
+            {
+                'label': 'եզ․ թիվ, գործ․ հոլով',
+                'example': '[Փողոցով] գնալ։',
+                'grammatical_features_item_ids': ['Q192997', 'Q110786'],
+            },
+            {
+                'label': 'եզ․ թիվ, բաց․ հոլով',
+                'example': '[Փողոցից] հեռանալ։',
+                'grammatical_features_item_ids': ['Q156986', 'Q110786'],
+            },
+            {
+                'label': 'եզ․ թիվ, ներգ․ հոլով',
+                'example': '[Փողոցում] ապրել։',
+                'grammatical_features_item_ids': ['Q202142', 'Q110786'],
+            },
+            {
+                'label': 'հոգ․ թիվ, ուղղ․ հոլով',
+                'example': 'Սրանք [փողոցներ] են։',
+                'grammatical_features_item_ids': ['Q131105', 'Q146786'],
+            },
+            {
+                'label': 'հոգ․ թիվ, սեռ․ հոլով',
+                'example': 'Բազմաթիվ [փողոցների] նշանակությունը։',
+                'grammatical_features_item_ids': ['Q146233', 'Q146786'],
+            },
+            {
+                'label': 'հոգ․ թիվ, տր․ հոլով',
+                'example': '[Փողոցներին] նայել։',
+                'grammatical_features_item_ids': ['Q145599', 'Q146786'],
+            },
+            {
+                'label': 'հոգ․ թիվ, հայց․ հոլով',
+                'example': 'Տեսնում եմ շատ [փողոցներ]։',
+                'grammatical_features_item_ids': ['Q146078', 'Q146786'],
+            },
+            {
+                'label': 'հոգ․ թիվ, գործ․ հոլով',
+                'example': 'Բոլոր [փողոցներով] գնալ։',
+                'grammatical_features_item_ids': ['Q192997', 'Q146786'],
+            },
+            {
+                'label': 'հոգ․ թիվ, բաց․ հոլով',
+                'example': 'Բոլոր [փողոցներից] հեռանալ։',
+                'grammatical_features_item_ids': ['Q156986', 'Q146786'],
+            },
+            {
+                'label': 'հոգ․ թիվ, ներգ․ հոլով',
+                'example': 'Տարբեր [փողոցներում] ապրել։',
+                'grammatical_features_item_ids': ['Q202142', 'Q146786'],
+            },
+        ],
+    }),
+    # template by User:Emptyfear, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Armenian
+    ('armenian-noun-singulare-tantum', {
+        'label': 'հայերեն հավաքական անհոգնական եզակի գոյական',
+        'language_item_id': 'Q8785',
+        'language_code': 'hy',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'եզ․ թիվ, ուղղ․ հոլով',
+                'example': 'Սա [կաթ] է։',
+                'grammatical_features_item_ids': ['Q131105', 'Q110786'],
+            },
+            {
+                'label': 'եզ․ թիվ, սեռ․ հոլով',
+                'example': '[Կաթի] նշանակությունը։',
+                'grammatical_features_item_ids': ['Q146233', 'Q110786'],
+            },
+            {
+                'label': 'եզ․ թիվ, տր․ հոլով',
+                'example': '[Կաթին] ավելացնել։',
+                'grammatical_features_item_ids': ['Q145599', 'Q110786'],
+            },
+            {
+                'label': 'եզ․ թիվ, հայց․ հոլով',
+                'example': 'Տեսնում եմ [կաթ]։',
+                'grammatical_features_item_ids': ['Q146078', 'Q110786'],
+            },
+            {
+                'label': 'եզ․ թիվ, գործ․ հոլով',
+                'example': '[Կաթով] պատրաստել։',
+                'grammatical_features_item_ids': ['Q192997', 'Q110786'],
+            },
+            {
+                'label': 'եզ․ թիվ, բաց․ հոլով',
+                'example': '[Կաթից] առանձնացնել։',
+                'grammatical_features_item_ids': ['Q156986', 'Q110786'],
+            },
+            {
+                'label': 'եզ․ թիվ, ներգ․ հոլով',
+                'example': '[Կաթում] լողալ։',
+                'grammatical_features_item_ids': ['Q202142', 'Q110786'],
+            },
+        ],
+        'claims': {
+            'P31': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P31',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q604984',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
     # template by User:Sannita, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Italian
     ('italian-noun-feminine', {
         'label': 'sostantivo femminile italiano',
