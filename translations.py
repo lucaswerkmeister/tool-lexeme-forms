@@ -119,7 +119,8 @@ translations = {
         'advanced_general': 'Olet laajennetussa muokkaustilassa.',
         'advanced_lexeme_id': 'Uuden lekseemin luomisen lisäksi voit muokata jo olemassa olevaa lekseemiä syöttämällä sen tunnisteen. Jätä lekseemissä jo olevat taivutusmuodot tyhjiksi, muuten ne tuplaantuvat.',
         'advanced_partial_forms': 'Voit jättää jotkin taivutusmuodoista tyhjiksi. Varmista kuitenkin, että ne ovat tyhjiä tarkoituksella eivätkä vahingossa.',
-        'lexeme_id': 'Lekseemi-tunniste'
+        'lexeme_id': 'Lekseemi-tunniste',
+        'advanced_partial_forms_hint': 'Luodaksesi lekseemin ilman joitakin taivutusmuotoja, siirry laajennettuun muokkaustilaan.',
     },
     # translations by User:Emptyfear, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Armenian
     'hy': {
