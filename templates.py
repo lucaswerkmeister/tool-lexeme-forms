@@ -1321,7 +1321,7 @@ templates = collections.OrderedDict([
         'forms': [
             {
                 'label': 'yksikön nominatiivi',
-                'example': 'Tämä on [koira].',
+                'example': 'Tämä on [koira/lisää/useampia/muotoja/näin].',
                 'grammatical_features_item_ids': ['Q110786', 'Q131105'],
             },
             {
@@ -1428,6 +1428,21 @@ templates = collections.OrderedDict([
                 'label': 'monikon allatiivi',
                 'example': 'Näille [koirille].',
                 'grammatical_features_item_ids': ['Q146786', 'Q655020'],
+            },
+            {
+                'label': 'monikon instruktiivi',
+                'example': 'Käsin, jaloin, kissoin ja [koirin].',
+                'grammatical_features_item_ids': ['Q1665275', 'Q146786'],
+            },
+            {
+                'label': 'yksikön abessiivi',
+                'example': 'Kädettä, jalatta, kissatta ja [koiratta].',
+                'grammatical_features_item_ids': ['Q319822', 'Q110786'],
+            },
+            {
+                'label': 'monikon abessiivi',
+                'example': 'Käsittä, jaloitta, kissoitta ja [koiritta].',
+                'grammatical_features_item_ids': ['Q319822', 'Q146786'],
             },
         ],
     }),
