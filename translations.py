@@ -13,7 +13,7 @@ translations = {
         'lexeme_id': 'Lexeme ID',
         'advanced_partial_forms_hint': 'To create lexemes with some forms missing, switch to advanced mode.',
     },
-    # translations by User:Oriciu, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Asturian
+    # translations by User:Oriciu, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Asturian
     'ast': {
         'create': 'Crear',
         'csrf_warning': 'Sentímoslo, nun pudimos procesar la solicitú (falló la protección escontra <abbr title="Cross-site request forgery">CSRF</abbr>). Tenta volver a unviar el formulariu.',
@@ -26,7 +26,7 @@ translations = {
         'advanced_partial_forms': 'Puedes dexar en blancu delles formes pa que nun s\'añadan. ¡Asegúrate de nun escaecer nenguna forma accidentalmente!',
         'lexeme_id': 'Identificador',
     },
-    # translations by User:Lexicolover, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Czech
+    # translations by User:Lexicolover, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Czech
     'cs': {
         'create': 'Vytvořit',
         'csrf_warning': 'Bohužel se nám nepodařilo vykonat požadavek. (<abbr title="Cross-site request forgery">CSRF</abbr> ochrana selhala). Zkuste prosím odeslat formulář znovu.',
@@ -54,7 +54,7 @@ translations = {
         'lexeme_id': 'Lexem-ID',
         'advanced_partial_forms_hint': 'Um Lexeme zu erstellen, denen einige Formen fehlen, wechsle in den erweiterten Modus.',
     },
-    # translations by User:Jens Ohlig, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Esperanto
+    # translations by User:Jens Ohlig, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Esperanto
     'eo': {
         'create': 'Krei',
         'csrf_warning': 'Pardonu, ni ne povis procesi ĉi tiun peton (protekto kontraŭ <abbr title="Cross-site request forgery">CSRF</abbr> malsucesis). Bonvolu provi submeti la formularon denove.',
@@ -68,7 +68,7 @@ translations = {
         'lexeme_id': 'Leksema identifikilo',
         'advanced_partial_forms_hint': 'Por krei leksemojn kun mankantaj formoj, ŝanĝu al altnivela reĝimo.',
     },
-    # translations by User:Andreasmperu, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Spanish
+    # translations by User:Andreasmperu, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Spanish
     'es': {
         'create': 'Crear',
         'csrf_warning': 'Lo siento, esta solicitud no pudo ser procesada (<abbr title="Cross-site request forgery">CSRF</abbr> protection failed). Por favor, intenta enviar el formulario nuevamente.',
@@ -81,7 +81,7 @@ translations = {
         'advanced_partial_forms': 'Puedes dejar algunas formas en blanco para evitar que sean añadidas. ¡Asegúrate de crear todas las formas necesarias!',
         'lexeme_id': 'Identificador de lexema',
     },
-    # template by User:Reosarevok, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Estonian
+    # template by User:Reosarevok, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Estonian
     'et': {
         'create': 'Loo',
         'csrf_warning': 'Vabandust, taotluse töötlemine ebaõnnestus (<abbr title="Cross-site request forgery">CSRFi</abbr> vastane kaitse ebaõnnestus). Palun proovi vorm uuesti saata.',
@@ -94,7 +94,7 @@ translations = {
         'advanced_partial_forms': 'Saad vormid tühjaks jätta, et neid ei lisataks. Kontrolli aga, et sa ei jätnud mõnda vormi kogemata tühjaks!',
         'lexeme_id': 'Lekseemi ID',
     },
-    # translations by User:Djiboun, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/French
+    # translations by User:Djiboun, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/French
     'fr': {
         'create': 'Créer',
         'csrf_warning': 'Désolé, cette requête n\'a pas pu être traitée (la protection anti-<abbr title="Cross-site request forgery">CSRF</abbr> a échoué). Essayez de renvoyer le formulaire.',
@@ -108,7 +108,7 @@ translations = {
         'lexeme_id': 'Identifiant',
         'advanced_partial_forms_hint': 'Pour créer des lexèmes en laissant certaines formes non renseignées, passez en mode avancé',
     },
-    # translations by User:Shinnin, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Finnish
+    # translations by User:Shinnin, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Finnish
     'fi': {
         'create': 'Julkaise',
         'csrf_warning': 'Anteeksi, pyynnön käsittely ei onnistunut (<abbr title="Cross-site request forgery">CSRF</abbr> suojaus epäonnistui). Yritä tallentaa kaavake uudestaan, kiitos.',
@@ -122,7 +122,7 @@ translations = {
         'lexeme_id': 'Lekseemi-tunniste',
         'advanced_partial_forms_hint': 'Luodaksesi lekseemin ilman joitakin taivutusmuotoja, siirry laajennettuun muokkaustilaan.',
     },
-    # translations by User:Emptyfear, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Armenian
+    # translations by User:Emptyfear, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Armenian
     'hy': {
         'create': 'Ստեղծել',
         'csrf_warning': 'Ցավոք, հարցումը հնարավոր չէ իրականացնել (<abbr title="Cross-site request forgery">CSRF</abbr> պաշտպանությունը ձախողվեց)։ Փորձեք ձևաթուղթը կրկին պահպանել։',
@@ -136,7 +136,7 @@ translations = {
         'lexeme_id': 'Լեքսեմի ID',
         'advanced_partial_forms_hint': 'Որոշ ձևերի բացակայությամբ լեքսեմներ ստեղծելու համար՝ գնացեք ընդլայնված տարբերակ։',
     },
-    # translations by User:Sannita, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Italian
+    # translations by User:Sannita, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Italian
     'it': {
         'create': 'Crea il lessema!',
         'csrf_warning': 'Ops, non è possibile salvare la pagina (errore: <abbr title="Cross-site request forgery">CSRF</abbr> protection failed). Per favore, riprova.',
@@ -164,7 +164,7 @@ translations = {
         'lexeme_id': 'Numerus verbi',
         'advanced_partial_forms_hint': 'Ut facere verbi quae aliqui formas desunt, adi modo amplificatum.',
     },
-    # translations by User:Njardarlogar, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Norwegian_Nynorsk
+    # translations by User:Njardarlogar, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Norwegian_Nynorsk
     'nn': {
         'create': 'Opprett',
         'csrf_warning': 'Førespurnaden kunne ikkje handsamast av di <abbr title="Cross-site request forgery">CSRF</abbr>-vernet mislukkast. Freist gjerne om att.',
@@ -177,7 +177,7 @@ translations = {
         'advanced_partial_forms': 'Du kan la nokre felt vera tomme slik at dei ikkje vert lagde til. Gjer deg viss på at du ikkje gløymer å skriva inn nokre av formene som skal vera med.',
         'lexeme_id': 'Leksem-ID',
     },
-    # translations by User:KaMan, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Polish
+    # translations by User:KaMan, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Polish
     'pl': {
         'create': 'Utwórz',
         'csrf_warning': 'Niestety przetworzenie tego żądania było niemożliwe (ochrona <abbr title="Cross-site request forgery">CSRF</abbr>). Proszę spróbować przesłać formularz ponownie.',
@@ -191,7 +191,7 @@ translations = {
         'lexeme_id': 'ID leksemu',
         'advanced_partial_forms_hint': 'Aby utworzyć leksemy z pominięciem niektórych form, przełącz się na tryb zaawansowany.',
     },
-    # translations by User:Infovarius, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Russian
+    # translations by User:Infovarius, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Russian
     'ru': {
         'create': 'Создать',
         'csrf_warning': 'Извините, запрос не получился (<abbr title="Cross-site request forgery">CSRF</abbr> ошибка защиты). Пожалуйста, попробуйте отправить форму снова.',
@@ -205,7 +205,7 @@ translations = {
         'lexeme_id': 'ID лексемы',
         'advanced_partial_forms_hint': 'Чтобы создать лексемы без некоторых форм, переключитесь в продвинутый режим.',
     },
-    # translations by User:Vesihiisi, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Swedish
+    # translations by User:Vesihiisi, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Swedish
     'sv': {
         'create': 'Skapa',
         'csrf_warning': 'Din begäran kunde inte utföras på grund av ett <abbr title="Cross-site request forgery">CSRF</abbr>-fel. Var god försök igen.',
@@ -219,7 +219,7 @@ translations = {
         'lexeme_id': 'Lexem-ID',
         'advanced_partial_forms_hint': 'För att skapa lexem utan att fylla i alla fält, byt till avancerat läge.',
     },
-    # translations by User:Tohaomg, see https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms/Ukrainian
+    # translations by User:Tohaomg, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Ukrainian
     'uk': {
         'create': 'Створити',
         'csrf_warning': 'Вибачте, не вийшло обробити цей запит (помилка системи захисту <abbr title="Cross-site request forgery">CSRF</abbr>). Будь ласка, спробуйте відіслати форму ще раз.',

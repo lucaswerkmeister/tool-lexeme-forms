@@ -51,7 +51,7 @@ Yay contributions! <3
 ### Templates
 
 To propose new templates for the tool,
-please head to [its page on Wikidata](https://www.wikidata.org/wiki/User:Lucas_Werkmeister/Wikidata_Lexeme_Forms)
+please head to [its page on Wikidata](https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms)
 and follow the instructions there.
 
 ### Code
