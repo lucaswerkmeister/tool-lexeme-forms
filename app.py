@@ -31,6 +31,41 @@ except FileNotFoundError:
     print('config.yaml file not found, assuming local development setup')
     app.secret_key = 'fake'
 
+@app.before_request
+def fixSessionToken():
+    """Fix the session token after its path was changed.
+
+    Old versions of this tool on Toolforge used '/' for the session
+    cookie path, which was insecure, sending our session cookie to
+    other tools as well. However, changing it to the tool name does
+    not invalidate the old cookie, so the first time a client visits
+    the tool again after this change was made, when we try to update
+    the cookie in our response, we’re actually setting a new one with
+    a different path, and on the next request we’ll receive two
+    session cookies, for the old and new path. That is the earliest
+    time when we can detect the situation, and deal with it by
+    instructing the client to delete the '/' version and then reload.
+    (We could try to decode the old session and salvage parts of it,
+    but this tool only uses the session for the CSRF token and OAuth
+    tokens, and salvaging either of those is probably a bad idea.)
+    """
+
+    if app.config.get('APPLICATION_ROOT', '/') == '/':
+        return
+    cookies_header = flask.request.headers.get('Cookie')
+    if not cookies_header:
+        return
+    first_session = cookies_header.find('session=')
+    if first_session < 0:
+        return
+    second_session = cookies_header[first_session+1:].find('session=')
+    if second_session < 0:
+        return
+
+    response = flask.redirect(current_url())
+    response.set_cookie('session', '', expires=0, path='/')
+    return response
+
 @app.template_filter()
 @jinja2.contextfilter
 def form2input(context, form, first=False):
