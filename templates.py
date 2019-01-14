@@ -787,7 +787,7 @@ templates = collections.OrderedDict([
             ],
         },
     }),
-    # template by Lucas Werkmeister
+    # template by Lucas Werkmeister and User:Andreasmperu, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/German
     ('german-verb', {
         'label': 'deutsches Verb',
         'language_item_id': 'Q188',
@@ -932,7 +932,7 @@ templates = collections.OrderedDict([
             {
                 'label': 'Partizip II',
                 'example': 'Ich werde [getragen].',
-                'grammatical_features_item_ids': ['Q1230649'],
+                'grammatical_features_item_ids': ['Q52434448'],
             },
         ],
     }),
