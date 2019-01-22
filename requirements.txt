@@ -7,3 +7,4 @@ toolforge
 requests
 jinja2
 pytest
+werkzeug

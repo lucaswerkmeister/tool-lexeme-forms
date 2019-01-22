@@ -11,9 +11,17 @@ import requests
 import requests_oauthlib
 import string
 import toolforge
+import werkzeug.datastructures
 import yaml
 from templates import templates
 from translations import translations
+
+class OrderedRequest(flask.Request):
+    """Request subclass to use ordered parameter storage"""
+    parameter_storage_class = werkzeug.datastructures.ImmutableOrderedMultiDict
+class OrderedFlask(flask.Flask):
+    """Flask subclass to use ordered parameter storage for requests"""
+    request_class = OrderedRequest
 
 app = flask.Flask(__name__)
 
