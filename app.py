@@ -23,7 +23,7 @@ class OrderedFlask(flask.Flask):
     """Flask subclass to use ordered parameter storage for requests"""
     request_class = OrderedRequest
 
-app = flask.Flask(__name__)
+app = OrderedFlask(__name__)
 
 app.before_request(toolforge.redirect_to_https)
 
