@@ -202,6 +202,7 @@ def process_template_advanced(template_name, advanced=True):
     template = templates[template_name]
     flask.g.language_code = template['language_code']
     form_data = flask.request.form
+    stashed_form_data = flask.session.pop('stashed_form_data', None)
 
     if flask.request.method == 'POST' and flask.request.referrer == current_url():
         response = if_has_duplicates_redirect(template, advanced, form_data)
@@ -221,6 +222,11 @@ def process_template_advanced(template_name, advanced=True):
             print(summary)
             return flask.Response(json.dumps(lexeme_data), mimetype='application/json')
     else:
+        if not form_data and flask.request.args:
+            flask.session['stashed_form_data'] = flask.request.args
+            return flask.redirect(current_url())
+        if not form_data and stashed_form_data:
+            form_data = stashed_form_data
         return flask.render_template(
             'template.html',
             template=add_form_data_to_template(form_data, template),
