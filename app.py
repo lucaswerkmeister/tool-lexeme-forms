@@ -213,10 +213,12 @@ def process_template_advanced(template_name, advanced=True):
             return response
 
         lexeme_data = build_lexeme(template, form_data)
+        summary = build_summary(template, form_data)
 
         if 'oauth' in app.config:
-            return submit_lexeme(template, lexeme_data)
+            return submit_lexeme(template, lexeme_data, summary)
         else:
+            print(summary)
             return flask.Response(json.dumps(lexeme_data), mimetype='application/json')
     else:
         return flask.render_template(
@@ -393,7 +395,18 @@ def build_lexeme(template, form_data):
         })
     return lexeme_data
 
-def submit_lexeme(template, lexeme_data):
+def build_summary(template, form_data):
+    template_name = template['template_name']
+    url = current_url()
+    if url.startswith('https://tools.wmflabs.org/'):
+        relative = url[len('https://tools.wmflabs.org/'):]
+        summary = '[[toolforge:%s|%s]]' % (relative, template_name)
+    else:
+        summary = template_name
+
+    return summary
+
+def submit_lexeme(template, lexeme_data, summary):
     if 'test' in template:
         host = 'https://test.wikidata.org'
     else:
@@ -403,14 +416,6 @@ def submit_lexeme(template, lexeme_data):
         auth=generate_auth(),
         user_agent=user_agent,
     )
-
-    template_name = template['template_name']
-    url = current_url()
-    if url.startswith('https://tools.wmflabs.org/'):
-        relative = url[len('https://tools.wmflabs.org/'):]
-        summary = '[[toolforge:%s|%s]]' % (relative, template_name)
-    else:
-        summary = template_name
 
     token = session.get(action='query', meta='tokens')['query']['tokens']['csrftoken']
     selector = {'id': lexeme_data['id']} if 'id' in lexeme_data else {'new': 'lexeme'}
