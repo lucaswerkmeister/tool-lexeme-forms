@@ -40,6 +40,14 @@
       </div>
       {% endfor %}
     </dl>
+    {% if template.via %}
+    <div class="form-group">
+      <label class="text-muted">
+        {{ message( 'generated_via' ) }}
+        <input name="generated_via" value="{{ template.via }}" readonly>
+      </label>
+    </div>
+    {% endif %}
     {% if duplicates %}
     {{ render_no_duplicate(template.language_code) | safe }}
     {% endif %}

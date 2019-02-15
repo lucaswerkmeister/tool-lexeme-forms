@@ -12,6 +12,7 @@ translations = {
         'advanced_partial_forms': 'You can leave some forms blank so that they will not be added. Make sure you’re not accidentally leaving out any forms!',
         'lexeme_id': 'Lexeme ID',
         'advanced_partial_forms_hint': 'To create lexemes with some forms missing, switch to advanced mode.',
+        'generated_via': 'generated via'
     },
     # translations by User:Oriciu, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Asturian
     'ast': {
