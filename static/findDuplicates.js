@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 duplicatesWarning.outerHTML = duplicatesWarningHtml;
 
                 const noDuplicate = document.createElement('label');
-                document.querySelector('form dl').insertAdjacentElement('afterend', noDuplicate);
+                document.querySelector('button.btn.btn-primary').insertAdjacentElement('beforebegin', noDuplicate);
                 noDuplicate.outerHTML = noDuplicateHtml;
             });
         }).catch(console.error);
