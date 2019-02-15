@@ -892,32 +892,32 @@ templates = collections.OrderedDict([
             {
                 'label': '1. Person Singular Konjunktiv II',
                 'example': 'Ich dachte, ich [trüge].',
-                'grammatical_features_item_ids': ['Q21714344', 'Q110786', 'Q54671845', 'Q442485', 'Q1317831'],
+                'grammatical_features_item_ids': ['Q21714344', 'Q110786', 'Q3502544', 'Q442485', 'Q1317831'],
             },
             {
                 'label': '2. Person Singular Konjunktiv II',
                 'example': 'Ich dachte, du [trügest/trügst].',
-                'grammatical_features_item_ids': ['Q51929049', 'Q110786', 'Q54671845', 'Q442485', 'Q1317831'],
+                'grammatical_features_item_ids': ['Q51929049', 'Q110786', 'Q3502544', 'Q442485', 'Q1317831'],
             },
             {
                 'label': '3. Person Singular Konjunktiv II',
                 'example': 'Ich dachte, er/sie/es [trüge].',
-                'grammatical_features_item_ids': ['Q51929074', 'Q110786', 'Q54671845', 'Q442485', 'Q1317831'],
+                'grammatical_features_item_ids': ['Q51929074', 'Q110786', 'Q3502544', 'Q442485', 'Q1317831'],
             },
             {
                 'label': '1. Person Plural Konjunktiv II',
                 'example': 'Ich dachte, wir [trügen].',
-                'grammatical_features_item_ids': ['Q21714344', 'Q146786', 'Q54671845', 'Q442485', 'Q1317831'],
+                'grammatical_features_item_ids': ['Q21714344', 'Q146786', 'Q3502544', 'Q442485', 'Q1317831'],
             },
             {
                 'label': '2. Person Plural Konjunktiv II',
                 'example': 'Ich dachte, ihr [trüget/trügt].',
-                'grammatical_features_item_ids': ['Q51929049', 'Q146786', 'Q54671845', 'Q442485', 'Q1317831'],
+                'grammatical_features_item_ids': ['Q51929049', 'Q146786', 'Q3502544', 'Q442485', 'Q1317831'],
             },
             {
                 'label': '3. Person Plural Konjunktiv II',
                 'example': 'Ich dachte, sie [trügen].',
-                'grammatical_features_item_ids': ['Q51929074', 'Q146786', 'Q54671845', 'Q442485', 'Q1317831'],
+                'grammatical_features_item_ids': ['Q51929074', 'Q146786', 'Q3502544', 'Q442485', 'Q1317831'],
             },
             {
                 'label': '2. Person Singular Imperativ',
