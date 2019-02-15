@@ -862,32 +862,32 @@ templates = collections.OrderedDict([
             {
                 'label': '1. Person Singular Konjunktiv I',
                 'example': 'Angenommen, ich [trage].',
-                'grammatical_features_item_ids': ['Q21714344', 'Q110786', 'Q55685962', 'Q192613', 'Q1317831'],
+                'grammatical_features_item_ids': ['Q21714344', 'Q110786', 'Q3502553', 'Q192613', 'Q1317831'],
             },
             {
                 'label': '2. Person Singular Konjunktiv I',
                 'example': 'Angenommen, du [tragest].',
-                'grammatical_features_item_ids': ['Q51929049', 'Q110786', 'Q55685962', 'Q192613', 'Q1317831'],
+                'grammatical_features_item_ids': ['Q51929049', 'Q110786', 'Q3502553', 'Q192613', 'Q1317831'],
             },
             {
                 'label': '3. Person Singular Konjunktiv I',
                 'example': 'Angenommen, er/sie/es [trage].',
-                'grammatical_features_item_ids': ['Q51929074', 'Q110786', 'Q55685962', 'Q192613', 'Q1317831'],
+                'grammatical_features_item_ids': ['Q51929074', 'Q110786', 'Q3502553', 'Q192613', 'Q1317831'],
             },
             {
                 'label': '1. Person Plural Konjunktiv I',
                 'example': 'Angenommen, wir [tragen].',
-                'grammatical_features_item_ids': ['Q21714344', 'Q146786', 'Q55685962', 'Q192613', 'Q1317831'],
+                'grammatical_features_item_ids': ['Q21714344', 'Q146786', 'Q3502553', 'Q192613', 'Q1317831'],
             },
             {
                 'label': '2. Person Plural Konjunktiv I',
                 'example': 'Angenommen, ihr [traget].',
-                'grammatical_features_item_ids': ['Q51929049', 'Q146786', 'Q55685962', 'Q192613', 'Q1317831'],
+                'grammatical_features_item_ids': ['Q51929049', 'Q146786', 'Q3502553', 'Q192613', 'Q1317831'],
             },
             {
                 'label': '3. Person Plural Konjunktiv I',
                 'example': 'Angenommen, sie [tragen].',
-                'grammatical_features_item_ids': ['Q51929074', 'Q146786', 'Q55685962', 'Q192613', 'Q1317831'],
+                'grammatical_features_item_ids': ['Q51929074', 'Q146786', 'Q3502553', 'Q192613', 'Q1317831'],
             },
             {
                 'label': '1. Person Singular Konjunktiv II',
