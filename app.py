@@ -344,8 +344,8 @@ def add_form_data_to_template(form_data, template):
         form['value'] = form_representation
     if 'lexeme_id' in form_data:
         template['lexeme_id'] = form_data['lexeme_id']
-    if 'via' in form_data:
-        template['via'] = form_data['via']
+    if 'generated_via' in form_data:
+        template['generated_via'] = form_data['generated_via']
     return template
 
 def if_needs_csrf_redirect(template, advanced, form_data):

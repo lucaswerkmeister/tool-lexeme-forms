@@ -40,11 +40,11 @@
       </div>
       {% endfor %}
     </dl>
-    {% if template.via %}
+    {% if template.generated_via %}
     <div class="form-group">
       <label class="text-muted">
         {{ message( 'generated_via' ) }}
-        <input name="generated_via" value="{{ template.via }}" readonly>
+        <input name="generated_via" value="{{ template.generated_via }}" readonly>
       </label>
     </div>
     {% endif %}
