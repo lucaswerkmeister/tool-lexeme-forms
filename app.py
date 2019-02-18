@@ -1,6 +1,5 @@
 import copy
 import flask
-import flask.json.tag
 import jinja2
 import json
 import mwapi
@@ -11,42 +10,13 @@ import re
 import requests_oauthlib
 import string
 import toolforge
-import werkzeug.datastructures
 import yaml
+
+from flask_utils import OrderedFlask, TagOrderedMultiDict, TagImmutableOrderedMultiDict
 from templates import templates
 from translations import translations
 
-class OrderedRequest(flask.Request):
-    """Request subclass to use ordered parameter storage"""
-    parameter_storage_class = werkzeug.datastructures.ImmutableOrderedMultiDict
-class OrderedFlask(flask.Flask):
-    """Flask subclass to use ordered parameter storage for requests"""
-    request_class = OrderedRequest
-
 app = OrderedFlask(__name__)
-
-class TagOrderedMultiDict(flask.json.tag.JSONTag):
-    __slots__ = ('serializer',)
-    key = ' omd'
-
-    def check(self, value):
-        return isinstance(value, werkzeug.datastructures.OrderedMultiDict)
-
-    def to_json(self, value):
-        return [(k, self.serializer.tag(v)) for k, v in value.items(multi=True)]
-
-    def to_python(self, value):
-        return werkzeug.datastructures.OrderedMultiDict(value)
-
-class TagImmutableOrderedMultiDict(TagOrderedMultiDict):
-    key = ' iomd'
-
-    def check(self, value):
-        return isinstance(value, werkzeug.datastructures.ImmutableOrderedMultiDict)
-
-    def to_python(self, value):
-        return werkzeug.datastructures.ImmutableOrderedMultiDict(value)
-
 app.session_interface.serializer.register(TagOrderedMultiDict, index=0)
 app.session_interface.serializer.register(TagImmutableOrderedMultiDict, index=0)
 
