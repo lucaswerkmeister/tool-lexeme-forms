@@ -191,6 +191,7 @@ translations = {
         'advanced_partial_forms': 'Możesz zostawić niektóre formy puste, dzięki czemu nie zostaną one dodane. Upewnij się, że przypadkowo nie pominąłeś żadnej formy!',
         'lexeme_id': 'ID leksemu',
         'advanced_partial_forms_hint': 'Aby utworzyć leksemy z pominięciem niektórych form, przełącz się na tryb zaawansowany.',
+        'generated_via': 'wygenerowane przez',
     },
     # translations by User:Infovarius, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Russian
     'ru': {
