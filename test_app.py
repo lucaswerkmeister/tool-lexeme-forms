@@ -228,25 +228,35 @@ def test_add_form_data_to_template_no_template_modification():
     assert template is not new_template
     assert 'lexeme_id' not in template
 
-def test_current_url_index():
+def test_current_url_index(monkeypatch):
+    monkeypatch.setitem(lexeme_forms.app.config, 'APPLICATION_ROOT', '/')
     with lexeme_forms.app.test_request_context('/'):
         current_url = lexeme_forms.current_url()
         assert current_url == 'http://localhost/'
 
-def test_current_url_index_https():
+def test_current_url_index_https(monkeypatch):
+    monkeypatch.setitem(lexeme_forms.app.config, 'APPLICATION_ROOT', '/')
     with lexeme_forms.app.test_request_context('/', headers=[('X-Forwarded-Proto', 'https')]):
         current_url = lexeme_forms.current_url()
         assert current_url == 'https://localhost/'
 
-def test_current_url_template():
+def test_current_url_template(monkeypatch):
+    monkeypatch.setitem(lexeme_forms.app.config, 'APPLICATION_ROOT', '/')
     with lexeme_forms.app.test_request_context('/template/foo/'):
         current_url = lexeme_forms.current_url()
         assert current_url == 'http://localhost/template/foo/'
 
-def test_current_url_template_advanced():
+def test_current_url_template_advanced(monkeypatch):
+    monkeypatch.setitem(lexeme_forms.app.config, 'APPLICATION_ROOT', '/')
     with lexeme_forms.app.test_request_context('/template/foo/advanced/'):
         current_url = lexeme_forms.current_url()
         assert current_url == 'http://localhost/template/foo/advanced/'
+
+def test_current_url_application_root(monkeypatch):
+    monkeypatch.setitem(lexeme_forms.app.config, 'APPLICATION_ROOT', '/foo/')
+    with lexeme_forms.app.test_request_context('/template/bar/'):
+        current_url = lexeme_forms.current_url()
+        assert current_url == 'http://localhost/foo/template/bar/'
 
 def test_build_lexeme():
     template = {
