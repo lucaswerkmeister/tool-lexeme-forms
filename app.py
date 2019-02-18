@@ -51,8 +51,6 @@ class TagImmutableOrderedMultiDict(TagOrderedMultiDict):
 app.session_interface.serializer.register(TagOrderedMultiDict, index=0)
 app.session_interface.serializer.register(TagImmutableOrderedMultiDict, index=0)
 
-app.before_request(toolforge.redirect_to_https)
-
 toolforge.set_user_agent('lexeme-forms', email='mail@lucaswerkmeister.de')
 user_agent = requests.utils.default_user_agent()
 
