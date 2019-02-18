@@ -1,3 +1,4 @@
+import flask
 import flask.json.tag
 import pytest
 import werkzeug.datastructures
@@ -20,3 +21,9 @@ def test_serializer(value):
 
     assert value == value_
     assert type(value) == type(value_)
+
+
+def test_ordered_request():
+    app = flask_utils.OrderedFlask(__name__)
+    with app.test_request_context('/?a=1&a=2&c=4&b=3'):
+        assert list(flask.request.args.items(multi=True)) == [('a', '1'), ('a', '2'), ('c', '4'), ('b', '3')]
