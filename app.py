@@ -8,7 +8,6 @@ import mwoauth
 import os
 import random
 import re
-import requests
 import requests_oauthlib
 import string
 import toolforge
@@ -51,8 +50,7 @@ class TagImmutableOrderedMultiDict(TagOrderedMultiDict):
 app.session_interface.serializer.register(TagOrderedMultiDict, index=0)
 app.session_interface.serializer.register(TagImmutableOrderedMultiDict, index=0)
 
-toolforge.set_user_agent('lexeme-forms', email='mail@lucaswerkmeister.de')
-user_agent = requests.utils.default_user_agent()
+user_agent = toolforge.set_user_agent('lexeme-forms', email='mail@lucaswerkmeister.de')
 
 __dir__ = os.path.dirname(__file__)
 try:

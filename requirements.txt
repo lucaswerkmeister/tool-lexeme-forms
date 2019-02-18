@@ -3,8 +3,7 @@ pyyaml
 mwoauth
 mwapi
 requests_oauthlib
-toolforge
-requests
+toolforge ~= 4.2
 jinja2
 pytest
 werkzeug
