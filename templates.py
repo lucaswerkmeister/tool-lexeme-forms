@@ -531,6 +531,295 @@ templates = collections.OrderedDict([
             },
         ],
     }),
+    # template by User:Strepon, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Czech
+    ('czech-adjective', {
+        'label': 'české přídavné jméno',
+        'language_item_id': 'Q9056',
+        'language_code': 'cs',
+        'lexical_category_item_id': 'Q34698',
+        'forms': [
+            {
+                'label': '1. pád, rod mužský životný, jednotné číslo',
+                'example': 'To je můj [velký] pes.',
+                'grammatical_features_item_ids': ['Q131105', 'Q110786', 'Q54020116'],
+            },
+            {
+                'label': '2. pád, rod mužský životný, jednotné číslo',
+                'example': 'Má strach z mého [velkého] psa.',
+                'grammatical_features_item_ids': ['Q146233', 'Q110786', 'Q54020116'],
+            },
+            {
+                'label': '3. pád, rod mužský životný, jednotné číslo',
+                'example': 'Dej to mému [velkému] psu.',
+                'grammatical_features_item_ids': ['Q145599', 'Q110786', 'Q54020116'],
+            },
+            {
+                'label': '4. pád, rod mužský životný, jednotné číslo',
+                'example': 'Vidím jednoho [velkého] psa.',
+                'grammatical_features_item_ids': ['Q146078', 'Q110786', 'Q54020116'],
+            },
+            {
+                'label': '5. pád, rod mužský životný, jednotné číslo',
+                'example': 'Kam kráčíš, [velký] pse?',
+                'grammatical_features_item_ids': ['Q185077', 'Q110786', 'Q54020116'],
+            },
+            {
+                'label': '6. pád, rod mužský životný, jednotné číslo',
+                'example': 'Pověz mi něco o svém [velkém] psu.',
+                'grammatical_features_item_ids': ['Q202142', 'Q110786', 'Q54020116'],
+            },
+            {
+                'label': '7. pád, rod mužský životný, jednotné číslo',
+                'example': 'Seznámil jsem se s tvým [velkým] psem.',
+                'grammatical_features_item_ids': ['Q192997', 'Q110786', 'Q54020116'],
+            },
+            {
+                'label': '1. pád, rod mužský neživotný, jednotné číslo',
+                'example': 'To je můj [velký] hrad.',
+                'grammatical_features_item_ids': ['Q131105', 'Q110786', 'Q54020181'],
+            },
+            {
+                'label': '2. pád, rod mužský neživotný, jednotné číslo',
+                'example': 'Má strach z mého [velkého] hradu.',
+                'grammatical_features_item_ids': ['Q146233', 'Q110786', 'Q54020181'],
+            },
+            {
+                'label': '3. pád, rod mužský neživotný, jednotné číslo',
+                'example': 'Dej to k mému [velkému] hradu.',
+                'grammatical_features_item_ids': ['Q145599', 'Q110786', 'Q54020181'],
+            },
+            {
+                'label': '4. pád, rod mužský neživotný, jednotné číslo',
+                'example': 'Vidím jeden [velký] hrad.',
+                'grammatical_features_item_ids': ['Q146078', 'Q110786', 'Q54020181'],
+            },
+            {
+                'label': '5. pád, rod mužský neživotný, jednotné číslo',
+                'example': 'Kam směřuješ, [velký] hrade?',
+                'grammatical_features_item_ids': ['Q185077', 'Q110786', 'Q54020181'],
+            },
+            {
+                'label': '6. pád, rod mužský neživotný, jednotné číslo',
+                'example': 'Pověz mi něco o svém [velkém] hradu.',
+                'grammatical_features_item_ids': ['Q202142', 'Q110786', 'Q54020181'],
+            },
+            {
+                'label': '7. pád, rod mužský neživotný, jednotné číslo',
+                'example': 'Seznámil jsem se s tvým [velkým] hradem.',
+                'grammatical_features_item_ids': ['Q192997', 'Q110786', 'Q54020181'],
+            },
+            {
+                'label': '1. pád, rod ženský, jednotné číslo',
+                'example': 'To je má [velká] žena.',
+                'grammatical_features_item_ids': ['Q131105', 'Q110786', 'Q1775415'],
+            },
+            {
+                'label': '2. pád, rod ženský, jednotné číslo',
+                'example': 'Má strach z mé [velké] ženy.',
+                'grammatical_features_item_ids': ['Q146233', 'Q110786', 'Q1775415'],
+            },
+            {
+                'label': '3. pád, rod ženský, jednotné číslo',
+                'example': 'Dej to mé [velké] ženě.',
+                'grammatical_features_item_ids': ['Q145599', 'Q110786', 'Q1775415'],
+            },
+            {
+                'label': '4. pád, rod ženský, jednotné číslo',
+                'example': 'Vidím jednu [velkou] ženu.',
+                'grammatical_features_item_ids': ['Q146078', 'Q110786', 'Q1775415'],
+            },
+            {
+                'label': '5. pád, rod ženský, jednotné číslo',
+                'example': 'Kam kráčíš, [velká] ženo?',
+                'grammatical_features_item_ids': ['Q185077', 'Q110786', 'Q1775415'],
+            },
+            {
+                'label': '6. pád, rod ženský, jednotné číslo',
+                'example': 'Pověz mi něco o své [velké] ženě.',
+                'grammatical_features_item_ids': ['Q202142', 'Q110786', 'Q1775415'],
+            },
+            {
+                'label': '7. pád, rod ženský, jednotné číslo',
+                'example': 'Seznámil jsem se s tvou [velkou] ženou.',
+                'grammatical_features_item_ids': ['Q192997', 'Q110786', 'Q1775415'],
+            },
+            {
+                'label': '1. pád, rod střední, jednotné číslo',
+                'example': 'To je mé [velké] kuře.',
+                'grammatical_features_item_ids': ['Q131105', 'Q110786', 'Q1775461'],
+            },
+            {
+                'label': '2. pád, rod střední, jednotné číslo',
+                'example': 'Má strach z mého [velkého] kuřete.',
+                'grammatical_features_item_ids': ['Q146233', 'Q110786', 'Q1775461'],
+            },
+            {
+                'label': '3. pád, rod střední, jednotné číslo',
+                'example': 'Dej to mému [velkému] kuřeti.',
+                'grammatical_features_item_ids': ['Q145599', 'Q110786', 'Q1775461'],
+            },
+            {
+                'label': '4. pád, rod střední, jednotné číslo',
+                'example': 'Vidím jedno [velké] kuře.',
+                'grammatical_features_item_ids': ['Q146078', 'Q110786', 'Q1775461'],
+            },
+            {
+                'label': '5. pád, rod střední, jednotné číslo',
+                'example': 'Kam kráčíš, [velké] kuře?',
+                'grammatical_features_item_ids': ['Q185077', 'Q110786', 'Q1775461'],
+            },
+            {
+                'label': '6. pád, rod střední, jednotné číslo',
+                'example': 'Pověz mi něco o svém [velkém] kuřeti.',
+                'grammatical_features_item_ids': ['Q202142', 'Q110786', 'Q1775461'],
+            },
+            {
+                'label': '7. pád, rod střední, jednotné číslo',
+                'example': 'Seznámil jsem se s tvým [velkým] kuřetem.',
+                'grammatical_features_item_ids': ['Q192997', 'Q110786', 'Q1775461'],
+            },
+            {
+                'label': '1. pád, rod mužský životný, množné číslo',
+                'example': 'To jsou moji [velcí] psi.',
+                'grammatical_features_item_ids': ['Q131105', 'Q146786', 'Q54020116'],
+            },
+            {
+                'label': '2. pád, rod mužský životný, množné číslo',
+                'example': 'Má strach z mých [velkých] psů.',
+                'grammatical_features_item_ids': ['Q146233', 'Q146786', 'Q54020116'],
+            },
+            {
+                'label': '3. pád, rod mužský životný, množné číslo',
+                'example': 'Dej to mým [velkým] psům.',
+                'grammatical_features_item_ids': ['Q145599', 'Q146786', 'Q54020116'],
+            },
+            {
+                'label': '4. pád, rod mužský životný, množné číslo',
+                'example': 'Vidím dva [velké] psy.',
+                'grammatical_features_item_ids': ['Q146078', 'Q146786', 'Q54020116'],
+            },
+            {
+                'label': '5. pád, rod mužský životný, množné číslo',
+                'example': 'Kam kráčíte, [velcí] psi?',
+                'grammatical_features_item_ids': ['Q185077', 'Q146786', 'Q54020116'],
+            },
+            {
+                'label': '6. pád, rod mužský životný, množné číslo',
+                'example': 'Pověz mi něco o svých [velkých] psech.',
+                'grammatical_features_item_ids': ['Q202142', 'Q146786', 'Q54020116'],
+            },
+            {
+                'label': '7. pád, rod mužský životný, množné číslo',
+                'example': 'Seznámil jsem se s tvými [velkými] psy.',
+                'grammatical_features_item_ids': ['Q192997', 'Q146786', 'Q54020116'],
+            },
+            {
+                'label': '1. pád, rod mužský neživotný, množné číslo',
+                'example': 'To jsou mé [velké] hrady.',
+                'grammatical_features_item_ids': ['Q131105', 'Q146786', 'Q54020181'],
+            },
+            {
+                'label': '2. pád, rod mužský neživotný, množné číslo',
+                'example': 'Má strach z mých [velkých] hradů.',
+                'grammatical_features_item_ids': ['Q146233', 'Q146786', 'Q54020181'],
+            },
+            {
+                'label': '3. pád, rod mužský neživotný, množné číslo',
+                'example': 'Dej to k mým [velkým] hradům.',
+                'grammatical_features_item_ids': ['Q145599', 'Q146786', 'Q54020181'],
+            },
+            {
+                'label': '4. pád, rod mužský neživotný, množné číslo',
+                'example': 'Vidím dva [velké] hrady.',
+                'grammatical_features_item_ids': ['Q146078', 'Q146786', 'Q54020181'],
+            },
+            {
+                'label': '5. pád, rod mužský neživotný, množné číslo',
+                'example': 'Kam směřujete, [velké] hrady?',
+                'grammatical_features_item_ids': ['Q185077', 'Q146786', 'Q54020181'],
+            },
+            {
+                'label': '6. pád, rod mužský neživotný, množné číslo',
+                'example': 'Pověz mi něco o svých [velkých] hradech.',
+                'grammatical_features_item_ids': ['Q202142', 'Q146786', 'Q54020181'],
+            },
+            {
+                'label': '7. pád, rod mužský neživotný, množné číslo',
+                'example': 'Seznámil jsem se s tvými [velkými] hrady.',
+                'grammatical_features_item_ids': ['Q192997', 'Q146786', 'Q54020181'],
+            },
+            {
+                'label': '1. pád, rod ženský, množné číslo',
+                'example': 'To jsou mé [velké] ženy.',
+                'grammatical_features_item_ids': ['Q131105', 'Q146786', 'Q1775415'],
+            },
+            {
+                'label': '2. pád, rod ženský, množné číslo',
+                'example': 'Má strach z mých [velkých] žen.',
+                'grammatical_features_item_ids': ['Q146233', 'Q146786', 'Q1775415'],
+            },
+            {
+                'label': '3. pád, rod ženský, množné číslo',
+                'example': 'Dej to mým [velkým] ženám.',
+                'grammatical_features_item_ids': ['Q145599', 'Q146786', 'Q1775415'],
+            },
+            {
+                'label': '4. pád, rod ženský, množné číslo',
+                'example': 'Vidím dvě [velké] ženy.',
+                'grammatical_features_item_ids': ['Q146078', 'Q146786', 'Q1775415'],
+            },
+            {
+                'label': '5. pád, rod ženský, množné číslo',
+                'example': 'Kam kráčíte, [velké] ženy?',
+                'grammatical_features_item_ids': ['Q185077', 'Q146786', 'Q1775415'],
+            },
+            {
+                'label': '6. pád, rod ženský, množné číslo',
+                'example': 'Pověz mi něco o svých [velkých] ženách.',
+                'grammatical_features_item_ids': ['Q202142', 'Q146786', 'Q1775415'],
+            },
+            {
+                'label': '7. pád, rod ženský, množné číslo',
+                'example': 'Seznámil jsem se s tvými [velkými] ženami.',
+                'grammatical_features_item_ids': ['Q192997', 'Q146786', 'Q1775415'],
+            },
+            {
+                'label': '1. pád, rod střední, množné číslo',
+                'example': 'To jsou má [velká] kuřata.',
+                'grammatical_features_item_ids': ['Q131105', 'Q146786', 'Q1775461'],
+            },
+            {
+                'label': '2. pád, rod střední, množné číslo',
+                'example': 'Má strach z mých [velkých] kuřat.',
+                'grammatical_features_item_ids': ['Q146233', 'Q146786', 'Q1775461'],
+            },
+            {
+                'label': '3. pád, rod střední, množné číslo',
+                'example': 'Dej to mým [velkým] kuřatům.',
+                'grammatical_features_item_ids': ['Q145599', 'Q146786', 'Q1775461'],
+            },
+            {
+                'label': '4. pád, rod střední, množné číslo',
+                'example': 'Vidím dvě [velká] kuřata.',
+                'grammatical_features_item_ids': ['Q146078', 'Q146786', 'Q1775461'],
+            },
+            {
+                'label': '5. pád, rod střední, množné číslo',
+                'example': 'Kam kráčíte, [velká] kuřata?',
+                'grammatical_features_item_ids': ['Q185077', 'Q146786', 'Q1775461'],
+            },
+            {
+                'label': '6. pád, rod střední, množné číslo',
+                'example': 'Pověz mi něco o svých [velkých] kuřatech.',
+                'grammatical_features_item_ids': ['Q202142', 'Q146786', 'Q1775461'],
+            },
+            {
+                'label': '7. pád, rod střední, množné číslo',
+                'example': 'Seznámil jsem se s tvými [velkými] kuřaty.',
+                'grammatical_features_item_ids': ['Q192997', 'Q146786', 'Q1775461'],
+            },
+        ],
+    }),
     # template by Lucas Werkmeister
     ('german-noun-masculine', {
         'label': 'deutsches Substantiv (Maskulinum)',
