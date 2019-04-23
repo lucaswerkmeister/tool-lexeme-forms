@@ -27,19 +27,20 @@ translations = {
         'advanced_partial_forms': 'Puedes dexar en blancu delles formes pa que nun s\'añadan. ¡Asegúrate de nun escaecer nenguna forma accidentalmente!',
         'lexeme_id': 'Identificador',
     },
-    # translations by User:Lexicolover, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Czech
+    # translations by User:Lexicolover and User:Matěj Suchánek, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Czech
     'cs': {
         'create': 'Vytvořit',
-        'csrf_warning': 'Bohužel se nám nepodařilo vykonat požadavek. (<abbr title="Cross-site request forgery">CSRF</abbr> ochrana selhala). Zkuste prosím odeslat formulář znovu.',
+        'csrf_warning': 'Bohužel se nám nepodařilo vykonat požadavek (<abbr title="Cross-site request forgery">CSRF</abbr> ochrana selhala). Zkuste prosím odeslat formulář znovu.',
         'duplicates_warning': 'Pokoušíte se vytvořit lexém, který má stejné lemma a jazyk jako už existující lexémy:',
         'duplicates_instructions': 'Jste-li si jisti, že zadávaný lexém je odlišný, zatrhněte pole na konci formuláře.',
-        'no_duplicate': 'Tento lexém není duplicitní k jjiž existujícímu lexému.',
+        'no_duplicate': 'Tento lexém není duplicitní k již existujícímu lexému.',
         'advanced': 'Pokročilé',
-        'advanced_general': 'Nacházíte se v „pokročilém” režimu.',
+        'advanced_general': 'Nacházíte se v „pokročilém“ režimu.',
         'advanced_lexeme_id': 'Zde můžete zadat ID lexému, ke kterému chcete přidat chybějící tvary, namísto vytvoření nového. Veškeré tvary, které jsou již u lexému vyplněné, nechte prázdné, jinak budou vytvořeny jako duplicitní!',
         'advanced_partial_forms': 'Některé tvary můžete nechat prázdné a tyto pak nebudou přidány do lexému. Ujistěte se, že omylem nevynecháte některý tvar!',
         'lexeme_id': 'ID lexému',
         'advanced_partial_forms_hint': 'Chcete-li vytvořit lexém bez některých tvarů, přepněte do pokročilého režimu.',
+        'generated_via': 'vygenerováno pomocí',
     },
     # translations by Lucas Werkmeister
     'de': {
