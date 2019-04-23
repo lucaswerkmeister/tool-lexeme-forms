@@ -124,19 +124,19 @@ translations = {
         'lexeme_id': 'Lekseemi-tunniste',
         'advanced_partial_forms_hint': 'Luodaksesi lekseemin ilman joitakin taivutusmuotoja, siirry laajennettuun muokkaustilaan.',
     },
-    # translations by User:Emptyfear, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Armenian
+    # translations by User:Emptyfear and User:Kareyac, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Armenian
     'hy': {
         'create': 'Ստեղծել',
         'csrf_warning': 'Ցավոք, հարցումը հնարավոր չէ իրականացնել (<abbr title="Cross-site request forgery">CSRF</abbr> պաշտպանությունը ձախողվեց)։ Փորձեք ձևաթուղթը կրկին պահպանել։',
-        'duplicates_warning': 'Հետևյալ լեքսեմներն ունեն նույն լեման և լեզվական կոդը, որոնք դուք ցանկանում եք ստեղծել:',
+        'duplicates_warning': 'Հետևյալ բառույթներն ունեն նույն լեման և լեզվական կոդը, որոնք դուք ցանկանում եք ստեղծել:',
         'duplicates_instructions': 'Եթե համոզված եք, որ դրանք տարբեր են՝ տես ձևաթղթի ներքևի նշասալիկը։',
         'no_duplicate': 'Սա առկա լեմայի կրկնօրինակ չէ։',
         'advanced': 'Ընդլայնված',
         'advanced_general': 'Դուք ընդլայնված տարբերակում եք',
-        'advanced_lexeme_id': 'Նոր լեքսեմ ստեղծելու փոխարեն՝ կարող եք ID֊ն նշել՝ արդեն գոյություն ունեցող լեքսեմին ձևեր ավելացնելու համար։ Արդեն գոյություն ունեցող լեքսեմի ձևերը դատարկ թողեք, թե չէ կկրկնօրինակվեն։',
+        'advanced_lexeme_id': 'Նոր բառույթ ստեղծելու փոխարեն՝ կարող եք ID֊ն նշել՝ արդեն գոյություն ունեցող բառույթին ձևեր ավելացնելու համար։ Արդեն գոյություն ունեցող բառույթի ձևերը դատարկ թողեք, թե չէ կկրկնօրինակվեն։',
         'advanced_partial_forms': 'Դուք կարող եք որոշ ձևեր դատարկ թողնել․ դրանք չեն ավելացվի։',
-        'lexeme_id': 'Լեքսեմի ID',
-        'advanced_partial_forms_hint': 'Որոշ ձևերի բացակայությամբ լեքսեմներ ստեղծելու համար՝ գնացեք ընդլայնված տարբերակ։',
+        'lexeme_id': 'Բառույթի ID',
+        'advanced_partial_forms_hint': 'Որոշ ձևերի բացակայությամբ բառույթներ ստեղծելու համար՝ գնացեք ընդլայնված տարբերակ։',
     },
     # translations by User:Sannita, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Italian
     'it': {
