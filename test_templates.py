@@ -1,6 +1,8 @@
 import mwapi
 
 import templates
+import translations
+
 
 def test_entities_exist():
     entity_ids = set()
@@ -30,3 +32,13 @@ def test_entities_exist():
                 missing_entity_ids.add(entity_id)
 
     assert not missing_entity_ids
+
+
+def test_translations_available():
+    missing_language_codes = set()
+    for template in templates.templates.values():
+        language_code = template['language_code']
+        if language_code not in translations.translations:
+            missing_language_codes.add(language_code)
+
+    assert not missing_language_codes
