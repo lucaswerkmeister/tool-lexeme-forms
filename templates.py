@@ -2359,6 +2359,202 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+    # template by User:MarcoSwart, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Dutch
+    ('dutch-neuter-noun', {
+        'label': 'Nederlands onzijdig zelfstandig naamwoord',
+        'language_item_id': 'Q7411',
+        'language_code': 'nl',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'enkelvoud',
+                'example': 'Dit is het [huis].',
+                'grammatical_features_item_ids': ['Q110786', 'Q1775461'],
+            },
+            {
+                'label': 'meervoud',
+                'example': 'Dit zijn de [huizen].',
+                'grammatical_features_item_ids': ['Q146786'],
+            },
+            {
+                'label': 'verkleinwoord, enkelvoud',
+                'example': 'Dit is het kleine [huisje].',
+                'grammatical_features_item_ids': ['Q108709', 'Q110786', 'Q1775461'],
+            },
+            {
+                'label': 'verkleinwoord, meervoud',
+                'example': 'Dit zijn de kleine [huisjes].',
+                'grammatical_features_item_ids': ['Q108709', 'Q146786'],
+            },
+        ],
+        'claims': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q1775461',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
+    # template by User:MarcoSwart, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Dutch
+    ('dutch-masculine-noun', {
+        'label': 'Nederlands strikt mannelijk zelfstandig naamwoord',
+        'language_item_id': 'Q7411',
+        'language_code': 'nl',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'enkelvoud',
+                'example': 'Dit is de [man].',
+                'grammatical_features_item_ids': ['Q110786', 'Q499327'],
+            },
+            {
+                'label': 'meervoud',
+                'example': 'Dit zijn de [mannen].',
+                'grammatical_features_item_ids': ['Q146786'],
+            },
+            {
+                'label': 'verkleinwoord, enkelvoud',
+                'example': 'Dit is het kleine [mannetje].',
+                'grammatical_features_item_ids': ['Q108709', 'Q110786', 'Q1775461'],
+            },
+            {
+                'label': 'verkleinwoord, meervoud',
+                'example': 'Dit zijn de kleine [mannetjes].',
+                'grammatical_features_item_ids': ['Q108709', 'Q146786'],
+            },
+        ],
+        'claims': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q499327',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
+    # template by User:MarcoSwart, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Dutch
+    ('dutch-feminine-noun', {
+        'label': 'Nederlands strikt vrouwelijk zelfstandig naamwoord',
+        'language_item_id': 'Q7411',
+        'language_code': 'nl',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'enkelvoud',
+                'example': 'Dit is de [vrouw].',
+                'grammatical_features_item_ids': ['Q110786', 'Q1775415'],
+            },
+            {
+                'label': 'meervoud',
+                'example': 'Dit zijn de [vrouwen].',
+                'grammatical_features_item_ids': ['Q146786'],
+            },
+            {
+                'label': 'verkleinwoord, enkelvoud',
+                'example': 'Dit is het kleine [vrouwtje].',
+                'grammatical_features_item_ids': ['Q108709', 'Q110786', 'Q1775461'],
+            },
+            {
+                'label': 'verkleinwoord, meervoud',
+                'example': 'Dit zijn de kleine [vrouwtjes].',
+                'grammatical_features_item_ids': ['Q108709', 'Q146786'],
+            },
+        ],
+        'claims': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q1775415',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
+    # template by User:MarcoSwart, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Dutch
+    ('dutch-fem2masc-noun', {
+        'label': 'Nederlands v/m zelfstandig naamwoord',
+        'language_item_id': 'Q7411',
+        'language_code': 'nl',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'enkelvoud',
+                'example': 'Dit is de [tafel].',
+                'grammatical_features_item_ids': ['Q110786', 'Q64448167'],
+            },
+            {
+                'label': 'meervoud',
+                'example': 'Dit zijn de [tafels].',
+                'grammatical_features_item_ids': ['Q146786'],
+            },
+            {
+                'label': 'verkleinwoord, enkelvoud',
+                'example': 'Dit is het kleine [tafeltje].',
+                'grammatical_features_item_ids': ['Q108709', 'Q110786', 'Q1775461'],
+            },
+            {
+                'label': 'verkleinwoord, meervoud',
+                'example': 'Dit zijn de kleine [tafeltjes].',
+                'grammatical_features_item_ids': ['Q108709', 'Q146786'],
+            },
+        ],
+        'claims': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q64448167',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
     # template by User:Njardarlogar, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Norwegian_Nynorsk
     ('nynorsk-noun-feminine', {
         'label': 'nynorsk hokjønnssubstantiv',

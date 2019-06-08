@@ -166,6 +166,21 @@ translations = {
         'lexeme_id': 'Numerus verbi',
         'advanced_partial_forms_hint': 'Ut facere verbi quae aliqui formas desunt, adi modo amplificatum.',
     },
+    # translations by User:MarcoSwart, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Dutch
+    'nl': {
+        'create': 'Aanmaken',
+        'csrf_warning': 'Sorry, we konden dit niet verwerken (door de <abbr title="Cross-site request forgery">CSRF</abbr>-bescherming). Probeer het webformulier nog eens aan te bieden.',
+        'duplicates_warning': 'Je probeert een lexeem aan te maken met hetzelfde lemmawoord en taalcode als een of meer bestaande lexemen:',
+        'duplicates_instructions': 'Weet je zeker dat je echt iets anders aanmaakt? Kruis dan het vakje voor de laatste regel aan.',
+        'no_duplicate': 'Dit is geen doublure van een lexeem dat al bestaat.',
+        'advanced': 'Geavanceerd',
+        'advanced_general': 'Geavanceerde mogelijkheden.',
+        'advanced_lexeme_id': 'Vul een lexeem ID in om woordvormen aan een bestaand lexeem toe te voegen. Woordvormen die het lexeem al heeft hier niet invullen, want dat geeft een doublure.',
+        'advanced_partial_forms': 'Als je woordvormen niet invult, worden ze niet toegevoegd. Let op dat je niet per ongeluk een woordvorm vergeet!',
+        'lexeme_id': 'Lexeem-ID',
+        'advanced_partial_forms_hint': 'Ga naar "Geavanceerd" als je een lexeem wil maken waarin een of meer woordvormen ontbreken.',
+        'generated_via': 'gegenereerd door',
+    },
     # translations by User:Njardarlogar, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Norwegian_Nynorsk
     'nn': {
         'create': 'Opprett',
