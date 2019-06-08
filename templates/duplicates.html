@@ -3,7 +3,7 @@
   {{ message( 'duplicates_warning' ) }}
   <ul>
     {% for duplicate in duplicates %}
-    <li><a href="{{ duplicate.uri }}">{{ duplicate.label }} ({{ duplicate.id }})</a>, {{ duplicate.description }}</li>
+    <li><a href="{{ duplicate.uri }}">{{ duplicate.label }} ({{ duplicate.id }})</a>, {{ duplicate.description | augment_description(duplicate.forms_count, duplicate.senses_count) }}</li>
     {% endfor %}
   </ul>
   {{ message( 'duplicates_instructions' ) }}

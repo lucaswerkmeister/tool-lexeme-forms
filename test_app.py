@@ -123,7 +123,7 @@ def test_get_lemma_no_form_representation():
     assert lemma is None
 
 def test_get_duplicates_api_json(monkeypatch):
-    duplicates = [{'id': 'L1', 'uri': 'http://www.wikidata.org/wiki/Lexeme:L1', 'label': 'lemma', 'description': 'a lexeme'}]
+    duplicates = [{'id': 'L1', 'uri': 'http://www.wikidata.org/wiki/Lexeme:L1', 'label': 'lemma', 'description': 'a lexeme', 'forms_count': None, 'senses_count': None}]
     monkeypatch.setattr(lexeme_forms, 'get_duplicates', lambda wiki, language_code, lemma: duplicates)
     with lexeme_forms.app.test_client() as client:
         response = client.get('/api/v1/duplicates/www/en/lemma')
@@ -131,7 +131,7 @@ def test_get_duplicates_api_json(monkeypatch):
     assert json.loads(response.get_data(as_text=True)) == duplicates
 
 def test_get_duplicates_api_html(monkeypatch):
-    duplicates = [{'id': 'L1', 'uri': 'http://www.wikidata.org/wiki/Lexeme:L1', 'label': 'test lemma', 'description': 'a test lexeme'}]
+    duplicates = [{'id': 'L1', 'uri': 'http://www.wikidata.org/wiki/Lexeme:L1', 'label': 'test lemma', 'description': 'a test lexeme', 'forms_count': None, 'senses_count': None}]
     monkeypatch.setattr(lexeme_forms, 'get_duplicates', lambda wiki, language_code, lemma: duplicates)
     with lexeme_forms.app.test_client() as client:
         response = client.get('/api/v1/duplicates/www/de/lemma', headers={'Accept': 'text/html'})

@@ -1,3 +1,4 @@
+import collections
 import copy
 import flask
 import jinja2
@@ -105,6 +106,13 @@ def render_duplicates(duplicates, language_code):
         'duplicates.html',
         duplicates=duplicates,
     )
+
+@app.template_filter()
+def augment_description(description, forms_count, senses_count):
+    if forms_count is None or senses_count is None:
+        return description
+    template = message('description_with_forms_and_senses')
+    return template.format(description=description, forms=forms_count, senses=senses_count)
 
 @app.template_global()
 def csrf_token():
@@ -283,12 +291,25 @@ def get_duplicates(wiki, language_code, lemma):
         type='lexeme',
         limit=50,
     )
-    matches = []
+    matches = collections.OrderedDict()
     for result in response['search']:
         if result['label'] == lemma and result['match']['language'] == language_code:
-            matches.append({'id': result['id'], 'uri': result['concepturi'], 'label': result['label'], 'description': result['description']})
+            matches[result['id']] = {'id': result['id'], 'uri': result['concepturi'], 'label': result['label'], 'description': result['description']}
 
-    return matches
+    if matches:
+        response = session.get( # no, this can’t be combined with the previous call by using generator=wbsearch – then we don’t get the match language
+            action='query',
+            titles=['Lexeme:' + id for id in matches],
+            prop=['pageprops'],
+            ppprop=['wbl-forms', 'wbl-senses'],
+        )
+        for page in response['query']['pages'].values():
+            id = page['title'][len('Lexeme:'):]
+            pageprops = page.get('pageprops', {})
+            matches[id]['forms_count'] = pageprops.get('wbl-forms')
+            matches[id]['senses_count'] = pageprops.get('wbl-senses')
+
+    return matches.values()
 
 @app.route('/api/v1/no_duplicate/<language_code>')
 @app.template_global()
