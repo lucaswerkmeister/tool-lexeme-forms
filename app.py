@@ -14,6 +14,7 @@ import toolforge
 import yaml
 
 from flask_utils import OrderedFlask, TagOrderedMultiDict, TagImmutableOrderedMultiDict
+from formatters import PluralFormatter
 from templates import templates
 from translations import translations
 
@@ -111,8 +112,13 @@ def render_duplicates(duplicates, language_code):
 def augment_description(description, forms_count, senses_count):
     if forms_count is None or senses_count is None:
         return description
-    template = message('description_with_forms_and_senses')
-    return template.format(description=description, forms=forms_count, senses=senses_count)
+    template, language = message_with_language('description_with_forms_and_senses')
+    return PluralFormatter(language).format(
+        template,
+        description=description,
+        forms=int(forms_count),
+        senses=int(senses_count),
+    )
 
 @app.template_global()
 def csrf_token():
@@ -148,9 +154,15 @@ def render_oauth_username():
 
 @app.template_global()
 def message(message_code):
+    message, language = message_with_language(message_code)
+    return message
+
+def message_with_language(message_code):
     language_code = flask.g.language_code
-    text = translations[language_code].get(message_code, translations['en'][message_code])
-    return flask.Markup(text)
+    if message_code not in translations[language_code]:
+        language_code = 'en'
+    text = translations[language_code][message_code]
+    return flask.Markup(text), language_code
 
 @app.route('/')
 def index():

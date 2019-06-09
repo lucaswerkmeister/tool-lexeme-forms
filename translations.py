@@ -13,7 +13,7 @@ translations = {
         'lexeme_id': 'Lexeme ID',
         'advanced_partial_forms_hint': 'To create lexemes with some forms missing, switch to advanced mode.',
         'generated_via': 'generated via',
-        'description_with_forms_and_senses': '{description}, {forms} form(s) and {senses} sense(s)',
+        'description_with_forms_and_senses': '{description}, {forms} {forms!p:one=form:other=forms} and {senses} {senses!p:one=sense:other=senses}',
     },
     # translations by User:Oriciu, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Asturian
     'ast': {
