@@ -1,3 +1,4 @@
+babel
 flask
 pyyaml
 mwoauth
