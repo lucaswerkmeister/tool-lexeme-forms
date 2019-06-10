@@ -31,7 +31,7 @@ translations = {
     # translations by User:Lexicolover and User:Matěj Suchánek, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Czech
     'cs': {
         'create': 'Vytvořit',
-        'csrf_warning': 'Bohužel se nám nepodařilo vykonat požadavek (<abbr title="Cross-site request forgery">CSRF</abbr> ochrana selhala). Zkuste prosím odeslat formulář znovu.',
+        'csrf_warning': 'Bohužel se nám nepodařilo vykonat požadavek (ochrana před <abbr title="Cross-site request forgery">CSRF</abbr> selhala). Zkuste prosím odeslat formulář znovu.',
         'duplicates_warning': 'Pokoušíte se vytvořit lexém, který má stejné lemma a jazyk jako už existující lexémy:',
         'duplicates_instructions': 'Jste-li si jisti, že zadávaný lexém je odlišný, zatrhněte pole na konci formuláře.',
         'no_duplicate': 'Tento lexém není duplicitní k již existujícímu lexému.',
@@ -42,6 +42,7 @@ translations = {
         'lexeme_id': 'ID lexému',
         'advanced_partial_forms_hint': 'Chcete-li vytvořit lexém bez některých tvarů, přepněte do pokročilého režimu.',
         'generated_via': 'vygenerováno pomocí',
+        'description_with_forms_and_senses': '{description}, {forms!p:0=žádné tvary:one=jeden tvar:few={forms} tvary:other=tvarů} a {senses!p:0=žádné významy:one=jeden význam:few={senses} významy:other={senses} významů}',
     },
     # translations by Lucas Werkmeister
     'de': {
