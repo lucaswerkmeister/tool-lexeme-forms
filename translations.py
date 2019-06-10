@@ -57,6 +57,8 @@ translations = {
         'advanced_partial_forms': 'Du kannst einige Formen leer lassen, so dass sie nicht hinzugefügt werden. Stelle sicher, dass du nicht aus Versehen welche weglässt!',
         'lexeme_id': 'Lexem-ID',
         'advanced_partial_forms_hint': 'Um Lexeme zu erstellen, denen einige Formen fehlen, wechsle in den erweiterten Modus.',
+        'generated_via': 'generiert durch',
+        'description_with_forms_and_senses': '{description}, {forms!p:0=keine Formen:one=eine Form:other={forms} Formen}, {senses!p:0=keine Senses:one=ein Sense:other={senses} Senses}',
     },
     # translations by User:Jens Ohlig, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Esperanto
     'eo': {
