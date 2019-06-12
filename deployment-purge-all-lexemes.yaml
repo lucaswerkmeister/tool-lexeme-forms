@@ -1,0 +1,32 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: lexeme-forms.purge-all-lexemes
+  namespace: lexeme-forms
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: lexeme-forms.purge-all-lexemes
+    spec:
+      containers:
+        - name: purge-all-lexemes
+          image: docker-registry.tools.wmflabs.org/toollabs-python35-base:latest
+          command: [ '/bin/bash', '-c' ]
+          args:
+            # venvs are not position-independent, so we build our own instead of
+            # mounting /data/project/lexeme-forms/www/python/venv somewhere
+            - python3 -m venv /tmp/venv &&
+              source /tmp/venv/bin/activate &&
+              pip install --upgrade pip &&
+              pip install -r /srv/lexeme-forms/requirements.txt &&
+              exec python3 /srv/lexeme-forms/purge-all-lexemes.py
+          volumeMounts:
+            - name: src
+              mountPath: '/srv/lexeme-forms/'
+              readOnly: true
+      volumes:
+        - name: src
+          hostPath:
+            path: '/data/project/lexeme-forms/www/python/src/'
