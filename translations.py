@@ -226,6 +226,8 @@ translations = {
         'advanced_partial_forms': 'Вы можете оставить некоторые формы пустыми, чтобы они не были добавлены. Убедитесь, что вы не сделали этого случайно!',
         'lexeme_id': 'ID лексемы',
         'advanced_partial_forms_hint': 'Чтобы создать лексемы без некоторых форм, переключитесь в продвинутый режим.',
+        'generated_via': 'сгенерировано с помощью',
+        'description_with_forms_and_senses': '{description}, {forms!p:0=нет форм:one=одна форма:few={forms} формы:many={forms} форм} и {senses!p:0=нет значений:one=одно значение:few={senses} значения:many={senses} значений}',
     },
     # translations by User:Vesihiisi, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Swedish
     'sv': {
