@@ -1,15 +1,15 @@
 apiVersion: extensions/v1beta1
-kind: Deployment
+kind: Job
 metadata:
   name: lexeme-forms.purge-all-lexemes
   namespace: lexeme-forms
 spec:
-  replicas: 1
   template:
     metadata:
       labels:
         name: lexeme-forms.purge-all-lexemes
     spec:
+      restartPolicy: OnFailure
       containers:
         - name: purge-all-lexemes
           image: docker-registry.tools.wmflabs.org/toollabs-python35-base:latest
