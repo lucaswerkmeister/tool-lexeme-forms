@@ -3189,6 +3189,380 @@ templates = collections.OrderedDict([
             },
         ],
     }),
+    # template by User:Carybe and User:Joalpe, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Portuguese
+    ('portuguese-verb', {
+        'label': 'verbo em Português',
+        'language_item_id': 'Q5146',
+        'language_code': 'pt',
+        'lexical_category_item_id': 'Q24905',
+        'forms': [
+            {
+                'label': 'Infinitivo Impessoal',
+                'example': 'O [cantar] do golfinhos é belo.',
+                'grammatical_features_item_ids': ['Q64003131'],
+            },
+            {
+                'label': 'Gerúndio',
+                'example': 'Ele estava [cantando] no chuveiro.',
+                'grammatical_features_item_ids': ['Q1923028'],
+            },
+            {
+                'label': 'Particípio',
+                'example': 'Estava sem voz, pois havia [cantado] mais cedo.',
+                'grammatical_features_item_ids': ['Q814722'],
+            },
+            {
+                'label': 'Primeira Pessoa do Singular do Presente do Modo Indicativo',
+                'example': 'Eu [canto] às segundas-feiras.',
+                'grammatical_features_item_ids': ['Q21714344', 'Q110786', 'Q192613', 'Q682111'],
+            },
+            {
+                'label': 'Segunda Pessoa do Singular do Presente do Modo Indicativo',
+                'example': 'Tu [cantas] às terças-feiras.',
+                'grammatical_features_item_ids': ['Q51929049', 'Q110786', 'Q192613', 'Q682111'],
+            },
+            {
+                'label': 'Terceira Pessoa do Singular do Presente do Modo Indicativo',
+                'example': 'Ele [canta] às quartas-feiras.',
+                'grammatical_features_item_ids': ['Q51929074', 'Q110786', 'Q192613', 'Q682111'],
+            },
+            {
+                'label': 'Primeira Pessoa do Plural do Presente do Modo Indicativo',
+                'example': 'Nós [cantamos] às quintas-feiras.',
+                'grammatical_features_item_ids': ['Q21714344', 'Q146786', 'Q192613', 'Q682111'],
+            },
+            {
+                'label': 'Segunda Pessoa do Plural do Presente do Modo Indicativo',
+                'example': 'Vós [cantais] às sextas-feiras.',
+                'grammatical_features_item_ids': ['Q51929049', 'Q146786', 'Q192613', 'Q682111'],
+            },
+            {
+                'label': 'Terceira Pessoa do Plural do Presente do Modo Indicativo',
+                'example': 'Eles [cantam] aos sábados.',
+                'grammatical_features_item_ids': ['Q51929074', 'Q146786', 'Q192613', 'Q682111'],
+            },
+            {
+                'label': 'Primeira Pessoa do Singular do Pretérito Perfeito do Modo Indicativo',
+                'example': 'Eu [cantei] ontem no palco.',
+                'grammatical_features_item_ids': ['Q21714344', 'Q110786', 'Q23663136', 'Q682111'],
+            },
+            {
+                'label': 'Segunda Pessoa do Singular do Pretérito Perfeito do Modo Indicativo',
+                'example': 'Tu [cantaste] ontem no palco.',
+                'grammatical_features_item_ids': ['Q51929049', 'Q110786', 'Q23663136', 'Q682111'],
+            },
+            {
+                'label': 'Terceira Pessoa do Singular do Pretérito Perfeito do Modo Indicativo',
+                'example': 'Ele [cantou] ontem no palco.',
+                'grammatical_features_item_ids': ['Q51929074', 'Q110786', 'Q23663136', 'Q682111'],
+            },
+            {
+                'label': 'Primeira Pessoa do Plural do Pretérito Perfeito do Modo Indicativo',
+                'example': 'Nós [cantamos] ontem no palco.',
+                'grammatical_features_item_ids': ['Q21714344', 'Q146786', 'Q23663136', 'Q682111'],
+            },
+            {
+                'label': 'Segunda Pessoa do Plural do Pretérito Perfeito do Modo Indicativo',
+                'example': 'Vós [cantastes] ontem no palco.',
+                'grammatical_features_item_ids': ['Q51929049', 'Q146786', 'Q23663136', 'Q682111'],
+            },
+            {
+                'label': 'Terceira Pessoa do Plural do Pretérito Perfeito do Modo Indicativo',
+                'example': 'Eles [cantaram] ontem no palco.',
+                'grammatical_features_item_ids': ['Q51929074', 'Q146786', 'Q23663136', 'Q682111'],
+            },
+            {
+                'label': 'Primeira Pessoa do Singular do Pretérito Imperfeito do Modo Indicativo',
+                'example': 'Eu [cantava] no coral quando acabou a luz.',
+                'grammatical_features_item_ids': ['Q21714344', 'Q110786', 'Q12547192', 'Q682111'],
+            },
+            {
+                'label': 'Segunda Pessoa do Singular do Pretérito Imperfeito do Modo Indicativo',
+                'example': 'Tu [cantavas] no coral quando acabou a luz.',
+                'grammatical_features_item_ids': ['Q51929049', 'Q110786', 'Q12547192', 'Q682111'],
+            },
+            {
+                'label': 'Terceira Pessoa do Singular do Pretérito Imperfeito do Modo Indicativo',
+                'example': 'Ele [cantava] no coral quando acabou a luz.',
+                'grammatical_features_item_ids': ['Q51929074', 'Q110786', 'Q12547192', 'Q682111'],
+            },
+            {
+                'label': 'Primeira Pessoa do Plural do Pretérito Imperfeito do Modo Indicativo',
+                'example': 'Nós [cantávamos] no coral quando acabou a luz.',
+                'grammatical_features_item_ids': ['Q21714344', 'Q146786', 'Q12547192', 'Q682111'],
+            },
+            {
+                'label': 'Segunda Pessoa do Plural do Pretérito Imperfeito do Modo Indicativo',
+                'example': 'Vós [cantáveis] no coral quando acabou a luz.',
+                'grammatical_features_item_ids': ['Q51929049', 'Q146786', 'Q12547192', 'Q682111'],
+            },
+            {
+                'label': 'Terceira Pessoa do Plural do Pretérito Imperfeito do Modo Indicativo',
+                'example': 'Eles [cantavam] no coral quando acabou a luz.',
+                'grammatical_features_item_ids': ['Q51929074', 'Q146786', 'Q12547192', 'Q682111'],
+            },
+            {
+                'label': 'Primeira Pessoa do Singular do Pretérito Mais-que-perfeito do Modo Indicativo',
+                'example': 'Esse é o grupo em que eu [cantara] antigamente.',
+                'grammatical_features_item_ids': ['Q21714344', 'Q110786', 'Q623742', 'Q682111'],
+            },
+            {
+                'label': 'Segunda Pessoa do Singular do Pretérito Mais-que-perfeito do Modo Indicativo',
+                'example': 'Esse é o grupo em que tu [cantaras] antigamente.',
+                'grammatical_features_item_ids': ['Q51929049', 'Q110786', 'Q623742', 'Q682111'],
+            },
+            {
+                'label': 'Terceira Pessoa do Singular do Pretérito Mais-que-perfeito do Modo Indicativo',
+                'example': 'Esse é o grupo em que ele [cantara] antigamente.',
+                'grammatical_features_item_ids': ['Q51929074', 'Q110786', 'Q623742', 'Q682111'],
+            },
+            {
+                'label': 'Primeira Pessoa do Plural do Pretérito Mais-que-perfeito do Modo Indicativo',
+                'example': 'Esse é o grupo em que nós [cantáramos] antigamente.',
+                'grammatical_features_item_ids': ['Q21714344', 'Q146786', 'Q623742', 'Q682111'],
+            },
+            {
+                'label': 'Segunda Pessoa do Plural do Pretérito Mais-que-perfeito do Modo Indicativo',
+                'example': 'Esse é o grupo em que ele vós [cantáreis] antigamente.',
+                'grammatical_features_item_ids': ['Q51929049', 'Q146786', 'Q623742', 'Q682111'],
+            },
+            {
+                'label': 'Terceira Pessoa do Plural do Pretérito Mais-que-perfeito do Modo Indicativo',
+                'example': 'Esse é o grupo em que ele eles [cantaram] antigamente.',
+                'grammatical_features_item_ids': ['Q51929074', 'Q146786', 'Q623742', 'Q682111'],
+            },
+            {
+                'label': 'Primeira Pessoa do Singular do Futuro do Presente do Modo Indicativo',
+                'example': 'Eu [cantarei] amanhã no teatro municipal.',
+                'grammatical_features_item_ids': ['Q21714344', 'Q110786', 'Q63997439', 'Q682111'],
+            },
+            {
+                'label': 'Segunda Pessoa do Singular do Futuro do Presente do Modo Indicativo',
+                'example': 'Tu [cantarás] amanhã no teatro municipal.',
+                'grammatical_features_item_ids': ['Q51929049', 'Q110786', 'Q63997439', 'Q682111'],
+            },
+            {
+                'label': 'Terceira Pessoa do Singular do Futuro do Presente do Modo Indicativo',
+                'example': 'Ele [cantará] amanhã no teatro municipal.',
+                'grammatical_features_item_ids': ['Q51929074', 'Q110786', 'Q63997439', 'Q682111'],
+            },
+            {
+                'label': 'Primeira Pessoa do Plural do Futuro do Presente do Modo Indicativo',
+                'example': 'Nós [cantaremos] amanhã no teatro municipal.',
+                'grammatical_features_item_ids': ['Q21714344', 'Q146786', 'Q63997439', 'Q682111'],
+            },
+            {
+                'label': 'Segunda Pessoa do Plural do Futuro do Presente do Modo Indicativo',
+                'example': 'Vós [cantareis] amanhã no teatro municipal.',
+                'grammatical_features_item_ids': ['Q51929049', 'Q146786', 'Q63997439', 'Q682111'],
+            },
+            {
+                'label': 'Terceira Pessoa do Plural do Futuro do Presente do Modo Indicativo',
+                'example': 'Eles [cantarão] amanhã no teatro municipal.',
+                'grammatical_features_item_ids': ['Q51929074', 'Q146786', 'Q63997439', 'Q682111'],
+            },
+            {
+                'label': 'Primeira Pessoa do Singular do Futuro do Pretérito do Modo Indicativo',
+                'example': 'Eu [cantaria] se fosse possível.',
+                'grammatical_features_item_ids': ['Q21714344', 'Q110786', 'Q63997520', 'Q682111'],
+            },
+            {
+                'label': 'Segunda Pessoa do Singular do Futuro do Pretérito do Modo Indicativo',
+                'example': 'Tu [cantarias] se fosse possível.',
+                'grammatical_features_item_ids': ['Q51929049', 'Q110786', 'Q63997520', 'Q682111'],
+            },
+            {
+                'label': 'Terceira Pessoa do Singular do Futuro do Pretérito do Modo Indicativo',
+                'example': 'Ele [cantaria] se fosse possível.',
+                'grammatical_features_item_ids': ['Q51929074', 'Q110786', 'Q63997520', 'Q682111'],
+            },
+            {
+                'label': 'Primeira Pessoa do Plural do Futuro do Pretérito do Modo Indicativo',
+                'example': 'Nós [cantaríamos] se fosse possível.',
+                'grammatical_features_item_ids': ['Q21714344', 'Q146786', 'Q63997520', 'Q682111'],
+            },
+            {
+                'label': 'Segunda Pessoa do Plural do Futuro do Pretérito do Modo Indicativo',
+                'example': 'Vós [cantaríeis] se fosse possível.',
+                'grammatical_features_item_ids': ['Q51929049', 'Q146786', 'Q63997520', 'Q682111'],
+            },
+            {
+                'label': 'Terceira Pessoa do Plural do Futuro do Pretérito do Modo Indicativo',
+                'example': 'Eles [cantariam] se fosse possível.',
+                'grammatical_features_item_ids': ['Q51929074', 'Q146786', 'Q63997520', 'Q682111'],
+            },
+            {
+                'label': 'Primeira Pessoa do Singular do Presente do Modo Subjuntivo',
+                'example': 'Espero que eu [cante] logo.',
+                'grammatical_features_item_ids': ['Q21714344', 'Q110786', 'Q192613', 'Q473746'],
+            },
+            {
+                'label': 'Segunda Pessoa do Singular do Presente do Modo Subjuntivo',
+                'example': 'Espero que tu [cantes] logo.',
+                'grammatical_features_item_ids': ['Q51929049', 'Q110786', 'Q192613', 'Q473746'],
+            },
+            {
+                'label': 'Terceira Pessoa do Singular do Presente do Modo Subjuntivo',
+                'example': 'Espero que ele [cante] logo.',
+                'grammatical_features_item_ids': ['Q51929074', 'Q110786', 'Q192613', 'Q473746'],
+            },
+            {
+                'label': 'Primeira Pessoa do Plural do Presente do Modo Subjuntivo',
+                'example': 'Espero que nós [cantemos] logo.',
+                'grammatical_features_item_ids': ['Q21714344', 'Q146786', 'Q192613', 'Q473746'],
+            },
+            {
+                'label': 'Segunda Pessoa do Plural do Presente do Modo Subjuntivo',
+                'example': 'Espero que vós [canteis] logo.',
+                'grammatical_features_item_ids': ['Q51929049', 'Q146786', 'Q192613', 'Q473746'],
+            },
+            {
+                'label': 'Terceira Pessoa do Plural do Presente do Modo Subjuntivo',
+                'example': 'Espero que eles [cantem] logo.',
+                'grammatical_features_item_ids': ['Q51929074', 'Q146786', 'Q192613', 'Q473746'],
+            },
+            {
+                'label': 'Primeira Pessoa do Singular do Pretérito Imperfeito do Modo Subjuntivo',
+                'example': 'Se eu [cantasse] mais alto, seria melhor.',
+                'grammatical_features_item_ids': ['Q21714344', 'Q110786', 'Q12547192', 'Q473746'],
+            },
+            {
+                'label': 'Segunda Pessoa do Singular do Pretérito Imperfeito do Modo Subjuntivo',
+                'example': 'Se tu [cantasses] mais alto, seria melhor.',
+                'grammatical_features_item_ids': ['Q51929049', 'Q110786', 'Q12547192', 'Q473746'],
+            },
+            {
+                'label': 'Terceira Pessoa do Singular do Pretérito Imperfeito do Modo Subjuntivo',
+                'example': 'Se ele [cantasse] mais alto, seria melhor.',
+                'grammatical_features_item_ids': ['Q51929074', 'Q110786', 'Q12547192', 'Q473746'],
+            },
+            {
+                'label': 'Primeira Pessoa do Plural do Pretérito Imperfeito do Modo Subjuntivo',
+                'example': 'Se nós [cantássemos] mais alto, seria melhor.',
+                'grammatical_features_item_ids': ['Q21714344', 'Q146786', 'Q12547192', 'Q473746'],
+            },
+            {
+                'label': 'Segunda Pessoa do Plural do Pretérito Imperfeito do Modo Subjuntivo',
+                'example': 'Se vós [cantásseis] mais alto, seria melhor.',
+                'grammatical_features_item_ids': ['Q51929049', 'Q146786', 'Q12547192', 'Q473746'],
+            },
+            {
+                'label': 'Terceira Pessoa do Plural do Pretérito Imperfeito do Modo Subjuntivo',
+                'example': 'Se eles [cantassem] mais alto, seria melhor.',
+                'grammatical_features_item_ids': ['Q51929074', 'Q146786', 'Q12547192', 'Q473746'],
+            },
+            {
+                'label': 'Primeira Pessoa do Singular do Futuro do Modo Subjuntivo',
+                'example': 'Quando eu [cantar] os outros ouvirão.',
+                'grammatical_features_item_ids': ['Q21714344', 'Q110786', 'Q501405', 'Q473746'],
+            },
+            {
+                'label': 'Segunda Pessoa do Singular do Futuro do Modo Subjuntivo',
+                'example': 'Quando tu [cantares] os outros ouvirão.',
+                'grammatical_features_item_ids': ['Q51929049', 'Q110786', 'Q501405', 'Q473746'],
+            },
+            {
+                'label': 'Terceira Pessoa do Singular do Futuro do Modo Subjuntivo',
+                'example': 'Quando ele [cantar] os outros ouvirão.',
+                'grammatical_features_item_ids': ['Q51929074', 'Q110786', 'Q501405', 'Q473746'],
+            },
+            {
+                'label': 'Primeira Pessoa do Plural do Futuro do Modo Subjuntivo',
+                'example': 'Quando nós [cantarmos] os outros ouvirão.',
+                'grammatical_features_item_ids': ['Q21714344', 'Q146786', 'Q501405', 'Q473746'],
+            },
+            {
+                'label': 'Segunda Pessoa do Plural do Futuro do Modo Subjuntivo',
+                'example': 'Quando vós [cantardes] os outros ouvirão.',
+                'grammatical_features_item_ids': ['Q51929049', 'Q146786', 'Q501405', 'Q473746'],
+            },
+            {
+                'label': 'Terceira Pessoa do Plural do Futuro do Modo Subjuntivo',
+                'example': 'Quando eles [cantarem] os outros ouvirão.',
+                'grammatical_features_item_ids': ['Q51929074', 'Q146786', 'Q501405', 'Q473746'],
+            },
+            {
+                'label': 'Segunda Pessoa do Singular do Modo Imperativo Afirmativo',
+                'example': '[Canta] tu agora que há tempo.',
+                'grammatical_features_item_ids': ['Q51929049', 'Q110786', 'Q22716'],
+            },
+            {
+                'label': 'Terceira Pessoa do Singular do Modo Imperativo Afirmativo',
+                'example': '[Canta] você agora que há tempo.',
+                'grammatical_features_item_ids': ['Q51929074', 'Q110786', 'Q22716'],
+            },
+            {
+                'label': 'Primeira Pessoa do Plural do Modo Imperativo Afirmativo',
+                'example': '[Cantemos] nós agora que há tempo.',
+                'grammatical_features_item_ids': ['Q21714344', 'Q146786', 'Q22716'],
+            },
+            {
+                'label': 'Segunda Pessoa do Plural do Modo Imperativo Afirmativo',
+                'example': '[Cantai] vós agora que há tempo.',
+                'grammatical_features_item_ids': ['Q51929049', 'Q146786', 'Q22716'],
+            },
+            {
+                'label': 'Terceira Pessoa do Plural do Modo Imperativo Afirmativo',
+                'example': '[Cantem] vocês agora que há tempo.',
+                'grammatical_features_item_ids': ['Q51929074', 'Q146786', 'Q22716'],
+            },
+            {
+                'label': 'Segunda Pessoa do Singular do Modo Imperativo Negativo',
+                'example': 'Não [cantes] tu, ainda não está na hora.',
+                'grammatical_features_item_ids': ['Q51929049', 'Q110786', 'Q64004115'],
+            },
+            {
+                'label': 'Terceira Pessoa do Singular do Modo Imperativo Negativo',
+                'example': 'Não [cante] você, ainda não está na hora.',
+                'grammatical_features_item_ids': ['Q51929074', 'Q110786', 'Q64004115'],
+            },
+            {
+                'label': 'Primeira Pessoa do Plural do Modo Imperativo Negativo',
+                'example': 'Não [cantemos] nós, ainda não está na hora.',
+                'grammatical_features_item_ids': ['Q21714344', 'Q146786', 'Q64004115'],
+            },
+            {
+                'label': 'Segunda Pessoa do Plural do Modo Imperativo Negativo',
+                'example': 'Não [canteis] vós, ainda não está na hora.',
+                'grammatical_features_item_ids': ['Q51929049', 'Q146786', 'Q64004115'],
+            },
+            {
+                'label': 'Terceira Pessoa do Plural do Modo Imperativo Negativo',
+                'example': 'Não [cantem] vocês, ainda não está na hora.',
+                'grammatical_features_item_ids': ['Q51929074', 'Q146786', 'Q64004115'],
+            },
+            {
+                'label': 'Primeira Pessoa do Singular do Infinitivo Pessoal',
+                'example': 'Por [cantar] eu ganhei vários prêmios.',
+                'grammatical_features_item_ids': ['Q21714344', 'Q110786', 'Q179230'],
+            },
+            {
+                'label': 'Segunda Pessoa do Singular do Infinitivo Pessoal',
+                'example': 'Por [cantares] tu ganhaste vários prêmios.',
+                'grammatical_features_item_ids': ['Q51929049', 'Q110786', 'Q179230'],
+            },
+            {
+                'label': 'Terceira Pessoa do Singular do Infinitivo Pessoal',
+                'example': 'Por [cantar] ele ganhou vários prêmios.',
+                'grammatical_features_item_ids': ['Q51929074', 'Q110786', 'Q179230'],
+            },
+            {
+                'label': 'Primeira Pessoa do Plural do Infinitivo Pessoal',
+                'example': 'Por [cantarmos] nós ganhamos vários prêmios.',
+                'grammatical_features_item_ids': ['Q21714344', 'Q146786', 'Q179230'],
+            },
+            {
+                'label': 'Segunda Pessoa do Plural do Infinitivo Pessoal',
+                'example': 'Por [cantardes] vós ganhastes vários prêmios.',
+                'grammatical_features_item_ids': ['Q51929049', 'Q146786', 'Q179230'],
+            },
+            {
+                'label': 'Terceira Pessoa do Plural do Infinitivo Pessoal',
+                'example': 'Por [cantarem] eles ganharam vários prêmios.',
+                'grammatical_features_item_ids': ['Q51929074', 'Q146786', 'Q179230'],
+            },
+        ],
+    }),
     # template by User:Infovarius, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Russian
     ('russian-noun-masculine', {
         'label': 'русское существительное, мужской род',

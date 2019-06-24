@@ -213,6 +213,21 @@ translations = {
         'advanced_partial_forms_hint': 'Aby utworzyć leksemy z pominięciem niektórych form, przełącz się na tryb zaawansowany.',
         'generated_via': 'wygenerowane przez',
     },
+    # translations by User:Ederporto and Lucas Werkmeister, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Portuguese
+    'pt': {
+        'create': 'Criar',
+        'csrf_warning': 'Desculpe, não foi possível processar essa requisição (proteção contra <abbr title="Cross-site request forgery">CSRF</abbr> falhou). Por favor, tente submeter o formulário novamente.',
+        'duplicates_warning': 'Os seguintes lexemas têm o mesmo lema e código de língua que o lema que você está tentando criar:',
+        'duplicates_instructions': 'Se você tem certeza que eles são diferentes, selecione a caixa no final do formulário.',
+        'no_duplicate': 'Isto não é uma duplicata de um lexema existente.',
+        'advanced': 'Avançado',
+        'advanced_general': 'Você está no modo «Avançado».',
+        'advanced_lexeme_id': 'No lugar de criar um novo lexema, você pode adicionar um identificador de um lexema existente para adicionar as formas faltantes. Deixe em branco as formas já existentes no lexema; Do contrário, será criada uma duplicata!',
+        'advanced_partial_forms': 'Você pode deixar algumas formas vazias para evitar que sejam adicionadas. Garanta criar todas as formas necessárias!',
+        'lexeme_id': 'Identificador de lexema',
+        'advanced_partial_forms_hint': 'Para criar lexemas com algumas formas faltando, mude para o modo avançado.',
+        'generated_via': 'gerado via',
+    },
     # translations by User:Infovarius, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Russian
     'ru': {
         'create': 'Создать',
