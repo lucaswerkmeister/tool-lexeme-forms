@@ -3189,7 +3189,7 @@ templates = collections.OrderedDict([
             },
         ],
     }),
-    # template by User:Carybe and User:Joalpe, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Portuguese
+    # template by User:Carybe, User:Joalpe and User:Waldir, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Portuguese
     ('portuguese-verb', {
         'label': 'verbo em Português',
         'language_item_id': 'Q5146',
@@ -3198,7 +3198,7 @@ templates = collections.OrderedDict([
         'forms': [
             {
                 'label': 'Infinitivo Impessoal',
-                'example': 'O [cantar] do golfinhos é belo.',
+                'example': 'O [cantar] dos golfinhos é belo.',
                 'grammatical_features_item_ids': ['Q64003131'],
             },
             {
