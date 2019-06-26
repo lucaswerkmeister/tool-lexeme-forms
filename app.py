@@ -321,7 +321,7 @@ def get_duplicates(wiki, language_code, lemma):
             matches[id]['forms_count'] = pageprops.get('wbl-forms')
             matches[id]['senses_count'] = pageprops.get('wbl-senses')
 
-    return matches.values()
+    return list(matches.values()) # list() to turn odict_values (not JSON serializable) into plain list
 
 @app.route('/api/v1/no_duplicate/<language_code>')
 @app.template_global()
