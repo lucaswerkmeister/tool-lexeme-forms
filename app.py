@@ -15,7 +15,7 @@ import yaml
 
 from flask_utils import OrderedFlask, TagOrderedMultiDict, TagImmutableOrderedMultiDict
 from formatters import PluralFormatter
-from templates import templates
+from templates import templates, match_template_to_lexeme_data
 from translations import translations
 
 app = OrderedFlask(__name__)
@@ -337,6 +337,43 @@ def render_advanced_partial_forms_hint(language_code):
     return flask.render_template(
         'advanced_partial_forms_hint.html',
     )
+
+@app.route('/api/v1/match_template_to_lexeme/<any(www,test):wiki>/<lexeme_id>')
+def match_templates_to_lexeme_id(wiki, lexeme_id):
+    lexeme_data = get_lexeme_data(lexeme_id, wiki)
+
+    response = flask.jsonify({
+        template_name: match_template_to_lexeme_data(template, lexeme_data)
+        for template_name, template in templates.items()
+    })
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    return response
+
+@app.route('/api/v1/match_template_to_lexeme/<any(www,test):wiki>/<lexeme_id>/<template_name>')
+def match_template_to_lexeme_id(wiki, lexeme_id, template_name):
+    template = templates.get(template_name)
+    if not template:
+        return 'no such template\n', 404
+
+    lexeme_data = get_lexeme_data(lexeme_id, wiki)
+
+    response = flask.jsonify(match_template_to_lexeme_data(template, lexeme_data))
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    return response
+
+def get_lexeme_data(lexeme_id, wiki):
+    host = 'https://' + wiki + '.wikidata.org'
+    session = mwapi.Session(
+        host,
+        user_agent=user_agent,
+    )
+    session.session.cookies['PHP_ENGINE'] = 'php7' # TODO remove this once PHP7 is the default
+
+    lexeme_data = session.get(
+        action='wbgetentities',
+        ids=[lexeme_id],
+    )['entities'][lexeme_id]
+    return lexeme_data
 
 def add_form_data_to_template(form_data, template):
     template = copy.deepcopy(template)
