@@ -19,7 +19,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146786'],
             },
         ],
-        'claims': {
+        'statements': {
             'P5185': [
                 {
                     'mainsnak': {
@@ -58,7 +58,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146786'],
             },
         ],
-        'claims': {
+        'statements': {
             'P5185': [
                 {
                     'mainsnak': {
@@ -157,7 +157,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q192997', 'Q146786'],
             },
         ],
-        'claims': {
+        'statements': {
             'P5185': [
                 {
                     'mainsnak': {
@@ -272,7 +272,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q192997', 'Q146786'],
             },
         ],
-        'claims': {
+        'statements': {
             'P5185': [
                 {
                     'mainsnak': {
@@ -387,7 +387,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q192997', 'Q146786'],
             },
         ],
-        'claims': {
+        'statements': {
             'P5185': [
                 {
                     'mainsnak': {
@@ -486,7 +486,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q192997', 'Q146786'],
             },
         ],
-        'claims': {
+        'statements': {
             'P5185': [
                 {
                     'mainsnak': {
@@ -868,7 +868,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146078', 'Q146786'],
             },
        ],
-        'claims': {
+        'statements': {
             'P5185': [
                 {
                     'mainsnak': {
@@ -937,7 +937,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146078', 'Q146786'],
             },
        ],
-        'claims': {
+        'statements': {
             'P5185': [
                 {
                     'mainsnak': {
@@ -1006,7 +1006,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146078', 'Q146786'],
             },
        ],
-        'claims': {
+        'statements': {
             'P5185': [
                 {
                     'mainsnak': {
@@ -1055,7 +1055,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146078', 'Q146786'],
             },
        ],
-        'claims': {
+        'statements': {
             'P31': [
                 {
                     'mainsnak': {
@@ -1363,7 +1363,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146786'],
             },
         ],
-        'claims': {
+        'statements': {
             'P5185': [
                 {
                     'mainsnak': {
@@ -1402,7 +1402,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146786'],
             },
         ],
-        'claims': {
+        'statements': {
             'P5185': [
                 {
                     'mainsnak': {
@@ -1753,7 +1753,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146786'],
             },
         ],
-        'claims': {
+        'statements': {
             'P5185': [
                 {
                     'mainsnak': {
@@ -1792,7 +1792,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146786'],
             },
         ],
-        'claims': {
+        'statements': {
             'P5185': [
                 {
                     'mainsnak': {
@@ -1964,7 +1964,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q202142', 'Q110786'],
             },
         ],
-        'claims': {
+        'statements': {
             'P31': [
                 {
                     'mainsnak': {
@@ -2003,7 +2003,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146786'],
             },
         ],
-        'claims': {
+        'statements': {
             'P5185': [
                 {
                     'mainsnak': {
@@ -2042,7 +2042,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146786'],
             },
         ],
-        'claims': {
+        'statements': {
             'P5185': [
                 {
                     'mainsnak': {
@@ -2160,7 +2160,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q185077', 'Q146786'],
             },
        ],
-        'claims': {
+        'statements': {
             'P5185': [
                 {
                     'mainsnak': {
@@ -2249,7 +2249,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q185077', 'Q146786'],
             },
        ],
-        'claims': {
+        'statements': {
             'P5185': [
                 {
                     'mainsnak': {
@@ -2338,7 +2338,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q185077', 'Q146786'],
             },
        ],
-        'claims': {
+        'statements': {
             'P5185': [
                 {
                     'mainsnak': {
@@ -2387,7 +2387,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q108709', 'Q146786'],
             },
         ],
-        'claims': {
+        'statements': {
             'P5185': [
                 {
                     'mainsnak': {
@@ -2436,7 +2436,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q108709', 'Q146786'],
             },
         ],
-        'claims': {
+        'statements': {
             'P5185': [
                 {
                     'mainsnak': {
@@ -2485,7 +2485,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q108709', 'Q146786'],
             },
         ],
-        'claims': {
+        'statements': {
             'P5185': [
                 {
                     'mainsnak': {
@@ -2534,7 +2534,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q108709', 'Q146786'],
             },
         ],
-        'claims': {
+        'statements': {
             'P5185': [
                 {
                     'mainsnak': {
@@ -2583,7 +2583,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146786', 'Q53997851'],
             },
         ],
-        'claims': {
+        'statements': {
             'P5185': [
                 {
                     'mainsnak': {
@@ -2632,7 +2632,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146786', 'Q53997851'],
             },
         ],
-        'claims': {
+        'statements': {
             'P5185': [
                 {
                     'mainsnak': {
@@ -2681,7 +2681,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146786', 'Q53997851'],
             },
         ],
-        'claims': {
+        'statements': {
             'P5185': [
                 {
                     'mainsnak': {
@@ -2827,7 +2827,7 @@ templates = collections.OrderedDict([
                 'label': 'mianownik, liczba mnoga, forma niedeprecjatywna',
                 'example': 'To są ci [robotnicy].',
                 'grammatical_features_item_ids': ['Q131105', 'Q146786'],
-                'claims': {
+                'statements': {
                     'P31': [
                         {
                             'mainsnak': {
@@ -2852,7 +2852,7 @@ templates = collections.OrderedDict([
                 'label': 'mianownik, liczba mnoga, forma deprecjatywna',
                 'example': 'To są te [robotniki].',
                 'grammatical_features_item_ids': ['Q131105', 'Q146786'],
-                'claims': {
+                'statements': {
                     'P31': [
                         {
                             'mainsnak': {
@@ -2902,7 +2902,7 @@ templates = collections.OrderedDict([
                 'label': 'wołacz, liczba mnoga, forma niedeprecjatywna',
                 'example': 'ci [robotnicy]',
                 'grammatical_features_item_ids': ['Q185077', 'Q146786'],
-                'claims': {
+                'statements': {
                     'P31': [
                         {
                             'mainsnak': {
@@ -2927,7 +2927,7 @@ templates = collections.OrderedDict([
                 'label': 'wołacz, liczba mnoga, forma deprecjatywna',
                 'example': 'te [robotniki]',
                 'grammatical_features_item_ids': ['Q185077', 'Q146786'],
-                'claims': {
+                'statements': {
                     'P31': [
                         {
                             'mainsnak': {
@@ -2949,7 +2949,7 @@ templates = collections.OrderedDict([
                 },
             },
         ],
-        'claims': {
+        'statements': {
             'P5185': [
                 {
                     'mainsnak': {
@@ -3016,7 +3016,7 @@ templates = collections.OrderedDict([
                 'label': 'mianownik, liczba mnoga, forma potencjalna',
                 'example': 'To są [językoznawstwa].',
                 'grammatical_features_item_ids': ['Q131105', 'Q146786'],
-                'claims': {
+                'statements': {
                     'P31': [
                         {
                             'mainsnak': {
@@ -3041,7 +3041,7 @@ templates = collections.OrderedDict([
                 'label': 'dopełniacz, liczba mnoga, forma potencjalna',
                 'example': 'Wśród nas nie ma [językoznawstw].',
                 'grammatical_features_item_ids': ['Q146233', 'Q146786'],
-                'claims': {
+                'statements': {
                     'P31': [
                         {
                             'mainsnak': {
@@ -3066,7 +3066,7 @@ templates = collections.OrderedDict([
                 'label': 'celownik, liczba mnoga, forma potencjalna',
                 'example': 'Przyglądam się [językoznawstwom].',
                 'grammatical_features_item_ids': ['Q145599', 'Q146786'],
-                'claims': {
+                'statements': {
                     'P31': [
                         {
                             'mainsnak': {
@@ -3091,7 +3091,7 @@ templates = collections.OrderedDict([
                 'label': 'biernik, liczba mnoga, forma potencjalna',
                 'example': 'Widzę [językoznawstwa].',
                 'grammatical_features_item_ids': ['Q146078', 'Q146786'],
-                'claims': {
+                'statements': {
                     'P31': [
                         {
                             'mainsnak': {
@@ -3116,7 +3116,7 @@ templates = collections.OrderedDict([
                 'label': 'narzędnik, liczba mnoga, forma potencjalna',
                 'example': 'Idę z [językoznawstwami].',
                 'grammatical_features_item_ids': ['Q192997', 'Q146786'],
-                'claims': {
+                'statements': {
                     'P31': [
                         {
                             'mainsnak': {
@@ -3141,7 +3141,7 @@ templates = collections.OrderedDict([
                 'label': 'miejscownik, liczba mnoga, forma potencjalna',
                 'example': 'Myślę o [językoznawstwach].',
                 'grammatical_features_item_ids': ['Q202142', 'Q146786'],
-                'claims': {
+                'statements': {
                     'P31': [
                         {
                             'mainsnak': {
@@ -3166,7 +3166,7 @@ templates = collections.OrderedDict([
                 'label': 'wołacz, liczba mnoga, forma potencjalna',
                 'example': '[językoznawstwa]',
                 'grammatical_features_item_ids': ['Q185077', 'Q146786'],
-                'claims': {
+                'statements': {
                     'P31': [
                         {
                             'mainsnak': {
@@ -3631,7 +3631,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q2114906', 'Q146786'],
             },
         ],
-        'claims': {
+        'statements': {
             'P5185': [
                 {
                     'mainsnak': {
@@ -3720,7 +3720,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q2114906', 'Q146786'],
             },
         ],
-        'claims': {
+        'statements': {
             'P5185': [
                 {
                     'mainsnak': {
@@ -3809,7 +3809,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q2114906', 'Q146786'],
             },
         ],
-        'claims': {
+        'statements': {
             'P5185': [
                 {
                     'mainsnak': {
@@ -3868,7 +3868,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q2114906', 'Q146786'],
             },
         ],
-        'claims': {
+        'statements': {
             'P31': [
                 {
                     'mainsnak': {
@@ -4076,7 +4076,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146233', 'Q146786', 'Q53997851'],
             },
         ],
-        'claims': {
+        'statements': {
             'P5185': [
                 {
                     'mainsnak': {
@@ -4145,7 +4145,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146233', 'Q146786', 'Q53997851'],
             },
         ],
-        'claims': {
+        'statements': {
             'P5185': [
                 {
                     'mainsnak': {
@@ -4244,7 +4244,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146786', 'Q185077'],
             },
         ],
-        'claims': {
+        'statements': {
             'P5185': [
                 {
                     'mainsnak': {
@@ -4343,7 +4343,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146786', 'Q185077'],
             },
         ],
-        'claims': {
+        'statements': {
             'P5185': [
                 {
                     'mainsnak': {
@@ -4442,7 +4442,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146786', 'Q185077'],
             },
         ],
-        'claims': {
+        'statements': {
             'P5185': [
                 {
                     'mainsnak': {
@@ -4506,7 +4506,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q185077'],
             },
         ],
-        'claims': {
+        'statements': {
             'P31': [
                 {
                     'mainsnak': {
@@ -4539,7 +4539,7 @@ templates = collections.OrderedDict([
                 'label': 'Nominativ Singular',
                 'example': 'Das ist das [Kind].',
                 'grammatical_features_item_ids': ['Q163012', 'Q163014'],
-                'claims': {
+                'statements': {
                     'P82': [
                         {
                             'mainsnak': {
@@ -4568,7 +4568,7 @@ templates = collections.OrderedDict([
                 'label': 'Dativ Singular',
                 'example': 'Das gehört dem [Kind].',
                 'grammatical_features_item_ids': ['Q163016', 'Q163014'],
-                'claims': {
+                'statements': {
                     'P82': [
                         {
                             'mainsnak': {
@@ -4614,7 +4614,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q163017', 'Q160570'],
             },
         ],
-        'claims': {
+        'statements': {
             'P73601': [
                 {
                     'mainsnak': {

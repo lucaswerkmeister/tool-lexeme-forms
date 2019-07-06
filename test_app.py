@@ -380,7 +380,7 @@ def test_build_lexeme_blank_form():
         'id': 'L123',
     }
 
-def test_build_lexeme_with_claims():
+def test_build_lexeme_with_statements():
     template = {
         'language_item_id': 'Q1860',
         'language_code': 'en',
@@ -388,14 +388,14 @@ def test_build_lexeme_with_claims():
         'forms': [
             {
                 'grammatical_features_item_ids': ['Q110786'],
-                'claims': 'singular test claims',
+                'statements': 'singular test statements',
             },
             {
                 'grammatical_features_item_ids': ['Q146786'],
-                'claims': 'plural test claims',
+                'statements': 'plural test statements',
             },
         ],
-        'claims': 'lexeme test claims',
+        'statements': 'lexeme test statements',
     }
     form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', 'noun'), ('form_representation', 'nouns')])
     lexeme_data = lexeme_forms.build_lexeme(template, form_data)
@@ -406,19 +406,19 @@ def test_build_lexeme_with_claims():
                 'add': '',
                 'representations': {'en': {'language': 'en', 'value': 'noun'}},
                 'grammaticalFeatures': ['Q110786'],
-                'claims': 'singular test claims',
+                'claims': 'singular test statements',
             },
             {
                 'add': '',
                 'representations': {'en': {'language': 'en', 'value': 'nouns'}},
                 'grammaticalFeatures': ['Q146786'],
-                'claims': 'plural test claims',
+                'claims': 'plural test statements',
             },
         ],
         'lemmas': {'en': {'language': 'en', 'value': 'noun'}},
         'language': 'Q1860',
         'lexicalCategory': 'Q1084',
-        'claims': 'lexeme test claims',
+        'claims': 'lexeme test statements',
     }
 
 def test_build_lexeme_with_variants():

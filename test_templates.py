@@ -13,7 +13,7 @@ def test_entities_exist():
         entity_ids.add(template['lexical_category_item_id'])
         for form in template['forms']:
             entity_ids.update(form['grammatical_features_item_ids'])
-        for property_id, statement_group in template.get('claims', {}).items():
+        for property_id, statement_group in template.get('statements', {}).items():
             entity_ids.add(property_id)
             for statement in statement_group:
                 entity_ids.add(statement['mainsnak']['datavalue']['value']['id'])

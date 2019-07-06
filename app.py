@@ -382,7 +382,7 @@ def build_lexeme(template, form_data):
                 'add': '',
                 'representations': {lang: {'language': lang, 'value': form_representation_variant}},
                 'grammaticalFeatures': form['grammatical_features_item_ids'],
-                'claims': form.get('claims', {})
+                'claims': form.get('statements', {})
             })
     lexeme_data = {
         'type': 'lexeme',
@@ -399,7 +399,7 @@ def build_lexeme(template, form_data):
             'lemmas': {lang: {'language': lang, 'value': lemma}},
             'language': template['language_item_id'],
             'lexicalCategory': template['lexical_category_item_id'],
-            'claims': template.get('claims', {}),
+            'claims': template.get('statements', {}),
         })
     return lexeme_data
 
