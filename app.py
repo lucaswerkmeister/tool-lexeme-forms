@@ -285,6 +285,7 @@ def get_lemma(form_data):
     return None
 
 @app.route('/api/v1/duplicates/<any(www,test):wiki>/<language_code>/<path:lemma>')
+@enableCORS
 def get_duplicates_api(wiki, language_code, lemma):
     flask.g.language_code = language_code
     matches = get_duplicates(wiki, language_code, lemma)
