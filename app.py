@@ -1,5 +1,6 @@
 import collections
 import copy
+import decorator
 import flask
 import jinja2
 import json
@@ -66,6 +67,13 @@ def fixSessionToken():
 
     response = flask.redirect(current_url())
     response.set_cookie('session', '', expires=0, path='/')
+    return response
+
+@decorator.decorator
+def enableCORS(func, *args, **kwargs):
+    rv = func(*args, **kwargs)
+    response = flask.make_response(rv)
+    response.headers['Access-Control-Allow-Origin'] = '*'
     return response
 
 @app.after_request
@@ -339,17 +347,17 @@ def render_advanced_partial_forms_hint(language_code):
     )
 
 @app.route('/api/v1/match_template_to_lexeme/<any(www,test):wiki>/<lexeme_id>')
+@enableCORS
 def match_templates_to_lexeme_id(wiki, lexeme_id):
     lexeme_data = get_lexeme_data(lexeme_id, wiki)
 
-    response = flask.jsonify({
+    return flask.jsonify({
         template_name: match_template_to_lexeme_data(template, lexeme_data)
         for template_name, template in templates.items()
     })
-    response.headers['Access-Control-Allow-Origin'] = '*'
-    return response
 
 @app.route('/api/v1/match_template_to_lexeme/<any(www,test):wiki>/<lexeme_id>/<template_name>')
+@enableCORS
 def match_template_to_lexeme_id(wiki, lexeme_id, template_name):
     template = templates.get(template_name)
     if not template:
@@ -357,9 +365,7 @@ def match_template_to_lexeme_id(wiki, lexeme_id, template_name):
 
     lexeme_data = get_lexeme_data(lexeme_id, wiki)
 
-    response = flask.jsonify(match_template_to_lexeme_data(template, lexeme_data))
-    response.headers['Access-Control-Allow-Origin'] = '*'
-    return response
+    return flask.jsonify(match_template_to_lexeme_data(template, lexeme_data))
 
 def get_lexeme_data(lexeme_id, wiki):
     host = 'https://' + wiki + '.wikidata.org'

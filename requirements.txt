@@ -1,4 +1,5 @@
 babel
+decorator
 flask
 pyyaml
 mwoauth
