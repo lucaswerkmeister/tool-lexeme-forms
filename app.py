@@ -435,6 +435,10 @@ def build_lexeme(template, form_data):
     lexeme_id = form_data.get('lexeme_id', '')
     if lexeme_id:
         lexeme_data['id'] = lexeme_id
+        wiki = 'test' if 'test' in template else 'www'
+        match = match_template_to_lexeme_data(template, get_lexeme_data(lexeme_id, wiki))
+        # TODO warn if match['conflicting_statements']?
+        lexeme_data['claims'] = match['missing_statements']
     else:
         lemma = get_lemma(form_data)
         if lemma is None:
