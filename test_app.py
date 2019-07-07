@@ -325,7 +325,8 @@ def test_build_lexeme_with_empty_lexeme_id():
         'claims': {},
     }
 
-def test_build_lexeme_with_nonempty_lexeme_id():
+def test_build_lexeme_with_nonempty_lexeme_id(monkeypatch):
+    monkeypatch.setattr(lexeme_forms, 'get_lexeme_data', lambda lexeme_id, wiki: {'language': 'Q1860', 'lexicalCategory': 'Q1084'})
     template = {
         'language_item_id': 'Q1860',
         'language_code': 'en',
@@ -349,9 +350,11 @@ def test_build_lexeme_with_nonempty_lexeme_id():
             },
         ],
         'id': 'L123',
+        'claims': {},
     }
 
-def test_build_lexeme_blank_form():
+def test_build_lexeme_blank_form(monkeypatch):
+    monkeypatch.setattr(lexeme_forms, 'get_lexeme_data', lambda lexeme_id, wiki: {'language': 'Q1860', 'lexicalCategory': 'Q1084'})
     template = {
         'language_item_id': 'Q1860',
         'language_code': 'en',
@@ -378,6 +381,7 @@ def test_build_lexeme_blank_form():
             },
         ],
         'id': 'L123',
+        'claims': {},
     }
 
 def test_build_lexeme_with_statements():
@@ -475,6 +479,93 @@ def test_build_lexeme_with_variants():
         'language': 'Q1860',
         'lexicalCategory': 'Q1084',
         'claims': {},
+    }
+
+def test_build_lexeme_with_statements_for_existing_lexeme(monkeypatch):
+    p5185 = [
+        {
+            'mainsnak': {
+                'snaktype': 'value',
+                'property': 'P5185',
+                'datatype': 'wikibase-item',
+                'datavalue': {
+                    'type': 'wikibase-entityid',
+                    'value': {
+                        'entity-type': 'item',
+                        'id': 'Q499327',
+                    },
+                },
+            },
+            'type': 'statement',
+            'rank': 'normal',
+        }
+    ]
+    p31 = [
+        {
+            'mainsnak': {
+                'snaktype': 'value',
+                'property': 'P31',
+                'datatype': 'wikibase-item',
+                'datavalue': {
+                    'type': 'wikibase-entityid',
+                    'value': {
+                        'entity-type': 'item',
+                        'id': 'Q604984',
+                    },
+                },
+            },
+            'type': 'statement',
+            'rank': 'normal',
+        }
+    ]
+    monkeypatch.setattr(lexeme_forms, 'get_lexeme_data', lambda lexeme_id, wiki: {
+        'language': 'Q1860',
+        'lexicalCategory': 'Q1084',
+        'claims': {
+            'P5185': p5185,
+        },
+    })
+    template = {
+        'language_item_id': 'Q1860',
+        'language_code': 'en',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'grammatical_features_item_ids': ['Q110786'],
+                'statements': 'singular test statements',
+            },
+            {
+                'grammatical_features_item_ids': ['Q146786'],
+                'statements': 'plural test statements',
+            },
+        ],
+        'statements': {
+            'P5185': p5185,
+            'P31': p31,
+        },
+    }
+    form_data = werkzeug.datastructures.ImmutableMultiDict([('lexeme_id', 'L123'), ('form_representation', 'noun'), ('form_representation', 'nouns')])
+    lexeme_data = lexeme_forms.build_lexeme(template, form_data)
+    assert lexeme_data == {
+        'id': 'L123',
+        'type': 'lexeme',
+        'forms': [
+            {
+                'add': '',
+                'representations': {'en': {'language': 'en', 'value': 'noun'}},
+                'grammaticalFeatures': ['Q110786'],
+                'claims': 'singular test statements',
+            },
+            {
+                'add': '',
+                'representations': {'en': {'language': 'en', 'value': 'nouns'}},
+                'grammaticalFeatures': ['Q146786'],
+                'claims': 'plural test statements',
+            },
+        ],
+        'claims': {
+            'P31': p31,
+        },
     }
 
 def test_build_summary_localhost(monkeypatch):
