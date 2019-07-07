@@ -6,6 +6,12 @@ import translations
 
 def test_entities_exist():
     entity_ids = set()
+    def add_from_statements(statements):
+        for property_id, statement_group in statements.items():
+            entity_ids.add(property_id)
+            for statement in statement_group:
+                entity_ids.add(statement['mainsnak']['datavalue']['value']['id'])
+
     for template in templates.templates.values():
         if template.get('test', False):
             continue
@@ -13,10 +19,8 @@ def test_entities_exist():
         entity_ids.add(template['lexical_category_item_id'])
         for form in template['forms']:
             entity_ids.update(form['grammatical_features_item_ids'])
-        for property_id, statement_group in template.get('statements', {}).items():
-            entity_ids.add(property_id)
-            for statement in statement_group:
-                entity_ids.add(statement['mainsnak']['datavalue']['value']['id'])
+            add_from_statements(form.get('statements', {}))
+        add_from_statements(template.get('statements', {}))
 
     entity_ids = list(entity_ids)
     session = mwapi.Session('https://www.wikidata.org', user_agent='lexeme-forms test (https://tools.wmflabs.org/lexeme-forms; mail@lucaswerkmeister.de)')
