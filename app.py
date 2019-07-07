@@ -214,7 +214,7 @@ def process_template_advanced(template_name, advanced=True):
             return submit_lexeme(template, lexeme_data, summary)
         else:
             print(summary)
-            return flask.Response(json.dumps(lexeme_data), mimetype='application/json')
+            return flask.jsonify(lexeme_data)
     else:
         if not form_data and flask.request.args:
             flask.session['stashed_form_data'] = flask.request.args
@@ -294,7 +294,7 @@ def get_duplicates_api(wiki, language_code, lemma):
     if flask.request.accept_mimetypes.accept_html:
         return render_duplicates(matches, language_code)
     else:
-        return flask.Response(json.dumps(matches), mimetype='application/json')
+        return flask.jsonify(matches)
 
 def get_duplicates(wiki, language_code, lemma):
     host = 'https://' + wiki + '.wikidata.org'
