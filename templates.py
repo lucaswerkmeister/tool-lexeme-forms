@@ -4166,6 +4166,60 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+    # template by User:Vesihiisi, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Swedish
+    ('swedish-verb', {
+        'label': 'svenskt verb',
+        'language_item_id': 'Q9027',
+        'language_code': 'sv',
+        'lexical_category_item_id': 'Q24905',
+        'forms': [
+            {
+                'label': 'infinitiv aktiv',
+                'example': 'Att [läsa] är bra.',
+                'grammatical_features_item_ids': ['Q179230', 'Q1317831'],
+            },
+            {
+                'label': 'presens aktiv',
+                'example': 'Hen [läser] varje dag.',
+                'grammatical_features_item_ids': ['Q192613', 'Q1317831'],
+            },
+            {
+                'label': 'preteritum aktiv',
+                'example': 'Hen [läste] igår.',
+                'grammatical_features_item_ids': ['Q442485', 'Q1317831'],
+            },
+            {
+                'label': 'supinum aktiv',
+                'example': 'Hen har [läst] hela dagen.',
+                'grammatical_features_item_ids': ['Q548470', 'Q1317831'],
+            },
+            {
+                'label': 'imperativ',
+                'example': '[läs] nu!',
+                'grammatical_features_item_ids': ['Q22716'],
+            },
+            {
+                'label': 'infinitiv passiv',
+                'example': 'Det ska [läsas].',
+                'grammatical_features_item_ids': ['Q179230', 'Q1194697'],
+            },
+            {
+                'label': 'presens passiv',
+                'example': 'Det [läses] varje dag.',
+                'grammatical_features_item_ids': ['Q192613', 'Q1194697'],
+            },
+            {
+                'label': 'preteritum passiv',
+                'example': 'Det [lästes] igår.',
+                'grammatical_features_item_ids': ['Q442485', 'Q1194697'],
+            },
+            {
+                'label': 'supinum passiv',
+                'example': 'Det har [lästs] hela dagen.',
+                'grammatical_features_item_ids': ['Q548470', 'Q1194697'],
+            },
+        ],
+    }),
     # template by User:Tohaomg, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Ukrainian
     ('ukrainian-noun-masculine', {
         'label': 'український іменник, чоловічий рід',
