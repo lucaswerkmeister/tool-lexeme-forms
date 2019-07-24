@@ -623,3 +623,29 @@ def test_build_summary_generated_via(monkeypatch):
     }
     summary = lexeme_forms.build_summary(template, form_data)
     assert summary == '[[toolforge:lexeme-forms/template/foo/|foo]], generated via [[toolforge:other/bar|other tool, bar]]'
+
+def test_get_all_templates_api():
+    with lexeme_forms.app.test_client() as client:
+        response = client.get('/api/v1/template/')
+    assert response.status_code == 200
+    assert response.content_type == 'application/json'
+    for template in json.loads(response.get_data(as_text=True)).values():
+        assert '@attribution' in template
+
+def test_get_template_api_exists():
+    with lexeme_forms.app.test_client() as client:
+        response = client.get('/api/v1/template/german-noun-feminine')
+    assert response.status_code == 200
+    assert response.content_type == 'application/json'
+    template = json.loads(response.get_data(as_text=True))
+    assert '@attribution' in template
+
+def test_get_template_api_missing():
+    with lexeme_forms.app.test_client() as client:
+        response = client.get('/api/v1/template/german-noun')
+    assert response.status_code == 404
+    # we don’t say that this is JSON,
+    # but for the benefit of clients who try to deserialize the response without checking the headers,
+    # we still want to reply with valid JSON
+    json.loads(response.get_data(as_text=True))
+    # the previous statement should not have thrown an exception

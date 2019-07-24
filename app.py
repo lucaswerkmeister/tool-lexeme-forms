@@ -491,6 +491,20 @@ def submit_lexeme(template, lexeme_data, summary):
 
     return flask.redirect(host + '/entity/' + lexeme_id, code=303)
 
+@app.route('/api/v1/template/')
+@enableCORS
+def get_all_templates_api():
+    return flask.jsonify(templates)
+
+@app.route('/api/v1/template/<template_name>')
+@enableCORS
+def get_template_api(template_name):
+    template = templates.get(template_name)
+    if template:
+        return flask.jsonify(template)
+    else:
+        return '"no such template"\n', 404
+
 def generate_auth():
     access_token = mwoauth.AccessToken(**flask.session['oauth_access_token'])
     return requests_oauthlib.OAuth1(
