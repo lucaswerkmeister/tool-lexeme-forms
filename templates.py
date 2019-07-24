@@ -1,8 +1,8 @@
 import collections
 
 templates = collections.OrderedDict([
-    # template by User:Oriciu, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Asturian
     ('asturian-noun-masculine', {
+        '@attribution': {'users': ['Oriciu'], 'title': 'Wikidata:Wikidata Lexeme Forms/Asturian'},
         'label': 'nome común masculín asturianu',
         'language_item_id': 'Q29507',
         'language_code': 'ast',
@@ -40,8 +40,8 @@ templates = collections.OrderedDict([
             ],
         },
     }),
-    # template by User:Oriciu, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Asturian
     ('asturian-noun-feminine', {
+        '@attribution': {'users': ['Oriciu'], 'title': 'Wikidata:Wikidata Lexeme Forms/Asturian'},
         'label': 'nome común femenín asturianu',
         'language_item_id': 'Q29507',
         'language_code': 'ast',
@@ -79,8 +79,8 @@ templates = collections.OrderedDict([
             ],
         },
     }),
-    # template by User:Lexicolover, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Czech
     ('czech-noun-masculine-animate', {
+        '@attribution': {'users': ['Lexicolover'], 'title': 'Wikidata:Wikidata Lexeme Forms/Czech'},
         'label': 'české podstatné jméno (rod mužský životný)',
         'language_item_id': 'Q9056',
         'language_code': 'cs',
@@ -194,8 +194,8 @@ templates = collections.OrderedDict([
             ],
         },
     }),
-    # template by User:Lexicolover, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Czech
     ('czech-noun-masculine-inanimate', {
+        '@attribution': {'users': ['Lexicolover'], 'title': 'Wikidata:Wikidata Lexeme Forms/Czech'},
         'label': 'české podstatné jméno (rod mužský neživotný)',
         'language_item_id': 'Q9056',
         'language_code': 'cs',
@@ -309,8 +309,8 @@ templates = collections.OrderedDict([
             ],
         },
     }),
-    # template by User:Lexicolover, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Czech
     ('czech-noun-feminine', {
+        '@attribution': {'users': ['Lexicolover'], 'title': 'Wikidata:Wikidata Lexeme Forms/Czech'},
         'label': 'české podstatné jméno (rod ženský)',
         'language_item_id': 'Q9056',
         'language_code': 'cs',
@@ -408,8 +408,8 @@ templates = collections.OrderedDict([
             ],
         },
     }),
-    # template by User:Lexicolover, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Czech
     ('czech-noun-neuter', {
+        '@attribution': {'users': ['Lexicolover'], 'title': 'Wikidata:Wikidata Lexeme Forms/Czech'},
         'label': 'české podstatné jméno (rod střední)',
         'language_item_id': 'Q9056',
         'language_code': 'cs',
@@ -507,8 +507,8 @@ templates = collections.OrderedDict([
             ],
         },
     }),
-    # template by User:Lexicolover, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Czech
     ('czech-adverb', {
+        '@attribution': {'users': ['Lexicolover'], 'title': 'Wikidata:Wikidata Lexeme Forms/Czech'},
         'label': 'české příslovce',
         'language_item_id': 'Q9056',
         'language_code': 'cs',
@@ -531,8 +531,8 @@ templates = collections.OrderedDict([
             },
         ],
     }),
-    # template by User:Strepon, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Czech
     ('czech-adjective', {
+        '@attribution': {'users': ['Strepon'], 'title': 'Wikidata:Wikidata Lexeme Forms/Czech'},
         'label': 'české přídavné jméno',
         'language_item_id': 'Q9056',
         'language_code': 'cs',
@@ -820,8 +820,8 @@ templates = collections.OrderedDict([
             },
         ],
     }),
-    # template by Lucas Werkmeister
     ('german-noun-masculine', {
+        '@attribution': {'users': ['Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/German'},
         'label': 'deutsches Substantiv (Maskulinum)',
         'language_item_id': 'Q188',
         'language_code': 'de',
@@ -889,8 +889,8 @@ templates = collections.OrderedDict([
             ],
         },
     }),
-    # template by Lucas Werkmeister
     ('german-noun-feminine', {
+        '@attribution': {'users': ['Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/German'},
         'label': 'deutsches Substantiv (Femininum)',
         'language_item_id': 'Q188',
         'language_code': 'de',
@@ -958,8 +958,8 @@ templates = collections.OrderedDict([
             ],
         },
     }),
-    # template by Lucas Werkmeister
     ('german-noun-neuter', {
+        '@attribution': {'users': ['Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/German'},
         'label': 'deutsches Substantiv (Neutrum)',
         'language_item_id': 'Q188',
         'language_code': 'de',
@@ -1027,8 +1027,8 @@ templates = collections.OrderedDict([
             ],
         },
     }),
-    # template by Lucas Werkmeister
     ('german-noun-pluraletantum', {
+        '@attribution': {'users': ['Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/German'},
         'label': 'deutsches Substantiv (Pluraletantum, kein Genus)',
         'language_item_id': 'Q188',
         'language_code': 'de',
@@ -1076,8 +1076,8 @@ templates = collections.OrderedDict([
             ],
         },
     }),
-    # template by Lucas Werkmeister and User:Andreasmperu, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/German
     ('german-verb', {
+        '@attribution': {'users': ['Lucas Werkmeister', 'Andreasmperu'], 'title': 'Wikidata:Wikidata Lexeme Forms/German'},
         'label': 'deutsches Verb',
         'language_item_id': 'Q188',
         'language_code': 'de',
@@ -1225,8 +1225,8 @@ templates = collections.OrderedDict([
             },
         ],
     }),
-    # template by Lucas Werkmeister
     ('english-noun', {
+        '@attribution': {'users': ['Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/English'},
         'label': 'English noun',
         'language_item_id': 'Q1860',
         'language_code': 'en',
@@ -1244,8 +1244,8 @@ templates = collections.OrderedDict([
             },
         ],
     }),
-    # template by User:ArthurPSmith, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/English
     ('english-adverb', {
+        '@attribution': {'users': ['ArthurPSmith'], 'title': 'Wikidata:Wikidata Lexeme Forms/English'},
         'label': 'English adverb',
         'language_item_id': 'Q1860',
         'language_code': 'en',
@@ -1258,8 +1258,8 @@ templates = collections.OrderedDict([
             },
         ],
     }),
-    # template by User:ArthurPSmith, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/English
     ('english-adjective', {
+        '@attribution': {'users': ['ArthurPSmith'], 'title': 'Wikidata:Wikidata Lexeme Forms/English'},
         'label': 'English adjective',
         'language_item_id': 'Q1860',
         'language_code': 'en',
@@ -1282,8 +1282,8 @@ templates = collections.OrderedDict([
             },
         ],
     }),
-    # template by User:ArthurPSmith, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/English
     ('english-verb', {
+        '@attribution': {'users': ['ArthurPSmith'], 'title': 'Wikidata:Wikidata Lexeme Forms/English'},
         'label': 'English verb',
         'language_item_id': 'Q1860',
         'language_code': 'en',
@@ -1316,8 +1316,8 @@ templates = collections.OrderedDict([
             },
         ],
     }),
-    # template by User:KaMan and User:Jens Ohlig, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Esperanto
     ('esperanto-noun', {
+        '@attribution': {'users': ['KaMan', 'Jens Ohlig'], 'title': 'Wikidata:Wikidata Lexeme Forms/Esperanto'},
         'label': 'esperanta substantivo',
         'language_item_id': 'Q143',
         'language_code': 'eo',
@@ -1345,8 +1345,8 @@ templates = collections.OrderedDict([
             },
         ],
     }),
-    # template by User:Andreasmperu, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Spanish
     ('spanish-noun-masculine', {
+        '@attribution': {'users': ['Andreasmperu'], 'title': 'Wikidata:Wikidata Lexeme Forms/Spanish'},
         'label': 'sustantivo masculino en español',
         'language_item_id': 'Q1321',
         'language_code': 'es',
@@ -1384,8 +1384,8 @@ templates = collections.OrderedDict([
             ],
         },
     }),
-    # template by User:Andreasmperu, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Spanish
     ('spanish-noun-feminine', {
+        '@attribution': {'users': ['Andreasmperu'], 'title': 'Wikidata:Wikidata Lexeme Forms/Spanish'},
         'label': 'sustantivo femenino en español',
         'language_item_id': 'Q1321',
         'language_code': 'es',
@@ -1423,8 +1423,8 @@ templates = collections.OrderedDict([
             ],
         },
     }),
-    # template by User:Andreasmperu, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Spanish
     ('spanish-adjective', {
+        '@attribution': {'users': ['Andreasmperu'], 'title': 'Wikidata:Wikidata Lexeme Forms/Spanish'},
         'label': 'adjetivo en español',
         'language_item_id': 'Q1321',
         'language_code': 'es',
@@ -1452,8 +1452,8 @@ templates = collections.OrderedDict([
             },
         ],
     }),
-    # template by User:Reosarevok, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Estonian
     ('estonian-noun', {
+        '@attribution': {'users': ['Reosarevok'], 'title': 'Wikidata:Wikidata Lexeme Forms/Estonian'},
         'label': 'eesti keele nimisõna',
         'language_item_id': 'Q9072',
         'language_code': 'et',
@@ -1601,8 +1601,8 @@ templates = collections.OrderedDict([
             },
         ],
     }),
-    # template by User:Shinnin, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Finnish
     ('finnish-noun', {
+        '@attribution': {'users': ['Shinnin'], 'title': 'Wikidata:Wikidata Lexeme Forms/Finnish'},
         'label': 'suomen kielen substantiivi',
         'language_item_id': 'Q1412',
         'language_code': 'fi',
@@ -1735,8 +1735,8 @@ templates = collections.OrderedDict([
             },
         ],
     }),
-    # template by User:Djiboun, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/French
     ('french-noun-masculine', {
+        '@attribution': {'users': ['Djiboun'], 'title': 'Wikidata:Wikidata Lexeme Forms/French'},
         'label': 'nom commun masculin en français',
         'language_item_id': 'Q150',
         'language_code': 'fr',
@@ -1774,8 +1774,8 @@ templates = collections.OrderedDict([
             ],
         },
     }),
-    # template by User:Djiboun, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/French
     ('french-noun-feminine', {
+        '@attribution': {'users': ['Djiboun'], 'title': 'Wikidata:Wikidata Lexeme Forms/French'},
         'label': 'nom commun féminin en français',
         'language_item_id': 'Q150',
         'language_code': 'fr',
@@ -1813,8 +1813,8 @@ templates = collections.OrderedDict([
             ],
         },
     }),
-    # template by User:Djiboun, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/French
     ('french-adjective', {
+        '@attribution': {'users': ['Djiboun'], 'title': 'Wikidata:Wikidata Lexeme Forms/French'},
         'label': 'adjectif en français',
         'language_item_id': 'Q150',
         'language_code': 'fr',
@@ -1842,8 +1842,8 @@ templates = collections.OrderedDict([
             },
         ],
     }),
-    # template by User:Emptyfear, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Armenian
     ('armenian-noun', {
+        '@attribution': {'users': ['Emptyfear'], 'title': 'Wikidata:Wikidata Lexeme Forms/Armenian'},
         'label': 'հայերեն գոյական',
         'language_item_id': 'Q8785',
         'language_code': 'hy',
@@ -1921,8 +1921,8 @@ templates = collections.OrderedDict([
             },
         ],
     }),
-    # template by User:Emptyfear, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Armenian
     ('armenian-noun-singulare-tantum', {
+        '@attribution': {'users': ['Emptyfear'], 'title': 'Wikidata:Wikidata Lexeme Forms/Armenian'},
         'label': 'հայերեն հավաքական անհոգնական եզակի գոյական',
         'language_item_id': 'Q8785',
         'language_code': 'hy',
@@ -1985,8 +1985,8 @@ templates = collections.OrderedDict([
             ],
         },
     }),
-    # template by User:Sannita, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Italian
     ('italian-noun-feminine', {
+        '@attribution': {'users': ['Sannita'], 'title': 'Wikidata:Wikidata Lexeme Forms/Italian'},
         'label': 'sostantivo femminile italiano',
         'language_item_id': 'Q652',
         'language_code': 'it',
@@ -2024,8 +2024,8 @@ templates = collections.OrderedDict([
             ],
         },
     }),
-    # template by User:Sannita, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Italian
     ('italian-noun-masculine', {
+        '@attribution': {'users': ['Sannita'], 'title': 'Wikidata:Wikidata Lexeme Forms/Italian'},
         'label': 'sostantivo maschile italiano',
         'language_item_id': 'Q652',
         'language_code': 'it',
@@ -2063,8 +2063,8 @@ templates = collections.OrderedDict([
             ],
         },
     }),
-    # template by User:Sannita, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Italian
     ('italian-adjective', {
+        '@attribution': {'users': ['Sannita'], 'title': 'Wikidata:Wikidata Lexeme Forms/Italian'},
         'label': 'aggettivo qualificativo italiano',
         'language_item_id': 'Q652',
         'language_code': 'it',
@@ -2092,8 +2092,8 @@ templates = collections.OrderedDict([
             },
         ],
     }),
-    # template by Lucas Werkmeister
     ('latin-noun-masculine', {
+        '@attribution': {'users': ['Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/Latin'},
         'label': 'nomen Latinum (masculinum)',
         'language_item_id': 'Q397',
         'language_code': 'la',
@@ -2181,8 +2181,8 @@ templates = collections.OrderedDict([
             ],
         },
     }),
-    # template by Lucas Werkmeister
     ('latin-noun-feminine', {
+        '@attribution': {'users': ['Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/Latin'},
         'label': 'nomen Latinum (femininum)',
         'language_item_id': 'Q397',
         'language_code': 'la',
@@ -2270,8 +2270,8 @@ templates = collections.OrderedDict([
             ],
         },
     }),
-    # template by Lucas Werkmeister
     ('latin-noun-neuter', {
+        '@attribution': {'users': ['Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/Latin'},
         'label': 'nomen Latinum (neutrum)',
         'language_item_id': 'Q397',
         'language_code': 'la',
@@ -2359,8 +2359,8 @@ templates = collections.OrderedDict([
             ],
         },
     }),
-    # template by User:MarcoSwart, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Dutch
     ('dutch-neuter-noun', {
+        '@attribution': {'users': ['MarcoSwart'], 'title': 'Wikidata:Wikidata Lexeme Forms/Dutch'},
         'label': 'Nederlands onzijdig zelfstandig naamwoord',
         'language_item_id': 'Q7411',
         'language_code': 'nl',
@@ -2408,8 +2408,8 @@ templates = collections.OrderedDict([
             ],
         },
     }),
-    # template by User:MarcoSwart, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Dutch
     ('dutch-masculine-noun', {
+        '@attribution': {'users': ['MarcoSwart'], 'title': 'Wikidata:Wikidata Lexeme Forms/Dutch'},
         'label': 'Nederlands strikt mannelijk zelfstandig naamwoord',
         'language_item_id': 'Q7411',
         'language_code': 'nl',
@@ -2457,8 +2457,8 @@ templates = collections.OrderedDict([
             ],
         },
     }),
-    # template by User:MarcoSwart, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Dutch
     ('dutch-feminine-noun', {
+        '@attribution': {'users': ['MarcoSwart'], 'title': 'Wikidata:Wikidata Lexeme Forms/Dutch'},
         'label': 'Nederlands strikt vrouwelijk zelfstandig naamwoord',
         'language_item_id': 'Q7411',
         'language_code': 'nl',
@@ -2506,8 +2506,8 @@ templates = collections.OrderedDict([
             ],
         },
     }),
-    # template by User:MarcoSwart, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Dutch
     ('dutch-fem2masc-noun', {
+        '@attribution': {'users': ['MarcoSwart'], 'title': 'Wikidata:Wikidata Lexeme Forms/Dutch'},
         'label': 'Nederlands v/m zelfstandig naamwoord',
         'language_item_id': 'Q7411',
         'language_code': 'nl',
@@ -2555,8 +2555,8 @@ templates = collections.OrderedDict([
             ],
         },
     }),
-    # template by User:Njardarlogar, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Norwegian_Nynorsk
     ('nynorsk-noun-feminine', {
+        '@attribution': {'users': ['Njardarlogar'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Nynorsk'},
         'label': 'nynorsk hokjønnssubstantiv',
         'language_item_id': 'Q25164',
         'language_code': 'nn',
@@ -2604,8 +2604,8 @@ templates = collections.OrderedDict([
             ],
         },
     }),
-    # template by User:Njardarlogar, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Norwegian_Nynorsk
     ('nynorsk-noun-masculine', {
+        '@attribution': {'users': ['Njardarlogar'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Nynorsk'},
         'label': 'nynorsk hankjønnssubstantiv',
         'language_item_id': 'Q25164',
         'language_code': 'nn',
@@ -2653,8 +2653,8 @@ templates = collections.OrderedDict([
             ],
         },
     }),
-    # template by User:Njardarlogar, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Norwegian_Nynorsk
     ('nynorsk-noun-neuter', {
+        '@attribution': {'users': ['Njardarlogar'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Nynorsk'},
         'label': 'nynorsk inkjekjønnssubstantiv',
         'language_item_id': 'Q25164',
         'language_code': 'nn',
@@ -2702,8 +2702,8 @@ templates = collections.OrderedDict([
             ],
         },
     }),
-    # template by User:KaMan, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Polish
     ('polish-noun', {
+        '@attribution': {'users': ['KaMan'], 'title': 'Wikidata:Wikidata Lexeme Forms/Polish'},
         'label': 'polski rzeczownik, prosta odmiana bez wariantów w żadnym z przypadków',
         'language_item_id': 'Q809',
         'language_code': 'pl',
@@ -2781,8 +2781,8 @@ templates = collections.OrderedDict([
             },
         ],
     }),
-    # template by User:KaMan, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Polish
     ('polish-noun-masculine-personal-with-depreciative-forms', {
+        '@attribution': {'users': ['KaMan'], 'title': 'Wikidata:Wikidata Lexeme Forms/Polish'},
         'label': 'polski rzeczownik, rodzaj męskoosobowy z formami ndepr. i depr. w M. i W. lm',
         'language_item_id': 'Q809',
         'language_code': 'pl',
@@ -2970,8 +2970,8 @@ templates = collections.OrderedDict([
             ],
         },
     }),
-    # template by User:KaMan, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Polish
     ('polish-noun-with-potential-plural-forms', {
+        '@attribution': {'users': ['KaMan'], 'title': 'Wikidata:Wikidata Lexeme Forms/Polish'},
         'label': 'polski rzeczownik, potencjalna liczba mnoga',
         'language_item_id': 'Q809',
         'language_code': 'pl',
@@ -3189,8 +3189,8 @@ templates = collections.OrderedDict([
             },
         ],
     }),
-    # template by User:Carybe, User:Joalpe and User:Waldir, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Portuguese
     ('portuguese-verb', {
+        '@attribution': {'users': ['Carybe', 'Joalpe', 'Waldir'], 'title': 'Wikidata:Wikidata Lexeme Forms/Portuguese'},
         'label': 'verbo em Português',
         'language_item_id': 'Q5146',
         'language_code': 'pt',
@@ -3563,8 +3563,8 @@ templates = collections.OrderedDict([
             },
         ],
     }),
-    # template by User:Infovarius, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Russian
     ('russian-noun-masculine', {
+        '@attribution': {'users': ['Infovarius'], 'title': 'Wikidata:Wikidata Lexeme Forms/Russian'},
         'label': 'русское существительное, мужской род',
         'language_item_id': 'Q7737',
         'language_code': 'ru',
@@ -3652,8 +3652,8 @@ templates = collections.OrderedDict([
             ],
         },
     }),
-    # template by User:Infovarius, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Russian
     ('russian-noun-feminine', {
+        '@attribution': {'users': ['Infovarius'], 'title': 'Wikidata:Wikidata Lexeme Forms/Russian'},
         'label': 'русское существительное, женский род',
         'language_item_id': 'Q7737',
         'language_code': 'ru',
@@ -3741,8 +3741,8 @@ templates = collections.OrderedDict([
             ],
         },
     }),
-    # template by User:Infovarius and others, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Russian
     ('russian-noun-neuter', {
+        '@attribution': {'users': ['Infovarius'], 'title': 'Wikidata:Wikidata Lexeme Forms/Russian'},
         'label': 'русское существительное, средний род',
         'language_item_id': 'Q7737',
         'language_code': 'ru',
@@ -3830,8 +3830,8 @@ templates = collections.OrderedDict([
             ],
         },
     }),
-    # template by User:Infovarius, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Russian
     ('russian-noun-pluraletantum', {
+        '@attribution': {'users': ['Infovarius'], 'title': 'Wikidata:Wikidata Lexeme Forms/Russian'},
         'label': 'имя существительное (Pluralia tantum, без рода)',
         'language_item_id': 'Q7737',
         'language_code': 'ru',
@@ -3889,8 +3889,8 @@ templates = collections.OrderedDict([
             ],
         },
     }),
-    # template by User:Infovarius, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Russian
     ('russian-adjective', {
+        '@attribution': {'users': ['Infovarius'], 'title': 'Wikidata:Wikidata Lexeme Forms/Russian'},
         'label': 'русское прилагательное',
         'language_item_id': 'Q7737',
         'language_code': 'ru',
@@ -4028,8 +4028,8 @@ templates = collections.OrderedDict([
             },
         ],
     }),
-    # template by User:Vesihiisi, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Swedish
     ('swedish-noun-common', {
+        '@attribution': {'users': ['Vesihiisi'], 'title': 'Wikidata:Wikidata Lexeme Forms/Swedish'},
         'label': 'svenskt substantiv (utrum)',
         'language_item_id': 'Q9027',
         'language_code': 'sv',
@@ -4097,8 +4097,8 @@ templates = collections.OrderedDict([
             ],
         },
     }),
-    # template by User:Vesihiisi, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Swedish
     ('swedish-noun-neuter', {
+        '@attribution': {'users': ['Vesihiisi'], 'title': 'Wikidata:Wikidata Lexeme Forms/Swedish'},
         'label': 'svenskt substantiv (neutrum)',
         'language_item_id': 'Q9027',
         'language_code': 'sv',
@@ -4166,8 +4166,8 @@ templates = collections.OrderedDict([
             ],
         },
     }),
-    # template by User:Vesihiisi, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Swedish
     ('swedish-verb', {
+        '@attribution': {'users': ['Vesihiisi'], 'title': 'Wikidata:Wikidata Lexeme Forms/Swedish'},
         'label': 'svenskt verb',
         'language_item_id': 'Q9027',
         'language_code': 'sv',
@@ -4220,8 +4220,8 @@ templates = collections.OrderedDict([
             },
         ],
     }),
-    # template by User:Tohaomg, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Ukrainian
     ('ukrainian-noun-masculine', {
+        '@attribution': {'users': ['Tohaomg'], 'title': 'Wikidata:Wikidata Lexeme Forms/Ukrainian'},
         'label': 'український іменник, чоловічий рід',
         'language_item_id': 'Q8798',
         'language_code': 'uk',
@@ -4319,8 +4319,8 @@ templates = collections.OrderedDict([
             ],
         },
     }),
-    # template by User:Tohaomg, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Ukrainian
     ('ukrainian-noun-feminine', {
+        '@attribution': {'users': ['Tohaomg'], 'title': 'Wikidata:Wikidata Lexeme Forms/Ukrainian'},
         'label': 'український іменник, жіночий рід',
         'language_item_id': 'Q8798',
         'language_code': 'uk',
@@ -4418,8 +4418,8 @@ templates = collections.OrderedDict([
             ],
         },
     }),
-    # template by User:Tohaomg, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Ukrainian
     ('ukrainian-noun-neuter', {
+        '@attribution': {'users': ['Tohaomg'], 'title': 'Wikidata:Wikidata Lexeme Forms/Ukrainian'},
         'label': 'український іменник, середній рід',
         'language_item_id': 'Q8798',
         'language_code': 'uk',
@@ -4517,8 +4517,8 @@ templates = collections.OrderedDict([
             ],
         },
     }),
-    # template by User:Tohaomg, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Ukrainian
     ('ukrainian-noun-pluraletantum', {
+        '@attribution': {'users': ['Tohaomg'], 'title': 'Wikidata:Wikidata Lexeme Forms/Ukrainian'},
         'label': 'український іменник, тільки множина (pluralia tantum)',
         'language_item_id': 'Q8798',
         'language_code': 'uk',
@@ -4581,8 +4581,8 @@ templates = collections.OrderedDict([
             ],
         },
     }),
-    # template by Lucas Werkmeister
     ('german-noun-neuter-test', {
+        '@attribution': {'users': ['Lucas Werkmeister']},
         'test': True,
         'label': 'deutsches Substantiv (Neutrum), test.wikidata.org',
         'language_item_id': 'Q348',

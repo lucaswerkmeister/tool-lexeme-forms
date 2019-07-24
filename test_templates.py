@@ -1,4 +1,5 @@
 import mwapi
+import pytest
 
 import templates
 import translations
@@ -46,6 +47,23 @@ def test_translations_available():
             missing_language_codes.add(language_code)
 
     assert not missing_language_codes
+
+
+@pytest.mark.parametrize('template_name', templates.templates.keys())
+def test_attribution_available(template_name):
+    template = templates.templates[template_name]
+    assert '@attribution' in template
+    attribution = template['@attribution']
+    assert isinstance(attribution, dict)
+    assert 'users' in attribution
+    users = attribution['users']
+    assert isinstance(users, list)
+    assert users
+    if not template.get('test', False):
+        assert 'title' in attribution
+        title = attribution['title']
+        assert isinstance(title, str)
+        assert title
 
 
 lexeme_data_german_noun_neuter = {
