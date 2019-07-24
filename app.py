@@ -452,7 +452,7 @@ def build_lexeme(template, form_data):
     return lexeme_data
 
 def build_summary(template, form_data):
-    template_name = template['template_name']
+    template_name = template['@template_name']
     url = current_url()
     if url.startswith('https://tools.wmflabs.org/'):
         relative = url[len('https://tools.wmflabs.org/'):]

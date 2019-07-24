@@ -151,7 +151,7 @@ def test_get_duplicates_api_html_empty(monkeypatch):
     assert response.get_data(as_text=True) == ''
 
 minimal_template = {
-    'template_name': 'minimal-template',
+    '@template_name': 'minimal-template',
     'language_code': 'en',
 }
 
@@ -571,7 +571,7 @@ def test_build_lexeme_with_statements_for_existing_lexeme(monkeypatch):
 def test_build_summary_localhost(monkeypatch):
     monkeypatch.setattr(lexeme_forms, 'current_url', lambda: 'http://localhost/template/foo/')
     template = {
-        'template_name': 'foo',
+        '@template_name': 'foo',
     }
     form_data = {}
     summary = lexeme_forms.build_summary(template, form_data)
@@ -580,7 +580,7 @@ def test_build_summary_localhost(monkeypatch):
 def test_build_summary_internet(monkeypatch):
     monkeypatch.setattr(lexeme_forms, 'current_url', lambda: 'https://example.com/lexeme-forms/template/foo/')
     template = {
-        'template_name': 'foo',
+        '@template_name': 'foo',
     }
     form_data = {}
     summary = lexeme_forms.build_summary(template, form_data)
@@ -589,7 +589,7 @@ def test_build_summary_internet(monkeypatch):
 def test_build_summary_toolforge_lexeme_forms(monkeypatch):
     monkeypatch.setattr(lexeme_forms, 'current_url', lambda: 'https://tools.wmflabs.org/lexeme-forms/template/foo/')
     template = {
-        'template_name': 'foo',
+        '@template_name': 'foo',
     }
     form_data = {}
     summary = lexeme_forms.build_summary(template, form_data)
@@ -598,7 +598,7 @@ def test_build_summary_toolforge_lexeme_forms(monkeypatch):
 def test_build_summary_toolforge_other(monkeypatch):
     monkeypatch.setattr(lexeme_forms, 'current_url', lambda: 'https://tools.wmflabs.org/other/template/foo/')
     template = {
-        'template_name': 'foo',
+        '@template_name': 'foo',
     }
     form_data = {}
     summary = lexeme_forms.build_summary(template, form_data)
@@ -607,7 +607,7 @@ def test_build_summary_toolforge_other(monkeypatch):
 def test_build_summary_toolforge_lexeme_forms_advanced(monkeypatch):
     monkeypatch.setattr(lexeme_forms, 'current_url', lambda: 'https://tools.wmflabs.org/lexeme-forms/template/foo/advanced/')
     template = {
-        'template_name': 'foo',
+        '@template_name': 'foo',
     }
     form_data = {}
     summary = lexeme_forms.build_summary(template, form_data)
@@ -616,7 +616,7 @@ def test_build_summary_toolforge_lexeme_forms_advanced(monkeypatch):
 def test_build_summary_generated_via(monkeypatch):
     monkeypatch.setattr(lexeme_forms, 'current_url', lambda: 'https://tools.wmflabs.org/lexeme-forms/template/foo/')
     template = {
-        'template_name': 'foo',
+        '@template_name': 'foo',
     }
     form_data = {
         'generated_via': '[[toolforge:other/bar|other tool, bar]]'

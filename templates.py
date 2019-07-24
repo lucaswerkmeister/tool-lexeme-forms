@@ -4692,7 +4692,7 @@ templates = collections.OrderedDict([
 ])
 
 for template_name, template in templates.items():
-    template['template_name'] = template_name
+    template['@template_name'] = template_name
 
 # whether the presence of some statement for a property
 # rules the lexeme out as a match for a template
