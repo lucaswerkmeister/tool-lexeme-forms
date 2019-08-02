@@ -299,7 +299,7 @@ templates = collections.OrderedDict([
                             'type': 'wikibase-entityid',
                             'value': {
                                 'entity-type': 'item',
-                                'id': 'Q54020181',
+                                'id': 'Q52943434',
                             },
                         },
                     },
@@ -576,37 +576,37 @@ templates = collections.OrderedDict([
             {
                 'label': '1. pád, rod mužský neživotný, jednotné číslo',
                 'example': 'To je můj [velký] hrad.',
-                'grammatical_features_item_ids': ['Q131105', 'Q110786', 'Q54020181'],
+                'grammatical_features_item_ids': ['Q131105', 'Q110786', 'Q52943434'],
             },
             {
                 'label': '2. pád, rod mužský neživotný, jednotné číslo',
                 'example': 'Má strach z mého [velkého] hradu.',
-                'grammatical_features_item_ids': ['Q146233', 'Q110786', 'Q54020181'],
+                'grammatical_features_item_ids': ['Q146233', 'Q110786', 'Q52943434'],
             },
             {
                 'label': '3. pád, rod mužský neživotný, jednotné číslo',
                 'example': 'Dej to k mému [velkému] hradu.',
-                'grammatical_features_item_ids': ['Q145599', 'Q110786', 'Q54020181'],
+                'grammatical_features_item_ids': ['Q145599', 'Q110786', 'Q52943434'],
             },
             {
                 'label': '4. pád, rod mužský neživotný, jednotné číslo',
                 'example': 'Vidím jeden [velký] hrad.',
-                'grammatical_features_item_ids': ['Q146078', 'Q110786', 'Q54020181'],
+                'grammatical_features_item_ids': ['Q146078', 'Q110786', 'Q52943434'],
             },
             {
                 'label': '5. pád, rod mužský neživotný, jednotné číslo',
                 'example': 'Kam směřuješ, [velký] hrade?',
-                'grammatical_features_item_ids': ['Q185077', 'Q110786', 'Q54020181'],
+                'grammatical_features_item_ids': ['Q185077', 'Q110786', 'Q52943434'],
             },
             {
                 'label': '6. pád, rod mužský neživotný, jednotné číslo',
                 'example': 'Pověz mi něco o svém [velkém] hradu.',
-                'grammatical_features_item_ids': ['Q202142', 'Q110786', 'Q54020181'],
+                'grammatical_features_item_ids': ['Q202142', 'Q110786', 'Q52943434'],
             },
             {
                 'label': '7. pád, rod mužský neživotný, jednotné číslo',
                 'example': 'Seznámil jsem se s tvým [velkým] hradem.',
-                'grammatical_features_item_ids': ['Q192997', 'Q110786', 'Q54020181'],
+                'grammatical_features_item_ids': ['Q192997', 'Q110786', 'Q52943434'],
             },
             {
                 'label': '1. pád, rod ženský, jednotné číslo',
@@ -716,37 +716,37 @@ templates = collections.OrderedDict([
             {
                 'label': '1. pád, rod mužský neživotný, množné číslo',
                 'example': 'To jsou mé [velké] hrady.',
-                'grammatical_features_item_ids': ['Q131105', 'Q146786', 'Q54020181'],
+                'grammatical_features_item_ids': ['Q131105', 'Q146786', 'Q52943434'],
             },
             {
                 'label': '2. pád, rod mužský neživotný, množné číslo',
                 'example': 'Má strach z mých [velkých] hradů.',
-                'grammatical_features_item_ids': ['Q146233', 'Q146786', 'Q54020181'],
+                'grammatical_features_item_ids': ['Q146233', 'Q146786', 'Q52943434'],
             },
             {
                 'label': '3. pád, rod mužský neživotný, množné číslo',
                 'example': 'Dej to k mým [velkým] hradům.',
-                'grammatical_features_item_ids': ['Q145599', 'Q146786', 'Q54020181'],
+                'grammatical_features_item_ids': ['Q145599', 'Q146786', 'Q52943434'],
             },
             {
                 'label': '4. pád, rod mužský neživotný, množné číslo',
                 'example': 'Vidím dva [velké] hrady.',
-                'grammatical_features_item_ids': ['Q146078', 'Q146786', 'Q54020181'],
+                'grammatical_features_item_ids': ['Q146078', 'Q146786', 'Q52943434'],
             },
             {
                 'label': '5. pád, rod mužský neživotný, množné číslo',
                 'example': 'Kam směřujete, [velké] hrady?',
-                'grammatical_features_item_ids': ['Q185077', 'Q146786', 'Q54020181'],
+                'grammatical_features_item_ids': ['Q185077', 'Q146786', 'Q52943434'],
             },
             {
                 'label': '6. pád, rod mužský neživotný, množné číslo',
                 'example': 'Pověz mi něco o svých [velkých] hradech.',
-                'grammatical_features_item_ids': ['Q202142', 'Q146786', 'Q54020181'],
+                'grammatical_features_item_ids': ['Q202142', 'Q146786', 'Q52943434'],
             },
             {
                 'label': '7. pád, rod mužský neživotný, množné číslo',
                 'example': 'Seznámil jsem se s tvými [velkými] hrady.',
-                'grammatical_features_item_ids': ['Q192997', 'Q146786', 'Q54020181'],
+                'grammatical_features_item_ids': ['Q192997', 'Q146786', 'Q52943434'],
             },
             {
                 'label': '1. pád, rod ženský, množné číslo',
@@ -3914,7 +3914,7 @@ templates = collections.OrderedDict([
             {
                 'label': 'ед.ч. м.р. неодушевл. вин.п.',
                 'example': 'Вижу [хороший] дом.',
-                'grammatical_features_item_ids': ['Q146078', 'Q499327', 'Q51927539', 'Q54020181', 'Q110786'],
+                'grammatical_features_item_ids': ['Q146078', 'Q499327', 'Q51927539', 'Q52943434', 'Q110786'],
             },
             {
                 'label': 'ед.ч. м.р. одушевл. вин.п.',
