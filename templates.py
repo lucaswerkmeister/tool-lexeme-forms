@@ -4220,6 +4220,60 @@ templates = collections.OrderedDict([
             },
         ],
     }),
+    ('swedish-absolute-adjective', {
+        '@attribution': {'users': ['Vesihiisi'], 'title': 'Wikidata:Wikidata Lexeme Forms/Swedish'},
+        'label': 'svenskt adjektiv (utan komparativ)',
+        'language_item_id': 'Q9027',
+        'language_code': 'sv',
+        'lexical_category_item_id': 'Q34698',
+        'forms': [
+            {
+                'label': 'obestämd singular, utrum',
+                'example': 'en [tolvårig] pojke',
+                'grammatical_features_item_ids': ['Q53997857', 'Q110786', 'Q1305037', 'Q3482678'],
+            },
+            {
+                'label': 'obestämd singular, neutrum',
+                'example': 'ett [tolvårigt] barn',
+                'grammatical_features_item_ids': ['Q53997857', 'Q110786', 'Q1775461', 'Q3482678'],
+            },
+            {
+                'label': 'bestämd singular, maskulinum',
+                'example': 'den [tolvårige] pojken',
+                'grammatical_features_item_ids': ['Q53997851', 'Q110786', 'Q499327', 'Q3482678'],
+            },
+            {
+                'label': 'bestämd singular, utrum/neutrum',
+                'example': 'det [tolvåriga] barnet',
+                'grammatical_features_item_ids': ['Q53997851', 'Q110786', 'Q3482678'],
+            },
+            {
+                'label': 'bestämd plural',
+                'example': 'de [tolvåriga] barnen',
+                'grammatical_features_item_ids': ['Q53997851', 'Q146786', 'Q3482678'],
+            },
+        ],
+        'statements': {
+            'P31': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P31',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q332375',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
     ('ukrainian-noun-masculine', {
         '@attribution': {'users': ['Tohaomg'], 'title': 'Wikidata:Wikidata Lexeme Forms/Ukrainian'},
         'label': 'український іменник, чоловічий рід',
