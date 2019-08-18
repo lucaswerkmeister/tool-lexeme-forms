@@ -31,6 +31,30 @@ def test_form2input_invalid():
         markup = lexeme_forms.form2input({'advanced': True}, {'example': 'No placeholder.'})
     assert 'missing [placeholder]' in str(excinfo.value)
 
+@pytest.mark.parametrize('example, expected_prefix, expected_placeholder, expected_suffix', [
+    ('Left [placeholder] right.', 'Left ', 'placeholder', ' right.'),
+    ('[placeholder] right.', '', 'placeholder', ' right.'),
+    ('Left [placeholder]', 'Left ', 'placeholder', ''),
+    ('[placeholder]', '', 'placeholder', ''),
+    ('Left [] right.', 'Left ', '', ' right.'),
+])
+def test_split_example(example, expected_prefix, expected_placeholder, expected_suffix):
+    form = {'example': example}
+    (actual_prefix, actual_placeholder, actual_suffix) = lexeme_forms.split_example(form)
+    assert (expected_prefix, expected_placeholder, expected_suffix) \
+        == (actual_prefix, actual_placeholder, actual_suffix)
+
+@pytest.mark.parametrize('example', [
+    'Left right.',
+    'Left [placeholder right.',
+    'Left placeholder] right.',
+    'Left ]placeholder[ right.',
+])
+def test_split_example_error(example):
+    form = {'example': example}
+    with pytest.raises(Exception):
+        lexeme_forms.split_example(form)
+
 def test_csrf_token_generate():
     with lexeme_forms.app.test_request_context():
         token = lexeme_forms.csrf_token()

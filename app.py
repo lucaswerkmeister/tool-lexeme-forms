@@ -91,21 +91,25 @@ def denyFrame(response):
 @app.template_filter()
 @jinja2.contextfilter
 def form2input(context, form, first=False):
+    (prefix, placeholder, suffix) = split_example(form)
+    return (flask.Markup.escape(prefix) +
+            flask.Markup(r'<input type="text" name="form_representation" placeholder="') +
+            flask.Markup.escape(placeholder) +
+            flask.Markup(r'"') +
+            flask.Markup(r' pattern="[^/]+(?:/[^/]+)*"') +
+            (flask.Markup(r' required') if not context['advanced'] else flask.Markup('')) +
+            (flask.Markup(r' autofocus') if first else flask.Markup('')) +
+            (flask.Markup(r' value="') + flask.Markup.escape(form['value']) + flask.Markup(r'"') if 'value' in form else flask.Markup('')) +
+            flask.Markup(r' spellcheck="true"') +
+            flask.Markup(r'>') +
+            flask.Markup.escape(suffix))
+
+def split_example(form):
     example = form['example']
     match = re.match(r'^(.*)\[(.*)\](.*)$', example)
     if match:
         (prefix, placeholder, suffix) = match.groups()
-        return (flask.Markup.escape(prefix) +
-                flask.Markup(r'<input type="text" name="form_representation" placeholder="') +
-                flask.Markup.escape(placeholder) +
-                flask.Markup(r'"') +
-                flask.Markup(r' pattern="[^/]+(?:/[^/]+)*"') +
-                (flask.Markup(r' required') if not context['advanced'] else flask.Markup('')) +
-                (flask.Markup(r' autofocus') if first else flask.Markup('')) +
-                (flask.Markup(r' value="') + flask.Markup.escape(form['value']) + flask.Markup(r'"') if 'value' in form else flask.Markup('')) +
-                flask.Markup(r' spellcheck="true"') +
-                flask.Markup(r'>') +
-                flask.Markup.escape(suffix))
+        return (prefix, placeholder, suffix)
     else:
         raise Exception('Invalid template: missing [placeholder]: ' + example)
 
