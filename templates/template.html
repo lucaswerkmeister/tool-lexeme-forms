@@ -23,7 +23,7 @@
     {{ message( 'csrf_warning' ) }}
   </div>
   {% endif %}
-  {{ duplicates | render_duplicates(template.language_code) | safe }}
+  {{ duplicates | render_duplicates(template.language_code, actionable=True) | safe }}
   <form method="post" autocapitalize="off">
     <input name="_csrf_token" type="hidden" value="{{ csrf_token() }}">
     {% if advanced %}
