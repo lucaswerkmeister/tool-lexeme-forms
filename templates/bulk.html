@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block main_tag_attributes %}{{ super() }} lang="{{ template.language_code }}"{% endblock main_tag_attributes %}
+{% block main %}
+  <h1>{{ template.label }}</h1>
+  <form method="post" autocapitalize="off">
+    <input name="_csrf_token" type="hidden" value="{{ csrf_token() }}">
+    <div class="form-group">
+      <textarea name="lexemes" class="form-control" rows="10" placeholder="{{ placeholder }}"></textarea>
+    </div>
+    <!-- TODO generated_via should fit somewhere in here -->
+    <button class="btn btn-danger">{{ message( 'create' ) }}</button>
+  </form>
+{% endblock main %}

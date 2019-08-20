@@ -13,9 +13,11 @@ import requests_oauthlib
 import string
 import toolforge
 import yaml
+import werkzeug.datastructures
 
 from flask_utils import OrderedFlask, TagOrderedMultiDict, TagImmutableOrderedMultiDict
 from formatters import PluralFormatter
+from parse_tpsv import parse_lexemes
 from templates import templates, match_template_to_lexeme_data
 from translations import translations
 
@@ -231,6 +233,68 @@ def process_template_advanced(template_name, advanced=True):
             'template.html',
             template=add_form_data_to_template(form_data, template),
             advanced=advanced,
+        )
+
+@app.route('/template/<template_name>/bulk/', methods=['GET', 'POST'])
+def process_template_bulk(template_name):
+    response = if_no_such_template_redirect(template_name)
+    if response:
+        return response
+
+    response = if_needs_oauth_redirect()
+    if response:
+        return response
+
+    template = templates[template_name]
+    flask.g.language_code = template['language_code']
+
+    if flask.request.method == 'POST' and flask.request.referrer == current_url():
+        form_data = flask.request.form
+        token = flask.session.pop('_csrf_token', None)
+        if not token or token != form_data.get('_csrf_token'):
+            return 'CSRF error', 400 # TODO better handling
+
+        lexemes = parse_lexemes(form_data.get('lexemes'))
+        results = []
+
+        for lexeme in lexemes:
+            lexeme_form_data = werkzeug.datastructures.ImmutableMultiDict(
+                [('form_representation', form_representation) for form_representation in lexeme])
+            duplicates = find_duplicates(template, lexeme_form_data)
+            if duplicates:
+                results.append(('duplicates', duplicates))
+                continue
+            lexeme_data = build_lexeme(template, lexeme_form_data)
+            summary = build_summary(template, form_data)
+
+            if 'oauth' in app.config:
+                lexeme_uri = submit_lexeme(template, lexeme_data, summary)
+                results.append(('lexeme_uri', lexeme_uri))
+            else:
+                print(summary)
+                results.append(('lexeme_data', lexeme_data))
+
+        if 'oauth' in app.config:
+            return flask.render_template(
+                'bulk-result.html',
+                template=template,
+                results=results,
+            )
+        else:
+            return flask.jsonify([result[1] for result in results])
+    else:
+        placeholder = ''
+        for form in template['forms']:
+            if placeholder:
+                placeholder += '|'
+            (prefix, form_placeholder, suffix) = split_example(form)
+            placeholder += form_placeholder
+        placeholder += '\n...'
+
+        return flask.render_template(
+            'bulk.html',
+            template=template,
+            placeholder=placeholder,
         )
 
 def if_no_such_template_redirect(template_name):

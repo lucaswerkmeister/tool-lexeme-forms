@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block main %}
+  <h1>{{ template.label }}</h1>
+  <ul>
+    {% for result in results %}
+    <li>
+    {% if result[0] == 'lexeme_uri' %}
+    {% set lexeme_uri = result[1] %}
+    <a href="{{ lexeme_uri }}">{{ lexeme_uri }}</a>
+    {% elif result[0] == 'duplicates' %}
+    {% set duplicates = result[1] %}
+    {{ duplicates | render_duplicates(template.language_code, actionable=False) | safe }}
+    {% else %}
+    <div class="alert alert-error">Unknown result type {{ result[0] }}!</div>
+    {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+{% endblock main %}
