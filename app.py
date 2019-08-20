@@ -215,7 +215,8 @@ def process_template_advanced(template_name, advanced=True):
         summary = build_summary(template, form_data)
 
         if 'oauth' in app.config:
-            return submit_lexeme(template, lexeme_data, summary)
+            lexeme_uri = submit_lexeme(template, lexeme_data, summary)
+            return flask.redirect(lexeme_uri, code=303)
         else:
             print(summary)
             return flask.jsonify(lexeme_data)
@@ -493,7 +494,7 @@ def submit_lexeme(template, lexeme_data, summary):
     lexeme_id = response['entity']['id']
     revid = response['entity']['lastrevid']
 
-    return flask.redirect(host + '/entity/' + lexeme_id, code=303)
+    return host + '/entity/' + lexeme_id
 
 @app.route('/api/v1/template/')
 @enableCORS
