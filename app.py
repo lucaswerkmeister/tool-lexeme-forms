@@ -248,6 +248,11 @@ def process_template_bulk(template_name):
     template = templates[template_name]
     flask.g.language_code = template['language_code']
 
+    if not can_use_bulk_mode():
+        return flask.render_template(
+            'bulk-not-allowed.html',
+        )
+
     if flask.request.method == 'POST' and flask.request.referrer == current_url():
         form_data = flask.request.form
         token = flask.session.pop('_csrf_token', None)
@@ -481,6 +486,15 @@ def current_url():
         _scheme=flask.request.headers.get('X-Forwarded-Proto', 'http'),
         **flask.request.view_args
     )
+
+@app.template_global()
+def can_use_bulk_mode():
+    if 'oauth' not in app.config:
+        return True
+    identity = identify()
+    if not identity:
+        return False
+    return 'autoconfirmed' in identity['groups']
 
 def build_lexeme(template, form_data):
     lang = template['language_code']
