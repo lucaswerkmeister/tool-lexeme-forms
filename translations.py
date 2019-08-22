@@ -14,6 +14,8 @@ translations = {
         'advanced_partial_forms_hint': 'To create lexemes with some forms missing, switch to advanced mode.',
         'generated_via': 'generated via',
         'description_with_forms_and_senses': '{description}, {forms!p:0=no forms:one=one form:other={forms} forms} and {senses!p:0=no senses:one=one sense:other={senses} senses}',
+        'bulk_heading': 'bulk mode',
+        'bulk_format_help': 'format help',
     },
     # translations by User:Oriciu, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Asturian
     'ast': {
