@@ -55,5 +55,8 @@
     {% if not advanced %}
     <button formnovalidate formaction="{{ url_for('process_template_advanced', template_name=template['@template_name']) }}" class="btn btn-secondary">{{ message( 'advanced' ) }}</button>
     {% endif %}
+    {% if can_use_bulk_mode %}
+    <button formnovalidate formaction="{{ url_for('process_template_bulk', template_name=template['@template_name']) }}" class="btn btn-secondary">{{ message('bulk_button') }}</button>
+    {% endif %}
   </form>
 {% endblock main %}

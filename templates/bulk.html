@@ -9,7 +9,7 @@
   <form method="post" autocapitalize="off">
     <input name="_csrf_token" type="hidden" value="{{ csrf_token() }}">
     <div class="form-group">
-      <textarea name="lexemes" class="form-control" rows="10" placeholder="{{ placeholder }}"></textarea>
+      <textarea name="lexemes" class="form-control" rows="10" placeholder="{{ placeholder }}">{% if value %}{{ value }}{% endif %}</textarea>
     </div>
     <!-- TODO generated_via should fit somewhere in here -->
     <button class="btn btn-danger">{{ message( 'create' ) }}</button>

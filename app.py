@@ -235,6 +235,7 @@ def process_template_advanced(template_name, advanced=True):
             'template.html',
             template=add_form_data_to_template(form_data, template),
             advanced=advanced,
+            can_use_bulk_mode=can_use_bulk_mode(),
         )
 
 @app.route('/template/<template_name>/bulk/', methods=['GET', 'POST'])
@@ -298,10 +299,18 @@ def process_template_bulk(template_name):
             placeholder += form_placeholder
         placeholder += '\n...'
 
+        if flask.request.method == 'POST':
+            form_data = flask.request.form
+            value = '|'.join(form_data.getlist('form_representation'))
+            value += '\n' # for convenience when adding more
+        else:
+            value = None
+
         return flask.render_template(
             'bulk.html',
             template=template,
             placeholder=placeholder,
+            value=value,
         )
 
 def if_no_such_template_redirect(template_name):
