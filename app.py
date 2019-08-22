@@ -168,12 +168,13 @@ def render_oauth_username():
             flask.Markup(r'</span>'))
 
 @app.template_global()
-def message(message_code):
-    message, language = message_with_language(message_code)
+def message(message_code, language_code=None):
+    message, language = message_with_language(message_code, language_code)
     return message
 
-def message_with_language(message_code):
-    language_code = flask.g.language_code
+def message_with_language(message_code, language_code=None):
+    if not language_code:
+        language_code = flask.g.language_code
     if message_code not in translations[language_code]:
         language_code = 'en'
     text = translations[language_code][message_code]
