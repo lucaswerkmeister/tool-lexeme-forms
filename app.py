@@ -185,6 +185,7 @@ def index():
     return flask.render_template(
         'index.html',
         templates=templates,
+        can_use_bulk_mode=can_use_bulk_mode(),
     )
 
 @app.route('/template/<template_name>/', methods=['GET', 'POST'])

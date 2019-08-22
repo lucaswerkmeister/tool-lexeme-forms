@@ -14,6 +14,7 @@ translations = {
         'advanced_partial_forms_hint': 'To create lexemes with some forms missing, switch to advanced mode.',
         'generated_via': 'generated via',
         'description_with_forms_and_senses': '{description}, {forms!p:0=no forms:one=one form:other={forms} forms} and {senses!p:0=no senses:one=one sense:other={senses} senses}',
+        'bulk_link': 'bulk mode',
         'bulk_heading': 'bulk mode',
         'bulk_format_help': 'format help',
         'bulk_not_allowed': 'You are not allowed to use bulk mode. Sorry.',
