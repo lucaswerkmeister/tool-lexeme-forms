@@ -1,6 +1,7 @@
 import collections
 
 templates = collections.OrderedDict([
+
     ('asturian-noun-masculine', {
         '@attribution': {'users': ['Oriciu'], 'title': 'Wikidata:Wikidata Lexeme Forms/Asturian'},
         'label': 'nome común masculín asturianu',
@@ -40,6 +41,7 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+
     ('asturian-noun-feminine', {
         '@attribution': {'users': ['Oriciu'], 'title': 'Wikidata:Wikidata Lexeme Forms/Asturian'},
         'label': 'nome común femenín asturianu',
@@ -79,6 +81,7 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+
     ('czech-noun-masculine-animate', {
         '@attribution': {'users': ['Lexicolover'], 'title': 'Wikidata:Wikidata Lexeme Forms/Czech'},
         'label': 'české podstatné jméno (rod mužský životný)',
@@ -194,6 +197,7 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+
     ('czech-noun-masculine-inanimate', {
         '@attribution': {'users': ['Lexicolover'], 'title': 'Wikidata:Wikidata Lexeme Forms/Czech'},
         'label': 'české podstatné jméno (rod mužský neživotný)',
@@ -309,6 +313,7 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+
     ('czech-noun-feminine', {
         '@attribution': {'users': ['Lexicolover'], 'title': 'Wikidata:Wikidata Lexeme Forms/Czech'},
         'label': 'české podstatné jméno (rod ženský)',
@@ -408,6 +413,7 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+
     ('czech-noun-neuter', {
         '@attribution': {'users': ['Lexicolover'], 'title': 'Wikidata:Wikidata Lexeme Forms/Czech'},
         'label': 'české podstatné jméno (rod střední)',
@@ -507,6 +513,7 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+
     ('czech-adverb', {
         '@attribution': {'users': ['Lexicolover'], 'title': 'Wikidata:Wikidata Lexeme Forms/Czech'},
         'label': 'české příslovce',
@@ -531,6 +538,7 @@ templates = collections.OrderedDict([
             },
         ],
     }),
+
     ('czech-adjective', {
         '@attribution': {'users': ['Strepon'], 'title': 'Wikidata:Wikidata Lexeme Forms/Czech'},
         'label': 'české přídavné jméno',
@@ -820,6 +828,7 @@ templates = collections.OrderedDict([
             },
         ],
     }),
+
     ('german-noun-masculine', {
         '@attribution': {'users': ['Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/German'},
         'label': 'deutsches Substantiv (Maskulinum)',
@@ -889,6 +898,7 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+
     ('german-noun-feminine', {
         '@attribution': {'users': ['Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/German'},
         'label': 'deutsches Substantiv (Femininum)',
@@ -958,6 +968,7 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+
     ('german-noun-neuter', {
         '@attribution': {'users': ['Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/German'},
         'label': 'deutsches Substantiv (Neutrum)',
@@ -1027,6 +1038,7 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+
     ('german-noun-pluraletantum', {
         '@attribution': {'users': ['Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/German'},
         'label': 'deutsches Substantiv (Pluraletantum, kein Genus)',
@@ -1076,6 +1088,7 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+
     ('german-verb', {
         '@attribution': {'users': ['Lucas Werkmeister', 'Andreasmperu'], 'title': 'Wikidata:Wikidata Lexeme Forms/German'},
         'label': 'deutsches Verb',
@@ -1225,6 +1238,7 @@ templates = collections.OrderedDict([
             },
         ],
     }),
+
     ('english-noun', {
         '@attribution': {'users': ['Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/English'},
         'label': 'English noun',
@@ -1244,6 +1258,7 @@ templates = collections.OrderedDict([
             },
         ],
     }),
+
     ('english-adverb', {
         '@attribution': {'users': ['ArthurPSmith'], 'title': 'Wikidata:Wikidata Lexeme Forms/English'},
         'label': 'English adverb',
@@ -1258,6 +1273,7 @@ templates = collections.OrderedDict([
             },
         ],
     }),
+
     ('english-adjective', {
         '@attribution': {'users': ['ArthurPSmith'], 'title': 'Wikidata:Wikidata Lexeme Forms/English'},
         'label': 'English adjective',
@@ -1282,6 +1298,7 @@ templates = collections.OrderedDict([
             },
         ],
     }),
+
     ('english-verb', {
         '@attribution': {'users': ['ArthurPSmith'], 'title': 'Wikidata:Wikidata Lexeme Forms/English'},
         'label': 'English verb',
@@ -1316,6 +1333,7 @@ templates = collections.OrderedDict([
             },
         ],
     }),
+
     ('esperanto-noun', {
         '@attribution': {'users': ['KaMan', 'Jens Ohlig'], 'title': 'Wikidata:Wikidata Lexeme Forms/Esperanto'},
         'label': 'esperanta substantivo',
@@ -1345,6 +1363,7 @@ templates = collections.OrderedDict([
             },
         ],
     }),
+
     ('spanish-noun-masculine', {
         '@attribution': {'users': ['Andreasmperu'], 'title': 'Wikidata:Wikidata Lexeme Forms/Spanish'},
         'label': 'sustantivo masculino en español',
@@ -1384,6 +1403,7 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+
     ('spanish-noun-feminine', {
         '@attribution': {'users': ['Andreasmperu'], 'title': 'Wikidata:Wikidata Lexeme Forms/Spanish'},
         'label': 'sustantivo femenino en español',
@@ -1423,6 +1443,7 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+
     ('spanish-adjective', {
         '@attribution': {'users': ['Andreasmperu'], 'title': 'Wikidata:Wikidata Lexeme Forms/Spanish'},
         'label': 'adjetivo en español',
@@ -1452,6 +1473,7 @@ templates = collections.OrderedDict([
             },
         ],
     }),
+
     ('estonian-noun', {
         '@attribution': {'users': ['Reosarevok'], 'title': 'Wikidata:Wikidata Lexeme Forms/Estonian'},
         'label': 'eesti keele nimisõna',
@@ -1601,6 +1623,7 @@ templates = collections.OrderedDict([
             },
         ],
     }),
+
     ('finnish-noun', {
         '@attribution': {'users': ['Shinnin'], 'title': 'Wikidata:Wikidata Lexeme Forms/Finnish'},
         'label': 'suomen kielen substantiivi',
@@ -1735,6 +1758,7 @@ templates = collections.OrderedDict([
             },
         ],
     }),
+
     ('french-noun-masculine', {
         '@attribution': {'users': ['Djiboun'], 'title': 'Wikidata:Wikidata Lexeme Forms/French'},
         'label': 'nom commun masculin en français',
@@ -1774,6 +1798,7 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+
     ('french-noun-feminine', {
         '@attribution': {'users': ['Djiboun'], 'title': 'Wikidata:Wikidata Lexeme Forms/French'},
         'label': 'nom commun féminin en français',
@@ -1813,6 +1838,7 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+
     ('french-adjective', {
         '@attribution': {'users': ['Djiboun'], 'title': 'Wikidata:Wikidata Lexeme Forms/French'},
         'label': 'adjectif en français',
@@ -1842,6 +1868,7 @@ templates = collections.OrderedDict([
             },
         ],
     }),
+
     ('armenian-noun', {
         '@attribution': {'users': ['Emptyfear'], 'title': 'Wikidata:Wikidata Lexeme Forms/Armenian'},
         'label': 'հայերեն գոյական',
@@ -1921,6 +1948,7 @@ templates = collections.OrderedDict([
             },
         ],
     }),
+
     ('armenian-noun-singulare-tantum', {
         '@attribution': {'users': ['Emptyfear'], 'title': 'Wikidata:Wikidata Lexeme Forms/Armenian'},
         'label': 'հայերեն հավաքական անհոգնական եզակի գոյական',
@@ -1985,6 +2013,7 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+
     ('italian-noun-feminine', {
         '@attribution': {'users': ['Sannita'], 'title': 'Wikidata:Wikidata Lexeme Forms/Italian'},
         'label': 'sostantivo femminile italiano',
@@ -2024,6 +2053,7 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+
     ('italian-noun-masculine', {
         '@attribution': {'users': ['Sannita'], 'title': 'Wikidata:Wikidata Lexeme Forms/Italian'},
         'label': 'sostantivo maschile italiano',
@@ -2063,6 +2093,7 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+
     ('italian-adjective', {
         '@attribution': {'users': ['Sannita'], 'title': 'Wikidata:Wikidata Lexeme Forms/Italian'},
         'label': 'aggettivo qualificativo italiano',
@@ -2092,6 +2123,7 @@ templates = collections.OrderedDict([
             },
         ],
     }),
+
     ('latin-noun-masculine', {
         '@attribution': {'users': ['Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/Latin'},
         'label': 'nomen Latinum (masculinum)',
@@ -2181,6 +2213,7 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+
     ('latin-noun-feminine', {
         '@attribution': {'users': ['Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/Latin'},
         'label': 'nomen Latinum (femininum)',
@@ -2270,6 +2303,7 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+
     ('latin-noun-neuter', {
         '@attribution': {'users': ['Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/Latin'},
         'label': 'nomen Latinum (neutrum)',
@@ -2359,6 +2393,7 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+
     ('dutch-neuter-noun', {
         '@attribution': {'users': ['MarcoSwart'], 'title': 'Wikidata:Wikidata Lexeme Forms/Dutch'},
         'label': 'Nederlands onzijdig zelfstandig naamwoord',
@@ -2408,6 +2443,7 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+
     ('dutch-masculine-noun', {
         '@attribution': {'users': ['MarcoSwart'], 'title': 'Wikidata:Wikidata Lexeme Forms/Dutch'},
         'label': 'Nederlands strikt mannelijk zelfstandig naamwoord',
@@ -2457,6 +2493,7 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+
     ('dutch-feminine-noun', {
         '@attribution': {'users': ['MarcoSwart'], 'title': 'Wikidata:Wikidata Lexeme Forms/Dutch'},
         'label': 'Nederlands strikt vrouwelijk zelfstandig naamwoord',
@@ -2506,6 +2543,7 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+
     ('dutch-fem2masc-noun', {
         '@attribution': {'users': ['MarcoSwart'], 'title': 'Wikidata:Wikidata Lexeme Forms/Dutch'},
         'label': 'Nederlands v/m zelfstandig naamwoord',
@@ -2555,6 +2593,7 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+
     ('nynorsk-noun-feminine', {
         '@attribution': {'users': ['Njardarlogar'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Nynorsk'},
         'label': 'nynorsk hokjønnssubstantiv',
@@ -2604,6 +2643,7 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+
     ('nynorsk-noun-masculine', {
         '@attribution': {'users': ['Njardarlogar'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Nynorsk'},
         'label': 'nynorsk hankjønnssubstantiv',
@@ -2653,6 +2693,7 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+
     ('nynorsk-noun-neuter', {
         '@attribution': {'users': ['Njardarlogar'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Nynorsk'},
         'label': 'nynorsk inkjekjønnssubstantiv',
@@ -2702,6 +2743,7 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+
     ('polish-noun', {
         '@attribution': {'users': ['KaMan'], 'title': 'Wikidata:Wikidata Lexeme Forms/Polish'},
         'label': 'polski rzeczownik, prosta odmiana bez wariantów w żadnym z przypadków',
@@ -2781,6 +2823,7 @@ templates = collections.OrderedDict([
             },
         ],
     }),
+
     ('polish-noun-masculine-personal-with-depreciative-forms', {
         '@attribution': {'users': ['KaMan'], 'title': 'Wikidata:Wikidata Lexeme Forms/Polish'},
         'label': 'polski rzeczownik, rodzaj męskoosobowy z formami ndepr. i depr. w M. i W. lm',
@@ -2970,6 +3013,7 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+
     ('polish-noun-with-potential-plural-forms', {
         '@attribution': {'users': ['KaMan'], 'title': 'Wikidata:Wikidata Lexeme Forms/Polish'},
         'label': 'polski rzeczownik, potencjalna liczba mnoga',
@@ -3189,6 +3233,7 @@ templates = collections.OrderedDict([
             },
         ],
     }),
+
     ('portuguese-verb', {
         '@attribution': {'users': ['Carybe', 'Joalpe', 'Waldir'], 'title': 'Wikidata:Wikidata Lexeme Forms/Portuguese'},
         'label': 'verbo em Português',
@@ -3563,6 +3608,7 @@ templates = collections.OrderedDict([
             },
         ],
     }),
+
     ('russian-noun-masculine', {
         '@attribution': {'users': ['Infovarius'], 'title': 'Wikidata:Wikidata Lexeme Forms/Russian'},
         'label': 'русское существительное, мужской род',
@@ -3652,6 +3698,7 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+
     ('russian-noun-feminine', {
         '@attribution': {'users': ['Infovarius'], 'title': 'Wikidata:Wikidata Lexeme Forms/Russian'},
         'label': 'русское существительное, женский род',
@@ -3741,6 +3788,7 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+
     ('russian-noun-neuter', {
         '@attribution': {'users': ['Infovarius'], 'title': 'Wikidata:Wikidata Lexeme Forms/Russian'},
         'label': 'русское существительное, средний род',
@@ -3830,6 +3878,7 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+
     ('russian-noun-pluraletantum', {
         '@attribution': {'users': ['Infovarius'], 'title': 'Wikidata:Wikidata Lexeme Forms/Russian'},
         'label': 'имя существительное (Pluralia tantum, без рода)',
@@ -3889,6 +3938,7 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+
     ('russian-adjective', {
         '@attribution': {'users': ['Infovarius'], 'title': 'Wikidata:Wikidata Lexeme Forms/Russian'},
         'label': 'русское прилагательное',
@@ -4028,6 +4078,7 @@ templates = collections.OrderedDict([
             },
         ],
     }),
+
     ('swedish-noun-common', {
         '@attribution': {'users': ['Vesihiisi'], 'title': 'Wikidata:Wikidata Lexeme Forms/Swedish'},
         'label': 'svenskt substantiv (utrum)',
@@ -4097,6 +4148,7 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+
     ('swedish-noun-neuter', {
         '@attribution': {'users': ['Vesihiisi'], 'title': 'Wikidata:Wikidata Lexeme Forms/Swedish'},
         'label': 'svenskt substantiv (neutrum)',
@@ -4166,6 +4218,7 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+
     ('swedish-verb', {
         '@attribution': {'users': ['Vesihiisi'], 'title': 'Wikidata:Wikidata Lexeme Forms/Swedish'},
         'label': 'svenskt verb',
@@ -4220,6 +4273,7 @@ templates = collections.OrderedDict([
             },
         ],
     }),
+
     ('swedish-absolute-adjective', {
         '@attribution': {'users': ['Vesihiisi'], 'title': 'Wikidata:Wikidata Lexeme Forms/Swedish'},
         'label': 'svenskt adjektiv (utan komparativ)',
@@ -4274,6 +4328,7 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+
     ('ukrainian-noun-masculine', {
         '@attribution': {'users': ['Tohaomg'], 'title': 'Wikidata:Wikidata Lexeme Forms/Ukrainian'},
         'label': 'український іменник, чоловічий рід',
@@ -4373,6 +4428,7 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+
     ('ukrainian-noun-feminine', {
         '@attribution': {'users': ['Tohaomg'], 'title': 'Wikidata:Wikidata Lexeme Forms/Ukrainian'},
         'label': 'український іменник, жіночий рід',
@@ -4472,6 +4528,7 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+
     ('ukrainian-noun-neuter', {
         '@attribution': {'users': ['Tohaomg'], 'title': 'Wikidata:Wikidata Lexeme Forms/Ukrainian'},
         'label': 'український іменник, середній рід',
@@ -4571,6 +4628,7 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+
     ('ukrainian-noun-pluraletantum', {
         '@attribution': {'users': ['Tohaomg'], 'title': 'Wikidata:Wikidata Lexeme Forms/Ukrainian'},
         'label': 'український іменник, тільки множина (pluralia tantum)',
@@ -4635,6 +4693,7 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+
     ('german-noun-neuter-test', {
         '@attribution': {'users': ['Lucas Werkmeister']},
         'test': True,
@@ -4743,6 +4802,7 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+
 ])
 
 for template_name, template in templates.items():
