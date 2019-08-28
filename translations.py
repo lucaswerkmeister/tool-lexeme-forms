@@ -262,6 +262,11 @@ translations = {
         'advanced_partial_forms': 'Du kan lämna vissa fält tomma; dessa former kommer då inte att läggas till. Försäkra dig dock om att du inte lämnar några fält tomma av misstag!',
         'lexeme_id': 'Lexem-ID',
         'advanced_partial_forms_hint': 'För att skapa lexem utan att fylla i alla fält, byt till avancerat läge.',
+        'bulk_link': 'masskapa',
+        'bulk_button': 'Masskapa',
+        'bulk_heading': 'masskapa',
+        'bulk_format_help': 'formateringshjälp',
+        'bulk_not_allowed': 'Du får dessvärre inte masskapa lexem.',
     },
     # translations by User:Info-farmer, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Tamil
     'ta': {
