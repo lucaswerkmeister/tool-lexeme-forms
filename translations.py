@@ -33,7 +33,7 @@ translations = {
         'advanced_partial_forms': 'Puedes dexar en blancu delles formes pa que nun s\'añadan. ¡Asegúrate de nun escaecer nenguna forma accidentalmente!',
         'lexeme_id': 'Identificador',
     },
-    # translations by User:Lexicolover and User:Matěj Suchánek, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Czech
+    # translations by User:Lexicolover, User:Matěj Suchánek and User:Adrijaned, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Czech
     'cs': {
         'create': 'Vytvořit',
         'csrf_warning': 'Bohužel se nám nepodařilo vykonat požadavek (ochrana před <abbr title="Cross-site request forgery">CSRF</abbr> selhala). Zkuste prosím odeslat formulář znovu.',
@@ -48,6 +48,11 @@ translations = {
         'advanced_partial_forms_hint': 'Chcete-li vytvořit lexém bez některých tvarů, přepněte do pokročilého režimu.',
         'generated_via': 'vygenerováno pomocí',
         'description_with_forms_and_senses': '{description}, {forms!p:0=žádné tvary:one=jeden tvar:few={forms} tvary:other=tvarů} a {senses!p:0=žádné významy:one=jeden význam:few={senses} významy:other={senses} významů}',
+        'bulk_link': 'hromadný mód',
+        'bulk_button': 'Hromadný mód',
+        'bulk_heading': 'hromadný mód',
+        'bulk_format_help': 'nápověda k formátování',
+        'bulk_not_allowed': 'Litujeme, ale nemáte oprávnění k použití hromadného módu.',
     },
     # translations by Lucas Werkmeister
     'de': {
