@@ -388,7 +388,6 @@ def get_duplicates(wiki, language_code, lemma):
         host,
         user_agent=user_agent,
     )
-    session.session.cookies['PHP_ENGINE'] = 'php7' # TODO remove this once PHP7 is the default
 
     response = session.get(
         action='wbsearchentities',
@@ -460,7 +459,6 @@ def get_lexeme_data(lexeme_id, wiki):
         host,
         user_agent=user_agent,
     )
-    session.session.cookies['PHP_ENGINE'] = 'php7' # TODO remove this once PHP7 is the default
 
     lexeme_data = session.get(
         action='wbgetentities',
@@ -570,7 +568,6 @@ def submit_lexeme(template, lexeme_data, summary):
         auth=generate_auth(),
         user_agent=user_agent,
     )
-    session.session.cookies['PHP_ENGINE'] = 'php7' # TODO remove this once PHP7 is the default
 
     token = session.get(action='query', meta='tokens')['query']['tokens']['csrftoken']
     selector = {'id': lexeme_data['id']} if 'id' in lexeme_data else {'new': 'lexeme'}

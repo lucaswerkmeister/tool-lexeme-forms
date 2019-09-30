@@ -10,7 +10,6 @@ session = mwapi.Session(
     host='https://www.wikidata.org',
     user_agent=user_agent
 )
-session.session.cookies['PHP_ENGINE'] = 'php7' # TODO remove this once PHP7 is the default
 
 for result in session.post(
         action='purge',
