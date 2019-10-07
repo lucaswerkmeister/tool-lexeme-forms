@@ -4630,7 +4630,7 @@ templates = collections.OrderedDict([
     }),
 
     ('ukrainian-noun-pluraletantum', {
-        '@attribution': {'users': ['Tohaomg'], 'title': 'Wikidata:Wikidata Lexeme Forms/Ukrainian'},
+        '@attribution': {'users': ['Tohaomg', 'Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/Ukrainian'},
         'label': 'український іменник, тільки множина (pluralia tantum)',
         'language_item_id': 'Q8798',
         'language_code': 'uk',
@@ -4639,37 +4639,37 @@ templates = collections.OrderedDict([
             {
                 'label': 'називний відмінок',
                 'example': 'Це [ножиці].',
-                'grammatical_features_item_ids': ['Q131105'],
+                'grammatical_features_item_ids': ['Q131105', 'Q146786'],
             },
             {
                 'label': 'родовий відмінок',
                 'example': 'Ніде нема [ножиць].',
-                'grammatical_features_item_ids': ['Q146233'],
+                'grammatical_features_item_ids': ['Q146233', 'Q146786'],
             },
             {
                 'label': 'давальний відмінок',
                 'example': 'Віддати це [ножицям].',
-                'grammatical_features_item_ids': ['Q145599'],
+                'grammatical_features_item_ids': ['Q145599', 'Q146786'],
             },
             {
                 'label': 'знахідний відмінок',
                 'example': 'Я бачу [ножиці].',
-                'grammatical_features_item_ids': ['Q146078'],
+                'grammatical_features_item_ids': ['Q146078', 'Q146786'],
             },
             {
                 'label': 'орудний відмінок',
                 'example': 'Я користуюсь цими [ножицями].',
-                'grammatical_features_item_ids': ['Q192997'],
+                'grammatical_features_item_ids': ['Q192997', 'Q146786'],
             },
             {
                 'label': 'місцевий відмінок',
                 'example': 'Папір застряг в [ножицях].',
-                'grammatical_features_item_ids': ['Q202142'],
+                'grammatical_features_item_ids': ['Q202142', 'Q146786'],
             },
             {
                 'label': 'кличний відмінок',
                 'example': 'Привіт, [ножиці].',
-                'grammatical_features_item_ids': ['Q185077'],
+                'grammatical_features_item_ids': ['Q185077', 'Q146786'],
             },
         ],
         'statements': {
