@@ -1,6 +1,7 @@
 import mwapi
 import pytest
 
+import app
 import templates
 import translations
 
@@ -47,6 +48,21 @@ def test_translations_available():
             missing_language_codes.add(language_code)
 
     assert not missing_language_codes
+
+
+def test_examples_valid():
+    for template in templates.templates.values():
+        for form in template['forms']:
+            app.split_example(form)
+
+
+def test_examples_distinct():
+    for template in templates.templates.values():
+        examples = set()
+        for form in template['forms']:
+            example = form['example']
+            assert example not in examples
+            examples.add(example)
 
 
 @pytest.mark.parametrize('template_name', templates.templates.keys())
