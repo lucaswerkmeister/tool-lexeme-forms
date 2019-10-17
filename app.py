@@ -19,6 +19,7 @@ from flask_utils import OrderedFlask, TagOrderedMultiDict, TagImmutableOrderedMu
 from formatters import PluralFormatter
 from parse_tpsv import parse_lexemes
 from templates import templates, match_template_to_lexeme_data
+from generators import generators
 from translations import translations
 
 app = OrderedFlask(__name__)
@@ -188,6 +189,28 @@ def index():
         can_use_bulk_mode=can_use_bulk_mode(),
     )
 
+@app.route('/generate/')
+def generate_no_param():
+    return flask.redirect('/')
+
+@app.route('/generate/<template_name>/', methods=['POST'])
+def generate(template_name):
+    form_data = flask.request.form
+    lexeme_forms = []
+    for pattern in generators[template_name]['patterns'][form_data['pattern']]:
+        for input_field_number in range(len(form_data) - 2, 0, -1):  # Iterate backwards in case of double digits
+            pattern = pattern.replace(f'/{input_field_number}', form_data[f'input_field_{input_field_number}'])
+        lexeme_forms.append(pattern)
+    flask.session['stashed_form_data'] = werkzeug.datastructures.ImmutableMultiDict(
+        [('form_representation', x) for x in lexeme_forms]
+    )
+    print(flask.session["stashed_form_data"])
+    return process_template(template_name)
+
+@app.route('/generator/<template_name>/', methods=['GET', 'POST'])
+def generator(template_name):
+    return flask.render_template('generator.html', template=generators[template_name], template_name=template_name)
+
 @app.route('/template/<template_name>/', methods=['GET', 'POST'])
 def process_template(template_name):
     return process_template_advanced(template_name=template_name, advanced=False)
@@ -204,7 +227,7 @@ def process_template_advanced(template_name, advanced=True):
 
     template = templates[template_name]
     flask.g.language_code = template['language_code']
-    form_data = flask.request.form
+    form_data = flask.request.form if 'generator' not in flask.request.form else werkzeug.datastructures.ImmutableMultiDict()
     stashed_form_data = flask.session.pop('stashed_form_data', None)
 
     if flask.request.method == 'POST' and flask.request.referrer == current_url():

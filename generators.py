@@ -2,8 +2,9 @@ import collections
 
 generators = collections.OrderedDict([
     ("czech-adjective", {
+        'language_code': 'cs',
         'label': 'generátor tvarů českých přídavných jmen',
-        'input-fields': [
+        'input_fields': [
             'Kořen 1. stupně přídavného jména ("mlad" pro mladý, "jarn" pro jarní, "rozmarn" pro rozmarný atd.)',
             '1. pád 2. stupně přídavného jména ("mladší", "jarnější", "rozmarnější" atd.)'
         ],

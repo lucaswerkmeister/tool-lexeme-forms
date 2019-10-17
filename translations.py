@@ -19,6 +19,7 @@ translations = {
         'bulk_heading': 'bulk mode',
         'bulk_format_help': 'format help',
         'bulk_not_allowed': 'You are not allowed to use bulk mode. Sorry.',
+        'pattern': 'Pattern',
     },
     # translations by User:Oriciu, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Asturian
     'ast': {
@@ -53,6 +54,7 @@ translations = {
         'bulk_heading': 'hromadný mód',
         'bulk_format_help': 'nápověda k formátování',
         'bulk_not_allowed': 'Litujeme, ale nemáte oprávnění k použití hromadného módu.',
+        'pattern': 'Vzor',
     },
     # translations by Lucas Werkmeister
     'de': {

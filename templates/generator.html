@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block main %}
+  <h1>{{ template.label }}</h1>
+  <form method="post" autocapitalize="off" action="/generate/{{ template_name }}/">
+    <dl>
+    {% for input_field in template.input_fields %}
+      <div class="form">
+        <dt>{{ input_field }}</dt>
+        <dd><label><input name="input_field_{{ loop.index }}" placeholder=""/></label></dd>
+      </div>
+    {% endfor %}
+    <div class="form">
+      <dt>{{ message('pattern', template.language_code) }}</dt>
+      <dd><label><select name="pattern">
+      {% for patternName, unused in template.patterns.items() %}
+        <option value="{{ patternName }}">{{ patternName }}</option>
+      {% endfor %}
+      </select></label></dd>
+    </div>
+    </dl>
+    <input type="hidden" name="generator"/>
+    <input type="submit" value="{{ message('create', template.language_code) }}"/>
+  </form>
+{% endblock main %}
