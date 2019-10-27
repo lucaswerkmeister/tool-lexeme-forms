@@ -262,17 +262,16 @@ def process_template_bulk(template_name):
         if not token or token != form_data.get('_csrf_token'):
             return 'CSRF error', 400 # TODO better handling
 
-        lexemes = parse_lexemes(form_data.get('lexemes'))
+        lexemes = parse_lexemes(form_data.get('lexemes'), template)
         results = []
 
         for lexeme in lexemes:
-            lexeme_form_data = werkzeug.datastructures.ImmutableMultiDict(
-                [('form_representation', form_representation) for form_representation in lexeme])
-            duplicates = find_duplicates(template, lexeme_form_data)
-            if duplicates:
-                results.append(('duplicates', duplicates))
-                continue
-            lexeme_data = build_lexeme(template, lexeme_form_data)
+            if not lexeme.get('lexeme_id'):
+                duplicates = find_duplicates(template, lexeme)
+                if duplicates:
+                    results.append(('duplicates', duplicates))
+                    continue
+            lexeme_data = build_lexeme(template, lexeme)
             summary = build_summary(template, form_data)
 
             if 'oauth' in app.config:
@@ -290,6 +289,7 @@ def process_template_bulk(template_name):
             )
         else:
             return flask.jsonify([result[1] for result in results])
+
     else:
         placeholder = ''
         for form in template['forms']:
