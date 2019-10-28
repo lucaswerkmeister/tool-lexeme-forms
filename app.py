@@ -229,6 +229,16 @@ def process_template_advanced(template_name, advanced=True):
         if not form_data and flask.request.args:
             flask.session['stashed_form_data'] = flask.request.args
             return flask.redirect(current_url())
+        if not form_data and flask.request.is_json:
+            payload = []
+            json = flask.request.json
+            if 'form_representation' in json:
+                for form in json['form_representation']:
+                    payload.append(('form_representation', form))
+                if 'generated_via' in json:
+                    payload.append(('generated_via', json['generated_via']))
+                multi_dict = werkzeug.datastructures.ImmutableOrderedMultiDict(payload)
+                stashed_form_data = multi_dict
         if not form_data and stashed_form_data:
             form_data = stashed_form_data
         return flask.render_template(
