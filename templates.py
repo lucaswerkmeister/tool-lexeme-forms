@@ -5371,12 +5371,12 @@ templates = collections.OrderedDict([
         'forms': [
             {
                 'label': 'ഏകവചനം',
-                'example': 'ഒരു ഭാഷ',
+                'example': 'ഒരു [ഭാഷ]'
                 'grammatical_features_item_ids': ['Q110786'],
             },
             {
                 'label': 'ബഹുവചനം',
-                'example': 'പല ഭാഷകൾ',
+                'example': 'പല [ഭാഷകൾ]',
                 'grammatical_features_item_ids': ['Q146786'],
             },
         ],
