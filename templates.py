@@ -5362,6 +5362,26 @@ templates = collections.OrderedDict([
             ],
         },
     }),
+    ('malayalam-noun', {
+        '@attribution': {'users': ['Jsamwrites'], 'title': 'Wikidata:Wikidata Lexeme Forms/Malayalam'},
+        'label': 'മലയാളത്തിലെ സാധാരണ നാമം',
+        'language_item_id': 'Q36236',
+        'language_code': 'ml',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'ഏകവചനം',
+                'example': 'ഒരു ഭാഷ',
+                'grammatical_features_item_ids': ['Q110786'],
+            },
+            {
+                'label': 'ബഹുവചനം',
+                'example': 'പല ഭാഷകൾ',
+                'grammatical_features_item_ids': ['Q146786'],
+            },
+        ],
+    }),
+
 
 ])
 
