@@ -70,6 +70,12 @@ To send a patch, you can use any of the following methods:
 
 They’re listed in the maintainer(s)’ order of preference, from most to least preferred,
 but feel free to use any of these methods as it best suits you.
+It’s best to reach out to the maintainer(s) in advance, though,
+to see if the contribution is likely to be accepted or not.
+
+Additions or changes to the templates or translations
+should always be made on-wiki (see [above](#templates)),
+not sent as patches.
 
 ## License
 
