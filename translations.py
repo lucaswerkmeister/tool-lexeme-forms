@@ -1,4 +1,5 @@
 translations = {
+
     # messages by Lucas Werkmeister
     'en': {
         'create': 'Create',
@@ -20,6 +21,7 @@ translations = {
         'bulk_format_help': 'format help',
         'bulk_not_allowed': 'You are not allowed to use bulk mode. Sorry.',
     },
+
     # translations by User:Oriciu, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Asturian
     'ast': {
         'create': 'Crear',
@@ -33,6 +35,7 @@ translations = {
         'advanced_partial_forms': 'Puedes dexar en blancu delles formes pa que nun s\'añadan. ¡Asegúrate de nun escaecer nenguna forma accidentalmente!',
         'lexeme_id': 'Identificador',
     },
+
     # translations by User:Lexicolover, User:Matěj Suchánek and User:Adrijaned, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Czech
     'cs': {
         'create': 'Vytvořit',
@@ -54,6 +57,7 @@ translations = {
         'bulk_format_help': 'nápověda k formátování',
         'bulk_not_allowed': 'Litujeme, ale nemáte oprávnění k použití hromadného módu.',
     },
+
     # translations by Lucas Werkmeister
     'de': {
         'create': 'Anlegen',
@@ -70,6 +74,7 @@ translations = {
         'generated_via': 'generiert durch',
         'description_with_forms_and_senses': '{description}, {forms!p:0=keine Formen:one=eine Form:other={forms} Formen}, {senses!p:0=keine Senses:one=ein Sense:other={senses} Senses}',
     },
+
     # translations by User:Jens Ohlig, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Esperanto
     'eo': {
         'create': 'Krei',
@@ -84,6 +89,7 @@ translations = {
         'lexeme_id': 'Leksema identifikilo',
         'advanced_partial_forms_hint': 'Por krei leksemojn kun mankantaj formoj, ŝanĝu al altnivela reĝimo.',
     },
+
     # translations by User:Andreasmperu, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Spanish
     'es': {
         'create': 'Crear',
@@ -97,6 +103,7 @@ translations = {
         'advanced_partial_forms': 'Puedes dejar algunas formas en blanco para evitar que sean añadidas. ¡Asegúrate de crear todas las formas necesarias!',
         'lexeme_id': 'Identificador de lexema',
     },
+
     # template by User:Reosarevok, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Estonian
     'et': {
         'create': 'Loo',
@@ -110,6 +117,7 @@ translations = {
         'advanced_partial_forms': 'Saad vormid tühjaks jätta, et neid ei lisataks. Kontrolli aga, et sa ei jätnud mõnda vormi kogemata tühjaks!',
         'lexeme_id': 'Lekseemi ID',
     },
+
     # translations by User:Djiboun, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/French
     'fr': {
         'create': 'Créer',
@@ -124,6 +132,7 @@ translations = {
         'lexeme_id': 'Identifiant',
         'advanced_partial_forms_hint': 'Pour créer des lexèmes en laissant certaines formes non renseignées, passez en mode avancé',
     },
+
     # translations by User:Shinnin, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Finnish
     'fi': {
         'create': 'Julkaise',
@@ -138,6 +147,7 @@ translations = {
         'lexeme_id': 'Lekseemi-tunniste',
         'advanced_partial_forms_hint': 'Luodaksesi lekseemin ilman joitakin taivutusmuotoja, siirry laajennettuun muokkaustilaan.',
     },
+
     # translations by User:Emptyfear and User:Kareyac, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Armenian
     'hy': {
         'create': 'Ստեղծել',
@@ -152,6 +162,7 @@ translations = {
         'lexeme_id': 'Բառույթի ID',
         'advanced_partial_forms_hint': 'Որոշ ձևերի բացակայությամբ բառույթներ ստեղծելու համար՝ գնացեք ընդլայնված տարբերակ։',
     },
+
     # translations by User:Sannita, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Italian
     'it': {
         'create': 'Crea il lessema!',
@@ -166,6 +177,7 @@ translations = {
         'lexeme_id': 'identificatore',
         'advanced_partial_forms_hint': 'Se vuoi creare dei lessemi privi di alcune forme, passa alla modalità avanzata.',
     },
+
     # translations by Lucas Werkmeister
     'la': {
         'create': 'Facere',
@@ -180,6 +192,7 @@ translations = {
         'lexeme_id': 'Numerus verbi',
         'advanced_partial_forms_hint': 'Ut facere verbi quae aliqui formas desunt, adi modo amplificatum.',
     },
+
     # translations by User:Jsamwrites, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Malayalam
     'ml': {
         'create': 'സൃഷ്ടിക്കുക',
@@ -200,6 +213,7 @@ translations = {
         'bulk_format_help': 'ഫോർമാറ്റ് മനസിലാക്കുന്നതിനുള്ള മാനുവൽ',
         'bulk_not_allowed': 'ബൾക്ക് മോഡ് ഉപയോഗിക്കാൻ നിങ്ങൾക്ക് അനുവാദമില്ല. ക്ഷമിക്കണം.',
     },
+
     # translations by User:MarcoSwart, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Dutch
     'nl': {
         'create': 'Aanmaken',
@@ -215,6 +229,7 @@ translations = {
         'advanced_partial_forms_hint': 'Ga naar "Geavanceerd" als je een lexeem wil maken waarin een of meer woordvormen ontbreken.',
         'generated_via': 'gegenereerd door',
     },
+
     # translations by User:Njardarlogar, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Norwegian_Nynorsk
     'nn': {
         'create': 'Opprett',
@@ -228,6 +243,7 @@ translations = {
         'advanced_partial_forms': 'Du kan la nokre felt vera tomme slik at dei ikkje vert lagde til. Gjer deg viss på at du ikkje gløymer å skriva inn nokre av formene som skal vera med.',
         'lexeme_id': 'Leksem-ID',
     },
+
     # translations by User:KaMan, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Polish
     'pl': {
         'create': 'Utwórz',
@@ -243,6 +259,7 @@ translations = {
         'advanced_partial_forms_hint': 'Aby utworzyć leksemy z pominięciem niektórych form, przełącz się na tryb zaawansowany.',
         'generated_via': 'wygenerowane przez',
     },
+
     # translations by User:Ederporto and Lucas Werkmeister, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Portuguese
     'pt': {
         'create': 'Criar',
@@ -258,6 +275,7 @@ translations = {
         'advanced_partial_forms_hint': 'Para criar lexemas com algumas formas faltando, mude para o modo avançado.',
         'generated_via': 'gerado via',
     },
+
     # translations by User:Infovarius, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Russian
     'ru': {
         'create': 'Создать',
@@ -274,6 +292,7 @@ translations = {
         'generated_via': 'сгенерировано с помощью',
         'description_with_forms_and_senses': '{description}, {forms!p:0=нет форм:one=одна форма:few={forms} формы:many={forms} форм} и {senses!p:0=нет значений:one=одно значение:few={senses} значения:many={senses} значений}',
     },
+
     # translations by User:Vesihiisi, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Swedish
     'sv': {
         'create': 'Skapa',
@@ -293,6 +312,7 @@ translations = {
         'bulk_format_help': 'formateringshjälp',
         'bulk_not_allowed': 'Du får dessvärre inte masskapa lexem.',
     },
+
     # translations by User:Info-farmer, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Tamil
     'ta': {
         'create': 'உருவாக்குக',
@@ -307,6 +327,7 @@ translations = {
         'lexeme_id': 'சொற்பொருளனின் குறியீடு',
         'advanced_partial_forms_hint': 'சில வடிவங்களைத் தவிர்த்த, சொற்பொருளன்களை உருவாக்க, மேம்பட்ட இயக்கமுறைக்கு மாறுக.',
     },
+
     # translations by User:Tohaomg, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Ukrainian
     'uk': {
         'create': 'Створити',
@@ -321,4 +342,5 @@ translations = {
         'lexeme_id': 'ID лексеми',
         'advanced_partial_forms_hint': 'Щоб створити лексему без деяких форм, переключіться в режим розширених налаштувань.',
     },
+
 }
