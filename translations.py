@@ -178,6 +178,23 @@ translations = {
         'advanced_partial_forms_hint': 'Se vuoi creare dei lessemi privi di alcune forme, passa alla modalità avanzata.',
     },
 
+    # translations by User:Şêr, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Kurdish_(Kurmancî)
+    'ku': {
+        'create': '    Biafirîne',
+        'csrf_warning': 'Bibore, me nikarî daxwaza te pêk bînin (bixebitînin) (Parastina <abbr title="Cross-site request forgery">CSRF</abbr>ê bi ser neket). Ji kerema xwe careke din hewl bide û formê dîsa bişîne.',
+        'duplicates_warning': '    Ev leksem xwediyê heman peyv û heman koda zimanî ye, wek ya ku niha dixwazî biafirînî:',
+        'duplicates_instructions': '    Ku tu bawer bî ku ev leksem ji hev cuda ne, ji kerema xwe re qutiya biçûk a di dawiya formê de nîşan bike.',
+        'no_duplicate': '    Ev ne dubareya leksema heye ye.',
+        'advanced': '    Pêşketî',
+        'advanced_general': '    Tu di beşa rewşa "pêşketî" de yî.',
+        'advanced_lexeme_id': '    Di şûna çêkirina leksemeke nû de, tu dikarî IDya leksemeke/bêjeyeke heye binivîsî ji bo lêzêdekirina forman li leksemeke heye. Ji kerema ma wan beşên ku di leksema heye de vala bihêle, da ku ev dubare neyên lêzêdekirin!',
+        'advanced_partial_forms': '    Tu dikarî hin forman vala bihêlî, da ku ev lê zêde nebin. Lê hay jê hebe ku tu hin forman bi şaşî/xeletî ji bîr nekî (jê nebî)!',
+        'lexeme_id': '    Lexem-ID',
+        'advanced_partial_forms_hint': '    Ji bo çêkirina leksemên/bêjeyên nû derbasî rewşa pêşketî bibe.',
+        'generated_via': '    hat çêkirin bi alîkariya',
+        'description_with_forms_and_senses': '{description}, {forms!p:0=form tune ne:one=formek:other={forms} form} û {senses!p=0:bê wate:one=wateyek:other={senses} wate}',
+    },
+
     # translations by Lucas Werkmeister
     'la': {
         'create': 'Facere',

@@ -2684,6 +2684,206 @@ templates = collections.OrderedDict([
         ],
     }),
 
+    ('kurmanji-noun-feminine', {
+        '@attribution': {'users': ['Şêr'], 'title': 'Wikidata:Wikidata Lexeme Forms/Kurdish (Kurmancî)'},
+        'label': 'navdêra kurdî (mê)',
+        'language_item_id': 'Q36163',
+        'language_code': 'ku',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'Rewşa navkî ya yekjimar a binavkirî',
+                'example': 'Ev [pisîk] e.',
+                'grammatical_features_item_ids': ['Q1751855', 'Q110786', 'Q53997851'],
+            },
+            {
+                'label': 'Rewşa navkî ya pirjimar a binavkirî',
+                'example': 'Ev [pisîk] in.',
+                'grammatical_features_item_ids': ['Q1751855', 'Q146786', 'Q53997851'],
+            },
+            {
+                'label': 'Rewşa çemandî ya yekjimar a binavkirî',
+                'example': 'Ez [pisîkê] dibînim.',
+                'grammatical_features_item_ids': ['Q1233197', 'Q110786', 'Q53997851'],
+            },
+            {
+                'label': 'Rewşa çemandî ya pirjimar ya binavkirî',
+                'example': 'Ez [pisîkan] dibînim.',
+                'grammatical_features_item_ids': ['Q1233197', 'Q146786', 'Q53997851'],
+            },
+            {
+                'label': 'Rewşa îzafe ya yekjimar a binavkirî',
+                'example': 'Ev [pisîka] nû ye.',
+                'grammatical_features_item_ids': ['Q18794', 'Q110786', 'Q53997851'],
+            },
+            {
+                'label': 'Rewşa îzafe ya pirjimar a binavkirî',
+                'example': 'Ev [pisîkên] nû ne.',
+                'grammatical_features_item_ids': ['Q18794', 'Q146786', 'Q53997851'],
+            },
+            {
+                'label': 'Rewşa navkî ya yekjimar a nebinavkirî',
+                'example': 'Ev [pisîkek] e.',
+                'grammatical_features_item_ids': ['Q1751855', 'Q110786', 'Q53997857'],
+            },
+            {
+                'label': 'Rewşa navkî ya pirjimar a nebinavkirî',
+                'example': 'Ev [pisîkin] in.',
+                'grammatical_features_item_ids': ['Q1751855', 'Q146786', 'Q53997857'],
+            },
+            {
+                'label': 'Rewşa çemandî ya yekjimar ya nebinavkirî',
+                'example': 'Ez [pisîkekê] dibînim.',
+                'grammatical_features_item_ids': ['Q1233197', 'Q110786', 'Q53997857'],
+            },
+            {
+                'label': 'Rewşa çemandî ya pirjimar ya nebinavkirî',
+                'example': 'Ez [pisîkinan] dibînim.',
+                'grammatical_features_item_ids': ['Q1233197', 'Q146786', 'Q53997857'],
+            },
+            {
+                'label': 'Rewşa îzafe ya yekjimar a nebinavkirî',
+                'example': 'Ev [pisîkeke] nû ye.',
+                'grammatical_features_item_ids': ['Q18794', 'Q110786', 'Q53997857'],
+            },
+            {
+                'label': 'Rewşa îzafe ya pirjimar a nebinavkirî',
+                'example': 'Ez [pisîkine] nû dibînim.',
+                'grammatical_features_item_ids': ['Q18794', 'Q146786', 'Q53997857'],
+            },
+            {
+                'label': 'Ez [pisîkine] nû dibînim.',
+                'example': 'Silav [pisîkê]!',
+                'grammatical_features_item_ids': ['Q185077', 'Q51929369'],
+            },
+            {
+                'label': 'Rewşa gazîkirinê ya kesê duyem pirjimar',
+                'example': 'Silav [pisîkino]!',
+                'grammatical_features_item_ids': ['Q185077', 'Q51929403'],
+            },
+        ],
+        'statements': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q1775415',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
+
+    ('kurmanji-noun-masculine', {
+        '@attribution': {'users': ['Şêr'], 'title': 'Wikidata:Wikidata Lexeme Forms/Kurdish (Kurmancî)'},
+        'label': 'navdêra kurdî (nêr)',
+        'language_item_id': 'Q36163',
+        'language_code': 'ku',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'Rewşa navkî ya yekjimar a binavkirî',
+                'example': 'Ev [gundek] e.',
+                'grammatical_features_item_ids': ['Q1751855', 'Q110786', 'Q53997851'],
+            },
+            {
+                'label': 'Rewşa navkî ya pirjimar a binavkirî',
+                'example': 'Ev [gund] in.',
+                'grammatical_features_item_ids': ['Q1751855', 'Q146786', 'Q53997851'],
+            },
+            {
+                'label': 'Rewşa çemandî ya yekjimar a binavkirî',
+                'example': 'Ez [gundekî] dibînim.',
+                'grammatical_features_item_ids': ['Q1233197', 'Q110786', 'Q53997851'],
+            },
+            {
+                'label': 'Rewşa çemandî ya pirjimar ya binavkirî',
+                'example': 'Ez [gundan] dibînim.',
+                'grammatical_features_item_ids': ['Q1233197', 'Q146786', 'Q53997851'],
+            },
+            {
+                'label': 'Rewşa îzafe ya yekjimar a binavkirî',
+                'example': 'Ev [gundê] kevn e.',
+                'grammatical_features_item_ids': ['Q18794', 'Q110786', 'Q53997851'],
+            },
+            {
+                'label': 'Rewşa îzafe ya pirjimar a binavkirî',
+                'example': 'Ev [gundên] nû kevn in.',
+                'grammatical_features_item_ids': ['Q18794', 'Q146786', 'Q53997851'],
+            },
+            {
+                'label': 'Rewşa navkî ya yekjimar a nebinavkirî',
+                'example': 'Ev [gundek] e.',
+                'grammatical_features_item_ids': ['Q1751855', 'Q110786', 'Q53997857'],
+            },
+            {
+                'label': 'Rewşa navkî ya pirjimar a nebinavkirî',
+                'example': 'Ev [gundin] in.',
+                'grammatical_features_item_ids': ['Q1751855', 'Q146786', 'Q53997857'],
+            },
+            {
+                'label': 'Rewşa çemandî ya yekjimar ya nebinavkirî',
+                'example': 'Ez [gundekî] dibînim.',
+                'grammatical_features_item_ids': ['Q1233197', 'Q110786', 'Q53997857'],
+            },
+            {
+                'label': 'Rewşa çemandî ya pirjimar ya nebinavkirî',
+                'example': 'Ez [gundinan] dibînim.',
+                'grammatical_features_item_ids': ['Q1233197', 'Q146786', 'Q53997857'],
+            },
+            {
+                'label': 'Rewşa îzafe ya yekjimar a nebinavkirî',
+                'example': 'Ev [gundekî] nû ye.',
+                'grammatical_features_item_ids': ['Q18794', 'Q110786', 'Q53997857'],
+            },
+            {
+                'label': 'Rewşa îzafe ya pirjimar a nebinavkirî',
+                'example': 'Ez [gundine] nû dibînim.',
+                'grammatical_features_item_ids': ['Q18794', 'Q146786', 'Q53997857'],
+            },
+            {
+                'label': 'Rewşa gazîkirinê ya kesê duyem yekjimar',
+                'example': 'Silav [bavo]!',
+                'grammatical_features_item_ids': ['Q185077', 'Q51929369'],
+            },
+            {
+                'label': 'Rewşa gazîkirinê ya kesê duyem pirjimar',
+                'example': 'Silav [bavino]!',
+                'grammatical_features_item_ids': ['Q185077', 'Q51929403'],
+            },
+        ],
+        'statements': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q499327',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
+
     ('latin-noun-masculine', {
         '@attribution': {'users': ['Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/Latin'},
         'label': 'nomen Latinum (masculinum)',
