@@ -55,6 +55,17 @@ def test_translations_available():
     for template_name in templates.templates.keys()
     for form in templates.templates[template_name]['forms']
 ])
+def test_labels_not_valid_examples(template_name, form):
+    fake_form = {'example': form['label']}
+    with pytest.raises(Exception):
+        app.split_example(fake_form)
+
+
+@pytest.mark.parametrize('template_name, form', [
+    (template_name, form)
+    for template_name in templates.templates.keys()
+    for form in templates.templates[template_name]['forms']
+])
 def test_examples_valid(template_name, form):
     app.split_example(form)
 
