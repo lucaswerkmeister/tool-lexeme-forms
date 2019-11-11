@@ -192,7 +192,7 @@ translations = {
         'lexeme_id': '    Lexem-ID',
         'advanced_partial_forms_hint': '    Ji bo çêkirina leksemên/bêjeyên nû derbasî rewşa pêşketî bibe.',
         'generated_via': '    hat çêkirin bi alîkariya',
-        'description_with_forms_and_senses': '{description}, {forms!p:0=form tune ne:one=formek:other={forms} form} û {senses!p=0:bê wate:one=wateyek:other={senses} wate}',
+        'description_with_forms_and_senses': '{description}, {forms!p:0=form tune ne:one=formek:other={forms} form} û {senses!p:0=bê wate:one=wateyek:other={senses} wate}',
     },
 
     # translations by Lucas Werkmeister
