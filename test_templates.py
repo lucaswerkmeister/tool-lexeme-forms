@@ -50,23 +50,27 @@ def test_translations_available():
     assert not missing_language_codes
 
 
-def test_examples_valid():
-    for template in templates.templates.values():
-        for form in template['forms']:
-            app.split_example(form)
+@pytest.mark.parametrize('template_name, form', [
+    (template_name, form)
+    for template_name in templates.templates.keys()
+    for form in templates.templates[template_name]['forms']
+])
+def test_examples_valid(template_name, form):
+    app.split_example(form)
 
 
-def test_examples_distinct():
-    for template in templates.templates.values():
-        examples = set()
-        for form in template['forms']:
-            example = form['example']
-            if (example == 'Ev [gundek] e.' or
-                example == 'Ez [gundekî] dibînim.'):
-                # under discussion
-                continue
-            assert example not in examples
-            examples.add(example)
+@pytest.mark.parametrize('template_name', templates.templates.keys())
+def test_examples_distinct(template_name):
+    template = templates.templates[template_name]
+    examples = set()
+    for form in template['forms']:
+        example = form['example']
+        if (example == 'Ev [gundek] e.' or
+            example == 'Ez [gundekî] dibînim.'):
+            # under discussion
+            continue
+        assert example not in examples
+        examples.add(example)
 
 
 @pytest.mark.parametrize('template_name', templates.templates.keys())
