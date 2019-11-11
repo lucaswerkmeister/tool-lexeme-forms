@@ -2752,14 +2752,14 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q18794', 'Q146786', 'Q53997857'],
             },
             {
-                'label': 'Ez [pisîkine] nû dibînim.',
+                'label': 'Rewşa gazîkirinê ya yekjimar',
                 'example': 'Silav [pisîkê]!',
-                'grammatical_features_item_ids': ['Q185077', 'Q51929369'],
+                'grammatical_features_item_ids': ['Q185077', 'Q110786'],
             },
             {
-                'label': 'Rewşa gazîkirinê ya kesê duyem pirjimar',
+                'label': 'Rewşa gazîkirinê ya pirjimar',
                 'example': 'Silav [pisîkino]!',
-                'grammatical_features_item_ids': ['Q185077', 'Q51929403'],
+                'grammatical_features_item_ids': ['Q185077', 'Q146786'],
             },
         ],
         'statements': {
@@ -2793,7 +2793,7 @@ templates = collections.OrderedDict([
         'forms': [
             {
                 'label': 'Rewşa navkî ya yekjimar a binavkirî',
-                'example': 'Ev [gundek] e.',
+                'example': 'Ev [gund] e.',
                 'grammatical_features_item_ids': ['Q1751855', 'Q110786', 'Q53997851'],
             },
             {
@@ -2803,7 +2803,7 @@ templates = collections.OrderedDict([
             },
             {
                 'label': 'Rewşa çemandî ya yekjimar a binavkirî',
-                'example': 'Ez [gundekî] dibînim.',
+                'example': 'Ez [gundî] dibînim.',
                 'grammatical_features_item_ids': ['Q1233197', 'Q110786', 'Q53997851'],
             },
             {
@@ -2852,14 +2852,14 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q18794', 'Q146786', 'Q53997857'],
             },
             {
-                'label': 'Rewşa gazîkirinê ya kesê duyem yekjimar',
+                'label': 'Rewşa gazîkirinê ya yekjimar',
                 'example': 'Silav [bavo]!',
-                'grammatical_features_item_ids': ['Q185077', 'Q51929369'],
+                'grammatical_features_item_ids': ['Q185077', 'Q110786'],
             },
             {
-                'label': 'Rewşa gazîkirinê ya kesê duyem pirjimar',
+                'label': 'Rewşa gazîkirinê ya pirjimar',
                 'example': 'Silav [bavino]!',
-                'grammatical_features_item_ids': ['Q185077', 'Q51929403'],
+                'grammatical_features_item_ids': ['Q185077', 'Q146786'],
             },
         ],
         'statements': {

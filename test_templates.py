@@ -65,10 +65,6 @@ def test_examples_distinct(template_name):
     examples = set()
     for form in template['forms']:
         example = form['example']
-        if (example == 'Ev [gundek] e.' or
-            example == 'Ez [gundekî] dibînim.'):
-            # under discussion
-            continue
         assert example not in examples
         examples.add(example)
 
