@@ -104,7 +104,7 @@ translations = {
         'lexeme_id': 'Identificador de lexema',
     },
 
-    # template by User:Reosarevok, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Estonian
+    # translations by User:Reosarevok, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Estonian
     'et': {
         'create': 'Loo',
         'csrf_warning': 'Vabandust, taotluse töötlemine ebaõnnestus (<abbr title="Cross-site request forgery">CSRFi</abbr> vastane kaitse ebaõnnestus). Palun proovi vorm uuesti saata.',
