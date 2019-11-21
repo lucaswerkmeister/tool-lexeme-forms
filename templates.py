@@ -2184,6 +2184,41 @@ templates = collections.OrderedDict([
         ],
     }),
 
+    ('basque-verb', {
+        '@attribution': {'users': ['Theklan'], 'title': 'Wikidata:Wikidata Lexeme Forms/Basque'},
+        'label': 'euskal aditza',
+        'language_item_id': 'Q8752',
+        'language_code': 'eu',
+        'lexical_category_item_id': 'Q24905',
+        'forms': [
+            {
+                'label': 'partizipioa',
+                'example': 'liburu bat [erosi] dut',
+                'grammatical_features_item_ids': ['Q814722'],
+            },
+            {
+                'label': 'aditzoina',
+                'example': 'liburu bat [eros] nezake',
+                'grammatical_features_item_ids': ['Q74674702'],
+            },
+            {
+                'label': 'aditz izena',
+                'example': 'liburu bat [erostea] pentsatu dut',
+                'grammatical_features_item_ids': ['Q74674960'],
+            },
+            {
+                'label': 'gerundioa',
+                'example': 'liburu bat [erosten] ari naiz',
+                'grammatical_features_item_ids': ['Q1923028', 'Q54556033'],
+            },
+            {
+                'label': 'etorkizuneko forma',
+                'example': 'liburu bat [erosiko] dut',
+                'grammatical_features_item_ids': ['Q501405'],
+            },
+        ],
+    }),
+
     ('finnish-noun', {
         '@attribution': {'users': ['Shinnin'], 'title': 'Wikidata:Wikidata Lexeme Forms/Finnish'},
         'label': 'suomen kielen substantiivi',
@@ -2315,42 +2350,6 @@ templates = collections.OrderedDict([
                 'label': 'monikon abessiivi',
                 'example': 'Käsittä, jaloitta, kissoitta ja [koiritta].',
                 'grammatical_features_item_ids': ['Q319822', 'Q146786'],
-            },
-        ],
-    }),
-
-
-    ('basque-verb', {
-        '@attribution': {'users': ['Theklan'], 'title': 'Wikidata:Wikidata Lexeme Forms/Basque'},
-        'label': 'euskal aditza',
-        'language_item_id': 'Q8752',
-        'language_code': 'eu',
-        'lexical_category_item_id': 'Q24905',
-        'forms': [
-            {
-                'label': 'partizipioa',
-                'example': 'liburu bat [erosi] dut',
-                'grammatical_features_item_ids': ['Q814722'],
-            },
-            {
-                'label': 'aditzoina',
-                'example': 'liburu bat [eros] nezake',
-                'grammatical_features_item_ids': ['Q74674702'],
-            },
-            {
-                'label': 'aditz izena',
-                'example': 'liburu bat [erostea] pentsatu dut',
-                'grammatical_features_item_ids': ['Q74674960'],
-            },
-            {
-                'label': 'gerundioa',
-                'example': 'liburu bat [erosten] ari naiz',
-                'grammatical_features_item_ids': ['Q1923028', 'Q54556033'],
-            },
-            {
-                'label': 'etorkizuneko forma',
-                'example': 'liburu bat [erosiko] dut',
-                'grammatical_features_item_ids': ['Q501405'],
             },
         ],
     }),
