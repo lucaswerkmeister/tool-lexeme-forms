@@ -366,7 +366,7 @@ def find_duplicates(template, form_data):
 def get_lemma(form_data):
     for form_representation in form_data.getlist('form_representation'):
         for form_representation_variant in form_representation.split('/'):
-            if form_representation_variant is not '':
+            if form_representation_variant != '':
                 return form_representation_variant
     return None
 
