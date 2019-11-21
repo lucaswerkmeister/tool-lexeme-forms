@@ -118,6 +118,23 @@ translations = {
         'lexeme_id': 'Lekseemi ID',
     },
 
+    # translations by User:Theklan, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Basque
+    'eu': {
+        'create': 'Sortu',
+        'csrf_warning': 'Barkatu, ezin izan dugu zure eskaera prozesatu (<abbr title="Cross-site request forgery">CSRF</abbr> babesak huts egin du). Saia zaitez berriro ere eskaera bidaltzen.',
+        'duplicates_warning': 'Dagoeneko badugu hizkuntza kode berberarekin lema berdina duten lexema hauek:',
+        'duplicates_instructions': 'Ziur bazaude lexema ezberdina dela, klik egin goian dagoen formularioko kutxan.',
+        'no_duplicate': 'Hau ez da bikoiztutako lexema bat.',
+        'advanced': 'Aurreratua',
+        'advanced_general': 'Modu "aurrearatuan" zaude.',
+        'advanced_lexeme_id': 'Lexema ID bat sar dezakezu dagoeneko existitzen den lexema bati formak gehitzeko, berri bat sortu beharrean. Dagoeneko existitzen diren lexemen formak zuriz utzi, bestela bikoiztuko dira eta!',
+        'advanced_partial_forms': 'Formularioko atal batzuk zuriz utzi ditzakezu, eta ez dira gehituko. Ziurtatu ez zaudela nahi gabe formarik ahazten!',
+        'lexeme_id': 'Lexema ID',
+        'advanced_partial_forms_hint': 'Forma batzuk falta dituzten lexemak sortzeko, aukeratu modu aurreratua',
+        'generated_via': 'honen bidez sortua',
+        'description_with_forms_and_senses': '{description}, {forms!p:0=formarik ez:one=forma bat:other={forms} forma} eta {senses!p:0=esanahirik ez:one=esanahi bat:other={senses} esanahi}',
+    },
+
     # translations by User:Djiboun, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/French
     'fr': {
         'create': 'Créer',
