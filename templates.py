@@ -1860,7 +1860,7 @@ templates = collections.OrderedDict([
     }),
 
     ('english-verb', {
-        '@attribution': {'users': ['ArthurPSmith'], 'title': 'Wikidata:Wikidata Lexeme Forms/English'},
+        '@attribution': {'users': ['ArthurPSmith', 'Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/English'},
         'label': 'English verb',
         'language_item_id': 'Q1860',
         'language_code': 'en',
@@ -1874,7 +1874,7 @@ templates = collections.OrderedDict([
             {
                 'label': 'third-person singular',
                 'example': 'He [sings] every day.',
-                'grammatical_features_item_ids': ['Q3910936', 'Q51929447'],
+                'grammatical_features_item_ids': ['Q3910936', 'Q51929074', 'Q110786'],
             },
             {
                 'label': 'simple past',
