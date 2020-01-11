@@ -540,7 +540,7 @@ templates = collections.OrderedDict([
     }),
 
     ('czech-adjective', {
-        '@attribution': {'users': ['Strepon'], 'title': 'Wikidata:Wikidata Lexeme Forms/Czech'},
+        '@attribution': {'users': ['Strepon', 'Adrijaned'], 'title': 'Wikidata:Wikidata Lexeme Forms/Czech'},
         'label': 'české přídavné jméno',
         'language_item_id': 'Q9056',
         'language_code': 'cs',
@@ -1078,7 +1078,7 @@ templates = collections.OrderedDict([
             },
             {
                 'label': '2. pád, rod střední, množné číslo, 2. stupeň',
-                'example': 'Má strach z mých [větích] kuřat.',
+                'example': 'Má strach z mých [větších] kuřat.',
                 'grammatical_features_item_ids': ['Q146233', 'Q146786', 'Q1775461', 'Q14169499'],
             },
             {
@@ -1358,7 +1358,7 @@ templates = collections.OrderedDict([
             },
             {
                 'label': '2. pád, rod střední, množné číslo, 3. stupeň',
-                'example': 'Má strach z mých [největích] kuřat.',
+                'example': 'Má strach z mých [největších] kuřat.',
                 'grammatical_features_item_ids': ['Q146233', 'Q146786', 'Q1775461', 'Q1817208'],
             },
             {
