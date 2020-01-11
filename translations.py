@@ -58,6 +58,28 @@ translations = {
         'bulk_not_allowed': 'Litujeme, ale nemáte oprávnění k použití hromadného módu.',
     },
 
+    # translations by User:So9q and User:Fnielsen, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Danish
+    'da': {
+        'create': 'Opret',
+        'csrf_warning': 'Din anmodning kunne ikke fremsættes på grund af en <abbr title="Cross-site request forgery">CSRF</abbr>-fejl. Prøv igen.',
+        'duplicates_warning': 'Disse eksisterende leksemer har den samme ordstamme og sprogkode som den, du prøver at oprette:',
+        'duplicates_instructions': 'Hvis du er sikker på, at de er forskellige, skal du markere afkrydsningsfeltet i bunden af formularen.',
+        'no_duplicate': 'Dette er ikke en duplikat af et eksisterende leksem.',
+        'advanced': 'Avanceret',
+        'advanced_general': 'Du er i “avanceret” tilstand',
+        'advanced_lexeme_id': 'Her kan du indtaste et leksem-id for at tilføje formularer til et eksisterende leksem i stedet for at oprette et nyt. For at undgå duplikering af eksisterende formularer skal du lade disse felter være tomme.',
+        'advanced_partial_forms': 'Du kan lade nogle felter være tomme; så tilføjes disse formularer ikke. Sørg dog for, at du ikke efterlader nogen felter tomme ved en fejltagelse!',
+        'lexeme_id': 'Leksem-ID',
+        'advanced_partial_forms_hint': 'For at oprette leksem uden at udfylde alle felter skal du skifte til avanceret tilstand.',
+        'generated_via': 'oprettet gennem',
+        'description_with_forms_and_senses': '{description}, {forms!p:0=ingen forme:one=en form:other={forms} forme} og {senses!p:0=inge betydelser:one=en betydelse:other={senses} betydelser}',
+        'bulk_link': 'masseopret',
+        'bulk_button': 'Masseopret',
+        'bulk_heading': 'Masseopret',
+        'bulk_format_help': 'formateringshjælp',
+        'bulk_not_allowed': 'Desværre har du ikke tilladelse til at oprette flere leksemer samtidigt.',
+    },
+
     # translations by Lucas Werkmeister
     'de': {
         'create': 'Anlegen',

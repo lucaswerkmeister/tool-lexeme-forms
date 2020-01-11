@@ -1569,6 +1569,156 @@ templates = collections.OrderedDict([
         },
     }),
 
+    ('danish-noun-common', {
+        '@attribution': {'users': ['So9q', 'Fnielsen'], 'title': 'Wikidata:Wikidata Lexeme Forms/Danish'},
+        'label': 'dansk substantiv (fælleskøn)',
+        'language_item_id': 'Q9035',
+        'language_code': 'da',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'nominativ ental, ubestemt',
+                'example': 'Det her er en [bil].',
+                'grammatical_features_item_ids': ['Q110786', 'Q53997857'],
+            },
+            {
+                'label': 'nominativ ental, bestemt',
+                'example': 'Den nye [bil].',
+                'grammatical_features_item_ids': ['Q110786', 'Q53997851'],
+            },
+            {
+                'label': 'nominativ flertal, ubestemt',
+                'example': 'Jag ser flere [biler].',
+                'grammatical_features_item_ids': ['Q146786', 'Q53997857'],
+            },
+            {
+                'label': 'nominativ flertal, bestemt',
+                'example': 'De nye [biler].',
+                'grammatical_features_item_ids': ['Q146786', 'Q53997851'],
+            },
+        ],
+        'statements': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q1305037',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
+
+    ('danish-noun-neuter', {
+        '@attribution': {'users': ['So9q', 'Fnielsen'], 'title': 'Wikidata:Wikidata Lexeme Forms/Danish'},
+        'label': 'dansk substantiv (intetkøn)',
+        'language_item_id': 'Q9035',
+        'language_code': 'da',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'nominativ ental, ubestemt',
+                'example': 'Det her er et [bord].',
+                'grammatical_features_item_ids': ['Q110786', 'Q53997857'],
+            },
+            {
+                'label': 'nominativ ental, bestemt',
+                'example': 'Det nye [bord].',
+                'grammatical_features_item_ids': ['Q110786', 'Q53997851'],
+            },
+            {
+                'label': 'nominativ flertal, ubestemt',
+                'example': 'Jeg ser flere [bord].',
+                'grammatical_features_item_ids': ['Q146786', 'Q53997857'],
+            },
+            {
+                'label': 'nominativ flertal, bestemt',
+                'example': 'De nye [bord].',
+                'grammatical_features_item_ids': ['Q146786', 'Q53997851'],
+            },
+        ],
+        'statements': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q1775461',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
+
+    ('danish-verb', {
+        '@attribution': {'users': ['So9q'], 'title': 'Wikidata:Wikidata Lexeme Forms/Danish'},
+        'label': 'dansk verb',
+        'language_item_id': 'Q9035',
+        'language_code': 'da',
+        'lexical_category_item_id': 'Q24905',
+        'forms': [
+            {
+                'label': 'infinitiv aktiv (navnemåde)',
+                'example': 'At [læse] er godt.',
+                'grammatical_features_item_ids': ['Q179230', 'Q1317831'],
+            },
+            {
+                'label': 'presens aktiv (nutid)',
+                'example': 'Hun [læser] hver dag.',
+                'grammatical_features_item_ids': ['Q192613', 'Q1317831'],
+            },
+            {
+                'label': 'preteritum aktiv (datid)',
+                'example': 'Hun [læste] i går.',
+                'grammatical_features_item_ids': ['Q442485', 'Q1317831'],
+            },
+            {
+                'label': 'præteritum participium (kort tillægsform)',
+                'example': 'Hen har [læst] hele dagen.',
+                'grammatical_features_item_ids': ['Q52434448'],
+            },
+            {
+                'label': 'imperativ (bydeform, bydemåde)',
+                'example': '[læs] nu!',
+                'grammatical_features_item_ids': ['Q22716'],
+            },
+            {
+                'label': 'presens passiv (nutid lideform)',
+                'example': 'Det [læses] hver dag.',
+                'grammatical_features_item_ids': ['Q192613', 'Q1194697'],
+            },
+            {
+                'label': 'preteritum passiv (datid lideform)',
+                'example': 'Det [læstes] i går.',
+                'grammatical_features_item_ids': ['Q442485', 'Q1194697'],
+            },
+            {
+                'label': 'præsens participium (lang tillægsform)',
+                'example': 'Sikke meget [læsende] det blev i dag.',
+                'grammatical_features_item_ids': ['Q10345583'],
+            },
+        ],
+    }),
+
     ('german-noun-masculine', {
         '@attribution': {'users': ['Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/German'},
         'label': 'deutsches Substantiv (Maskulinum)',
