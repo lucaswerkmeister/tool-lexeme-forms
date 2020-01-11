@@ -1389,6 +1389,186 @@ templates = collections.OrderedDict([
         ],
     }),
 
+    ('czech-verb-perfective', {
+        '@attribution': {'users': ['Adrijaned', 'Strepon'], 'title': 'Wikidata:Wikidata Lexeme Forms/Czech'},
+        'label': 'české sloveso dokonavé',
+        'language_item_id': 'Q9056',
+        'language_code': 'cs',
+        'lexical_category_item_id': 'Q24905',
+        'forms': [
+            {
+                'label': 'infinitiv',
+                'example': '[zazpívat].',
+                'grammatical_features_item_ids': ['Q179230'],
+            },
+            {
+                'label': '1. osoba, jednotné číslo',
+                'example': 'Já teď [zazpívám].',
+                'grammatical_features_item_ids': ['Q21714344', 'Q110786', 'Q682111'],
+            },
+            {
+                'label': '2. osoba, jednotné číslo',
+                'example': 'Ty teď [zazpíváš].',
+                'grammatical_features_item_ids': ['Q51929049', 'Q110786', 'Q682111'],
+            },
+            {
+                'label': '3. osoba, jednotné číslo',
+                'example': 'Ono to teď [zazpívá].',
+                'grammatical_features_item_ids': ['Q51929074', 'Q110786', 'Q682111'],
+            },
+            {
+                'label': '1. osoba, množné číslo',
+                'example': 'My teď [zazpíváme].',
+                'grammatical_features_item_ids': ['Q21714344', 'Q146786', 'Q682111'],
+            },
+            {
+                'label': '2. osoba, množné číslo',
+                'example': 'Vy teď [zazpíváte].',
+                'grammatical_features_item_ids': ['Q51929049', 'Q146786', 'Q682111'],
+            },
+            {
+                'label': '3. osoba, množné číslo',
+                'example': 'Oni teď [zazpívají].',
+                'grammatical_features_item_ids': ['Q51929074', 'Q146786', 'Q682111'],
+            },
+            {
+                'label': 'rozkazovací způsob, 2. osoba, jednotné číslo',
+                'example': 'Ty [zazpívej]!',
+                'grammatical_features_item_ids': ['Q22716', 'Q51929049', 'Q110786'],
+            },
+            {
+                'label': 'rozkazovací způsob, 1. osoba, množné číslo',
+                'example': 'My [zazpívejme]!',
+                'grammatical_features_item_ids': ['Q22716', 'Q21714344', 'Q146786'],
+            },
+            {
+                'label': 'rozkazovací způsob, 2. osoba, množné číslo',
+                'example': 'Vy [zazpívejte]!',
+                'grammatical_features_item_ids': ['Q22716', 'Q51929049', 'Q146786'],
+            },
+            {
+                'label': 'příčestí činné, rod mužský, jednotné číslo',
+                'example': 'On by [zazpíval].',
+                'grammatical_features_item_ids': ['Q72249355', 'Q499327', 'Q110786'],
+            },
+            {
+                'label': 'příčestí činné, rod ženský, jednotné číslo',
+                'example': 'Ona by [zazpívala].',
+                'grammatical_features_item_ids': ['Q72249355', 'Q1775415', 'Q110786'],
+            },
+            {
+                'label': 'příčestí činné, rod střední, jednotné číslo',
+                'example': 'Ono by [zazpívalo].',
+                'grammatical_features_item_ids': ['Q72249355', 'Q1775461', 'Q110786'],
+            },
+            {
+                'label': 'příčestí činné, rod mužský životný, množné číslo',
+                'example': 'Oni muži by [zazpívali].',
+                'grammatical_features_item_ids': ['Q72249355', 'Q499327', 'Q51927507', 'Q146786'],
+            },
+            {
+                'label': 'příčestí činné, rod mužský neživotný, množné číslo',
+                'example': 'Ony hrady by [zazpívaly].',
+                'grammatical_features_item_ids': ['Q72249355', 'Q499327', 'Q51927539', 'Q146786'],
+            },
+            {
+                'label': 'příčestí činné, rod ženský, množné číslo',
+                'example': 'Ony by [zazpívaly].',
+                'grammatical_features_item_ids': ['Q72249355', 'Q1775415', 'Q146786'],
+            },
+            {
+                'label': 'příčestí činné, rod střední, množné číslo',
+                'example': 'Ona by [zazpívala].',
+                'grammatical_features_item_ids': ['Q72249355', 'Q1775461', 'Q146786'],
+            },
+            {
+                'label': 'příčestí trpné, rod mužský, jednotné číslo',
+                'example': 'On bude [zazpíván].',
+                'grammatical_features_item_ids': ['Q72249544', 'Q499327', 'Q110786'],
+            },
+            {
+                'label': 'příčestí trpné, rod ženský, jednotné číslo',
+                'example': 'Ona bude [zazpívána].',
+                'grammatical_features_item_ids': ['Q72249544', 'Q1775415', 'Q110786'],
+            },
+            {
+                'label': 'příčestí trpné, rod střední, jednotné číslo',
+                'example': 'Ono bude [zazpíváno].',
+                'grammatical_features_item_ids': ['Q72249544', 'Q1775461', 'Q110786'],
+            },
+            {
+                'label': 'příčestí trpné, rod mužský životný, množné číslo',
+                'example': 'Oni muži budou [zazpíváni].',
+                'grammatical_features_item_ids': ['Q72249544', 'Q499327', 'Q51927507', 'Q146786'],
+            },
+            {
+                'label': 'příčestí trpné, rod mužský neživotný, množné číslo',
+                'example': 'Ony hrady budou [zazpívány].',
+                'grammatical_features_item_ids': ['Q72249544', 'Q499327', 'Q51927539', 'Q146786'],
+            },
+            {
+                'label': 'příčestí trpné, rod ženský, množné číslo',
+                'example': 'Ony budou [zazpívány].',
+                'grammatical_features_item_ids': ['Q72249544', 'Q1775415', 'Q146786'],
+            },
+            {
+                'label': 'příčestí trpné, rod střední, množné číslo',
+                'example': 'Ona budou [zazpívána].',
+                'grammatical_features_item_ids': ['Q72249544', 'Q1775461', 'Q146786'],
+            },
+            {
+                'label': 'přechodník minulý, rod mužský, jednotné číslo',
+                'example': 'On [zazpívav], odešel.',
+                'grammatical_features_item_ids': ['Q65540485', 'Q499327', 'Q110786'],
+            },
+            {
+                'label': 'přechodník minulý, rod ženský, střední, jednotné číslo',
+                'example': 'Ona [zazpívavši], odešla.',
+                'grammatical_features_item_ids': ['Q65540485', 'Q1775415', 'Q1775461', 'Q110786'],
+            },
+            {
+                'label': 'přechodník minulý, množné číslo',
+                'example': '[Zazpívavše], odešli.',
+                'grammatical_features_item_ids': ['Q65540485', 'Q146786'],
+            },
+            {
+                'label': 'přechodník přítomný, rod mužský, jednotné číslo',
+                'example': 'On [zazpívaje], odejde.',
+                'grammatical_features_item_ids': ['Q65540125', 'Q499327', 'Q110786'],
+            },
+            {
+                'label': 'přechodník přítomný, rod ženský, střední, jednotné číslo',
+                'example': 'Ona [zazpívajíc], odejde.',
+                'grammatical_features_item_ids': ['Q65540125', 'Q1775415', 'Q1775461', 'Q110786'],
+            },
+            {
+                'label': 'přechodník přítomný, množné číslo',
+                'example': '[Zazpívajíce], odejdou.',
+                'grammatical_features_item_ids': ['Q65540125', 'Q146786'],
+            },
+        ],
+        'statements': {
+            'P7486': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P7486',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q1424306',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
+
     ('german-noun-masculine', {
         '@attribution': {'users': ['Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/German'},
         'label': 'deutsches Substantiv (Maskulinum)',
@@ -5632,6 +5812,8 @@ properties_exclusive = {
         'P31': False,
         # other “grammatical gender” are incompatible
         'P5185': True,
+        # other “grammatical aspect” are incompatible
+        'P7486': True,
     },
     'test': {
         # other “grammatical gender” are incompatible

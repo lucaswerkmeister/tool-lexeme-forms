@@ -70,13 +70,19 @@ def test_examples_valid(template_name, form):
     app.split_example(form)
 
 
+ambiguous_examples = {
+    'Ona by [zazpívala].',
+}
+
+
 @pytest.mark.parametrize('template_name', templates.templates.keys())
 def test_examples_distinct(template_name):
     template = templates.templates[template_name]
     examples = set()
     for form in template['forms']:
         example = form['example']
-        assert example not in examples
+        if example not in ambiguous_examples:
+            assert example not in examples
         examples.add(example)
 
 
