@@ -1,3 +1,4 @@
+import babel
 import collections
 import copy
 import decorator
@@ -179,6 +180,15 @@ def message_with_language(message_code, language_code=None):
         language_code = 'en'
     text = translations[language_code][message_code]
     return flask.Markup(text), language_code
+
+@app.template_filter()
+def text_direction(language_code):
+    try:
+        locale = babel.Locale.parse(language_code)
+    except babel.UnknownLocaleError:
+        return 'auto'
+    else:
+        return locale.text_direction
 
 @app.route('/')
 def index():

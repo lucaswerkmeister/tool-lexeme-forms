@@ -6,7 +6,7 @@
 <script src="{{ url_for('static', filename='alertPartialForms.js') }}"></script>
 <link rel="stylesheet" href="{{ url_for('static', filename='template.css') }}">
 {% endblock %}
-{% block main_tag_attributes %}{{ super() }} lang="{{ template.language_code }}" data-template='{{ template | tojson }}'{% endblock main_tag_attributes %}
+{% block main_tag_attributes %}{{ super() }} lang="{{ template.language_code }}" dir="{{ template.language_code | text_direction }}" data-template='{{ template | tojson }}'{% endblock main_tag_attributes %}
 {% block main %}
   <h1>{{ template.label }}</h1>
   {% if advanced %}
