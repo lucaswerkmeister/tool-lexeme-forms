@@ -2364,6 +2364,116 @@ templates = collections.OrderedDict([
         ],
     }),
 
+    ('spanish-verb', {
+        '@attribution': {'users': ['DemonDays64', 'Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/Spanish'},
+        'label': 'verbo en español',
+        'language_item_id': 'Q1321',
+        'language_code': 'es',
+        'lexical_category_item_id': 'Q24905',
+        'forms': [
+            {
+                'label': 'infinitivo',
+                'example': 'Quieres [cantar].',
+                'grammatical_features_item_ids': ['Q179230'],
+            },
+            {
+                'label': 'primera persona singular presente',
+                'example': 'Yo [canto] mucho.',
+                'grammatical_features_item_ids': ['Q192613', 'Q682111', 'Q21714344', 'Q110786'],
+            },
+            {
+                'label': 'segunda persona singular presente',
+                'example': 'Tú [cantas] mucho.',
+                'grammatical_features_item_ids': ['Q192613', 'Q682111', 'Q51929049', 'Q110786'],
+            },
+            {
+                'label': 'tercera persona singular presente',
+                'example': 'Él [canta] mucho.',
+                'grammatical_features_item_ids': ['Q192613', 'Q682111', 'Q51929074', 'Q110786'],
+            },
+            {
+                'label': 'primera persona plural presente',
+                'example': 'Nosotros [cantamos] mucho.',
+                'grammatical_features_item_ids': ['Q192613', 'Q682111', 'Q21714344', 'Q146786'],
+            },
+            {
+                'label': 'segunda persona plural presente',
+                'example': 'Vosotros [cantáis] mucho.',
+                'grammatical_features_item_ids': ['Q192613', 'Q682111', 'Q51929049', 'Q146786'],
+            },
+            {
+                'label': 'tercera persona plural presente',
+                'example': 'Ellos [cantan] mucho.',
+                'grammatical_features_item_ids': ['Q192613', 'Q682111', 'Q51929074', 'Q146786'],
+            },
+            {
+                'label': 'primera persona singular pretérito',
+                'example': 'Yo [canté] mucho.',
+                'grammatical_features_item_ids': ['Q442485', 'Q21714344', 'Q110786'],
+            },
+            {
+                'label': 'segunda persona singular pretérito',
+                'example': 'Tú [cantaste] mucho.',
+                'grammatical_features_item_ids': ['Q442485', 'Q51929049', 'Q110786'],
+            },
+            {
+                'label': 'tercera persona singular pretérito',
+                'example': 'Él [cantó] mucho.',
+                'grammatical_features_item_ids': ['Q442485', 'Q51929074', 'Q110786'],
+            },
+            {
+                'label': 'primera persona plural pretérito',
+                'example': 'Nosotros [cantamos] mucho.',
+                'grammatical_features_item_ids': ['Q442485', 'Q21714344', 'Q146786'],
+            },
+            {
+                'label': 'segunda persona plural pretérito',
+                'example': 'Vosotros [cantasteis] mucho.',
+                'grammatical_features_item_ids': ['Q442485', 'Q51929049', 'Q146786'],
+            },
+            {
+                'label': 'tercera persona plural pretérito',
+                'example': 'Ellos [cantaron] mucho.',
+                'grammatical_features_item_ids': ['Q442485', 'Q51929074', 'Q146786'],
+            },
+            {
+                'label': 'primera persona singular pretérito imperfecto',
+                'example': 'Yo [cantaba] mucho.',
+                'grammatical_features_item_ids': ['Q12547192', 'Q21714344', 'Q110786'],
+            },
+            {
+                'label': 'segunda persona singular pretérito imprefecto',
+                'example': 'Tú [cantabas] mucho.',
+                'grammatical_features_item_ids': ['Q12547192', 'Q51929049', 'Q110786'],
+            },
+            {
+                'label': 'tercera persona singular pretérito imperfecto',
+                'example': 'Él [cantaba] mucho.',
+                'grammatical_features_item_ids': ['Q12547192', 'Q51929074', 'Q110786'],
+            },
+            {
+                'label': 'primera persona plural pretérito imperfecto',
+                'example': 'Nosotros [cantábamos] mucho.',
+                'grammatical_features_item_ids': ['Q12547192', 'Q21714344', 'Q146786'],
+            },
+            {
+                'label': 'segunda persona plural pretérito imperfecto',
+                'example': 'Vosotros [cantabais] mucho.',
+                'grammatical_features_item_ids': ['Q12547192', 'Q51929049', 'Q146786'],
+            },
+            {
+                'label': 'tercera persona plural pretérito imperfecto',
+                'example': 'Ellos [cantaban] mucho.',
+                'grammatical_features_item_ids': ['Q12547192', 'Q51929074', 'Q146786'],
+            },
+            {
+                'label': 'participio presente',
+                'example': 'Estoy [cantando].',
+                'grammatical_features_item_ids': ['Q10345583', 'Q51929074', 'Q146786'],
+            },
+        ],
+    }),
+
     ('estonian-noun', {
         '@attribution': {'users': ['Reosarevok'], 'title': 'Wikidata:Wikidata Lexeme Forms/Estonian'},
         'label': 'eesti keele nimisõna',

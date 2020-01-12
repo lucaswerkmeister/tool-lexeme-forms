@@ -72,6 +72,7 @@ def test_examples_valid(template_name, form):
 
 ambiguous_examples = {
     'Ona by [zazpívala].',
+    'Nosotros [cantamos] mucho.',
 }
 
 
