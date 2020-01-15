@@ -6,6 +6,11 @@
   <p>
     <a href="https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms#Bulk_mode">{{ message('bulk_format_help') }}</a>
   </p>
+  {% if csrf_error %}
+  <div class="alert alert-warning">
+    {{ message( 'csrf_warning' ) }}
+  </div>
+  {% endif %}
   <form method="post" autocapitalize="off">
     <input name="_csrf_token" type="hidden" value="{{ csrf_token() }}">
     <div class="form-group">

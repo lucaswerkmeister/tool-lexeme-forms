@@ -256,12 +256,11 @@ def process_template_bulk(template_name):
             'bulk-not-allowed.html',
         )
 
-    if flask.request.method == 'POST' and flask.request.referrer == current_url():
-        form_data = flask.request.form
-        token = flask.session.pop('_csrf_token', None)
-        if not token or token != form_data.get('_csrf_token'):
-            return 'CSRF error', 400 # TODO better handling
+    if (flask.request.method == 'POST' and
+        flask.request.referrer == current_url() and
+        csrf_token_matches(flask.request.form)):
 
+        form_data = flask.request.form
         lexemes = parse_lexemes(form_data.get('lexemes'), template)
         results = []
 
@@ -298,11 +297,18 @@ def process_template_bulk(template_name):
             (prefix, form_placeholder, suffix) = split_example(form)
             placeholder += form_placeholder
         placeholder += '\n...'
+        csrf_error = False
 
         if flask.request.method == 'POST':
             form_data = flask.request.form
-            value = '|'.join(form_data.getlist('form_representation'))
-            value += '\n' # for convenience when adding more
+            if 'form_representation' in form_data:
+                # user came from non-bulk mode
+                value = '|'.join(form_data.getlist('form_representation'))
+                value += '\n' # for convenience when adding more
+            else:
+                # user came from bulk mode with CSRF error
+                value = form_data.get('lexemes')
+                csrf_error = True
         else:
             value = None
 
@@ -311,6 +317,7 @@ def process_template_bulk(template_name):
             template=template,
             placeholder=placeholder,
             value=value,
+            csrf_error=csrf_error,
         )
 
 def if_no_such_template_redirect(template_name):
@@ -479,8 +486,7 @@ def add_form_data_to_template(form_data, template):
     return template
 
 def if_needs_csrf_redirect(template, advanced, form_data):
-    token = flask.session.pop('_csrf_token', None)
-    if not token or token != form_data.get('_csrf_token'):
+    if not csrf_token_matches(form_data):
         return flask.render_template(
             'template.html',
             template=add_form_data_to_template(form_data, template),
@@ -489,6 +495,13 @@ def if_needs_csrf_redirect(template, advanced, form_data):
         )
     else:
         return None
+
+def csrf_token_matches(form_data):
+    token = flask.session.pop('_csrf_token', None)
+    if not token or token != form_data.get('_csrf_token'):
+        return False
+    else:
+        return True
 
 def current_url():
     return flask.url_for(
