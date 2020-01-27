@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block main_tag_attributes %}{{ super() }} lang="{{ template.language_code }}"{% endblock main_tag_attributes %}
+{% block main_tag_attributes %}{{ super() }} lang="{{ template.language_code }}" dir="{{ template.language_code | text_direction }}"{% endblock main_tag_attributes %}
 {% block main %}
   <h1>{{ template.label }}</h1>
   <h2>{{ message('bulk_heading') }}</h2>
