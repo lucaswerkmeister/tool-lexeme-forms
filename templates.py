@@ -2659,6 +2659,66 @@ templates = collections.OrderedDict([
         ],
     }),
 
+    ('persian-noun', {
+        '@attribution': {'users': ['Ladsgroup'], 'title': 'Wikidata:Wikidata Lexeme Forms/Persian'},
+        'label': 'اسم فارسی',
+        'language_item_id': 'Q9168',
+        'language_code': 'fa',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'مفرد',
+                'example': '[سگ] غذا می‌خورد.',
+                'grammatical_features_item_ids': ['Q110786'],
+            },
+            {
+                'label': 'جمع',
+                'example': '[سگ‌ها] غذا می‌خورند.',
+                'grammatical_features_item_ids': ['Q146786'],
+            },
+        ],
+    }),
+
+    ('persian-verb', {
+        '@attribution': {'users': ['Ladsgroup'], 'title': 'Wikidata:Wikidata Lexeme Forms/Persian'},
+        'label': 'فعل فارسی',
+        'language_item_id': 'Q9168',
+        'language_code': 'fa',
+        'lexical_category_item_id': 'Q24905',
+        'forms': [
+            {
+                'label': 'اول شخص مفرد',
+                'example': 'من [می‌روم].',
+                'grammatical_features_item_ids': ['Q21714344', 'Q110786'],
+            },
+            {
+                'label': 'دوم شخص مفرد',
+                'example': 'تو [می‌روی].',
+                'grammatical_features_item_ids': ['Q51929049', 'Q110786'],
+            },
+            {
+                'label': 'سوم شخص مفرد',
+                'example': 'او [می‌رود].',
+                'grammatical_features_item_ids': ['Q51929074', 'Q110786'],
+            },
+            {
+                'label': 'اول شخص جمع',
+                'example': 'ما [می‌رویم].',
+                'grammatical_features_item_ids': ['Q21714344', 'Q146786'],
+            },
+            {
+                'label': 'دوم شخص جمع',
+                'example': 'شما [می‌روید].',
+                'grammatical_features_item_ids': ['Q51929049', 'Q146786'],
+            },
+            {
+                'label': 'سوم شخص جمع',
+                'example': 'آنها [می‌روند].',
+                'grammatical_features_item_ids': ['Q51929074', 'Q146786'],
+            },
+        ],
+    }),
+
     ('finnish-noun', {
         '@attribution': {'users': ['Shinnin'], 'title': 'Wikidata:Wikidata Lexeme Forms/Finnish'},
         'label': 'suomen kielen substantiivi',

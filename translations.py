@@ -157,6 +157,23 @@ translations = {
         'description_with_forms_and_senses': '{description}, {forms!p:0=formarik ez:one=forma bat:other={forms} forma} eta {senses!p:0=esanahirik ez:one=esanahi bat:other={senses} esanahi}',
     },
 
+    # translations by User:Ladsgroup, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Persian
+    'fa': {
+        'create': 'ایجاد',
+        'csrf_warning': 'شرمنده، ما قادر به پردازش این درخواست نیستیم. (حفاظت <abbr title="Cross-site request forgery" lang="en" dir="ltr">CSRF</abbr> به خطا خورد). لطفا دوباره این فرم را بفرستید.',
+        'duplicates_warning': 'این تکواژه‌ها مدخل و زبان یکسانی با تکواژه‌ای که قصد ساختنش را دارید دارند:',
+        'duplicates_instructions': 'اگر مطمئنید که این تکواژه‌ها متفاوت هستند، جعبه پایین فرم را علامت بزنید.',
+        'no_duplicate': 'این یک تکواژه تکراری نیست.',
+        'advanced': 'پیشرفته',
+        'advanced_general': 'شما در حالت پیشرفته هستید.',
+        'advanced_lexeme_id': 'شما می‌توانید یک شماره تکواژ وارد کنید تا فرم‌های جدید به آن اضافه کنید. هر فرمی که قبلا در صفحه تکواژه موجود است خالی بگذارید، در غیر این صورت کپی خواهند شد.',
+        'advanced_partial_forms': 'شما می‌توانید بخشی از فرم‌ها را خالی بگذارید و در این صورت آنها اضافه نخواهند شد. مطمئن شوید که هیچ فرمی تصادفا خالی نمی‌گذارید.',
+        'lexeme_id': 'شماره تکواژه',
+        'advanced_partial_forms_hint': 'برای ایجاد تکواژه بدون بخشی از فرم‌هایش، به حالت پیشرفته سوییچ کنید.',
+        'generated_via': 'تولید شده با استفاده از',
+        'description_with_forms_and_senses': '{description}، {forms!p:0=بدون فرم:one=یک فرم:other={forms} فرم} و {senses!p:0=بدون معنی:one=یک معنی:other={senses} معنی}',
+    },
+
     # translations by User:Shinnin, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Finnish
     'fi': {
         'create': 'Julkaise',
