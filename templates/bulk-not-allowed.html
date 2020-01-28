@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% block main_tag_attributes %}{{ super() }} lang="{{ template.language_code }}" dir="{{ template.language_code | text_direction }}"{% endblock main_tag_attributes %}
 {% block main %}
   <div class="alert alert-info">
     {{ message('bulk_not_allowed') }}

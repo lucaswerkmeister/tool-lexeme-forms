@@ -264,6 +264,7 @@ def process_template_bulk(template_name):
     if not can_use_bulk_mode():
         return flask.render_template(
             'bulk-not-allowed.html',
+            template=template,
         )
 
     if (flask.request.method == 'POST' and
