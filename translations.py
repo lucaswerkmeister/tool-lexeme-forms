@@ -172,6 +172,11 @@ translations = {
         'advanced_partial_forms_hint': 'برای ایجاد تکواژه بدون بخشی از فرم‌هایش، به حالت پیشرفته سوییچ کنید.',
         'generated_via': 'تولید شده با استفاده از',
         'description_with_forms_and_senses': '{description}، {forms!p:0=بدون فرم:one=یک فرم:other={forms} فرم} و {senses!p:0=بدون معنی:one=یک معنی:other={senses} معنی}',
+        'bulk_link': 'ویرایش انبوده',
+        'bulk_button': 'ویرایش انبوده',
+        'bulk_heading': 'ویرایش انبوده',
+        'bulk_format_help': 'راهنمای قالب‌بندی',
+        'bulk_not_allowed': 'شما دسترسی لازم برای استفاده از ویرایش انبوه را ندارید. شرمنده.',
     },
 
     # translations by User:Shinnin, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Finnish
