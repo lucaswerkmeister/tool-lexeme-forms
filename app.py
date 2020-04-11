@@ -18,8 +18,9 @@ import werkzeug.datastructures
 
 from flask_utils import OrderedFlask, TagOrderedMultiDict, TagImmutableOrderedMultiDict
 from formatters import PluralFormatter
+from matching import match_template_to_lexeme_data
 from parse_tpsv import parse_lexemes
-from templates import templates, match_template_to_lexeme_data
+from templates import templates
 from translations import translations
 
 app = OrderedFlask(__name__)
