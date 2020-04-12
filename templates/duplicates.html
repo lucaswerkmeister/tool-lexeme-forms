@@ -1,13 +1,13 @@
 {% if duplicates %}
 <div {% if actionable %} id="duplicates-warning" {% endif %} class="alert alert-warning">
-  {{ message( 'duplicates_warning' ) }}
+  {{ message_with_plural( 'duplicates_warning', lexemes=duplicates | length ) }}
   <ul>
     {% for duplicate in duplicates %}
     <li><a href="{{ duplicate.uri }}">{{ duplicate.label }} ({{ duplicate.id }})</a>, {{ duplicate.description | augment_description(duplicate.forms_count, duplicate.senses_count) }}</li>
     {% endfor %}
   </ul>
   {% if actionable %}
-  {{ message( 'duplicates_instructions' ) }}
+  {{ message_with_plural( 'duplicates_instructions', lexemes=duplicates | length ) }}
   {% endif %}
 </div>
 {% endif %}

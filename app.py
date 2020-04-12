@@ -129,9 +129,8 @@ def render_duplicates(duplicates, language_code, actionable):
 def augment_description(description, forms_count, senses_count):
     if forms_count is None or senses_count is None:
         return description
-    template, language = message_with_language('description_with_forms_and_senses')
-    return PluralFormatter(language).format(
-        template,
+    return message_with_plural(
+        'description_with_forms_and_senses',
         description=description,
         forms=int(forms_count),
         senses=int(senses_count),
@@ -181,6 +180,13 @@ def message_with_language(message_code, language_code=None):
         language_code = 'en'
     text = translations[language_code][message_code]
     return flask.Markup(text), language_code
+
+@app.template_global()
+def message_with_plural(message_code, **kwargs):
+    template, language = message_with_language(message_code)
+    if language == 'la':
+        language = 'en' # Latin is not in CLDR, English has same plural forms
+    return PluralFormatter(language).format(template, **kwargs)
 
 @app.template_filter()
 def text_direction(language_code):
