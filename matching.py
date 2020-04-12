@@ -11,8 +11,10 @@ properties_exclusive = {
         'P7486': True,
     },
     'test': {
+        # other “instance of” are likely unrelated and okay
+        'P82': False,
         # other “grammatical gender” are incompatible
-        'P73601': False,
+        'P73601': True,
     },
 }
 

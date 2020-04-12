@@ -86,5 +86,9 @@ def test_properties_exclusive_covers_template_claims_properties():
         for property_id in template.get('statements', {}).keys():
             if property_id not in properties_exclusive_for_template:
                 missing_property_ids.add((wiki, property_id))
+        for form in template['forms']:
+            for property_id in form.get('statements', {}).keys():
+                if property_id not in properties_exclusive_for_template:
+                    missing_property_ids.add((wiki, property_id))
 
     assert not missing_property_ids
