@@ -480,17 +480,24 @@ def match_template_to_lexeme_id(wiki, lexeme_id, template_name):
 
     return flask.jsonify(match_template_to_lexeme_data(template, lexeme_data))
 
-def get_lexeme_data(lexeme_id, wiki):
+def get_lexeme_data(lexeme_id, wiki, revision=None):
     host = 'https://' + wiki + '.wikidata.org'
     session = mwapi.Session(
         host,
         user_agent=user_agent,
     )
 
-    lexeme_data = session.get(
-        action='wbgetentities',
-        ids=[lexeme_id],
-    )['entities'][lexeme_id]
+    if revision:
+        entities_data = session.session.get(
+            f'{host}/wiki/Special:EntityData/{lexeme_id}.json?revision={revision}',
+        ).json()
+    else: # TODO when T128486 is fixed, use Special:EntityData without revision too, for better caching
+        entities_data = session.get(
+            action='wbgetentities',
+            ids=[lexeme_id],
+        )
+
+    lexeme_data = entities_data['entities'][lexeme_id]
     return lexeme_data
 
 def add_form_data_to_template(form_data, template):
