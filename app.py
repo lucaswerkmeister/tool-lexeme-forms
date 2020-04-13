@@ -18,7 +18,7 @@ import werkzeug.datastructures
 
 from flask_utils import OrderedFlask, TagOrderedMultiDict, TagImmutableOrderedMultiDict
 from formatters import PluralFormatter
-from matching import match_template_to_lexeme_data
+from matching import match_template_to_lexeme_data, match_lexeme_forms_to_template
 from parse_tpsv import parse_lexemes
 from templates import templates
 from translations import translations
@@ -338,6 +338,61 @@ def process_template_bulk(template_name):
             csrf_error=csrf_error,
         )
 
+@app.route('/template/<template_name>/edit/<lexeme_id>', methods=['GET', 'POST'])
+def process_template_edit(template_name, lexeme_id):
+    response = if_no_such_template_redirect(template_name)
+    if response:
+        return response
+
+    response = if_needs_oauth_redirect()
+    if response:
+        return response
+
+    template = templates[template_name]
+    language_code = template['language_code']
+    flask.g.language_code = language_code
+    wiki = 'test' if 'test' in template else 'www'
+
+    if flask.request.method == 'POST':
+        lexeme_revision = flask.request.form['_lexeme_revision']
+        lexeme_data = get_lexeme_data(lexeme_id, wiki, lexeme_revision)
+    else:
+        lexeme_data = get_lexeme_data(lexeme_id, wiki)
+        lexeme_revision = lexeme_data['lastrevid']
+
+    template = match_lexeme_forms_to_template(lexeme_data['forms'], template)
+    template['lexeme_id'] = lexeme_id
+    template['lexeme_revision'] = lexeme_revision
+
+    if (flask.request.method == 'POST' and
+        flask.request.referrer == current_url() and
+        csrf_token_matches(flask.request.form)):
+        form_data = flask.request.form
+        lexeme_data = update_lexeme(lexeme_data, template, form_data)
+        summary = build_summary(template, form_data)
+
+        if 'oauth' in app.config:
+            lexeme_uri = submit_lexeme(template, lexeme_data, summary)
+            return flask.redirect(lexeme_uri, code=303)
+        else:
+            print(summary)
+            return flask.jsonify(lexeme_data)
+
+    if flask.request.method == 'POST':
+        template = add_form_data_to_template(flask.request.form, template)
+    else:
+        for template_form in template['forms']:
+            lexeme_forms = template_form.get('lexeme_forms')
+            if lexeme_forms: # TODO use walrus operator in Python 3.8
+                template_form['value'] = '/'.join(lexeme_form['representations'][language_code]['value'] for lexeme_form in lexeme_forms)
+
+    return flask.render_template(
+        'edit.html',
+        template=template,
+        advanced=True, # for form2input
+        csrf_error=flask.request.method == 'POST',
+    )
+
 def if_no_such_template_redirect(template_name):
     if template_name not in templates:
         return flask.render_template(
@@ -587,6 +642,49 @@ def build_form(template_form, template_language, form_representation):
         'claims': template_form.get('statements', {})
     }
 
+def update_lexeme(lexeme_data, template, form_data):
+    lexeme_data = copy.deepcopy(lexeme_data)
+    lexeme_data['base_revision_id'] = template['lexeme_revision']
+    language_code = template['language_code']
+    for form_data_representation, template_form in zip(form_data.getlist('form_representation'), template['forms']):
+        form_data_representation_variants = form_data_representation.split('/')
+        if form_data_representation_variants == ['']:
+            form_data_representation_variants = []
+        lexeme_forms = template_form.get('lexeme_forms', []).copy()
+        # find and remove matching forms (no modification necessary)
+        for lexeme_form in lexeme_forms:
+            for lexeme_form_representation in lexeme_form['representations'].values():
+                if lexeme_form_representation['value'] in form_data_representation_variants:
+                    lexeme_forms.remove(lexeme_form)
+                    form_data_representation_variants.remove(lexeme_form_representation['value'])
+                    break
+        # overwrite remaining lexeme forms with form data as long as we have both
+        # currently simply in order, cleverer matching via edit distance may be possible but likely not necessary
+        overwritten_forms = 0
+        for form_data_representation_variant, lexeme_form in zip(form_data_representation_variants, lexeme_forms):
+            lexeme_form = find_form(lexeme_data, lexeme_form['id'])
+            lexeme_form_representation = lexeme_form['representations'].setdefault(language_code, {'language': language_code})
+            assert form_data_representation_variant, 'Representation cannot be empty'
+            lexeme_form_representation['value'] = form_data_representation_variant
+            overwritten_forms += 1
+        form_data_representation_variants = form_data_representation_variants[overwritten_forms:]
+        lexeme_forms = lexeme_forms[overwritten_forms:]
+        # add remaining form data as new OR delete remaining lexeme forms
+        assert not (form_data_representation_variants and lexeme_forms), 'After previous loop, at least one list must be exhausted'
+        for form_data_representation_variant in form_data_representation_variants:
+            assert form_data_representation_variant, 'Representation cannot be empty'
+            lexeme_data['forms'].append(build_form(template_form, language_code, form_data_representation_variant))
+        for lexeme_form in lexeme_forms:
+            lexeme_form = find_form(lexeme_data, lexeme_form['id'])
+            lexeme_form['remove'] = ''
+    return lexeme_data
+
+def find_form(lexeme_data, form_id):
+    for form in lexeme_data['forms']:
+        if form['id'] == form_id:
+            return form
+    raise LookupError(f'Form {form_id} not found in lexeme data for {lexeme_data["id"]}')
+
 def build_summary(template, form_data):
     template_name = template['@template_name']
     url = current_url()
@@ -614,6 +712,8 @@ def submit_lexeme(template, lexeme_data, summary):
 
     token = session.get(action='query', meta='tokens')['query']['tokens']['csrftoken']
     selector = {'id': lexeme_data['id']} if 'id' in lexeme_data else {'new': 'lexeme'}
+    if 'base_revision_id' in lexeme_data:
+        selector['baserevid'] = lexeme_data['base_revision_id']
     response = session.post(
         action='wbeditentity',
         data=json.dumps(lexeme_data),

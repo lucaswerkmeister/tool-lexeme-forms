@@ -20,6 +20,10 @@ translations = {
         'bulk_heading': 'bulk mode',
         'bulk_format_help': 'format help',
         'bulk_not_allowed': 'You are not allowed to use bulk mode. Sorry.',
+        'edit': 'Edit',
+        'edit_general': 'You are in “edit” mode. Changing the values below will edit, add or remove forms of the target lexeme.',
+        'edit_ambiguous_warning': 'The following lexeme {forms!p:one=form:other=forms} matched more than one template form equally well:',
+        'edit_unmatched_warning': 'The following lexeme {forms!p:one=form:other=forms} did not match any of the template forms:',
     },
 
     # translations by User:Oriciu, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Asturian
@@ -95,6 +99,10 @@ translations = {
         'advanced_partial_forms_hint': 'Um Lexeme zu erstellen, denen einige Formen fehlen, wechsle in den erweiterten Modus.',
         'generated_via': 'generiert durch',
         'description_with_forms_and_senses': '{description}, {forms!p:0=keine Formen:one=eine Form:other={forms} Formen}, {senses!p:0=keine Senses:one=ein Sense:other={senses} Senses}',
+        'edit': 'Bearbeiten',
+        'edit_general': 'Du befindest dich im „Bearbeiten“-Modus. Wenn du die Werte unten bearbeitest, werden Formen des Ziellexems geändert, hinzugefügt oder entfernt.',
+        'edit_ambiguous_warning': 'Die {forms!p:one=folgende Lexem-Form passt:other=folgenden Lexem-Formen passen} zu mehreren Formen der Vorlage gleich gut:',
+        'edit_unmatched_warning': 'Die {forms!p:one=folgende Lexem-Form passt:other=folgenden Lexem-Formen passen} zu keinen Formen der Vorlage:',
     },
 
     # translations by User:Jens Ohlig, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Esperanto
@@ -269,6 +277,8 @@ translations = {
         'advanced_partial_forms': 'Posses omittere aliqui formas, ut non addentur. Cave erroribus!',
         'lexeme_id': 'Numerus verbi',
         'advanced_partial_forms_hint': 'Ut facere verbi quae aliqui formas desunt, adi modo amplificatum.',
+        'edit': 'corrigere',
+        'edit_general': 'In modo corrigendi es. Sic mutas scriptum inferum, formas verbi mutabuntur, addentur vel removebuntur.',
     },
 
     # translations by User:Jsamwrites, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Malayalam

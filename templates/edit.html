@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% macro lexeme_form_link(wiki, lexeme_id, form) %}
+  <a href="https://{{ wiki }}.wikidata.org/wiki/Lexeme:{{ lexeme_id }}#{{ form.id | replace(lexeme_id + '-', '') }}">
+    {% for representation_language, representation in form.representations.items() -%}
+    <span lang="{{ representation_language }}" dir="{{ representation_language | text_direction }}">{{ representation.value }}</span>
+    {%- if not loop.last %}/{% endif -%}
+    {%- endfor %}
+    ({{ form.id }})
+  </a>
+{% endmacro %}
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='template.css') }}">
+{% endblock %}
+{% block main_tag_attributes %}{{ super() }} lang="{{ template.language_code }}" dir="{{ template.language_code | text_direction }}"{% endblock main_tag_attributes %}
+{% block main %}
+  <h1>{{ template.label }}</h1>
+  <h2>
+    <a href="https://{{ 'test' if template.test else 'www' }}.wikidata.org/wiki/Lexeme:{{ template.lexeme_id }}">{{ template.lexeme_id }}</a>
+  </h2>
+  <div class="alert alert-warning">
+    {{ message( 'edit_general' ) }}
+  </div>
+  {% if csrf_error %}
+  <div class="alert alert-warning">
+    {{ message( 'csrf_warning' ) }}
+  </div>
+  {% endif %}
+  {% if template.ambiguous_lexeme_forms %}
+  <div class="alert alert-warning">
+    {{ message_with_plural( 'edit_ambiguous_warning', forms=template.ambiguous_lexeme_forms | length ) }}
+    <ul>
+      {% for lexeme_form in template.ambiguous_lexeme_forms %}
+      <li>{{ lexeme_form_link('test' if template.test else 'www', template.lexeme_id, lexeme_form) }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+  {% if template.unmatched_lexeme_forms %}
+  <div class="alert alert-warning">
+    {{ message_with_plural( 'edit_unmatched_warning', forms=template.unmatched_lexeme_forms | length ) }}
+    <ul>
+      {% for lexeme_form in template.unmatched_lexeme_forms %}
+      <li>{{ lexeme_form_link('test' if template.test else 'www', template.lexeme_id, lexeme_form) }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+  <form method="post" autocapitalize="off">
+    <input name="_csrf_token" type="hidden" value="{{ csrf_token() }}">
+    <input name="_lexeme_revision" type="hidden" value="{{ template.lexeme_revision }}">
+    <dl>
+      {% for form in template.forms %}
+      <div class="form">
+        <dt>{{ form.label }}</dt>
+        <dd>{{ form | form2input(loop.first) }}</dd>
+      </div>
+      {% endfor %}
+    </dl>
+    <button class="btn btn-primary">{{ message( 'edit' ) }}</button>
+  </form>
+{% endblock main %}
