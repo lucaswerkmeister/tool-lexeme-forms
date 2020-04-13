@@ -555,12 +555,7 @@ def build_lexeme(template, form_data):
         for form_representation_variant in form_representation.split('/'):
             if not form_representation_variant:
                 flask.abort(400)
-            forms.append({
-                'add': '',
-                'representations': {lang: {'language': lang, 'value': form_representation_variant}},
-                'grammaticalFeatures': form['grammatical_features_item_ids'],
-                'claims': form.get('statements', {})
-            })
+            forms.append(build_form(form, lang, form_representation_variant))
     lexeme_data = {
         'type': 'lexeme',
         'forms': forms,
@@ -583,6 +578,14 @@ def build_lexeme(template, form_data):
             'claims': template.get('statements', {}),
         })
     return lexeme_data
+
+def build_form(template_form, template_language, form_representation):
+    return {
+        'add': '',
+        'representations': {template_language: {'language': template_language, 'value': form_representation}},
+        'grammaticalFeatures': template_form['grammatical_features_item_ids'],
+        'claims': template_form.get('statements', {})
+    }
 
 def build_summary(template, form_data):
     template_name = template['@template_name']
