@@ -88,6 +88,15 @@ def test_message_with_plural(template_name, number):
         message = lexeme_forms.message_with_plural('description_with_forms_and_senses', description='', forms=number, senses=number)
     # should not have failed
 
+@pytest.mark.parametrize('language_code, expected_direction', [
+    ('en', 'ltr'),
+    ('fa', 'rtl'),
+    ('mis', 'auto'),
+    ('mis-x-Q401', 'auto'),
+])
+def test_text_direction(language_code, expected_direction):
+    assert lexeme_forms.text_direction(language_code) == expected_direction
+
 def test_if_no_such_template_redirect_known_template():
     assert lexeme_forms.if_no_such_template_redirect('english-noun') is None
 

@@ -191,7 +191,7 @@ def message_with_plural(message_code, **kwargs):
 @app.template_filter()
 def text_direction(language_code):
     try:
-        locale = babel.Locale.parse(language_code)
+        locale = babel.Locale.parse(language_code.split('-')[0]) # the -x-Qid stuff is not understood by Babel
     except babel.UnknownLocaleError:
         return 'auto'
     else:
