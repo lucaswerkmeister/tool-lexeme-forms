@@ -360,6 +360,12 @@ def process_template_edit(template_name, lexeme_id):
         lexeme_data = get_lexeme_data(lexeme_id, wiki)
         lexeme_revision = lexeme_data['lastrevid']
 
+    lexeme_match = match_template_to_lexeme_data(template, lexeme_data)
+    lexeme_matches_template = (
+        lexeme_match['language']
+        and lexeme_match['lexical_category']
+        and not lexeme_match['conflicting_statements']
+    )
     template = match_lexeme_forms_to_template(lexeme_data['forms'], template)
     template['lexeme_id'] = lexeme_id
     template['lexeme_revision'] = lexeme_revision
@@ -368,7 +374,7 @@ def process_template_edit(template_name, lexeme_id):
         flask.request.referrer == current_url() and
         csrf_token_matches(flask.request.form)):
         form_data = flask.request.form
-        lexeme_data = update_lexeme(lexeme_data, template, form_data)
+        lexeme_data = update_lexeme(lexeme_data, template, form_data, missing_statements=lexeme_match['missing_statements'])
         summary = build_summary(template, form_data)
 
         if 'oauth' in app.config:
@@ -390,6 +396,7 @@ def process_template_edit(template_name, lexeme_id):
         'edit.html',
         template=template,
         lemmas=lexeme_data['lemmas'],
+        lexeme_matches_template=lexeme_matches_template,
         advanced=True, # for form2input
         csrf_error=flask.request.method == 'POST',
     )
@@ -643,10 +650,11 @@ def build_form(template_form, template_language, form_representation):
         'claims': template_form.get('statements', {})
     }
 
-def update_lexeme(lexeme_data, template, form_data):
+def update_lexeme(lexeme_data, template, form_data, missing_statements=None):
     lexeme_data = copy.deepcopy(lexeme_data)
     lexeme_data['base_revision_id'] = template['lexeme_revision']
     language_code = template['language_code']
+
     for form_data_representation, template_form in zip(form_data.getlist('form_representation'), template['forms']):
         form_data_representation_variants = form_data_representation.split('/')
         if form_data_representation_variants == ['']:
@@ -678,6 +686,10 @@ def update_lexeme(lexeme_data, template, form_data):
         for lexeme_form in lexeme_forms:
             lexeme_form = find_form(lexeme_data, lexeme_form['id'])
             lexeme_form['remove'] = ''
+
+    for property_id, statements in (missing_statements or {}).items():
+        lexeme_data.setdefault('claims', {}).setdefault(property_id, []).extend(statements)
+
     return lexeme_data
 
 def find_form(lexeme_data, form_id):

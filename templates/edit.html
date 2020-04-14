@@ -24,6 +24,11 @@
       ({{ template.lexeme_id }})
     </a>
   </h2>
+  {% if not lexeme_matches_template %}
+  <div class="alert alert-danger">
+    {{ message( 'edit_mismatch_warning' ) }}
+  </div>
+  {% endif %}
   <div class="alert alert-warning">
     {{ message( 'edit_general' ) }}
   </div>
