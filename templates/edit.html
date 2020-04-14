@@ -16,7 +16,13 @@
 {% block main %}
   <h1>{{ template.label }}</h1>
   <h2>
-    <a href="https://{{ 'test' if template.test else 'www' }}.wikidata.org/wiki/Lexeme:{{ template.lexeme_id }}">{{ template.lexeme_id }}</a>
+    <a href="https://{{ 'test' if template.test else 'www' }}.wikidata.org/wiki/Lexeme:{{ template.lexeme_id }}">
+      {% for lemma_language, lemma in lemmas.items() -%}
+      <span lang="{{ lemma_language }}" dir="{{ lemma_language | text_direction }}">{{ lemma.value }}</span>
+      {%- if not loop.last %}/{% endif -%}
+      {%- endfor %}
+      ({{ template.lexeme_id }})
+    </a>
   </h2>
   <div class="alert alert-warning">
     {{ message( 'edit_general' ) }}

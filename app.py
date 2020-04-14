@@ -389,6 +389,7 @@ def process_template_edit(template_name, lexeme_id):
     return flask.render_template(
         'edit.html',
         template=template,
+        lemmas=lexeme_data['lemmas'],
         advanced=True, # for form2input
         csrf_error=flask.request.method == 'POST',
     )
