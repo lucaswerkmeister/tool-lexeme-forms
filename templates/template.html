@@ -51,7 +51,7 @@
     {% if duplicates %}
     {{ render_no_duplicate(template.language_code) | safe }}
     {% endif %}
-    <button class="btn btn-{% if not advanced %}primary{% else %}danger{% endif %}">{{ message( 'create' ) }}</button>
+    <button id="submit" class="btn btn-{% if not advanced %}primary{% else %}danger{% endif %}">{{ message( 'create' ) }}</button>
     {% if not advanced %}
     <button formnovalidate formaction="{{ url_for('process_template_advanced', template_name=template['@template_name']) }}" class="btn btn-secondary">{{ message( 'advanced' ) }}</button>
     {% endif %}
