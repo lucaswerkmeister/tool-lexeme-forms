@@ -113,6 +113,39 @@ def test_properties_exclusive_covers_template_claims_properties():
     assert not missing_property_ids
 
 
+def test_match_lexeme_forms_to_template():
+    singular_lexeme_form = {'id': 'singular', 'grammaticalFeatures': ['Q1']}
+    plural_lexeme_form_1 = {'id': 'plural', 'grammaticalFeatures': ['Q2']}
+    singular_plural_lexeme_form = {'id': 'singular plural', 'grammaticalFeatures': ['Q1', 'Q2']}
+    nothing_lexeme_form = {'id': 'nothing', 'grammaticalFeatures': []}
+    plural_lexeme_form_2 = {'id': 'plural again', 'grammaticalFeatures': ['Q2']}
+    lexeme_forms = [
+        singular_lexeme_form,
+        plural_lexeme_form_1,
+        singular_plural_lexeme_form,
+        nothing_lexeme_form,
+        plural_lexeme_form_2,
+    ]
+
+    singular_template_form = {'grammatical_features_item_ids': ['Q1']}
+    plural_template_form = {'grammatical_features_item_ids': ['Q2']}
+    template = {'forms': [singular_template_form, plural_template_form]}
+
+    template = matching.match_lexeme_forms_to_template(lexeme_forms, template)
+
+    # original not modified
+    assert singular_template_form.get('lexeme_forms') is None
+    assert plural_template_form.get('lexeme_forms') is None
+    singular_template_form = template['forms'][0]
+    plural_template_form = template['forms'][1]
+
+    # modified copy has expected data
+    assert singular_template_form['lexeme_forms'] == [singular_lexeme_form]
+    assert plural_template_form['lexeme_forms'] == [plural_lexeme_form_1, plural_lexeme_form_2]
+    assert template['ambiguous_lexeme_forms'] == [singular_plural_lexeme_form]
+    assert template['unmatched_lexeme_forms'] == [nothing_lexeme_form]
+
+
 def test_match_lexeme_form_to_template_forms():
     lexeme_form = {
         'grammaticalFeatures': ['Q1', 'Q2', 'Q3'],
