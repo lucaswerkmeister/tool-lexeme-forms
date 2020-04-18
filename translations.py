@@ -219,7 +219,7 @@ translations = {
         'advanced_partial_forms_hint': 'Pour créer des lexèmes en laissant certaines formes non renseignées, passez en mode avancé',
     },
 
-    # translations by User:Uziel302, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Hebrew
+    # translations by User:Uziel302 and User:Uzielbot, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Hebrew
     'he': {
         'create': 'צור',
         'csrf_warning': 'סליחה, לא יכולנו לעבד את הבקשה, האימות נכשל',
