@@ -5,6 +5,7 @@ import pytest
 import werkzeug
 
 import app as lexeme_forms
+import matching
 from templates import templates
 
 def test_form2input_basic():
@@ -707,3 +708,20 @@ def test_get_template_api_missing():
     # we still want to reply with valid JSON
     json.loads(response.get_data(as_text=True))
     # the previous statement should not have thrown an exception
+
+
+@pytest.mark.parametrize('template_name', templates.keys())
+def test_integration_edit(template_name):
+    """Create a lexeme from a template, then match it against the same template.
+
+    If this fails, then there might be a bug when creating or matching lexemes,
+    or the template might have ambiguous forms."""
+    template = templates[template_name]
+    form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', str(index)) for index in range(0, len(template['forms']))])
+    lexeme_data = lexeme_forms.build_lexeme(template, form_data)
+    matched_template = matching.match_lexeme_forms_to_template(lexeme_data['forms'], template)
+    assert matched_template.get('ambiguous_lexeme_forms') is None
+    assert matched_template.get('unmatched_lexeme_forms') is None
+    for index, form in enumerate(matched_template['forms']):
+        assert len(form['lexeme_forms']) == 1
+        assert form['lexeme_forms'][0]['representations'][template['language_code']]['value'] == str(index)
