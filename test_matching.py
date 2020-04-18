@@ -182,6 +182,12 @@ def test_match_lexeme_form_to_template_forms():
         template_form_match_one_grammatical_feature_one_statement,
     ]
 
+def test_match_lexeme_form_to_template_forms_one_featureless_form():
+    lexeme_form = {'id': 'L1-F1'}
+    template_forms = [{'grammatical_features_item_ids': []}]
+    best_template_forms = matching.match_lexeme_form_to_template_forms(False, lexeme_form, template_forms)
+    assert best_template_forms == template_forms
+
 
 def test_match_lexeme_form_to_template_form_missing_grammatical_feature():
     lexeme_form = {'grammaticalFeatures': ['Q1', 'Q3']}

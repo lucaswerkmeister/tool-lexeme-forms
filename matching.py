@@ -102,6 +102,9 @@ def match_lexeme_form_to_template_forms(test, lexeme_form, template_forms):
             best_template_forms = [template_form]
         elif matching_features == best_matching_features and best_matching_features > 0:
             best_template_forms.append(template_form)
+    if not best_template_forms and len(template_forms) == 1 and matchable_features(template_form) == 0:
+        # as a special exception, in a template with a single featureless form, a lexeme form is allowed to match with no matching features
+        return [template_forms[0]]
     return best_template_forms
 
 
@@ -121,3 +124,10 @@ def match_lexeme_form_to_template_form(test, lexeme_form, template_form):
         matching_features += len(matched_statements)
 
     return matching_features
+
+
+def matchable_features(template_form):
+    features = len(template_form['grammatical_features_item_ids'])
+    for property_id in template_form.get('statements', {}):
+        features += len(template_form['statements'][property_id])
+    return features
