@@ -219,6 +219,27 @@ translations = {
         'advanced_partial_forms_hint': 'Pour créer des lexèmes en laissant certaines formes non renseignées, passez en mode avancé',
     },
 
+    # translations by User:Uziel302, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Hebrew
+    'he': {
+        'create': 'צור',
+        'csrf_warning': 'סליחה, לא יכולנו לעבד את הבקשה, האימות נכשל',
+        'duplicates_warning': 'ללקסמות הקיימות הבאות יש אותה למה ואותו קוד שפה כמו המילה שאתם מנסים ליצור',
+        'duplicates_instructions': 'אם אתם לא בטוחים שהם שונים, בדקו את התיבה בתחתית העמוד',
+        'no_duplicate': 'זה לא כפילות של לקסמה קיימת',
+        'advanced': 'מתקדם',
+        'advanced_general': 'אתם במוד מתקדם',
+        'advanced_lexeme_id': 'ניתן להכניס מזהה לקסמה ולהוסיף הטיות של המילה במקום ליצור לקסמה חדשה, השאירו הטיות קיימות כריקות, אחרת יוכפלו',
+        'advanced_partial_forms': 'ניתן להשאיר הטיות ריקות כך שלא יוספו.',
+        'lexeme_id': 'מזהה לקסמה',
+        'advanced_partial_forms_hint': 'לעדכון לקסמות קיימות שחסרות בהן הטיות, עברו למוד מתקדם',
+        'generated_via': 'נוצר באמצעות',
+        'bulk_link': 'מצב סיטונאי',
+        'bulk_button': 'מצב סיטונאי',
+        'bulk_heading': 'מצב סיטונאי',
+        'bulk_format_help': 'עזרה',
+        'bulk_not_allowed': 'אינך מורשה להשתמש במצב סיטונאי',
+    },
+
     # translations by User:Emptyfear and User:Kareyac, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Armenian
     'hy': {
         'create': 'Ստեղծել',

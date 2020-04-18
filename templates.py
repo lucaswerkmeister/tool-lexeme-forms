@@ -2964,6 +2964,86 @@ templates = collections.OrderedDict([
         ],
     }),
 
+    ('hebrew-masculine-noun', {
+        '@attribution': {'users': ['Uziel302'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hebrew'},
+        'label': 'שם עצם זכר',
+        'language_item_id': 'Q9288',
+        'language_code': 'he',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'יחיד',
+                'example': 'זה [כלב].',
+                'grammatical_features_item_ids': ['Q110786'],
+            },
+            {
+                'label': 'רבים',
+                'example': 'אלה [כלבים].',
+                'grammatical_features_item_ids': ['Q146786'],
+            },
+        ],
+        'statements': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q499327',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
+
+    ('hebrew-feminine-noun', {
+        '@attribution': {'users': ['Uziel302'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hebrew'},
+        'label': 'שם עצם נקבה',
+        'language_item_id': 'Q9288',
+        'language_code': 'he',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'יחידה',
+                'example': 'זו [כלבה].',
+                'grammatical_features_item_ids': ['Q110786'],
+            },
+            {
+                'label': 'רבות',
+                'example': 'אלה [כלבות].',
+                'grammatical_features_item_ids': ['Q146786'],
+            },
+        ],
+        'statements': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q1775415',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
+
     ('armenian-noun', {
         '@attribution': {'users': ['Emptyfear'], 'title': 'Wikidata:Wikidata Lexeme Forms/Armenian'},
         'label': 'հայերեն գոյական',
