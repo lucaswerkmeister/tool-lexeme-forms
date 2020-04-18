@@ -2,6 +2,25 @@ import matching
 import templates
 
 
+def make_statement(property_id, item_id):
+    return {
+        'mainsnak': {
+            'snaktype': 'value',
+            'property': property_id,
+            'datatype': 'wikibase-item',
+            'datavalue': {
+                'type': 'wikibase-entityid',
+                'value': {
+                    'entity-type': 'item',
+                    'id': item_id,
+                },
+            },
+        },
+        'type': 'statement',
+        'rank': 'normal',
+    }
+
+
 lexeme_data_german_noun_neuter = {
     'lexicalCategory': 'Q1084',
     'language': 'Q188',
@@ -92,3 +111,45 @@ def test_properties_exclusive_covers_template_claims_properties():
                     missing_property_ids.add((wiki, property_id))
 
     assert not missing_property_ids
+
+
+def test_match_lexeme_form_to_template_form_missing_grammatical_feature():
+    lexeme_form = {'grammaticalFeatures': ['Q1', 'Q3']}
+    template_form = {'grammatical_features_item_ids': ['Q1', 'Q2', 'Q3']}
+    assert matching.match_lexeme_form_to_template_form(False, lexeme_form, template_form) == 0
+
+def test_match_lexeme_form_to_template_form_missing_statement():
+    lexeme_form = {'grammaticalFeatures': ['Q1']}
+    template_form = {
+        'grammatical_features_item_ids': ['Q1'],
+        'statements': {'P31': [make_statement('P31', 'Q4115189')]},
+    }
+    assert matching.match_lexeme_form_to_template_form(False, lexeme_form, template_form) == 0
+
+def test_match_lexeme_form_to_template_form_conflicting_statement():
+    lexeme_form = {
+        'grammaticalFeatures': ['Q1'],
+        'claims': {'P5185': [make_statement('P5185', 'Q4115189'), make_statement('P5185', 'Q13406268')]},
+    }
+    template_form = {
+        'grammatical_features_item_ids': ['Q1'],
+        'statements': {'P5185': [make_statement('P5185', 'Q4115189')]},
+    }
+    assert matching.match_lexeme_form_to_template_form(False, lexeme_form, template_form) == 0
+
+def test_match_lexeme_form_to_template_form_counts_grammatical_features_and_statements():
+    lexeme_form = {
+        'grammaticalFeatures': ['Q1', 'Q2', 'Q3', 'Q4'],
+        'claims': {
+            'P31': [make_statement('P31', 'Q4115189'), make_statement('P31', 'Q13406268')],
+            'P5185': [make_statement('P5185', 'Q4115189')],
+        },
+    }
+    template_form = {
+        'grammatical_features_item_ids': ['Q1', 'Q2'],
+        'statements': {
+            'P31': [make_statement('P31', 'Q4115189')],
+            'P5185': [make_statement('P5185', 'Q4115189')],
+        },
+    }
+    assert matching.match_lexeme_form_to_template_form(False, lexeme_form, template_form) == 4
