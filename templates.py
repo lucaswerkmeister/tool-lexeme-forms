@@ -2964,7 +2964,7 @@ templates = collections.OrderedDict([
         ],
     }),
 
-    ('hebrew-masculine-noun', {
+    ('hebrew-noun-masculine', {
         '@attribution': {'users': ['Uziel302'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hebrew'},
         'label': 'שם עצם זכר',
         'language_item_id': 'Q9288',
@@ -3004,7 +3004,7 @@ templates = collections.OrderedDict([
         },
     }),
 
-    ('hebrew-feminine-noun', {
+    ('hebrew-noun-feminine', {
         '@attribution': {'users': ['Uziel302'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hebrew'},
         'label': 'שם עצם נקבה',
         'language_item_id': 'Q9288',
