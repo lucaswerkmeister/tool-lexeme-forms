@@ -113,6 +113,43 @@ def test_properties_exclusive_covers_template_claims_properties():
     assert not missing_property_ids
 
 
+def test_match_lexeme_form_to_template_forms():
+    lexeme_form = {
+        'grammaticalFeatures': ['Q1', 'Q2', 'Q3'],
+        'claims': {'P31': [make_statement('P31', 'Q4115189')]},
+    }
+    template_form_missing_grammatical_feature = {
+        'grammatical_features_item_ids': ['Q1', 'Q2', 'Q3', 'Q4'],
+        'statements': {'P31': [make_statement('P31', 'Q4115189')]},
+    }
+    template_form_missing_statement = {
+        'grammatical_features_item_ids': ['Q1', 'Q2'],
+        'statements': {'P31': [make_statement('P31', 'Q4115189'), make_statement('P31', 'Q13406268')]},
+    }
+    template_form_match_two_grammatical_features_no_statement = {
+        'grammatical_features_item_ids': ['Q1', 'Q2'],
+    }
+    template_form_match_one_grammatical_feature_one_statement = {
+        'grammatical_features_item_ids': ['Q1'],
+        'statements': {'P31': [make_statement('P31', 'Q4115189')]},
+    }
+    template_form_match_one_grammatical_feature_no_statement = {
+        'grammatical_features_item_ids': ['Q1'],
+    }
+    template_forms = [
+        template_form_missing_grammatical_feature,
+        template_form_missing_statement,
+        template_form_match_two_grammatical_features_no_statement,
+        template_form_match_one_grammatical_feature_one_statement,
+        template_form_match_one_grammatical_feature_no_statement,
+    ]
+    best_template_forms = matching.match_lexeme_form_to_template_forms(False, lexeme_form, template_forms)
+    assert best_template_forms == [
+        template_form_match_two_grammatical_features_no_statement,
+        template_form_match_one_grammatical_feature_one_statement,
+    ]
+
+
 def test_match_lexeme_form_to_template_form_missing_grammatical_feature():
     lexeme_form = {'grammaticalFeatures': ['Q1', 'Q3']}
     template_form = {'grammatical_features_item_ids': ['Q1', 'Q2', 'Q3']}
