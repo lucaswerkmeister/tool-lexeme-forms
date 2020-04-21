@@ -9,6 +9,8 @@ On Wikimedia Toolforge, this tool runs under the `lexeme-forms` tool name.
 Source code resides in `~/www/python/src/`,
 a virtual environment is set up in `~/www/python/venv/`,
 logs end up in `~/uwsgi.log`.
+The `uwsgi.ini` configuration file in the source code repository
+is symlinked into `~/www/python/uwsgi.ini`.
 
 If the web service is not running for some reason, run the following command:
 ```
