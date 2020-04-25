@@ -1,6 +1,6 @@
 # Wikidata Lexeme Forms
 
-[This tool](https://tools.wmflabs.org/lexeme-forms/) lets users create Wikidata lexemes with pre-populated forms,
+[This tool](https://lexeme-forms.toolforge.org/) lets users create Wikidata lexemes with pre-populated forms,
 such as the declensions of a noun or the conjugations of a verb.
 
 ## Toolforge setup

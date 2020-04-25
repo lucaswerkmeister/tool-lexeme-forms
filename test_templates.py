@@ -25,7 +25,7 @@ def test_entities_exist():
         add_from_statements(template.get('statements', {}))
 
     entity_ids = list(entity_ids)
-    session = mwapi.Session('https://www.wikidata.org', user_agent='lexeme-forms test (https://tools.wmflabs.org/lexeme-forms; mail@lucaswerkmeister.de)')
+    session = mwapi.Session('https://www.wikidata.org', user_agent='lexeme-forms test (https://lexeme-forms.toolforge.org/; mail@lucaswerkmeister.de)')
     missing_entity_ids = set()
     while entity_ids:
         chunk, entity_ids = entity_ids[:50], entity_ids[50:]
