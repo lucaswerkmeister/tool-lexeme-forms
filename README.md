@@ -14,20 +14,22 @@ is symlinked into `~/www/python/uwsgi.ini`.
 
 If the web service is not running for some reason, run the following command:
 ```
-webservice --backend=kubernetes python3.7 start
+webservice start
 ```
 If it’s acting up, try the same command with `restart` instead of `start`.
+Both should pull their config from the `service.template` file,
+which is symlinked from the source code directory into the tool home directory.
 
 To update the service, run the following commands after becoming the tool account:
 ```
-webservice --backend=kubernetes python3.7 shell
+webservice shell
 source ~/www/python/venv/bin/activate
 cd ~/www/python/src
 git fetch
 git diff @ @{u} # inspect changes
 git merge --ff-only @{u}
 pip3 install -r requirements.txt
-webservice --backend=kubernetes python3.7 restart
+webservice restart
 ```
 However, the `venv` and `pip3` parts are only necessary when new packages are required –
 if only `templates.py` and/or `translations.py` were updated, you can skip those.
