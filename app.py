@@ -701,7 +701,12 @@ def find_form(lexeme_data, form_id):
 def build_summary(template, form_data):
     template_name = template['@template_name']
     url = current_url()
-    if url.startswith('https://tools.wmflabs.org/'):
+    toolforge_match = re.match(r'https://([a-z0-9-_]+).toolforge.org/(.*)$', url)
+    if toolforge_match: # TODO use walrus operator in Python 3.8+
+        tool_name = toolforge_match.group(1)
+        rest = toolforge_match.group(2)
+        summary = '[[toolforge:%s/%s|%s]]' % (tool_name, rest, template_name)
+    elif url.startswith('https://tools.wmflabs.org/'):
         relative = url[len('https://tools.wmflabs.org/'):]
         summary = '[[toolforge:%s|%s]]' % (relative, template_name)
     else:

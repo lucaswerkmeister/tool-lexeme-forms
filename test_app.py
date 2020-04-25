@@ -672,8 +672,46 @@ def test_build_summary_toolforge_lexeme_forms_advanced(monkeypatch):
     summary = lexeme_forms.build_summary(template, form_data)
     assert summary == '[[toolforge:lexeme-forms/template/foo/advanced/|foo]]'
 
+def test_build_summary_toolforge_canonical_lexeme_forms(monkeypatch):
+    monkeypatch.setattr(lexeme_forms, 'current_url', lambda: 'https://lexeme-forms.toolforge.org/template/foo/')
+    template = {
+        '@template_name': 'foo',
+    }
+    form_data = {}
+    summary = lexeme_forms.build_summary(template, form_data)
+    assert summary == '[[toolforge:lexeme-forms/template/foo/|foo]]'
+
+def test_build_summary_toolforge_canonical_other(monkeypatch):
+    monkeypatch.setattr(lexeme_forms, 'current_url', lambda: 'https://other.toolforge.org/template/foo/')
+    template = {
+        '@template_name': 'foo',
+    }
+    form_data = {}
+    summary = lexeme_forms.build_summary(template, form_data)
+    assert summary == '[[toolforge:other/template/foo/|foo]]'
+
+def test_build_summary_toolforge_canonical_lexeme_forms_advanced(monkeypatch):
+    monkeypatch.setattr(lexeme_forms, 'current_url', lambda: 'https://lexeme-forms.toolforge.org/template/foo/advanced/')
+    template = {
+        '@template_name': 'foo',
+    }
+    form_data = {}
+    summary = lexeme_forms.build_summary(template, form_data)
+    assert summary == '[[toolforge:lexeme-forms/template/foo/advanced/|foo]]'
+
 def test_build_summary_generated_via(monkeypatch):
     monkeypatch.setattr(lexeme_forms, 'current_url', lambda: 'https://tools.wmflabs.org/lexeme-forms/template/foo/')
+    template = {
+        '@template_name': 'foo',
+    }
+    form_data = {
+        'generated_via': '[[toolforge:other/bar|other tool, bar]]'
+    }
+    summary = lexeme_forms.build_summary(template, form_data)
+    assert summary == '[[toolforge:lexeme-forms/template/foo/|foo]], generated via [[toolforge:other/bar|other tool, bar]]'
+
+def test_build_summary_canonical_generated_via(monkeypatch):
+    monkeypatch.setattr(lexeme_forms, 'current_url', lambda: 'https://lexeme-forms.toolforge.org/template/foo/')
     template = {
         '@template_name': 'foo',
     }
