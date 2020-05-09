@@ -16,8 +16,8 @@ class PluralFormatter(string.Formatter):
     tags, currently “zero”, “one”, “two”, “few”, “many”, or “other”,
     or an explicit value. The text for the matching value or tag,
     according to the plural rules of the locale specified in the
-    constructor, is substituted into the message. For all other
-    values, the format spec is interpreted as usual.
+    constructor, is substituted into the message. Attempting to
+    convert non-numeric values with !p is an error.
 
     Note that most languages do not use all possible tags, and only
     exactly those tags used in a language should occur in the format
