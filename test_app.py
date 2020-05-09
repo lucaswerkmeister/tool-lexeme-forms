@@ -767,6 +767,24 @@ def test_update_lexeme_add_dwarves_dwarrows():
         {'add': '', 'representations': {'en': {'language': 'en', 'value': 'dwarrows'}}, 'grammaticalFeatures': ['Q146786'], 'claims': {}},
     ], 'base_revision_id': 123}
 
+def test_update_lexeme_match_forms():
+    lexeme_data = {'forms': [
+        {'id': 'L22936-F1', 'representations': {'en': {'language': 'en', 'value': 'dwarf'}}, 'grammaticalFeatures': []},
+        {'id': 'L22936-F2', 'representations': {'en': {'language': 'en', 'value': 'dwarfs'}}, 'grammaticalFeatures': []},
+        {'id': 'L22936-F3', 'representations': {'en': {'language': 'en', 'value': 'dwarves'}}, 'grammaticalFeatures': []},
+        {'id': 'L22936-F4', 'representations': {'en': {'language': 'en', 'value': 'dwarrows'}}, 'grammaticalFeatures': []},
+    ]}
+    template = copy.deepcopy(templates['english-noun'])
+    template['lexeme_revision'] = 123
+    form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', 'L22936-F1'), ('form_representation', 'L22936-F2/L22936-F3/L22936-F4')])
+    updated_lexeme_data = lexeme_forms.update_lexeme(lexeme_data, template, form_data)
+    assert updated_lexeme_data == {'forms': [
+        {'id': 'L22936-F1', 'representations': {'en': {'language': 'en', 'value': 'dwarf'}}, 'grammaticalFeatures': ['Q110786']},
+        {'id': 'L22936-F2', 'representations': {'en': {'language': 'en', 'value': 'dwarfs'}}, 'grammaticalFeatures': ['Q146786']},
+        {'id': 'L22936-F3', 'representations': {'en': {'language': 'en', 'value': 'dwarves'}}, 'grammaticalFeatures': ['Q146786']},
+        {'id': 'L22936-F4', 'representations': {'en': {'language': 'en', 'value': 'dwarrows'}}, 'grammaticalFeatures': ['Q146786']},
+    ], 'base_revision_id': 123}
+
 def test_update_lexeme_noop():
     lexeme_data = {'forms': [
         {'id': 'L22936-F1', 'representations': {'en': {'language': 'en', 'value': 'dwarf'}}, 'grammaticalFeatures': ['Q110786']},

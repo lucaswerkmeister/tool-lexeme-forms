@@ -18,7 +18,7 @@ import werkzeug.datastructures
 
 from flask_utils import OrderedFlask, TagOrderedMultiDict, TagImmutableOrderedMultiDict
 from formatters import PluralFormatter
-from matching import match_template_to_lexeme_data, match_lexeme_forms_to_template
+from matching import match_template_to_lexeme_data, match_lexeme_forms_to_template, match_template_entity_to_lexeme_entity
 from parse_tpsv import parse_lexemes
 from templates import templates
 from translations import translations
@@ -660,6 +660,22 @@ def update_lexeme(lexeme_data, template, form_data, missing_statements=None):
         if form_data_representation_variants == ['']:
             form_data_representation_variants = []
         lexeme_forms = template_form.get('lexeme_forms', []).copy()
+        # process “representations” that actually reference existing forms first
+        for form_data_representation_variant in reversed(form_data_representation_variants): # reversed so that the remove within the loop doesn’t disturb the iteration
+            if not re.match(r'^L[1-9][0-9]*-F[1-9][0-9]*$', form_data_representation_variant):
+                continue
+            lexeme_form = find_form(lexeme_data, form_id=form_data_representation_variant)
+            # add missing grammatical features
+            for grammatical_feature_item_id in template_form['grammatical_features_item_ids']:
+                if grammatical_feature_item_id not in lexeme_form['grammaticalFeatures']:
+                    lexeme_form['grammaticalFeatures'].append(grammatical_feature_item_id)
+            # add missing statements (and complain about conflicting ones)
+            form_matched_statements, form_missing_statements, form_conflicting_statements = match_template_entity_to_lexeme_entity('test' in template, template_form, lexeme_form)
+            if form_conflicting_statements:
+                raise Exception('Conflicting statements!') # TODO better error reporting
+            for property_id, statements in form_missing_statements.items():
+                lexeme_form.setdefault('claims', {}).setdefault(property_id, []).extend(statements)
+            form_data_representation_variants.remove(form_data_representation_variant)
         # find and remove matching forms (no modification necessary)
         for lexeme_form in reversed(lexeme_forms): # reversed so that the remove within the loop doesn’t disturb the iteration
             for lexeme_form_representation in lexeme_form['representations'].values():
