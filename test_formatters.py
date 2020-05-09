@@ -59,3 +59,51 @@ def test_PluralFormatter_invalid_format_spec(format_spec, type):
     plural_formatter = formatters.PluralFormatter('en')
     with pytest.raises(type):
         plural_formatter.format(format_spec, 1)
+
+
+@pytest.mark.parametrize('list, expected', [
+    (['FLAC'], 'FLAC.'),
+    (['FLAC', 'OGG'], 'FLAC and OGG.'),
+    (['FLAC', 'OGG', 'OPUS'], 'FLAC, OGG, and OPUS.'),
+])
+def test_CommaSeparatedListFormatter_en(list, expected):
+    comma_separated_list_formatter = formatters.CommaSeparatedListFormatter('en')
+    assert comma_separated_list_formatter.format(
+        '{list!l}.',
+        list=list
+    ) == expected
+
+
+@pytest.mark.parametrize('list, expected', [
+    (['FLAC'], 'FLAC.'),
+    (['FLAC', 'OGG'], 'FLAC和OGG.'),
+    (['FLAC', 'OGG', 'OPUS'], 'FLAC、OGG和OPUS.'),
+])
+def test_CommaSeparatedListFormatter_zh(list, expected):
+    comma_separated_list_formatter = formatters.CommaSeparatedListFormatter('zh')
+    assert comma_separated_list_formatter.format(
+        '{list!l}.',
+        list=list
+    ) == expected
+
+
+def test_CommaSeparatedListFormatter_formats_list_items_with_format_spec():
+    comma_separated_list_formatter = formatters.CommaSeparatedListFormatter('en')
+    assert comma_separated_list_formatter.format(
+        'The binaries are {sizes!l:04d} bytes large.',
+        sizes=[64, 128, 256, 1024, 4096]
+    ) == 'The binaries are 0064, 0128, 0256, 1024, and 4096 bytes large.'
+
+
+@pytest.mark.parametrize('formats, expected', [
+    (['FLAC'], 'The accepted format is FLAC.'),
+    (['FLAC', 'OGG'], 'The accepted formats are FLAC and OGG.'),
+    (['FLAC', 'OGG', 'OPUS'], 'The accepted formats are FLAC, OGG, and OPUS.'),
+])
+def test_I18nFormatter_en(formats, expected):
+    i18n_formatter = formatters.I18nFormatter('en')
+    assert i18n_formatter.format(
+        'The accepted {count!p:one=format is:other=formats are} {formats!l}.',
+        count=len(formats),
+        formats=formats
+    ) == expected

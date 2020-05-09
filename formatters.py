@@ -1,4 +1,5 @@
 import babel
+import babel.lists
 import string
 
 
@@ -65,3 +66,48 @@ class _Plural:
             if plural.startswith(tag_eq):
                 return plural[len(tag_eq):]
         raise KeyError('No plural for tag {} found in format spec {}!'.format(tag, format_spec))
+
+
+class CommaSeparatedListFormatter(string.Formatter):
+    """A string formatter supporting a !l list conversion.
+
+    Format string example:
+
+        "We went to {cities!l}."
+
+    For iterable values converted with !l, the format spec is applied
+    to each list element. Afterwards, the list elements are joined
+    into a standard list using the locale specified in the
+    constructor. (For English, this means separating most items with
+    an ASCII comma plus a space, and the final two with an extra
+    “and”; Chinese and Japanese, for instance, use a fullwidth comma
+    instead.) Attempting to convert non-iterable values with !l is an
+    error."""
+
+    def __init__(self, locale_identifier):
+        """The locale identifier must be understood by Locale.parse."""
+        self.locale = babel.Locale.parse(locale_identifier)
+
+    def convert_field(self, value, conversion):
+        if conversion == 'l':
+            return _CommaSeparatedList(value, self.locale)
+        return super().convert_field(value, conversion)
+
+
+class _CommaSeparatedList:
+    """Wrapper around a list with special formatting.
+
+    This class formats itself as described in CommaSeparatedListFormatter."""
+
+    def __init__(self, value, locale):
+        self.value = value
+        self.locale = locale
+
+    def __format__(self, format_spec):
+        return babel.lists.format_list([format(item, format_spec) for item in self.value], locale=self.locale)
+
+
+class I18nFormatter(PluralFormatter, CommaSeparatedListFormatter):
+    """A string formatter supporting !p (plural) and !l (list) conversions.
+
+    See PluralFormatter and CommaSeparatedListFormatter for details."""
