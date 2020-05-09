@@ -1,12 +1,11 @@
 {% extends "base.html" %}
-{% macro lexeme_form_link(wiki, lexeme_id, form) %}
+{% macro lexeme_form_link(wiki, lexeme_id, form) -%}
   <a href="https://{{ wiki }}.wikidata.org/wiki/Lexeme:{{ lexeme_id }}#{{ form.id | replace(lexeme_id + '-', '') }}">
     {% for representation in form.representations.values() -%}
     {{ representation | term_span }}
     {%- if not loop.last %}/{% endif -%}
     {%- endfor %}
-    ({{ form.id }})
-  </a>
+    ({{ form.id }})</a>
 {% endmacro %}
 {% block head %}
 {{ super() }}
