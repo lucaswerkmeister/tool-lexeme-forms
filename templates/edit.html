@@ -10,7 +10,9 @@
 {% endmacro %}
 {% block head %}
 {{ super() }}
+<script src="{{ url_for('static', filename='edit.js') }}"></script>
 <link rel="stylesheet" href="{{ url_for('static', filename='template.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='edit.css') }}">
 {% endblock %}
 {% block main_tag_attributes %}{{ super() }} lang="{{ template.language_code }}" dir="{{ template.language_code | text_direction }}"{% endblock main_tag_attributes %}
 {% block main %}
