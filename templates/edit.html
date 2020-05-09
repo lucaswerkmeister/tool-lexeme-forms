@@ -6,6 +6,14 @@
     {%- if not loop.last %}/{% endif -%}
     {%- endfor %}
     ({{ form.id }})</a>
+{%- endmacro %}
+{% macro lexeme_form_list_item(wiki, lexeme_id, form) %}
+  <li>
+    {{ message_with_kwargs( 'edit_form_list_item',
+                            form_link=lexeme_form_link(wiki, lexeme_id, form),
+                            grammatical_feature_labels=form.grammaticalFeatures_labels | map('term_span') if form.grammaticalFeatures_labels else [message( 'no_grammatical_features' )],
+                            statements=form.get('claims', {}) | length ) | safe }}
+  </li>
 {% endmacro %}
 {% block head %}
 {{ super() }}
@@ -43,7 +51,7 @@
     {{ message_with_kwargs( 'edit_ambiguous_warning', forms=template.ambiguous_lexeme_forms | length ) }}
     <ul>
       {% for lexeme_form in template.ambiguous_lexeme_forms %}
-      <li>{{ lexeme_form_link('test' if template.test else 'www', template.lexeme_id, lexeme_form) }}</li>
+      {{ lexeme_form_list_item('test' if template.test else 'www', template.lexeme_id, lexeme_form) }}
       {% endfor %}
     </ul>
   </div>
@@ -53,7 +61,7 @@
     {{ message_with_kwargs( 'edit_unmatched_warning', forms=template.unmatched_lexeme_forms | length ) }}
     <ul>
       {% for lexeme_form in template.unmatched_lexeme_forms %}
-      <li>{{ lexeme_form_link('test' if template.test else 'www', template.lexeme_id, lexeme_form) }}</li>
+      {{ lexeme_form_list_item('test' if template.test else 'www', template.lexeme_id, lexeme_form) }}
       {% endfor %}
     </ul>
   </div>

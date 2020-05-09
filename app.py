@@ -402,6 +402,15 @@ def process_template_edit(template_name, lexeme_id):
             if lexeme_forms: # TODO use walrus operator in Python 3.8
                 template_form['value'] = '/'.join(lexeme_form['representations'][language_code]['value'] for lexeme_form in lexeme_forms)
 
+    add_labels_to_lexeme_forms_grammatical_features(
+        mwapi.Session(
+            'https://' + wiki + '.wikidata.org',
+            user_agent=user_agent,
+        ),
+        language_code,
+        template.get('unmatched_lexeme_forms', []) + template.get('ambiguous_lexeme_forms', [])
+    )
+
     return flask.render_template(
         'edit.html',
         template=template,
@@ -775,6 +784,26 @@ def submit_lexeme(template, lexeme_data, summary):
     revid = response['entity']['lastrevid']
 
     return host + '/entity/' + lexeme_id
+
+def add_labels_to_lexeme_forms_grammatical_features(session, language, lexeme_forms):
+    grammatical_features_item_ids = set()
+    for lexeme_form in lexeme_forms:
+        grammatical_features_item_ids.update(lexeme_form['grammaticalFeatures'])
+    grammatical_features_item_ids = list(grammatical_features_item_ids)
+    labels_map = {} # item ID to label
+    while grammatical_features_item_ids:
+        chunk, grammatical_features_item_ids = grammatical_features_item_ids[:50], grammatical_features_item_ids[50:]
+        response = session.get(action='wbgetentities',
+                               ids=chunk,
+                               props=['labels'],
+                               languages=[language],
+                               languagefallback=1, # TODO use True once mediawiki-utilities/python-mwapi#38 is in a released version
+                               formatversion=2)
+        for item_id, item in response['entities'].items():
+            labels_map[item_id] = item['labels'].get(language, {'language': 'zxx', 'value': item_id})
+    for lexeme_form in lexeme_forms:
+        lexeme_form['grammaticalFeatures_labels'] = [labels_map[grammatical_feature_item_id]
+                                                     for grammatical_feature_item_id in lexeme_form['grammaticalFeatures']]
 
 @app.route('/api/v1/template/')
 @enableCORS

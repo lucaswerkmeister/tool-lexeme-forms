@@ -25,6 +25,8 @@ translations = {
         'edit_mismatch_warning': 'This lexeme does not appear to match this template! Please double-check that it is the right template for this lexeme before continuing.',
         'edit_ambiguous_warning': 'The following lexeme {forms!p:one=form:other=forms} matched more than one template form equally well:',
         'edit_unmatched_warning': 'The following lexeme {forms!p:one=form:other=forms} did not match any of the template forms:',
+        'edit_form_list_item': '{form_link}, {grammatical_feature_labels!l}, {statements!p:0=no statements:one=one statement:other={statements} statements}',
+        'no_grammatical_features': 'no grammatical features',
     },
 
     # translations by User:Oriciu, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Asturian
@@ -105,6 +107,8 @@ translations = {
         'edit_mismatch_warning': 'Dieses Lexem scheint nicht zu dieser Vorlage zu passen! Bitte prüfe nochmal genau nach, dass es die richtige Vorlage für dieses Lexem ist, bevor du fortfährst.',
         'edit_ambiguous_warning': 'Die {forms!p:one=folgende Lexem-Form passt:other=folgenden Lexem-Formen passen} zu mehreren Formen der Vorlage gleich gut:',
         'edit_unmatched_warning': 'Die {forms!p:one=folgende Lexem-Form passt:other=folgenden Lexem-Formen passen} zu keinen Formen der Vorlage:',
+        'edit_form_list_item': '{form_link}, {grammatical_feature_labels!l}, {statements!p:0=keine Aussagen:one=eine Aussage:other={statements} Aussagen}',
+        'no_grammatical_features': 'keine grammatikalischen Funktionen',
     },
 
     # translations by User:Jens Ohlig, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Esperanto
