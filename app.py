@@ -197,6 +197,16 @@ def text_direction(language_code):
     else:
         return locale.text_direction
 
+@app.template_filter()
+def term_span(term):
+    return (flask.Markup(r'<span lang="') +
+            flask.Markup.escape(term['language']) +
+            flask.Markup(r'" dir="') +
+            flask.Markup.escape(text_direction(term['language'])) +
+            flask.Markup(r'">') +
+            flask.Markup.escape(term['value']) +
+            flask.Markup(r'</span>'))
+
 @app.route('/')
 def index():
     return flask.render_template(

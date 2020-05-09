@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% macro lexeme_form_link(wiki, lexeme_id, form) %}
   <a href="https://{{ wiki }}.wikidata.org/wiki/Lexeme:{{ lexeme_id }}#{{ form.id | replace(lexeme_id + '-', '') }}">
-    {% for representation_language, representation in form.representations.items() -%}
-    <span lang="{{ representation_language }}" dir="{{ representation_language | text_direction }}">{{ representation.value }}</span>
+    {% for representation in form.representations.values() -%}
+    {{ representation | term_span }}
     {%- if not loop.last %}/{% endif -%}
     {%- endfor %}
     ({{ form.id }})
@@ -19,8 +19,8 @@
   <h1>{{ template.label }}</h1>
   <h2>
     <a href="https://{{ 'test' if template.test else 'www' }}.wikidata.org/wiki/Lexeme:{{ template.lexeme_id }}">
-      {% for lemma_language, lemma in lemmas.items() -%}
-      <span lang="{{ lemma_language }}" dir="{{ lemma_language | text_direction }}">{{ lemma.value }}</span>
+      {% for lemma in lemmas.values() -%}
+      {{ lemma | term_span }}
       {%- if not loop.last %}/{% endif -%}
       {%- endfor %}
       ({{ template.lexeme_id }})
