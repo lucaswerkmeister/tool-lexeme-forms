@@ -1,3 +1,4 @@
+import copy
 import flask
 import json
 import mwoauth
@@ -746,6 +747,41 @@ def test_get_template_api_missing():
     # we still want to reply with valid JSON
     json.loads(response.get_data(as_text=True))
     # the previous statement should not have thrown an exception
+
+
+def test_update_lexeme_add_dwarves_dwarrows():
+    lexeme_data = {'forms': [
+        {'id': 'L22936-F1', 'representations': {'en': {'language': 'en', 'value': 'dwarf'}}, 'grammaticalFeatures': ['Q110786']},
+        {'id': 'L22936-F2', 'representations': {'en': {'language': 'en', 'value': 'dwarfs'}}, 'grammaticalFeatures': ['Q146786']},
+    ]}
+    template = copy.deepcopy(templates['english-noun'])
+    template['lexeme_revision'] = 123
+    template['forms'][0]['lexeme_forms'] = [lexeme_data['forms'][0]]
+    template['forms'][1]['lexeme_forms'] = [lexeme_data['forms'][1]]
+    form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', 'dwarf'), ('form_representation', 'dwarfs/dwarves/dwarrows')])
+    updated_lexeme_data = lexeme_forms.update_lexeme(lexeme_data, template, form_data)
+    assert updated_lexeme_data == {'forms': [
+        {'id': 'L22936-F1', 'representations': {'en': {'language': 'en', 'value': 'dwarf'}}, 'grammaticalFeatures': ['Q110786']},
+        {'id': 'L22936-F2', 'representations': {'en': {'language': 'en', 'value': 'dwarfs'}}, 'grammaticalFeatures': ['Q146786']},
+        {'add': '', 'representations': {'en': {'language': 'en', 'value': 'dwarves'}}, 'grammaticalFeatures': ['Q146786'], 'claims': {}},
+        {'add': '', 'representations': {'en': {'language': 'en', 'value': 'dwarrows'}}, 'grammaticalFeatures': ['Q146786'], 'claims': {}},
+    ], 'base_revision_id': 123}
+
+def test_update_lexeme_noop():
+    lexeme_data = {'forms': [
+        {'id': 'L22936-F1', 'representations': {'en': {'language': 'en', 'value': 'dwarf'}}, 'grammaticalFeatures': ['Q110786']},
+        {'id': 'L22936-F2', 'representations': {'en': {'language': 'en', 'value': 'dwarfs'}}, 'grammaticalFeatures': ['Q146786']},
+        {'id': 'L22936-F3', 'representations': {'en': {'language': 'en', 'value': 'dwarves'}}, 'grammaticalFeatures': ['Q146786']},
+        {'id': 'L22936-F4', 'representations': {'en': {'language': 'en', 'value': 'dwarrows'}}, 'grammaticalFeatures': ['Q146786']},
+        {'id': 'L22936-F5', 'representations': {'en': {'language': 'en', 'value': 'dweorgas'}}, 'grammaticalFeatures': ['Q146786']},
+    ]}
+    template = copy.deepcopy(templates['english-noun'])
+    template['lexeme_revision'] = 123
+    template['forms'][0]['lexeme_forms'] = [lexeme_data['forms'][0]]
+    template['forms'][1]['lexeme_forms'] = [lexeme_data['forms'][1], lexeme_data['forms'][2], lexeme_data['forms'][3], lexeme_data['forms'][4]]
+    form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', 'dwarf'), ('form_representation', 'dwarfs/dweorgas/dwarves/dwarrows')])
+    updated_lexeme_data = lexeme_forms.update_lexeme(lexeme_data, template, form_data)
+    assert updated_lexeme_data == {'forms': lexeme_data['forms'], 'base_revision_id': 123}
 
 
 @pytest.mark.parametrize('template_name', templates.keys())

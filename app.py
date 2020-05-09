@@ -661,7 +661,7 @@ def update_lexeme(lexeme_data, template, form_data, missing_statements=None):
             form_data_representation_variants = []
         lexeme_forms = template_form.get('lexeme_forms', []).copy()
         # find and remove matching forms (no modification necessary)
-        for lexeme_form in lexeme_forms:
+        for lexeme_form in reversed(lexeme_forms): # reversed so that the remove within the loop doesn’t disturb the iteration
             for lexeme_form_representation in lexeme_form['representations'].values():
                 if lexeme_form_representation['value'] in form_data_representation_variants:
                     lexeme_forms.remove(lexeme_form)
