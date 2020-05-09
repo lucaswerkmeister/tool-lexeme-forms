@@ -83,11 +83,11 @@ def test_template_group_test():
 
 @pytest.mark.parametrize('template_name', templates.keys())
 @pytest.mark.parametrize('number', range(-1,5))
-def test_message_with_plural(template_name, number):
+def test_message_with_kwargs(template_name, number):
     template = templates[template_name]
     with lexeme_forms.app.test_request_context():
         flask.g.language_code = template['language_code']
-        message = lexeme_forms.message_with_plural('description_with_forms_and_senses', description='', forms=number, senses=number)
+        message = lexeme_forms.message_with_kwargs('description_with_forms_and_senses', description='', forms=number, senses=number)
     # should not have failed
 
 @pytest.mark.parametrize('language_code, expected_direction', [

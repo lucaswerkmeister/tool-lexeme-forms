@@ -40,7 +40,7 @@
   {% endif %}
   {% if template.ambiguous_lexeme_forms %}
   <div class="alert alert-warning">
-    {{ message_with_plural( 'edit_ambiguous_warning', forms=template.ambiguous_lexeme_forms | length ) }}
+    {{ message_with_kwargs( 'edit_ambiguous_warning', forms=template.ambiguous_lexeme_forms | length ) }}
     <ul>
       {% for lexeme_form in template.ambiguous_lexeme_forms %}
       <li>{{ lexeme_form_link('test' if template.test else 'www', template.lexeme_id, lexeme_form) }}</li>
@@ -50,7 +50,7 @@
   {% endif %}
   {% if template.unmatched_lexeme_forms %}
   <div class="alert alert-warning">
-    {{ message_with_plural( 'edit_unmatched_warning', forms=template.unmatched_lexeme_forms | length ) }}
+    {{ message_with_kwargs( 'edit_unmatched_warning', forms=template.unmatched_lexeme_forms | length ) }}
     <ul>
       {% for lexeme_form in template.unmatched_lexeme_forms %}
       <li>{{ lexeme_form_link('test' if template.test else 'www', template.lexeme_id, lexeme_form) }}</li>

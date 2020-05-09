@@ -17,7 +17,7 @@ import yaml
 import werkzeug.datastructures
 
 from flask_utils import OrderedFlask, TagOrderedMultiDict, TagImmutableOrderedMultiDict
-from formatters import PluralFormatter
+from formatters import I18nFormatter
 from matching import match_template_to_lexeme_data, match_lexeme_forms_to_template, match_template_entity_to_lexeme_entity
 from parse_tpsv import parse_lexemes
 from templates import templates
@@ -129,7 +129,7 @@ def render_duplicates(duplicates, language_code, actionable):
 def augment_description(description, forms_count, senses_count):
     if forms_count is None or senses_count is None:
         return description
-    return message_with_plural(
+    return message_with_kwargs(
         'description_with_forms_and_senses',
         description=description,
         forms=int(forms_count),
@@ -182,11 +182,11 @@ def message_with_language(message_code, language_code=None):
     return flask.Markup(text), language_code
 
 @app.template_global()
-def message_with_plural(message_code, **kwargs):
+def message_with_kwargs(message_code, **kwargs):
     template, language = message_with_language(message_code)
     if language == 'la':
         language = 'en' # Latin is not in CLDR, English has same plural forms
-    return PluralFormatter(language).format(template, **kwargs)
+    return I18nFormatter(language).format(template, **kwargs)
 
 @app.template_filter()
 def text_direction(language_code):
