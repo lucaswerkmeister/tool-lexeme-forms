@@ -776,6 +776,7 @@ def test_update_lexeme_match_forms():
     ]}
     template = copy.deepcopy(templates['english-noun'])
     template['lexeme_revision'] = 123
+    template['unmatched_lexeme_forms'] = lexeme_data['forms'][:]
     form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', 'L22936-F1'), ('form_representation', 'L22936-F2/L22936-F3/L22936-F4')])
     updated_lexeme_data = lexeme_forms.update_lexeme(lexeme_data, template, form_data)
     assert updated_lexeme_data == {'forms': [
@@ -800,6 +801,24 @@ def test_update_lexeme_noop():
     form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', 'dwarf'), ('form_representation', 'dwarfs/dweorgas/dwarves/dwarrows')])
     updated_lexeme_data = lexeme_forms.update_lexeme(lexeme_data, template, form_data)
     assert updated_lexeme_data == {'forms': lexeme_data['forms'], 'base_revision_id': 123}
+
+def test_update_lexeme_rematch_already_matched_form():
+    lexeme_data = {'forms': [{'id': 'L4592-F1', 'representations': {'en': {'language': 'en', 'value': 'gold'}}, 'grammaticalFeatures': ['Q110786']}]}
+    template = copy.deepcopy(templates['english-noun'])
+    template['lexeme_revision'] = 123
+    template['forms'][0]['lexeme_forms'] = [lexeme_data['forms'][0]]
+    form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', 'gold'), ('form_representation', 'L4592-F1')])
+    with pytest.raises(Exception):
+        lexeme_forms.update_lexeme(lexeme_data, template, form_data)
+
+def test_update_lexeme_rematch_same_form_twice():
+    lexeme_data = {'forms': [{'id': 'L4592-F1', 'representations': {'en': {'language': 'en', 'value': 'gold'}}, 'grammaticalFeatures': []}]}
+    template = copy.deepcopy(templates['english-noun'])
+    template['lexeme_revision'] = 123
+    template['unmatched_lexeme_forms'] = lexeme_data['forms'][:]
+    form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', 'L4592-F1'), ('form_representation', 'L4592-F1')])
+    with pytest.raises(Exception):
+        lexeme_forms.update_lexeme(lexeme_data, template, form_data)
 
 
 @pytest.mark.parametrize('template_name', templates.keys())
