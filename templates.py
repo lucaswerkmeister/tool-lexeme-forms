@@ -102,6 +102,36 @@ templates = collections.OrderedDict([
         ],
     }),
 
+    ('breton-adjective-without-mutation', {
+        '@attribution': {'users': ['VIGNERON'], 'title': 'Wikidata:Wikidata Lexeme Forms/Breton'},
+        'label': 'anv-gwan (hep kemmadur)',
+        'language_item_id': 'Q12107',
+        'language_code': 'br',
+        'lexical_category_item_id': 'Q34698',
+        'forms': [
+            {
+                'label': 'derez-plaen',
+                'example': 'Un dra [ledan] eo.',
+                'grammatical_features_item_ids': ['Q3482678'],
+            },
+            {
+                'label': 'derez-uheloc\'h',
+                'example': 'Un dra [ledanoc\'h] eo.',
+                'grammatical_features_item_ids': ['Q14169499'],
+            },
+            {
+                'label': 'derez-uhelañ',
+                'example': 'An dra [ledanañ] eo.',
+                'grammatical_features_item_ids': ['Q1817208'],
+            },
+            {
+                'label': 'derez-estlammiñ',
+                'example': '[ledanat] dra !',
+                'grammatical_features_item_ids': ['Q93868909'],
+            },
+        ],
+    }),
+
     ('czech-noun-masculine-animate', {
         '@attribution': {'users': ['Lexicolover'], 'title': 'Wikidata:Wikidata Lexeme Forms/Czech'},
         'label': 'české podstatné jméno (rod mužský životný)',
