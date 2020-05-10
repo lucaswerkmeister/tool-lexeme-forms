@@ -90,13 +90,13 @@ templates = collections.OrderedDict([
         'lexical_category_item_id': 'Q1084',
         'forms': [
             {
-                'label': 'singular',
-                'example': '[levr] zo amañ.',
+                'label': 'unander',
+                'example': 'Ma [levr] zo amañ.',
                 'grammatical_features_item_ids': ['Q110786'],
             },
             {
-                'label': 'plural',
-                'example': '[levrioù] zo amañ.',
+                'label': 'liester',
+                'example': 'Ma [levrioù] zo amañ.',
                 'grammatical_features_item_ids': ['Q146786'],
             },
         ],
