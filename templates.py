@@ -126,7 +126,7 @@ templates = collections.OrderedDict([
             },
             {
                 'label': 'derez-estlammiñ',
-                'example': '[ledanat] dra !',
+                'example': '[ledanat] tra !',
                 'grammatical_features_item_ids': ['Q93868909'],
             },
         ],
