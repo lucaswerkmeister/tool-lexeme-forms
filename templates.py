@@ -82,6 +82,26 @@ templates = collections.OrderedDict([
         },
     }),
 
+    ('breton-noun-without-mutation', {
+        '@attribution': {'users': ['VIGNERON'], 'title': 'Wikidata:Wikidata Lexeme Forms/Breton'},
+        'label': 'anv-kadarn (hep kemmadur)',
+        'language_item_id': 'Q12107',
+        'language_code': 'br',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'singular',
+                'example': '[levr] zo amañ.',
+                'grammatical_features_item_ids': ['Q110786'],
+            },
+            {
+                'label': 'plural',
+                'example': '[levrioù] zo amañ.',
+                'grammatical_features_item_ids': ['Q146786'],
+            },
+        ],
+    }),
+
     ('czech-noun-masculine-animate', {
         '@attribution': {'users': ['Lexicolover'], 'title': 'Wikidata:Wikidata Lexeme Forms/Czech'},
         'label': 'české podstatné jméno (rod mužský životný)',

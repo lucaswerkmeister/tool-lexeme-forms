@@ -43,6 +43,18 @@ translations = {
         'lexeme_id': 'Identificador',
     },
 
+    # translations by User:VIGNERON, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Breton
+    'br': {
+        'create': 'Krouiñ',
+        'csrf_warning': 'Digarezit, ne oa ket tu d''ober war-dro ar reked-mañ (gwarez <abbr title="Cross-site request forgery">CSRF</abbr> c\'hwitet). Adkrogit mar plij.',
+        'duplicates_warning': 'Al leksemoù-se a zo dija gant ar memes lemma ha memes kod yezh ... :',
+        'duplicates_instructions': 'Mard oc\'h sur n\'eo ket memes leksem, diuzit al log en traoñ ar furm.',
+        'no_duplicate': 'N\'eo ket un doubl ul leksem a zo dija.',
+        'advanced': 'Aaraokaet',
+        'advanced_general': 'En “hentenn araokaet” emaoc\'h.',
+        'lexeme_id': 'Anaouder al lexeme',
+    },
+
     # translations by User:Lexicolover, User:Matěj Suchánek and User:Adrijaned, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Czech
     'cs': {
         'create': 'Vytvořit',
