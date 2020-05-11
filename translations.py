@@ -269,6 +269,7 @@ translations = {
         'advanced_partial_forms': 'Դուք կարող եք որոշ ձևեր դատարկ թողնել․ դրանք չեն ավելացվի։',
         'lexeme_id': 'Բառույթի ID',
         'advanced_partial_forms_hint': 'Որոշ ձևերի բացակայությամբ բառույթներ ստեղծելու համար՝ գնացեք ընդլայնված տարբերակ։',
+        'edit': 'Խմբագրել',
     },
 
     # translations by User:Sannita, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Italian
