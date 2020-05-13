@@ -1744,7 +1744,7 @@ templates = collections.OrderedDict([
             {
                 'label': 'præteritum participium (kort tillægsform)',
                 'example': 'Hen har [læst] hele dagen.',
-                'grammatical_features_item_ids': ['Q52434448'],
+                'grammatical_features_item_ids': ['Q12717679'],
             },
             {
                 'label': 'imperativ (bydeform, bydemåde)',
@@ -2174,7 +2174,7 @@ templates = collections.OrderedDict([
             {
                 'label': 'Partizip II',
                 'example': 'Ich werde [getragen].',
-                'grammatical_features_item_ids': ['Q52434448'],
+                'grammatical_features_item_ids': ['Q12717679'],
             },
         ],
     }),
