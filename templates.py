@@ -83,8 +83,8 @@ templates = collections.OrderedDict([
     }),
 
     ('breton-noun-without-mutation', {
-        '@attribution': {'users': ['VIGNERON'], 'title': 'Wikidata:Wikidata Lexeme Forms/Breton'},
-        'label': 'anv-kadarn (hep kemmadur)',
+        '@attribution': {'users': ['VIGNERON', 'Fulup'], 'title': 'Wikidata:Wikidata Lexeme Forms/Breton'},
+        'label': 'anvioù-kadarn (hep kemmadur)',
         'language_item_id': 'Q12107',
         'language_code': 'br',
         'lexical_category_item_id': 'Q1084',
@@ -103,8 +103,8 @@ templates = collections.OrderedDict([
     }),
 
     ('breton-adjective-without-mutation', {
-        '@attribution': {'users': ['VIGNERON'], 'title': 'Wikidata:Wikidata Lexeme Forms/Breton'},
-        'label': 'anv-gwan (hep kemmadur)',
+        '@attribution': {'users': ['VIGNERON', 'Fulup'], 'title': 'Wikidata:Wikidata Lexeme Forms/Breton'},
+        'label': 'anvioù-gwan (hep kemmadur)',
         'language_item_id': 'Q12107',
         'language_code': 'br',
         'lexical_category_item_id': 'Q34698',
