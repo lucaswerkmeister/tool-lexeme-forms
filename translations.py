@@ -115,7 +115,7 @@ translations = {
         'lexeme_id': 'ID lexému',
         'advanced_partial_forms_hint': 'Chcete-li vytvořit lexém bez některých tvarů, přepněte do pokročilého režimu.',
         'generated_via': 'vygenerováno pomocí',
-        'description_with_forms_and_senses': '{description}, {forms!p:0=žádné tvary:one=jeden tvar:few={forms} tvary:other=tvarů} a {senses!p:0=žádné významy:one=jeden význam:few={senses} významy:other={senses} významů}',
+        'description_with_forms_and_senses': '{description}, {forms!p:0=žádné tvary:one=jeden tvar:few={forms} tvary:other={forms} tvarů} a {senses!p:0=žádné významy:one=jeden význam:few={senses} významy:other={senses} významů}',
         'bulk_link': 'hromadný mód',
         'bulk_button': 'Hromadný mód',
         'bulk_heading': 'hromadný mód',
