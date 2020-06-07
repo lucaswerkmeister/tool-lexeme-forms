@@ -43,6 +43,35 @@ translations = {
         'lexeme_id': 'Identificador',
     },
 
+    # translations by User:Bodhisattwa, User:Tanay barisha and User:Mahir256, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Bengali
+    'bn': {
+        'create': 'তৈরি করুন',
+        'csrf_warning': 'দুঃখিত, আমরা এই অনুরোধটির প্রক্রিয়াকরণ করতে পারিনি (<abbr title="ক্রস-সাইট অনুরোধ জালিয়াতি">সিএসআরএফ</abbr> সংরক্ষণকরণ ব্যর্থ)। দয়া করে আবার ফর্মটি জমা দিন।',
+        'duplicates_warning': 'আপনি যে লেক্সিম তৈরি করতে চাইছেন তার অনুরূপ লেমা এবং ভাষা-কোড নিম্নলিখিত লেক্সিমগুলিতে রয়েছে :',
+        'duplicates_instructions': 'আপনি যদি নিশ্চিত হন যে এগুলি ভিন্ন, তাহলে ফর্মের নীচে বাক্সটি টিক চিহ্নিত করুন।',
+        'no_duplicate': 'এটি বিদ্যমান কোন লেক্সিমের সদৃশ নয়।',
+        'advanced': 'উন্নত',
+        'advanced_general': 'আপনি "উন্নত" প্রণালী ব্যবহার করছেন।',
+        'advanced_lexeme_id': 'নতুন লেক্সিম তৈরি করার পরিবর্তে কোন বিদ্যমান লেক্সিমের আইডি লিখে সেটির শব্দরূপ যোগ করতে পারেন। বিদ্যমান শব্দরূপের ক্ষেত্রগুলি ফাঁকা রাখুন, নতুবা সেটির সদৃশ আরেকটি শব্দরূপ তৈরি হবে!',
+        'advanced_partial_forms': 'কোন শব্দরূপ যোগ করতে না চাইলে সেটি ফাঁকা রাখতে পারেন। তবে এটা নিশ্চিত করুন যে আপনি ভূলবশত কোন শব্দরূপ ছেড়ে যাচ্ছেন না।',
+        'lexeme_id': 'লেক্সিম আইডি',
+        'advanced_partial_forms_hint': 'যদি এমন লেক্সিম তৈরি করতে চান, যেটির কিছু শব্দরূপ অনুপস্থিত, তবে "উন্নত" প্রণালী ব্যবহার করুন।',
+        'generated_via': 'যার মাধ্যমে উৎপন্ন',
+        'description_with_forms_and_senses': '{description}, {forms!p:0=শব্দরূপ নেই:one=একটি শব্দরূপ:other={forms}টি শব্দরূপ} ও {senses!p:0=অর্থ নেই:one=একটি অর্থ:other={senses}টি অর্থ}',
+        'bulk_link': 'গণহার প্রক্রিয়া',
+        'bulk_button': 'গণহার প্রক্রিয়া',
+        'bulk_heading': 'গণহার প্রক্রিয়া',
+        'bulk_format_help': 'বিন্যাস সাহায্য',
+        'bulk_not_allowed': 'আপনার গণহার প্রক্রিয়া ব্যবহারের অনুমতি নেই। দুঃখিত।',
+        'edit': 'সম্পাদনা করুন',
+        'edit_general': 'আপনি সম্পাদনা মোডে রয়েছেন। নীচের মানগুলি পরিবর্তন করলে লেক্সিমটির শব্দরূপ সম্পাদনা, যোগ বা অপসারণ করা যাবে।',
+        'edit_mismatch_warning': 'এই লেক্সিম এই টেমপ্লেটের সঙ্গে সামঞ্জস্যপূর্ণ বলে মনে হচ্ছে না! দয়া করে এগোনোর আগে এটি সঠিক টেমপ্লেট কিনা আরেকবার যাচাই করে নিন।',
+        'edit_ambiguous_warning': 'পরবর্তী লেক্সিমটির {forms!p:one=শব্দরূপটি:other=শব্দরূপগুলি} একাধিক টেমপ্লেটের সঙ্গে সমানভাবে সামঞ্জস্য রক্ষা করছে:',
+        'edit_unmatched_warning': 'পরবর্তী লেক্সিমটির {forms!p:one=শব্দরূপটি:other=শব্দরূপগুলি} কোন টেম্পলেটের সঙ্গে সামঞ্জস্য রক্ষা করছে না:',
+        'edit_form_list_item': '{form_link}, {grammatical_feature_labels!l}, {statements!p:0=বিবৃতি নেই:one=একটি বিবৃতি:other={statements}টি বিবৃতি}}',
+        'no_grammatical_features': 'কোন ব্যাকরণগত বৈশিষ্ট্য নেই',
+    },
+
     # translations by User:VIGNERON, User:Fulup and User:Iriep, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Breton
     'br': {
         'create': 'Krouiñ',

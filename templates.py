@@ -82,6 +82,131 @@ templates = collections.OrderedDict([
         },
     }),
 
+    ('bengali-noun-animate', {
+        '@attribution': {'users': ['Bodhisattwa', 'Mahir256'], 'title': 'Wikidata:Wikidata Lexeme Forms/Bengali'},
+        'label': 'প্রাণীবাচক বিশেষ্য',
+        'language_item_id': 'Q9610',
+        'language_code': 'bn',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'কর্তৃকারক',
+                'example': 'আমার [কুকুর] ওখানে গিয়েছে।',
+                'grammatical_features_item_ids': ['Q131105'],
+            },
+            {
+                'label': 'সম্বন্ধ পদ',
+                'example': 'এটা আমার [কুকুরের] নাম।',
+                'grammatical_features_item_ids': ['Q146233'],
+            },
+            {
+                'label': 'কর্ম কারক',
+                'example': 'আমার [কুকুরকে] পছন্দ হয়েছে?',
+                'grammatical_features_item_ids': ['Q146078'],
+            },
+            {
+                'label': 'সম্প্রদান কারক',
+                'example': 'আমার [কুকুরকে] মাংস দিন।',
+                'grammatical_features_item_ids': ['Q145599'],
+            },
+        ],
+    }),
+
+    ('bengali-noun-inanimate-othervowels', {
+        '@attribution': {'users': ['Bodhisattwa', 'Mahir256'], 'title': 'Wikidata:Wikidata Lexeme Forms/Bengali'},
+        'label': 'অপ্রাণীবাচক বিশেষ্য (-আ/এ/ও-কারান্ত শব্দ)',
+        'language_item_id': 'Q9610',
+        'language_code': 'bn',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'কর্তৃকারক',
+                'example': 'আমার [জামা] রঙিন।',
+                'grammatical_features_item_ids': ['Q131105'],
+            },
+            {
+                'label': 'সম্বন্ধ পদ',
+                'example': 'এই [জামার] রঙ নীল।',
+                'grammatical_features_item_ids': ['Q146233'],
+            },
+            {
+                'label': 'কর্ম কারক',
+                'example': 'সে তার [জামাকে] ছিঁড়ে দিয়েছে।',
+                'grammatical_features_item_ids': ['Q146078'],
+            },
+            {
+                'label': 'অধিকরণ কারক (-য়-কারান্ত)',
+                'example': 'ওর [জামায়] একটা দাগ আছে।',
+                'grammatical_features_item_ids': ['Q202142'],
+            },
+            {
+                'label': 'অধিকরণ কারক (-তে অক্ষরান্ত)',
+                'example': 'ওর [জামাতে] একটা দাগ আছে।',
+                'grammatical_features_item_ids': ['Q202142', 'Q59342809'],
+            },
+        ],
+    }),
+
+    ('bengali-noun-inanimate-highvowels', {
+        '@attribution': {'users': ['Bodhisattwa', 'Mahir256'], 'title': 'Wikidata:Wikidata Lexeme Forms/Bengali'},
+        'label': 'অপ্রাণীবাচক বিশেষ্য (-ই/ঈ/উ/ঊ/ঐ/ঔ-কারান্ত শব্দ)',
+        'language_item_id': 'Q9610',
+        'language_code': 'bn',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'কর্তৃকারক',
+                'example': 'এই [গাড়ি] চলতেছে।',
+                'grammatical_features_item_ids': ['Q131105'],
+            },
+            {
+                'label': 'সম্বন্ধ পদ',
+                'example': 'এই [গাড়ির] রঙ লাল।',
+                'grammatical_features_item_ids': ['Q146233'],
+            },
+            {
+                'label': 'কর্ম কারক',
+                'example': 'তার [গাড়িকে] লাল রঙ করে দিয়েছে।',
+                'grammatical_features_item_ids': ['Q146078'],
+            },
+            {
+                'label': 'অধিকরণ কারক',
+                'example': 'শীঘ্রই [গাড়িতে] উঠুন!',
+                'grammatical_features_item_ids': ['Q202142'],
+            },
+        ],
+    }),
+
+    ('bengali-noun-inanimate-consonants', {
+        '@attribution': {'users': ['Bodhisattwa', 'Mahir256'], 'title': 'Wikidata:Wikidata Lexeme Forms/Bengali'},
+        'label': 'অপ্রাণীবাচক বিশেষ্য (ব্যঞ্জনান্ত শব্দ)',
+        'language_item_id': 'Q9610',
+        'language_code': 'bn',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'কর্তৃকারক',
+                'example': 'এই [আম] পেকে গেছে।',
+                'grammatical_features_item_ids': ['Q131105'],
+            },
+            {
+                'label': 'সম্বন্ধ পদ',
+                'example': 'এই [আমের] খোসা লাল।',
+                'grammatical_features_item_ids': ['Q146233'],
+            },
+            {
+                'label': 'কর্ম কারক',
+                'example': 'সে [আমকে] একটু আগে কাটল।',
+                'grammatical_features_item_ids': ['Q146078'],
+            },
+            {
+                'label': 'অধিকরণ কারক',
+                'example': 'ওই [আমে] একটা দাগ আছে।',
+                'grammatical_features_item_ids': ['Q202142'],
+            },
+        ],
+    }),
+
     ('breton-noun-without-mutation', {
         '@attribution': {'users': ['VIGNERON', 'Fulup'], 'title': 'Wikidata:Wikidata Lexeme Forms/Breton'},
         'label': 'anvioù-kadarn (hep kemmadur)',
