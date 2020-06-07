@@ -96,7 +96,7 @@ translations = {
         'edit_general': 'Emaoc\'h er mod “aozañ”. Ma cheñchit an talvoudoù dindan e vo aozet, ouzhpennet pe dilamet furmoù \'zo eus al leksem pal.',
         'edit_mismatch_warning': 'Evit doare ne glot ket al leksem-mañ gant ar patrom! Gwiriit mat eo ar patrom a zere evit al leksem a-raok kenderc\'hel ganti.',
         # 'edit_ambiguous_warning': '{forms!p:one=furm:other=a furmoù} al leksem da heul a glote kement ha kement gant furm meur a batrom:',
-        # 'edit_unmatched_warning': '{forms!p:one=Furm:other=Furmoù}} al leksem da heul ne glote(nt) gant furm ebet eus ar patrom:',
+        # 'edit_unmatched_warning': '{forms!p:one=Furm:other=Furmoù} al leksem da heul ne {forms!p:one=glote:other=glotent} gant furm ebet eus ar patrom:',
         # 'edit_form_list_item': '{form_link}, {grammatical_feature_labels!l}, {statements!p:|0=disklêriadur ebet:one=un disklêriadur:other={statements} disklêriadur}',
         'no_grammatical_features': 'perzh yezhadurel ebet',
     },
