@@ -102,3 +102,23 @@ def test_attribution_available(template_name):
         title = attribution['title']
         assert isinstance(title, str)
         assert title
+
+
+@pytest.mark.parametrize('template_name', templates.templates.keys())
+def test_sections_declared(template_name):
+    """Check that every template whose forms contain section breaks also
+    declares that it has sections in the header.
+
+    The inverse case, that a template declares sections but has no
+    section breaks, is allowed, since it can be useful to have all
+    forms in a single two-column section.
+    """
+    template = templates.templates[template_name]
+    has_sections = False
+    for form in template['forms']:
+        if form.get('section_break', False):
+            has_sections = True
+            break
+    if has_sections:
+        assert template.get('has_sections', False)
+
