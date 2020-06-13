@@ -1900,6 +1900,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q188',
         'language_code': 'de',
         'lexical_category_item_id': 'Q1084',
+        'has_sections': True,
         'forms': [
             {
                 'label': 'Nominativ Singular',
@@ -1922,6 +1923,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146078', 'Q110786'],
             },
             {
+                'section_break': True,
                 'label': 'Nominativ Plural',
                 'example': 'Das sind die [Hunde].',
                 'grammatical_features_item_ids': ['Q131105', 'Q146786'],
@@ -1970,6 +1972,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q188',
         'language_code': 'de',
         'lexical_category_item_id': 'Q1084',
+        'has_sections': True,
         'forms': [
             {
                 'label': 'Nominativ Singular',
@@ -1992,6 +1995,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146078', 'Q110786'],
             },
             {
+                'section_break': True,
                 'label': 'Nominativ Plural',
                 'example': 'Das sind die [Katzen].',
                 'grammatical_features_item_ids': ['Q131105', 'Q146786'],
@@ -2040,6 +2044,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q188',
         'language_code': 'de',
         'lexical_category_item_id': 'Q1084',
+        'has_sections': True,
         'forms': [
             {
                 'label': 'Nominativ Singular',
@@ -2062,6 +2067,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146078', 'Q110786'],
             },
             {
+                'section_break': True,
                 'label': 'Nominativ Plural',
                 'example': 'Das sind die [Kinder].',
                 'grammatical_features_item_ids': ['Q131105', 'Q146786'],
@@ -2160,6 +2166,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q188',
         'language_code': 'de',
         'lexical_category_item_id': 'Q24905',
+        'has_sections': True,
         'forms': [
             {
                 'label': 'Infinitiv',
@@ -2167,6 +2174,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q179230'],
             },
             {
+                'section_break': True,
                 'label': '1. Person Singular Präsens',
                 'example': 'Ich [trage] heute.',
                 'grammatical_features_item_ids': ['Q21714344', 'Q110786', 'Q682111', 'Q192613', 'Q1317831'],
@@ -2197,6 +2205,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q51929074', 'Q146786', 'Q682111', 'Q192613', 'Q1317831'],
             },
             {
+                'section_break': True,
                 'label': '1. Person Singular Präteritum',
                 'example': 'Ich [trug] gestern.',
                 'grammatical_features_item_ids': ['Q21714344', 'Q110786', 'Q682111', 'Q442485', 'Q1317831'],
@@ -2227,6 +2236,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q51929074', 'Q146786', 'Q682111', 'Q442485', 'Q1317831'],
             },
             {
+                'section_break': True,
                 'label': '1. Person Singular Konjunktiv I',
                 'example': 'Angenommen, ich [trage].',
                 'grammatical_features_item_ids': ['Q21714344', 'Q110786', 'Q3502553', 'Q192613', 'Q1317831'],
@@ -2257,6 +2267,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q51929074', 'Q146786', 'Q3502553', 'Q192613', 'Q1317831'],
             },
             {
+                'section_break': True,
                 'label': '1. Person Singular Konjunktiv II',
                 'example': 'Ich dachte, ich [trüge].',
                 'grammatical_features_item_ids': ['Q21714344', 'Q110786', 'Q3502544', 'Q442485', 'Q1317831'],
@@ -2287,6 +2298,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q51929074', 'Q146786', 'Q3502544', 'Q442485', 'Q1317831'],
             },
             {
+                'section_break': True,
                 'label': '2. Person Singular Imperativ',
                 'example': 'He du da, [trag/trage]!',
                 'grammatical_features_item_ids': ['Q51929049', 'Q110786', 'Q22716', 'Q192613', 'Q1317831'],
@@ -2297,6 +2309,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q51929049', 'Q146786', 'Q22716', 'Q192613', 'Q1317831'],
             },
             {
+                'section_break': True,
                 'label': 'Partizip II',
                 'example': 'Ich werde [getragen].',
                 'grammatical_features_item_ids': ['Q12717679'],

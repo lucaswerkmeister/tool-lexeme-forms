@@ -32,13 +32,21 @@
       <input name="lexeme_id" pattern="^L[1-9][0-9]*$" placeholder="L123" {% if template.lexeme_id %}value="{{ template.lexeme_id }}"{% endif %}>
     </label>
     {% endif %}
-    <dl>
-      {% for form in template.forms %}
-      <div class="form">
-        <dt>{{ form.label }}</dt>
-        <dd>{{ form | form2input(loop.first) }}</dd>
+    <dl{% if template.has_sections %} class="with-sections"{% endif %}>
+      <div class="section">
+        {% for form in template.forms %}
+        {% if form.section_break %}
+        <div class="section-spacer"></div>
       </div>
-      {% endfor %}
+      <hr>
+      <div class="section">
+        {% endif %}
+        <div class="form">
+          <dt>{{ form.label }}</dt>
+          <dd>{{ form | form2input(loop.first) }}</dd>
+        </div>
+        {% endfor %}
+      </div>
     </dl>
     {% if template.generated_via %}
     <div class="form-group">
