@@ -1923,7 +1923,6 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146078', 'Q110786'],
             },
             {
-                'section_break': True,
                 'label': 'Nominativ Plural',
                 'example': 'Das sind die [Hunde].',
                 'grammatical_features_item_ids': ['Q131105', 'Q146786'],
@@ -1995,7 +1994,6 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146078', 'Q110786'],
             },
             {
-                'section_break': True,
                 'label': 'Nominativ Plural',
                 'example': 'Das sind die [Katzen].',
                 'grammatical_features_item_ids': ['Q131105', 'Q146786'],
@@ -2067,7 +2065,6 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146078', 'Q110786'],
             },
             {
-                'section_break': True,
                 'label': 'Nominativ Plural',
                 'example': 'Das sind die [Kinder].',
                 'grammatical_features_item_ids': ['Q131105', 'Q146786'],
