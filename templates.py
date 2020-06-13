@@ -263,6 +263,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q9056',
         'language_code': 'cs',
         'lexical_category_item_id': 'Q1084',
+        'has_sections': True,
         'forms': [
             {
                 'label': '1. pád, jednotné číslo',
@@ -379,6 +380,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q9056',
         'language_code': 'cs',
         'lexical_category_item_id': 'Q1084',
+        'has_sections': True,
         'forms': [
             {
                 'label': '1. pád, jednotné číslo',
@@ -495,6 +497,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q9056',
         'language_code': 'cs',
         'lexical_category_item_id': 'Q1084',
+        'has_sections': True,
         'forms': [
             {
                 'label': '1. pád, jednotné číslo',
@@ -595,6 +598,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q9056',
         'language_code': 'cs',
         'lexical_category_item_id': 'Q1084',
+        'has_sections': True,
         'forms': [
             {
                 'label': '1. pád, jednotné číslo',
@@ -720,6 +724,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q9056',
         'language_code': 'cs',
         'lexical_category_item_id': 'Q34698',
+        'has_sections': True,
         'forms': [
             {
                 'label': '1. pád, rod mužský životný, jednotné číslo, 1. stupeň',
@@ -792,6 +797,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q192997', 'Q110786', 'Q52943434', 'Q3482678'],
             },
             {
+                'section_break': True,
                 'label': '1. pád, rod ženský, jednotné číslo, 1. stupeň',
                 'example': 'To je má [velká] žena.',
                 'grammatical_features_item_ids': ['Q131105', 'Q110786', 'Q1775415', 'Q3482678'],
@@ -862,6 +868,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q192997', 'Q110786', 'Q1775461', 'Q3482678'],
             },
             {
+                'section_break': True,
                 'label': '1. pád, rod mužský životný, množné číslo, 1. stupeň',
                 'example': 'To jsou moji [velcí] psi.',
                 'grammatical_features_item_ids': ['Q131105', 'Q146786', 'Q54020116', 'Q3482678'],
@@ -932,6 +939,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q192997', 'Q146786', 'Q52943434', 'Q3482678'],
             },
             {
+                'section_break': True,
                 'label': '1. pád, rod ženský, množné číslo, 1. stupeň',
                 'example': 'To jsou mé [velké] ženy.',
                 'grammatical_features_item_ids': ['Q131105', 'Q146786', 'Q1775415', 'Q3482678'],
@@ -1002,6 +1010,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q192997', 'Q146786', 'Q1775461', 'Q3482678'],
             },
             {
+                'section_break': True,
                 'label': '1. pád, rod mužský životný, jednotné číslo, 2. stupeň',
                 'example': 'To je můj [větší] pes.',
                 'grammatical_features_item_ids': ['Q131105', 'Q110786', 'Q54020116', 'Q14169499'],
@@ -1072,6 +1081,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q192997', 'Q110786', 'Q52943434', 'Q14169499'],
             },
             {
+                'section_break': True,
                 'label': '1. pád, rod ženský, jednotné číslo, 2. stupeň',
                 'example': 'To je má [větší] žena.',
                 'grammatical_features_item_ids': ['Q131105', 'Q110786', 'Q1775415', 'Q14169499'],
@@ -1142,6 +1152,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q192997', 'Q110786', 'Q1775461', 'Q14169499'],
             },
             {
+                'section_break': True,
                 'label': '1. pád, rod mužský životný, množné číslo, 2. stupeň',
                 'example': 'To jsou moji [větší] psi.',
                 'grammatical_features_item_ids': ['Q131105', 'Q146786', 'Q54020116', 'Q14169499'],
@@ -1212,6 +1223,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q192997', 'Q146786', 'Q52943434', 'Q14169499'],
             },
             {
+                'section_break': True,
                 'label': '1. pád, rod ženský, množné číslo, 2. stupeň',
                 'example': 'To jsou mé [větší] ženy.',
                 'grammatical_features_item_ids': ['Q131105', 'Q146786', 'Q1775415', 'Q14169499'],
@@ -1282,6 +1294,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q192997', 'Q146786', 'Q1775461', 'Q14169499'],
             },
             {
+                'section_break': True,
                 'label': '1. pád, rod mužský životný, jednotné číslo, 3. stupeň',
                 'example': 'To je můj [největší] pes.',
                 'grammatical_features_item_ids': ['Q131105', 'Q110786', 'Q54020116', 'Q1817208'],
@@ -1352,6 +1365,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q192997', 'Q110786', 'Q52943434', 'Q1817208'],
             },
             {
+                'section_break': True,
                 'label': '1. pád, rod ženský, jednotné číslo, 3. stupeň',
                 'example': 'To je má [největší] žena.',
                 'grammatical_features_item_ids': ['Q131105', 'Q110786', 'Q1775415', 'Q1817208'],
@@ -1422,6 +1436,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q192997', 'Q110786', 'Q1775461', 'Q1817208'],
             },
             {
+                'section_break': True,
                 'label': '1. pád, rod mužský životný, množné číslo, 3. stupeň',
                 'example': 'To jsou moji [největší] psi.',
                 'grammatical_features_item_ids': ['Q131105', 'Q146786', 'Q54020116', 'Q1817208'],
@@ -1492,6 +1507,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q192997', 'Q146786', 'Q52943434', 'Q1817208'],
             },
             {
+                'section_break': True,
                 'label': '1. pád, rod ženský, množné číslo, 3. stupeň',
                 'example': 'To jsou mé [největší] ženy.',
                 'grammatical_features_item_ids': ['Q131105', 'Q146786', 'Q1775415', 'Q1817208'],
@@ -1750,6 +1766,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q9035',
         'language_code': 'da',
         'lexical_category_item_id': 'Q1084',
+        'has_sections': True,
         'forms': [
             {
                 'label': 'nominativ ental, ubestemt',
@@ -1800,6 +1817,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q9035',
         'language_code': 'da',
         'lexical_category_item_id': 'Q1084',
+        'has_sections': True,
         'forms': [
             {
                 'label': 'nominativ ental, ubestemt',
@@ -2415,6 +2433,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q143',
         'language_code': 'eo',
         'lexical_category_item_id': 'Q1084',
+        'has_sections': True,
         'forms': [
             {
                 'label': 'ununombro, nominativo',
@@ -2525,6 +2544,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q1321',
         'language_code': 'es',
         'lexical_category_item_id': 'Q34698',
+        'has_sections': True,
         'forms': [
             {
                 'label': 'masculino singular',
@@ -2555,6 +2575,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q1321',
         'language_code': 'es',
         'lexical_category_item_id': 'Q24905',
+        'has_sections': True,
         'forms': [
             {
                 'label': 'infinitivo',
@@ -2562,6 +2583,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q179230'],
             },
             {
+                'section_break': True,
                 'label': 'primera persona singular presente',
                 'example': 'Yo [canto] todos los días.',
                 'grammatical_features_item_ids': ['Q192613', 'Q682111', 'Q21714344', 'Q110786'],
@@ -2592,6 +2614,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q192613', 'Q682111', 'Q51929074', 'Q146786'],
             },
             {
+                'section_break': True,
                 'label': 'primera persona singular pretérito',
                 'example': 'Yo [canté] mucho durante la semana pasada.',
                 'grammatical_features_item_ids': ['Q442485', 'Q21714344', 'Q110786'],
@@ -2622,6 +2645,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q442485', 'Q51929074', 'Q146786'],
             },
             {
+                'section_break': True,
                 'label': 'primera persona singular pretérito imperfecto',
                 'example': 'Yo [cantaba] mucho cuándo era niño.',
                 'grammatical_features_item_ids': ['Q12547192', 'Q21714344', 'Q110786'],
@@ -2652,6 +2676,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q12547192', 'Q51929074', 'Q146786'],
             },
             {
+                'section_break': True,
                 'label': 'participio presente',
                 'example': 'Estoy [cantando].',
                 'grammatical_features_item_ids': ['Q10345583', 'Q51929074', 'Q146786'],
@@ -2665,6 +2690,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q9072',
         'language_code': 'et',
         'lexical_category_item_id': 'Q1084',
+        'has_sections': True,
         'forms': [
             {
                 'label': 'ainsuse nimetav',
@@ -2677,6 +2703,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146786', 'Q131105'],
             },
             {
+                'section_break': True,
                 'label': 'ainsuse omastav',
                 'example': 'Selle [auto].',
                 'grammatical_features_item_ids': ['Q110786', 'Q146233'],
@@ -2687,6 +2714,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146786', 'Q146233'],
             },
             {
+                'section_break': True,
                 'label': 'ainsuse osastav',
                 'example': 'Seda [autot].',
                 'grammatical_features_item_ids': ['Q110786', 'Q857325'],
@@ -2697,6 +2725,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146786', 'Q857325'],
             },
             {
+                'section_break': True,
                 'label': 'ainsuse sisseütlev',
                 'example': 'Sellesse [autosse].',
                 'grammatical_features_item_ids': ['Q110786', 'Q474668'],
@@ -2707,6 +2736,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146786', 'Q474668'],
             },
             {
+                'section_break': True,
                 'label': 'ainsuse seesütlev',
                 'example': 'Selles [autos].',
                 'grammatical_features_item_ids': ['Q110786', 'Q282031'],
@@ -2717,6 +2747,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146786', 'Q282031'],
             },
             {
+                'section_break': True,
                 'label': 'ainsuse seestütlev',
                 'example': 'Sellest [autost].',
                 'grammatical_features_item_ids': ['Q110786', 'Q394253'],
@@ -2727,6 +2758,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146786', 'Q394253'],
             },
             {
+                'section_break': True,
                 'label': 'ainsuse alaleütlev',
                 'example': 'Sellele [autole].',
                 'grammatical_features_item_ids': ['Q110786', 'Q655020'],
@@ -2737,6 +2769,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146786', 'Q655020'],
             },
             {
+                'section_break': True,
                 'label': 'ainsuse alalütlev',
                 'example': 'Sellel [autol].',
                 'grammatical_features_item_ids': ['Q110786', 'Q281954'],
@@ -2747,6 +2780,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146786', 'Q281954'],
             },
             {
+                'section_break': True,
                 'label': 'ainsuse alaltütlev',
                 'example': 'Sellelt [autolt].',
                 'grammatical_features_item_ids': ['Q110786', 'Q156986'],
@@ -2757,6 +2791,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146786', 'Q156986'],
             },
             {
+                'section_break': True,
                 'label': 'ainsuse saav',
                 'example': 'Selleks [autoks].',
                 'grammatical_features_item_ids': ['Q110786', 'Q950170'],
@@ -2767,6 +2802,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146786', 'Q950170'],
             },
             {
+                'section_break': True,
                 'label': 'ainsuse rajav',
                 'example': 'Selle [autoni].',
                 'grammatical_features_item_ids': ['Q110786', 'Q747019'],
@@ -2777,6 +2813,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146786', 'Q747019'],
             },
             {
+                'section_break': True,
                 'label': 'ainsuse olev',
                 'example': 'Selle [autona].',
                 'grammatical_features_item_ids': ['Q110786', 'Q148465'],
@@ -2787,6 +2824,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146786', 'Q148465'],
             },
             {
+                'section_break': True,
                 'label': 'ainsuse ilmaütlev',
                 'example': 'Selle [autota].',
                 'grammatical_features_item_ids': ['Q110786', 'Q319822'],
@@ -2797,6 +2835,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146786', 'Q319822'],
             },
             {
+                'section_break': True,
                 'label': 'ainsuse kaasaütlev',
                 'example': 'Selle [autoga].',
                 'grammatical_features_item_ids': ['Q110786', 'Q838581'],
@@ -2870,6 +2909,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q9168',
         'language_code': 'fa',
         'lexical_category_item_id': 'Q24905',
+        'has_sections': True,
         'forms': [
             {
                 'label': 'اول شخص مفرد',
@@ -2910,6 +2950,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q1412',
         'language_code': 'fi',
         'lexical_category_item_id': 'Q1084',
+        'has_sections': True,
         'forms': [
             {
                 'label': 'yksikön nominatiivi',
@@ -2922,6 +2963,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146786', 'Q131105'],
             },
             {
+                'section_break': True,
                 'label': 'yksikön genetiivi',
                 'example': 'Tämän [koiran].',
                 'grammatical_features_item_ids': ['Q110786', 'Q146233'],
@@ -2932,6 +2974,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146786', 'Q146233'],
             },
             {
+                'section_break': True,
                 'label': 'yksikön partitiivi',
                 'example': 'Tätä [koiraa].',
                 'grammatical_features_item_ids': ['Q110786', 'Q857325'],
@@ -2942,6 +2985,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146786', 'Q857325'],
             },
             {
+                'section_break': True,
                 'label': 'yksikön essiivi',
                 'example': 'Tällaisena [koirana].',
                 'grammatical_features_item_ids': ['Q110786', 'Q148465'],
@@ -2952,6 +2996,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146786', 'Q148465'],
             },
             {
+                'section_break': True,
                 'label': 'yksikön translatiivi',
                 'example': 'Yhdeksi [koiraksi].',
                 'grammatical_features_item_ids': ['Q110786', 'Q950170'],
@@ -2962,6 +3007,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146786', 'Q950170'],
             },
             {
+                'section_break': True,
                 'label': 'yksikön inessiivi',
                 'example': 'Tässä [koirassa].',
                 'grammatical_features_item_ids': ['Q110786', 'Q282031'],
@@ -2972,6 +3018,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146786', 'Q282031'],
             },
             {
+                'section_break': True,
                 'label': 'yksikön elatiivi',
                 'example': 'Tästä [koirasta].',
                 'grammatical_features_item_ids': ['Q110786', 'Q394253'],
@@ -2982,6 +3029,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146786', 'Q394253'],
             },
             {
+                'section_break': True,
                 'label': 'yksikön illatiivi',
                 'example': 'Tähän [koiraan].',
                 'grammatical_features_item_ids': ['Q110786', 'Q474668'],
@@ -2992,6 +3040,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146786', 'Q474668'],
             },
             {
+                'section_break': True,
                 'label': 'yksikön adessiivi',
                 'example': 'Tällä [koiralla].',
                 'grammatical_features_item_ids': ['Q110786', 'Q281954'],
@@ -3002,6 +3051,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146786', 'Q281954'],
             },
             {
+                'section_break': True,
                 'label': 'yksikön ablatiivi',
                 'example': 'Tältä [koiralta].',
                 'grammatical_features_item_ids': ['Q110786', 'Q156986'],
@@ -3012,6 +3062,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146786', 'Q156986'],
             },
             {
+                'section_break': True,
                 'label': 'yksikön allatiivi',
                 'example': 'Tälle [koiralle].',
                 'grammatical_features_item_ids': ['Q110786', 'Q655020'],
@@ -3022,11 +3073,13 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146786', 'Q655020'],
             },
             {
+                'section_break': True,
                 'label': 'monikon instruktiivi',
                 'example': 'Käsin, jaloin, kissoin ja [koirin].',
                 'grammatical_features_item_ids': ['Q1665275', 'Q146786'],
             },
             {
+                'section_break': True,
                 'label': 'yksikön abessiivi',
                 'example': 'Kädettä, jalatta, kissatta ja [koiratta].',
                 'grammatical_features_item_ids': ['Q319822', 'Q110786'],
@@ -3125,6 +3178,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q150',
         'language_code': 'fr',
         'lexical_category_item_id': 'Q34698',
+        'has_sections': True,
         'forms': [
             {
                 'label': 'masculin singulier',
@@ -3235,6 +3289,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q8785',
         'language_code': 'hy',
         'lexical_category_item_id': 'Q1084',
+        'has_sections': True,
         'forms': [
             {
                 'label': 'եզ․ թիվ, ուղղ․ հոլով',
@@ -3460,6 +3515,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q652',
         'language_code': 'it',
         'lexical_category_item_id': 'Q34698',
+        'has_sections': True,
         'forms': [
             {
                 'label': 'maschile singolare',
@@ -3490,6 +3546,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q36163',
         'language_code': 'ku',
         'lexical_category_item_id': 'Q1084',
+        'has_sections': True,
         'forms': [
             {
                 'label': 'Rewşa navkî ya yekjimar a binavkirî',
@@ -3502,6 +3559,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q1751855', 'Q146786', 'Q53997851'],
             },
             {
+                'section_break': True,
                 'label': 'Rewşa çemandî ya yekjimar a binavkirî',
                 'example': 'Ez [pisîkê] dibînim.',
                 'grammatical_features_item_ids': ['Q1233197', 'Q110786', 'Q53997851'],
@@ -3512,6 +3570,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q1233197', 'Q146786', 'Q53997851'],
             },
             {
+                'section_break': True,
                 'label': 'Rewşa îzafe ya yekjimar a binavkirî',
                 'example': 'Ev [pisîka] nû ye.',
                 'grammatical_features_item_ids': ['Q18794', 'Q110786', 'Q53997851'],
@@ -3522,6 +3581,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q18794', 'Q146786', 'Q53997851'],
             },
             {
+                'section_break': True,
                 'label': 'Rewşa navkî ya yekjimar a nebinavkirî',
                 'example': 'Ev [pisîkek] e.',
                 'grammatical_features_item_ids': ['Q1751855', 'Q110786', 'Q53997857'],
@@ -3532,6 +3592,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q1751855', 'Q146786', 'Q53997857'],
             },
             {
+                'section_break': True,
                 'label': 'Rewşa çemandî ya yekjimar ya nebinavkirî',
                 'example': 'Ez [pisîkekê] dibînim.',
                 'grammatical_features_item_ids': ['Q1233197', 'Q110786', 'Q53997857'],
@@ -3542,6 +3603,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q1233197', 'Q146786', 'Q53997857'],
             },
             {
+                'section_break': True,
                 'label': 'Rewşa îzafe ya yekjimar a nebinavkirî',
                 'example': 'Ev [pisîkeke] nû ye.',
                 'grammatical_features_item_ids': ['Q18794', 'Q110786', 'Q53997857'],
@@ -3552,6 +3614,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q18794', 'Q146786', 'Q53997857'],
             },
             {
+                'section_break': True,
                 'label': 'Rewşa gazîkirinê ya yekjimar',
                 'example': 'Silav [pisîkê]!',
                 'grammatical_features_item_ids': ['Q185077', 'Q110786'],
@@ -3590,6 +3653,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q36163',
         'language_code': 'ku',
         'lexical_category_item_id': 'Q1084',
+        'has_sections': True,
         'forms': [
             {
                 'label': 'Rewşa navkî ya yekjimar a binavkirî',
@@ -3602,6 +3666,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q1751855', 'Q146786', 'Q53997851'],
             },
             {
+                'section_break': True,
                 'label': 'Rewşa çemandî ya yekjimar a binavkirî',
                 'example': 'Ez [gundî] dibînim.',
                 'grammatical_features_item_ids': ['Q1233197', 'Q110786', 'Q53997851'],
@@ -3612,6 +3677,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q1233197', 'Q146786', 'Q53997851'],
             },
             {
+                'section_break': True,
                 'label': 'Rewşa îzafe ya yekjimar a binavkirî',
                 'example': 'Ev [gundê] kevn e.',
                 'grammatical_features_item_ids': ['Q18794', 'Q110786', 'Q53997851'],
@@ -3622,6 +3688,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q18794', 'Q146786', 'Q53997851'],
             },
             {
+                'section_break': True,
                 'label': 'Rewşa navkî ya yekjimar a nebinavkirî',
                 'example': 'Ev [gundek] e.',
                 'grammatical_features_item_ids': ['Q1751855', 'Q110786', 'Q53997857'],
@@ -3632,6 +3699,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q1751855', 'Q146786', 'Q53997857'],
             },
             {
+                'section_break': True,
                 'label': 'Rewşa çemandî ya yekjimar ya nebinavkirî',
                 'example': 'Ez [gundekî] dibînim.',
                 'grammatical_features_item_ids': ['Q1233197', 'Q110786', 'Q53997857'],
@@ -3642,6 +3710,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q1233197', 'Q146786', 'Q53997857'],
             },
             {
+                'section_break': True,
                 'label': 'Rewşa îzafe ya yekjimar a nebinavkirî',
                 'example': 'Ev [gundekî] nû ye.',
                 'grammatical_features_item_ids': ['Q18794', 'Q110786', 'Q53997857'],
@@ -3652,6 +3721,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q18794', 'Q146786', 'Q53997857'],
             },
             {
+                'section_break': True,
                 'label': 'Rewşa gazîkirinê ya yekjimar',
                 'example': 'Silav [bavo]!',
                 'grammatical_features_item_ids': ['Q185077', 'Q110786'],
@@ -3690,6 +3760,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q397',
         'language_code': 'la',
         'lexical_category_item_id': 'Q1084',
+        'has_sections': True,
         'forms': [
             {
                 'label': 'nominativus singularis',
@@ -3780,6 +3851,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q397',
         'language_code': 'la',
         'lexical_category_item_id': 'Q1084',
+        'has_sections': True,
         'forms': [
             {
                 'label': 'nominativus singularis',
@@ -3870,6 +3942,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q397',
         'language_code': 'la',
         'lexical_category_item_id': 'Q1084',
+        'has_sections': True,
         'forms': [
             {
                 'label': 'nominativus singularis',
@@ -3980,6 +4053,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q7411',
         'language_code': 'nl',
         'lexical_category_item_id': 'Q1084',
+        'has_sections': True,
         'forms': [
             {
                 'label': 'enkelvoud',
@@ -4030,6 +4104,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q7411',
         'language_code': 'nl',
         'lexical_category_item_id': 'Q1084',
+        'has_sections': True,
         'forms': [
             {
                 'label': 'enkelvoud',
@@ -4080,6 +4155,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q7411',
         'language_code': 'nl',
         'lexical_category_item_id': 'Q1084',
+        'has_sections': True,
         'forms': [
             {
                 'label': 'enkelvoud',
@@ -4130,6 +4206,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q7411',
         'language_code': 'nl',
         'lexical_category_item_id': 'Q1084',
+        'has_sections': True,
         'forms': [
             {
                 'label': 'enkelvoud',
@@ -4180,6 +4257,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q25164',
         'language_code': 'nn',
         'lexical_category_item_id': 'Q1084',
+        'has_sections': True,
         'forms': [
             {
                 'label': 'ubunde eintal',
@@ -4230,6 +4308,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q25164',
         'language_code': 'nn',
         'lexical_category_item_id': 'Q1084',
+        'has_sections': True,
         'forms': [
             {
                 'label': 'ubunde eintal',
@@ -4280,6 +4359,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q25164',
         'language_code': 'nn',
         'lexical_category_item_id': 'Q1084',
+        'has_sections': True,
         'forms': [
             {
                 'label': 'ubunde eintal',
@@ -4330,6 +4410,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q809',
         'language_code': 'pl',
         'lexical_category_item_id': 'Q1084',
+        'has_sections': True,
         'forms': [
             {
                 'label': 'Liczba pojedyncza, mianownik',
@@ -4600,6 +4681,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q809',
         'language_code': 'pl',
         'lexical_category_item_id': 'Q1084',
+        'has_sections': True,
         'forms': [
             {
                 'label': 'mianownik, liczba pojedyncza',
@@ -4820,6 +4902,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q5146',
         'language_code': 'pt',
         'lexical_category_item_id': 'Q24905',
+        'has_sections': True,
         'forms': [
             {
                 'label': 'Infinitivo Impessoal',
@@ -4837,6 +4920,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q814722'],
             },
             {
+                'section_break': True,
                 'label': 'Primeira Pessoa do Singular do Presente do Modo Indicativo',
                 'example': 'Eu [canto] às segundas-feiras.',
                 'grammatical_features_item_ids': ['Q21714344', 'Q110786', 'Q192613', 'Q682111'],
@@ -4867,6 +4951,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q51929074', 'Q146786', 'Q192613', 'Q682111'],
             },
             {
+                'section_break': True,
                 'label': 'Primeira Pessoa do Singular do Pretérito Perfeito do Modo Indicativo',
                 'example': 'Eu [cantei] ontem no palco.',
                 'grammatical_features_item_ids': ['Q21714344', 'Q110786', 'Q23663136', 'Q682111'],
@@ -4897,6 +4982,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q51929074', 'Q146786', 'Q23663136', 'Q682111'],
             },
             {
+                'section_break': True,
                 'label': 'Primeira Pessoa do Singular do Pretérito Imperfeito do Modo Indicativo',
                 'example': 'Eu [cantava] no coral quando acabou a luz.',
                 'grammatical_features_item_ids': ['Q21714344', 'Q110786', 'Q12547192', 'Q682111'],
@@ -4927,6 +5013,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q51929074', 'Q146786', 'Q12547192', 'Q682111'],
             },
             {
+                'section_break': True,
                 'label': 'Primeira Pessoa do Singular do Pretérito Mais-que-perfeito do Modo Indicativo',
                 'example': 'Esse é o grupo em que eu [cantara] antigamente.',
                 'grammatical_features_item_ids': ['Q21714344', 'Q110786', 'Q623742', 'Q682111'],
@@ -4957,6 +5044,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q51929074', 'Q146786', 'Q623742', 'Q682111'],
             },
             {
+                'section_break': True,
                 'label': 'Primeira Pessoa do Singular do Futuro do Presente do Modo Indicativo',
                 'example': 'Eu [cantarei] amanhã no teatro municipal.',
                 'grammatical_features_item_ids': ['Q21714344', 'Q110786', 'Q63997439', 'Q682111'],
@@ -4987,6 +5075,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q51929074', 'Q146786', 'Q63997439', 'Q682111'],
             },
             {
+                'section_break': True,
                 'label': 'Primeira Pessoa do Singular do Futuro do Pretérito do Modo Indicativo',
                 'example': 'Eu [cantaria] se fosse possível.',
                 'grammatical_features_item_ids': ['Q21714344', 'Q110786', 'Q63997520', 'Q682111'],
@@ -5017,6 +5106,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q51929074', 'Q146786', 'Q63997520', 'Q682111'],
             },
             {
+                'section_break': True,
                 'label': 'Primeira Pessoa do Singular do Presente do Modo Subjuntivo',
                 'example': 'Espero que eu [cante] logo.',
                 'grammatical_features_item_ids': ['Q21714344', 'Q110786', 'Q192613', 'Q473746'],
@@ -5047,6 +5137,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q51929074', 'Q146786', 'Q192613', 'Q473746'],
             },
             {
+                'section_break': True,
                 'label': 'Primeira Pessoa do Singular do Pretérito Imperfeito do Modo Subjuntivo',
                 'example': 'Se eu [cantasse] mais alto, seria melhor.',
                 'grammatical_features_item_ids': ['Q21714344', 'Q110786', 'Q12547192', 'Q473746'],
@@ -5077,6 +5168,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q51929074', 'Q146786', 'Q12547192', 'Q473746'],
             },
             {
+                'section_break': True,
                 'label': 'Primeira Pessoa do Singular do Futuro do Modo Subjuntivo',
                 'example': 'Quando eu [cantar] os outros ouvirão.',
                 'grammatical_features_item_ids': ['Q21714344', 'Q110786', 'Q501405', 'Q473746'],
@@ -5107,6 +5199,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q51929074', 'Q146786', 'Q501405', 'Q473746'],
             },
             {
+                'section_break': True,
                 'label': 'Segunda Pessoa do Singular do Modo Imperativo Afirmativo',
                 'example': '[Canta] tu agora que há tempo.',
                 'grammatical_features_item_ids': ['Q51929049', 'Q110786', 'Q22716'],
@@ -5132,6 +5225,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q51929074', 'Q146786', 'Q22716'],
             },
             {
+                'section_break': True,
                 'label': 'Segunda Pessoa do Singular do Modo Imperativo Negativo',
                 'example': 'Não [cantes] tu, ainda não está na hora.',
                 'grammatical_features_item_ids': ['Q51929049', 'Q110786', 'Q64004115'],
@@ -5157,6 +5251,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q51929074', 'Q146786', 'Q64004115'],
             },
             {
+                'section_break': True,
                 'label': 'Primeira Pessoa do Singular do Infinitivo Pessoal',
                 'example': 'Por [cantar] eu ganhei vários prêmios.',
                 'grammatical_features_item_ids': ['Q21714344', 'Q110786', 'Q179230'],
@@ -5195,6 +5290,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q7737',
         'language_code': 'ru',
         'lexical_category_item_id': 'Q1084',
+        'has_sections': True,
         'forms': [
             {
                 'label': 'ед.ч. им.п.',
@@ -5285,6 +5381,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q7737',
         'language_code': 'ru',
         'lexical_category_item_id': 'Q1084',
+        'has_sections': True,
         'forms': [
             {
                 'label': 'ед.ч. им.п.',
@@ -5375,6 +5472,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q7737',
         'language_code': 'ru',
         'lexical_category_item_id': 'Q1084',
+        'has_sections': True,
         'forms': [
             {
                 'label': 'ед.ч. им.п.',
