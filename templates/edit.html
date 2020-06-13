@@ -69,13 +69,21 @@
   <form method="post" autocapitalize="off">
     <input name="_csrf_token" type="hidden" value="{{ csrf_token() }}">
     <input name="_lexeme_revision" type="hidden" value="{{ template.lexeme_revision }}">
-    <dl>
-      {% for form in template.forms %}
-      <div class="form">
-        <dt>{{ form.label }}</dt>
-        <dd>{{ form | form2input(loop.first) }}</dd>
+    <dl{% if template.has_sections %} class="with-sections"{% endif %}>
+      <div class="section">
+        {% for form in template.forms %}
+        {% if form.section_break %}
+        <div class="section-spacer"></div>
       </div>
-      {% endfor %}
+      <hr>
+      <div class="section">
+        {% endif %}
+        <div class="form">
+          <dt>{{ form.label }}</dt>
+          <dd>{{ form | form2input(loop.first) }}</dd>
+        </div>
+        {% endfor %}
+      </div>
     </dl>
     <button class="btn btn-primary">{{ message( 'edit' ) }}</button>
   </form>
