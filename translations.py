@@ -97,7 +97,7 @@ translations = {
         'edit_mismatch_warning': 'Evit doare ne glot ket al leksem-mañ gant ar patrom! Gwiriit mat eo ar patrom a zere evit al leksem a-raok kenderc\'hel ganti.',
         # 'edit_ambiguous_warning': '{forms!p:one=furm:other=a furmoù} al leksem da heul a glote kement ha kement gant furm meur a batrom:',
         # 'edit_unmatched_warning': '{forms!p:one=Furm:other=Furmoù} al leksem da heul ne {forms!p:one=glote:other=glotent} gant furm ebet eus ar patrom:',
-        # 'edit_form_list_item': '{form_link}, {grammatical_feature_labels!l}, {statements!p:|0=disklêriadur ebet:one=un disklêriadur:other={statements} disklêriadur}',
+        # 'edit_form_list_item': '{form_link}, {grammatical_feature_labels!l}, {statements!p:0=disklêriadur ebet:one=un disklêriadur:other={statements} disklêriadur}',
         'no_grammatical_features': 'perzh yezhadurel ebet',
     },
 
@@ -121,6 +121,13 @@ translations = {
         'bulk_heading': 'hromadný mód',
         'bulk_format_help': 'nápověda k formátování',
         'bulk_not_allowed': 'Litujeme, ale nemáte oprávnění k použití hromadného módu.',
+        'edit': 'Editovat',
+        'edit_general': 'Nacházíte se v módu editace. Upravování hodnot níže povede k upravení, přidání, nebo odebrání tvarů z cílového lexému.',
+        'edit_mismatch_warning': 'Zdá se, že tento lexém neodpovídá tomuto vzoru! Prosím, zkontrolujte si, že opravdu používáte správný vzor před tím, než budete pokračovat!',
+        'edit_ambiguous_warning': 'Následující {forms!p:one=tvar:few=tvary:other=tvary} lexému odpovídají více než jednomu vzoru se stejnou pravděpodobností:',
+        'edit_unmatched_warning': 'Následující {forms!p:one=tvar:few=tvary:other=tvary} lexému neodpovídají ani jednomu ze vzorů:',
+        'edit_form_list_item': '{form_link}, {grammatical_feature_labels!l}, {statements!p:0=žádná tvrzení:one=jedno tvrzení:few={statements} tvrzení:other={statements} tvrzení}',
+        'no_grammatical_features': 'bez gramatických vlastností',
     },
 
     # translations by User:So9q and User:Fnielsen, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Danish
