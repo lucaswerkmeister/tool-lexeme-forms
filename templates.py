@@ -5763,6 +5763,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q9027',
         'language_code': 'sv',
         'lexical_category_item_id': 'Q1084',
+        'has_sections': True,
         'forms': [
             {
                 'label': 'nominativ singular, obestämd',
@@ -5785,6 +5786,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q131105', 'Q146786', 'Q53997851'],
             },
             {
+                'section_break': True,
                 'label': 'genitiv singular, obestämd',
                 'example': 'En [bils] utseende.',
                 'grammatical_features_item_ids': ['Q146233', 'Q110786', 'Q53997857'],
@@ -5833,6 +5835,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q9027',
         'language_code': 'sv',
         'lexical_category_item_id': 'Q1084',
+        'has_sections': True,
         'forms': [
             {
                 'label': 'nominativ singular, obestämd',
@@ -5855,6 +5858,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q131105', 'Q146786', 'Q53997851'],
             },
             {
+                'section_break': True,
                 'label': 'genitiv singular, obestämd',
                 'example': 'Ett [bords] utseende.',
                 'grammatical_features_item_ids': ['Q146233', 'Q110786', 'Q53997857'],
@@ -6013,6 +6017,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q8798',
         'language_code': 'uk',
         'lexical_category_item_id': 'Q1084',
+        'has_sections': True,
         'forms': [
             {
                 'label': 'однина, називний відмінок',
@@ -6113,6 +6118,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q8798',
         'language_code': 'uk',
         'lexical_category_item_id': 'Q1084',
+        'has_sections': True,
         'forms': [
             {
                 'label': 'однина, називний відмінок',
@@ -6213,6 +6219,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q8798',
         'language_code': 'uk',
         'lexical_category_item_id': 'Q1084',
+        'has_sections': True,
         'forms': [
             {
                 'label': 'однина, називний відмінок',
