@@ -247,6 +247,7 @@ def test_add_form_data_to_template():
                 'label': 'singular',
                 'example': 'One [thing].',
                 'grammatical_features_item_ids': ['Q110786'],
+                'value': 'Noun',
             },
             {
                 'label': 'plural',
@@ -264,6 +265,43 @@ def test_add_form_data_to_template():
                 'example': 'One [thing].',
                 'grammatical_features_item_ids': ['Q110786'],
                 'value': 'noun',
+            },
+            {
+                'label': 'plural',
+                'example': 'Two [things]',
+                'grammatical_features_item_ids': ['Q146786'],
+                'value': 'nouns',
+            },
+        ],
+        'other_data': 'preserve',
+    }
+
+def test_add_form_data_to_template_no_overwrite():
+    form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', 'noun'), ('form_representation', 'nouns')])
+    template = {
+        'forms': [
+            {
+                'label': 'singular',
+                'example': 'One [thing].',
+                'grammatical_features_item_ids': ['Q110786'],
+                'value': 'Noun',
+            },
+            {
+                'label': 'plural',
+                'example': 'Two [things]',
+                'grammatical_features_item_ids': ['Q146786'],
+            },
+        ],
+        'other_data': 'preserve',
+    }
+    new_template = lexeme_forms.add_form_data_to_template(form_data, template, overwrite=False)
+    assert new_template == {
+        'forms': [
+            {
+                'label': 'singular',
+                'example': 'One [thing].',
+                'grammatical_features_item_ids': ['Q110786'],
+                'value': 'Noun',
             },
             {
                 'label': 'plural',

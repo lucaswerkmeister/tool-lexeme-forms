@@ -364,10 +364,16 @@ def process_template_edit(template_name, lexeme_id):
     flask.g.language_code = language_code
     wiki = 'test' if 'test' in template else 'www'
 
-    if flask.request.method == 'POST':
+    # Whether we should treat this request as a “submit”.
+    # The ‘edit’ “link” in duplicate warnings also uses POST, but isn’t a “submit”.
+    wants_to_submit = flask.request.method == 'POST' and flask.request.referrer == current_url()
+
+    if '_lexeme_revision' in flask.request.form:
         lexeme_revision = flask.request.form['_lexeme_revision']
         lexeme_data = get_lexeme_data(lexeme_id, wiki, lexeme_revision)
     else:
+        if wants_to_submit:
+            raise ValueError('Tried to submit edit without specifying lexeme revision!')
         lexeme_data = get_lexeme_data(lexeme_id, wiki)
         lexeme_revision = lexeme_data['lastrevid']
 
@@ -381,9 +387,7 @@ def process_template_edit(template_name, lexeme_id):
     template['lexeme_id'] = lexeme_id
     template['lexeme_revision'] = lexeme_revision
 
-    if (flask.request.method == 'POST' and
-        flask.request.referrer == current_url() and
-        csrf_token_matches(flask.request.form)):
+    if wants_to_submit and csrf_token_matches(flask.request.form):
         form_data = flask.request.form
         lexeme_data = update_lexeme(lexeme_data, template, form_data, missing_statements=lexeme_match['missing_statements'])
         summary = build_summary(template, form_data)
@@ -395,13 +399,12 @@ def process_template_edit(template_name, lexeme_id):
             print(summary)
             return flask.jsonify(lexeme_data)
 
+    for template_form in template['forms']:
+        lexeme_forms = template_form.get('lexeme_forms')
+        if lexeme_forms: # TODO use walrus operator in Python 3.8
+            template_form['value'] = '/'.join(lexeme_form['representations'][language_code]['value'] for lexeme_form in lexeme_forms)
     if flask.request.method == 'POST':
-        template = add_form_data_to_template(flask.request.form, template)
-    else:
-        for template_form in template['forms']:
-            lexeme_forms = template_form.get('lexeme_forms')
-            if lexeme_forms: # TODO use walrus operator in Python 3.8
-                template_form['value'] = '/'.join(lexeme_form['representations'][language_code]['value'] for lexeme_form in lexeme_forms)
+        template = add_form_data_to_template(flask.request.form, template, overwrite=wants_to_submit)
 
     add_labels_to_lexeme_forms_grammatical_features(
         mwapi.Session(
@@ -418,7 +421,7 @@ def process_template_edit(template_name, lexeme_id):
         lemmas=lexeme_data['lemmas'],
         lexeme_matches_template=lexeme_matches_template,
         advanced=True, # for form2input
-        csrf_error=flask.request.method == 'POST',
+        csrf_error=wants_to_submit,
     )
 
 def if_no_such_template_redirect(template_name):
@@ -588,10 +591,11 @@ def get_lexeme_data(lexeme_id, wiki, revision=None):
     lexeme_data = entities_data['entities'][lexeme_id]
     return lexeme_data
 
-def add_form_data_to_template(form_data, template):
+def add_form_data_to_template(form_data, template, overwrite=True):
     template = copy.deepcopy(template)
     for (form_representation, form) in zip(form_data.getlist('form_representation'), template['forms']):
-        form['value'] = form_representation
+        if overwrite or not form.get('value'):
+            form['value'] = form_representation
     if 'lexeme_id' in form_data:
         template['lexeme_id'] = form_data['lexeme_id']
     if 'generated_via' in form_data:

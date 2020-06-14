@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const url = `${baseUrl}api/v1/no_duplicate/${template.language_code}`;
             return fetch(url, init).then(response => response.text()).then(noDuplicateHtml => {
                 const duplicatesWarning = document.createElement('div');
-                document.querySelector('form').insertAdjacentElement('beforebegin', duplicatesWarning);
+                document.querySelector('form').insertAdjacentElement('afterbegin', duplicatesWarning);
                 duplicatesWarning.outerHTML = duplicatesWarningHtml;
 
                 const noDuplicate = document.createElement('label');
