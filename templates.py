@@ -135,14 +135,9 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146078'],
             },
             {
-                'label': 'অধিকরণ কারক (-য়-কারান্ত)',
-                'example': 'ওর [জামায়] একটা দাগ আছে।',
+                'label': 'অধিকরণ কারক (-য়-কারান্ত/-তে অক্ষরান্ত)',
+                'example': 'ওর [জামায়/জামাতে] একটা দাগ আছে।',
                 'grammatical_features_item_ids': ['Q202142'],
-            },
-            {
-                'label': 'অধিকরণ কারক (-তে অক্ষরান্ত)',
-                'example': 'ওর [জামাতে] একটা দাগ আছে।',
-                'grammatical_features_item_ids': ['Q202142', 'Q59342809'],
             },
         ],
     }),
