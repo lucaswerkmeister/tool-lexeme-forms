@@ -70,7 +70,7 @@ translations = {
         'edit_mismatch_warning': 'এই লেক্সিম এই টেমপ্লেটের সঙ্গে সামঞ্জস্যপূর্ণ বলে মনে হচ্ছে না! দয়া করে এগোনোর আগে এটি সঠিক টেমপ্লেট কিনা আরেকবার যাচাই করে নিন।',
         'edit_ambiguous_warning': 'পরবর্তী লেক্সিমটির {forms!p:one=শব্দরূপটি:other=শব্দরূপগুলি} একাধিক টেমপ্লেটের সঙ্গে সমানভাবে সামঞ্জস্য রক্ষা করছে:',
         'edit_unmatched_warning': 'পরবর্তী লেক্সিমটির {forms!p:one=শব্দরূপটি:other=শব্দরূপগুলি} কোন টেম্পলেটের সঙ্গে সামঞ্জস্য রক্ষা করছে না:',
-        'edit_form_list_item': '{form_link}, {grammatical_feature_labels!l}, {statements!p:0=বিবৃতি নেই:one=একটি বিবৃতি:other={statements}টি বিবৃতি}}',
+        'edit_form_list_item': '{form_link}, {grammatical_feature_labels!l}, {statements!p:0=বিবৃতি নেই:one=একটি বিবৃতি:other={statements}টি বিবৃতি}',
         'no_grammatical_features': 'কোন ব্যাকরণগত বৈশিষ্ট্য নেই',
     },
 
