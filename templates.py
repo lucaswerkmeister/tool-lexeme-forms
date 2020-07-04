@@ -4042,6 +4042,111 @@ templates = collections.OrderedDict([
         ],
     }),
 
+    ('bokmål-adjective', {
+        '@attribution': {'users': ['Jon Harald Søby'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Bokmål'},
+        'label': 'bokmål adjektiv',
+        'language_item_id': 'Q25167',
+        'language_code': 'nb',
+        'lexical_category_item_id': 'Q34698',
+        'forms': [
+            {
+                'label': 'ubestemt hankjønn og hunkjønn',
+                'example': 'En [flink] person.',
+                'grammatical_features_item_ids': ['Q110786', 'Q53997857', 'Q499327', 'Q1775415'],
+            },
+            {
+                'label': 'ubestemt intetkjønn',
+                'example': 'Et [flinkt] barn.',
+                'grammatical_features_item_ids': ['Q110786', 'Q53997857', 'Q1775461'],
+            },
+            {
+                'label': 'bestemt entall',
+                'example': 'Det [flinke] barnet.',
+                'grammatical_features_item_ids': ['Q110786', 'Q53997851'],
+            },
+            {
+                'label': 'flertall',
+                'example': 'De [flinke] barna.',
+                'grammatical_features_item_ids': ['Q146786'],
+            },
+            {
+                'label': 'komparativ',
+                'example': 'En [flinkere] person.',
+                'grammatical_features_item_ids': ['Q14169499'],
+            },
+            {
+                'label': 'superlativ',
+                'example': 'Barnet var [flinkest].',
+                'grammatical_features_item_ids': ['Q1817208'],
+            },
+            {
+                'label': 'superlativ, bestemt form',
+                'example': 'Det [flinkeste] barnet.',
+                'grammatical_features_item_ids': ['Q1817208', 'Q53997851'],
+            },
+        ],
+    }),
+
+    ('bokmål-verb', {
+        '@attribution': {'users': ['Jon Harald Søby'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Bokmål'},
+        'label': 'bokmål verb',
+        'language_item_id': 'Q25167',
+        'language_code': 'nb',
+        'lexical_category_item_id': 'Q24905',
+        'forms': [
+            {
+                'label': 'infinitiv',
+                'example': 'Å [hilse].',
+                'grammatical_features_item_ids': ['Q179230'],
+            },
+            {
+                'label': 'presens',
+                'example': 'Jeg [hilser].',
+                'grammatical_features_item_ids': ['Q192613'],
+            },
+            {
+                'label': 'preteritum',
+                'example': 'Jeg [hilste].',
+                'grammatical_features_item_ids': ['Q442485'],
+            },
+            {
+                'label': 'presens perfektum',
+                'example': 'Jeg har [hilst].',
+                'grammatical_features_item_ids': ['Q1240211'],
+            },
+            {
+                'label': 'imperativ',
+                'example': '[Hils]!',
+                'grammatical_features_item_ids': ['Q22716'],
+            },
+            {
+                'label': 'perfektum partisipp, hankjønn og hunkjønn',
+                'example': 'En [hilst] person.',
+                'grammatical_features_item_ids': ['Q12717679', 'Q110786', 'Q53997857', 'Q499327', 'Q1775415'],
+            },
+            {
+                'label': 'perfektum partisipp, intetkjønn',
+                'example': 'Et [hilst] barn.',
+                'grammatical_features_item_ids': ['Q12717679', 'Q110786', 'Q53997857', 'Q1775461'],
+            },
+            {
+                'label': 'perfektum partisipp, bestemt form',
+                'example': 'Den [hilste] personen.',
+                'grammatical_features_item_ids': ['Q12717679', 'Q110786', 'Q53997851'],
+            },
+            {
+                'label': 'perfektum partisipp, flertall',
+                'example': 'Mange [hilste] personer.',
+                'grammatical_features_item_ids': ['Q12717679', 'Q146786'],
+            },
+            {
+                'label': 'presens partisipp',
+                'example': 'En [hilsende] person.',
+                'grammatical_features_item_ids': ['Q10345583'],
+            },
+        ],
+    }),
+
     ('dutch-neuter-noun', {
         '@attribution': {'users': ['MarcoSwart'], 'title': 'Wikidata:Wikidata Lexeme Forms/Dutch'},
         'label': 'Nederlands onzijdig zelfstandig naamwoord',

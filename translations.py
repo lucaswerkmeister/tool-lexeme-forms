@@ -402,6 +402,35 @@ translations = {
         'bulk_not_allowed': 'ബൾക്ക് മോഡ് ഉപയോഗിക്കാൻ നിങ്ങൾക്ക് അനുവാദമില്ല. ക്ഷമിക്കണം.',
     },
 
+    # translations by User:Danmichaelo and User:Jon Harald Søby, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Norwegian_Bokmål
+    'nb': {
+        'create': 'Opprett',
+        'csrf_warning': 'Forespørselen din ble ikke behandlet på grunn av et <abbr title="Cross-site request forgery">CSRF</abbr>-problem. Prøv gjerne om igjen.',
+        'duplicates_warning': 'Følgende eksisterende leksemer har samme lemma og språkkode som de du holder på å opprette:',
+        'duplicates_instructions': 'Hvis du er sikker på at de er ulike kan du hake av i avkrysningsboksen i skjemaet.',
+        'no_duplicate': 'Dette er ikke et duplikat av et leksem som finnes fra før.',
+        'advanced': 'Avansert',
+        'advanced_general': 'Du er i avansert modus.',
+        'advanced_lexeme_id': 'Du kan skrive inn ID-en til et leksem som allerede finnes i stedet for å opprette et nytt. La alle formene som allerede er lagt inn stå tomme, ellers blir de duplisert!',
+        'advanced_partial_forms': 'Du kan la noen felt stå tomme slik at de ikke blir lagt til, men pass på at du ikke glemmer å fylle inn noen av formene som skal være med.',
+        'lexeme_id': 'Leksem-ID',
+        'generated_via': 'generert via',
+        'description_with_forms_and_senses': '{description}, {forms!p:0=ingen former:one=én form:other={forms} former} og {senses!p:0=ingen betydninger:one=én betydning:other={senses} betydninger}',
+        'bulk_link': 'masseinnleggingsmodus',
+        'bulk_button': 'Masseinnleggingsmodus',
+        'bulk_heading': 'masseinnleggingsmodus',
+        'bulk_format_help': 'formathjelp',
+        'bulk_not_allowed': 'Du har dessverre ikke tillatelse til å bruke masseinnleggingsmodus.',
+        'edit_button': 'Rediger',
+        'edit_link': 'rediger',
+        'edit_general': 'Du er i redigeringsmodus. Hvis du endrer verdiene nedenfor blir målleksemet redigert.',
+        'edit_mismatch_warning': 'Dette leksemet passer ikke med denne malen! Dobbeltsjekk at det er riktig mal for dette leksemet før du fortsetter.',
+        'edit_ambiguous_warning': '{forms!p:one=Denne leksemformen:other=Følgende leksemformer} matchet mer enn ett malskjema like godt:',
+        'edit_unmatched_warning': '{forms!p:one=Denne leksemformen:other=Følgende leksemformer} matchet ikke noen av malskjemaene:',
+        'edit_form_list_item': '{form_link}, {grammatical_feature_labels!l}, {statements!p:0=ingen påstander:one=én påstand:other={statements} påstander}',
+        'no_grammatical_features': 'ingen grammatiske trekk',
+    },
+
     # translations by User:MarcoSwart, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Dutch
     'nl': {
         'create': 'Aanmaken',
