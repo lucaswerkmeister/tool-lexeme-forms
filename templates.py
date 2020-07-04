@@ -4042,6 +4042,161 @@ templates = collections.OrderedDict([
         ],
     }),
 
+    ('bokmål-noun-masculine', {
+        '@attribution': {'users': ['Danmichaelo'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Bokmål'},
+        'label': 'bokmål hankjønnssubstantiv',
+        'language_item_id': 'Q25167',
+        'language_code': 'nb',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'ubestemt entall',
+                'example': 'Dette er en [båt].',
+                'grammatical_features_item_ids': ['Q110786', 'Q53997857'],
+            },
+            {
+                'label': 'bestemt entall',
+                'example': 'Dette er [båten].',
+                'grammatical_features_item_ids': ['Q110786', 'Q53997851'],
+            },
+            {
+                'label': 'ubestemt flertall',
+                'example': 'Dette er noen [båter].',
+                'grammatical_features_item_ids': ['Q146786', 'Q53997857'],
+            },
+            {
+                'label': 'bestemt flertall',
+                'example': 'Dette er [båtene].',
+                'grammatical_features_item_ids': ['Q146786', 'Q53997851'],
+            },
+        ],
+        'statements': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q499327',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
+
+    ('bokmål-noun-feminine', {
+        '@attribution': {'users': ['Danmichaelo', 'Jon Harald Søby'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Bokmål'},
+        'label': 'bokmål hunkjønnssubstantiv',
+        'language_item_id': 'Q25167',
+        'language_code': 'nb',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'ubestemt entall',
+                'example': 'Dette er ei [liste].',
+                'grammatical_features_item_ids': ['Q110786', 'Q53997857'],
+            },
+            {
+                'label': 'bestemt entall hunkjønn',
+                'example': 'Dette er [lista].',
+                'grammatical_features_item_ids': ['Q110786', 'Q53997851', 'Q1775415'],
+            },
+            {
+                'label': 'bestemt entall hankjønn',
+                'example': 'Dette er [listen].',
+                'grammatical_features_item_ids': ['Q110786', 'Q53997851', 'Q499327'],
+            },
+            {
+                'label': 'ubestemt flertall',
+                'example': 'Dette er noen [lister].',
+                'grammatical_features_item_ids': ['Q146786', 'Q53997857'],
+            },
+            {
+                'label': 'bestemt flertall',
+                'example': 'Dette er [listene].',
+                'grammatical_features_item_ids': ['Q146786', 'Q53997851'],
+            },
+        ],
+        'statements': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q1775415',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
+
+    ('bokmål-noun-neuter', {
+        '@attribution': {'users': ['Danmichaelo'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Bokmål'},
+        'label': 'bokmål intetkjønnssubstantiv',
+        'language_item_id': 'Q25167',
+        'language_code': 'nb',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'ubestemt entall',
+                'example': 'Dette er et [hus].',
+                'grammatical_features_item_ids': ['Q110786', 'Q53997857'],
+            },
+            {
+                'label': 'bestemt entall',
+                'example': 'Dette er [huset].',
+                'grammatical_features_item_ids': ['Q110786', 'Q53997851'],
+            },
+            {
+                'label': 'ubestemt flertall',
+                'example': 'Dette er noen [hus].',
+                'grammatical_features_item_ids': ['Q146786', 'Q53997857'],
+            },
+            {
+                'label': 'bestemt flertall',
+                'example': 'Dette er [husa].',
+                'grammatical_features_item_ids': ['Q146786', 'Q53997851'],
+            },
+        ],
+        'statements': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q1775461',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
+
     ('bokmål-adjective', {
         '@attribution': {'users': ['Jon Harald Søby'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Bokmål'},
         'label': 'bokmål adjektiv',
