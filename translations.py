@@ -414,6 +414,7 @@ translations = {
         'advanced_lexeme_id': 'Du kan skrive inn ID-en til et leksem som allerede finnes i stedet for å opprette et nytt. La alle formene som allerede er lagt inn stå tomme, ellers blir de duplisert!',
         'advanced_partial_forms': 'Du kan la noen felt stå tomme slik at de ikke blir lagt til, men pass på at du ikke glemmer å fylle inn noen av formene som skal være med.',
         'lexeme_id': 'Leksem-ID',
+        'advanced_partial_forms_hint': 'Bytt til avansert modus om du ønsker å opprette leksemer uten alle formene.',
         'generated_via': 'generert via',
         'description_with_forms_and_senses': '{description}, {forms!p:0=ingen former:one=én form:other={forms} former} og {senses!p:0=ingen betydninger:one=én betydning:other={senses} betydninger}',
         'bulk_link': 'masseinnleggingsmodus',
