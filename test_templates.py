@@ -72,6 +72,26 @@ def test_examples_valid(template_name, form):
 
 
 expected_example_counts = {
+    'bengali-verb': {
+        'তুমি [দেখো]।': 3,
+        'সে [দেখুক]।': 2,
+        'তিনি [দেখুন]।': 2,
+        'তুই [দেখিস]।': 3,
+        'সে [দেখবে]।': 2,
+        'সে [দেখিবে]।': 2,
+        'তিনি [দেখবেন]।': 2,
+        'তিনি [দেখিবেন]।': 2,
+    },
+    'bengali-verb-ano': {
+        'তুমি [দেখাও]।': 3,
+        'তুই [দেখাস]।': 2,
+        'তিনি [দেখান]।': 2,
+        'সে [দেখাক]।': 2,
+        'সে [দেখাবে]।': 2,
+        'সে [দেখাইবে]।': 2,
+        'তিনি [দেখাবেন]।': 2,
+        'তিনি [দেখাইবেন]।': 2,
+    },
     'czech-verb-perfective': {
         'Ona by [zazpívala].': 2,
     }
@@ -134,4 +154,3 @@ def test_sections_declared(template_name):
             break
     if has_sections:
         assert template.get('has_sections', False)
-
