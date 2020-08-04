@@ -67,7 +67,8 @@ def test_labels_not_valid_examples(template_name, form):
     for form in templates.templates[template_name]['forms']
 ])
 def test_examples_valid(template_name, form):
-    app.split_example(form)
+    prefix, placeholder, suffix = app.split_example(form)
+    assert placeholder != ''
 
 
 ambiguous_examples = {
