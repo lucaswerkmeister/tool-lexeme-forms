@@ -71,21 +71,23 @@ def test_examples_valid(template_name, form):
     assert placeholder != ''
 
 
-ambiguous_examples = {
-    'Ona by [zazpívala].',
-    'Nosotros [cantamos] mucho.',
+expected_example_counts = {
+    'czech-verb-perfective': {
+        'Ona by [zazpívala].': 2,
+    }
 }
 
 
 @pytest.mark.parametrize('template_name', templates.templates.keys())
 def test_examples_distinct(template_name):
     template = templates.templates[template_name]
-    examples = set()
+    examples = {}
     for form in template['forms']:
         example = form['example']
-        if example not in ambiguous_examples:
-            assert example not in examples
-        examples.add(example)
+        examples[example] = examples.get(example, 0) + 1
+    actual_counts = { example: count for example, count in examples.items() if count > 1 }
+    expected_counts = expected_example_counts.get(template_name, {})
+    assert actual_counts == expected_counts
 
 
 @pytest.mark.parametrize('template_name', templates.templates.keys())
