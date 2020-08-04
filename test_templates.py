@@ -90,6 +90,16 @@ def test_examples_distinct(template_name):
     assert actual_counts == expected_counts
 
 
+@pytest.mark.parametrize('template_name, form', [
+    (template_name, form)
+    for template_name in templates.templates.keys()
+    for form in templates.templates[template_name]['forms']
+])
+def test_grammatical_feature_item_ids_distinct(template_name, form):
+    grammatical_features_item_ids = form['grammatical_features_item_ids']
+    assert len(set(grammatical_features_item_ids)) == len(grammatical_features_item_ids)
+
+
 @pytest.mark.parametrize('template_name', templates.templates.keys())
 def test_attribution_available(template_name):
     template = templates.templates[template_name]
