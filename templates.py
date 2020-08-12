@@ -278,7 +278,7 @@ templates = collections.OrderedDict([
             },
             {
                 'label': 'সাধারণ বর্তমান, সাধারণ মধ্যমপুরুষ',
-                'example': 'তুমি [দেখো]।',
+                'example': 'তুমি [দেখ]।',
                 'grammatical_features_item_ids': ['Q3910936', 'Q56650487'],
             },
             {
@@ -360,12 +360,12 @@ templates = collections.OrderedDict([
             },
             {
                 'label': 'পুরাঘটিত বর্তমান, সাধারণ মধ্যমপুরুষ, চলিত ভাষা',
-                'example': 'তুমি [দেখেছো]।',
+                'example': 'তুমি [দেখেছ]।',
                 'grammatical_features_item_ids': ['Q1240211', 'Q56650487', 'Q75242466'],
             },
             {
                 'label': 'পুরাঘটিত বর্তমান, সাধারণ মধ্যমপুরুষ, সাধু ভাষা',
-                'example': 'তুমি [দেখিয়াছো]।',
+                'example': 'তুমি [দেখিয়াছ]।',
                 'grammatical_features_item_ids': ['Q1240211', 'Q56650487', 'Q20613396'],
             },
             {
@@ -753,7 +753,7 @@ templates = collections.OrderedDict([
             },
             {
                 'label': 'সর্তজ্ঞাপক অসমাপিকা ক্রিয়া, সাধু ভাষা',
-                'example': 'এটা [দেখিলে] ভালো লাগে।',
+                'example': 'ইহা [দেখিলে] ভালো লাগে।',
                 'grammatical_features_item_ids': ['Q625581', 'Q1050494', 'Q20613396'],
             },
             {
@@ -763,7 +763,7 @@ templates = collections.OrderedDict([
             },
             {
                 'label': 'সম্বন্ধবাচক ভাববিশেষ্য, সাধু ভাষা',
-                'example': 'আমি সেটা [দেখিবার] জন্য গিয়াছিলাম।',
+                'example': 'আমি তাহা [দেখিবার] জন্য গিয়াছিলাম।',
                 'grammatical_features_item_ids': ['Q146233', 'Q1350145', 'Q20613396'],
             },
         ],
@@ -938,7 +938,7 @@ templates = collections.OrderedDict([
             },
             {
                 'label': 'বর্তমান অনুজ্ঞা, সম্ভ্রমার্থ রূপ, সাধু ভাষা',
-                'example': 'তিনি [দেখাক]।',
+                'example': 'তিনি [দেখান]।',
                 'grammatical_features_item_ids': ['Q52434162', 'Q56650512', 'Q20613396'],
             },
             {
@@ -1214,7 +1214,7 @@ templates = collections.OrderedDict([
             },
             {
                 'label': 'ভবিষ্যৎ অনুজ্ঞা, তুচ্ছার্থ মধ্যমপুরুষ, সাধু ভাষা',
-                'example': 'তুই [দেখাইস]।',
+                'example': 'তুই [দেখাস]।',
                 'grammatical_features_item_ids': ['Q75244800', 'Q56650485', 'Q20613396'],
             },
             {
@@ -1265,7 +1265,7 @@ templates = collections.OrderedDict([
             },
             {
                 'label': 'সর্তজ্ঞাপক অসমাপিকা ক্রিয়া, সাধু ভাষা',
-                'example': 'এটা [দেখাইলে] ভালো লাগে।',
+                'example': 'ইহা [দেখাইলে] ভালো লাগে।',
                 'grammatical_features_item_ids': ['Q625581', 'Q1050494', 'Q20613396'],
             },
             {
@@ -1275,7 +1275,7 @@ templates = collections.OrderedDict([
             },
             {
                 'label': 'সম্বন্ধবাচক ভাববিশেষ্য, সাধু ভাষা',
-                'example': 'আমি সেটা [দেখাইবার] জন্য গিয়াছিলাম।',
+                'example': 'আমি তাহা [দেখাইবার] জন্য গিয়াছিলাম।',
                 'grammatical_features_item_ids': ['Q146233', 'Q1350145', 'Q20613396'],
             },
         ],
