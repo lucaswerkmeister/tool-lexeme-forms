@@ -242,6 +242,21 @@ templates = collections.OrderedDict([
         ],
     }),
 
+    ('bengali-adverb', {
+        '@attribution': {'users': ['Mahir256', 'Bodhisattwa'], 'title': 'Wikidata:Wikidata Lexeme Forms/Bengali'},
+        'label': 'ক্রিয়া বিশেষণ',
+        'language_item_id': 'Q9610',
+        'language_code': 'bn',
+        'lexical_category_item_id': 'Q380057',
+        'forms': [
+            {
+                'label': 'সাধারণ',
+                'example': 'ইনি [দ্রুত] করে দেবেন।',
+                'grammatical_features_item_ids': ['Q3482678'],
+            },
+        ],
+    }),
+
     ('bengali-verb', {
         '@attribution': {'users': ['Bodhisattwa', 'Mahir256', 'Tanay barisha'], 'title': 'Wikidata:Wikidata Lexeme Forms/Bengali'},
         'label': 'ক্রিয়াপদ',
