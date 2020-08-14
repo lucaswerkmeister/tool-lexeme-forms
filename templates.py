@@ -1107,12 +1107,12 @@ templates = collections.OrderedDict([
             },
             {
                 'label': 'নিত্যবৃত্ত অতীত, তুচ্ছার্থ মধ্যমপুরুষ, চলিত ভাষা',
-                'example': 'তুই [দেখাতি]।',
+                'example': 'তুই [দেখাতিস]।',
                 'grammatical_features_item_ids': ['Q75243920', 'Q56650485', 'Q75242466'],
             },
             {
                 'label': 'নিত্যবৃত্ত অতীত, তুচ্ছার্থ মধ্যমপুরুষ, সাধু ভাষা',
-                'example': 'তুই [দেখাইতি]।',
+                'example': 'তুই [দেখাইতিস]।',
                 'grammatical_features_item_ids': ['Q75243920', 'Q56650485', 'Q20613396'],
             },
             {
