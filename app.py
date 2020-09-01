@@ -177,6 +177,9 @@ def message(message_code, language_code=None):
 def message_with_language(message_code, language_code=None):
     if not language_code:
         language_code = flask.g.language_code
+    if language_code == 'bn-x-Q6747180':
+        # Manbhumi reuses the standard Bengali messages
+        language_code = 'bn'
     if message_code not in translations[language_code]:
         language_code = 'en'
     text = translations[language_code][message_code]

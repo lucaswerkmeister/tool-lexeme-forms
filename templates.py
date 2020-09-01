@@ -1281,6 +1281,36 @@ templates = collections.OrderedDict([
         ],
     }),
 
+    ('manbhumi-adjective', {
+        '@attribution': {'users': ['Bodhisattwa'], 'title': 'Wikidata:Wikidata Lexeme Forms/Manbhumi'},
+        'label': 'বিশেষণ',
+        'language_item_id': 'Q6747180',
+        'language_code': 'bn-x-Q6747180',
+        'lexical_category_item_id': 'Q34698',
+        'forms': [
+            {
+                'label': 'সাধারণ',
+                'example': 'উ [বেহায়া] লক বটে।',
+                'grammatical_features_item_ids': ['Q3482678'],
+            },
+        ],
+    }),
+
+    ('manbhumi-adverb', {
+        '@attribution': {'users': ['Bodhisattwa'], 'title': 'Wikidata:Wikidata Lexeme Forms/Manbhumi'},
+        'label': 'ক্রিয়া বিশেষণ',
+        'language_item_id': 'Q6747180',
+        'language_code': 'bn-x-Q6747180',
+        'lexical_category_item_id': 'Q380057',
+        'forms': [
+            {
+                'label': 'সাধারণ',
+                'example': 'উ [ঝট্‌] কর‍্যে চল্যে যাবেক।',
+                'grammatical_features_item_ids': ['Q3482678'],
+            },
+        ],
+    }),
+
     ('breton-noun-without-mutation', {
         '@attribution': {'users': ['VIGNERON', 'Fulup'], 'title': 'Wikidata:Wikidata Lexeme Forms/Breton'},
         'label': 'anvioù-kadarn (hep kemmadur)',
