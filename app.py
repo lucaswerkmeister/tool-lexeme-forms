@@ -508,11 +508,13 @@ def get_duplicates(wiki, language_code, lemma):
         user_agent=user_agent,
     )
 
+    api_language_code = 'bn' if language_code == 'bn-x-Q6747180' else language_code
+
     response = session.get(
         action='wbsearchentities',
         search=lemma,
-        language=language_code,
-        uselang=language_code, # for the result descriptions
+        language=api_language_code,
+        uselang=api_language_code, # for the result descriptions
         type='lexeme',
         limit=50,
     )
