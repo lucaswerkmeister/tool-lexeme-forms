@@ -97,7 +97,7 @@ expected_example_counts = {
     },
     'czech-verb-perfective': {
         'Ona by [zazpívala].': 2,
-    }
+    },
 }
 
 
