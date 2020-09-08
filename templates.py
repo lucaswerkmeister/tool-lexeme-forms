@@ -1311,6 +1311,288 @@ templates = collections.OrderedDict([
         ],
     }),
 
+    ('manbhumi-verb', {
+        '@attribution': {'users': ['Bodhisattwa'], 'title': 'Wikidata:Wikidata Lexeme Forms/Manbhumi'},
+        'label': 'ক্রিয়াপদ',
+        'language_item_id': 'Q6747180',
+        'language_code': 'bn-x-Q6747180',
+        'lexical_category_item_id': 'Q24905',
+        'has_sections': True,
+        'forms': [
+            {
+                'label': 'ভাববাচক বিশেষ্য',
+                'example': 'আমার [ভালা] হল।',
+                'grammatical_features_item_ids': ['Q1350145'],
+            },
+            {
+                'section_break': True,
+                'label': 'সাধারণ বর্তমান, উত্তম পুরুষ',
+                'example': 'আমি [ভালি]।',
+                'grammatical_features_item_ids': ['Q3910936', 'Q21714344'],
+            },
+            {
+                'label': 'সাধারণ বর্তমান, সাধারণ মধ্যমপুরুষ',
+                'example': 'তুমি [ভাল]।',
+                'grammatical_features_item_ids': ['Q3910936', 'Q56650487'],
+            },
+            {
+                'label': 'সাধারণ বর্তমান, তুচ্ছার্থ মধ্যমপুরুষ',
+                'example': 'তুঁই [ভালিস]।',
+                'grammatical_features_item_ids': ['Q3910936', 'Q56650485'],
+            },
+            {
+                'label': 'সাধারণ বর্তমান, প্রথম পুরুষ',
+                'example': 'উ [ভালে]।',
+                'grammatical_features_item_ids': ['Q3910936', 'Q51929074'],
+            },
+            {
+                'label': 'সাধারণ বর্তমান, সম্ভ্রমার্থ রূপ',
+                'example': 'উনি [ভালেন]।',
+                'grammatical_features_item_ids': ['Q3910936', 'Q56650512'],
+            },
+            {
+                'section_break': True,
+                'label': 'ঘটমান বর্তমান, উত্তম পুরুষ',
+                'example': 'আমি [ভাইলছি]।',
+                'grammatical_features_item_ids': ['Q7240943', 'Q21714344'],
+            },
+            {
+                'label': 'ঘটমান বর্তমান, সাধারণ মধ্যমপুরুষ',
+                'example': 'তুমি [ভাইলছ]।',
+                'grammatical_features_item_ids': ['Q7240943', 'Q56650487'],
+            },
+            {
+                'label': 'ঘটমান বর্তমান, তুচ্ছার্থ মধ্যমপুরুষ',
+                'example': 'তুঁই [ভাইলছিস]।',
+                'grammatical_features_item_ids': ['Q7240943', 'Q56650485'],
+            },
+            {
+                'label': 'ঘটমান বর্তমান, প্রথম পুরুষ',
+                'example': 'উ [ভাইলছে]।',
+                'grammatical_features_item_ids': ['Q7240943', 'Q51929074'],
+            },
+            {
+                'label': 'ঘটমান বর্তমান, সম্ভ্রমার্থ রূপ',
+                'example': 'উনি [ভাইলছেন]।',
+                'grammatical_features_item_ids': ['Q7240943', 'Q56650512'],
+            },
+            {
+                'section_break': True,
+                'label': 'পুরাঘটিত বর্তমান, উত্তম পুরুষ',
+                'example': 'আমি [ভাইলেছি]।',
+                'grammatical_features_item_ids': ['Q1240211', 'Q21714344'],
+            },
+            {
+                'label': 'পুরাঘটিত বর্তমান, সাধারণ মধ্যমপুরুষ',
+                'example': 'তুমি [ভাইলেছ]।',
+                'grammatical_features_item_ids': ['Q1240211', 'Q56650487'],
+            },
+            {
+                'label': 'পুরাঘটিত বর্তমান, তুচ্ছার্থ মধ্যমপুরুষ',
+                'example': 'তুঁই [ভাইলেছিস]।',
+                'grammatical_features_item_ids': ['Q1240211', 'Q56650485'],
+            },
+            {
+                'label': 'পুরাঘটিত বর্তমান, প্রথম পুরুষ',
+                'example': 'উ [ভাইলেছে]।',
+                'grammatical_features_item_ids': ['Q1240211', 'Q51929074'],
+            },
+            {
+                'label': 'পুরাঘটিত বর্তমান, সম্ভ্রমার্থ রূপ',
+                'example': 'উনি [ভাইলেছেন]।',
+                'grammatical_features_item_ids': ['Q1240211', 'Q56650512'],
+            },
+            {
+                'section_break': True,
+                'label': 'বর্তমান অনুজ্ঞা, সাধারণ মধ্যমপুরুষ',
+                'example': 'তুমি [ভালো]।',
+                'grammatical_features_item_ids': ['Q52434162', 'Q56650487'],
+            },
+            {
+                'label': 'বর্তমান অনুজ্ঞা, তুচ্ছার্থ মধ্যমপুরুষ',
+                'example': 'তুঁই [ভাল্‌]।',
+                'grammatical_features_item_ids': ['Q52434162', 'Q56650485'],
+            },
+            {
+                'label': 'বর্তমান অনুজ্ঞা, প্রথম পুরুষ',
+                'example': 'উ [ভালুক]।',
+                'grammatical_features_item_ids': ['Q52434162', 'Q51929074'],
+            },
+            {
+                'label': 'বর্তমান অনুজ্ঞা, সম্ভ্রমার্থ রূপ',
+                'example': 'উনি [ভালুন]।',
+                'grammatical_features_item_ids': ['Q52434162', 'Q56650512'],
+            },
+            {
+                'section_break': True,
+                'label': 'সাধারণ অতীত, উত্তম পুরুষ',
+                'example': 'আমি [ভাইললম/ভাইললি]।',
+                'grammatical_features_item_ids': ['Q1392475', 'Q21714344'],
+            },
+            {
+                'label': 'সাধারণ অতীত, সাধারণ মধ্যমপুরুষ',
+                'example': 'তুমি [ভাইললে]।',
+                'grammatical_features_item_ids': ['Q1392475', 'Q56650487'],
+            },
+            {
+                'label': 'সাধারণ অতীত, তুচ্ছার্থ মধ্যমপুরুষ',
+                'example': 'তুঁই [ভাইললি/ভাইললিস]।',
+                'grammatical_features_item_ids': ['Q1392475', 'Q56650485'],
+            },
+            {
+                'label': 'সাধারণ অতীত, প্রথম পুরুষ',
+                'example': 'উ [ভাইলল/ভাইললক/ভাইললেক]।',
+                'grammatical_features_item_ids': ['Q1392475', 'Q51929074'],
+            },
+            {
+                'label': 'সাধারণ অতীত, সম্ভ্রমার্থ রূপ',
+                'example': 'উনি [ভাইললেন]।',
+                'grammatical_features_item_ids': ['Q1392475', 'Q56650512'],
+            },
+            {
+                'section_break': True,
+                'label': 'ঘটমান অতীত, উত্তম পুরুষ',
+                'example': 'আমি [ভাইলছিলম/ভাইলতেছিলম/ভাইলছিলি/ভাইলতেছিলি]।',
+                'grammatical_features_item_ids': ['Q56650537', 'Q21714344'],
+            },
+            {
+                'label': 'ঘটমান অতীত, সাধারণ মধ্যমপুরুষ',
+                'example': 'তুমি [ভাইলছিলে/ভাইলতেছিলে]।',
+                'grammatical_features_item_ids': ['Q56650537', 'Q56650487'],
+            },
+            {
+                'label': 'ঘটমান অতীত, তুচ্ছার্থ মধ্যমপুরুষ',
+                'example': 'তুঁই [ভাইলছিলি/ভাইলছিলিস/ভাইলতেছিলি/ভাইলতেছিলিস]।',
+                'grammatical_features_item_ids': ['Q56650537', 'Q56650485'],
+            },
+            {
+                'label': 'ঘটমান অতীত, প্রথম পুরুষ',
+                'example': 'উ [ভাইলছিল/ভাইলতেছিল/ভাইলছিলক/ভাইলতেছিলক/ভাইললেক/ভাইলতেছিলেক]।',
+                'grammatical_features_item_ids': ['Q56650537', 'Q51929074'],
+            },
+            {
+                'label': 'ঘটমান অতীত, সম্ভ্রমার্থ রূপ',
+                'example': 'উনি [ভাইলছিলেন/ভাইলতেছিলেন]।',
+                'grammatical_features_item_ids': ['Q56650537', 'Q56650512'],
+            },
+            {
+                'section_break': True,
+                'label': 'পুরাঘটিত অতীত, উত্তম পুরুষ',
+                'example': 'আমি [ভাইলেছিলম/ভাইলেছিলি]।',
+                'grammatical_features_item_ids': ['Q623742', 'Q21714344'],
+            },
+            {
+                'label': 'পুরাঘটিত অতীত, সাধারণ মধ্যমপুরুষ',
+                'example': 'তুমি [ভাইলেছিলে]।',
+                'grammatical_features_item_ids': ['Q623742', 'Q56650487'],
+            },
+            {
+                'label': 'পুরাঘটিত অতীত, তুচ্ছার্থ মধ্যমপুরুষ',
+                'example': 'তুঁই [ভাইলেছিলি/ভাইলেছিলিস]।',
+                'grammatical_features_item_ids': ['Q623742', 'Q56650485'],
+            },
+            {
+                'label': 'পুরাঘটিত অতীত, প্রথম পুরুষ',
+                'example': 'উ [ভাইলেছিল/ভাইলেছিলক/ভাইলেছিলেক]।',
+                'grammatical_features_item_ids': ['Q623742', 'Q51929074'],
+            },
+            {
+                'label': 'পুরাঘটিত অতীত, সম্ভ্রমার্থ রূপ',
+                'example': 'উনি [ভাইলেছিলেন]।',
+                'grammatical_features_item_ids': ['Q623742', 'Q56650512'],
+            },
+            {
+                'section_break': True,
+                'label': 'নিত্যবৃত্ত অতীত, উত্তম পুরুষ',
+                'example': 'আমি [ভাইলতম/ভাইলতি/ভাইলথম/ভাইলথি]।',
+                'grammatical_features_item_ids': ['Q75243920', 'Q21714344'],
+            },
+            {
+                'label': 'নিত্যবৃত্ত অতীত, সাধারণ মধ্যমপুরুষ',
+                'example': 'তুমি [ভাইলতে/ভাইলথে]।',
+                'grammatical_features_item_ids': ['Q75243920', 'Q56650487'],
+            },
+            {
+                'label': 'নিত্যবৃত্ত অতীত, তুচ্ছার্থ মধ্যমপুরুষ',
+                'example': 'তুঁই [ভাইলতি/ভাইলতিস/ভাইলথি/ভাইলথিস]।',
+                'grammatical_features_item_ids': ['Q75243920', 'Q56650485'],
+            },
+            {
+                'label': 'নিত্যবৃত্ত অতীত, প্রথম পুরুষ',
+                'example': 'উ [ভাইলত/ভাইলতক/ভাইলতেক/ভাইলথ/ভাইলথক/ভাইলথেক]।',
+                'grammatical_features_item_ids': ['Q75243920', 'Q51929074'],
+            },
+            {
+                'label': 'নিত্যবৃত্ত অতীত, সম্ভ্রমার্থ রূপ',
+                'example': 'উনি [ভাইলতেন]।',
+                'grammatical_features_item_ids': ['Q75243920', 'Q56650512'],
+            },
+            {
+                'section_break': True,
+                'label': 'সাধারণ ভবিষ্যৎ, উত্তম পুরুষ',
+                'example': 'আমি [ভাইলব]।',
+                'grammatical_features_item_ids': ['Q96323395', 'Q21714344'],
+            },
+            {
+                'label': 'সাধারণ ভবিষ্যৎ, সাধারণ মধ্যমপুরুষ',
+                'example': 'তুমি [ভাইলবে]।',
+                'grammatical_features_item_ids': ['Q96323395', 'Q56650487'],
+            },
+            {
+                'label': 'সাধারণ ভবিষ্যৎ, তুচ্ছার্থ মধ্যমপুরুষ',
+                'example': 'তুঁই [ভাইলবি/ভাইলবিস]।',
+                'grammatical_features_item_ids': ['Q96323395', 'Q56650485'],
+            },
+            {
+                'label': 'সাধারণ ভবিষ্যৎ, প্রথম পুরুষ',
+                'example': 'উ [ভাইলবেক]।',
+                'grammatical_features_item_ids': ['Q96323395', 'Q51929074'],
+            },
+            {
+                'label': 'সাধারণ ভবিষ্যৎ, সম্ভ্রমার্থ রূপ',
+                'example': 'উনি [ভাইলবেন]।',
+                'grammatical_features_item_ids': ['Q96323395', 'Q56650512'],
+            },
+            {
+                'section_break': True,
+                'label': 'ভবিষ্যৎ অনুজ্ঞা, সাধারণ মধ্যমপুরুষ',
+                'example': 'তুমি [ভাইলো]।',
+                'grammatical_features_item_ids': ['Q75244800', 'Q56650487'],
+            },
+            {
+                'label': 'ভবিষ্যৎ অনুজ্ঞা, তুচ্ছার্থ মধ্যমপুরুষ',
+                'example': 'তুঁই [ভাইলিস]।',
+                'grammatical_features_item_ids': ['Q75244800', 'Q56650485'],
+            },
+            {
+                'label': 'ভবিষ্যৎ অনুজ্ঞা, প্রথম পুরুষ',
+                'example': 'উ [ভাইলবেক]।',
+                'grammatical_features_item_ids': ['Q75244800', 'Q51929074'],
+            },
+            {
+                'label': 'ভবিষ্যৎ অনুজ্ঞা, সম্ভ্রমার্থ রূপ',
+                'example': 'উনি [ভাইলবেন]।',
+                'grammatical_features_item_ids': ['Q75244800', 'Q56650512'],
+            },
+            {
+                'section_break': True,
+                'label': 'ঘটমান অসমাপিকা ক্রিয়া',
+                'example': 'আমি [ভাইলতে] চাই।',
+                'grammatical_features_item_ids': ['Q1423674', 'Q1050494'],
+            },
+            {
+                'label': 'পুরাঘটিত অসমাপিকা ক্রিয়া',
+                'example': 'উয়ার পানে [ভালি/ভাইলে/ভালাঁই] গেইলছি।',
+                'grammatical_features_item_ids': ['Q1424306', 'Q1050494'],
+            },
+            {
+                'label': 'সর্তজ্ঞাপক অসমাপিকা ক্রিয়া',
+                'example': 'ইটা [ভাইললে] ভালো লাগে।',
+                'grammatical_features_item_ids': ['Q625581', 'Q1050494'],
+            },
+        ],
+    }),
+
     ('breton-noun-without-mutation', {
         '@attribution': {'users': ['VIGNERON', 'Fulup'], 'title': 'Wikidata:Wikidata Lexeme Forms/Breton'},
         'label': 'anvioù-kadarn (hep kemmadur)',

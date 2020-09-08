@@ -95,6 +95,10 @@ expected_example_counts = {
         'তিনি [দেখাবেন]।': 2,
         'তিনি [দেখাইবেন]।': 2,
     },
+    'manbhumi-verb': {
+        'উ [ভাইলবেক]।': 2,
+        'উনি [ভাইলবেন]।': 2,
+    },
     'czech-verb-perfective': {
         'Ona by [zazpívala].': 2,
     },
