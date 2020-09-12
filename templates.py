@@ -3913,7 +3913,7 @@ templates = collections.OrderedDict([
                             'type': 'wikibase-entityid',
                             'value': {
                                 'entity-type': 'item',
-                                'id': 'Q499327',
+                                'id': 'Q1775415',
                             },
                         },
                     },
