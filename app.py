@@ -335,8 +335,14 @@ def process_template_bulk(template_name):
             form_data = flask.request.form
             if 'form_representation' in form_data:
                 # user came from non-bulk mode
-                value = '|'.join(form_data.getlist('form_representation'))
-                value += '\n' # for convenience when adding more
+                representations = form_data.getlist('form_representation')
+                value = '|'.join(representations)
+                if value == '|' * (len(representations) - 1):
+                    # ...but had not typed anything into non-bulk mode yet,
+                    # clear the value so that the placeholder is shown
+                    value = ''
+                else:
+                    value += '\n' # for convenience when adding more
             else:
                 # user came from bulk mode with CSRF error
                 value = form_data.get('lexemes')
