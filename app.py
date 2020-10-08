@@ -176,7 +176,7 @@ def message(message_code, language_code=None):
 
 def message_with_language(message_code, language_code=None):
     if not language_code:
-        language_code = flask.g.language_code
+        language_code = flask.g.interface_language_code
     if language_code == 'bn-x-Q6747180':
         # Manbhumi reuses the standard Bengali messages
         language_code = 'bn'
@@ -234,7 +234,7 @@ def process_template_advanced(template_name, advanced=True):
         return response
 
     template = templates[template_name]
-    flask.g.language_code = template['language_code']
+    flask.g.interface_language_code = template['language_code']
     form_data = flask.request.form
     stashed_form_data = flask.session.pop('stashed_form_data', None)
 
@@ -280,7 +280,7 @@ def process_template_bulk(template_name):
         return response
 
     template = templates[template_name]
-    flask.g.language_code = template['language_code']
+    flask.g.interface_language_code = template['language_code']
 
     if not can_use_bulk_mode():
         return flask.render_template(
@@ -370,7 +370,7 @@ def process_template_edit(template_name, lexeme_id):
 
     template = templates[template_name]
     language_code = template['language_code']
-    flask.g.language_code = language_code
+    flask.g.interface_language_code = language_code
     wiki = 'test' if 'test' in template else 'www'
 
     # Whether we should treat this request as a “submit”.
@@ -493,7 +493,7 @@ def get_lemma(form_data):
 @app.route('/api/v1/duplicates/<any(www,test):wiki>/<language_code>/<path:lemma>')
 @enableCORS
 def get_duplicates_api(wiki, language_code, lemma):
-    flask.g.language_code = language_code
+    flask.g.interface_language_code = language_code
     matches = get_duplicates(wiki, language_code, lemma)
     if not matches:
         return flask.Response(status=204)
@@ -549,14 +549,14 @@ def get_duplicates(wiki, language_code, lemma):
 @app.route('/api/v1/no_duplicate/<language_code>')
 @app.template_global()
 def render_no_duplicate(language_code):
-    flask.g.language_code = language_code
+    flask.g.interface_language_code = language_code
     return flask.render_template(
         'no_duplicate.html',
     )
 
 @app.route('/api/v1/advanced_partial_forms_hint/<language_code>')
 def render_advanced_partial_forms_hint(language_code):
-    flask.g.language_code = language_code
+    flask.g.interface_language_code = language_code
     return flask.render_template(
         'advanced_partial_forms_hint.html',
     )

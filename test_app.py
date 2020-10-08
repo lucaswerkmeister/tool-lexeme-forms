@@ -86,7 +86,7 @@ def test_template_group_test():
 def test_message_with_kwargs(template_name, number):
     template = templates[template_name]
     with lexeme_forms.app.test_request_context():
-        flask.g.language_code = template['language_code']
+        flask.g.interface_language_code = template['language_code']
         message = lexeme_forms.message_with_kwargs('description_with_forms_and_senses', description='', forms=number, senses=number)
     # should not have failed
 
