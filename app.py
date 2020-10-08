@@ -526,7 +526,7 @@ def get_duplicates(wiki, language_code, lemma):
     )
     matches = collections.OrderedDict()
     for result in response['search']:
-        if (result['label'] == lemma and
+        if (result.get('label') == lemma and
             (result['match']['language'] == language_code or
              result['match']['language'] == 'und')): # T230833
             matches[result['id']] = {'id': result['id'], 'uri': result['concepturi'], 'label': result['label'], 'description': result['description']}
