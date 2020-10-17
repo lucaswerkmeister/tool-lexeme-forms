@@ -455,6 +455,7 @@ def if_needs_oauth_redirect():
 def oauth_callback():
     access_token = mwoauth.complete('https://www.wikidata.org/w/index.php', consumer_token, mwoauth.RequestToken(**flask.session.pop('oauth_request_token')), flask.request.query_string, user_agent=user_agent)
     flask.session['oauth_access_token'] = dict(zip(access_token._fields, access_token))
+    flask.session.pop('_csrf_token', None)
     return flask.redirect(flask.session['oauth_redirect_target'])
 
 @app.route('/logout')
@@ -630,7 +631,7 @@ def if_needs_csrf_redirect(template, advanced, form_data):
         return None
 
 def csrf_token_matches(form_data):
-    token = flask.session.pop('_csrf_token', None)
+    token = flask.session.get('_csrf_token')
     if not token or token != form_data.get('_csrf_token'):
         return False
     else:
