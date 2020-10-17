@@ -457,6 +457,11 @@ def oauth_callback():
     flask.session['oauth_access_token'] = dict(zip(access_token._fields, access_token))
     return flask.redirect(flask.session['oauth_redirect_target'])
 
+@app.route('/logout')
+def logout():
+    flask.session.pop('oauth_access_token', None)
+    return flask.redirect(flask.url_for('index'))
+
 def if_has_duplicates_redirect(template, advanced, form_data):
     if 'no_duplicate' in form_data:
         return None
