@@ -29,6 +29,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (list.childElementCount === 0) {
             alert.remove();
         }
+
+        dragend(event);
     }
 
     function dragend(event) {
