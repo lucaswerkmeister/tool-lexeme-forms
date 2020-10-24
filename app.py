@@ -763,12 +763,18 @@ def update_lexeme(lexeme_data, template, form_data, representation_language_code
             lexeme_data['forms'].append(build_form(template_form, representation_language_code, form_data_representation_variant))
         for lexeme_form in lexeme_forms:
             lexeme_form = find_form(lexeme_data, lexeme_form['id'])
-            lexeme_form['remove'] = ''
+            if representation_language_code in lexeme_form['representations']:
+                lexeme_form['remove'] = ''
+            # otherwise it’s an unrelated form that wasn’t shown to begin with, leave it alone
 
     for property_id, statements in (missing_statements or {}).items():
         lexeme_data.setdefault('claims', {}).setdefault(property_id, []).extend(statements)
 
-    lexeme_data['lemmas'][representation_language_code] = lexeme_data['forms'][0]['representations'][representation_language_code]
+    first_form_representations = lexeme_data['forms'][0]['representations']
+    if representation_language_code in first_form_representations:
+        lexeme_data['lemmas'][representation_language_code] = first_form_representations[representation_language_code]
+    else:
+        lexeme_data['lemmas'].pop(representation_language_code, None)
 
     return lexeme_data
 

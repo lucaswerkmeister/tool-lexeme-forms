@@ -896,6 +896,59 @@ def test_update_lexeme_different_language():
         'base_revision_id': 123,
     }
 
+def test_update_lexeme_different_language_for_some_forms():
+    lexeme_data = {
+        'lemmas': {
+            'de': {'language': 'de', 'value': 'müssen'},
+            'de-ch': {'language': 'de-ch', 'value': 'müßen'},
+        },
+        'forms': [
+            {
+                'id': 'L315210-F1',
+                'representations': {
+                    'de': {'language': 'de', 'value': 'müssen'},
+                },
+                'grammaticalFeatures': ['Q179230'],
+            },
+            {
+                'id': 'L315210-F2',
+                'representations': {
+                    'de': {'language': 'de', 'value': 'muss'},
+                },
+                'grammaticalFeatures': ['Q110786', 'Q1317831', 'Q192613', 'Q21714344', 'Q682111'],
+            },
+        ],
+    }
+    template = copy.deepcopy(templates['german-verb'])
+    template['lexeme_revision'] = 123
+    template['forms'][0]['lexeme_forms'] = [lexeme_data['forms'][0]]
+    template['forms'][1]['lexeme_forms'] = [lexeme_data['forms'][1]]
+    form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', ''), ('form_representation', 'muß')])
+    updated_lexeme_data = lexeme_forms.update_lexeme(lexeme_data, template, form_data, 'de-ch')
+    assert updated_lexeme_data == {
+        'lemmas': {
+            'de': {'language': 'de', 'value': 'müssen'},
+        },
+        'forms': [
+            {
+                'id': 'L315210-F1',
+                'representations': {
+                    'de': {'language': 'de', 'value': 'müssen'},
+                },
+                'grammaticalFeatures': ['Q179230'],
+            },
+            {
+                'id': 'L315210-F2',
+                'representations': {
+                    'de': {'language': 'de', 'value': 'muss'},
+                    'de-ch': {'language': 'de-ch', 'value': 'muß'},
+                },
+                'grammaticalFeatures': ['Q110786', 'Q1317831', 'Q192613', 'Q21714344', 'Q682111'],
+            },
+        ],
+        'base_revision_id': 123,
+    }
+
 def test_update_lexeme_noop():
     lexeme_data = {
         'lemmas': {'en': {'language': 'en', 'value': 'dwarf'}},
