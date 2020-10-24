@@ -758,6 +758,8 @@ def update_lexeme(lexeme_data, template, form_data, missing_statements=None):
     for property_id, statements in (missing_statements or {}).items():
         lexeme_data.setdefault('claims', {}).setdefault(property_id, []).extend(statements)
 
+    lexeme_data['lemmas'][language_code] = lexeme_data['forms'][0]['representations'][language_code]
+
     return lexeme_data
 
 def find_form(lexeme_data, form_id):

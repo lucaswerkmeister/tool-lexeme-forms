@@ -788,57 +788,98 @@ def test_get_template_api_missing():
 
 
 def test_update_lexeme_add_dwarves_dwarrows():
-    lexeme_data = {'forms': [
-        {'id': 'L22936-F1', 'representations': {'en': {'language': 'en', 'value': 'dwarf'}}, 'grammaticalFeatures': ['Q110786']},
-        {'id': 'L22936-F2', 'representations': {'en': {'language': 'en', 'value': 'dwarfs'}}, 'grammaticalFeatures': ['Q146786']},
-    ]}
+    lexeme_data = {
+        'lemmas': {'en': {'language': 'en', 'value': 'dwarf'}},
+        'forms': [
+            {'id': 'L22936-F1', 'representations': {'en': {'language': 'en', 'value': 'dwarf'}}, 'grammaticalFeatures': ['Q110786']},
+            {'id': 'L22936-F2', 'representations': {'en': {'language': 'en', 'value': 'dwarfs'}}, 'grammaticalFeatures': ['Q146786']},
+        ],
+    }
     template = copy.deepcopy(templates['english-noun'])
     template['lexeme_revision'] = 123
     template['forms'][0]['lexeme_forms'] = [lexeme_data['forms'][0]]
     template['forms'][1]['lexeme_forms'] = [lexeme_data['forms'][1]]
     form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', 'dwarf'), ('form_representation', 'dwarfs/dwarves/dwarrows')])
     updated_lexeme_data = lexeme_forms.update_lexeme(lexeme_data, template, form_data)
-    assert updated_lexeme_data == {'forms': [
-        {'id': 'L22936-F1', 'representations': {'en': {'language': 'en', 'value': 'dwarf'}}, 'grammaticalFeatures': ['Q110786']},
-        {'id': 'L22936-F2', 'representations': {'en': {'language': 'en', 'value': 'dwarfs'}}, 'grammaticalFeatures': ['Q146786']},
-        {'add': '', 'representations': {'en': {'language': 'en', 'value': 'dwarves'}}, 'grammaticalFeatures': ['Q146786'], 'claims': {}},
-        {'add': '', 'representations': {'en': {'language': 'en', 'value': 'dwarrows'}}, 'grammaticalFeatures': ['Q146786'], 'claims': {}},
-    ], 'base_revision_id': 123}
+    assert updated_lexeme_data == {
+        'lemmas': {'en': {'language': 'en', 'value': 'dwarf'}},
+        'forms': [
+            {'id': 'L22936-F1', 'representations': {'en': {'language': 'en', 'value': 'dwarf'}}, 'grammaticalFeatures': ['Q110786']},
+            {'id': 'L22936-F2', 'representations': {'en': {'language': 'en', 'value': 'dwarfs'}}, 'grammaticalFeatures': ['Q146786']},
+            {'add': '', 'representations': {'en': {'language': 'en', 'value': 'dwarves'}}, 'grammaticalFeatures': ['Q146786'], 'claims': {}},
+            {'add': '', 'representations': {'en': {'language': 'en', 'value': 'dwarrows'}}, 'grammaticalFeatures': ['Q146786'], 'claims': {}},
+        ],
+        'base_revision_id': 123,
+    }
 
 def test_update_lexeme_match_forms():
-    lexeme_data = {'forms': [
-        {'id': 'L22936-F1', 'representations': {'en': {'language': 'en', 'value': 'dwarf'}}, 'grammaticalFeatures': []},
-        {'id': 'L22936-F2', 'representations': {'en': {'language': 'en', 'value': 'dwarfs'}}, 'grammaticalFeatures': []},
-        {'id': 'L22936-F3', 'representations': {'en': {'language': 'en', 'value': 'dwarves'}}, 'grammaticalFeatures': []},
-        {'id': 'L22936-F4', 'representations': {'en': {'language': 'en', 'value': 'dwarrows'}}, 'grammaticalFeatures': []},
-    ]}
+    lexeme_data = {
+        'lemmas': {'en': {'language': 'en', 'value': 'dwarf'}},
+        'forms': [
+            {'id': 'L22936-F1', 'representations': {'en': {'language': 'en', 'value': 'dwarf'}}, 'grammaticalFeatures': []},
+            {'id': 'L22936-F2', 'representations': {'en': {'language': 'en', 'value': 'dwarfs'}}, 'grammaticalFeatures': []},
+            {'id': 'L22936-F3', 'representations': {'en': {'language': 'en', 'value': 'dwarves'}}, 'grammaticalFeatures': []},
+            {'id': 'L22936-F4', 'representations': {'en': {'language': 'en', 'value': 'dwarrows'}}, 'grammaticalFeatures': []},
+        ],
+    }
     template = copy.deepcopy(templates['english-noun'])
     template['lexeme_revision'] = 123
     template['unmatched_lexeme_forms'] = lexeme_data['forms'][:]
     form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', 'L22936-F1'), ('form_representation', 'L22936-F2/L22936-F3/L22936-F4')])
     updated_lexeme_data = lexeme_forms.update_lexeme(lexeme_data, template, form_data)
-    assert updated_lexeme_data == {'forms': [
-        {'id': 'L22936-F1', 'representations': {'en': {'language': 'en', 'value': 'dwarf'}}, 'grammaticalFeatures': ['Q110786']},
-        {'id': 'L22936-F2', 'representations': {'en': {'language': 'en', 'value': 'dwarfs'}}, 'grammaticalFeatures': ['Q146786']},
-        {'id': 'L22936-F3', 'representations': {'en': {'language': 'en', 'value': 'dwarves'}}, 'grammaticalFeatures': ['Q146786']},
-        {'id': 'L22936-F4', 'representations': {'en': {'language': 'en', 'value': 'dwarrows'}}, 'grammaticalFeatures': ['Q146786']},
-    ], 'base_revision_id': 123}
+    assert updated_lexeme_data == {
+        'lemmas': {'en': {'language': 'en', 'value': 'dwarf'}},
+        'forms': [
+            {'id': 'L22936-F1', 'representations': {'en': {'language': 'en', 'value': 'dwarf'}}, 'grammaticalFeatures': ['Q110786']},
+            {'id': 'L22936-F2', 'representations': {'en': {'language': 'en', 'value': 'dwarfs'}}, 'grammaticalFeatures': ['Q146786']},
+            {'id': 'L22936-F3', 'representations': {'en': {'language': 'en', 'value': 'dwarves'}}, 'grammaticalFeatures': ['Q146786']},
+            {'id': 'L22936-F4', 'representations': {'en': {'language': 'en', 'value': 'dwarrows'}}, 'grammaticalFeatures': ['Q146786']},
+        ],
+        'base_revision_id': 123,
+    }
+
+def test_update_lexeme_edit_lemma():
+    lexeme_data = {
+        'lemmas': {'en': {'language': 'en', 'value': 'fuschia'}},
+        'forms': [
+            {'id': 'L3280-F1', 'representations': {'en': {'language': 'en', 'value': 'fuschia'}}, 'grammaticalFeatures': ['Q3482678']},
+        ],
+    }
+    template = copy.deepcopy(templates['english-adjective'])
+    template['lexeme_revision'] = 123
+    template['forms'][0]['lexeme_forms'] = [lexeme_data['forms'][0]]
+    form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', 'fuchsia')])
+    updated_lexeme_data = lexeme_forms.update_lexeme(lexeme_data, template, form_data)
+    assert updated_lexeme_data == {
+        'lemmas': {'en': {'language': 'en', 'value': 'fuchsia'}},
+        'forms': [
+            {'id': 'L3280-F1', 'representations': {'en': {'language': 'en', 'value': 'fuchsia'}}, 'grammaticalFeatures': ['Q3482678']},
+        ],
+        'base_revision_id': 123,
+    }
 
 def test_update_lexeme_noop():
-    lexeme_data = {'forms': [
-        {'id': 'L22936-F1', 'representations': {'en': {'language': 'en', 'value': 'dwarf'}}, 'grammaticalFeatures': ['Q110786']},
-        {'id': 'L22936-F2', 'representations': {'en': {'language': 'en', 'value': 'dwarfs'}}, 'grammaticalFeatures': ['Q146786']},
-        {'id': 'L22936-F3', 'representations': {'en': {'language': 'en', 'value': 'dwarves'}}, 'grammaticalFeatures': ['Q146786']},
-        {'id': 'L22936-F4', 'representations': {'en': {'language': 'en', 'value': 'dwarrows'}}, 'grammaticalFeatures': ['Q146786']},
-        {'id': 'L22936-F5', 'representations': {'en': {'language': 'en', 'value': 'dweorgas'}}, 'grammaticalFeatures': ['Q146786']},
-    ]}
+    lexeme_data = {
+        'lemmas': {'en': {'language': 'en', 'value': 'dwarf'}},
+        'forms': [
+            {'id': 'L22936-F1', 'representations': {'en': {'language': 'en', 'value': 'dwarf'}}, 'grammaticalFeatures': ['Q110786']},
+            {'id': 'L22936-F2', 'representations': {'en': {'language': 'en', 'value': 'dwarfs'}}, 'grammaticalFeatures': ['Q146786']},
+            {'id': 'L22936-F3', 'representations': {'en': {'language': 'en', 'value': 'dwarves'}}, 'grammaticalFeatures': ['Q146786']},
+            {'id': 'L22936-F4', 'representations': {'en': {'language': 'en', 'value': 'dwarrows'}}, 'grammaticalFeatures': ['Q146786']},
+            {'id': 'L22936-F5', 'representations': {'en': {'language': 'en', 'value': 'dweorgas'}}, 'grammaticalFeatures': ['Q146786']},
+        ],
+    }
     template = copy.deepcopy(templates['english-noun'])
     template['lexeme_revision'] = 123
     template['forms'][0]['lexeme_forms'] = [lexeme_data['forms'][0]]
     template['forms'][1]['lexeme_forms'] = [lexeme_data['forms'][1], lexeme_data['forms'][2], lexeme_data['forms'][3], lexeme_data['forms'][4]]
     form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', 'dwarf'), ('form_representation', 'dwarfs/dweorgas/dwarves/dwarrows')])
     updated_lexeme_data = lexeme_forms.update_lexeme(lexeme_data, template, form_data)
-    assert updated_lexeme_data == {'forms': lexeme_data['forms'], 'base_revision_id': 123}
+    assert updated_lexeme_data == {
+        'lemmas': lexeme_data['lemmas'],
+        'forms': lexeme_data['forms'],
+        'base_revision_id': 123,
+    }
 
 def test_update_lexeme_rematch_already_matched_form():
     lexeme_data = {'forms': [{'id': 'L4592-F1', 'representations': {'en': {'language': 'en', 'value': 'gold'}}, 'grammaticalFeatures': ['Q110786']}]}
