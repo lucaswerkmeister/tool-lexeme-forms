@@ -94,8 +94,12 @@ def denyFrame(response):
 
 @app.template_filter()
 @jinja2.contextfilter
-def form2input(context, form, first=False):
+def form2input(context, form, first=False, template_language_code=None, representation_language_code=None):
     (prefix, placeholder, suffix) = split_example(form)
+    if 'lexeme_forms' in form and template_language_code != representation_language_code:
+        placeholder = '/'.join(lexeme_form['representations'][template_language_code]['value']
+                               for lexeme_form in form['lexeme_forms']
+                               if template_language_code in lexeme_form['representations'])
     return (flask.Markup.escape(prefix) +
             flask.Markup(r'<input type="text" name="form_representation" placeholder="') +
             flask.Markup.escape(placeholder) +
@@ -105,6 +109,7 @@ def form2input(context, form, first=False):
             (flask.Markup(r' autofocus') if first else flask.Markup('')) +
             (flask.Markup(r' value="') + flask.Markup.escape(form['value']) + flask.Markup(r'"') if 'value' in form else flask.Markup('')) +
             flask.Markup(r' spellcheck="true"') +
+            (flask.Markup(r' lang="') + flask.Markup.escape(representation_language_code) + flask.Markup(r'"') if representation_language_code != template_language_code else flask.Markup('')) +
             flask.Markup(r'>') +
             flask.Markup.escape(suffix))
 
@@ -369,8 +374,9 @@ def process_template_edit(template_name, lexeme_id):
         return response
 
     template = templates[template_name]
-    language_code = template['language_code']
-    flask.g.interface_language_code = language_code
+    template_language_code = template['language_code']
+    flask.g.interface_language_code = template_language_code
+    representation_language_code = flask.request.args.get('language_code', template_language_code)
     wiki = 'test' if 'test' in template else 'www'
 
     # Whether we should treat this request as a “submit”.
@@ -398,7 +404,7 @@ def process_template_edit(template_name, lexeme_id):
 
     if wants_to_submit and csrf_token_matches(flask.request.form):
         form_data = flask.request.form
-        lexeme_data = update_lexeme(lexeme_data, template, form_data, missing_statements=lexeme_match['missing_statements'])
+        lexeme_data = update_lexeme(lexeme_data, template, form_data, representation_language_code, missing_statements=lexeme_match['missing_statements'])
         summary = build_summary(template, form_data)
 
         if 'oauth' in app.config:
@@ -411,7 +417,9 @@ def process_template_edit(template_name, lexeme_id):
     for template_form in template['forms']:
         lexeme_forms = template_form.get('lexeme_forms')
         if lexeme_forms: # TODO use walrus operator in Python 3.8
-            template_form['value'] = '/'.join(lexeme_form['representations'][language_code]['value'] for lexeme_form in lexeme_forms)
+            template_form['value'] = '/'.join(lexeme_form['representations'][representation_language_code]['value']
+                                              for lexeme_form in lexeme_forms
+                                              if representation_language_code in lexeme_form['representations'])
     if flask.request.method == 'POST':
         template = add_form_data_to_template(flask.request.form, template, overwrite=wants_to_submit)
 
@@ -420,7 +428,7 @@ def process_template_edit(template_name, lexeme_id):
             'https://' + wiki + '.wikidata.org',
             user_agent=user_agent,
         ),
-        language_code,
+        template_language_code,
         template.get('unmatched_lexeme_forms', []) + template.get('ambiguous_lexeme_forms', [])
     )
 
@@ -429,6 +437,8 @@ def process_template_edit(template_name, lexeme_id):
         template=template,
         lemmas=lexeme_data['lemmas'],
         lexeme_matches_template=lexeme_matches_template,
+        template_language_code=template_language_code,
+        representation_language_code=representation_language_code,
         advanced=True, # for form2input
         csrf_error=wants_to_submit,
     )
@@ -642,7 +652,8 @@ def current_url():
         flask.request.endpoint,
         _external=True,
         _scheme=flask.request.headers.get('X-Forwarded-Proto', 'http'),
-        **flask.request.view_args
+        **flask.request.view_args,
+        **flask.request.args,
     )
 
 @app.template_global()
@@ -696,10 +707,9 @@ def build_form(template_form, template_language, form_representation):
         'claims': template_form.get('statements', {})
     }
 
-def update_lexeme(lexeme_data, template, form_data, missing_statements=None):
+def update_lexeme(lexeme_data, template, form_data, representation_language_code, missing_statements=None):
     lexeme_data = copy.deepcopy(lexeme_data)
     lexeme_data['base_revision_id'] = template['lexeme_revision']
-    language_code = template['language_code']
 
     for form_data_representation, template_form in zip(form_data.getlist('form_representation'), template['forms']):
         form_data_representation_variants = form_data_representation.split('/')
@@ -740,7 +750,7 @@ def update_lexeme(lexeme_data, template, form_data, missing_statements=None):
         overwritten_forms = 0
         for form_data_representation_variant, lexeme_form in zip(form_data_representation_variants, lexeme_forms):
             lexeme_form = find_form(lexeme_data, lexeme_form['id'])
-            lexeme_form_representation = lexeme_form['representations'].setdefault(language_code, {'language': language_code})
+            lexeme_form_representation = lexeme_form['representations'].setdefault(representation_language_code, {'language': representation_language_code})
             assert form_data_representation_variant, 'Representation cannot be empty'
             lexeme_form_representation['value'] = form_data_representation_variant
             overwritten_forms += 1
@@ -750,7 +760,7 @@ def update_lexeme(lexeme_data, template, form_data, missing_statements=None):
         assert not (form_data_representation_variants and lexeme_forms), 'After previous loop, at least one list must be exhausted'
         for form_data_representation_variant in form_data_representation_variants:
             assert form_data_representation_variant, 'Representation cannot be empty'
-            lexeme_data['forms'].append(build_form(template_form, language_code, form_data_representation_variant))
+            lexeme_data['forms'].append(build_form(template_form, representation_language_code, form_data_representation_variant))
         for lexeme_form in lexeme_forms:
             lexeme_form = find_form(lexeme_data, lexeme_form['id'])
             lexeme_form['remove'] = ''
@@ -758,7 +768,7 @@ def update_lexeme(lexeme_data, template, form_data, missing_statements=None):
     for property_id, statements in (missing_statements or {}).items():
         lexeme_data.setdefault('claims', {}).setdefault(property_id, []).extend(statements)
 
-    lexeme_data['lemmas'][language_code] = lexeme_data['forms'][0]['representations'][language_code]
+    lexeme_data['lemmas'][representation_language_code] = lexeme_data['forms'][0]['representations'][representation_language_code]
 
     return lexeme_data
 

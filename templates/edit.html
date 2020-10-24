@@ -80,7 +80,7 @@
         {% endif %}
         <div class="form">
           <dt>{{ form.label }}</dt>
-          <dd>{{ form | form2input(loop.first) }}</dd>
+          <dd>{{ form | form2input(loop.first, template_language_code, representation_language_code) }}</dd>
         </div>
         {% endfor %}
         <div class="section-spacer"></div>
