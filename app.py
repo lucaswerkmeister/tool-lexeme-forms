@@ -740,11 +740,13 @@ def update_lexeme(lexeme_data, template, form_data, representation_language_code
             form_data_representation_variants.remove(form_data_representation_variant)
         # find and remove matching forms (no modification necessary)
         for lexeme_form in reversed(lexeme_forms): # reversed so that the remove within the loop doesn’t disturb the iteration
-            for lexeme_form_representation in lexeme_form['representations'].values():
-                if lexeme_form_representation['value'] in form_data_representation_variants:
-                    lexeme_forms.remove(lexeme_form)
-                    form_data_representation_variants.remove(lexeme_form_representation['value'])
-                    break
+            if representation_language_code not in lexeme_form['representations']:
+                continue
+            lexeme_form_representation = lexeme_form['representations'][representation_language_code]
+            if lexeme_form_representation['value'] in form_data_representation_variants:
+                lexeme_forms.remove(lexeme_form)
+                form_data_representation_variants.remove(lexeme_form_representation['value'])
+                break
         # overwrite remaining lexeme forms with form data as long as we have both
         # currently simply in order, cleverer matching via edit distance may be possible but likely not necessary
         overwritten_forms = 0
