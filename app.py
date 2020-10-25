@@ -264,7 +264,7 @@ def process_template_advanced(template_name, advanced=True):
     else:
         if not form_data and flask.request.args:
             flask.session['stashed_form_data'] = flask.request.args
-            return flask.redirect(current_url())
+            return flask.redirect(current_url(include_args=False))
         if not form_data and stashed_form_data:
             form_data = stashed_form_data
         return flask.render_template(
@@ -647,13 +647,14 @@ def csrf_token_matches(form_data):
     else:
         return True
 
-def current_url():
+def current_url(include_args=True):
+    args = flask.request.args if include_args else {}
     return flask.url_for(
         flask.request.endpoint,
         _external=True,
         _scheme=flask.request.headers.get('X-Forwarded-Proto', 'http'),
         **flask.request.view_args,
-        **flask.request.args,
+        **args,
     )
 
 @app.template_global()
