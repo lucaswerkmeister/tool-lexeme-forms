@@ -900,7 +900,7 @@ def test_update_lexeme_different_language_for_some_forms():
     lexeme_data = {
         'lemmas': {
             'de': {'language': 'de', 'value': 'müssen'},
-            'de-ch': {'language': 'de-ch', 'value': 'müßen'},
+            'de-1901': {'language': 'de-1901', 'value': 'müßen'},
         },
         'forms': [
             {
@@ -924,7 +924,7 @@ def test_update_lexeme_different_language_for_some_forms():
     template['forms'][0]['lexeme_forms'] = [lexeme_data['forms'][1]]
     template['forms'][1]['lexeme_forms'] = [lexeme_data['forms'][0]]
     form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', ''), ('form_representation', 'muß')])
-    updated_lexeme_data = lexeme_forms.update_lexeme(lexeme_data, template, form_data, 'de-ch')
+    updated_lexeme_data = lexeme_forms.update_lexeme(lexeme_data, template, form_data, 'de-1901')
     assert updated_lexeme_data == {
         'lemmas': {
             'de': {'language': 'de', 'value': 'müssen'},
@@ -934,7 +934,7 @@ def test_update_lexeme_different_language_for_some_forms():
                 'id': 'L315210-F1',
                 'representations': {
                     'de': {'language': 'de', 'value': 'muss'},
-                    'de-ch': {'language': 'de-ch', 'value': 'muß'},
+                    'de-1901': {'language': 'de-1901', 'value': 'muß'},
                 },
                 'grammaticalFeatures': ['Q110786', 'Q1317831', 'Q192613', 'Q21714344', 'Q682111'],
             },
