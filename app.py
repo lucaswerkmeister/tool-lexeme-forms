@@ -773,11 +773,13 @@ def update_lexeme(lexeme_data, template, form_data, representation_language_code
     for property_id, statements in (missing_statements or {}).items():
         lexeme_data.setdefault('claims', {}).setdefault(property_id, []).extend(statements)
 
-    first_form_representations = lexeme_data['forms'][0]['representations']
-    if representation_language_code in first_form_representations:
-        lexeme_data['lemmas'][representation_language_code] = first_form_representations[representation_language_code]
-    else:
-        lexeme_data['lemmas'].pop(representation_language_code, None)
+    first_form = next(iter(template['forms'][0].get('lexeme_forms', [])), None)
+    if first_form:
+        first_form = find_form(lexeme_data, first_form['id']) # find edited version
+        if representation_language_code in first_form['representations']:
+            lexeme_data['lemmas'][representation_language_code] = first_form['representations'][representation_language_code]
+        else:
+            lexeme_data['lemmas'].pop(representation_language_code, None)
 
     return lexeme_data
 

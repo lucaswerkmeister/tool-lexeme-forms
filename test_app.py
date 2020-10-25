@@ -906,23 +906,23 @@ def test_update_lexeme_different_language_for_some_forms():
             {
                 'id': 'L315210-F1',
                 'representations': {
-                    'de': {'language': 'de', 'value': 'müssen'},
+                    'de': {'language': 'de', 'value': 'muss'},
                 },
-                'grammaticalFeatures': ['Q179230'],
+                'grammaticalFeatures': ['Q110786', 'Q1317831', 'Q192613', 'Q21714344', 'Q682111'],
             },
             {
                 'id': 'L315210-F2',
                 'representations': {
-                    'de': {'language': 'de', 'value': 'muss'},
+                    'de': {'language': 'de', 'value': 'müssen'},
                 },
-                'grammaticalFeatures': ['Q110786', 'Q1317831', 'Q192613', 'Q21714344', 'Q682111'],
+                'grammaticalFeatures': ['Q179230'],
             },
         ],
     }
     template = copy.deepcopy(templates['german-verb'])
     template['lexeme_revision'] = 123
-    template['forms'][0]['lexeme_forms'] = [lexeme_data['forms'][0]]
-    template['forms'][1]['lexeme_forms'] = [lexeme_data['forms'][1]]
+    template['forms'][0]['lexeme_forms'] = [lexeme_data['forms'][1]]
+    template['forms'][1]['lexeme_forms'] = [lexeme_data['forms'][0]]
     form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', ''), ('form_representation', 'muß')])
     updated_lexeme_data = lexeme_forms.update_lexeme(lexeme_data, template, form_data, 'de-ch')
     assert updated_lexeme_data == {
@@ -933,17 +933,17 @@ def test_update_lexeme_different_language_for_some_forms():
             {
                 'id': 'L315210-F1',
                 'representations': {
-                    'de': {'language': 'de', 'value': 'müssen'},
-                },
-                'grammaticalFeatures': ['Q179230'],
-            },
-            {
-                'id': 'L315210-F2',
-                'representations': {
                     'de': {'language': 'de', 'value': 'muss'},
                     'de-ch': {'language': 'de-ch', 'value': 'muß'},
                 },
                 'grammaticalFeatures': ['Q110786', 'Q1317831', 'Q192613', 'Q21714344', 'Q682111'],
+            },
+            {
+                'id': 'L315210-F2',
+                'representations': {
+                    'de': {'language': 'de', 'value': 'müssen'},
+                },
+                'grammaticalFeatures': ['Q179230'],
             },
         ],
         'base_revision_id': 123,
