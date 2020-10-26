@@ -3844,6 +3844,37 @@ templates = collections.OrderedDict([
         ],
     }),
 
+    ('esperanto-adjective', {
+        '@attribution': {'users': ['Nikki'], 'title': 'Wikidata:Wikidata Lexeme Forms/Esperanto'},
+        'label': 'esperanta adjektivo',
+        'language_item_id': 'Q143',
+        'language_code': 'eo',
+        'lexical_category_item_id': 'Q34698',
+        'has_sections': True,
+        'forms': [
+            {
+                'label': 'ununombro, nominativo',
+                'example': 'Ĉi tio estas [esperanta] vorto.',
+                'grammatical_features_item_ids': ['Q131105', 'Q110786'],
+            },
+            {
+                'label': 'ununombro, akuzativo',
+                'example': 'Mi ŝatas [esperantan] vorton.',
+                'grammatical_features_item_ids': ['Q146078', 'Q110786'],
+            },
+            {
+                'label': 'multenombro, nominativo',
+                'example': 'Ĉi tiuj estas [esperantaj] vortoj.',
+                'grammatical_features_item_ids': ['Q131105', 'Q146786'],
+            },
+            {
+                'label': 'multenombro, akuzativo',
+                'example': 'Mi ŝatas [esperantajn] vortojn.',
+                'grammatical_features_item_ids': ['Q146078', 'Q146786'],
+            },
+        ],
+    }),
+
     ('spanish-noun-masculine', {
         '@attribution': {'users': ['Andreasmperu'], 'title': 'Wikidata:Wikidata Lexeme Forms/Spanish'},
         'label': 'sustantivo masculino en español',
