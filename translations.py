@@ -344,6 +344,21 @@ translations = {
         'advanced_partial_forms': 'Se lasci un campo vuoto, non verrà creata nessuna forma. Assicurati di creare tutte le forme necessarie!',
         'lexeme_id': 'identificatore',
         'advanced_partial_forms_hint': 'Se vuoi creare dei lessemi privi di alcune forme, passa alla modalità avanzata.',
+        'generated_via': 'generato tramite',
+        'description_with_forms_and_senses': '{description}, {forms!p:0=nessuna forma:one=una forma:other={forms} forme} e {senses!p:0=nessun senso:one=un senso:other={senses} sensi}',
+        'bulk_link': 'caricamento di massa',
+        'bulk_button': 'Caricamento di massa',
+        'bulk_heading': 'caricamento di massa',
+        'bulk_format_help': 'aiuto formattazione',
+        'bulk_not_allowed': 'Ci dispiace, ma non sei autorizzato/a a usare il caricamento di massa.', # TODO support {{GENDER}}?
+        'edit_button': 'Modifica',
+        'edit_link': 'modifica',
+        'edit_general': 'Ti trovi nella modalità “modifica”. Cambia uno dei valori per modificare, aggiungere o rimuovere forme dal lessema.',
+        'edit_mismatch_warning': 'Questo lessema non combacia con questo template! Per favore, controlla che questo sia il giusto template per il lessema prima di continuare.',
+        'edit_ambiguous_warning': '{forms!p:one=La seguente forma:other=Le seguenti forme} del lessema combaciano con più di una forma nel template:',
+        'edit_unmatched_warning': '{forms!p:one=La seguente forma:other=Le seguenti forme} del lessema non combaciano con alcuna delle forme nel template:',
+        'edit_form_list_item': '{form_link}, {grammatical_feature_labels!l}, {statements!p:0=nessuna dichiarazione:one=una dichiarazione:other={statements} dichiarazioni}',
+        'no_grammatical_features': 'nessuna caratteristica grammaticale',
     },
 
     # translations by User:Şêr, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Kurdish_(Kurmancî)
