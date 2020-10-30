@@ -3,7 +3,14 @@ import babel.lists
 import string
 
 
-class PluralFormatter(string.Formatter):
+class BaseI18nFormatter(string.Formatter):
+    """Empty base class stripping away constructor arguments."""
+
+    def __init__(self, **kwargs):
+        super().__init__()
+
+
+class PluralFormatter(BaseI18nFormatter):
     """A string formatter supporting a !p plural conversion.
 
     Format string examples:
@@ -35,9 +42,10 @@ class PluralFormatter(string.Formatter):
     value, they must be identical to the str() of the value: for
     instance, a “1” key will not match a 1.0 value or vice versa."""
 
-    def __init__(self, locale_identifier):
+    def __init__(self, *, locale_identifier, **kwargs):
         """The locale identifier must be understood by Locale.parse."""
         self.locale = babel.Locale.parse(locale_identifier)
+        super().__init__(locale_identifier=locale_identifier, **kwargs)
 
     def convert_field(self, value, conversion):
         if conversion == 'p':
@@ -68,7 +76,7 @@ class _Plural:
         raise KeyError('No plural for tag {} found in format spec {}!'.format(tag, format_spec))
 
 
-class CommaSeparatedListFormatter(string.Formatter):
+class CommaSeparatedListFormatter(BaseI18nFormatter):
     """A string formatter supporting a !l list conversion.
 
     Format string example:
@@ -84,9 +92,10 @@ class CommaSeparatedListFormatter(string.Formatter):
     instead.) Attempting to convert non-iterable values with !l is an
     error."""
 
-    def __init__(self, locale_identifier):
+    def __init__(self, *, locale_identifier, **kwargs):
         """The locale identifier must be understood by Locale.parse."""
         self.locale = babel.Locale.parse(locale_identifier)
+        super().__init__(locale_identifier=locale_identifier, **kwargs)
 
     def convert_field(self, value, conversion):
         if conversion == 'l':

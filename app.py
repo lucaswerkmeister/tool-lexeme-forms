@@ -195,7 +195,7 @@ def message_with_kwargs(message_code, **kwargs):
     template, language = message_with_language(message_code)
     if language == 'la':
         language = 'en' # Latin is not in CLDR, English has same plural forms
-    return I18nFormatter(language).format(template, **kwargs)
+    return I18nFormatter(locale_identifier=language).format(template, **kwargs)
 
 @app.template_filter()
 def text_direction(language_code):

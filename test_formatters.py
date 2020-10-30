@@ -9,7 +9,7 @@ import formatters
     (0, 'I ate no apples.'),
 ])
 def test_PluralFormatter_en(count, expected):
-    plural_formatter = formatters.PluralFormatter('en')
+    plural_formatter = formatters.PluralFormatter(locale_identifier='en')
     assert plural_formatter.format(
         'I ate {count!p:0=no apples:one={count} apple:other={count} apples}.',
         count=count
@@ -23,7 +23,7 @@ def test_PluralFormatter_en(count, expected):
     (5, '5 (0x0005) bajtow'),
 ])
 def test_PluralFormatter_hsb(size, expected):
-    plural_formatter = formatters.PluralFormatter('hsb')
+    plural_formatter = formatters.PluralFormatter(locale_identifier='hsb')
     assert plural_formatter.format(
         '{size} (0x{size:04X}) {size!p:one=bajt:two=bajtaj:few=bajty:other=bajtow}',
         size=size
@@ -37,14 +37,14 @@ def test_PluralFormatter_hsb(size, expected):
     (0.0, 'other'),
 ])
 def test_PluralFormatter_explicit(num, expected):
-    plural_formatter = formatters.PluralFormatter('en')
+    plural_formatter = formatters.PluralFormatter(locale_identifier='en')
     assert plural_formatter.format(
         '{num!p:0=zero:1=one:2=two:other=other}',
         num=num
     ) == expected
 
 def test_PluralFormatter_explicit_takes_precedence():
-    plural_formatter = formatters.PluralFormatter('en')
+    plural_formatter = formatters.PluralFormatter(locale_identifier='en')
     assert plural_formatter.format(
         '{num!p:other=other:0=zero}',
         num=0
@@ -56,7 +56,7 @@ def test_PluralFormatter_explicit_takes_precedence():
     ('{!p:en:other=missing plural for one}', KeyError),
 ])
 def test_PluralFormatter_invalid_format_spec(format_spec, type):
-    plural_formatter = formatters.PluralFormatter('en')
+    plural_formatter = formatters.PluralFormatter(locale_identifier='en')
     with pytest.raises(type):
         plural_formatter.format(format_spec, 1)
 
@@ -67,7 +67,7 @@ def test_PluralFormatter_invalid_format_spec(format_spec, type):
     (['FLAC', 'OGG', 'OPUS'], 'FLAC, OGG, and OPUS.'),
 ])
 def test_CommaSeparatedListFormatter_en(list, expected):
-    comma_separated_list_formatter = formatters.CommaSeparatedListFormatter('en')
+    comma_separated_list_formatter = formatters.CommaSeparatedListFormatter(locale_identifier='en')
     assert comma_separated_list_formatter.format(
         '{list!l}.',
         list=list
@@ -80,7 +80,7 @@ def test_CommaSeparatedListFormatter_en(list, expected):
     (['FLAC', 'OGG', 'OPUS'], 'FLAC、OGG和OPUS.'),
 ])
 def test_CommaSeparatedListFormatter_zh(list, expected):
-    comma_separated_list_formatter = formatters.CommaSeparatedListFormatter('zh')
+    comma_separated_list_formatter = formatters.CommaSeparatedListFormatter(locale_identifier='zh')
     assert comma_separated_list_formatter.format(
         '{list!l}.',
         list=list
@@ -88,7 +88,7 @@ def test_CommaSeparatedListFormatter_zh(list, expected):
 
 
 def test_CommaSeparatedListFormatter_formats_list_items_with_format_spec():
-    comma_separated_list_formatter = formatters.CommaSeparatedListFormatter('en')
+    comma_separated_list_formatter = formatters.CommaSeparatedListFormatter(locale_identifier='en')
     assert comma_separated_list_formatter.format(
         'The binaries are {sizes!l:04d} bytes large.',
         sizes=[64, 128, 256, 1024, 4096]
@@ -101,7 +101,7 @@ def test_CommaSeparatedListFormatter_formats_list_items_with_format_spec():
     (['FLAC', 'OGG', 'OPUS'], 'The accepted formats are FLAC, OGG, and OPUS.'),
 ])
 def test_I18nFormatter_en(formats, expected):
-    i18n_formatter = formatters.I18nFormatter('en')
+    i18n_formatter = formatters.I18nFormatter(locale_identifier='en')
     assert i18n_formatter.format(
         'The accepted {count!p:one=format is:other=formats are} {formats!l}.',
         count=len(formats),
