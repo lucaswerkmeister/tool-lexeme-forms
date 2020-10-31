@@ -1,11 +1,11 @@
 babel
 decorator
 flask
-pyyaml
-mwoauth
+jinja2
 mwapi
+mwoauth
+pytest
+pyyaml
 requests_oauthlib
 toolforge ~= 4.2
-jinja2
-pytest
 werkzeug
