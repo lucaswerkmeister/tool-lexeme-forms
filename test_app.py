@@ -991,6 +991,17 @@ def test_update_lexeme_rematch_same_form_twice():
         lexeme_forms.update_lexeme(lexeme_data, template, form_data)
 
 
+@pytest.mark.parametrize('user, expected', [
+    ('علاء', 'm'),
+    ('Harmonia Amanda', 'f'),
+    ('Nikki', 'n'),
+    (None, 'n'),
+])
+def test_get_gender(user, expected):
+    with lexeme_forms.app.test_request_context():
+        assert lexeme_forms.get_gender(user) == expected
+
+
 @pytest.mark.parametrize('template_name', templates.keys())
 def test_integration_edit(template_name):
     """Create a lexeme from a template, then match it against the same template.

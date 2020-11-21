@@ -195,7 +195,8 @@ def message_with_kwargs(message_code, **kwargs):
     template, language = message_with_language(message_code)
     if language == 'la':
         language = 'en' # Latin is not in CLDR, English has same plural forms
-    return I18nFormatter(locale_identifier=language).format(template, **kwargs)
+    return I18nFormatter(locale_identifier=language,
+                         get_gender=get_gender).format(template, **kwargs)
 
 @app.template_filter()
 def text_direction(language_code):
@@ -868,6 +869,44 @@ def get_template_api(template_name):
         return flask.jsonify(template)
     else:
         return '"no such template"\n', 404
+
+def get_gender(user):
+    if user is None:
+        gender_option = gender_option_of_user()
+    else:
+        gender_option = gender_option_of_user_name(user)
+    return {
+        'male': 'm',
+        'female': 'f',
+        'unknown': 'n',
+    }[gender_option]
+
+def gender_option_of_user_name(user_name):
+    session = mwapi.Session(
+        host='https://www.wikidata.org',
+        user_agent=user_agent,
+    )
+    response = session.get(action='query',
+                           list=['users'],
+                           usprop=['gender'],
+                           ususers=[user_name],
+                           formatversion=2)
+    return response['query']['users'][0]['gender']
+
+def gender_option_of_user():
+    if 'oauth_access_token' not in flask.session:
+        return 'unknown'
+
+    session = mwapi.Session(
+        host='https://www.wikidata.org',
+        auth=generate_auth(),
+        user_agent=user_agent,
+    )
+    response = session.get(action='query',
+                           meta=['userinfo'],
+                           uiprop=['options'],
+                           formatversion=2)
+    return response['query']['userinfo']['options']['gender']
 
 def generate_auth():
     access_token = mwoauth.AccessToken(**flask.session['oauth_access_token'])

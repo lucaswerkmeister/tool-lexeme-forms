@@ -116,7 +116,52 @@ class _CommaSeparatedList:
         return babel.lists.format_list([format(item, format_spec) for item in self.value], locale=self.locale)
 
 
-class I18nFormatter(PluralFormatter, CommaSeparatedListFormatter):
-    """A string formatter supporting !p (plural) and !l (list) conversions.
+class GenderFormatter(BaseI18nFormatter):
+    """A string formatter supporting a !g grammatical gender conversion.
 
-    See PluralFormatter and CommaSeparatedListFormatter for details."""
+    Format string examples:
+
+        "Leave a message on {user!g:m=his:f=her:n=their} talk page."
+        "Ci dispiace, ma non sei {user!g:m=autorizzato:f=autorizzata:n=autorizzato/a} a usare il caricamento di massa."
+
+    The formatted value, which can be anything as far as this
+    formatter is concerned, is passed into a function specified in the
+    constructor, which should return one of the values "m", "f", or
+    "n", to select the grammatically masculine, feminine, or neutral
+    replacement, respectively. The format spec specifies these three
+    replacements separated by colons."""
+
+    def __init__(self, *, get_gender, **kwargs):
+        self.get_gender = get_gender
+        super().__init__(get_gender=get_gender, **kwargs)
+
+    def convert_field(self, value, conversion):
+        if conversion == 'g':
+            return _Gender(value, self.get_gender)
+        return super().convert_field(value, conversion)
+
+
+class _Gender:
+    """Wrapper around a value with special formatting.
+
+    This class formats itself as described in GenderFormatter."""
+
+    def __init__(self, value, get_gender):
+        self.value = value
+        self.get_gender = get_gender
+
+    def __format__(self, format_spec):
+        replacements = format_spec.split(':')
+        gender = self.get_gender(self.value)
+        gender_eq = gender + '='
+        for replacement in replacements:
+            if replacement.startswith(gender_eq):
+                return replacement[len(gender_eq):]
+        raise KeyError('No replacement for gender {} found in format spec {}!'.format(gender, format_spec))
+
+
+class I18nFormatter(PluralFormatter, CommaSeparatedListFormatter, GenderFormatter):
+
+    """A string formatter supporting !p (plural), !l (list) and !g (gender) conversions.
+
+    See PluralFormatter, CommaSeparatedListFormatter and GenderFormatter for details."""

@@ -95,15 +95,39 @@ def test_CommaSeparatedListFormatter_formats_list_items_with_format_spec():
     ) == 'The binaries are 0064, 0128, 0256, 1024, and 4096 bytes large.'
 
 
-@pytest.mark.parametrize('formats, expected', [
-    (['FLAC'], 'The accepted format is FLAC.'),
-    (['FLAC', 'OGG'], 'The accepted formats are FLAC and OGG.'),
-    (['FLAC', 'OGG', 'OPUS'], 'The accepted formats are FLAC, OGG, and OPUS.'),
+@pytest.mark.parametrize('gender, expected', [
+    ('m', 'Thank him?'),
+    ('f', 'Thank her?'),
+    ('n', 'Thank them?'),
 ])
-def test_I18nFormatter_en(formats, expected):
-    i18n_formatter = formatters.I18nFormatter(locale_identifier='en')
+def test_GenderFormatter(gender, expected):
+    user = 'opaque value'
+    def get_gender(value):
+        assert value == user
+        return gender
+    gender_formatter = formatters.GenderFormatter(get_gender=get_gender)
+    assert gender_formatter.format(
+        'Thank {user!g:m=him:f=her:n=them}?',
+        user=user
+    ) == expected
+
+
+@pytest.mark.parametrize('formats, user, expected', [
+    (['FLAC'], 'Keith', 'His preferred format is FLAC.'),
+    (['FLAC', 'OGG'], 'Keira', 'Her preferred formats are FLAC and OGG.'),
+    (['FLAC', 'OGG', 'OPUS'], 'Kim', 'Their preferred formats are FLAC, OGG, and OPUS.'),
+])
+def test_I18nFormatter_en(formats, user, expected):
+    genders = {
+        'Keith': 'm',
+        'Keira': 'f',
+        'Kim': 'n',
+    }
+    i18n_formatter = formatters.I18nFormatter(locale_identifier='en',
+                                              get_gender = lambda value: genders[value])
     assert i18n_formatter.format(
-        'The accepted {count!p:one=format is:other=formats are} {formats!l}.',
+        '{user!g:m=His:f=Her:n=Their} preferred {count!p:one=format is:other=formats are} {formats!l}.',
+        user=user,
         count=len(formats),
         formats=formats
     ) == expected

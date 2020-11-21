@@ -350,7 +350,7 @@ translations = {
         'bulk_button': 'Caricamento di massa',
         'bulk_heading': 'caricamento di massa',
         'bulk_format_help': 'aiuto formattazione',
-        'bulk_not_allowed': 'Ci dispiace, ma non sei autorizzato/a a usare il caricamento di massa.', # TODO support {{GENDER}}?
+        'bulk_not_allowed': 'Ci dispiace, ma non sei {user!g:m=autorizzato:f=autorizzata:n=autorizzato/a} a usare il caricamento di massa.',
         'edit_button': 'Modifica',
         'edit_link': 'modifica',
         'edit_general': 'Ti trovi nella modalità “modifica”. Cambia uno dei valori per modificare, aggiungere o rimuovere forme dal lessema.',
