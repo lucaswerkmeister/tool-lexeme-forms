@@ -3308,42 +3308,42 @@ templates = collections.OrderedDict([
         'forms': [
             {
                 'label': 'Nominativ Singular',
-                'example': 'Das ist der [Hund].',
+                'example': 'Das ist ein [Hund].',
                 'grammatical_features_item_ids': ['Q131105', 'Q110786'],
             },
             {
                 'label': 'Genitiv Singular',
-                'example': 'Das Eigentum des [Hunds/Hundes].',
+                'example': 'Das Eigentum eines [Hunds/Hundes].',
                 'grammatical_features_item_ids': ['Q146233', 'Q110786'],
             },
             {
                 'label': 'Dativ Singular',
-                'example': 'Das gehört dem [Hund/Hunde].',
+                'example': 'Das gehört einem [Hund/Hunde].',
                 'grammatical_features_item_ids': ['Q145599', 'Q110786'],
             },
             {
                 'label': 'Akkusativ Singular',
-                'example': 'Ich mag den [Hund].',
+                'example': 'Ich mag einen [Hund].',
                 'grammatical_features_item_ids': ['Q146078', 'Q110786'],
             },
             {
                 'label': 'Nominativ Plural',
-                'example': 'Das sind die [Hunde].',
+                'example': 'Das sind mehrere [Hunde].',
                 'grammatical_features_item_ids': ['Q131105', 'Q146786'],
             },
             {
                 'label': 'Genitiv Plural',
-                'example': 'Das Eigentum der [Hunde].',
+                'example': 'Das Eigentum mehrerer [Hunde].',
                 'grammatical_features_item_ids': ['Q146233', 'Q146786'],
             },
             {
                 'label': 'Dativ Plural',
-                'example': 'Das gehört den [Hunden].',
+                'example': 'Das gehört mehreren [Hunden].',
                 'grammatical_features_item_ids': ['Q145599', 'Q146786'],
             },
             {
                 'label': 'Akkusativ Plural',
-                'example': 'Ich mag die [Hunde].',
+                'example': 'Ich mag mehrere [Hunde].',
                 'grammatical_features_item_ids': ['Q146078', 'Q146786'],
             },
        ],
@@ -3379,42 +3379,42 @@ templates = collections.OrderedDict([
         'forms': [
             {
                 'label': 'Nominativ Singular',
-                'example': 'Das ist die [Katze].',
+                'example': 'Das ist eine [Katze].',
                 'grammatical_features_item_ids': ['Q131105', 'Q110786'],
             },
             {
                 'label': 'Genitiv Singular',
-                'example': 'Das Eigentum der [Katze].',
+                'example': 'Das Eigentum einer [Katze].',
                 'grammatical_features_item_ids': ['Q146233', 'Q110786'],
             },
             {
                 'label': 'Dativ Singular',
-                'example': 'Das gehört der [Katze].',
+                'example': 'Das gehört einer [Katze].',
                 'grammatical_features_item_ids': ['Q145599', 'Q110786'],
             },
             {
                 'label': 'Akkusativ Singular',
-                'example': 'Ich mag die [Katze].',
+                'example': 'Ich mag eine [Katze].',
                 'grammatical_features_item_ids': ['Q146078', 'Q110786'],
             },
             {
                 'label': 'Nominativ Plural',
-                'example': 'Das sind die [Katzen].',
+                'example': 'Das sind mehrere [Katzen].',
                 'grammatical_features_item_ids': ['Q131105', 'Q146786'],
             },
             {
                 'label': 'Genitiv Plural',
-                'example': 'Das Eigentum der [Katzen].',
+                'example': 'Das Eigentum mehrerer [Katzen].',
                 'grammatical_features_item_ids': ['Q146233', 'Q146786'],
             },
             {
                 'label': 'Dativ Plural',
-                'example': 'Das gehört den [Katzen].',
+                'example': 'Das gehört mehreren [Katzen].',
                 'grammatical_features_item_ids': ['Q145599', 'Q146786'],
             },
             {
                 'label': 'Akkusativ Plural',
-                'example': 'Ich mag die [Katzen].',
+                'example': 'Ich mag mehrere [Katzen].',
                 'grammatical_features_item_ids': ['Q146078', 'Q146786'],
             },
        ],
@@ -3450,42 +3450,42 @@ templates = collections.OrderedDict([
         'forms': [
             {
                 'label': 'Nominativ Singular',
-                'example': 'Das ist das [Kind].',
+                'example': 'Das ist ein [Kind].',
                 'grammatical_features_item_ids': ['Q131105', 'Q110786'],
             },
             {
                 'label': 'Genitiv Singular',
-                'example': 'Das Eigentum des [Kindes/Kinds].',
+                'example': 'Das Eigentum eines [Kindes/Kinds].',
                 'grammatical_features_item_ids': ['Q146233', 'Q110786'],
             },
             {
                 'label': 'Dativ Singular',
-                'example': 'Das gehört dem [Kind/Kinde].',
+                'example': 'Das gehört einem [Kind/Kinde].',
                 'grammatical_features_item_ids': ['Q145599', 'Q110786'],
             },
             {
                 'label': 'Akkusativ Singular',
-                'example': 'Ich mag das [Kind].',
+                'example': 'Ich mag ein [Kind].',
                 'grammatical_features_item_ids': ['Q146078', 'Q110786'],
             },
             {
                 'label': 'Nominativ Plural',
-                'example': 'Das sind die [Kinder].',
+                'example': 'Das sind mehrere [Kinder].',
                 'grammatical_features_item_ids': ['Q131105', 'Q146786'],
             },
             {
                 'label': 'Genitiv Plural',
-                'example': 'Das Eigentum der [Kinder].',
+                'example': 'Das Eigentum mehrerer [Kinder].',
                 'grammatical_features_item_ids': ['Q146233', 'Q146786'],
             },
             {
                 'label': 'Dativ Plural',
-                'example': 'Das gehört den [Kindern].',
+                'example': 'Das gehört mehreren [Kindern].',
                 'grammatical_features_item_ids': ['Q145599', 'Q146786'],
             },
             {
                 'label': 'Akkusativ Plural',
-                'example': 'Ich mag die [Kinder].',
+                'example': 'Ich mag mehrere [Kinder].',
                 'grammatical_features_item_ids': ['Q146078', 'Q146786'],
             },
        ],
