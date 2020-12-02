@@ -181,7 +181,7 @@ translations = {
         'no_grammatical_features': 'keine grammatikalischen Funktionen',
     },
 
-    # translations by User:Jens Ohlig, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Esperanto
+    # translations by User:Jens Ohlig and User:Robin van der Vliet, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Esperanto
     'eo': {
         'create': 'Krei',
         'csrf_warning': 'Pardonu, ni ne povis procesi ĉi tiun peton (protekto kontraŭ <abbr title="Cross-site request forgery">CSRF</abbr> malsucesis). Bonvolu provi submeti la formularon denove.',
@@ -194,6 +194,10 @@ translations = {
         'advanced_partial_forms': 'Vi povas lasi iujn formojn malplenaj por ke ili ne aldoniĝos. Certiĝu, ke vi hazarde ne lasas iun formojn!',
         'lexeme_id': 'Leksema identifikilo',
         'advanced_partial_forms_hint': 'Por krei leksemojn kun mankantaj formoj, ŝanĝu al altnivela reĝimo.',
+        'edit_button': 'Redakti',
+        'edit_link': 'redakti',
+        'edit_form_list_item': '{form_link}, {grammatical_feature_labels!l}, {statements!p:0=neniu deklaro:one=unu deklaro:other={statements} deklaroj}',
+        'no_grammatical_features': 'neniu gramatika trajto',
     },
 
     # translations by User:Andreasmperu, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Spanish
