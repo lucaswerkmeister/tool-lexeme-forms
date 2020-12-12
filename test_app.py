@@ -75,11 +75,11 @@ def test_csrf_token_load():
 
 def test_template_group():
     group = lexeme_forms.template_group({'language_code': 'de'})
-    assert group == 'de'
+    assert group == '<span lang="de" dir="ltr" title="de">Deutsch</span>'
 
 def test_template_group_test():
     group = lexeme_forms.template_group({'language_code': 'de', 'test': True})
-    assert group == 'de, test.wikidata.org'
+    assert group == '<span lang="de" dir="ltr" title="de">Deutsch</span>, test.wikidata.org'
 
 @pytest.mark.parametrize('template_name', templates.keys())
 @pytest.mark.parametrize('number', range(-1,5))

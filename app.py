@@ -18,6 +18,7 @@ import werkzeug.datastructures
 
 from flask_utils import OrderedFlask, TagOrderedMultiDict, TagImmutableOrderedMultiDict
 from formatters import I18nFormatter
+from language_names import autonym
 from matching import match_template_to_lexeme_data, match_lexeme_forms_to_template, match_template_entity_to_lexeme_entity
 from parse_tpsv import parse_lexemes
 from templates import templates
@@ -150,7 +151,7 @@ def csrf_token():
 
 @app.template_global()
 def template_group(template):
-    group = template['language_code']
+    group = language_autonym_or_code(template['language_code'])
     if 'test' in template:
         group += ', test.wikidata.org'
     return group
@@ -215,6 +216,21 @@ def term_span(term):
             flask.Markup.escape(text_direction(term['language'])) +
             flask.Markup(r'">') +
             flask.Markup.escape(term['value']) +
+            flask.Markup(r'</span>'))
+
+@app.template_filter()
+def language_autonym_or_code(language_code):
+    language_autonym = autonym(language_code)
+    if language_autonym is None:
+        return flask.Markup.escape(language_code)
+    return (flask.Markup(r'<span lang="') +
+            flask.Markup.escape(language_code) +
+            flask.Markup(r'" dir="') +
+            flask.Markup.escape(text_direction(language_code)) +
+            flask.Markup(r'" title="') +
+            flask.Markup.escape(language_code) +
+            flask.Markup(r'">') +
+            flask.Markup.escape(language_autonym) +
             flask.Markup(r'</span>'))
 
 @app.route('/')
