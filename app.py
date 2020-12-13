@@ -151,7 +151,7 @@ def csrf_token():
 
 @app.template_global()
 def template_group(template):
-    group = language_autonym_or_code(template['language_code'])
+    group = language_autonym_with_code(template['language_code'])
     if 'test' in template:
         group += ', test.wikidata.org'
     return group
@@ -219,19 +219,22 @@ def term_span(term):
             flask.Markup(r'</span>'))
 
 @app.template_filter()
-def language_autonym_or_code(language_code):
+def language_autonym_with_code(language_code):
+    code_zxx = (flask.Markup(r'<span lang=zxx>') +
+                flask.Markup.escape(language_code) +
+                flask.Markup(r'</span>'))
     language_autonym = autonym(language_code)
     if language_autonym is None:
-        return flask.Markup.escape(language_code)
+        return code_zxx
     return (flask.Markup(r'<span lang="') +
             flask.Markup.escape(language_code) +
             flask.Markup(r'" dir="') +
             flask.Markup.escape(text_direction(language_code)) +
-            flask.Markup(r'" title="') +
-            flask.Markup.escape(language_code) +
             flask.Markup(r'">') +
             flask.Markup.escape(language_autonym) +
-            flask.Markup(r'</span>'))
+            flask.Markup(r' (') +
+            code_zxx +
+            flask.Markup(r')</span>'))
 
 @app.route('/')
 def index():
