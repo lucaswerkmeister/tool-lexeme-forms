@@ -668,7 +668,7 @@ def csrf_token_matches(form_data):
         return True
 
 def current_url(include_args=True):
-    args = flask.request.args if include_args else {}
+    args = flask.request.args.to_dict(flat=False) if include_args else {}
     return flask.url_for(
         flask.request.endpoint,
         _external=True,
