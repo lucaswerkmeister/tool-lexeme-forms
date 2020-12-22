@@ -3895,6 +3895,49 @@ templates = collections.OrderedDict([
         ],
     }),
 
+    ('esperanto-verb', {
+        '@attribution': {'users': ['Nikki'], 'title': 'Wikidata:Wikidata Lexeme Forms/Esperanto'},
+        'label': 'esperanta verbo',
+        'language_item_id': 'Q143',
+        'language_code': 'eo',
+        'lexical_category_item_id': 'Q24905',
+        'two_column_sections': False,
+        'forms': [
+            {
+                'label': 'infinitivo',
+                'example': 'Ili volas [dormi].',
+                'grammatical_features_item_ids': ['Q179230'],
+            },
+            {
+                'section_break': True,
+                'label': 'indikativo, prezenco',
+                'example': 'Ili nun [dormas].',
+                'grammatical_features_item_ids': ['Q682111', 'Q192613'],
+            },
+            {
+                'label': 'indikativo, preterito',
+                'example': 'Ili [dormis] hieraŭ.',
+                'grammatical_features_item_ids': ['Q682111', 'Q1994301'],
+            },
+            {
+                'label': 'indikativo, futuro',
+                'example': 'Ili [dormos] morgaŭ.',
+                'grammatical_features_item_ids': ['Q682111', 'Q501405'],
+            },
+            {
+                'section_break': True,
+                'label': 'kondicionalo',
+                'example': 'Estus bone, se ili [dormus].',
+                'grammatical_features_item_ids': ['Q625581'],
+            },
+            {
+                'label': 'imperativo',
+                'example': 'Ne [dormu]!',
+                'grammatical_features_item_ids': ['Q22716'],
+            },
+        ],
+    }),
+
     ('spanish-noun-masculine', {
         '@attribution': {'users': ['Andreasmperu'], 'title': 'Wikidata:Wikidata Lexeme Forms/Spanish'},
         'label': 'sustantivo masculino en español',
