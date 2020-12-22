@@ -4300,6 +4300,31 @@ templates = collections.OrderedDict([
         ],
     }),
 
+    ('basque-adjective-comparative', {
+        '@attribution': {'users': ['Theklan'], 'title': 'Wikidata:Wikidata Lexeme Forms/Basque'},
+        'label': 'euskal adjektibo konparatibo eta superlatiboak',
+        'language_item_id': 'Q8752',
+        'language_code': 'eu',
+        'lexical_category_item_id': 'Q34698',
+        'forms': [
+            {
+                'label': 'oina',
+                'example': '[gorri]',
+                'grammatical_features_item_ids': ['Q332734', 'Q53998049'],
+            },
+            {
+                'label': 'konparatiboa',
+                'example': '[gorriago]',
+                'grammatical_features_item_ids': ['Q14169499'],
+            },
+            {
+                'label': 'superlatiboa',
+                'example': '[gorrien]',
+                'grammatical_features_item_ids': ['Q1817208'],
+            },
+        ],
+    }),
+
     ('persian-noun', {
         '@attribution': {'users': ['Ladsgroup'], 'title': 'Wikidata:Wikidata Lexeme Forms/Persian'},
         'label': 'اسم فارسی',
