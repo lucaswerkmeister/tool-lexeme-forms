@@ -1613,6 +1613,26 @@ templates = collections.OrderedDict([
         ],
     }),
 
+    ('breton-noun-without-mutation-collective', {
+        '@attribution': {'users': ['VIGNERON'], 'title': 'Wikidata:Wikidata Lexeme Forms/Breton'},
+        'label': 'anvioù-kadarn (strollder, hep kemmadur)',
+        'language_item_id': 'Q12107',
+        'language_code': 'br',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'unanderenn',
+                'example': 'Ma [steredenn] zo amañ.',
+                'grammatical_features_item_ids': ['Q1450795'],
+            },
+            {
+                'label': 'strollder',
+                'example': 'Ma [stered] zo amañ.',
+                'grammatical_features_item_ids': ['Q694268'],
+            },
+        ],
+    }),
+
     ('breton-adjective-without-mutation', {
         '@attribution': {'users': ['VIGNERON', 'Fulup'], 'title': 'Wikidata:Wikidata Lexeme Forms/Breton'},
         'label': 'anvioù-gwan (hep kemmadur)',
