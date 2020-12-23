@@ -69,7 +69,7 @@
   <form method="post" autocapitalize="off">
     <input name="_csrf_token" type="hidden" value="{{ csrf_token() }}">
     <input name="_lexeme_revision" type="hidden" value="{{ template.lexeme_revision }}">
-    <dl{% if template.has_sections %} class="with-sections"{% endif %}>
+    <dl{% if template.two_column_sections %} class="two-column-sections"{% endif %}>
       <div class="section">
         {% for form in template.forms %}
         {% if form.section_break %}
