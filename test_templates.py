@@ -53,6 +53,21 @@ def test_translations_available():
     assert not missing_language_codes
 
 
+def test_template_labels_distinct_per_language():
+    template_names_by_language_and_label = {}
+    for template_name, template in templates.templates.items():
+        template_names_by_language_and_label\
+            .setdefault(template['language_code'], {})\
+            .setdefault(template['label'], [])\
+            .append(template_name)
+    ambiguous_template_names_by_language_and_label = {}
+    for language, template_names_by_label in template_names_by_language_and_label.items():
+        for template_label, template_names in template_names_by_label.items():
+            if len(template_names) > 1:
+                ambiguous_template_names_by_language_and_label.setdefault(language, {})[template_label] = template_names
+    assert not ambiguous_template_names_by_language_and_label
+
+
 @pytest.mark.parametrize('template_name, form', [
     (template_name, form)
     for template_name in templates.templates.keys()
