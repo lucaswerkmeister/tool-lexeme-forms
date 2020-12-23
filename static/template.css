@@ -11,7 +11,7 @@
 }
 
 @media screen and (min-width: 1000px) {
-    .with-sections .section {
+    .two-column-sections .section {
         column-count: 2;
     }
 
@@ -21,7 +21,7 @@
      * An empty spacer avoids this (by taking up the second column),
      * but we only want that to be visible in columns mode for single-form sections.
      */
-    .with-sections .section .form:first-child + .section-spacer {
+    .two-column-sections .section .form:first-child + .section-spacer {
         display: block;
         height: 1em;
     }

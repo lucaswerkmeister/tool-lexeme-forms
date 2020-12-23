@@ -263,7 +263,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q9610',
         'language_code': 'bn',
         'lexical_category_item_id': 'Q24905',
-        'has_sections': True,
+        'two_column_sections': True,
         'forms': [
             {
                 'label': 'ভাববাচক বিশেষ্য',
@@ -775,7 +775,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q9610',
         'language_code': 'bn',
         'lexical_category_item_id': 'Q24905',
-        'has_sections': True,
+        'two_column_sections': True,
         'forms': [
             {
                 'label': 'ভাববাচক বিশেষ্য',
@@ -1317,7 +1317,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q6747180',
         'language_code': 'bn-x-Q6747180',
         'lexical_category_item_id': 'Q24905',
-        'has_sections': True,
+        'two_column_sections': True,
         'forms': [
             {
                 'label': 'ভাববাচক বিশেষ্য',
@@ -1669,7 +1669,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q9056',
         'language_code': 'cs',
         'lexical_category_item_id': 'Q1084',
-        'has_sections': True,
+        'two_column_sections': True,
         'forms': [
             {
                 'label': '1. pád, jednotné číslo',
@@ -1786,7 +1786,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q9056',
         'language_code': 'cs',
         'lexical_category_item_id': 'Q1084',
-        'has_sections': True,
+        'two_column_sections': True,
         'forms': [
             {
                 'label': '1. pád, jednotné číslo',
@@ -1903,7 +1903,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q9056',
         'language_code': 'cs',
         'lexical_category_item_id': 'Q1084',
-        'has_sections': True,
+        'two_column_sections': True,
         'forms': [
             {
                 'label': '1. pád, jednotné číslo',
@@ -2004,7 +2004,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q9056',
         'language_code': 'cs',
         'lexical_category_item_id': 'Q1084',
-        'has_sections': True,
+        'two_column_sections': True,
         'forms': [
             {
                 'label': '1. pád, jednotné číslo',
@@ -2130,7 +2130,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q9056',
         'language_code': 'cs',
         'lexical_category_item_id': 'Q34698',
-        'has_sections': True,
+        'two_column_sections': True,
         'forms': [
             {
                 'label': '1. pád, rod mužský životný, jednotné číslo, 1. stupeň',
@@ -3172,7 +3172,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q9035',
         'language_code': 'da',
         'lexical_category_item_id': 'Q1084',
-        'has_sections': True,
+        'two_column_sections': True,
         'forms': [
             {
                 'label': 'nominativ ental, ubestemt',
@@ -3223,7 +3223,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q9035',
         'language_code': 'da',
         'lexical_category_item_id': 'Q1084',
-        'has_sections': True,
+        'two_column_sections': True,
         'forms': [
             {
                 'label': 'nominativ ental, ubestemt',
@@ -3324,7 +3324,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q188',
         'language_code': 'de',
         'lexical_category_item_id': 'Q1084',
-        'has_sections': True,
+        'two_column_sections': True,
         'forms': [
             {
                 'label': 'Nominativ Singular',
@@ -3395,7 +3395,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q188',
         'language_code': 'de',
         'lexical_category_item_id': 'Q1084',
-        'has_sections': True,
+        'two_column_sections': True,
         'forms': [
             {
                 'label': 'Nominativ Singular',
@@ -3466,7 +3466,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q188',
         'language_code': 'de',
         'lexical_category_item_id': 'Q1084',
-        'has_sections': True,
+        'two_column_sections': True,
         'forms': [
             {
                 'label': 'Nominativ Singular',
@@ -3587,7 +3587,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q188',
         'language_code': 'de',
         'lexical_category_item_id': 'Q24905',
-        'has_sections': True,
+        'two_column_sections': True,
         'forms': [
             {
                 'label': 'Infinitiv',
@@ -3839,7 +3839,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q143',
         'language_code': 'eo',
         'lexical_category_item_id': 'Q1084',
-        'has_sections': True,
+        'two_column_sections': True,
         'forms': [
             {
                 'label': 'ununombro, nominativo',
@@ -3870,7 +3870,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q143',
         'language_code': 'eo',
         'lexical_category_item_id': 'Q34698',
-        'has_sections': True,
+        'two_column_sections': True,
         'forms': [
             {
                 'label': 'ununombro, nominativo',
@@ -3981,7 +3981,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q1321',
         'language_code': 'es',
         'lexical_category_item_id': 'Q34698',
-        'has_sections': True,
+        'two_column_sections': True,
         'forms': [
             {
                 'label': 'masculino singular',
@@ -4012,7 +4012,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q1321',
         'language_code': 'es',
         'lexical_category_item_id': 'Q24905',
-        'has_sections': True,
+        'two_column_sections': True,
         'forms': [
             {
                 'label': 'infinitivo',
@@ -4127,7 +4127,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q9072',
         'language_code': 'et',
         'lexical_category_item_id': 'Q1084',
-        'has_sections': True,
+        'two_column_sections': True,
         'forms': [
             {
                 'label': 'ainsuse nimetav',
@@ -4371,7 +4371,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q9168',
         'language_code': 'fa',
         'lexical_category_item_id': 'Q24905',
-        'has_sections': True,
+        'two_column_sections': True,
         'forms': [
             {
                 'label': 'اول شخص مفرد',
@@ -4412,7 +4412,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q1412',
         'language_code': 'fi',
         'lexical_category_item_id': 'Q1084',
-        'has_sections': True,
+        'two_column_sections': True,
         'forms': [
             {
                 'label': 'yksikön nominatiivi',
@@ -4640,7 +4640,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q150',
         'language_code': 'fr',
         'lexical_category_item_id': 'Q34698',
-        'has_sections': True,
+        'two_column_sections': True,
         'forms': [
             {
                 'label': 'masculin singulier',
@@ -4751,7 +4751,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q8785',
         'language_code': 'hy',
         'lexical_category_item_id': 'Q1084',
-        'has_sections': True,
+        'two_column_sections': True,
         'forms': [
             {
                 'label': 'եզ․ թիվ, ուղղ․ հոլով',
@@ -4977,7 +4977,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q652',
         'language_code': 'it',
         'lexical_category_item_id': 'Q34698',
-        'has_sections': True,
+        'two_column_sections': True,
         'forms': [
             {
                 'label': 'maschile singolare',
@@ -5008,7 +5008,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q36163',
         'language_code': 'ku',
         'lexical_category_item_id': 'Q1084',
-        'has_sections': True,
+        'two_column_sections': True,
         'forms': [
             {
                 'label': 'Rewşa navkî ya yekjimar a binavkirî',
@@ -5115,7 +5115,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q36163',
         'language_code': 'ku',
         'lexical_category_item_id': 'Q1084',
-        'has_sections': True,
+        'two_column_sections': True,
         'forms': [
             {
                 'label': 'Rewşa navkî ya yekjimar a binavkirî',
@@ -5222,7 +5222,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q397',
         'language_code': 'la',
         'lexical_category_item_id': 'Q1084',
-        'has_sections': True,
+        'two_column_sections': True,
         'forms': [
             {
                 'label': 'nominativus singularis',
@@ -5313,7 +5313,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q397',
         'language_code': 'la',
         'lexical_category_item_id': 'Q1084',
-        'has_sections': True,
+        'two_column_sections': True,
         'forms': [
             {
                 'label': 'nominativus singularis',
@@ -5404,7 +5404,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q397',
         'language_code': 'la',
         'lexical_category_item_id': 'Q1084',
-        'has_sections': True,
+        'two_column_sections': True,
         'forms': [
             {
                 'label': 'nominativus singularis',
@@ -5775,7 +5775,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q7411',
         'language_code': 'nl',
         'lexical_category_item_id': 'Q1084',
-        'has_sections': True,
+        'two_column_sections': True,
         'forms': [
             {
                 'label': 'enkelvoud',
@@ -5826,7 +5826,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q7411',
         'language_code': 'nl',
         'lexical_category_item_id': 'Q1084',
-        'has_sections': True,
+        'two_column_sections': True,
         'forms': [
             {
                 'label': 'enkelvoud',
@@ -5877,7 +5877,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q7411',
         'language_code': 'nl',
         'lexical_category_item_id': 'Q1084',
-        'has_sections': True,
+        'two_column_sections': True,
         'forms': [
             {
                 'label': 'enkelvoud',
@@ -5928,7 +5928,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q7411',
         'language_code': 'nl',
         'lexical_category_item_id': 'Q1084',
-        'has_sections': True,
+        'two_column_sections': True,
         'forms': [
             {
                 'label': 'enkelvoud',
@@ -5979,7 +5979,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q25164',
         'language_code': 'nn',
         'lexical_category_item_id': 'Q1084',
-        'has_sections': True,
+        'two_column_sections': True,
         'forms': [
             {
                 'label': 'ubunde eintal',
@@ -6030,7 +6030,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q25164',
         'language_code': 'nn',
         'lexical_category_item_id': 'Q1084',
-        'has_sections': True,
+        'two_column_sections': True,
         'forms': [
             {
                 'label': 'ubunde eintal',
@@ -6081,7 +6081,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q25164',
         'language_code': 'nn',
         'lexical_category_item_id': 'Q1084',
-        'has_sections': True,
+        'two_column_sections': True,
         'forms': [
             {
                 'label': 'ubunde eintal',
@@ -6132,7 +6132,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q809',
         'language_code': 'pl',
         'lexical_category_item_id': 'Q1084',
-        'has_sections': True,
+        'two_column_sections': True,
         'forms': [
             {
                 'label': 'Liczba pojedyncza, mianownik',
@@ -6403,7 +6403,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q809',
         'language_code': 'pl',
         'lexical_category_item_id': 'Q1084',
-        'has_sections': True,
+        'two_column_sections': True,
         'forms': [
             {
                 'label': 'mianownik, liczba pojedyncza',
@@ -6624,7 +6624,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q5146',
         'language_code': 'pt',
         'lexical_category_item_id': 'Q24905',
-        'has_sections': True,
+        'two_column_sections': True,
         'forms': [
             {
                 'label': 'Infinitivo Impessoal',
@@ -7012,7 +7012,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q7737',
         'language_code': 'ru',
         'lexical_category_item_id': 'Q1084',
-        'has_sections': True,
+        'two_column_sections': True,
         'forms': [
             {
                 'label': 'ед.ч. им.п.',
@@ -7103,7 +7103,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q7737',
         'language_code': 'ru',
         'lexical_category_item_id': 'Q1084',
-        'has_sections': True,
+        'two_column_sections': True,
         'forms': [
             {
                 'label': 'ед.ч. им.п.',
@@ -7194,7 +7194,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q7737',
         'language_code': 'ru',
         'lexical_category_item_id': 'Q1084',
-        'has_sections': True,
+        'two_column_sections': True,
         'forms': [
             {
                 'label': 'ед.ч. им.п.',
@@ -7485,7 +7485,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q9027',
         'language_code': 'sv',
         'lexical_category_item_id': 'Q1084',
-        'has_sections': True,
+        'two_column_sections': True,
         'forms': [
             {
                 'label': 'nominativ singular, obestämd',
@@ -7557,7 +7557,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q9027',
         'language_code': 'sv',
         'lexical_category_item_id': 'Q1084',
-        'has_sections': True,
+        'two_column_sections': True,
         'forms': [
             {
                 'label': 'nominativ singular, obestämd',
@@ -7739,7 +7739,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q8798',
         'language_code': 'uk',
         'lexical_category_item_id': 'Q1084',
-        'has_sections': True,
+        'two_column_sections': True,
         'forms': [
             {
                 'label': 'однина, називний відмінок',
@@ -7840,7 +7840,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q8798',
         'language_code': 'uk',
         'lexical_category_item_id': 'Q1084',
-        'has_sections': True,
+        'two_column_sections': True,
         'forms': [
             {
                 'label': 'однина, називний відмінок',
@@ -7941,7 +7941,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q8798',
         'language_code': 'uk',
         'lexical_category_item_id': 'Q1084',
-        'has_sections': True,
+        'two_column_sections': True,
         'forms': [
             {
                 'label': 'однина, називний відмінок',

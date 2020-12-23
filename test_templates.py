@@ -162,17 +162,23 @@ def test_attribution_available(template_name):
 @pytest.mark.parametrize('template_name', templates.templates.keys())
 def test_sections_declared(template_name):
     """Check that every template whose forms contain section breaks also
-    declares that it has sections in the header.
+    declares whether its sections should have two columns or not in
+    the header.
 
-    The inverse case, that a template declares sections but has no
-    section breaks, is allowed, since it can be useful to have all
-    forms in a single two-column section.
+    The inverse case, that a template declares two-column sections but
+    has no section breaks, is allowed, since it can be useful to have
+    all forms in a single two-column section. However, a template may
+    not declare that it does *not* use two-column sections in that
+    case, since that would be redundant.
+
     """
     template = templates.templates[template_name]
-    has_sections = False
+    has_section_breaks = False
     for form in template['forms']:
         if form.get('section_break', False):
-            has_sections = True
+            has_section_breaks = True
             break
-    if has_sections:
-        assert template.get('has_sections', False)
+    if has_section_breaks:
+        assert 'two_column_sections' in template
+    else:
+        assert template.get('two_column_sections', True)
