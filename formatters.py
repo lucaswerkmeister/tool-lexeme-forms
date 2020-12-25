@@ -1,6 +1,7 @@
 import babel
 import babel.lists
 import string
+from warnings import warn
 
 
 class BaseI18nFormatter(string.Formatter):
@@ -73,7 +74,11 @@ class _Plural:
         for plural in plurals:
             if plural.startswith(tag_eq):
                 return plural[len(tag_eq):]
-        raise KeyError('No plural for tag {} found in format spec {}!'.format(tag, format_spec))
+        warn('No plural for tag "{}" found in format spec "{}", falling back to "other"'.format(tag, format_spec))
+        for plural in plurals:
+            if plural.startswith('other='):
+                return plural[len('other='):]
+        raise KeyError('No plurals for tag "{}" or "other" found in format spec "{}"!'.format(tag, format_spec))
 
 
 class CommaSeparatedListFormatter(BaseI18nFormatter):
