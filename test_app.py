@@ -864,6 +864,23 @@ def test_update_lexeme_edit_lemma():
         'base_revision_id': 123,
     }
 
+def test_update_lexeme_edit_lemma_new_form():
+    lexeme_data = {
+        'lemmas': {'en': {'language': 'en', 'value': 'fuschia'}},
+        'forms': [],
+    }
+    template = copy.deepcopy(templates['english-adjective'])
+    template['lexeme_revision'] = 123
+    form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', 'fuchsia')])
+    updated_lexeme_data = lexeme_forms.update_lexeme(lexeme_data, template, form_data, 'en')
+    assert updated_lexeme_data == {
+        'lemmas': {'en': {'language': 'en', 'value': 'fuchsia'}},
+        'forms': [
+            {'add': '', 'claims': {}, 'representations': {'en': {'language': 'en', 'value': 'fuchsia'}}, 'grammaticalFeatures': ['Q3482678']},
+        ],
+        'base_revision_id': 123,
+    }
+
 def test_update_lexeme_different_language():
     lexeme_data = {
         'lemmas': {

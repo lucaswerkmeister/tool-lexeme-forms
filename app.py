@@ -783,7 +783,9 @@ def update_lexeme(lexeme_data, template, form_data, representation_language_code
         assert not (form_data_representation_variants and lexeme_forms), 'After previous loop, at least one list must be exhausted'
         for form_data_representation_variant in form_data_representation_variants:
             assert form_data_representation_variant, 'Representation cannot be empty'
-            lexeme_data['forms'].append(build_form(template_form, representation_language_code, form_data_representation_variant))
+            lexeme_form = build_form(template_form, representation_language_code, form_data_representation_variant)
+            lexeme_data['forms'].append(lexeme_form)
+            template_form.setdefault('lexeme_forms', []).append(lexeme_form) # so it can be found as first_form below
         for lexeme_form in lexeme_forms:
             lexeme_form = find_form(lexeme_data, lexeme_form['id'])
             if representation_language_code in lexeme_form['representations']:
@@ -795,7 +797,12 @@ def update_lexeme(lexeme_data, template, form_data, representation_language_code
 
     first_form = next(iter(template['forms'][0].get('lexeme_forms', [])), None)
     if first_form:
-        first_form = find_form(lexeme_data, first_form['id']) # find edited version
+        first_form_id = first_form.get('id')
+        if first_form_id: # TODO use walrus operator in Python 3.8+
+            first_form = find_form(lexeme_data, first_form_id) # find edited version
+        else:
+            # it’s a new form, first_form is already the edited version
+            pass
         if representation_language_code in first_form['representations']:
             lexeme_data['lemmas'][representation_language_code] = first_form['representations'][representation_language_code]
         else:
