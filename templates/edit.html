@@ -1,16 +1,19 @@
 {% extends "base.html" %}
-{% macro lexeme_form_link(wiki, lexeme_id, form) -%}
-  <a href="https://{{ wiki }}.wikidata.org/wiki/Lexeme:{{ lexeme_id }}#{{ form.id | replace(lexeme_id + '-', '') }}">
+{% macro lexeme_form_link(wiki, lexeme_id, form, classes=[]) -%}
+  <a
+    href="https://{{ wiki }}.wikidata.org/wiki/Lexeme:{{ lexeme_id }}#{{ form.id | replace(lexeme_id + '-', '') }}"
+    {% if classes %} class="{{ classes | join(' ') }}" {% endif %}
+  >
     {% for representation in form.representations.values() -%}
     {{ representation | term_span }}
     {%- if not loop.last %}/{% endif -%}
     {%- endfor %}
     ({{ form.id }})</a>
 {%- endmacro %}
-{% macro lexeme_form_list_item(wiki, lexeme_id, form) %}
+{% macro lexeme_form_list_item(wiki, lexeme_id, form, link_classes=[]) %}
   <li>
     {{ message_with_kwargs( 'edit_form_list_item',
-                            form_link=lexeme_form_link(wiki, lexeme_id, form),
+                            form_link=lexeme_form_link(wiki, lexeme_id, form, classes=link_classes),
                             grammatical_feature_labels=form.grammaticalFeatures_labels | map('term_span') if form.grammaticalFeatures_labels else [message( 'no_grammatical_features' )],
                             statements=form.get('claims', {}) | length ) | safe }}
   </li>
@@ -51,7 +54,7 @@
     {{ message_with_kwargs( 'edit_ambiguous_warning', forms=template.ambiguous_lexeme_forms | length ) }}
     <ul>
       {% for lexeme_form in template.ambiguous_lexeme_forms %}
-      {{ lexeme_form_list_item('test' if template.test else 'www', template.lexeme_id, lexeme_form) }}
+      {{ lexeme_form_list_item('test' if template.test else 'www', template.lexeme_id, lexeme_form, link_classes=['grabbable']) }}
       {% endfor %}
     </ul>
   </div>
@@ -61,7 +64,7 @@
     {{ message_with_kwargs( 'edit_unmatched_warning', forms=template.unmatched_lexeme_forms | length ) }}
     <ul>
       {% for lexeme_form in template.unmatched_lexeme_forms %}
-      {{ lexeme_form_list_item('test' if template.test else 'www', template.lexeme_id, lexeme_form) }}
+      {{ lexeme_form_list_item('test' if template.test else 'www', template.lexeme_id, lexeme_form, link_classes=['grabbable']) }}
       {% endfor %}
     </ul>
   </div>

@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     'use strict';
 
+    document.documentElement.classList.add('draggable')
+
     let draggedElement = null;
 
     function dragstart(event) {

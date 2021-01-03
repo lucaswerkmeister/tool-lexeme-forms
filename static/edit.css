@@ -1,3 +1,7 @@
 :root.dragging input[name=form_representation] {
     border: 2px dashed red;
 }
+
+:root.draggable .grabbable {
+    cursor: grab;
+}
