@@ -124,12 +124,13 @@ def split_example(form):
         raise Exception('Invalid template: missing [placeholder]: ' + example)
 
 @app.template_filter()
-def render_duplicates(duplicates, language_code, actionable, template_name=None):
+def render_duplicates(duplicates, language_code, actionable, template_name=None, form_representations=[]):
     return flask.render_template(
         'duplicates.html',
         duplicates=duplicates,
         actionable=actionable,
         template_name=template_name,
+        form_representations=form_representations,
     )
 
 @app.template_filter()
@@ -398,6 +399,7 @@ def process_template_edit(template_name, lexeme_id):
     flask.g.interface_language_code = template_language_code
     representation_language_code = flask.request.args.get('language_code', template_language_code)
     wiki = 'test' if 'test' in template else 'www'
+    stashed_form_data = flask.session.pop('stashed_form_data', None)
 
     if flask.request.method == 'POST':
         lexeme_revision = flask.request.form['_lexeme_revision']
@@ -438,6 +440,12 @@ def process_template_edit(template_name, lexeme_id):
                                               if representation_language_code in lexeme_form['representations'])
     if flask.request.method == 'POST':
         template = add_form_data_to_template(flask.request.form, template)
+    else:
+        if flask.request.args:
+            flask.session['stashed_form_data'] = flask.request.args
+            return flask.redirect(current_url(include_args=False))
+        if stashed_form_data:
+            template = add_form_data_to_template(stashed_form_data, template, overwrite=False)
 
     add_labels_to_lexeme_forms_grammatical_features(
         mwapi.Session(
@@ -502,6 +510,7 @@ def if_has_duplicates_redirect(template, advanced, form_data):
             template=add_form_data_to_template(form_data, template),
             advanced=advanced,
             duplicates=duplicates,
+            submitted_form_representations=form_data.getlist('form_representation'),
         )
     else:
         return None
