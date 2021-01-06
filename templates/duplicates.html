@@ -7,7 +7,7 @@
       <a href="{{ duplicate.uri }}">{{ duplicate.label }} ({{ duplicate.id }})</a>,
       {{ duplicate.description | augment_description(duplicate.forms_count, duplicate.senses_count) }}
       {% if template_name %}
-      (<button class="btn btn-link p-0 border-0 align-baseline" formnovalidate formaction="{{ url_for( 'process_template_edit', template_name=template_name, lexeme_id=duplicate.id ) }}">{{ message( 'edit_link' ) }}</button>)
+      (<a href="{{ url_for( 'process_template_edit', template_name=template_name, lexeme_id=duplicate.id ) }}">{{ message( 'edit_link' ) }}</a>)
       {% endif %}
     </li>
     {% endfor %}
