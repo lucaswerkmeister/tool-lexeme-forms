@@ -131,26 +131,60 @@ def test_if_needs_oauth_redirect_not_logged_in(monkeypatch):
     assert str(response.status_code).startswith('3')
 
 def test_if_has_duplicates_redirect_checkbox_checked():
-    assert lexeme_forms.if_has_duplicates_redirect({}, False, {'no_duplicate': True}) is None
+    assert lexeme_forms.if_has_duplicates_redirect(
+        {},
+        False,
+        werkzeug.datastructures.ImmutableMultiDict({'no_duplicate': True}),
+    ) is None
 
 def test_if_has_duplicates_redirect_lexeme_id_specified():
-    assert lexeme_forms.if_has_duplicates_redirect({}, False, {'lexeme_id': 'L123'}) is None
+    assert lexeme_forms.if_has_duplicates_redirect(
+        {},
+        False,
+        werkzeug.datastructures.ImmutableMultiDict({'lexeme_id': 'L123'}),
+    ) is None
 
 def test_if_has_duplicates_redirect_lexeme_id_blank(monkeypatch):
     monkeypatch.setattr(lexeme_forms, 'find_duplicates', lambda template, form_data: ['duplicate'])
     monkeypatch.setattr(lexeme_forms, 'add_form_data_to_template', lambda form_data, template: True)
     monkeypatch.setattr(flask, 'render_template', lambda template_file_name, **kwargs: True)
-    assert lexeme_forms.if_has_duplicates_redirect(minimal_template, False, {'lexeme_id': ''}) is not None
+    assert lexeme_forms.if_has_duplicates_redirect(
+        minimal_template,
+        False,
+        werkzeug.datastructures.ImmutableMultiDict({'lexeme_id': ''}),
+    ) is not None
 
 def test_if_has_duplicates_redirect_some_duplicates(monkeypatch):
     monkeypatch.setattr(lexeme_forms, 'find_duplicates', lambda template, form_data: ['duplicate'])
     monkeypatch.setattr(lexeme_forms, 'add_form_data_to_template', lambda form_data, template: True)
     monkeypatch.setattr(flask, 'render_template', lambda template_file_name, **kwargs: 'rendered duplicates')
-    assert lexeme_forms.if_has_duplicates_redirect(minimal_template, False, {}) == 'rendered duplicates'
+    assert lexeme_forms.if_has_duplicates_redirect(
+        minimal_template,
+        False,
+        werkzeug.datastructures.ImmutableMultiDict(),
+    ) == 'rendered duplicates'
 
 def test_if_has_duplicates_redirect_no_duplicates(monkeypatch):
     monkeypatch.setattr(lexeme_forms, 'find_duplicates', lambda template, form_data: [])
-    assert lexeme_forms.if_has_duplicates_redirect({}, False, {}) is None
+    assert lexeme_forms.if_has_duplicates_redirect(
+        {},
+        False,
+        werkzeug.datastructures.ImmutableMultiDict(),
+    ) is None
+
+def test_if_has_duplicates_redirect_submitted_form_representations(monkeypatch):
+    def render_template(template_file_name, **kwargs):
+        assert template_file_name == 'template.html'
+        assert kwargs['submitted_form_representations'] == ['noun', 'nouns']
+        return 'rendered duplicates'
+    monkeypatch.setattr(lexeme_forms, 'find_duplicates', lambda template, form_data: ['duplicate'])
+    monkeypatch.setattr(lexeme_forms, 'add_form_data_to_template', lambda form_data, template: True)
+    monkeypatch.setattr(flask, 'render_template', render_template)
+    assert lexeme_forms.if_has_duplicates_redirect(
+        copy.deepcopy(templates['english-noun']),
+        False,
+        werkzeug.datastructures.ImmutableMultiDict([('form_representation', 'noun'), ('form_representation', 'nouns')]),
+    ) == 'rendered duplicates'
 
 def test_get_lemma_first_form_representation():
     form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', 'noun'), ('form_representation', 'nouns')])

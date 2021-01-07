@@ -3,8 +3,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const template = JSON.parse(document.getElementsByTagName('main')[0].dataset.template),
           baseUrl = document.querySelector('link[rel=index]').href,
-          lemmaInput = document.querySelector('input[name=form_representation]'),
-          lexemeIdInput = document.querySelector('input[name=lexeme_id]');
+          form = document.forms[0],
+          lemmaInput = form.elements['form_representation'][0],
+          lexemeIdInput = (form.elements['lexeme_id'] || [])[0];
 
     function removeElementById(id) {
         const element = document.getElementById(id);
@@ -40,12 +41,27 @@ document.addEventListener('DOMContentLoaded', function() {
             const url = `${baseUrl}api/v1/no_duplicate/${template.language_code}`;
             return fetch(url, init).then(response => response.text()).then(noDuplicateHtml => {
                 const duplicatesWarning = document.createElement('div');
-                document.querySelector('form').insertAdjacentElement('afterbegin', duplicatesWarning);
+                form.insertAdjacentElement('afterbegin', duplicatesWarning);
                 duplicatesWarning.outerHTML = duplicatesWarningHtml;
 
                 const noDuplicate = document.createElement('label');
                 document.getElementById('submit').insertAdjacentElement('beforebegin', noDuplicate);
                 noDuplicate.outerHTML = noDuplicateHtml;
+
+                for (const link of form.getElementsByTagName('a')) {
+                    if (link.href.startsWith(`${baseUrl}template/${template['@template_name']}/edit/`)) {
+                        function addFormDataToLink() {
+                            const params = new URLSearchParams(link.search);
+                            params.delete('form_representation');
+                            for (const form_representation of form.elements['form_representation']) {
+                                params.append('form_representation', form_representation.value);
+                            }
+                            link.search = params;
+                        }
+                        link.addEventListener('click', addFormDataToLink);
+                        link.addEventListener('auxclick', addFormDataToLink);
+                    }
+                }
             });
         }).catch(console.error);
     }

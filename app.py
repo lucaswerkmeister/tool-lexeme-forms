@@ -124,12 +124,13 @@ def split_example(form):
         raise Exception('Invalid template: missing [placeholder]: ' + example)
 
 @app.template_filter()
-def render_duplicates(duplicates, language_code, actionable, template_name=None):
+def render_duplicates(duplicates, language_code, actionable, template_name=None, form_representations=[]):
     return flask.render_template(
         'duplicates.html',
         duplicates=duplicates,
         actionable=actionable,
         template_name=template_name,
+        form_representations=form_representations,
     )
 
 @app.template_filter()
@@ -398,17 +399,12 @@ def process_template_edit(template_name, lexeme_id):
     flask.g.interface_language_code = template_language_code
     representation_language_code = flask.request.args.get('language_code', template_language_code)
     wiki = 'test' if 'test' in template else 'www'
+    stashed_form_data = flask.session.pop('stashed_form_data', None)
 
-    # Whether we should treat this request as a “submit”.
-    # The ‘edit’ “link” in duplicate warnings also uses POST, but isn’t a “submit”.
-    wants_to_submit = flask.request.method == 'POST' and flask.request.referrer == current_url()
-
-    if '_lexeme_revision' in flask.request.form:
+    if flask.request.method == 'POST':
         lexeme_revision = flask.request.form['_lexeme_revision']
         lexeme_data = get_lexeme_data(lexeme_id, wiki, lexeme_revision)
     else:
-        if wants_to_submit:
-            raise ValueError('Tried to submit edit without specifying lexeme revision!')
         lexeme_data = get_lexeme_data(lexeme_id, wiki)
         lexeme_revision = lexeme_data['lastrevid']
 
@@ -422,7 +418,9 @@ def process_template_edit(template_name, lexeme_id):
     template['lexeme_id'] = lexeme_id
     template['lexeme_revision'] = lexeme_revision
 
-    if wants_to_submit and csrf_token_matches(flask.request.form):
+    if (flask.request.method == 'POST' and
+        flask.request.referrer == current_url() and
+        csrf_token_matches(flask.request.form)):
         form_data = flask.request.form
         lexeme_data = update_lexeme(lexeme_data, template, form_data, representation_language_code, missing_statements=lexeme_match['missing_statements'])
         summary = build_summary(template, form_data)
@@ -441,7 +439,13 @@ def process_template_edit(template_name, lexeme_id):
                                               for lexeme_form in lexeme_forms
                                               if representation_language_code in lexeme_form['representations'])
     if flask.request.method == 'POST':
-        template = add_form_data_to_template(flask.request.form, template, overwrite=wants_to_submit)
+        template = add_form_data_to_template(flask.request.form, template)
+    else:
+        if flask.request.args:
+            flask.session['stashed_form_data'] = flask.request.args
+            return flask.redirect(current_url(include_args=False))
+        if stashed_form_data:
+            template = add_form_data_to_template(stashed_form_data, template, overwrite=False)
 
     add_labels_to_lexeme_forms_grammatical_features(
         mwapi.Session(
@@ -460,7 +464,7 @@ def process_template_edit(template_name, lexeme_id):
         template_language_code=template_language_code,
         representation_language_code=representation_language_code,
         advanced=True, # for form2input
-        csrf_error=wants_to_submit,
+        csrf_error=flask.request.method == 'POST',
     )
 
 def if_no_such_template_redirect(template_name):
@@ -506,6 +510,7 @@ def if_has_duplicates_redirect(template, advanced, form_data):
             template=add_form_data_to_template(form_data, template),
             advanced=advanced,
             duplicates=duplicates,
+            submitted_form_representations=form_data.getlist('form_representation'),
         )
     else:
         return None
