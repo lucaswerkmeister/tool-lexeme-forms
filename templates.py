@@ -3531,6 +3531,90 @@ templates = collections.OrderedDict([
         },
     }),
 
+    ('german-noun-neuter-toponym', {
+        '@attribution': {'users': ['Lucas Werkmeister', 'Nikki'], 'title': 'Wikidata:Wikidata Lexeme Forms/German'},
+        'label': 'deutsches Substantiv (Neutrum, Toponym)',
+        'language_item_id': 'Q188',
+        'language_code': 'de',
+        'lexical_category_item_id': 'Q147276',
+        'forms': [
+            {
+                'label': 'Nominativ Singular',
+                'example': 'Das heutige [Berlin].',
+                'grammatical_features_item_ids': ['Q131105', 'Q110786'],
+            },
+            {
+                'label': 'Genitiv Singular',
+                'example': 'Fotos des damaligen [Berlins/Berlin].',
+                'grammatical_features_item_ids': ['Q146233', 'Q110786'],
+            },
+            {
+                'label': 'Dativ Singular',
+                'example': 'Fotos vom damaligen [Berlin].',
+                'grammatical_features_item_ids': ['Q145599', 'Q110786'],
+            },
+            {
+                'label': 'Akkusativ Singular',
+                'example': 'Pläne für das zukünftige [Berlin].',
+                'grammatical_features_item_ids': ['Q146078', 'Q110786'],
+            },
+       ],
+        'statements': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q1775461',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+            'P31': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P31',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q604984',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                },
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P31',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q7884789',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
+
     ('german-noun-pluraletantum', {
         '@attribution': {'users': ['Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/German'},
         'label': 'deutsches Substantiv (Pluraletantum, kein Genus)',
