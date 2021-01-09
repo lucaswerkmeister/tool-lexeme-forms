@@ -3555,7 +3555,7 @@ templates = collections.OrderedDict([
             },
             {
                 'label': 'Akkusativ Singular',
-                'example': 'Plänen für das zukünftige [Berlin].',
+                'example': 'Pläne für das zukünftige [Berlin].',
                 'grammatical_features_item_ids': ['Q146078', 'Q110786'],
             },
        ],
