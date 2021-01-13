@@ -671,7 +671,7 @@ def current_url(include_args=True):
         _scheme=flask.request.headers.get('X-Forwarded-Proto', 'http'),
         **flask.request.view_args,
         **args,
-    )
+    ).replace('+', '%20')
 
 @app.template_global()
 def can_use_bulk_mode():

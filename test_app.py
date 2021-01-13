@@ -396,6 +396,12 @@ def test_current_url_arglist(monkeypatch):
         current_url = lexeme_forms.current_url()
         assert current_url == 'http://localhost/template/foo/?form_representation=X&form_representation=Y'
 
+def test_current_url_space(monkeypatch):
+    monkeypatch.setitem(lexeme_forms.app.config, 'APPLICATION_ROOT', '/')
+    with lexeme_forms.app.test_request_context('/template/foo/?form_representation=X%20Y%20Z'):
+        current_url = lexeme_forms.current_url()
+        assert current_url == 'http://localhost/template/foo/?form_representation=X%20Y%20Z'
+
 def test_build_lexeme():
     template = {
         'language_item_id': 'Q1860',
