@@ -481,7 +481,7 @@ def oauth_callback():
     access_token = mwoauth.complete('https://www.wikidata.org/w/index.php', consumer_token, mwoauth.RequestToken(**flask.session.pop('oauth_request_token')), flask.request.query_string, user_agent=user_agent)
     flask.session['oauth_access_token'] = dict(zip(access_token._fields, access_token))
     flask.session.pop('_csrf_token', None)
-    return flask.redirect(flask.session['oauth_redirect_target'])
+    return flask.redirect(flask.session.pop('oauth_redirect_target'))
 
 @app.route('/logout')
 def logout():
