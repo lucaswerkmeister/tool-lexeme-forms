@@ -366,12 +366,6 @@ def test_current_url_index(monkeypatch):
         current_url = lexeme_forms.current_url()
         assert current_url == 'http://localhost/'
 
-def test_current_url_index_https(monkeypatch):
-    monkeypatch.setitem(lexeme_forms.app.config, 'APPLICATION_ROOT', '/')
-    with lexeme_forms.app.test_request_context('/', headers=[('X-Forwarded-Proto', 'https')]):
-        current_url = lexeme_forms.current_url()
-        assert current_url == 'https://localhost/'
-
 def test_current_url_template(monkeypatch):
     monkeypatch.setitem(lexeme_forms.app.config, 'APPLICATION_ROOT', '/')
     with lexeme_forms.app.test_request_context('/template/foo/'):

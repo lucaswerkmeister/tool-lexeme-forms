@@ -628,15 +628,8 @@ def csrf_token_matches(form_data):
     else:
         return True
 
-def current_url(include_args=True):
-    args = flask.request.args.to_dict(flat=False) if include_args else {}
-    return flask.url_for(
-        flask.request.endpoint,
-        _external=True,
-        _scheme=flask.request.headers.get('X-Forwarded-Proto', 'http'),
-        **flask.request.view_args,
-        **args,
-    ).replace('+', '%20')
+def current_url():
+    return flask.request.url
 
 @app.template_global()
 def can_use_bulk_mode():
