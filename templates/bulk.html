@@ -11,6 +11,11 @@
     {{ message( 'csrf_warning' ) }}
   </div>
   {% endif %}
+  {% if parse_error %}
+  <div class="alert alert-warning">
+     {{ message( 'bulk_parse_error' ) }}
+  </div>
+  {% endif %}
   <form method="post" autocapitalize="off">
     <input name="_csrf_token" type="hidden" value="{{ csrf_token() }}">
     <div class="form-group">

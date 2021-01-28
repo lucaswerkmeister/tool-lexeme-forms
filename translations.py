@@ -20,6 +20,7 @@ translations = {
         'bulk_heading': 'bulk mode',
         'bulk_format_help': 'format help',
         'bulk_not_allowed': 'You are not allowed to use bulk mode. Sorry.',
+        'bulk_parse_error': 'Wrong number of columns',
         'edit_button': 'Edit',
         'edit_link': 'edit',
         'edit_general': 'You are in “edit” mode. Changing the values below will edit, add or remove forms of the target lexeme.',
