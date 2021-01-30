@@ -287,8 +287,8 @@ def process_template_bulk(template_name):
                 'bulk.html',
                 template=template,
                 value=form_data.get('lexemes'),
-                parse_error=parse_error
-        )
+                parse_error=parse_error,
+            )
 
         results = []
 
