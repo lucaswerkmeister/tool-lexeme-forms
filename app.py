@@ -280,7 +280,16 @@ def process_template_bulk(template_name):
         csrf_token_matches(flask.request.form)):
 
         form_data = flask.request.form
-        lexemes = parse_lexemes(form_data.get('lexemes'), template)
+        try:
+            lexemes = parse_lexemes(form_data.get('lexemes'), template)
+        except ValueError as parse_error:
+            return flask.render_template(
+                'bulk.html',
+                template=template,
+                value=form_data.get('lexemes'),
+                parse_error=parse_error,
+            )
+
         results = []
 
         for lexeme in lexemes:
