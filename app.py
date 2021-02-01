@@ -638,7 +638,13 @@ def csrf_token_matches(form_data):
         return True
 
 def current_url():
-    return flask.request.url
+    return flask.url_for(
+        flask.request.endpoint,
+        _external=True,
+        _scheme=flask.request.headers.get('X-Forwarded-Proto', 'http'),
+        **flask.request.view_args,
+        **flask.request.args.to_dict(flat=False),
+    ).replace('+', '%20')
 
 @app.template_global()
 def can_use_bulk_mode():
