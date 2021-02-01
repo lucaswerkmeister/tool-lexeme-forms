@@ -71,6 +71,7 @@
   {% endif %}
   <form method="post" autocapitalize="off">
     <input name="_csrf_token" type="hidden" value="{{ csrf_token() }}">
+    <input name="_edit_mode" type="hidden" value="">
     <input name="_lexeme_revision" type="hidden" value="{{ template.lexeme_revision }}">
     <dl{% if template.two_column_sections %} class="two-column-sections"{% endif %}>
       <div class="section">

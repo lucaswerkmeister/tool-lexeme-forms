@@ -26,6 +26,7 @@
   <form method="post" autocapitalize="off">
     {{ duplicates | render_duplicates(template.language_code, actionable=True, template_name=template['@template_name'], form_representations=submitted_form_representations) | safe }}
     <input name="_csrf_token" type="hidden" value="{{ csrf_token() }}">
+    <input name="_advanced_mode" type="hidden" value="{{ advanced }}">
     {% if advanced %}
     <label>
       {{ message( 'lexeme_id' ) }}

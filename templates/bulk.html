@@ -18,6 +18,7 @@
   {% endif %}
   <form method="post" autocapitalize="off">
     <input name="_csrf_token" type="hidden" value="{{ csrf_token() }}">
+    <input name="_bulk_mode" type="hidden" value="">
     <div class="form-group">
       <textarea name="lexemes" class="form-control" rows="10" placeholder="{{ placeholder }}" required autofocus spellcheck="true">{% if value %}{{ value }}{% endif %}</textarea>
     </div>
