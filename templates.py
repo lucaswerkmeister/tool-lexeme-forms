@@ -3822,6 +3822,21 @@ templates = collections.OrderedDict([
         ],
     }),
 
+    ('german-adverb', {
+        '@attribution': {'users': ['Nikki'], 'title': 'Wikidata:Wikidata Lexeme Forms/German'},
+        'label': 'deutsches Adverb',
+        'language_item_id': 'Q188',
+        'language_code': 'de',
+        'lexical_category_item_id': 'Q380057',
+        'forms': [
+            {
+                'label': 'Lemma',
+                'example': 'Wir machen das [immer].',
+                'grammatical_features_item_ids': [],
+            },
+        ],
+    }),
+
     ('english-noun', {
         '@attribution': {'users': ['Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/English'},
         'label': 'English noun',
