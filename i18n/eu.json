@@ -1,0 +1,15 @@
+{
+	"create": "Sortu",
+	"csrf_warning": "Barkatu, ezin izan dugu zure eskaera prozesatu (<abbr title=\"Cross-site request forgery\">CSRF</abbr> babesak huts egin du). Saia zaitez berriro ere eskaera bidaltzen.",
+	"duplicates_warning": "Dagoeneko badugu hizkuntza kode berberarekin lema berdina duten lexema hauek:",
+	"duplicates_instructions": "Ziur bazaude lexema ezberdina dela, klik egin goian dagoen formularioko kutxan.",
+	"no_duplicate": "Hau ez da bikoiztutako lexema bat.",
+	"advanced": "Aurreratua",
+	"advanced_general": "Modu \"aurrearatuan\" zaude.",
+	"advanced_lexeme_id": "Lexema ID bat sar dezakezu dagoeneko existitzen den lexema bati formak gehitzeko, berri bat sortu beharrean. Dagoeneko existitzen diren lexemen formak zuriz utzi, bestela bikoiztuko dira eta!",
+	"advanced_partial_forms": "Formularioko atal batzuk zuriz utzi ditzakezu, eta ez dira gehituko. Ziurtatu ez zaudela nahi gabe formarik ahazten!",
+	"lexeme_id": "Lexema ID",
+	"advanced_partial_forms_hint": "Forma batzuk falta dituzten lexemak sortzeko, aukeratu modu aurreratua",
+	"generated_via": "honen bidez sortua",
+	"description_with_forms_and_senses": "$1, {{PLURAL:$2|0=formarik ez|forma bat|$2 forma}} eta {{PLURAL:$3|0=esanahirik ez|esanahi bat|$3 esanahi}}"
+}
