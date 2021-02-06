@@ -13,8 +13,6 @@
 	"generated_via": "oprettet gennem",
 	"description_with_forms_and_senses": "$1, {{PLURAL:$2|0=ingen forme|en form|$2 forme}} og {{PLURAL:$3|0=inge betydelser|en betydelse|$3 betydelser}}",
 	"bulk_link": "masseopret",
-	"bulk_button": "Masseopret",
-	"bulk_heading": "Masseopret",
 	"bulk_format_help": "formateringshjælp",
 	"bulk_not_allowed": "Desværre har du ikke tilladelse til at oprette flere leksemer samtidigt."
 }

@@ -10,7 +10,6 @@
 	"advanced_partial_forms": "Vi povas lasi iujn formojn malplenaj por ke ili ne aldoniĝos. Certiĝu, ke vi hazarde ne lasas iun formojn!",
 	"lexeme_id": "Leksema identifikilo",
 	"advanced_partial_forms_hint": "Por krei leksemojn kun mankantaj formoj, ŝanĝu al altnivela reĝimo.",
-	"edit_button": "Redakti",
 	"edit_link": "redakti",
 	"edit_form_list_item": "$1, $2, {{PLURAL:$3|0=neniu deklaro|unu deklaro|$3 deklaroj}}",
 	"no_grammatical_features": "neniu gramatika trajto"

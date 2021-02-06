@@ -11,8 +11,6 @@
 	"lexeme_id": "Lexem-ID",
 	"advanced_partial_forms_hint": "För att skapa lexem utan att fylla i alla fält, byt till avancerat läge.",
 	"bulk_link": "masskapa",
-	"bulk_button": "Masskapa",
-	"bulk_heading": "masskapa",
 	"bulk_format_help": "formateringshjälp",
 	"bulk_not_allowed": "Du får dessvärre inte masskapa lexem."
 }

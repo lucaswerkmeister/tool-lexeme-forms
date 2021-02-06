@@ -155,7 +155,7 @@ translations = {
         'description_with_forms_and_senses': '{description}, {forms!p:0=ingen forme:one=en form:other={forms} forme} og {senses!p:0=inge betydelser:one=en betydelse:other={senses} betydelser}',
         'bulk_link': 'masseopret',
         'bulk_button': 'Masseopret',
-        'bulk_heading': 'Masseopret',
+        'bulk_heading': 'masseopret',
         'bulk_format_help': 'formateringshjælp',
         'bulk_not_allowed': 'Desværre har du ikke tilladelse til at oprette flere leksemer samtidigt.',
     },
@@ -407,7 +407,7 @@ translations = {
         'advanced_partial_forms': 'Posses omittere aliqui formas, ut non addentur. Cave erroribus!',
         'lexeme_id': 'Numerus verbi',
         'advanced_partial_forms_hint': 'Ut facere verbi quae aliqui formas desunt, adi modo amplificatum.',
-        'edit_button': 'corrigere',
+        'edit_button': 'Corrigere',
         'edit_link': 'corrigere',
         'edit_general': 'In modo corrigendi es. Sic mutas scriptum inferum, formas verbi mutabuntur, addentur vel removebuntur.',
     },
@@ -595,6 +595,14 @@ translations = {
 }
 
 
+def initial_titlecase(s):
+    return s[:1].title() + s[1:]
+
+
+def identity(s):
+    return s
+
+
 variables = {
     'duplicates_warning': ['lexemes'],
     'duplicates_instructions': ['lexemes'],
@@ -606,6 +614,11 @@ variables = {
 }
 lists = {
     'edit_form_list_item': {'grammatical_feature_labels'},
+}
+derived_messages = {
+    'bulk_button': ('bulk_link', initial_titlecase),
+    'bulk_heading': ('bulk_link', identity),
+    'edit_button': ('edit_link', initial_titlecase),
 }
 
 
@@ -647,7 +660,11 @@ if __name__ == '__main__':
         with open(f'i18n/{language}.json', 'w') as f:
             data = {}
             for key in translations[language]:
-                msg = py2mw(translations[language][key], variables.get(key, []), lists.get(key, set()))
-                data[key] = msg
+                if key in derived_messages:
+                    source_key, transformation = derived_messages[key]
+                    assert translations[language][key] == transformation(translations[language][source_key])
+                else:
+                    msg = py2mw(translations[language][key], variables.get(key, []), lists.get(key, set()))
+                    data[key] = msg
             json.dump(data, f, ensure_ascii=False, indent='\t')
             f.write('\n')

@@ -12,7 +12,6 @@
 	"advanced_partial_forms_hint": "Um Lexeme zu erstellen, denen einige Formen fehlen, wechsle in den erweiterten Modus.",
 	"generated_via": "generiert durch",
 	"description_with_forms_and_senses": "$1, {{PLURAL:$2|0=keine Formen|eine Form|$2 Formen}}, {{PLURAL:$3|0=keine Senses|ein Sense|$3 Senses}}",
-	"edit_button": "Bearbeiten",
 	"edit_link": "bearbeiten",
 	"edit_general": "Du befindest dich im „Bearbeiten“-Modus. Wenn du die Werte unten bearbeitest, werden Formen des Ziellexems geändert, hinzugefügt oder entfernt.",
 	"edit_mismatch_warning": "Dieses Lexem scheint nicht zu dieser Vorlage zu passen! Bitte prüfe nochmal genau nach, dass es die richtige Vorlage für dieses Lexem ist, bevor du fortfährst.",
