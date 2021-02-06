@@ -526,7 +526,7 @@ translations = {
         'generated_via': 'gerado via',
     },
 
-    # translations by User:Infovarius, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Russian
+    # translations by User:Infovarius and User:Amire80, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Russian
     'ru': {
         'create': 'Создать',
         'csrf_warning': 'Извините, запрос не получился (<abbr title="Cross-site request forgery">CSRF</abbr> ошибка защиты). Пожалуйста, попробуйте отправить форму снова.',
@@ -540,7 +540,7 @@ translations = {
         'lexeme_id': 'ID лексемы',
         'advanced_partial_forms_hint': 'Чтобы создать лексемы без некоторых форм, переключитесь в продвинутый режим.',
         'generated_via': 'сгенерировано с помощью',
-        'description_with_forms_and_senses': '{description}, {forms!p:0=нет форм:one=одна форма:few={forms} формы:many={forms} форм} и {senses!p:0=нет значений:one=одно значение:few={senses} значения:many={senses} значений}',
+        'description_with_forms_and_senses': '{description}, {forms!p:0=нет форм:one=одна форма:few={forms} формы:many={forms} форм:other={forms} формы} и {senses!p:0=нет значений:one=одно значение:few={senses} значения:many={senses} значений:other={senses} значения}',
     },
 
     # translations by User:Vesihiisi, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Swedish
