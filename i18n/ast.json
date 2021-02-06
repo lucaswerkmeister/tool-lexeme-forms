@@ -1,4 +1,9 @@
 {
+	"@metadata": {
+		"authors": [
+			"Oriciu"
+		]
+	},
 	"create": "Crear",
 	"csrf_warning": "Sentímoslo, nun pudimos procesar la solicitú (falló la protección escontra <abbr title=\"Cross-site request forgery\">CSRF</abbr>). Tenta volver a unviar el formulariu.",
 	"duplicates_warning": "Los lexemes siguientes tienen yá un llema y códigu d'idioma iguales que'l que tentes crear:",

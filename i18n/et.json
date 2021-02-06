@@ -1,4 +1,9 @@
 {
+	"@metadata": {
+		"authors": [
+			"Reosarevok"
+		]
+	},
 	"create": "Loo",
 	"csrf_warning": "Vabandust, taotluse töötlemine ebaõnnestus (<abbr title=\"Cross-site request forgery\">CSRFi</abbr> vastane kaitse ebaõnnestus). Palun proovi vorm uuesti saata.",
 	"duplicates_warning": "Nendel olemasolevatel lekseemidel on sama lemma ja keel kui lekseemil, mida sa tahad luua:",

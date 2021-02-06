@@ -1,4 +1,10 @@
 {
+	"@metadata": {
+		"authors": [
+			"Ederporto",
+			"Lucas Werkmeister"
+		]
+	},
 	"create": "Criar",
 	"csrf_warning": "Desculpe, não foi possível processar essa requisição (proteção contra <abbr title=\"Cross-site request forgery\">CSRF</abbr> falhou). Por favor, tente submeter o formulário novamente.",
 	"duplicates_warning": "Os seguintes lexemas têm o mesmo lema e código de língua que o lema que você está tentando criar:",

@@ -1,4 +1,9 @@
 {
+	"@metadata": {
+		"authors": [
+			"Djiboun"
+		]
+	},
 	"create": "Créer",
 	"csrf_warning": "Désolé, cette requête n'a pas pu être traitée (la protection anti-<abbr title=\"Cross-site request forgery\">CSRF</abbr> a échoué). Essayez de renvoyer le formulaire.",
 	"duplicates_warning": "Les lexèmes suivants possèdent déjà un lemme et un code de langue identiques à celui que vous souhaitez créer :",

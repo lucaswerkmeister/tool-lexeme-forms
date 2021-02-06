@@ -1,4 +1,9 @@
 {
+	"@metadata": {
+		"authors": [
+			"Lucas Werkmeister"
+		]
+	},
 	"create": "Facere",
 	"csrf_warning": "Excusa, error accidit. Quaeso, repete.",
 	"duplicates_warning": "{{PLURAL:$1|Sequens verbum|Sequentia verba}} aequum lemma aequa linguaque {{PLURAL:$1|habet|habent}}:",

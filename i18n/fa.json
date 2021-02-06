@@ -1,4 +1,9 @@
 {
+	"@metadata": {
+		"authors": [
+			"Ladsgroup"
+		]
+	},
 	"create": "ایجاد",
 	"csrf_warning": "شرمنده، ما قادر به پردازش این درخواست نیستیم. (حفاظت <abbr title=\"Cross-site request forgery\" lang=\"en\" dir=\"ltr\">CSRF</abbr> به خطا خورد). لطفا دوباره این فرم را بفرستید.",
 	"duplicates_warning": "این تکواژه‌ها مدخل و زبان یکسانی با تکواژه‌ای که قصد ساختنش را دارید دارند:",

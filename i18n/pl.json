@@ -1,4 +1,9 @@
 {
+	"@metadata": {
+		"authors": [
+			"KaMan"
+		]
+	},
 	"create": "Utwórz",
 	"csrf_warning": "Niestety przetworzenie tego żądania było niemożliwe (ochrona <abbr title=\"Cross-site request forgery\">CSRF</abbr>). Proszę spróbować przesłać formularz ponownie.",
 	"duplicates_warning": "Następujące istniejące leksemy mają tę samą formę kanoniczną i kod języka jak ten, który próbujesz utworzyć:",

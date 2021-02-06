@@ -1,4 +1,9 @@
 {
+	"@metadata": {
+		"authors": [
+			"Şêr"
+		]
+	},
 	"create": "    Biafirîne",
 	"csrf_warning": "Bibore, me nikarî daxwaza te pêk bînin (bixebitînin) (Parastina <abbr title=\"Cross-site request forgery\">CSRF</abbr>ê bi ser neket). Ji kerema xwe careke din hewl bide û formê dîsa bişîne.",
 	"duplicates_warning": "    Ev leksem xwediyê heman peyv û heman koda zimanî ye, wek ya ku niha dixwazî biafirînî:",

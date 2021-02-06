@@ -1,4 +1,9 @@
 {
+	"@metadata": {
+		"authors": [
+			"Infovarius"
+		]
+	},
 	"create": "Создать",
 	"csrf_warning": "Извините, запрос не получился (<abbr title=\"Cross-site request forgery\">CSRF</abbr> ошибка защиты). Пожалуйста, попробуйте отправить форму снова.",
 	"duplicates_warning": "Следующие лексемы имеют такие же лемму и язык, что и создаваемая вами:",

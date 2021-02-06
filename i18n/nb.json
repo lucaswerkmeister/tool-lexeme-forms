@@ -1,4 +1,10 @@
 {
+	"@metadata": {
+		"authors": [
+			"Danmichaelo",
+			"Jon Harald Søby"
+		]
+	},
 	"create": "Opprett",
 	"csrf_warning": "Forespørselen din ble ikke behandlet på grunn av et <abbr title=\"Cross-site request forgery\">CSRF</abbr>-problem. Prøv gjerne om igjen.",
 	"duplicates_warning": "Følgende eksisterende leksemer har samme lemma og språkkode som de du holder på å opprette:",

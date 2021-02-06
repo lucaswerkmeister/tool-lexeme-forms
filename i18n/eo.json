@@ -1,4 +1,10 @@
 {
+	"@metadata": {
+		"authors": [
+			"Jens Ohlig",
+			"Robin van der Vliet"
+		]
+	},
 	"create": "Krei",
 	"csrf_warning": "Pardonu, ni ne povis procesi ĉi tiun peton (protekto kontraŭ <abbr title=\"Cross-site request forgery\">CSRF</abbr> malsucesis). Bonvolu provi submeti la formularon denove.",
 	"duplicates_warning": "La jenaj ekzistantaj leksemoj havas saman lemo kaj lingva kodo kiel tiu kiun vi provis krei:",

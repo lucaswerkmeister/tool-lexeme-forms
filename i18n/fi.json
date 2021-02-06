@@ -1,4 +1,9 @@
 {
+	"@metadata": {
+		"authors": [
+			"Shinnin"
+		]
+	},
 	"create": "Julkaise",
 	"csrf_warning": "Anteeksi, pyynnön käsittely ei onnistunut (<abbr title=\"Cross-site request forgery\">CSRF</abbr> suojaus epäonnistui). Yritä tallentaa kaavake uudestaan, kiitos.",
 	"duplicates_warning": "Seuraavilla lekseemeillä on sama lemma ja kieli kuin sillä, jota yrität luoda:",

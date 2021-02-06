@@ -1,4 +1,11 @@
 {
+	"@metadata": {
+		"authors": [
+			"Lexicolover",
+			"Matěj Suchánek",
+			"Adrijaned"
+		]
+	},
 	"create": "Vytvořit",
 	"csrf_warning": "Bohužel se nám nepodařilo vykonat požadavek (ochrana před <abbr title=\"Cross-site request forgery\">CSRF</abbr> selhala). Zkuste prosím odeslat formulář znovu.",
 	"duplicates_warning": "Pokoušíte se vytvořit lexém, který má stejné lemma a jazyk jako už existující lexémy:",

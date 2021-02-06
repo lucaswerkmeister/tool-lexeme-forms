@@ -1,4 +1,9 @@
 {
+	"@metadata": {
+		"authors": [
+			"Lucas Werkmeister"
+		]
+	},
 	"create": "Anlegen",
 	"csrf_warning": "Entschuldigung, wir konnten diese Anfrage nicht verarbeiten (<abbr title=\"Cross-site request forgery\">CSRF</abbr>-Schutz schlug fehl). Bitte versuche, das Formular nochmal abzuschicken.",
 	"duplicates_warning": "{{PLURAL:$1|Das folgende, bereits bestehende Lexem hat|Die folgenden, bereits bestehenden Lexeme haben}} das gleiche Lemma und den gleichen Sprachcode wie das, was du erstellen willst:",

@@ -1,4 +1,10 @@
 {
+	"@metadata": {
+		"authors": [
+			"So9q",
+			"Fnielsen"
+		]
+	},
 	"create": "Opret",
 	"csrf_warning": "Din anmodning kunne ikke fremsættes på grund af en <abbr title=\"Cross-site request forgery\">CSRF</abbr>-fejl. Prøv igen.",
 	"duplicates_warning": "Disse eksisterende leksemer har den samme ordstamme og sprogkode som den, du prøver at oprette:",

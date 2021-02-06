@@ -1,4 +1,9 @@
 {
+	"@metadata": {
+		"authors": [
+			"Sannita"
+		]
+	},
 	"create": "Crea il lessema!",
 	"csrf_warning": "Ops, non è possibile salvare la pagina (errore: <abbr title=\"Cross-site request forgery\">CSRF</abbr> protection failed). Per favore, riprova.",
 	"duplicates_warning": "Attenzione, i seguenti lessemi hanno lo stesso lemma e codice linguistico di quello che hai appena tentato di creare:",

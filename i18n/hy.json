@@ -1,4 +1,10 @@
 {
+	"@metadata": {
+		"authors": [
+			"Emptyfear",
+			"Kareyac"
+		]
+	},
 	"create": "Ստեղծել",
 	"csrf_warning": "Ցավոք, հարցումը հնարավոր չէ իրականացնել (<abbr title=\"Cross-site request forgery\">CSRF</abbr> պաշտպանությունը ձախողվեց)։ Փորձեք ձևաթուղթը կրկին պահպանել։",
 	"duplicates_warning": "Հետևյալ բառույթներն ունեն նույն լեման և լեզվական կոդը, որոնք դուք ցանկանում եք ստեղծել:",

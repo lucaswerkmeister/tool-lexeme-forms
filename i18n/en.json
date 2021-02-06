@@ -1,4 +1,9 @@
 {
+	"@metadata": {
+		"authors": [
+			"Lucas Werkmeister"
+		]
+	},
 	"create": "Create",
 	"csrf_warning": "Sorry, we couldn’t process this request (<abbr title=\"Cross-site request forgery\">CSRF</abbr> protection failed). Please try submitting the form again.",
 	"duplicates_warning": "The following existing {{PLURAL:$1|lexeme has|lexemes have}} the same lemma and language code as the one you’re trying to create:",

@@ -1,4 +1,9 @@
 {
+	"@metadata": {
+		"authors": [
+			"Vesihiisi"
+		]
+	},
 	"create": "Skapa",
 	"csrf_warning": "Din begäran kunde inte utföras på grund av ett <abbr title=\"Cross-site request forgery\">CSRF</abbr>-fel. Var god försök igen.",
 	"duplicates_warning": "Dessa befintliga lexem har samma lemma och språkkod som lexemet du försöker skapa:",

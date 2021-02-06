@@ -1,4 +1,9 @@
 {
+	"@metadata": {
+		"authors": [
+			"Njardarlogar"
+		]
+	},
 	"create": "Opprett",
 	"csrf_warning": "Førespurnaden kunne ikkje handsamast av di <abbr title=\"Cross-site request forgery\">CSRF</abbr>-vernet mislukkast. Freist gjerne om att.",
 	"duplicates_warning": "Desse leksema finst frå før og har det samme lemmaet og den same språkkoden som leksemet du held på å oppretta.",

@@ -1,4 +1,9 @@
 {
+	"@metadata": {
+		"authors": [
+			"Theklan"
+		]
+	},
 	"create": "Sortu",
 	"csrf_warning": "Barkatu, ezin izan dugu zure eskaera prozesatu (<abbr title=\"Cross-site request forgery\">CSRF</abbr> babesak huts egin du). Saia zaitez berriro ere eskaera bidaltzen.",
 	"duplicates_warning": "Dagoeneko badugu hizkuntza kode berberarekin lema berdina duten lexema hauek:",

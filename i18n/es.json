@@ -1,4 +1,9 @@
 {
+	"@metadata": {
+		"authors": [
+			"Andreasmperu"
+		]
+	},
 	"create": "Crear",
 	"csrf_warning": "Lo siento, esta solicitud no pudo ser procesada (<abbr title=\"Cross-site request forgery\">CSRF</abbr> protection failed). Por favor, intenta enviar el formulario nuevamente.",
 	"duplicates_warning": "Los lexemas siguientes ya tienen un lema y un código lingüístico idéntico a aquel que estás intentado crear:",

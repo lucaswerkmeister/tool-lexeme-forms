@@ -1,4 +1,9 @@
 {
+	"@metadata": {
+		"authors": [
+			"MarcoSwart"
+		]
+	},
 	"create": "Aanmaken",
 	"csrf_warning": "Sorry, we konden dit niet verwerken (door de <abbr title=\"Cross-site request forgery\">CSRF</abbr>-bescherming). Probeer het webformulier nog eens aan te bieden.",
 	"duplicates_warning": "Je probeert een lexeem aan te maken met hetzelfde lemmawoord en taalcode als een of meer bestaande lexemen:",
