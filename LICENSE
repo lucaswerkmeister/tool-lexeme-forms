@@ -1,4 +1,6 @@
-The files `translations.py` and `templates.py` are published under the CC BY-SA 3.0 license,
+The files `translations.py` and `templates.py`,
+as well as all the files in the `i18n/` directory,
+are published under the CC BY-SA 3.0 license,
 as provided in the `LICENSE.CC_BY-SA_3.0` file in this repository.
 Parts of their full history are on Wikidata and not in this repository –
 see the links in the files for details.

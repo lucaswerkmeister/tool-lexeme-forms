@@ -1,3 +1,9 @@
+import json
+import os
+from pprint import pprint
+import re
+
+
 translations = {
 
     # messages by Lucas Werkmeister
@@ -589,3 +595,64 @@ translations = {
     },
 
 }
+
+
+def py2mw(py):
+    variables = {}
+    lists = set()
+    def replace(match):
+        nonlocal variables, lists
+        inner = match[0][1:-1] # strip away braces
+        variable, _, rest = inner.partition('!')
+        if variable in variables:
+            number = variables[variable]
+        else:
+            number = len(variables) + 1
+            variables[variable] = number
+        if not rest:
+            return f'${number}'
+        conversion, _, format_spec = rest.partition(':')
+        format_spec = format_spec.replace('{' + variable + '}', f'${number}')
+        if conversion == 'p':
+            args = []
+            for plural in format_spec.split(':'):
+                key, _, text = plural.partition('=')
+                if key.isnumeric():
+                    args.append(plural)
+                else:
+                    args.append(text)
+            return '{{PLURAL:$' + str(number) + '|' + '|'.join(args) + '}}'
+        elif conversion == 'g':
+            args = []
+            for replacement in format_spec.split(':'):
+                gender, _, text = replacement.partition('=')
+                args.append(text)
+            return '{{GENDER:$' + str(number) + '|' + '|'.join(args) + '}}'
+        elif conversion == 'l':
+            lists.add(variable)
+            return f'${number}'
+        else:
+            raise ValueError(f'Unknown conversion {conversion}')
+    return re.sub(r'\{([^{}]|\{[^}]*\})*\}', replace, py), list(variables.keys()), lists
+
+
+if __name__ == '__main__':
+    try:
+        os.mkdir('i18n')
+    except FileExistsError:
+        pass
+    with open('i18n/en.json', 'w') as f:
+        data = {}
+        variables = {}
+        lists = {}
+        for key in translations['en']:
+            msg, msg_variables, msg_lists = py2mw(translations['en'][key])
+            data[key] = msg
+            if msg_variables:
+                variables[key] = msg_variables
+            if msg_lists:
+                lists[key] = msg_lists
+        json.dump(data, f, ensure_ascii=False, indent='\t')
+        f.write('\n')
+        pprint(variables, sort_dicts=False)
+        pprint(lists)
