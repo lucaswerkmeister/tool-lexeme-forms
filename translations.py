@@ -1,3 +1,4 @@
+import babel
 import json
 import re
 
@@ -656,16 +657,66 @@ def py2mw(py, variables, lists):
     return re.sub(r'\{([^{}]|\{[^}]*\})*\}', replace, py)
 
 
-if __name__ == '__main__':
+def mw2py(mw, language, variables, lists):
+    if language == 'la':
+        language = 'en' # Latin is not in CLDR, English has same plural forms
+    locale = babel.Locale(language)
+    def replace_plural(match):
+        nonlocal locale, variables
+        number = int(match[1])
+        variable = variables[number - 1]
+        args = match[2].split('|')
+        plurals = []
+        tag_args = []
+        for arg in args:
+            key, _, text = arg.partition('=')
+            if key.isnumeric():
+                plurals.append(arg)
+            else:
+                tag_args.append(arg)
+        tags = [tag
+                for tag in ['zero', 'one', 'two', 'few', 'many']
+                if tag in locale.plural_form.tags]
+        tags = tags[:len(tag_args)-1] + ['other']
+        for tag, tag_arg in zip(tags, tag_args):
+            plurals.append(f'{tag}={tag_arg}')
+        return '{' + variable + '!p:' + ':'.join(plurals) + '}'
+    py = re.sub(r'\{\{PLURAL:\$([1-9][0-9]*)\|([^}]*)\}\}', replace_plural, mw)
+    def replace_gender(match):
+        nonlocal variables
+        number = int(match[1])
+        variable = variables[number - 1]
+        args = match[2].split('|')
+        genders = []
+        for gender, arg in zip(['m', 'f', 'n'], args):
+            genders.append(f'{gender}={arg}')
+        return '{' + variable + '!g:' + ':'.join(genders) + '}'
+    py = re.sub(r'\{\{GENDER:\$([1-9][0-9]*)\|([^}]*)\}\}', replace_gender, py)
+    def replace_unconverted(match):
+        nonlocal variables
+        number = int(match[1])
+        variable = variables[number - 1]
+        if variable in lists:
+            return '{' + variable + '!l}'
+        else:
+            return '{' + variable + '}'
+    py = re.sub(r'\$([1-9][0-9]*)', replace_unconverted, py)
+    return py
+
+
+def load_translations():
+    loaded_translations = {}
     for language in translations:
-        with open(f'i18n/{language}.json', 'w') as f:
-            data = {}
-            for key in translations[language]:
-                if key in derived_messages:
-                    source_key, transformation = derived_messages[key]
-                    assert translations[language][key] == transformation(translations[language][source_key])
-                else:
-                    msg = py2mw(translations[language][key], variables.get(key, []), lists.get(key, set()))
-                    data[key] = msg
-            json.dump(data, f, ensure_ascii=False, indent='\t')
-            f.write('\n')
+        with open(f'i18n/{language}.json', 'r') as f:
+            data = json.load(f)
+        loaded_translations[language] = {}
+        for key in data:
+            if key.startswith('@'):
+                continue
+            msg = mw2py(data[key], language, variables.get(key, []), lists.get(key, set()))
+            loaded_translations[language][key] = msg
+        for key in derived_messages:
+            source_key, transformation = derived_messages[key]
+            if source_key in loaded_translations[language]:
+                loaded_translations[language][key] = transformation(loaded_translations[language][source_key])
+    return loaded_translations
