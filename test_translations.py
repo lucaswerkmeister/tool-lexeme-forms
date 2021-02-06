@@ -121,7 +121,3 @@ def test_message_syntax_valid_bulk_not_allowed(language_code, gender):
             message,
             user='some user',
         )
-
-
-def test_loaded_translations():
-    assert translations.load_translations() == translations.translations
