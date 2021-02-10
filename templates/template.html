@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block head %}
 {{ super() }}
-<script defer src="https://tools-static.wmflabs.org/cdnjs/ajax/libs/lodash.js/4.17.10/lodash.min.js"></script>
+<script defer src="https://tools-static.wmflabs.org/cdnjs/ajax/libs/lodash.js/4.17.20/lodash.min.js" integrity="sha384-EnW5v27oxpPV45dNJxtnA2OWfHpDTXuO/EzFl+c1vzZcB1aWeANNH0pFZLJ6Gsbr" crossorigin="anonymous"></script>
 <script defer src="{{ url_for('static', filename='findDuplicates.js') }}"></script>
 <script defer src="{{ url_for('static', filename='alertPartialForms.js') }}"></script>
 <script defer src="{{ url_for('static', filename='preventDoubleSubmit.js') }}"></script>
