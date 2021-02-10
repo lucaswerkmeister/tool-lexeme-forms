@@ -1,4 +1,8 @@
 {% extends "base.html" %}
+{% block head %}
+{{ super() }}
+<script src="{{ url_for('static', filename='preventDoubleSubmit.js') }}"></script>
+{% endblock %}
 {% block main_tag_attributes %}{{ super() }} lang="{{ template.language_code }}" dir="{{ template.language_code | text_direction }}"{% endblock main_tag_attributes %}
 {% block main %}
   <h1>{{ template.label }}</h1>
