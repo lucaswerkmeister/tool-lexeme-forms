@@ -20,8 +20,8 @@
 {% endmacro %}
 {% block head %}
 {{ super() }}
-<script src="{{ url_for('static', filename='edit.js') }}"></script>
-<script src="{{ url_for('static', filename='preventDoubleSubmit.js') }}"></script>
+<script defer src="{{ url_for('static', filename='edit.js') }}"></script>
+<script defer src="{{ url_for('static', filename='preventDoubleSubmit.js') }}"></script>
 <link rel="stylesheet" href="{{ url_for('static', filename='template.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='edit.css') }}">
 {% endblock %}
