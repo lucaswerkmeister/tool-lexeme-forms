@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const template = JSON.parse(document.getElementsByTagName('main')[0].dataset.template),
           baseUrl = document.querySelector('link[rel=index]').href,
           form = document.forms[0],
-          lemmaInput = form.elements['form_representation'][0],
+          lemmaInput = form.elements['form_representation'][0] || form.elements['form_representation'],
           lexemeIdInput = (form.elements['lexeme_id'] || [])[0];
 
     function removeElementById(id) {
