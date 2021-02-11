@@ -535,7 +535,7 @@ def get_duplicates(wiki, language_code, lemma):
     for result in response['search']:
         if (result.get('label') == lemma and
             (result['match']['language'] == language_code or
-             result['match']['language'] == 'und')): # T230833
+             (len(language_code) > 2 and result['match']['language'] == 'und'))): # T230833
             matches[result['id']] = {'id': result['id'], 'uri': result['concepturi'], 'label': result['label'], 'description': result['description']}
 
     if matches:
