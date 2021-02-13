@@ -749,7 +749,7 @@ def update_lexeme(lexeme_data, template, form_data, representation_language_code
             overwritten_forms += 1
         form_data_representation_variants = form_data_representation_variants[overwritten_forms:]
         lexeme_forms = lexeme_forms[overwritten_forms:]
-        # add remaining form data as new OR delete remaining lexeme forms
+        # add remaining form data as new OR delete remaining lexeme form representations or forms
         assert not (form_data_representation_variants and lexeme_forms), 'After previous loop, at least one list must be exhausted'
         for form_data_representation_variant in form_data_representation_variants:
             assert form_data_representation_variant, 'Representation cannot be empty'
@@ -759,7 +759,10 @@ def update_lexeme(lexeme_data, template, form_data, representation_language_code
         for lexeme_form in lexeme_forms:
             lexeme_form = find_form(lexeme_data, lexeme_form['id'])
             if representation_language_code in lexeme_form['representations']:
-                lexeme_form['remove'] = ''
+                if len(lexeme_form['representations']) == 1:
+                    lexeme_form['remove'] = '' # remove whole form
+                else:
+                    lexeme_form['representations'][representation_language_code]['remove'] = '' # remove only this representation
             # otherwise it’s an unrelated form that wasn’t shown to begin with, leave it alone
 
     for property_id, statements in (missing_statements or {}).items():

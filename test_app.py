@@ -1053,6 +1053,120 @@ def test_update_lexeme_rematch_same_form_twice():
     with pytest.raises(Exception):
         lexeme_forms.update_lexeme(lexeme_data, template, form_data)
 
+def test_update_lexeme_remove_form_representation():
+    lexeme_data = {
+        'lemmas': {
+            'de': {'language': 'de', 'value': 'Straße'},
+            'de-ch': {'language': 'de-ch', 'value': 'Strasse'},
+        },
+        'forms': [
+            {
+                'id': 'L44061-F1',
+                'representations': {
+                    'de': {'language': 'de', 'value': 'Straße'},
+                    'de-ch': {'language': 'de-ch', 'value': 'Strasse'},
+                },
+                'grammaticalFeatures': ['Q110786', 'Q131105'],
+            },
+            {
+                'id': 'L44061-F2',
+                'representations': {
+                    'de': {'language': 'de', 'value': 'Straße'},
+                    'de-ch': {'language': 'de-ch', 'value': 'Strasse'},
+                },
+                'grammaticalFeatures': ['Q110786', 'Q146233'],
+            },
+        ],
+    }
+    template = copy.deepcopy(templates['german-noun-feminine'])
+    template['lexeme_revision'] = 123
+    template['forms'][0]['lexeme_forms'] = [lexeme_data['forms'][0]]
+    template['forms'][1]['lexeme_forms'] = [lexeme_data['forms'][1]]
+    form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', ''), ('form_representation', 'Strasse')])
+    updated_lexeme_data = lexeme_forms.update_lexeme(lexeme_data, template, form_data, 'de-ch')
+    assert updated_lexeme_data == {
+        'lemmas': {
+            'de': {'language': 'de', 'value': 'Straße'},
+            'de-ch': {'language': 'de-ch', 'value': 'Strasse', 'remove': ''},
+        },
+        'forms': [
+            {
+                'id': 'L44061-F1',
+                'representations': {
+                    'de': {'language': 'de', 'value': 'Straße'},
+                    'de-ch': {'language': 'de-ch', 'value': 'Strasse', 'remove': ''},
+                },
+                'grammaticalFeatures': ['Q110786', 'Q131105'],
+            },
+            {
+                'id': 'L44061-F2',
+                'representations': {
+                    'de': {'language': 'de', 'value': 'Straße'},
+                    'de-ch': {'language': 'de-ch', 'value': 'Strasse'},
+                },
+                'grammaticalFeatures': ['Q110786', 'Q146233'],
+            },
+        ],
+        'base_revision_id': 123,
+    }
+
+def test_update_lexeme_remove_main_form_representation():
+    lexeme_data = {
+        'lemmas': {
+            'de': {'language': 'de', 'value': 'Straße'},
+            'de-ch': {'language': 'de-ch', 'value': 'Strasse'},
+        },
+        'forms': [
+            {
+                'id': 'L44061-F1',
+                'representations': {
+                    'de': {'language': 'de', 'value': 'Straße'},
+                    'de-ch': {'language': 'de-ch', 'value': 'Strasse'},
+                },
+                'grammaticalFeatures': ['Q110786', 'Q131105'],
+            },
+            {
+                'id': 'L44061-F2',
+                'representations': {
+                    'de': {'language': 'de', 'value': 'Straße'},
+                    'de-ch': {'language': 'de-ch', 'value': 'Strasse'},
+                },
+                'grammaticalFeatures': ['Q110786', 'Q146233'],
+            },
+        ],
+    }
+    template = copy.deepcopy(templates['german-noun-feminine'])
+    template['lexeme_revision'] = 123
+    template['forms'][0]['lexeme_forms'] = [lexeme_data['forms'][0]]
+    template['forms'][1]['lexeme_forms'] = [lexeme_data['forms'][1]]
+    form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', ''), ('form_representation', 'Straße')])
+    updated_lexeme_data = lexeme_forms.update_lexeme(lexeme_data, template, form_data, 'de')
+    assert updated_lexeme_data == {
+        'lemmas': {
+            'de': {'language': 'de', 'value': 'Straße', 'remove': ''},
+            'de-ch': {'language': 'de-ch', 'value': 'Strasse'},
+        },
+        'forms': [
+            {
+                'id': 'L44061-F1',
+                'representations': {
+                    'de': {'language': 'de', 'value': 'Straße', 'remove': ''},
+                    'de-ch': {'language': 'de-ch', 'value': 'Strasse'},
+                },
+                'grammaticalFeatures': ['Q110786', 'Q131105'],
+            },
+            {
+                'id': 'L44061-F2',
+                'representations': {
+                    'de': {'language': 'de', 'value': 'Straße'},
+                    'de-ch': {'language': 'de-ch', 'value': 'Strasse'},
+                },
+                'grammaticalFeatures': ['Q110786', 'Q146233'],
+            },
+        ],
+        'base_revision_id': 123,
+    }
+
 
 @pytest.mark.parametrize('user, expected', [
     ('علاء', 'm'),
