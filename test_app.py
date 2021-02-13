@@ -31,7 +31,7 @@ def test_form2input_escape_value():
 
 def test_form2input_invalid():
     with pytest.raises(Exception) as excinfo:
-        markup = lexeme_forms.form2input({'advanced': True}, {'example': 'No placeholder.'})
+        markup = lexeme_forms.form2input({'advanced': True}, {'example': 'No placeholder.'}) # noqa:F841
     assert 'missing [placeholder]' in str(excinfo.value)
 
 @pytest.mark.parametrize('example, expected_prefix, expected_placeholder, expected_suffix', [
@@ -87,7 +87,7 @@ def test_message_with_kwargs(template_name, number):
     template = templates[template_name]
     with lexeme_forms.app.test_request_context():
         flask.g.interface_language_code = template['language_code']
-        message = lexeme_forms.message_with_kwargs('description_with_forms_and_senses', description='', forms=number, senses=number)
+        message = lexeme_forms.message_with_kwargs('description_with_forms_and_senses', description='', forms=number, senses=number) # noqa:F841
     # should not have failed
 
 @pytest.mark.parametrize('language_code, expected_direction', [
@@ -125,7 +125,7 @@ def test_if_needs_oauth_redirect_not_logged_in(monkeypatch):
     monkeypatch.setitem(lexeme_forms.app.config, 'oauth', {})
     monkeypatch.setattr(lexeme_forms, 'consumer_token', mwoauth.ConsumerToken('test key', 'test secret'), raising=False)
     monkeypatch.setattr(mwoauth, 'initiate', lambda mw_uri, consumer_token, user_agent: ('test redirect', mwoauth.RequestToken('test key', 'test secret')))
-    with lexeme_forms.app.test_request_context() as context:
+    with lexeme_forms.app.test_request_context() as context: # noqa: F841
         response = lexeme_forms.if_needs_oauth_redirect()
     assert response is not None
     assert str(response.status_code).startswith('3')

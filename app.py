@@ -830,7 +830,6 @@ def submit_lexeme(template, lexeme_data, summary):
         **selector
     )
     lexeme_id = response['entity']['id']
-    revid = response['entity']['lastrevid']
 
     return host + '/entity/' + lexeme_id
 

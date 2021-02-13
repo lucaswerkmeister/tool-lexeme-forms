@@ -27,8 +27,6 @@ ignore =
     E306
     # line too long
     E501
-    # local variable is assigned to but never used
-    F841
     # line break before binary operator
     W503
     # line break after binary operator
