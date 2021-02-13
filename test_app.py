@@ -713,98 +713,80 @@ def test_build_lexeme_with_statements_for_existing_lexeme(monkeypatch):
         },
     }
 
-def test_build_summary_localhost(monkeypatch):
-    monkeypatch.setattr(lexeme_forms, 'current_url', lambda: 'http://localhost/template/foo/')
+def test_build_summary_localhost():
     template = {
         '@template_name': 'foo',
     }
     form_data = {}
-    summary = lexeme_forms.build_summary(template, form_data)
+    with lexeme_forms.app.test_request_context(base_url='http://localhost/'):
+        summary = lexeme_forms.build_summary(template, form_data)
     assert summary == 'foo'
 
-def test_build_summary_internet(monkeypatch):
-    monkeypatch.setattr(lexeme_forms, 'current_url', lambda: 'https://example.com/lexeme-forms/template/foo/')
+def test_build_summary_internet():
     template = {
         '@template_name': 'foo',
     }
     form_data = {}
-    summary = lexeme_forms.build_summary(template, form_data)
+    with lexeme_forms.app.test_request_context(base_url='https://example.com/lexeme-forms/'):
+        summary = lexeme_forms.build_summary(template, form_data)
     assert summary == 'foo'
 
-def test_build_summary_toolforge_lexeme_forms(monkeypatch):
-    monkeypatch.setattr(lexeme_forms, 'current_url', lambda: 'https://tools.wmflabs.org/lexeme-forms/template/foo/')
+def test_build_summary_toolforge_lexeme_forms():
     template = {
         '@template_name': 'foo',
     }
     form_data = {}
-    summary = lexeme_forms.build_summary(template, form_data)
+    with lexeme_forms.app.test_request_context(base_url='https://tools.wmflabs.org/lexeme-forms/'):
+        summary = lexeme_forms.build_summary(template, form_data)
     assert summary == '[[toolforge:lexeme-forms/template/foo/|foo]]'
 
-def test_build_summary_toolforge_other(monkeypatch):
-    monkeypatch.setattr(lexeme_forms, 'current_url', lambda: 'https://tools.wmflabs.org/other/template/foo/')
+def test_build_summary_toolforge_other():
     template = {
         '@template_name': 'foo',
     }
     form_data = {}
-    summary = lexeme_forms.build_summary(template, form_data)
+    with lexeme_forms.app.test_request_context(base_url='https://tools.wmflabs.org/other/'):
+        summary = lexeme_forms.build_summary(template, form_data)
     assert summary == '[[toolforge:other/template/foo/|foo]]'
 
-def test_build_summary_toolforge_lexeme_forms_advanced(monkeypatch):
-    monkeypatch.setattr(lexeme_forms, 'current_url', lambda: 'https://tools.wmflabs.org/lexeme-forms/template/foo/advanced/')
+def test_build_summary_toolforge_canonical_lexeme_forms():
     template = {
         '@template_name': 'foo',
     }
     form_data = {}
-    summary = lexeme_forms.build_summary(template, form_data)
-    assert summary == '[[toolforge:lexeme-forms/template/foo/advanced/|foo]]'
-
-def test_build_summary_toolforge_canonical_lexeme_forms(monkeypatch):
-    monkeypatch.setattr(lexeme_forms, 'current_url', lambda: 'https://lexeme-forms.toolforge.org/template/foo/')
-    template = {
-        '@template_name': 'foo',
-    }
-    form_data = {}
-    summary = lexeme_forms.build_summary(template, form_data)
+    with lexeme_forms.app.test_request_context(base_url='https://lexeme-forms.toolforge.org/'):
+        summary = lexeme_forms.build_summary(template, form_data)
     assert summary == '[[toolforge:lexeme-forms/template/foo/|foo]]'
 
-def test_build_summary_toolforge_canonical_other(monkeypatch):
-    monkeypatch.setattr(lexeme_forms, 'current_url', lambda: 'https://other.toolforge.org/template/foo/')
+def test_build_summary_toolforge_canonical_other():
     template = {
         '@template_name': 'foo',
     }
     form_data = {}
-    summary = lexeme_forms.build_summary(template, form_data)
+    with lexeme_forms.app.test_request_context(base_url='https://other.toolforge.org/'):
+        summary = lexeme_forms.build_summary(template, form_data)
     assert summary == '[[toolforge:other/template/foo/|foo]]'
 
-def test_build_summary_toolforge_canonical_lexeme_forms_advanced(monkeypatch):
-    monkeypatch.setattr(lexeme_forms, 'current_url', lambda: 'https://lexeme-forms.toolforge.org/template/foo/advanced/')
-    template = {
-        '@template_name': 'foo',
-    }
-    form_data = {}
-    summary = lexeme_forms.build_summary(template, form_data)
-    assert summary == '[[toolforge:lexeme-forms/template/foo/advanced/|foo]]'
-
-def test_build_summary_generated_via(monkeypatch):
-    monkeypatch.setattr(lexeme_forms, 'current_url', lambda: 'https://tools.wmflabs.org/lexeme-forms/template/foo/')
+def test_build_summary_generated_via():
     template = {
         '@template_name': 'foo',
     }
     form_data = {
         'generated_via': '[[toolforge:other/bar|other tool, bar]]'
     }
-    summary = lexeme_forms.build_summary(template, form_data)
+    with lexeme_forms.app.test_request_context(base_url='https://tools.wmflabs.org/lexeme-forms/'):
+        summary = lexeme_forms.build_summary(template, form_data)
     assert summary == '[[toolforge:lexeme-forms/template/foo/|foo]], generated via [[toolforge:other/bar|other tool, bar]]'
 
-def test_build_summary_canonical_generated_via(monkeypatch):
-    monkeypatch.setattr(lexeme_forms, 'current_url', lambda: 'https://lexeme-forms.toolforge.org/template/foo/')
+def test_build_summary_canonical_generated_via():
     template = {
         '@template_name': 'foo',
     }
     form_data = {
         'generated_via': '[[toolforge:other/bar|other tool, bar]]'
     }
-    summary = lexeme_forms.build_summary(template, form_data)
+    with lexeme_forms.app.test_request_context(base_url='https://lexeme-forms.toolforge.org/'):
+        summary = lexeme_forms.build_summary(template, form_data)
     assert summary == '[[toolforge:lexeme-forms/template/foo/|foo]], generated via [[toolforge:other/bar|other tool, bar]]'
 
 def test_get_all_templates_api():

@@ -790,7 +790,7 @@ def find_form(lexeme_data, form_id):
 
 def build_summary(template, form_data):
     template_name = template['@template_name']
-    url = current_url()
+    url = flask.url_for('process_template', template_name=template_name, _external=True)
     toolforge_match = re.match(r'https://([a-z0-9-_]+).toolforge.org/(.*)$', url)
     if toolforge_match:  # TODO use walrus operator in Python 3.8+
         tool_name = toolforge_match.group(1)
