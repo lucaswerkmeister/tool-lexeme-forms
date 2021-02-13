@@ -15,8 +15,6 @@ ignore =
     E202
     # missing whitespace after ','
     E231
-    # at least two spaces before inline comment
-    E261
     # expected 2 blank lines
     E302
     # expected 2 blank lines after class or function definition

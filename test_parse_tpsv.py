@@ -36,7 +36,7 @@ def test_parse_lexeme_three_forms_no_lexeme_id(line, expected_representations):
 def test_parse_lexeme_two_forms_lexeme_id(line, expected_lexeme_id, expected_representations):
     template = { 'forms': [ {}, {} ] }
     actual_data = parse_tpsv.parse_lexeme(line, template)
-    [actual_lexeme_id] = actual_data.getlist('lexeme_id') # unpack + getlist guards against extra lexeme IDs
+    [actual_lexeme_id] = actual_data.getlist('lexeme_id')  # unpack + getlist guards against extra lexeme IDs
     actual_representations = actual_data.getlist('form_representation')
     assert expected_lexeme_id == actual_lexeme_id
     assert expected_representations == actual_representations
