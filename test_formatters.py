@@ -111,9 +111,11 @@ def test_CommaSeparatedListFormatter_formats_list_items_with_format_spec():
 ])
 def test_GenderFormatter(gender, expected):
     user = 'opaque value'
+
     def get_gender(value):
         assert value == user
         return gender
+
     gender_formatter = formatters.GenderFormatter(get_gender=get_gender)
     assert gender_formatter.format(
         'Thank {user!g:m=him:f=her:n=them}?',
