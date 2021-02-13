@@ -1,0 +1,37 @@
+# -*- mode: conf; -*-
+[flake8]
+ignore =
+    # continuation line under-indented for hanging indent
+    E121
+    # continuation line missing indentation or outdented
+    E122
+    # continuation line with same indent as next logical line
+    E125
+    # visually indented line with same indent as next logical line
+    E129
+    # whitespace after '{' or '['
+    E201
+    # whitespace before '}' or ']'
+    E202
+    # missing whitespace after ','
+    E231
+    # unexpected spaces around keyword / parameter equals
+    E251
+    # at least two spaces before inline comment
+    E261
+    # expected 2 blank lines
+    E302
+    # expected 2 blank lines after class or function definition
+    E305
+    # expected 1 blank line before a nested definition
+    E306
+    # line too long
+    E501
+    # module imported but unused
+    F401
+    # local variable is assigned to but never used
+    F841
+    # line break before binary operator
+    W503
+    # line break after binary operator
+    W504

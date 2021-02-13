@@ -1,5 +1,6 @@
 babel
 decorator
+flake8
 flask
 jinja2
 mwapi
