@@ -111,9 +111,11 @@ def test_CommaSeparatedListFormatter_formats_list_items_with_format_spec():
 ])
 def test_GenderFormatter(gender, expected):
     user = 'opaque value'
+
     def get_gender(value):
         assert value == user
         return gender
+
     gender_formatter = formatters.GenderFormatter(get_gender=get_gender)
     assert gender_formatter.format(
         'Thank {user!g:m=him:f=her:n=them}?',
@@ -133,7 +135,7 @@ def test_I18nFormatter_en(formats, user, expected):
         'Kim': 'n',
     }
     i18n_formatter = formatters.I18nFormatter(locale_identifier='en',
-                                              get_gender = lambda value: genders[value])
+                                              get_gender=lambda value: genders[value])
     assert i18n_formatter.format(
         '{user!g:m=His:f=Her:n=Their} preferred {count!p:one=format is:other=formats are} {formats!l}.',
         user=user,

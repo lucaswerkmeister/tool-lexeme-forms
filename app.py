@@ -14,7 +14,6 @@ import requests_oauthlib
 import string
 import toolforge
 import yaml
-import werkzeug.datastructures
 
 from flask_utils import OrderedFlask, TagOrderedMultiDict, TagImmutableOrderedMultiDict
 from formatters import I18nFormatter
@@ -161,14 +160,14 @@ def message_with_language(message_code, language_code=None):
 def message_with_kwargs(message_code, **kwargs):
     template, language = message_with_language(message_code)
     if language == 'la':
-        language = 'en' # Latin is not in CLDR, English has same plural forms
+        language = 'en'  # Latin is not in CLDR, English has same plural forms
     return I18nFormatter(locale_identifier=language,
                          get_gender=get_gender).format(template, **kwargs)
 
 @app.template_filter()
 def text_direction(language_code):
     try:
-        locale = babel.Locale.parse(language_code.split('-')[0]) # the -x-Qid stuff is not understood by Babel
+        locale = babel.Locale.parse(language_code.split('-')[0])  # the -x-Qid stuff is not understood by Babel
     except babel.UnknownLocaleError:
         return 'auto'
     else:
@@ -229,7 +228,7 @@ def process_template_advanced(template_name, advanced=True):
     form_data = flask.request.form
 
     if (flask.request.method == 'POST' and
-        form_data.get('_advanced_mode', 'None') == str(advanced)):
+            form_data.get('_advanced_mode', 'None') == str(advanced)):
         response = if_has_duplicates_redirect(template, advanced, form_data)
         if response:
             return response
@@ -277,8 +276,8 @@ def process_template_bulk(template_name):
         )
 
     if (flask.request.method == 'POST' and
-        '_bulk_mode' in flask.request.form and
-        csrf_token_matches(flask.request.form)):
+            '_bulk_mode' in flask.request.form and
+            csrf_token_matches(flask.request.form)):
 
         form_data = flask.request.form
         try:
@@ -339,7 +338,7 @@ def process_template_bulk(template_name):
                     # clear the value so that the placeholder is shown
                     value = ''
                 else:
-                    value += '\n' # for convenience when adding more
+                    value += '\n'  # for convenience when adding more
             else:
                 # user came from bulk mode with CSRF error
                 value = form_data.get('lexemes')
@@ -380,17 +379,17 @@ def process_template_edit(template_name, lexeme_id):
 
     lexeme_match = match_template_to_lexeme_data(template, lexeme_data)
     lexeme_matches_template = (
-        lexeme_match['language']
-        and lexeme_match['lexical_category']
-        and not lexeme_match['conflicting_statements']
+        lexeme_match['language'] and
+        lexeme_match['lexical_category'] and
+        not lexeme_match['conflicting_statements']
     )
     template = match_lexeme_forms_to_template(lexeme_data['forms'], template)
     template['lexeme_id'] = lexeme_id
     template['lexeme_revision'] = lexeme_revision
 
     if (flask.request.method == 'POST' and
-        '_edit_mode' in flask.request.form and
-        csrf_token_matches(flask.request.form)):
+            '_edit_mode' in flask.request.form and
+            csrf_token_matches(flask.request.form)):
         form_data = flask.request.form
         lexeme_data = update_lexeme(lexeme_data, template, form_data, representation_language_code, missing_statements=lexeme_match['missing_statements'])
         summary = build_summary(template, form_data)
@@ -404,7 +403,7 @@ def process_template_edit(template_name, lexeme_id):
 
     for template_form in template['forms']:
         lexeme_forms = template_form.get('lexeme_forms')
-        if lexeme_forms: # TODO use walrus operator in Python 3.8
+        if lexeme_forms:  # TODO use walrus operator in Python 3.8
             template_form['value'] = '/'.join(lexeme_form['representations'][representation_language_code]['value']
                                               for lexeme_form in lexeme_forms
                                               if representation_language_code in lexeme_form['representations'])
@@ -429,7 +428,7 @@ def process_template_edit(template_name, lexeme_id):
         lexeme_matches_template=lexeme_matches_template,
         template_language_code=template_language_code,
         representation_language_code=representation_language_code,
-        advanced=True, # for form2input
+        advanced=True,  # for form2input
         csrf_error=flask.request.method == 'POST',
     )
 
@@ -527,7 +526,7 @@ def get_duplicates(wiki, language_code, lemma):
         action='wbsearchentities',
         search=lemma,
         language=api_language_code,
-        uselang=api_language_code, # for the result descriptions
+        uselang=api_language_code,  # for the result descriptions
         type='lexeme',
         limit=50,
     )
@@ -535,11 +534,11 @@ def get_duplicates(wiki, language_code, lemma):
     for result in response['search']:
         if (result.get('label') == lemma and
             (result['match']['language'] == language_code or
-             (len(language_code) > 2 and result['match']['language'] == 'und'))): # T230833
+             (len(language_code) > 2 and result['match']['language'] == 'und'))):  # T230833
             matches[result['id']] = {'id': result['id'], 'uri': result['concepturi'], 'label': result['label'], 'description': result['description']}
 
     if matches:
-        response = session.get( # no, this can’t be combined with the previous call by using generator=wbsearch – then we don’t get the match language
+        response = session.get(  # no, this can’t be combined with the previous call by using generator=wbsearch – then we don’t get the match language
             action='query',
             titles=['Lexeme:' + id for id in matches],
             prop=['pageprops'],
@@ -551,7 +550,7 @@ def get_duplicates(wiki, language_code, lemma):
             matches[id]['forms_count'] = pageprops.get('wbl-forms')
             matches[id]['senses_count'] = pageprops.get('wbl-senses')
 
-    return list(matches.values()) # list() to turn odict_values (not JSON serializable) into plain list
+    return list(matches.values())  # list() to turn odict_values (not JSON serializable) into plain list
 
 @app.route('/api/v1/no_duplicate/<language_code>')
 @app.template_global()
@@ -600,7 +599,7 @@ def get_lexeme_data(lexeme_id, wiki, revision=None):
         entities_data = session.session.get(
             f'{host}/wiki/Special:EntityData/{lexeme_id}.json?revision={revision}',
         ).json()
-    else: # TODO when T128486 is fixed, use Special:EntityData without revision too, for better caching
+    else:  # TODO when T128486 is fixed, use Special:EntityData without revision too, for better caching
         entities_data = session.get(
             action='wbgetentities',
             ids=[lexeme_id],
@@ -708,7 +707,7 @@ def update_lexeme(lexeme_data, template, form_data, representation_language_code
             form_data_representation_variants = []
         lexeme_forms = template_form.get('lexeme_forms', []).copy()
         # process “representations” that actually reference existing forms first
-        for form_data_representation_variant in reversed(form_data_representation_variants): # reversed so that the remove within the loop doesn’t disturb the iteration
+        for form_data_representation_variant in reversed(form_data_representation_variants):  # reversed so that the remove within the loop doesn’t disturb the iteration
             if not re.match(r'^L[1-9][0-9]*-F[1-9][0-9]*$', form_data_representation_variant):
                 continue
             lexeme_form = find_form(lexeme_data, form_id=form_data_representation_variant)
@@ -725,12 +724,12 @@ def update_lexeme(lexeme_data, template, form_data, representation_language_code
             # add missing statements (and complain about conflicting ones)
             form_matched_statements, form_missing_statements, form_conflicting_statements = match_template_entity_to_lexeme_entity('test' in template, template_form, lexeme_form)
             if form_conflicting_statements:
-                raise Exception('Conflicting statements!') # TODO better error reporting
+                raise Exception('Conflicting statements!')  # TODO better error reporting
             for property_id, statements in form_missing_statements.items():
                 lexeme_form.setdefault('claims', {}).setdefault(property_id, []).extend(statements)
             form_data_representation_variants.remove(form_data_representation_variant)
         # find and remove matching forms (no modification necessary)
-        for lexeme_form in reversed(lexeme_forms): # reversed so that the remove within the loop doesn’t disturb the iteration
+        for lexeme_form in reversed(lexeme_forms):  # reversed so that the remove within the loop doesn’t disturb the iteration
             if representation_language_code not in lexeme_form['representations']:
                 continue
             lexeme_form_representation = lexeme_form['representations'][representation_language_code]
@@ -755,14 +754,14 @@ def update_lexeme(lexeme_data, template, form_data, representation_language_code
             assert form_data_representation_variant, 'Representation cannot be empty'
             lexeme_form = build_form(template_form, representation_language_code, form_data_representation_variant)
             lexeme_data['forms'].append(lexeme_form)
-            template_form.setdefault('lexeme_forms', []).append(lexeme_form) # so it can be found as first_form below
+            template_form.setdefault('lexeme_forms', []).append(lexeme_form)  # so it can be found as first_form below
         for lexeme_form in lexeme_forms:
             lexeme_form = find_form(lexeme_data, lexeme_form['id'])
             if representation_language_code in lexeme_form['representations']:
                 if len(lexeme_form['representations']) == 1:
-                    lexeme_form['remove'] = '' # remove whole form
+                    lexeme_form['remove'] = ''  # remove whole form
                 else:
-                    lexeme_form['representations'][representation_language_code]['remove'] = '' # remove only this representation
+                    lexeme_form['representations'][representation_language_code]['remove'] = ''  # remove only this representation
             # otherwise it’s an unrelated form that wasn’t shown to begin with, leave it alone
 
     for property_id, statements in (missing_statements or {}).items():
@@ -771,8 +770,8 @@ def update_lexeme(lexeme_data, template, form_data, representation_language_code
     first_form = next(iter(template['forms'][0].get('lexeme_forms', [])), None)
     if first_form:
         first_form_id = first_form.get('id')
-        if first_form_id: # TODO use walrus operator in Python 3.8+
-            first_form = find_form(lexeme_data, first_form_id) # find edited version
+        if first_form_id:  # TODO use walrus operator in Python 3.8+
+            first_form = find_form(lexeme_data, first_form_id)  # find edited version
         else:
             # it’s a new form, first_form is already the edited version
             pass
@@ -793,7 +792,7 @@ def build_summary(template, form_data):
     template_name = template['@template_name']
     url = current_url()
     toolforge_match = re.match(r'https://([a-z0-9-_]+).toolforge.org/(.*)$', url)
-    if toolforge_match: # TODO use walrus operator in Python 3.8+
+    if toolforge_match:  # TODO use walrus operator in Python 3.8+
         tool_name = toolforge_match.group(1)
         rest = toolforge_match.group(2)
         summary = '[[toolforge:%s/%s|%s]]' % (tool_name, rest, template_name)
@@ -831,7 +830,6 @@ def submit_lexeme(template, lexeme_data, summary):
         **selector
     )
     lexeme_id = response['entity']['id']
-    revid = response['entity']['lastrevid']
 
     return host + '/entity/' + lexeme_id
 
@@ -840,14 +838,14 @@ def add_labels_to_lexeme_forms_grammatical_features(session, language, lexeme_fo
     for lexeme_form in lexeme_forms:
         grammatical_features_item_ids.update(lexeme_form['grammaticalFeatures'])
     grammatical_features_item_ids = list(grammatical_features_item_ids)
-    labels_map = {} # item ID to label
+    labels_map = {}  # item ID to label
     while grammatical_features_item_ids:
         chunk, grammatical_features_item_ids = grammatical_features_item_ids[:50], grammatical_features_item_ids[50:]
         response = session.get(action='wbgetentities',
                                ids=chunk,
                                props=['labels'],
                                languages=[language],
-                               languagefallback=1, # TODO use True once mediawiki-utilities/python-mwapi#38 is in a released version
+                               languagefallback=1,  # TODO use True once mediawiki-utilities/python-mwapi#38 is in a released version
                                formatversion=2)
         for item_id, item in response['entities'].items():
             labels_map[item_id] = item['labels'].get(language, {'language': 'zxx', 'value': item_id})
