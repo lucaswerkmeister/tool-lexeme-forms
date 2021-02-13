@@ -3366,7 +3366,7 @@ templates = collections.OrderedDict([
                 'example': 'Ich mag mehrere [Hunde].',
                 'grammatical_features_item_ids': ['Q146078', 'Q146786'],
             },
-       ],
+        ],
         'statements': {
             'P5185': [
                 {
@@ -3437,7 +3437,7 @@ templates = collections.OrderedDict([
                 'example': 'Ich mag mehrere [Katzen].',
                 'grammatical_features_item_ids': ['Q146078', 'Q146786'],
             },
-       ],
+        ],
         'statements': {
             'P5185': [
                 {
@@ -3508,7 +3508,7 @@ templates = collections.OrderedDict([
                 'example': 'Ich mag mehrere [Kinder].',
                 'grammatical_features_item_ids': ['Q146078', 'Q146786'],
             },
-       ],
+        ],
         'statements': {
             'P5185': [
                 {
@@ -3558,7 +3558,7 @@ templates = collections.OrderedDict([
                 'example': 'Pläne für das zukünftige [Berlin].',
                 'grammatical_features_item_ids': ['Q146078', 'Q110786'],
             },
-       ],
+        ],
         'statements': {
             'P5185': [
                 {
@@ -3642,7 +3642,7 @@ templates = collections.OrderedDict([
                 'example': 'Ich mag die [Großeltern].',
                 'grammatical_features_item_ids': ['Q146078', 'Q146786'],
             },
-       ],
+        ],
         'statements': {
             'P31': [
                 {
@@ -5426,7 +5426,7 @@ templates = collections.OrderedDict([
                 'example': 'Et vos, [pueri]?',
                 'grammatical_features_item_ids': ['Q185077', 'Q146786'],
             },
-       ],
+        ],
         'statements': {
             'P5185': [
                 {
@@ -5517,7 +5517,7 @@ templates = collections.OrderedDict([
                 'example': 'Et vos, [puellae]?',
                 'grammatical_features_item_ids': ['Q185077', 'Q146786'],
             },
-       ],
+        ],
         'statements': {
             'P5185': [
                 {
@@ -5608,7 +5608,7 @@ templates = collections.OrderedDict([
                 'example': 'Et vos, [fora]?',
                 'grammatical_features_item_ids': ['Q185077', 'Q146786'],
             },
-       ],
+        ],
         'statements': {
             'P5185': [
                 {

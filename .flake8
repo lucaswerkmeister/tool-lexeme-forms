@@ -3,8 +3,6 @@
 ignore =
     # continuation line under-indented for hanging indent
     E121
-    # continuation line missing indentation or outdented
-    E122
     # continuation line with same indent as next logical line
     E125
     # visually indented line with same indent as next logical line
