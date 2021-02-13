@@ -14,7 +14,6 @@ import requests_oauthlib
 import string
 import toolforge
 import yaml
-import werkzeug.datastructures
 
 from flask_utils import OrderedFlask, TagOrderedMultiDict, TagImmutableOrderedMultiDict
 from formatters import I18nFormatter
