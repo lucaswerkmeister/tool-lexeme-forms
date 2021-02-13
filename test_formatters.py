@@ -133,7 +133,7 @@ def test_I18nFormatter_en(formats, user, expected):
         'Kim': 'n',
     }
     i18n_formatter = formatters.I18nFormatter(locale_identifier='en',
-                                              get_gender = lambda value: genders[value])
+                                              get_gender=lambda value: genders[value])
     assert i18n_formatter.format(
         '{user!g:m=His:f=Her:n=Their} preferred {count!p:one=format is:other=formats are} {formats!l}.',
         user=user,
