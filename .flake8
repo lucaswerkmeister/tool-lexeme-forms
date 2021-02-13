@@ -5,8 +5,6 @@ ignore =
     E121
     # continuation line with same indent as next logical line
     E125
-    # visually indented line with same indent as next logical line
-    E129
     # expected 2 blank lines
     E302
     # expected 2 blank lines after class or function definition

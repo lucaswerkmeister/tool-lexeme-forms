@@ -228,7 +228,7 @@ def process_template_advanced(template_name, advanced=True):
     form_data = flask.request.form
 
     if (flask.request.method == 'POST' and
-        form_data.get('_advanced_mode', 'None') == str(advanced)):
+            form_data.get('_advanced_mode', 'None') == str(advanced)):
         response = if_has_duplicates_redirect(template, advanced, form_data)
         if response:
             return response
@@ -276,8 +276,8 @@ def process_template_bulk(template_name):
         )
 
     if (flask.request.method == 'POST' and
-        '_bulk_mode' in flask.request.form and
-        csrf_token_matches(flask.request.form)):
+            '_bulk_mode' in flask.request.form and
+            csrf_token_matches(flask.request.form)):
 
         form_data = flask.request.form
         try:
@@ -388,8 +388,8 @@ def process_template_edit(template_name, lexeme_id):
     template['lexeme_revision'] = lexeme_revision
 
     if (flask.request.method == 'POST' and
-        '_edit_mode' in flask.request.form and
-        csrf_token_matches(flask.request.form)):
+            '_edit_mode' in flask.request.form and
+            csrf_token_matches(flask.request.form)):
         form_data = flask.request.form
         lexeme_data = update_lexeme(lexeme_data, template, form_data, representation_language_code, missing_statements=lexeme_match['missing_statements'])
         summary = build_summary(template, form_data)
