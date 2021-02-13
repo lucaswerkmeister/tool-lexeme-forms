@@ -736,29 +736,11 @@ def test_build_summary_toolforge_lexeme_forms():
         '@template_name': 'foo',
     }
     form_data = {}
-    with lexeme_forms.app.test_request_context(base_url='https://tools.wmflabs.org/lexeme-forms/'):
-        summary = lexeme_forms.build_summary(template, form_data)
-    assert summary == '[[toolforge:lexeme-forms/template/foo/|foo]]'
-
-def test_build_summary_toolforge_other():
-    template = {
-        '@template_name': 'foo',
-    }
-    form_data = {}
-    with lexeme_forms.app.test_request_context(base_url='https://tools.wmflabs.org/other/'):
-        summary = lexeme_forms.build_summary(template, form_data)
-    assert summary == '[[toolforge:other/template/foo/|foo]]'
-
-def test_build_summary_toolforge_canonical_lexeme_forms():
-    template = {
-        '@template_name': 'foo',
-    }
-    form_data = {}
     with lexeme_forms.app.test_request_context(base_url='https://lexeme-forms.toolforge.org/'):
         summary = lexeme_forms.build_summary(template, form_data)
     assert summary == '[[toolforge:lexeme-forms/template/foo/|foo]]'
 
-def test_build_summary_toolforge_canonical_other():
+def test_build_summary_toolforge_other():
     template = {
         '@template_name': 'foo',
     }
@@ -768,17 +750,6 @@ def test_build_summary_toolforge_canonical_other():
     assert summary == '[[toolforge:other/template/foo/|foo]]'
 
 def test_build_summary_generated_via():
-    template = {
-        '@template_name': 'foo',
-    }
-    form_data = {
-        'generated_via': '[[toolforge:other/bar|other tool, bar]]'
-    }
-    with lexeme_forms.app.test_request_context(base_url='https://tools.wmflabs.org/lexeme-forms/'):
-        summary = lexeme_forms.build_summary(template, form_data)
-    assert summary == '[[toolforge:lexeme-forms/template/foo/|foo]], generated via [[toolforge:other/bar|other tool, bar]]'
-
-def test_build_summary_canonical_generated_via():
     template = {
         '@template_name': 'foo',
     }

@@ -796,9 +796,6 @@ def build_summary(template, form_data):
         tool_name = toolforge_match.group(1)
         rest = toolforge_match.group(2)
         summary = '[[toolforge:%s/%s|%s]]' % (tool_name, rest, template_name)
-    elif url.startswith('https://tools.wmflabs.org/'):
-        relative = url[len('https://tools.wmflabs.org/'):]
-        summary = '[[toolforge:%s|%s]]' % (relative, template_name)
     else:
         summary = template_name
 
