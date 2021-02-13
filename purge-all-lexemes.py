@@ -17,8 +17,7 @@ for result in session.post(
         gapnamespace=146,  # Lexeme
         gaplimit=30,  # rate limit permits 30 purges per 60 seconds
         forcelinkupdate=True,
-        continuation=True
-    ):
+        continuation=True):
     pages = result['purge']
     first_id = pages[0]['title'][len('Lexeme:'):]
     last_id = pages[-1]['title'][len('Lexeme:'):]
