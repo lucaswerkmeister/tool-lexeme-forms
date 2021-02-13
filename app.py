@@ -379,9 +379,9 @@ def process_template_edit(template_name, lexeme_id):
 
     lexeme_match = match_template_to_lexeme_data(template, lexeme_data)
     lexeme_matches_template = (
-        lexeme_match['language']
-        and lexeme_match['lexical_category']
-        and not lexeme_match['conflicting_statements']
+        lexeme_match['language'] and
+        lexeme_match['lexical_category'] and
+        not lexeme_match['conflicting_statements']
     )
     template = match_lexeme_forms_to_template(lexeme_data['forms'], template)
     template['lexeme_id'] = lexeme_id
