@@ -9,8 +9,6 @@ ignore =
     E125
     # visually indented line with same indent as next logical line
     E129
-    # missing whitespace after ','
-    E231
     # expected 2 blank lines
     E302
     # expected 2 blank lines after class or function definition

@@ -82,7 +82,7 @@ def test_template_group_test():
     assert group == '<span lang="de" dir="ltr">Deutsch (<span lang=zxx>de</span>)</span>, test.wikidata.org'
 
 @pytest.mark.parametrize('template_name', templates.keys())
-@pytest.mark.parametrize('number', range(-1,5))
+@pytest.mark.parametrize('number', range(-1, 5))
 def test_message_with_kwargs(template_name, number):
     template = templates[template_name]
     with lexeme_forms.app.test_request_context():
