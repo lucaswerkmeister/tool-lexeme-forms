@@ -3,8 +3,6 @@
 ignore =
     # expected 2 blank lines
     E302
-    # expected 2 blank lines after class or function definition
-    E305
     # expected 1 blank line before a nested definition
     E306
     # line too long

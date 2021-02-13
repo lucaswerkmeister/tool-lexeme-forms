@@ -244,6 +244,7 @@ def test_get_duplicates_api_html_empty(monkeypatch):
     assert response.content_type == 'text/html; charset=utf-8'
     assert response.get_data(as_text=True) == ''
 
+
 minimal_template = {
     '@template_name': 'minimal-template',
     'language_code': 'en',
