@@ -11,6 +11,7 @@
     {% endblock head %}
   </head>
   <body>
+    <a href="#main" class="sr-only sr-only-focusable">Skip to main content</a>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
       <a href="{{ url_for('index') }}" class="navbar-brand">Wikidata Lexeme Forms</a>
       <ul class="navbar-nav mr-auto">
@@ -20,7 +21,7 @@
       </ul>
       {{ render_oauth_username() }}
     </nav>
-    <main {% block main_tag_attributes %}class="container mt-3"{% endblock main_tag_attributes %}>
+    <main id="main" {% block main_tag_attributes %}class="container mt-3"{% endblock main_tag_attributes %}>
       {% block main %}
       {% endblock main %}
     </main>
