@@ -413,10 +413,7 @@ def process_template_edit(template_name, lexeme_id):
         template = add_form_data_to_template(flask.request.args, template, overwrite=False)
 
     add_labels_to_lexeme_forms_grammatical_features(
-        mwapi.Session(
-            'https://' + wiki + '.wikidata.org',
-            user_agent=user_agent,
-        ),
+        anonymous_session(f'https://{wiki}.wikidata.org'),
         template_language_code,
         template.get('unmatched_lexeme_forms', []) + template.get('ambiguous_lexeme_forms', [])
     )
@@ -514,11 +511,7 @@ def get_duplicates_api(wiki, language_code, lemma):
         return flask.jsonify(matches)
 
 def get_duplicates(wiki, language_code, lemma):
-    host = 'https://' + wiki + '.wikidata.org'
-    session = mwapi.Session(
-        host,
-        user_agent=user_agent,
-    )
+    session = anonymous_session(f'https://{wiki}.wikidata.org')
 
     api_language_code = 'bn' if language_code == 'bn-x-Q6747180' else language_code
 
@@ -589,11 +582,7 @@ def match_template_to_lexeme_id(wiki, lexeme_id, template_name):
     return flask.jsonify(match_template_to_lexeme_data(template, lexeme_data))
 
 def get_lexeme_data(lexeme_id, wiki, revision=None):
-    host = 'https://' + wiki + '.wikidata.org'
-    session = mwapi.Session(
-        host,
-        user_agent=user_agent,
-    )
+    session = anonymous_session(f'https://{wiki}.wikidata.org')
 
     if revision:
         entities_data = session.session.get(
@@ -809,11 +798,7 @@ def submit_lexeme(template, lexeme_data, summary):
         host = 'https://test.wikidata.org'
     else:
         host = 'https://www.wikidata.org'
-    session = mwapi.Session(
-        host=host,
-        auth=generate_auth(),
-        user_agent=user_agent,
-    )
+    session = authenticated_session(host)
 
     token = session.get(action='query', meta='tokens')['query']['tokens']['csrftoken']
     selector = {'id': lexeme_data['id']} if 'id' in lexeme_data else {'new': 'lexeme'}
@@ -876,10 +861,7 @@ def get_gender(user):
     }[gender_option]
 
 def gender_option_of_user_name(user_name):
-    session = mwapi.Session(
-        host='https://www.wikidata.org',
-        user_agent=user_agent,
-    )
+    session = anonymous_session('https://www.wikidata.org')
     response = session.get(action='query',
                            list=['users'],
                            usprop=['gender'],
@@ -891,16 +873,25 @@ def gender_option_of_user():
     if 'oauth_access_token' not in flask.session:
         return 'unknown'
 
-    session = mwapi.Session(
-        host='https://www.wikidata.org',
-        auth=generate_auth(),
-        user_agent=user_agent,
-    )
+    session = authenticated_session('https://www.wikidata.org')
     response = session.get(action='query',
                            meta=['userinfo'],
                            uiprop=['options'],
                            formatversion=2)
     return response['query']['userinfo']['options']['gender']
+
+def authenticated_session(host):
+    return mwapi.Session(
+        host=host,
+        auth=generate_auth(),
+        user_agent=user_agent,
+    )
+
+def anonymous_session(host):
+    return mwapi.Session(
+        host=host,
+        user_agent=user_agent,
+    )
 
 def generate_auth():
     access_token = mwoauth.AccessToken(**flask.session['oauth_access_token'])
