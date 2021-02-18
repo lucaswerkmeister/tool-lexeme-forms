@@ -583,7 +583,8 @@ def match_template_to_lexeme_id(wiki, lexeme_id, template_name):
     return flask.jsonify(match_template_to_lexeme_data(template, lexeme_data))
 
 def get_lexeme_data(lexeme_id, wiki, revision=None):
-    session = anonymous_session(f'https://{wiki}.wikidata.org')
+    host = f'https://{wiki}.wikidata.org'
+    session = anonymous_session(host)
 
     if revision:
         entities_data = session.session.get(
