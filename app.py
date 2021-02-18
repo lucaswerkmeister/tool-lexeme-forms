@@ -19,6 +19,7 @@ from flask_utils import OrderedFlask, TagOrderedMultiDict, TagImmutableOrderedMu
 from formatters import I18nFormatter
 from language_names import autonym
 from matching import match_template_to_lexeme_data, match_lexeme_forms_to_template, match_template_entity_to_lexeme_entity
+from mwapi_utils import T272319RetryingSession
 from parse_tpsv import parse_lexemes
 from templates import templates
 from translations import translations
@@ -881,7 +882,7 @@ def gender_option_of_user():
     return response['query']['userinfo']['options']['gender']
 
 def authenticated_session(host):
-    return mwapi.Session(
+    return T272319RetryingSession(
         host=host,
         auth=generate_auth(),
         user_agent=user_agent,
