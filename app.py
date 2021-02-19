@@ -134,11 +134,11 @@ def user_link(user_name):
 
 @app.template_global()
 def render_oauth_username():
-    identity = identify()
-    if identity is None:
+    userinfo = get_userinfo()
+    if userinfo is None:
         return flask.Markup(r'')
     return (flask.Markup(r'<span class="navbar-text">Logged in as ') +
-            user_link(identity['username']) +
+            user_link(userinfo['name']) +
             flask.Markup(r'</span>'))
 
 @app.template_global()
@@ -641,10 +641,8 @@ def current_url():
 def can_use_bulk_mode():
     if 'oauth' not in app.config:
         return True
-    identity = identify()
-    if not identity:
-        return False
-    return 'autoconfirmed' in identity['groups']
+    userinfo = get_userinfo()
+    return userinfo is not None and 'autoconfirmed' in userinfo['groups']
 
 def build_lexeme(template, form_data):
     lang = template['language_code']
@@ -904,12 +902,14 @@ def generate_auth():
         resource_owner_secret=access_token.secret,
     )
 
-def identify():
+def get_userinfo():
     if 'oauth_access_token' not in flask.session:
         return None
-    access_token = mwoauth.AccessToken(**flask.session['oauth_access_token'])
-    return mwoauth.identify(
-        'https://www.wikidata.org/w/index.php',
-        consumer_token,
-        access_token,
-    )
+    session = authenticated_session('https://www.wikidata.org')
+    userinfo = session.get(action='query',
+                           meta='userinfo',
+                           uiprop='groups',
+                           formatversion=2)['query']['userinfo']
+    if userinfo.get('anon', False):
+        return None
+    return userinfo
