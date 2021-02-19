@@ -899,6 +899,12 @@ def generate_auth():
     )
 
 def get_userinfo():
+    if 'userinfo' not in flask.g:
+        flask.g.userinfo = query_userinfo()
+
+    return flask.g.userinfo
+
+def query_userinfo():
     if 'oauth_access_token' not in flask.session:
         return None
     session = authenticated_session('https://www.wikidata.org')
