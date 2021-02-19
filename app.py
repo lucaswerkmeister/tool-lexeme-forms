@@ -870,15 +870,11 @@ def gender_option_of_user_name(user_name):
     return response['query']['users'][0]['gender']
 
 def gender_option_of_user():
-    if 'oauth_access_token' not in flask.session:
+    userinfo = get_userinfo()
+    if userinfo is None:
         return 'unknown'
 
-    session = authenticated_session('https://www.wikidata.org')
-    response = session.get(action='query',
-                           meta=['userinfo'],
-                           uiprop=['options'],
-                           formatversion=2)
-    return response['query']['userinfo']['options']['gender']
+    return userinfo['options']['gender']
 
 def authenticated_session(host):
     return T272319RetryingSession(
@@ -908,7 +904,7 @@ def get_userinfo():
     session = authenticated_session('https://www.wikidata.org')
     userinfo = session.get(action='query',
                            meta='userinfo',
-                           uiprop='groups',
+                           uiprop=['groups', 'options'],
                            formatversion=2)['query']['userinfo']
     if userinfo.get('anon', False):
         return None
