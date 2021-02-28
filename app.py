@@ -466,7 +466,7 @@ def login(from_other_url=False):
         if from_other_url:
             # login() is usually called via if_needs_oauth_redirect() from a different URL –
             # if /login was loaded directly, don’t redirect back to it afterwards
-            flask.session['oauth_redirect_target'] = current_url
+            flask.session['oauth_redirect_target'] = current_url()
         return flask.redirect(redirect)
     else:
         return flask.redirect(flask.url_for('index'))
