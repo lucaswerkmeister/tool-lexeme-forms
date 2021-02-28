@@ -441,10 +441,7 @@ def if_no_such_template_redirect(template_name):
 
 def if_needs_oauth_redirect():
     if 'oauth' in app.config and 'oauth_access_token' not in flask.session:
-        (redirect, request_token) = mwoauth.initiate('https://www.wikidata.org/w/index.php', consumer_token, user_agent=user_agent)
-        flask.session['oauth_request_token'] = dict(zip(request_token._fields, request_token))
-        flask.session['oauth_redirect_target'] = current_url()
-        return flask.redirect(redirect)
+        return login(from_other_url=True)
     else:
         return None
 
@@ -453,7 +450,21 @@ def oauth_callback():
     access_token = mwoauth.complete('https://www.wikidata.org/w/index.php', consumer_token, mwoauth.RequestToken(**flask.session.pop('oauth_request_token')), flask.request.query_string, user_agent=user_agent)
     flask.session['oauth_access_token'] = dict(zip(access_token._fields, access_token))
     flask.session.pop('_csrf_token', None)
-    return flask.redirect(flask.session.pop('oauth_redirect_target'))
+    redirect_target = flask.session.pop('oauth_redirect_target', None)
+    return flask.redirect(redirect_target or flask.url_for('index'))
+
+@app.route('/login')
+def login(from_other_url=False):
+    if 'oauth' in app.config:
+        (redirect, request_token) = mwoauth.initiate('https://www.wikidata.org/w/index.php', consumer_token, user_agent=user_agent)
+        flask.session['oauth_request_token'] = dict(zip(request_token._fields, request_token))
+        if from_other_url:
+            # login() is usually called via if_needs_oauth_redirect() from a different URL –
+            # if /login was loaded directly, don’t redirect back to it afterwards
+            flask.session['oauth_redirect_target'] = current_url
+        return flask.redirect(redirect)
+    else:
+        return flask.redirect(flask.url_for('index'))
 
 @app.route('/logout')
 def logout():
