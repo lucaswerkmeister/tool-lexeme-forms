@@ -5,14 +5,14 @@
 		]
 	},
 	"create": "Créer",
-	"csrf_warning": "Désolé, cette requête n'a pas pu être traitée (la protection anti-<abbr title=\"Cross-site request forgery\">CSRF</abbr> a échoué). Essayez de renvoyer le formulaire.",
-	"duplicates_warning": "Les lexèmes suivants possèdent déjà un lemme et un code de langue identiques à celui que vous souhaitez créer :",
-	"duplicates_instructions": "Si vous êtes certains qu'ils sont différents, cochez la case située en fin de formulaire.",
-	"no_duplicate": "Ceci n'est pas le doublon d'un lexème existant.",
+	"csrf-warning": "Désolé, cette requête n'a pas pu être traitée (la protection anti-<abbr title=\"Cross-site request forgery\">CSRF</abbr> a échoué). Essayez de renvoyer le formulaire.",
+	"duplicates-warning": "Les lexèmes suivants possèdent déjà un lemme et un code de langue identiques à celui que vous souhaitez créer :",
+	"duplicates-instructions": "Si vous êtes certains qu'ils sont différents, cochez la case située en fin de formulaire.",
+	"no-duplicate": "Ceci n'est pas le doublon d'un lexème existant.",
 	"advanced": "Avancé",
-	"advanced_general": "Vous êtes dans le mode \"avancé\".",
-	"advanced_lexeme_id": "Au lieu de créer un nouveau lexème, vous pouvez entrer l'identifiant d'un lexème existant pour y ajouter des formes supplémentaires. Laissez les cases vides pour les formes déjà existantes afin d'éviter de créer des doublons !",
-	"advanced_partial_forms": "Vous pouvez laisser des cases vides pour empêcher la création des formes associées. Assurez-vous de ne pas oublier accidentellement l'une des formes !",
-	"lexeme_id": "Identifiant",
-	"advanced_partial_forms_hint": "Pour créer des lexèmes en laissant certaines formes non renseignées, passez en mode avancé"
+	"advanced-general": "Vous êtes dans le mode \"avancé\".",
+	"advanced-lexeme-id": "Au lieu de créer un nouveau lexème, vous pouvez entrer l'identifiant d'un lexème existant pour y ajouter des formes supplémentaires. Laissez les cases vides pour les formes déjà existantes afin d'éviter de créer des doublons !",
+	"advanced-partial-forms": "Vous pouvez laisser des cases vides pour empêcher la création des formes associées. Assurez-vous de ne pas oublier accidentellement l'une des formes !",
+	"lexeme-id": "Identifiant",
+	"advanced-partial-forms-hint": "Pour créer des lexèmes en laissant certaines formes non renseignées, passez en mode avancé"
 }

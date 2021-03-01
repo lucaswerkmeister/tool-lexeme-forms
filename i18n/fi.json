@@ -5,14 +5,14 @@
 		]
 	},
 	"create": "Julkaise",
-	"csrf_warning": "Anteeksi, pyynnön käsittely ei onnistunut (<abbr title=\"Cross-site request forgery\">CSRF</abbr> suojaus epäonnistui). Yritä tallentaa kaavake uudestaan, kiitos.",
-	"duplicates_warning": "Seuraavilla lekseemeillä on sama lemma ja kieli kuin sillä, jota yrität luoda:",
-	"duplicates_instructions": "Jos olet varma, että ne ovat eri lekseemeitä, laita rasti kaavakkeen lopussa olevaan laatikkoon.",
-	"no_duplicate": "Tämä ei ole kaksoiskappale olemassa olevasta lekseemistä.",
+	"csrf-warning": "Anteeksi, pyynnön käsittely ei onnistunut (<abbr title=\"Cross-site request forgery\">CSRF</abbr> suojaus epäonnistui). Yritä tallentaa kaavake uudestaan, kiitos.",
+	"duplicates-warning": "Seuraavilla lekseemeillä on sama lemma ja kieli kuin sillä, jota yrität luoda:",
+	"duplicates-instructions": "Jos olet varma, että ne ovat eri lekseemeitä, laita rasti kaavakkeen lopussa olevaan laatikkoon.",
+	"no-duplicate": "Tämä ei ole kaksoiskappale olemassa olevasta lekseemistä.",
 	"advanced": "Laajenna",
-	"advanced_general": "Olet laajennetussa muokkaustilassa.",
-	"advanced_lexeme_id": "Uuden lekseemin luomisen lisäksi voit muokata jo olemassa olevaa lekseemiä syöttämällä sen tunnisteen. Jätä lekseemissä jo olevat taivutusmuodot tyhjiksi, muuten ne tuplaantuvat.",
-	"advanced_partial_forms": "Voit jättää jotkin taivutusmuodoista tyhjiksi. Varmista kuitenkin, että ne ovat tyhjiä tarkoituksella eivätkä vahingossa.",
-	"lexeme_id": "Lekseemi-tunniste",
-	"advanced_partial_forms_hint": "Luodaksesi lekseemin ilman joitakin taivutusmuotoja, siirry laajennettuun muokkaustilaan."
+	"advanced-general": "Olet laajennetussa muokkaustilassa.",
+	"advanced-lexeme-id": "Uuden lekseemin luomisen lisäksi voit muokata jo olemassa olevaa lekseemiä syöttämällä sen tunnisteen. Jätä lekseemissä jo olevat taivutusmuodot tyhjiksi, muuten ne tuplaantuvat.",
+	"advanced-partial-forms": "Voit jättää jotkin taivutusmuodoista tyhjiksi. Varmista kuitenkin, että ne ovat tyhjiä tarkoituksella eivätkä vahingossa.",
+	"lexeme-id": "Lekseemi-tunniste",
+	"advanced-partial-forms-hint": "Luodaksesi lekseemin ilman joitakin taivutusmuotoja, siirry laajennettuun muokkaustilaan."
 }

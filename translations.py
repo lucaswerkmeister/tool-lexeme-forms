@@ -124,12 +124,13 @@ for entry in os.scandir('i18n/'):
     with open(entry.path, 'r') as f:
         data = json.load(f)
     translations[language] = {}
-    for key in data:
-        if key.startswith('@'):
+    for key_json in data:
+        if key_json.startswith('@'):
             continue
-        msg = mw2py(data[key], language, variables.get(key, []), lists.get(key, set()))
-        translations[language][key] = msg
-    for key in derived_messages:
-        source_key, transformation = derived_messages[key]
-        if source_key in translations[language]:
-            translations[language][key] = transformation(translations[language][source_key])
+        key_py = key_json.replace('-', '_')
+        msg = mw2py(data[key_json], language, variables.get(key_py, []), lists.get(key_py, set()))
+        translations[language][key_py] = msg
+    for key_py in derived_messages:
+        source_key_py, transformation = derived_messages[key_py]
+        if source_key_py in translations[language]:
+            translations[language][key_py] = transformation(translations[language][source_key_py])
