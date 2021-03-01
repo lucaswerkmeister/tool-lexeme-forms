@@ -119,6 +119,8 @@ for entry in os.scandir('i18n/'):
     if not match:
         continue
     language = match[1]
+    if language == 'qqq':
+        continue
     with open(entry.path, 'r') as f:
         data = json.load(f)
     translations[language] = {}
