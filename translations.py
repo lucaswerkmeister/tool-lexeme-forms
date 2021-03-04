@@ -34,7 +34,7 @@ derived_messages = {
 def py2mw(py, variables, lists):
     def replace(match):
         nonlocal variables, lists
-        inner = match[0][1:-1] # strip away braces
+        inner = match[0][1:-1]  # strip away braces
         variable, _, rest = inner.partition('!')
         number = variables.index(variable) + 1
         if not rest:
@@ -66,8 +66,9 @@ def py2mw(py, variables, lists):
 
 def mw2py(mw, language, variables, lists):
     if language == 'la':
-        language = 'en' # Latin is not in CLDR, English has same plural forms
+        language = 'en'  # Latin is not in CLDR, English has same plural forms
     locale = babel.Locale(language)
+
     def replace_plural(match):
         nonlocal locale, variables
         number = int(match[1])
@@ -84,11 +85,12 @@ def mw2py(mw, language, variables, lists):
         tags = [tag
                 for tag in ['zero', 'one', 'two', 'few', 'many']
                 if tag in locale.plural_form.tags]
-        tags = tags[:len(tag_args)-1] + ['other']
+        tags = tags[:len(tag_args) - 1] + ['other']
         for tag, tag_arg in zip(tags, tag_args):
             plurals.append(f'{tag}={tag_arg}')
         return '{' + variable + '!p:' + ':'.join(plurals) + '}'
     py = re.sub(r'\{\{PLURAL:\$([1-9][0-9]*)\|([^}]*)\}\}', replace_plural, mw)
+
     def replace_gender(match):
         nonlocal variables
         number = int(match[1])
@@ -99,6 +101,7 @@ def mw2py(mw, language, variables, lists):
             genders.append(f'{gender}={arg}')
         return '{' + variable + '!g:' + ':'.join(genders) + '}'
     py = re.sub(r'\{\{GENDER:\$([1-9][0-9]*)\|([^}]*)\}\}', replace_gender, py)
+
     def replace_unconverted(match):
         nonlocal variables
         number = int(match[1])
