@@ -538,7 +538,7 @@ translations = {
         'description_with_forms_and_senses': '{description}, {forms!p:0=нет форм:one=одна форма:few={forms} формы:many={forms} форм} и {senses!p:0=нет значений:one=одно значение:few={senses} значения:many={senses} значений}',
     },
 
-    # translations by User:Vesihiisi, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Swedish
+    # translations by User:Vesihiisi and User:Sabelöga, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Swedish
     'sv': {
         'create': 'Skapa',
         'csrf_warning': 'Din begäran kunde inte utföras på grund av ett <abbr title="Cross-site request forgery">CSRF</abbr>-fel. Var god försök igen.',
@@ -551,11 +551,15 @@ translations = {
         'advanced_partial_forms': 'Du kan lämna vissa fält tomma; dessa former kommer då inte att läggas till. Försäkra dig dock om att du inte lämnar några fält tomma av misstag!',
         'lexeme_id': 'Lexem-ID',
         'advanced_partial_forms_hint': 'För att skapa lexem utan att fylla i alla fält, byt till avancerat läge.',
+        'generated_via': 'genererades via',
         'bulk_link': 'masskapa',
         'bulk_button': 'Masskapa',
         'bulk_heading': 'masskapa',
         'bulk_format_help': 'formateringshjälp',
         'bulk_not_allowed': 'Du får dessvärre inte masskapa lexem.',
+        'edit_button': 'Redigera',
+        'edit_link': 'redigera',
+        'no_grammatical_features': 'inga grammatiska funktioner',
     },
 
     # translations by User:Info-farmer, see https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms/Tamil
