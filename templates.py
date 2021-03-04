@@ -3061,12 +3061,12 @@ templates = collections.OrderedDict([
             {
                 'label': 'příčestí činné, rod mužský životný, množné číslo',
                 'example': 'Oni muži by [zazpívali].',
-                'grammatical_features_item_ids': ['Q72249355', 'Q499327', 'Q51927507', 'Q146786'],
+                'grammatical_features_item_ids': ['Q72249355', 'Q54020116', 'Q146786'],
             },
             {
                 'label': 'příčestí činné, rod mužský neživotný, množné číslo',
                 'example': 'Ony hrady by [zazpívaly].',
-                'grammatical_features_item_ids': ['Q72249355', 'Q499327', 'Q51927539', 'Q146786'],
+                'grammatical_features_item_ids': ['Q72249355', 'Q52943434', 'Q146786'],
             },
             {
                 'label': 'příčestí činné, rod ženský, množné číslo',
@@ -3096,12 +3096,12 @@ templates = collections.OrderedDict([
             {
                 'label': 'příčestí trpné, rod mužský životný, množné číslo',
                 'example': 'Oni muži budou [zazpíváni].',
-                'grammatical_features_item_ids': ['Q72249544', 'Q499327', 'Q51927507', 'Q146786'],
+                'grammatical_features_item_ids': ['Q72249544', 'Q54020116', 'Q146786'],
             },
             {
                 'label': 'příčestí trpné, rod mužský neživotný, množné číslo',
                 'example': 'Ony hrady budou [zazpívány].',
-                'grammatical_features_item_ids': ['Q72249544', 'Q499327', 'Q51927539', 'Q146786'],
+                'grammatical_features_item_ids': ['Q72249544', 'Q52943434', 'Q146786'],
             },
             {
                 'label': 'příčestí trpné, rod ženský, množné číslo',
