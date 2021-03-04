@@ -5,22 +5,23 @@
     <meta charset="utf-8">
     <title>{% block title %}Wikidata Lexeme Forms{% endblock title %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://tools-static.wmflabs.org/cdnjs/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://tools-static.wmflabs.org/cdnjs/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ url_for('static', filename='tool.css') }}">
     <link rel="index" href="{{ url_for('index') }}">
     {% endblock head %}
   </head>
   <body>
+    <a href="#main" class="sr-only sr-only-focusable">Skip to main content</a>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
       <a href="{{ url_for('index') }}" class="navbar-brand">Wikidata Lexeme Forms</a>
       <ul class="navbar-nav mr-auto">
-        <li><a href="https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms" class="nav-link">Documentation</a></li>
-        <li><a href="//tools.wmflabs.org/" class="nav-link">Wikimedia Toolforge</a></li>
-        <li><a href="https://phabricator.wikimedia.org/source/tool-lexeme-forms/" class="nav-link">Source code</a></li>
+        <li class="nav-item"><a href="https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms" class="nav-link">Documentation</a></li>
+        <li class="nav-item"><a href="//tools.wmflabs.org/" class="nav-link">Wikimedia Toolforge</a></li>
+        <li class="nav-item"><a href="https://phabricator.wikimedia.org/source/tool-lexeme-forms/" class="nav-link">Source code</a></li>
       </ul>
       {{ render_oauth_username() }}
     </nav>
-    <main {% block main_tag_attributes %}class="container mt-3"{% endblock main_tag_attributes %}>
+    <main id="main" {% block main_tag_attributes %}class="container mt-3"{% endblock main_tag_attributes %}>
       {% block main %}
       {% endblock main %}
     </main>

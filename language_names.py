@@ -18,7 +18,7 @@ def load_language_info():
                            formatversion='2')
     if 'continue' in response:
         print('WARNING: MediaWiki languageinfo incomplete, continue={}'.format(response['continue']),
-              file=stderr)
+              file=sys.stderr)
     return response['query']['languageinfo']
 
 def autonym(code):

@@ -31,7 +31,7 @@ def test_form2input_escape_value():
 
 def test_form2input_invalid():
     with pytest.raises(Exception) as excinfo:
-        markup = lexeme_forms.form2input({'advanced': True}, {'example': 'No placeholder.'})
+        markup = lexeme_forms.form2input({'advanced': True}, {'example': 'No placeholder.'})  # noqa:F841
     assert 'missing [placeholder]' in str(excinfo.value)
 
 @pytest.mark.parametrize('example, expected_prefix, expected_placeholder, expected_suffix', [
@@ -82,12 +82,12 @@ def test_template_group_test():
     assert group == '<span lang="de" dir="ltr">Deutsch (<span lang=zxx>de</span>)</span>, test.wikidata.org'
 
 @pytest.mark.parametrize('template_name', templates.keys())
-@pytest.mark.parametrize('number', range(-1,5))
+@pytest.mark.parametrize('number', range(-1, 5))
 def test_message_with_kwargs(template_name, number):
     template = templates[template_name]
     with lexeme_forms.app.test_request_context():
         flask.g.interface_language_code = template['language_code']
-        message = lexeme_forms.message_with_kwargs('description_with_forms_and_senses', description='', forms=number, senses=number)
+        message = lexeme_forms.message_with_kwargs('description_with_forms_and_senses', description='', forms=number, senses=number)  # noqa:F841
     # should not have failed
 
 @pytest.mark.parametrize('language_code, expected_direction', [
@@ -125,7 +125,7 @@ def test_if_needs_oauth_redirect_not_logged_in(monkeypatch):
     monkeypatch.setitem(lexeme_forms.app.config, 'oauth', {})
     monkeypatch.setattr(lexeme_forms, 'consumer_token', mwoauth.ConsumerToken('test key', 'test secret'), raising=False)
     monkeypatch.setattr(mwoauth, 'initiate', lambda mw_uri, consumer_token, user_agent: ('test redirect', mwoauth.RequestToken('test key', 'test secret')))
-    with lexeme_forms.app.test_request_context() as context:
+    with lexeme_forms.app.test_request_context() as context:  # noqa: F841
         response = lexeme_forms.if_needs_oauth_redirect()
     assert response is not None
     assert str(response.status_code).startswith('3')
@@ -243,6 +243,7 @@ def test_get_duplicates_api_html_empty(monkeypatch):
         response = client.get('/api/v1/duplicates/www/de/lemma', headers={'Accept': 'text/html'})
     assert response.content_type == 'text/html; charset=utf-8'
     assert response.get_data(as_text=True) == ''
+
 
 minimal_template = {
     '@template_name': 'minimal-template',
@@ -712,98 +713,51 @@ def test_build_lexeme_with_statements_for_existing_lexeme(monkeypatch):
         },
     }
 
-def test_build_summary_localhost(monkeypatch):
-    monkeypatch.setattr(lexeme_forms, 'current_url', lambda: 'http://localhost/template/foo/')
+def test_build_summary_localhost():
     template = {
         '@template_name': 'foo',
     }
     form_data = {}
-    summary = lexeme_forms.build_summary(template, form_data)
+    with lexeme_forms.app.test_request_context(base_url='http://localhost/'):
+        summary = lexeme_forms.build_summary(template, form_data)
     assert summary == 'foo'
 
-def test_build_summary_internet(monkeypatch):
-    monkeypatch.setattr(lexeme_forms, 'current_url', lambda: 'https://example.com/lexeme-forms/template/foo/')
+def test_build_summary_internet():
     template = {
         '@template_name': 'foo',
     }
     form_data = {}
-    summary = lexeme_forms.build_summary(template, form_data)
+    with lexeme_forms.app.test_request_context(base_url='https://example.com/lexeme-forms/'):
+        summary = lexeme_forms.build_summary(template, form_data)
     assert summary == 'foo'
 
-def test_build_summary_toolforge_lexeme_forms(monkeypatch):
-    monkeypatch.setattr(lexeme_forms, 'current_url', lambda: 'https://tools.wmflabs.org/lexeme-forms/template/foo/')
+def test_build_summary_toolforge_lexeme_forms():
     template = {
         '@template_name': 'foo',
     }
     form_data = {}
-    summary = lexeme_forms.build_summary(template, form_data)
+    with lexeme_forms.app.test_request_context(base_url='https://lexeme-forms.toolforge.org/'):
+        summary = lexeme_forms.build_summary(template, form_data)
     assert summary == '[[toolforge:lexeme-forms/template/foo/|foo]]'
 
-def test_build_summary_toolforge_other(monkeypatch):
-    monkeypatch.setattr(lexeme_forms, 'current_url', lambda: 'https://tools.wmflabs.org/other/template/foo/')
+def test_build_summary_toolforge_other():
     template = {
         '@template_name': 'foo',
     }
     form_data = {}
-    summary = lexeme_forms.build_summary(template, form_data)
+    with lexeme_forms.app.test_request_context(base_url='https://other.toolforge.org/'):
+        summary = lexeme_forms.build_summary(template, form_data)
     assert summary == '[[toolforge:other/template/foo/|foo]]'
 
-def test_build_summary_toolforge_lexeme_forms_advanced(monkeypatch):
-    monkeypatch.setattr(lexeme_forms, 'current_url', lambda: 'https://tools.wmflabs.org/lexeme-forms/template/foo/advanced/')
-    template = {
-        '@template_name': 'foo',
-    }
-    form_data = {}
-    summary = lexeme_forms.build_summary(template, form_data)
-    assert summary == '[[toolforge:lexeme-forms/template/foo/advanced/|foo]]'
-
-def test_build_summary_toolforge_canonical_lexeme_forms(monkeypatch):
-    monkeypatch.setattr(lexeme_forms, 'current_url', lambda: 'https://lexeme-forms.toolforge.org/template/foo/')
-    template = {
-        '@template_name': 'foo',
-    }
-    form_data = {}
-    summary = lexeme_forms.build_summary(template, form_data)
-    assert summary == '[[toolforge:lexeme-forms/template/foo/|foo]]'
-
-def test_build_summary_toolforge_canonical_other(monkeypatch):
-    monkeypatch.setattr(lexeme_forms, 'current_url', lambda: 'https://other.toolforge.org/template/foo/')
-    template = {
-        '@template_name': 'foo',
-    }
-    form_data = {}
-    summary = lexeme_forms.build_summary(template, form_data)
-    assert summary == '[[toolforge:other/template/foo/|foo]]'
-
-def test_build_summary_toolforge_canonical_lexeme_forms_advanced(monkeypatch):
-    monkeypatch.setattr(lexeme_forms, 'current_url', lambda: 'https://lexeme-forms.toolforge.org/template/foo/advanced/')
-    template = {
-        '@template_name': 'foo',
-    }
-    form_data = {}
-    summary = lexeme_forms.build_summary(template, form_data)
-    assert summary == '[[toolforge:lexeme-forms/template/foo/advanced/|foo]]'
-
-def test_build_summary_generated_via(monkeypatch):
-    monkeypatch.setattr(lexeme_forms, 'current_url', lambda: 'https://tools.wmflabs.org/lexeme-forms/template/foo/')
+def test_build_summary_generated_via():
     template = {
         '@template_name': 'foo',
     }
     form_data = {
         'generated_via': '[[toolforge:other/bar|other tool, bar]]'
     }
-    summary = lexeme_forms.build_summary(template, form_data)
-    assert summary == '[[toolforge:lexeme-forms/template/foo/|foo]], generated via [[toolforge:other/bar|other tool, bar]]'
-
-def test_build_summary_canonical_generated_via(monkeypatch):
-    monkeypatch.setattr(lexeme_forms, 'current_url', lambda: 'https://lexeme-forms.toolforge.org/template/foo/')
-    template = {
-        '@template_name': 'foo',
-    }
-    form_data = {
-        'generated_via': '[[toolforge:other/bar|other tool, bar]]'
-    }
-    summary = lexeme_forms.build_summary(template, form_data)
+    with lexeme_forms.app.test_request_context(base_url='https://lexeme-forms.toolforge.org/'):
+        summary = lexeme_forms.build_summary(template, form_data)
     assert summary == '[[toolforge:lexeme-forms/template/foo/|foo]], generated via [[toolforge:other/bar|other tool, bar]]'
 
 def test_get_all_templates_api():
@@ -1052,6 +1006,120 @@ def test_update_lexeme_rematch_same_form_twice():
     form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', 'L4592-F1'), ('form_representation', 'L4592-F1')])
     with pytest.raises(Exception):
         lexeme_forms.update_lexeme(lexeme_data, template, form_data)
+
+def test_update_lexeme_remove_form_representation():
+    lexeme_data = {
+        'lemmas': {
+            'de': {'language': 'de', 'value': 'Straße'},
+            'de-ch': {'language': 'de-ch', 'value': 'Strasse'},
+        },
+        'forms': [
+            {
+                'id': 'L44061-F1',
+                'representations': {
+                    'de': {'language': 'de', 'value': 'Straße'},
+                    'de-ch': {'language': 'de-ch', 'value': 'Strasse'},
+                },
+                'grammaticalFeatures': ['Q110786', 'Q131105'],
+            },
+            {
+                'id': 'L44061-F2',
+                'representations': {
+                    'de': {'language': 'de', 'value': 'Straße'},
+                    'de-ch': {'language': 'de-ch', 'value': 'Strasse'},
+                },
+                'grammaticalFeatures': ['Q110786', 'Q146233'],
+            },
+        ],
+    }
+    template = copy.deepcopy(templates['german-noun-feminine'])
+    template['lexeme_revision'] = 123
+    template['forms'][0]['lexeme_forms'] = [lexeme_data['forms'][0]]
+    template['forms'][1]['lexeme_forms'] = [lexeme_data['forms'][1]]
+    form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', ''), ('form_representation', 'Strasse')])
+    updated_lexeme_data = lexeme_forms.update_lexeme(lexeme_data, template, form_data, 'de-ch')
+    assert updated_lexeme_data == {
+        'lemmas': {
+            'de': {'language': 'de', 'value': 'Straße'},
+            'de-ch': {'language': 'de-ch', 'value': 'Strasse', 'remove': ''},
+        },
+        'forms': [
+            {
+                'id': 'L44061-F1',
+                'representations': {
+                    'de': {'language': 'de', 'value': 'Straße'},
+                    'de-ch': {'language': 'de-ch', 'value': 'Strasse', 'remove': ''},
+                },
+                'grammaticalFeatures': ['Q110786', 'Q131105'],
+            },
+            {
+                'id': 'L44061-F2',
+                'representations': {
+                    'de': {'language': 'de', 'value': 'Straße'},
+                    'de-ch': {'language': 'de-ch', 'value': 'Strasse'},
+                },
+                'grammaticalFeatures': ['Q110786', 'Q146233'],
+            },
+        ],
+        'base_revision_id': 123,
+    }
+
+def test_update_lexeme_remove_main_form_representation():
+    lexeme_data = {
+        'lemmas': {
+            'de': {'language': 'de', 'value': 'Straße'},
+            'de-ch': {'language': 'de-ch', 'value': 'Strasse'},
+        },
+        'forms': [
+            {
+                'id': 'L44061-F1',
+                'representations': {
+                    'de': {'language': 'de', 'value': 'Straße'},
+                    'de-ch': {'language': 'de-ch', 'value': 'Strasse'},
+                },
+                'grammaticalFeatures': ['Q110786', 'Q131105'],
+            },
+            {
+                'id': 'L44061-F2',
+                'representations': {
+                    'de': {'language': 'de', 'value': 'Straße'},
+                    'de-ch': {'language': 'de-ch', 'value': 'Strasse'},
+                },
+                'grammaticalFeatures': ['Q110786', 'Q146233'],
+            },
+        ],
+    }
+    template = copy.deepcopy(templates['german-noun-feminine'])
+    template['lexeme_revision'] = 123
+    template['forms'][0]['lexeme_forms'] = [lexeme_data['forms'][0]]
+    template['forms'][1]['lexeme_forms'] = [lexeme_data['forms'][1]]
+    form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', ''), ('form_representation', 'Straße')])
+    updated_lexeme_data = lexeme_forms.update_lexeme(lexeme_data, template, form_data, 'de')
+    assert updated_lexeme_data == {
+        'lemmas': {
+            'de': {'language': 'de', 'value': 'Straße', 'remove': ''},
+            'de-ch': {'language': 'de-ch', 'value': 'Strasse'},
+        },
+        'forms': [
+            {
+                'id': 'L44061-F1',
+                'representations': {
+                    'de': {'language': 'de', 'value': 'Straße', 'remove': ''},
+                    'de-ch': {'language': 'de-ch', 'value': 'Strasse'},
+                },
+                'grammaticalFeatures': ['Q110786', 'Q131105'],
+            },
+            {
+                'id': 'L44061-F2',
+                'representations': {
+                    'de': {'language': 'de', 'value': 'Straße'},
+                    'de-ch': {'language': 'de-ch', 'value': 'Strasse'},
+                },
+                'grammaticalFeatures': ['Q110786', 'Q146233'],
+            },
+        ],
+        'base_revision_id': 123,
+    }
 
 
 @pytest.mark.parametrize('user, expected', [

@@ -36,7 +36,7 @@ def match_template_to_lexeme_data(template, lexeme_data):
     }
 
 
-def match_template_entity_to_lexeme_entity(test, template_entity, lexeme_entity): # may be template + lexeme or template form + lexeme form
+def match_template_entity_to_lexeme_entity(test, template_entity, lexeme_entity):  # may be template + lexeme or template form + lexeme form
     matched_statements = {}
     missing_statements = {}
     conflicting_statements = {}
@@ -47,7 +47,7 @@ def match_template_entity_to_lexeme_entity(test, template_entity, lexeme_entity)
         for template_statement in template_entity['statements'][property_id]:
             found_matching_statement = False
             if lexeme_entity.get('claims') == []:
-                lexeme_entity['claims'] = {} # work around T241422
+                lexeme_entity['claims'] = {}  # work around T241422
             for lexeme_statement in lexeme_entity.get('claims', {}).get(property_id, []):
                 if match_statement(template_statement, lexeme_statement):
                     found_matching_statement = True

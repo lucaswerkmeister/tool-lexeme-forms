@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Vesihiisi"
+			"Vesihiisi",
+			"Sabelöga"
 		]
 	},
 	"create": "Skapa",
@@ -15,7 +16,10 @@
 	"advanced-partial-forms": "Du kan lämna vissa fält tomma; dessa former kommer då inte att läggas till. Försäkra dig dock om att du inte lämnar några fält tomma av misstag!",
 	"lexeme-id": "Lexem-ID",
 	"advanced-partial-forms-hint": "För att skapa lexem utan att fylla i alla fält, byt till avancerat läge.",
+	"generated-via": "genererades via",
 	"bulk-link": "masskapa",
 	"bulk-format-help": "formateringshjälp",
-	"bulk-not-allowed": "Du får dessvärre inte masskapa lexem."
+	"bulk-not-allowed": "Du får dessvärre inte masskapa lexem.",
+	"edit-link": "redigera",
+	"no-grammatical-features": "inga grammatiska funktioner"
 }

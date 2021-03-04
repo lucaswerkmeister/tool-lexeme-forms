@@ -8,6 +8,7 @@ import translations
 
 def test_entities_exist():
     entity_ids = set()
+
     def add_from_statements(statements):
         for property_id, statement_group in statements.items():
             entity_ids.add(property_id)
@@ -127,7 +128,7 @@ def test_examples_distinct(template_name):
     for form in template['forms']:
         example = form['example']
         examples[example] = examples.get(example, 0) + 1
-    actual_counts = { example: count for example, count in examples.items() if count > 1 }
+    actual_counts = {example: count for example, count in examples.items() if count > 1}
     expected_counts = expected_example_counts.get(template_name, {})
     assert actual_counts == expected_counts
 

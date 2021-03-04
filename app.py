@@ -14,12 +14,12 @@ import requests_oauthlib
 import string
 import toolforge
 import yaml
-import werkzeug.datastructures
 
 from flask_utils import OrderedFlask, TagOrderedMultiDict, TagImmutableOrderedMultiDict
 from formatters import I18nFormatter
 from language_names import autonym
 from matching import match_template_to_lexeme_data, match_lexeme_forms_to_template, match_template_entity_to_lexeme_entity
+from mwapi_utils import T272319RetryingSession
 from parse_tpsv import parse_lexemes
 from templates import templates
 from translations import translations
@@ -134,11 +134,11 @@ def user_link(user_name):
 
 @app.template_global()
 def render_oauth_username():
-    identity = identify()
-    if identity is None:
+    userinfo = get_userinfo()
+    if userinfo is None:
         return flask.Markup(r'')
     return (flask.Markup(r'<span class="navbar-text">Logged in as ') +
-            user_link(identity['username']) +
+            user_link(userinfo['name']) +
             flask.Markup(r'</span>'))
 
 @app.template_global()
@@ -161,14 +161,14 @@ def message_with_language(message_code, language_code=None):
 def message_with_kwargs(message_code, **kwargs):
     template, language = message_with_language(message_code)
     if language == 'la':
-        language = 'en' # Latin is not in CLDR, English has same plural forms
+        language = 'en'  # Latin is not in CLDR, English has same plural forms
     return I18nFormatter(locale_identifier=language,
                          get_gender=get_gender).format(template, **kwargs)
 
 @app.template_filter()
 def text_direction(language_code):
     try:
-        locale = babel.Locale.parse(language_code.split('-')[0]) # the -x-Qid stuff is not understood by Babel
+        locale = babel.Locale.parse(language_code.split('-')[0])  # the -x-Qid stuff is not understood by Babel
     except babel.UnknownLocaleError:
         return 'auto'
     else:
@@ -229,7 +229,7 @@ def process_template_advanced(template_name, advanced=True):
     form_data = flask.request.form
 
     if (flask.request.method == 'POST' and
-        form_data.get('_advanced_mode', 'None') == str(advanced)):
+            form_data.get('_advanced_mode', 'None') == str(advanced)):
         response = if_has_duplicates_redirect(template, advanced, form_data)
         if response:
             return response
@@ -277,8 +277,8 @@ def process_template_bulk(template_name):
         )
 
     if (flask.request.method == 'POST' and
-        '_bulk_mode' in flask.request.form and
-        csrf_token_matches(flask.request.form)):
+            '_bulk_mode' in flask.request.form and
+            csrf_token_matches(flask.request.form)):
 
         form_data = flask.request.form
         try:
@@ -339,7 +339,7 @@ def process_template_bulk(template_name):
                     # clear the value so that the placeholder is shown
                     value = ''
                 else:
-                    value += '\n' # for convenience when adding more
+                    value += '\n'  # for convenience when adding more
             else:
                 # user came from bulk mode with CSRF error
                 value = form_data.get('lexemes')
@@ -380,17 +380,17 @@ def process_template_edit(template_name, lexeme_id):
 
     lexeme_match = match_template_to_lexeme_data(template, lexeme_data)
     lexeme_matches_template = (
-        lexeme_match['language']
-        and lexeme_match['lexical_category']
-        and not lexeme_match['conflicting_statements']
+        lexeme_match['language'] and
+        lexeme_match['lexical_category'] and
+        not lexeme_match['conflicting_statements']
     )
     template = match_lexeme_forms_to_template(lexeme_data['forms'], template)
     template['lexeme_id'] = lexeme_id
     template['lexeme_revision'] = lexeme_revision
 
     if (flask.request.method == 'POST' and
-        '_edit_mode' in flask.request.form and
-        csrf_token_matches(flask.request.form)):
+            '_edit_mode' in flask.request.form and
+            csrf_token_matches(flask.request.form)):
         form_data = flask.request.form
         lexeme_data = update_lexeme(lexeme_data, template, form_data, representation_language_code, missing_statements=lexeme_match['missing_statements'])
         summary = build_summary(template, form_data)
@@ -404,7 +404,7 @@ def process_template_edit(template_name, lexeme_id):
 
     for template_form in template['forms']:
         lexeme_forms = template_form.get('lexeme_forms')
-        if lexeme_forms: # TODO use walrus operator in Python 3.8
+        if lexeme_forms:  # TODO use walrus operator in Python 3.8
             template_form['value'] = '/'.join(lexeme_form['representations'][representation_language_code]['value']
                                               for lexeme_form in lexeme_forms
                                               if representation_language_code in lexeme_form['representations'])
@@ -414,10 +414,7 @@ def process_template_edit(template_name, lexeme_id):
         template = add_form_data_to_template(flask.request.args, template, overwrite=False)
 
     add_labels_to_lexeme_forms_grammatical_features(
-        mwapi.Session(
-            'https://' + wiki + '.wikidata.org',
-            user_agent=user_agent,
-        ),
+        anonymous_session(f'https://{wiki}.wikidata.org'),
         template_language_code,
         template.get('unmatched_lexeme_forms', []) + template.get('ambiguous_lexeme_forms', [])
     )
@@ -429,7 +426,7 @@ def process_template_edit(template_name, lexeme_id):
         lexeme_matches_template=lexeme_matches_template,
         template_language_code=template_language_code,
         representation_language_code=representation_language_code,
-        advanced=True, # for form2input
+        advanced=True,  # for form2input
         csrf_error=flask.request.method == 'POST',
     )
 
@@ -444,19 +441,35 @@ def if_no_such_template_redirect(template_name):
 
 def if_needs_oauth_redirect():
     if 'oauth' in app.config and 'oauth_access_token' not in flask.session:
-        (redirect, request_token) = mwoauth.initiate('https://www.wikidata.org/w/index.php', consumer_token, user_agent=user_agent)
-        flask.session['oauth_request_token'] = dict(zip(request_token._fields, request_token))
-        flask.session['oauth_redirect_target'] = current_url()
-        return flask.redirect(redirect)
+        return login(from_other_url=True)
     else:
         return None
 
 @app.route('/oauth/callback')
 def oauth_callback():
-    access_token = mwoauth.complete('https://www.wikidata.org/w/index.php', consumer_token, mwoauth.RequestToken(**flask.session.pop('oauth_request_token')), flask.request.query_string, user_agent=user_agent)
+    oauth_request_token = flask.session.pop('oauth_request_token', None)
+    if oauth_request_token is None:
+        return flask.render_template('error-oauth-callback.html',
+                                     already_logged_in='oauth_access_token' in flask.session,
+                                     query_string=flask.request.query_string.decode(flask.request.url_charset))
+    access_token = mwoauth.complete('https://www.wikidata.org/w/index.php', consumer_token, mwoauth.RequestToken(**oauth_request_token), flask.request.query_string, user_agent=user_agent)
     flask.session['oauth_access_token'] = dict(zip(access_token._fields, access_token))
     flask.session.pop('_csrf_token', None)
-    return flask.redirect(flask.session.pop('oauth_redirect_target'))
+    redirect_target = flask.session.pop('oauth_redirect_target', None)
+    return flask.redirect(redirect_target or flask.url_for('index'))
+
+@app.route('/login')
+def login(from_other_url=False):
+    if 'oauth' in app.config:
+        (redirect, request_token) = mwoauth.initiate('https://www.wikidata.org/w/index.php', consumer_token, user_agent=user_agent)
+        flask.session['oauth_request_token'] = dict(zip(request_token._fields, request_token))
+        if from_other_url:
+            # login() is usually called via if_needs_oauth_redirect() from a different URL –
+            # if /login was loaded directly, don’t redirect back to it afterwards
+            flask.session['oauth_redirect_target'] = current_url()
+        return flask.redirect(redirect)
+    else:
+        return flask.redirect(flask.url_for('index'))
 
 @app.route('/logout')
 def logout():
@@ -515,11 +528,7 @@ def get_duplicates_api(wiki, language_code, lemma):
         return flask.jsonify(matches)
 
 def get_duplicates(wiki, language_code, lemma):
-    host = 'https://' + wiki + '.wikidata.org'
-    session = mwapi.Session(
-        host,
-        user_agent=user_agent,
-    )
+    session = anonymous_session(f'https://{wiki}.wikidata.org')
 
     api_language_code = 'bn' if language_code == 'bn-x-Q6747180' else language_code
 
@@ -527,7 +536,7 @@ def get_duplicates(wiki, language_code, lemma):
         action='wbsearchentities',
         search=lemma,
         language=api_language_code,
-        uselang=api_language_code, # for the result descriptions
+        uselang=api_language_code,  # for the result descriptions
         type='lexeme',
         limit=50,
     )
@@ -535,11 +544,11 @@ def get_duplicates(wiki, language_code, lemma):
     for result in response['search']:
         if (result.get('label') == lemma and
             (result['match']['language'] == language_code or
-             result['match']['language'] == 'und')): # T230833
+             (len(language_code) > 2 and result['match']['language'] == 'und'))):  # T230833
             matches[result['id']] = {'id': result['id'], 'uri': result['concepturi'], 'label': result['label'], 'description': result['description']}
 
     if matches:
-        response = session.get( # no, this can’t be combined with the previous call by using generator=wbsearch – then we don’t get the match language
+        response = session.get(  # no, this can’t be combined with the previous call by using generator=wbsearch – then we don’t get the match language
             action='query',
             titles=['Lexeme:' + id for id in matches],
             prop=['pageprops'],
@@ -551,7 +560,7 @@ def get_duplicates(wiki, language_code, lemma):
             matches[id]['forms_count'] = pageprops.get('wbl-forms')
             matches[id]['senses_count'] = pageprops.get('wbl-senses')
 
-    return list(matches.values()) # list() to turn odict_values (not JSON serializable) into plain list
+    return list(matches.values())  # list() to turn odict_values (not JSON serializable) into plain list
 
 @app.route('/api/v1/no_duplicate/<language_code>')
 @app.template_global()
@@ -590,17 +599,14 @@ def match_template_to_lexeme_id(wiki, lexeme_id, template_name):
     return flask.jsonify(match_template_to_lexeme_data(template, lexeme_data))
 
 def get_lexeme_data(lexeme_id, wiki, revision=None):
-    host = 'https://' + wiki + '.wikidata.org'
-    session = mwapi.Session(
-        host,
-        user_agent=user_agent,
-    )
+    host = f'https://{wiki}.wikidata.org'
+    session = anonymous_session(host)
 
     if revision:
         entities_data = session.session.get(
             f'{host}/wiki/Special:EntityData/{lexeme_id}.json?revision={revision}',
         ).json()
-    else: # TODO when T128486 is fixed, use Special:EntityData without revision too, for better caching
+    else:  # TODO when T128486 is fixed, use Special:EntityData without revision too, for better caching
         entities_data = session.get(
             action='wbgetentities',
             ids=[lexeme_id],
@@ -651,10 +657,8 @@ def current_url():
 def can_use_bulk_mode():
     if 'oauth' not in app.config:
         return True
-    identity = identify()
-    if not identity:
-        return False
-    return 'autoconfirmed' in identity['groups']
+    userinfo = get_userinfo()
+    return userinfo is not None and 'autoconfirmed' in userinfo['groups']
 
 def build_lexeme(template, form_data):
     lang = template['language_code']
@@ -708,7 +712,7 @@ def update_lexeme(lexeme_data, template, form_data, representation_language_code
             form_data_representation_variants = []
         lexeme_forms = template_form.get('lexeme_forms', []).copy()
         # process “representations” that actually reference existing forms first
-        for form_data_representation_variant in reversed(form_data_representation_variants): # reversed so that the remove within the loop doesn’t disturb the iteration
+        for form_data_representation_variant in reversed(form_data_representation_variants):  # reversed so that the remove within the loop doesn’t disturb the iteration
             if not re.match(r'^L[1-9][0-9]*-F[1-9][0-9]*$', form_data_representation_variant):
                 continue
             lexeme_form = find_form(lexeme_data, form_id=form_data_representation_variant)
@@ -725,12 +729,12 @@ def update_lexeme(lexeme_data, template, form_data, representation_language_code
             # add missing statements (and complain about conflicting ones)
             form_matched_statements, form_missing_statements, form_conflicting_statements = match_template_entity_to_lexeme_entity('test' in template, template_form, lexeme_form)
             if form_conflicting_statements:
-                raise Exception('Conflicting statements!') # TODO better error reporting
+                raise Exception('Conflicting statements!')  # TODO better error reporting
             for property_id, statements in form_missing_statements.items():
                 lexeme_form.setdefault('claims', {}).setdefault(property_id, []).extend(statements)
             form_data_representation_variants.remove(form_data_representation_variant)
         # find and remove matching forms (no modification necessary)
-        for lexeme_form in reversed(lexeme_forms): # reversed so that the remove within the loop doesn’t disturb the iteration
+        for lexeme_form in reversed(lexeme_forms):  # reversed so that the remove within the loop doesn’t disturb the iteration
             if representation_language_code not in lexeme_form['representations']:
                 continue
             lexeme_form_representation = lexeme_form['representations'][representation_language_code]
@@ -749,17 +753,20 @@ def update_lexeme(lexeme_data, template, form_data, representation_language_code
             overwritten_forms += 1
         form_data_representation_variants = form_data_representation_variants[overwritten_forms:]
         lexeme_forms = lexeme_forms[overwritten_forms:]
-        # add remaining form data as new OR delete remaining lexeme forms
+        # add remaining form data as new OR delete remaining lexeme form representations or forms
         assert not (form_data_representation_variants and lexeme_forms), 'After previous loop, at least one list must be exhausted'
         for form_data_representation_variant in form_data_representation_variants:
             assert form_data_representation_variant, 'Representation cannot be empty'
             lexeme_form = build_form(template_form, representation_language_code, form_data_representation_variant)
             lexeme_data['forms'].append(lexeme_form)
-            template_form.setdefault('lexeme_forms', []).append(lexeme_form) # so it can be found as first_form below
+            template_form.setdefault('lexeme_forms', []).append(lexeme_form)  # so it can be found as first_form below
         for lexeme_form in lexeme_forms:
             lexeme_form = find_form(lexeme_data, lexeme_form['id'])
             if representation_language_code in lexeme_form['representations']:
-                lexeme_form['remove'] = ''
+                if len(lexeme_form['representations']) == 1:
+                    lexeme_form['remove'] = ''  # remove whole form
+                else:
+                    lexeme_form['representations'][representation_language_code]['remove'] = ''  # remove only this representation
             # otherwise it’s an unrelated form that wasn’t shown to begin with, leave it alone
 
     for property_id, statements in (missing_statements or {}).items():
@@ -768,8 +775,8 @@ def update_lexeme(lexeme_data, template, form_data, representation_language_code
     first_form = next(iter(template['forms'][0].get('lexeme_forms', [])), None)
     if first_form:
         first_form_id = first_form.get('id')
-        if first_form_id: # TODO use walrus operator in Python 3.8+
-            first_form = find_form(lexeme_data, first_form_id) # find edited version
+        if first_form_id:  # TODO use walrus operator in Python 3.8+
+            first_form = find_form(lexeme_data, first_form_id)  # find edited version
         else:
             # it’s a new form, first_form is already the edited version
             pass
@@ -788,15 +795,12 @@ def find_form(lexeme_data, form_id):
 
 def build_summary(template, form_data):
     template_name = template['@template_name']
-    url = current_url()
+    url = flask.url_for('process_template', template_name=template_name, _external=True)
     toolforge_match = re.match(r'https://([a-z0-9-_]+).toolforge.org/(.*)$', url)
-    if toolforge_match: # TODO use walrus operator in Python 3.8+
+    if toolforge_match:  # TODO use walrus operator in Python 3.8+
         tool_name = toolforge_match.group(1)
         rest = toolforge_match.group(2)
         summary = '[[toolforge:%s/%s|%s]]' % (tool_name, rest, template_name)
-    elif url.startswith('https://tools.wmflabs.org/'):
-        relative = url[len('https://tools.wmflabs.org/'):]
-        summary = '[[toolforge:%s|%s]]' % (relative, template_name)
     else:
         summary = template_name
 
@@ -810,11 +814,7 @@ def submit_lexeme(template, lexeme_data, summary):
         host = 'https://test.wikidata.org'
     else:
         host = 'https://www.wikidata.org'
-    session = mwapi.Session(
-        host=host,
-        auth=generate_auth(),
-        user_agent=user_agent,
-    )
+    session = authenticated_session(host)
 
     token = session.get(action='query', meta='tokens')['query']['tokens']['csrftoken']
     selector = {'id': lexeme_data['id']} if 'id' in lexeme_data else {'new': 'lexeme'}
@@ -828,7 +828,6 @@ def submit_lexeme(template, lexeme_data, summary):
         **selector
     )
     lexeme_id = response['entity']['id']
-    revid = response['entity']['lastrevid']
 
     return host + '/entity/' + lexeme_id
 
@@ -837,14 +836,14 @@ def add_labels_to_lexeme_forms_grammatical_features(session, language, lexeme_fo
     for lexeme_form in lexeme_forms:
         grammatical_features_item_ids.update(lexeme_form['grammaticalFeatures'])
     grammatical_features_item_ids = list(grammatical_features_item_ids)
-    labels_map = {} # item ID to label
+    labels_map = {}  # item ID to label
     while grammatical_features_item_ids:
         chunk, grammatical_features_item_ids = grammatical_features_item_ids[:50], grammatical_features_item_ids[50:]
         response = session.get(action='wbgetentities',
                                ids=chunk,
                                props=['labels'],
                                languages=[language],
-                               languagefallback=1, # TODO use True once mediawiki-utilities/python-mwapi#38 is in a released version
+                               languagefallback=1,  # TODO use True once mediawiki-utilities/python-mwapi#38 is in a released version
                                formatversion=2)
         for item_id, item in response['entities'].items():
             labels_map[item_id] = item['labels'].get(language, {'language': 'zxx', 'value': item_id})
@@ -878,10 +877,7 @@ def get_gender(user):
     }[gender_option]
 
 def gender_option_of_user_name(user_name):
-    session = mwapi.Session(
-        host='https://www.wikidata.org',
-        user_agent=user_agent,
-    )
+    session = anonymous_session('https://www.wikidata.org')
     response = session.get(action='query',
                            list=['users'],
                            usprop=['gender'],
@@ -890,19 +886,24 @@ def gender_option_of_user_name(user_name):
     return response['query']['users'][0]['gender']
 
 def gender_option_of_user():
-    if 'oauth_access_token' not in flask.session:
+    userinfo = get_userinfo()
+    if userinfo is None:
         return 'unknown'
 
-    session = mwapi.Session(
-        host='https://www.wikidata.org',
+    return userinfo['options']['gender']
+
+def authenticated_session(host):
+    return T272319RetryingSession(
+        host=host,
         auth=generate_auth(),
         user_agent=user_agent,
     )
-    response = session.get(action='query',
-                           meta=['userinfo'],
-                           uiprop=['options'],
-                           formatversion=2)
-    return response['query']['userinfo']['options']['gender']
+
+def anonymous_session(host):
+    return mwapi.Session(
+        host=host,
+        user_agent=user_agent,
+    )
 
 def generate_auth():
     access_token = mwoauth.AccessToken(**flask.session['oauth_access_token'])
@@ -913,12 +914,20 @@ def generate_auth():
         resource_owner_secret=access_token.secret,
     )
 
-def identify():
+def get_userinfo():
+    if 'userinfo' not in flask.g:
+        flask.g.userinfo = query_userinfo()
+
+    return flask.g.userinfo
+
+def query_userinfo():
     if 'oauth_access_token' not in flask.session:
         return None
-    access_token = mwoauth.AccessToken(**flask.session['oauth_access_token'])
-    return mwoauth.identify(
-        'https://www.wikidata.org/w/index.php',
-        consumer_token,
-        access_token,
-    )
+    session = authenticated_session('https://www.wikidata.org')
+    userinfo = session.get(action='query',
+                           meta='userinfo',
+                           uiprop=['groups', 'options'],
+                           formatversion=2)['query']['userinfo']
+    if userinfo.get('anon', False):
+        return None
+    return userinfo
