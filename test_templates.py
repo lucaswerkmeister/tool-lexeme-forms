@@ -115,8 +115,12 @@ expected_example_counts = {
         'উ [ভাইলবেক]।': 2,
         'উনি [ভাইলবেন]।': 2,
     },
+    'czech-verb-imperfective': {
+        'Ona byla [zpívána].': 2,
+        'Ona to včera [zpívala].': 2,
+    },
     'czech-verb-perfective': {
-        'Ona by [zazpívala].': 2,
+        'Ona by [postavila].': 2,
     },
 }
 

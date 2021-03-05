@@ -10,6 +10,9 @@ properties_exclusive = {
         'P31': False,
         # other “grammatical gender” are incompatible
         'P5185': True,
+        # other “language style” are incompatible
+        # (used to distinguish between two infinitive forms in Czech)
+        'P6191': True,
         # other “grammatical aspect” are incompatible
         'P7486': True,
     },
