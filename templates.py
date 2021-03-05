@@ -2995,8 +2995,33 @@ templates = collections.OrderedDict([
         'forms': [
             {
                 'label': 'infinitiv',
-                'example': '[postavit/postaviti].',
+                'example': '[postavit].',
                 'grammatical_features_item_ids': ['Q179230'],
+            },
+            {
+                'label': 'infinitiv',
+                'example': '[postaviti].',
+                'grammatical_features_item_ids': ['Q179230'],
+                'statements': {
+                    'P6191': [
+                        {
+                            'mainsnak': {
+                                'snaktype': 'value',
+                                'property': 'P6191',
+                                'datatype': 'wikibase-item',
+                                'datavalue': {
+                                    'type': 'wikibase-entityid',
+                                    'value': {
+                                        'entity-type': 'item',
+                                        'id': 'Q61857234',
+                                    },
+                                },
+                            },
+                            'type': 'statement',
+                            'rank': 'normal',
+                        }
+                    ],
+                },
             },
             {
                 'label': '1. osoba, jednotné číslo, oznamovací způsob',
