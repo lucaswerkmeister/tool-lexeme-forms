@@ -2992,6 +2992,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q9056',
         'language_code': 'cs',
         'lexical_category_item_id': 'Q24905',
+        'two_column_sections': False,
         'forms': [
             {
                 'label': 'infinitiv',
@@ -3024,6 +3025,7 @@ templates = collections.OrderedDict([
                 },
             },
             {
+                'section_break': True,
                 'label': '1. osoba, jednotné číslo, oznamovací způsob',
                 'example': 'Já teď [postavím].',
                 'grammatical_features_item_ids': ['Q21714344', 'Q110786', 'Q682111', 'Q192613'],
@@ -3054,6 +3056,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q51929074', 'Q146786', 'Q682111', 'Q192613'],
             },
             {
+                'section_break': True,
                 'label': 'rozkazovací způsob, 2. osoba, jednotné číslo',
                 'example': 'Ty [postav]!',
                 'grammatical_features_item_ids': ['Q22716', 'Q51929049', 'Q110786'],
@@ -3069,6 +3072,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q22716', 'Q51929049', 'Q146786'],
             },
             {
+                'section_break': True,
                 'label': 'příčestí činné, rod mužský životný, jednotné číslo',
                 'example': 'On by [postavil].',
                 'grammatical_features_item_ids': ['Q72249355', 'Q54020116', 'Q110786'],
@@ -3109,6 +3113,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q72249355', 'Q1775461', 'Q146786'],
             },
             {
+                'section_break': True,
                 'label': 'příčestí trpné, rod mužský životný, jednotné číslo',
                 'example': 'On bude [postaven].',
                 'grammatical_features_item_ids': ['Q72249544', 'Q54020116', 'Q110786'],
@@ -3149,6 +3154,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q72249544', 'Q1775461', 'Q146786'],
             },
             {
+                'section_break': True,
                 'label': 'přechodník minulý, rod mužský životný, jednotné číslo',
                 'example': 'On [postaviv], odešel.',
                 'grammatical_features_item_ids': ['Q65540485', 'Q54020116', 'Q110786'],
@@ -3217,6 +3223,7 @@ templates = collections.OrderedDict([
         'language_item_id': 'Q9056',
         'language_code': 'cs',
         'lexical_category_item_id': 'Q24905',
+        'two_column_sections': False,
         'forms': [
             {
                 'label': 'infinitiv',
@@ -3249,6 +3256,7 @@ templates = collections.OrderedDict([
                 },
             },
             {
+                'section_break': True,
                 'label': '1. osoba, jednotné číslo, oznamovací způsob',
                 'example': 'Já [zpívám].',
                 'grammatical_features_item_ids': ['Q21714344', 'Q110786', 'Q682111', 'Q192613'],
@@ -3279,6 +3287,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q51929074', 'Q146786', 'Q682111', 'Q192613'],
             },
             {
+                'section_break': True,
                 'label': 'rozkazovací způsob, 2. osoba, jednotné číslo',
                 'example': '(Ty) [zpívej]!',
                 'grammatical_features_item_ids': ['Q22716', 'Q51929049', 'Q110786'],
@@ -3294,6 +3303,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q22716', 'Q51929049', 'Q146786'],
             },
             {
+                'section_break': True,
                 'label': 'příčestí činné, rod mužský životný, jednotné číslo',
                 'example': 'On to včera [zpíval].',
                 'grammatical_features_item_ids': ['Q72249355', 'Q54020116', 'Q110786'],
@@ -3334,6 +3344,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q72249355', 'Q1775461', 'Q146786'],
             },
             {
+                'section_break': True,
                 'label': 'příčestí trpné, rod mužský životný, jednotné číslo',
                 'example': 'On byl [zpíván].',
                 'grammatical_features_item_ids': ['Q72249544', 'Q54020116', 'Q110786'],
@@ -3374,6 +3385,7 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q72249544', 'Q1775461', 'Q146786'],
             },
             {
+                'section_break': True,
                 'label': 'přechodník přítomný, rod mužský životný, jednotné číslo',
                 'example': 'On [zpívaje] odešel.',
                 'grammatical_features_item_ids': ['Q65540125', 'Q54020116', 'Q110786'],
