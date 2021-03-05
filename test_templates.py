@@ -116,7 +116,7 @@ expected_example_counts = {
         'উনি [ভাইলবেন]।': 2,
     },
     'czech-verb-perfective': {
-        'Ona by [zazpívala].': 2,
+        'Ona by [postavila].': 2,
     },
 }
 
