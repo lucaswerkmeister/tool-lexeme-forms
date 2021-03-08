@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Theklan"
+		]
+	},
+	"create": "Sortu",
+	"csrf-warning": "Barkatu, ezin izan dugu zure eskaera prozesatu (<abbr title=\"Cross-site request forgery\">CSRF</abbr> babesak huts egin du). Saia zaitez berriro ere eskaera bidaltzen.",
+	"duplicates-warning": "Dagoeneko badugu hizkuntza kode berberarekin lema berdina duten lexema hauek:",
+	"duplicates-instructions": "Ziur bazaude lexema ezberdina dela, klik egin goian dagoen formularioko kutxan.",
+	"no-duplicate": "Hau ez da bikoiztutako lexema bat.",
+	"advanced": "Aurreratua",
+	"advanced-general": "Modu \"aurrearatuan\" zaude.",
+	"advanced-lexeme-id": "Lexema ID bat sar dezakezu dagoeneko existitzen den lexema bati formak gehitzeko, berri bat sortu beharrean. Dagoeneko existitzen diren lexemen formak zuriz utzi, bestela bikoiztuko dira eta!",
+	"advanced-partial-forms": "Formularioko atal batzuk zuriz utzi ditzakezu, eta ez dira gehituko. Ziurtatu ez zaudela nahi gabe formarik ahazten!",
+	"lexeme-id": "Lexema ID",
+	"advanced-partial-forms-hint": "Forma batzuk falta dituzten lexemak sortzeko, aukeratu modu aurreratua",
+	"generated-via": "honen bidez sortua",
+	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=formarik ez|forma bat|$2 forma}} eta {{PLURAL:$3|0=esanahirik ez|esanahi bat|$3 esanahi}}"
+}

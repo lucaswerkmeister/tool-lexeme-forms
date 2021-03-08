@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ederporto",
+			"Lucas Werkmeister"
+		]
+	},
+	"create": "Criar",
+	"csrf-warning": "Desculpe, não foi possível processar essa requisição (proteção contra <abbr title=\"Cross-site request forgery\">CSRF</abbr> falhou). Por favor, tente submeter o formulário novamente.",
+	"duplicates-warning": "Os seguintes lexemas têm o mesmo lema e código de língua que o lema que você está tentando criar:",
+	"duplicates-instructions": "Se você tem certeza que eles são diferentes, selecione a caixa no final do formulário.",
+	"no-duplicate": "Isto não é uma duplicata de um lexema existente.",
+	"advanced": "Avançado",
+	"advanced-general": "Você está no modo «Avançado».",
+	"advanced-lexeme-id": "No lugar de criar um novo lexema, você pode adicionar um identificador de um lexema existente para adicionar as formas faltantes. Deixe em branco as formas já existentes no lexema; Do contrário, será criada uma duplicata!",
+	"advanced-partial-forms": "Você pode deixar algumas formas vazias para evitar que sejam adicionadas. Garanta criar todas as formas necessárias!",
+	"lexeme-id": "Identificador de lexema",
+	"advanced-partial-forms-hint": "Para criar lexemas com algumas formas faltando, mude para o modo avançado.",
+	"generated-via": "gerado via"
+}

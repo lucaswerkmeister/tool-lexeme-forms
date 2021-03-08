@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Vesihiisi",
+			"Sabelöga"
+		]
+	},
+	"create": "Skapa",
+	"csrf-warning": "Din begäran kunde inte utföras på grund av ett <abbr title=\"Cross-site request forgery\">CSRF</abbr>-fel. Var god försök igen.",
+	"duplicates-warning": "Dessa befintliga lexem har samma lemma och språkkod som lexemet du försöker skapa:",
+	"duplicates-instructions": "Om du är säker på att de är olika, markera i kryssrutan längst ner i formuläret.",
+	"no-duplicate": "Duplicerar ej ett befintligt lexem.",
+	"advanced": "Avancerat läge",
+	"advanced-general": "Du är nu i avancerat läge",
+	"advanced-lexeme-id": "Här kan du skriva in ett lexem-ID för att lägga till former till ett befintligt lexem istället för att skapa ett nytt. För att undvika att redan befintliga former dupliceras, lämna dessa fält tomma.",
+	"advanced-partial-forms": "Du kan lämna vissa fält tomma; dessa former kommer då inte att läggas till. Försäkra dig dock om att du inte lämnar några fält tomma av misstag!",
+	"lexeme-id": "Lexem-ID",
+	"advanced-partial-forms-hint": "För att skapa lexem utan att fylla i alla fält, byt till avancerat läge.",
+	"generated-via": "genererades via",
+	"bulk-link": "masskapa",
+	"bulk-format-help": "formateringshjälp",
+	"bulk-not-allowed": "Du får dessvärre inte masskapa lexem.",
+	"edit-link": "redigera",
+	"no-grammatical-features": "inga grammatiska funktioner"
+}

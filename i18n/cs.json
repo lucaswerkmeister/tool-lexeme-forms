@@ -1,0 +1,32 @@
+{
+	"@metadata": {
+		"authors": [
+			"Lexicolover",
+			"Matěj Suchánek",
+			"Adrijaned"
+		]
+	},
+	"create": "Vytvořit",
+	"csrf-warning": "Bohužel se nám nepodařilo vykonat požadavek (ochrana před <abbr title=\"Cross-site request forgery\">CSRF</abbr> selhala). Zkuste prosím odeslat formulář znovu.",
+	"duplicates-warning": "Pokoušíte se vytvořit lexém, který má stejné lemma a jazyk jako už existující lexémy:",
+	"duplicates-instructions": "Jste-li si jisti, že zadávaný lexém je odlišný, zatrhněte pole na konci formuláře.",
+	"no-duplicate": "Tento lexém není duplicitní k již existujícímu lexému.",
+	"advanced": "Pokročilé",
+	"advanced-general": "Nacházíte se v „pokročilém“ režimu.",
+	"advanced-lexeme-id": "Zde můžete zadat ID lexému, ke kterému chcete přidat chybějící tvary, namísto vytvoření nového. Veškeré tvary, které jsou již u lexému vyplněné, nechte prázdné, jinak budou vytvořeny jako duplicitní!",
+	"advanced-partial-forms": "Některé tvary můžete nechat prázdné a tyto pak nebudou přidány do lexému. Ujistěte se, že omylem nevynecháte některý tvar!",
+	"lexeme-id": "ID lexému",
+	"advanced-partial-forms-hint": "Chcete-li vytvořit lexém bez některých tvarů, přepněte do pokročilého režimu.",
+	"generated-via": "vygenerováno pomocí",
+	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=žádné tvary|jeden tvar|$2 tvary|$2 tvarů}} a {{PLURAL:$3|0=žádné významy|jeden význam|$3 významy|$3 významů}}",
+	"bulk-link": "hromadný mód",
+	"bulk-format-help": "nápověda k formátování",
+	"bulk-not-allowed": "Litujeme, ale nemáte oprávnění k použití hromadného módu.",
+	"edit-link": "editovat",
+	"edit-general": "Nacházíte se v módu editace. Upravování hodnot níže povede k upravení, přidání, nebo odebrání tvarů z cílového lexému.",
+	"edit-mismatch-warning": "Zdá se, že tento lexém neodpovídá tomuto vzoru! Prosím, zkontrolujte si, že opravdu používáte správný vzor před tím, než budete pokračovat!",
+	"edit-ambiguous-warning": "Následující {{PLURAL:$1|tvar|tvary|tvary}} lexému odpovídají více než jednomu vzoru se stejnou pravděpodobností:",
+	"edit-unmatched-warning": "Následující {{PLURAL:$1|tvar|tvary|tvary}} lexému neodpovídají ani jednomu ze vzorů:",
+	"edit-form-list-item": "$1, $2, {{PLURAL:$3|0=žádná tvrzení|jedno tvrzení|$3 tvrzení|$3 tvrzení}}",
+	"no-grammatical-features": "bez gramatických vlastností"
+}

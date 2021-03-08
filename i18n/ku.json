@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Şêr"
+		]
+	},
+	"create": "    Biafirîne",
+	"csrf-warning": "Bibore, me nikarî daxwaza te pêk bînin (bixebitînin) (Parastina <abbr title=\"Cross-site request forgery\">CSRF</abbr>ê bi ser neket). Ji kerema xwe careke din hewl bide û formê dîsa bişîne.",
+	"duplicates-warning": "    Ev leksem xwediyê heman peyv û heman koda zimanî ye, wek ya ku niha dixwazî biafirînî:",
+	"duplicates-instructions": "    Ku tu bawer bî ku ev leksem ji hev cuda ne, ji kerema xwe re qutiya biçûk a di dawiya formê de nîşan bike.",
+	"no-duplicate": "    Ev ne dubareya leksema heye ye.",
+	"advanced": "    Pêşketî",
+	"advanced-general": "    Tu di beşa rewşa \"pêşketî\" de yî.",
+	"advanced-lexeme-id": "    Di şûna çêkirina leksemeke nû de, tu dikarî IDya leksemeke/bêjeyeke heye binivîsî ji bo lêzêdekirina forman li leksemeke heye. Ji kerema ma wan beşên ku di leksema heye de vala bihêle, da ku ev dubare neyên lêzêdekirin!",
+	"advanced-partial-forms": "    Tu dikarî hin forman vala bihêlî, da ku ev lê zêde nebin. Lê hay jê hebe ku tu hin forman bi şaşî/xeletî ji bîr nekî (jê nebî)!",
+	"lexeme-id": "    Lexem-ID",
+	"advanced-partial-forms-hint": "    Ji bo çêkirina leksemên/bêjeyên nû derbasî rewşa pêşketî bibe.",
+	"generated-via": "    hat çêkirin bi alîkariya",
+	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=form tune ne|formek|$2 form}} û {{PLURAL:$3|0=bê wate|wateyek|$3 wate}}"
+}

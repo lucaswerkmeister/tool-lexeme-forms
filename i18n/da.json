@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"So9q",
+			"Fnielsen"
+		]
+	},
+	"create": "Opret",
+	"csrf-warning": "Din anmodning kunne ikke fremsættes på grund af en <abbr title=\"Cross-site request forgery\">CSRF</abbr>-fejl. Prøv igen.",
+	"duplicates-warning": "Disse eksisterende leksemer har den samme ordstamme og sprogkode som den, du prøver at oprette:",
+	"duplicates-instructions": "Hvis du er sikker på, at de er forskellige, skal du markere afkrydsningsfeltet i bunden af formularen.",
+	"no-duplicate": "Dette er ikke en duplikat af et eksisterende leksem.",
+	"advanced": "Avanceret",
+	"advanced-general": "Du er i “avanceret” tilstand",
+	"advanced-lexeme-id": "Her kan du indtaste et leksem-id for at tilføje formularer til et eksisterende leksem i stedet for at oprette et nyt. For at undgå duplikering af eksisterende formularer skal du lade disse felter være tomme.",
+	"advanced-partial-forms": "Du kan lade nogle felter være tomme; så tilføjes disse formularer ikke. Sørg dog for, at du ikke efterlader nogen felter tomme ved en fejltagelse!",
+	"lexeme-id": "Leksem-ID",
+	"advanced-partial-forms-hint": "For at oprette leksem uden at udfylde alle felter skal du skifte til avanceret tilstand.",
+	"generated-via": "oprettet gennem",
+	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=ingen forme|en form|$2 forme}} og {{PLURAL:$3|0=inge betydelser|en betydelse|$3 betydelser}}",
+	"bulk-link": "masseopret",
+	"bulk-format-help": "formateringshjælp",
+	"bulk-not-allowed": "Desværre har du ikke tilladelse til at oprette flere leksemer samtidigt."
+}

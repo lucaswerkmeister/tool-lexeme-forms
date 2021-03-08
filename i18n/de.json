@@ -1,0 +1,27 @@
+{
+	"@metadata": {
+		"authors": [
+			"Lucas Werkmeister"
+		]
+	},
+	"create": "Anlegen",
+	"csrf-warning": "Entschuldigung, wir konnten diese Anfrage nicht verarbeiten (<abbr title=\"Cross-site request forgery\">CSRF</abbr>-Schutz schlug fehl). Bitte versuche, das Formular nochmal abzuschicken.",
+	"duplicates-warning": "{{PLURAL:$1|Das folgende, bereits bestehende Lexem hat|Die folgenden, bereits bestehenden Lexeme haben}} das gleiche Lemma und den gleichen Sprachcode wie das, was du erstellen willst:",
+	"duplicates-instructions": "Wenn du sicher bist, dass es {{PLURAL:$1|ein unterschiedliches Lexem ist|unterschiedliche Lexeme sind}}, kreuze das Kästchen am Ende des Formulars an.",
+	"no-duplicate": "Dies ist kein Duplikat eines existierenden Lexems.",
+	"advanced": "Erweitert",
+	"advanced-general": "Du befindest dich im „erweiterten“ Modus.",
+	"advanced-lexeme-id": "Du kannst eine Lexem-ID eingeben, um Formen zu einem bestehenden Lexem hinzuzufügen, anstatt ein neues zu erstellen. Lass alle Formen, die das Lexem bereits hat, leer, sonst werden sie dupliziert!",
+	"advanced-partial-forms": "Du kannst einige Formen leer lassen, so dass sie nicht hinzugefügt werden. Stelle sicher, dass du nicht aus Versehen welche weglässt!",
+	"lexeme-id": "Lexem-ID",
+	"advanced-partial-forms-hint": "Um Lexeme zu erstellen, denen einige Formen fehlen, wechsle in den erweiterten Modus.",
+	"generated-via": "generiert durch",
+	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=keine Formen|eine Form|$2 Formen}}, {{PLURAL:$3|0=keine Senses|ein Sense|$3 Senses}}",
+	"edit-link": "bearbeiten",
+	"edit-general": "Du befindest dich im „Bearbeiten“-Modus. Wenn du die Werte unten bearbeitest, werden Formen des Ziellexems geändert, hinzugefügt oder entfernt.",
+	"edit-mismatch-warning": "Dieses Lexem scheint nicht zu dieser Vorlage zu passen! Bitte prüfe nochmal genau nach, dass es die richtige Vorlage für dieses Lexem ist, bevor du fortfährst.",
+	"edit-ambiguous-warning": "Die {{PLURAL:$1|folgende Lexem-Form passt|folgenden Lexem-Formen passen}} zu mehreren Formen der Vorlage gleich gut:",
+	"edit-unmatched-warning": "Die {{PLURAL:$1|folgende Lexem-Form passt|folgenden Lexem-Formen passen}} zu keinen Formen der Vorlage:",
+	"edit-form-list-item": "$1, $2, {{PLURAL:$3|0=keine Aussagen|eine Aussage|$3 Aussagen}}",
+	"no-grammatical-features": "keine grammatikalischen Funktionen"
+}

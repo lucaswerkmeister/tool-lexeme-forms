@@ -1,0 +1,28 @@
+{
+	"@metadata": {
+		"authors": [
+			"VIGNERON",
+			"Fulup",
+			"Iriep"
+		]
+	},
+	"create": "Krouiñ",
+	"csrf-warning": "N'eus ket bet gallet ober war-dro ar reked-mañ (gwarez <abbr title=\"Cross-site request forgery\">CSRF</abbr> c'hwitet). Klaskit adkas ar furm.",
+	"duplicates-warning": "Al leksemoù da heul o deus an hevelep lemma, ha kod yezh, hag an hini emaoc'h o klask krouiñ:",
+	"duplicates-instructions": "Mard oc'h sur int disheñvel, askit al log e traoñ ar furm.",
+	"no-duplicate": "N'eo ket un eil eus ul leksem a zo anezhañ c'hoazh.",
+	"advanced": "Araokaet",
+	"advanced-general": "Er mod “araokaet” emaoc'h.",
+	"advanced-lexeme-id": "Gallout a rit merkañ ID ul leksem evit ouzhpennañ furmoù d'ul leksem a zo anezhañ, kentoc'h eget krouiñ unan nevez. Lezit goullo kement furm a zo anezhi c'hoazh war al leksem a-hend-all e vint eilet!",
+	"advanced-partial-forms": "Gallout a rit lezel goullo furmoù 'zo, evel-se ne vint ket ouzhpennet. Bezit sur na lezit ket furmoù er-maez dre fazi!",
+	"lexeme-id": "ID al leksem",
+	"advanced-partial-forms-hint": "Evit krouiñ leksemoù gant furmoù a vank, grit gant ar mod araokaet.",
+	"generated-via": "ganet dre",
+	"bulk-link": "mod a-vras",
+	"bulk-format-help": "Skoazell furmad",
+	"bulk-not-allowed": "N'oc'h ket aotreet d'ober gant ar mod a-vras.",
+	"edit-link": "aozañ",
+	"edit-general": "Emaoc'h er mod “aozañ”. Ma cheñchit an talvoudoù dindan e vo aozet, ouzhpennet pe dilamet furmoù 'zo eus al leksem pal.",
+	"edit-mismatch-warning": "Evit doare ne glot ket al leksem-mañ gant ar patrom! Gwiriit mat eo ar patrom a zere evit al leksem a-raok kenderc'hel ganti.",
+	"no-grammatical-features": "perzh yezhadurel ebet"
+}

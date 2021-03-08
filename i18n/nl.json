@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"MarcoSwart"
+		]
+	},
+	"create": "Aanmaken",
+	"csrf-warning": "Sorry, we konden dit niet verwerken (door de <abbr title=\"Cross-site request forgery\">CSRF</abbr>-bescherming). Probeer het webformulier nog eens aan te bieden.",
+	"duplicates-warning": "Je probeert een lexeem aan te maken met hetzelfde lemmawoord en taalcode als een of meer bestaande lexemen:",
+	"duplicates-instructions": "Weet je zeker dat je echt iets anders aanmaakt? Kruis dan het vakje voor de laatste regel aan.",
+	"no-duplicate": "Dit is geen doublure van een lexeem dat al bestaat.",
+	"advanced": "Geavanceerd",
+	"advanced-general": "Geavanceerde mogelijkheden.",
+	"advanced-lexeme-id": "Vul een lexeem ID in om woordvormen aan een bestaand lexeem toe te voegen. Woordvormen die het lexeem al heeft hier niet invullen, want dat geeft een doublure.",
+	"advanced-partial-forms": "Als je woordvormen niet invult, worden ze niet toegevoegd. Let op dat je niet per ongeluk een woordvorm vergeet!",
+	"lexeme-id": "Lexeem-ID",
+	"advanced-partial-forms-hint": "Ga naar \"Geavanceerd\" als je een lexeem wil maken waarin een of meer woordvormen ontbreken.",
+	"generated-via": "gegenereerd door"
+}

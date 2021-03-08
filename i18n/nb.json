@@ -1,0 +1,31 @@
+{
+	"@metadata": {
+		"authors": [
+			"Danmichaelo",
+			"Jon Harald Søby"
+		]
+	},
+	"create": "Opprett",
+	"csrf-warning": "Forespørselen din ble ikke behandlet på grunn av et <abbr title=\"Cross-site request forgery\">CSRF</abbr>-problem. Prøv gjerne om igjen.",
+	"duplicates-warning": "Følgende eksisterende leksemer har samme lemma og språkkode som de du holder på å opprette:",
+	"duplicates-instructions": "Hvis du er sikker på at de er ulike kan du hake av i avkrysningsboksen i skjemaet.",
+	"no-duplicate": "Dette er ikke et duplikat av et leksem som finnes fra før.",
+	"advanced": "Avansert",
+	"advanced-general": "Du er i avansert modus.",
+	"advanced-lexeme-id": "Du kan skrive inn ID-en til et leksem som allerede finnes i stedet for å opprette et nytt. La alle formene som allerede er lagt inn stå tomme, ellers blir de duplisert!",
+	"advanced-partial-forms": "Du kan la noen felt stå tomme slik at de ikke blir lagt til, men pass på at du ikke glemmer å fylle inn noen av formene som skal være med.",
+	"lexeme-id": "Leksem-ID",
+	"advanced-partial-forms-hint": "Bytt til avansert modus om du ønsker å opprette leksemer uten alle formene.",
+	"generated-via": "generert via",
+	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=ingen former|én form|$2 former}} og {{PLURAL:$3|0=ingen betydninger|én betydning|$3 betydninger}}",
+	"bulk-link": "masseinnleggingsmodus",
+	"bulk-format-help": "formathjelp",
+	"bulk-not-allowed": "Du har dessverre ikke tillatelse til å bruke masseinnleggingsmodus.",
+	"edit-link": "rediger",
+	"edit-general": "Du er i redigeringsmodus. Hvis du endrer verdiene nedenfor blir målleksemet redigert.",
+	"edit-mismatch-warning": "Dette leksemet passer ikke med denne malen! Dobbeltsjekk at det er riktig mal for dette leksemet før du fortsetter.",
+	"edit-ambiguous-warning": "{{PLURAL:$1|Denne leksemformen|Følgende leksemformer}} matchet mer enn ett malskjema like godt:",
+	"edit-unmatched-warning": "{{PLURAL:$1|Denne leksemformen|Følgende leksemformer}} matchet ikke noen av malskjemaene:",
+	"edit-form-list-item": "$1, $2, {{PLURAL:$3|0=ingen påstander|én påstand|$3 påstander}}",
+	"no-grammatical-features": "ingen grammatiske trekk"
+}

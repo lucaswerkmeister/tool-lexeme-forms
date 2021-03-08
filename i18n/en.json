@@ -1,0 +1,30 @@
+{
+	"@metadata": {
+		"authors": [
+			"Lucas Werkmeister"
+		]
+	},
+	"create": "Create",
+	"csrf-warning": "Sorry, we couldn’t process this request (<abbr title=\"Cross-site request forgery\">CSRF</abbr> protection failed). Please try submitting the form again.",
+	"duplicates-warning": "The following existing {{PLURAL:$1|lexeme has|lexemes have}} the same lemma and language code as the one you’re trying to create:",
+	"duplicates-instructions": "If you’re sure that {{PLURAL:$1|it’s|they’re}} different, check the box at the bottom of the form.",
+	"no-duplicate": "This is not a duplicate of an existing lexeme.",
+	"advanced": "Advanced",
+	"advanced-general": "You are in “advanced” mode.",
+	"advanced-lexeme-id": "You can enter a lexeme ID to add forms to an existing lexeme instead of creating a new one. Leave any forms that already exist on the lexeme blank, otherwise they will be duplicated!",
+	"advanced-partial-forms": "You can leave some forms blank so that they will not be added. Make sure you’re not accidentally leaving out any forms!",
+	"lexeme-id": "Lexeme ID",
+	"advanced-partial-forms-hint": "To create lexemes with some forms missing, switch to advanced mode.",
+	"generated-via": "generated via",
+	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=no forms|one form|$2 forms}} and {{PLURAL:$3|0=no senses|one sense|$3 senses}}",
+	"bulk-link": "bulk mode",
+	"bulk-format-help": "format help",
+	"bulk-not-allowed": "You are not allowed to use bulk mode. Sorry.",
+	"edit-link": "edit",
+	"edit-general": "You are in “edit” mode. Changing the values below will edit, add or remove forms of the target lexeme.",
+	"edit-mismatch-warning": "This lexeme does not appear to match this template! Please double-check that it is the right template for this lexeme before continuing.",
+	"edit-ambiguous-warning": "The following lexeme {{PLURAL:$1|form|forms}} matched more than one template form equally well:",
+	"edit-unmatched-warning": "The following lexeme {{PLURAL:$1|form|forms}} did not match any of the template forms:",
+	"edit-form-list-item": "$1, $2, {{PLURAL:$3|0=no statements|one statement|$3 statements}}",
+	"no-grammatical-features": "no grammatical features"
+}
