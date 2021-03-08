@@ -29,6 +29,10 @@ derived_messages = {
     'bulk_heading': ('bulk_link', identity),
     'edit_button': ('edit_link', initial_titlecase),
 }
+language_twn2tool = {
+    'ku-latn': 'ku',
+    'tg-cyrl': 'tg',
+}
 
 
 def py2mw(py, variables, lists):
@@ -64,10 +68,11 @@ def py2mw(py, variables, lists):
     return re.sub(r'\{([^{}]|\{[^}]*\})*\}', replace, py)
 
 
-def mw2py(mw, language, variables, lists):
-    if language == 'la':
-        language = 'en'  # Latin is not in CLDR, English has same plural forms
-    locale = babel.Locale(language)
+def mw2py(mw, language_tool, variables, lists):
+    language_babel = language_tool
+    if language_babel == 'la':
+        language_babel = 'en'  # Latin is not in CLDR, English has same plural forms
+    locale = babel.Locale(language_babel)
 
     def replace_plural(match):
         nonlocal locale, variables
@@ -121,19 +126,20 @@ for entry in os.scandir('i18n/'):
     match = re.match(r'(.*)\.json$', entry.name)
     if not match:
         continue
-    language = match[1]
-    if language == 'qqq':
+    language_twn = match[1]
+    if language_twn == 'qqq':
         continue
+    language_tool = language_twn2tool.get(language_twn, language_twn)
     with open(entry.path, 'r') as f:
         data = json.load(f)
-    translations[language] = {}
+    translations[language_tool] = {}
     for key_json in data:
         if key_json.startswith('@'):
             continue
         key_py = key_json.replace('-', '_')
-        msg = mw2py(data[key_json], language, variables.get(key_py, []), lists.get(key_py, set()))
-        translations[language][key_py] = msg
+        msg = mw2py(data[key_json], language_tool, variables.get(key_py, []), lists.get(key_py, set()))
+        translations[language_tool][key_py] = msg
     for key_py in derived_messages:
         source_key_py, transformation = derived_messages[key_py]
-        if source_key_py in translations[language]:
-            translations[language][key_py] = transformation(translations[language][source_key_py])
+        if source_key_py in translations[language_tool]:
+            translations[language_tool][key_py] = transformation(translations[language_tool][source_key_py])
