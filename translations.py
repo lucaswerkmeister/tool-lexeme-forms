@@ -118,7 +118,7 @@ translations = {}
 for entry in os.scandir('i18n/'):
     if not entry.is_file():
         continue
-    match = re.match(r'(.*)\.json', entry.name)
+    match = re.match(r'(.*)\.json$', entry.name)
     if not match:
         continue
     language = match[1]
