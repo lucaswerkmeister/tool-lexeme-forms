@@ -931,3 +931,8 @@ def query_userinfo():
     if userinfo.get('anon', False):
         return None
     return userinfo
+
+@app.errorhandler(mwapi.errors.APIError)
+def handle_api_error(e):
+    return flask.render_template('error-api.html',
+                                 error=e), 500

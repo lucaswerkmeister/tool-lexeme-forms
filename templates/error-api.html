@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="alert alert-info" role="alert">
+  <p>
+    An API error occurred while handling this request:
+  </p>
+  <blockquote>
+    {{ error.info }}
+  </blockquote>
+</div>
+{% endblock main %}
