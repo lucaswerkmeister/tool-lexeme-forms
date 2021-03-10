@@ -934,5 +934,6 @@ def query_userinfo():
 
 @app.errorhandler(mwapi.errors.APIError)
 def handle_api_error(e):
+    app.log_exception(e)
     return flask.render_template('error-api.html',
                                  error=e), 500
