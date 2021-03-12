@@ -39,6 +39,13 @@ allowed_html_element_names = {
 }
 
 
+def test_message_keys(language_code):
+    language_keys = set(translations.translations[language_code].keys())
+    english_keys = set(translations.translations['en'].keys())
+    extra_keys = language_keys.difference(english_keys)
+    assert not extra_keys
+
+
 def test_message_html_elements(language_code, message_key):
     message = translations.translations[language_code].get(message_key)
     if message is None:
