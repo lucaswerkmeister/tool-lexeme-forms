@@ -55,7 +55,6 @@ def test_PluralFormatter_explicit_takes_precedence():
     ('{!p:}', KeyError),
     ('{!p:0=missing plural for other}', KeyError),
 ])
-@pytest.mark.filterwarnings('ignore:.*format spec.*')
 def test_PluralFormatter_invalid_format_spec(format_spec, type):
     plural_formatter = formatters.PluralFormatter(locale_identifier='en')
     with pytest.raises(type):
@@ -63,11 +62,8 @@ def test_PluralFormatter_invalid_format_spec(format_spec, type):
 
 def test_PluralFormatter_fallback():
     plural_formatter = formatters.PluralFormatter(locale_identifier='en')
-    with pytest.warns(UserWarning) as record:
-        formatted = plural_formatter.format('prefix {val!p:0=zero:other="{val}"} suffix', val=1)
-        assert formatted == 'prefix "1" suffix'
-    assert len(record) == 1
-    assert str(record[0].message) == 'No plural for tag "one" found in format spec "0=zero:other="1"", falling back to "other"'
+    formatted = plural_formatter.format('prefix {val!p:0=zero:other="{val}"} suffix', val=1)
+    assert formatted == 'prefix "1" suffix'
 
 
 @pytest.mark.parametrize('list, expected', [

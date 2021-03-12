@@ -1,14 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Vesihiisi",
-			"Sabelöga"
+			"Ainali",
+			"Sabelöga",
+			"Vesihiisi"
 		]
 	},
 	"create": "Skapa",
 	"csrf-warning": "Din begäran kunde inte utföras på grund av ett <abbr title=\"Cross-site request forgery\">CSRF</abbr>-fel. Var god försök igen.",
-	"duplicates-warning": "Dessa befintliga lexem har samma lemma och språkkod som lexemet du försöker skapa:",
-	"duplicates-instructions": "Om du är säker på att de är olika, markera i kryssrutan längst ner i formuläret.",
+	"duplicates-warning": "{{PLURAL:$1|Detta befintliga lexem|Dessa befintliga lexem}} har samma lemma och språkkod som lexemet du försöker skapa:",
+	"duplicates-instructions": "Om du är säker på att {{PLURAL:$1|det är olikt|de är olika}}, markera i kryssrutan längst ner i formuläret.",
 	"no-duplicate": "Duplicerar ej ett befintligt lexem.",
 	"advanced": "Avancerat läge",
 	"advanced-general": "Du är nu i avancerat läge",
@@ -17,9 +18,15 @@
 	"lexeme-id": "Lexem-ID",
 	"advanced-partial-forms-hint": "För att skapa lexem utan att fylla i alla fält, byt till avancerat läge.",
 	"generated-via": "genererades via",
+	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=ingen form|en form|$2 former}} och {{PLURAL:$3|0=ingen betydelse|en betydelse|$3 betydelser}}",
 	"bulk-link": "masskapa",
 	"bulk-format-help": "formateringshjälp",
 	"bulk-not-allowed": "Du får dessvärre inte masskapa lexem.",
 	"edit-link": "redigera",
+	"edit-general": "Du är i \"redigeringsläge\". Ändringar i värdena nedan kommer att redigera, lägga till eller ta bort former i det angivna lexemet.",
+	"edit-mismatch-warning": "Detta lexem verkar inte matcha denna mall! Dubbelkolla att det är rätt mall för detta lexem innan du fortsätter.",
+	"edit-ambiguous-warning": "Följande {{PLURAL:$1|lexemform|lexemformer}} matchade mer än ett mallformulär lika bra:",
+	"edit-unmatched-warning": "Följande {{PLURAL:$1|lexemform|lexemformer}} matchade inte något mallformulär:",
+	"edit-form-list-item": "$1, $2, {{PLURAL:$3|0=inget uttalande|ett uttalande|$3 uttalanden}}",
 	"no-grammatical-features": "inga grammatiska funktioner"
 }

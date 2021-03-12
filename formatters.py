@@ -1,7 +1,6 @@
 import babel
 import babel.lists
 import string
-from warnings import warn
 
 
 class BaseI18nFormatter(string.Formatter):
@@ -74,7 +73,7 @@ class _Plural:
         for plural in plurals:
             if plural.startswith(tag_eq):
                 return plural[len(tag_eq):]
-        warn('No plural for tag "{}" found in format spec "{}", falling back to "other"'.format(tag, format_spec))
+        # fall back to "other"
         for plural in plurals:
             if plural.startswith('other='):
                 return plural[len('other='):]

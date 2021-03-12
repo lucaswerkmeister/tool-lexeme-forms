@@ -2,13 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Jens Ohlig",
+			"Nikki",
 			"Robin van der Vliet"
 		]
 	},
 	"create": "Krei",
 	"csrf-warning": "Pardonu, ni ne povis procesi ĉi tiun peton (protekto kontraŭ <abbr title=\"Cross-site request forgery\">CSRF</abbr> malsucesis). Bonvolu provi submeti la formularon denove.",
-	"duplicates-warning": "La jenaj ekzistantaj leksemoj havas saman lemo kaj lingva kodo kiel tiu kiun vi provis krei:",
-	"duplicates-instructions": "Se vi certas, ke ili estas malsamaj, marku la markobutonon ĉe la malsupro de la formo.",
+	"duplicates-warning": "La {{PLURAL:$1|jena ekzistanta leksemo|jenaj ekzistantaj leksemoj}} havas saman lemo kaj lingva kodo kiel tiu kiun vi provis krei:",
+	"duplicates-instructions": "Se vi certas, ke {{PLURAL:$1|ĝi estas malsama|ili estas malsamaj}}, marku la markobutonon ĉe la malsupro de la formo.",
 	"no-duplicate": "Ĉi tiu ne estas duplikato de ekzistanta leksemo.",
 	"advanced": "Altnivela reĝimo",
 	"advanced-general": "Vi estas en “altnivela” reĝimo.",

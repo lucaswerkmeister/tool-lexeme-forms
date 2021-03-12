@@ -1,18 +1,32 @@
 {
 	"@metadata": {
 		"authors": [
-			"Djiboun"
+			"Djiboun",
+			"Thibaut120094",
+			"Verdy p"
 		]
 	},
 	"create": "Créer",
-	"csrf-warning": "Désolé, cette requête n'a pas pu être traitée (la protection anti-<abbr title=\"Cross-site request forgery\">CSRF</abbr> a échoué). Essayez de renvoyer le formulaire.",
-	"duplicates-warning": "Les lexèmes suivants possèdent déjà un lemme et un code de langue identiques à celui que vous souhaitez créer :",
-	"duplicates-instructions": "Si vous êtes certains qu'ils sont différents, cochez la case située en fin de formulaire.",
-	"no-duplicate": "Ceci n'est pas le doublon d'un lexème existant.",
+	"csrf-warning": "Désolé, cette requête n’a pas pu être traitée (la protection anti-<abbr title=\"Cross-site request forgery\">CSRF</abbr> a échoué). Essayez de renvoyer le formulaire.",
+	"duplicates-warning": "{{PLURAL:$1|Le lexème suivant possède|Les lexèmes suivants possèdent}} déjà un lemme et un code de langue identiques à ceux que vous souhaitez créer :",
+	"duplicates-instructions": "Si vous avez l’assurance {{PLURAL:$1|qu’il est différent|qu’ils sont différents}}, cochez la case située en fin de formulaire.",
+	"no-duplicate": "Ceci n’est un doublon d’un lexème existant.",
 	"advanced": "Avancé",
-	"advanced-general": "Vous êtes dans le mode \"avancé\".",
-	"advanced-lexeme-id": "Au lieu de créer un nouveau lexème, vous pouvez entrer l'identifiant d'un lexème existant pour y ajouter des formes supplémentaires. Laissez les cases vides pour les formes déjà existantes afin d'éviter de créer des doublons !",
-	"advanced-partial-forms": "Vous pouvez laisser des cases vides pour empêcher la création des formes associées. Assurez-vous de ne pas oublier accidentellement l'une des formes !",
-	"lexeme-id": "Identifiant",
-	"advanced-partial-forms-hint": "Pour créer des lexèmes en laissant certaines formes non renseignées, passez en mode avancé"
+	"advanced-general": "Vous êtes dans le mode « avancé ».",
+	"advanced-lexeme-id": "Au lieu de créer un nouveau lexème, vous pouvez entrer l’identifiant d’un lexème existant pour y ajouter des formes supplémentaires. Laissez les cases vides pour les formes déjà existantes afin d’éviter de créer des doublons !",
+	"advanced-partial-forms": "Vous pouvez laisser des cases vides pour empêcher la création des formes associées. Assurez-vous de n’oublier accidentellement aucune des formes !",
+	"lexeme-id": "identifiant du lexème",
+	"advanced-partial-forms-hint": "Pour créer des lexèmes en laissant certaines formes non renseignées, passez en mode avancé.",
+	"generated-via": "généré avec",
+	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=aucune forme|une forme|$2 formes}} et {{PLURAL:$3|0=aucun|un|$3}} sens",
+	"bulk-link": "Mode en masse",
+	"bulk-format-help": "Aide sur le format",
+	"bulk-not-allowed": "Vous n’avez pas le droit d’utiliser le mode en masse. Désolé.",
+	"edit-link": "modifier",
+	"edit-general": "Vous êtes en mode « modification ». Tout changement de valeur ci-dessous modifiera, ajoutera ou supprimera les formes du lexème cible.",
+	"edit-mismatch-warning": "Ce lexème ne semble pas correspondre avec ce modèle ! Veuillez vérifier à nouveau que c’est le modèle approprié pour ce lexème avant de continuer.",
+	"edit-ambiguous-warning": "{{PLURAL:$1|La forme suivante|Les formes suivantes}} du lexème correspondent bien de la même façon à plusieurs formes modèles :",
+	"edit-unmatched-warning": "{{PLURAL:$1|La forme suivante|Les formes suivantes}} du lexème ne correspondent à aucune forme modèle :",
+	"edit-form-list-item": "$1, $2, {{PLURAL:$3|une déclaration|$3 déclarations}}",
+	"no-grammatical-features": "aucune caractéristique grammaticale"
 }

@@ -1,0 +1,30 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kly"
+		]
+	},
+	"create": "建立",
+	"csrf-warning": "很抱歉，我們無法處理這個請求（<abbr title=\"Cross-site request forgery\">CSRF</abbr> 保護失敗）。請嘗試重新提交。",
+	"duplicates-warning": "以下現存的{{PLURAL:$1|詞位}}，與您現在建立的詞位剛好有相同詞元與語言代碼：",
+	"duplicates-instructions": "如果您確定{{PLURAL:$1|這個|它們}}不相同，請勾選在形式下方的方框。",
+	"no-duplicate": "這不是現有詞位的重複內容。",
+	"advanced": "進階",
+	"advanced-general": "您目前在「進階」模式。",
+	"advanced-lexeme-id": "您可以透過輸入詞位 ID，取代用建立的方式來對現有詞位添加形式。對存在詞位上的任一形式留空，不然會出現重複內容！",
+	"advanced-partial-forms": "您可以對某些形式內容留空，這樣子它們就不會被添加。另外請確認您沒有意外遺漏掉任何形式！",
+	"lexeme-id": "詞位 ID",
+	"advanced-partial-forms-hint": "要建立缺少某些形式的詞位，請切換成進階模式。",
+	"generated-via": "產生透過",
+	"description-with-forms-and-senses": "$1，{{PLURAL:$2|0=沒有形式|1 個形式|$2 個形式}}，{{PLURAL:$3|0=沒有含意|1 個含意|$3 個含意}}",
+	"bulk-link": "批量模式",
+	"bulk-format-help": "格式說明",
+	"bulk-not-allowed": "很抱歉，您不被允許使用批量模式。",
+	"edit-link": "編輯",
+	"edit-general": "您目前在「編輯」模式。更改以下的值將會編輯、添加、或是移除目標詞位的形式。",
+	"edit-mismatch-warning": "這個詞位似乎與此模板不相符！在繼續操作之前，請仔細檢查是否為適用此詞位的模板。",
+	"edit-ambiguous-warning": "以下詞位{{PLURAL:$1|形式}}相符一個以上模板形式而引起歧義：",
+	"edit-unmatched-warning": "以下詞位{{PLURAL:$1|形式}}不符合任一模板形式：",
+	"edit-form-list-item": "$1，$2，{{PLURAL:$3|0=沒有陳述|1 個陳述|$3 個陳述}}",
+	"no-grammatical-features": "沒有語法特徵"
+}

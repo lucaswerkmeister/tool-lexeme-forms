@@ -1,13 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
+			"Bikarhêner",
 			"Şêr"
 		]
 	},
 	"create": "Biafirîne",
 	"csrf-warning": "Bibore, me nikarî daxwaza te pêk bînin (bixebitînin) (Parastina <abbr title=\"Cross-site request forgery\">CSRF</abbr>ê bi ser neket). Ji kerema xwe careke din hewl bide û formê dîsa bişîne.",
-	"duplicates-warning": "Ev leksem xwediyê heman peyv û heman koda zimanî ye, wek ya ku niha dixwazî biafirînî:",
-	"duplicates-instructions": "Ku tu bawer bî ku ev leksem ji hev cuda ne, ji kerema xwe re qutiya biçûk a di dawiya formê de nîşan bike.",
+	"duplicates-warning": "Ev leksem xwediyê heman peyv û heman koda zimanî {{PLURAL:$1|ye|ne}}, wek ya ku niha dixwazî çêkî:",
+	"duplicates-instructions": "Ku tu bawer bî ku ev leksem {{PLURAL:$1|cuda ye|ji hev cuda ne}}, ji kerema xwe re qutiya biçûk a di dawiya formê de nîşan bike.",
 	"no-duplicate": "Ev ne dubareya leksema heye ye.",
 	"advanced": "Pêşketî",
 	"advanced-general": "Tu di beşa rewşa \"pêşketî\" de yî.",
