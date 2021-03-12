@@ -1,4 +1,5 @@
 import pytest
+import re
 
 import formatters
 import translations
@@ -6,6 +7,11 @@ import translations
 
 @pytest.fixture(scope="module", params=translations.translations.keys())
 def language_code(request):
+    return request.param
+
+
+@pytest.fixture(scope="module", params=translations.translations['en'].keys())
+def message_key(request):
     return request.param
 
 
@@ -26,6 +32,21 @@ def list(request):
 
 def unused(*args, **kwargs):
     raise RuntimeError('This function should not be called!')
+
+
+allowed_html_element_names = {
+    'abbr',
+}
+
+
+def test_message_html_elements(language_code, message_key):
+    message = translations.translations[language_code].get(message_key)
+    if message is None:
+        return
+    html_element_names = {tag_name.lower()
+                          for tag_name in re.findall('</?([0-9A-Za-z]*)', message)}
+    html_element_names.difference_update(allowed_html_element_names)
+    assert not html_element_names
 
 
 def test_message_syntax_valid_duplicates_warning(language_code, number):
