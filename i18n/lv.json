@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Papuass"
+		]
+	},
+	"create": "Izveidot",
+	"csrf-warning": "Atvaino, nevarēja apstrādāt šo pieprasījumu (nostrādāja <abbr title=\"Cross-site request forgery\">CSRF</abbr> aizsardzība). Lūdzu, mēģini iesniegt formu vēlreiz.",
+	"duplicates-instructions": "Ja ir pārliecība, ka tie ir atšķirīgi, atzīmē ķeksīti formas apakšā.",
+	"no-duplicate": "Šis nav jau esošas leksēmas dublikāts.",
+	"advanced": "Paplašināti",
+	"advanced-general": "Tu esi paplašinātajā režīmā",
+	"lexeme-id": "Leksēmas ID",
+	"advanced-partial-forms-hint": "Lai izveidotu leksēmas ar trūkstošām formām, pārslēdzies uz paplašināto režīmu.",
+	"generated-via": "ģenerēts ar",
+	"bulk-format-help": "formatēšanas palīdība",
+	"edit-link": "labot"
+}
