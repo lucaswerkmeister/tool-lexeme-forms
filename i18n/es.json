@@ -1,13 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Andreasmperu"
+			"Andreasmperu",
+			"ZealousBlaze"
 		]
 	},
 	"create": "Crear",
-	"csrf-warning": "Lo siento, esta solicitud no pudo ser procesada (<abbr title=\"Cross-site request forgery\">CSRF</abbr> protection failed). Por favor, intenta enviar el formulario nuevamente.",
+	"csrf-warning": "Lo sentimos, no pudimos procesar esta solicitud (<abbr title=\"Cross-site request forgery\">CSRF</abbr> protection failed). Por favor, intenta enviar el formulario nuevamente.",
 	"duplicates-warning": "Los lexemas siguientes ya tienen un lema y un código lingüístico idéntico a aquel que estás intentado crear:",
-	"duplicates-instructions": "Si estás seguro que son distintos, revisa la casilla situada al final de este formulario.",
+	"duplicates-instructions": "Si estás seguro que {{PLURAL:$1|es diferente|son diferentes}}, marca la casilla al final del formato.",
 	"no-duplicate": "Este no es un duplicado de un lexema existente.",
 	"advanced": "Avanzado",
 	"advanced-general": "Estás en el modo \"avanzado\".",

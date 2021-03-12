@@ -1,13 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
+			"Beta16",
 			"Sannita"
 		]
 	},
 	"create": "Crea il lessema!",
 	"csrf-warning": "Ops, non è possibile salvare la pagina (errore: <abbr title=\"Cross-site request forgery\">CSRF</abbr> protection failed). Per favore, riprova.",
-	"duplicates-warning": "Attenzione, i seguenti lessemi hanno lo stesso lemma e codice linguistico di quello che hai appena tentato di creare:",
-	"duplicates-instructions": "Se sei sicuro che siano diversi, spunta la casella alla fine di questo modulo.",
+	"duplicates-warning": "Attenzione, {{PLURAL:$1|il seguente lessema ha|i seguenti lessemi hanno}} lo stesso lemma e codice linguistico di quello che hai appena tentato di creare:",
+	"duplicates-instructions": "Se sei sicuro che {{PLURAL:$1|sia diverso|siano diversi}}, spunta la casella alla fine di questo modulo.",
 	"no-duplicate": "Questo NON è un duplicato di un lessema esistente.",
 	"advanced": "Avanzate",
 	"advanced-general": "Ti trovi nella modalità “avanzata”.",
@@ -19,7 +20,7 @@
 	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=nessuna forma|una forma|$2 forme}} e {{PLURAL:$3|0=nessun senso|un senso|$3 sensi}}",
 	"bulk-link": "caricamento di massa",
 	"bulk-format-help": "aiuto formattazione",
-	"bulk-not-allowed": "Ci dispiace, ma non sei {{GENDER:$1|autorizzato|autorizzata|autorizzato/a}} a usare il caricamento di massa.",
+	"bulk-not-allowed": "Ci dispiace, ma non sei autorizzato a usare il caricamento di massa.",
 	"edit-link": "modifica",
 	"edit-general": "Ti trovi nella modalità “modifica”. Cambia uno dei valori per modificare, aggiungere o rimuovere forme dal lessema.",
 	"edit-mismatch-warning": "Questo lessema non combacia con questo template! Per favore, controlla che questo sia il giusto template per il lessema prima di continuare.",
