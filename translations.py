@@ -114,6 +114,13 @@ def mw2py(mw, language, variables, lists):
     return py
 
 
+skipped_language_codes = {
+    'pt-br',
+    'qqq',
+    'zh-hant',
+}
+
+
 translations = {}
 for entry in os.scandir('i18n/'):
     if not entry.is_file():
@@ -122,7 +129,7 @@ for entry in os.scandir('i18n/'):
     if not match:
         continue
     language = match[1]
-    if language == 'qqq':
+    if language in skipped_language_codes:
         continue
     with open(entry.path, 'r') as f:
         data = json.load(f)
