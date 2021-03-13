@@ -133,7 +133,8 @@ class GenderFormatter(BaseI18nFormatter):
     constructor, which should return one of the values "m", "f", or
     "n", to select the grammatically masculine, feminine, or neutral
     replacement, respectively. The format spec specifies these three
-    replacements separated by colons."""
+    replacements separated by colons. Gender values not specified in
+    the format spec fall back to "m"."""
 
     def __init__(self, *, get_gender, **kwargs):
         self.get_gender = get_gender
@@ -161,7 +162,11 @@ class _Gender:
         for replacement in replacements:
             if replacement.startswith(gender_eq):
                 return replacement[len(gender_eq):]
-        raise KeyError('No replacement for gender {} found in format spec {}!'.format(gender, format_spec))
+        # fall back to "m"
+        for replacement in replacements:
+            if replacement.startswith('m='):
+                return replacement[len('m='):]
+        raise KeyError('No replacement for gender "{}" or "m" found in format spec "{}"!'.format(gender, format_spec))
 
 
 class I18nFormatter(PluralFormatter, CommaSeparatedListFormatter, GenderFormatter):

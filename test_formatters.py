@@ -119,6 +119,25 @@ def test_GenderFormatter(gender, expected):
     ) == expected
 
 
+@pytest.mark.parametrize('gender', [
+    ('m'),
+    ('f'),
+    ('n'),
+])
+def test_GenderFormatter_fallback(gender):
+    user = 'opaque value'
+
+    def get_gender(value):
+        assert value == user
+        return gender
+
+    gender_formatter = formatters.GenderFormatter(get_gender=get_gender)
+    assert gender_formatter.format(
+        'Thank {user!g:m=you}!',
+        user=user
+    ) == 'Thank you!'
+
+
 @pytest.mark.parametrize('formats, user, expected', [
     (['FLAC'], 'Keith', 'His preferred format is FLAC.'),
     (['FLAC', 'OGG'], 'Keira', 'Her preferred formats are FLAC and OGG.'),
