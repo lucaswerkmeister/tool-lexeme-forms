@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kkairri"
+		]
+	},
+	"create": "作成",
+	"advanced": "アドバンス",
+	"advanced-general": "現在「アドバンス」モードです。",
+	"lexeme-id": "語彙素ID",
+	"bulk-link": "バルクモード",
+	"bulk-format-help": "様式のヘルプ",
+	"edit-link": "編集"
+}

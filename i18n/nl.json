@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"MarcoSwart"
+			"MarcoSwart",
+			"Mbch331"
 		]
 	},
 	"create": "Aanmaken",
 	"csrf-warning": "Sorry, we konden dit niet verwerken (door de <abbr title=\"Cross-site request forgery\">CSRF</abbr>-bescherming). Probeer het webformulier nog eens aan te bieden.",
-	"duplicates-warning": "Je probeert een lexeem aan te maken met hetzelfde lemmawoord en taalcode als een of meer bestaande lexemen:",
+	"duplicates-warning": "De volgende bestaande {{PLURAL:$1|lexeem heeft|lexemen hebben}} hetzelfde lemmawoord en taalcode als degene die je probeert aan te maken:",
 	"duplicates-instructions": "Weet je zeker dat je echt iets anders aanmaakt? Kruis dan het vakje voor de laatste regel aan.",
 	"no-duplicate": "Dit is geen doublure van een lexeem dat al bestaat.",
 	"advanced": "Geavanceerd",

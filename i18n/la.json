@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Demetrius Talpa",
 			"Lucas Werkmeister"
 		]
 	},
@@ -8,13 +9,13 @@
 	"csrf-warning": "Excusa, error accidit. Quaeso, repete.",
 	"duplicates-warning": "{{PLURAL:$1|Sequens verbum|Sequentia verba}} aequum lemma aequa linguaque {{PLURAL:$1|habet|habent}}:",
 	"duplicates-instructions": "Si certus es {{PLURAL:$1|differens est|differentes sunt}}, designa sic conclusio paginae.",
-	"no-duplicate": "Non duplex verbi existendi est.",
+	"no-duplicate": "Hoc non lexema existens duplicatum est.",
 	"advanced": "Modus amplificatus",
-	"advanced-general": "In modo amplificatum es.",
+	"advanced-general": "In modo amplificato es.",
 	"advanced-lexeme-id": "Posses significare numerum verbi, ut formae ad id verbum addentur. Amitte formas qui id verbo exstant aut duplicis formas facies!",
 	"advanced-partial-forms": "Posses omittere aliqui formas, ut non addentur. Cave erroribus!",
 	"lexeme-id": "Numerus verbi",
-	"advanced-partial-forms-hint": "Ut facere verbi quae aliqui formas desunt, adi modo amplificatum.",
+	"advanced-partial-forms-hint": "Lexematum quorum formae nonnullae deficiunt creandarum causa in modum amplificatum intras.",
 	"edit-link": "corrigere",
 	"edit-general": "In modo corrigendi es. Sic mutas scriptum inferum, formas verbi mutabuntur, addentur vel removebuntur."
 }
