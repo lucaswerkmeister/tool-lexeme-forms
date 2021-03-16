@@ -7042,6 +7042,86 @@ templates = collections.OrderedDict([
         ],
     }),
 
+    ('portuguese-noun-masculine', {
+        '@attribution': {'users': ['EnaldoSS'], 'title': 'Wikidata:Wikidata Lexeme Forms/Portuguese'},
+        'label': 'substantivo masculino em português',
+        'language_item_id': 'Q5146',
+        'language_code': 'pt',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'singular',
+                'example': 'Este é um [livro].',
+                'grammatical_features_item_ids': ['Q110786'],
+            },
+            {
+                'label': 'plural',
+                'example': 'Estes são alguns [livros].',
+                'grammatical_features_item_ids': ['Q146786'],
+            },
+        ],
+        'statements': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q499327',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
+
+    ('portuguese-noun-feminine', {
+        '@attribution': {'users': ['EnaldoSS'], 'title': 'Wikidata:Wikidata Lexeme Forms/Portuguese'},
+        'label': 'substantivo feminino em português',
+        'language_item_id': 'Q5146',
+        'language_code': 'pt',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'singular',
+                'example': 'Esta é uma [maçã].',
+                'grammatical_features_item_ids': ['Q110786'],
+            },
+            {
+                'label': 'plural',
+                'example': 'Estas são umas [maçãs].',
+                'grammatical_features_item_ids': ['Q146786'],
+            },
+        ],
+        'statements': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q1775415',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
+
     ('portuguese-verb', {
         '@attribution': {'users': ['Carybe', 'Joalpe', 'Waldir'], 'title': 'Wikidata:Wikidata Lexeme Forms/Portuguese'},
         'label': 'verbo em Português',
