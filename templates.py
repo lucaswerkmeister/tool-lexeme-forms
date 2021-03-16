@@ -7123,8 +7123,8 @@ templates = collections.OrderedDict([
     }),
 
     ('portuguese-verb', {
-        '@attribution': {'users': ['Carybe', 'Joalpe', 'Waldir'], 'title': 'Wikidata:Wikidata Lexeme Forms/Portuguese'},
-        'label': 'verbo em Português',
+        '@attribution': {'users': ['Carybe', 'EnaldoSS', 'Joalpe', 'Waldir'], 'title': 'Wikidata:Wikidata Lexeme Forms/Portuguese'},
+        'label': 'verbo em português',
         'language_item_id': 'Q5146',
         'language_code': 'pt',
         'lexical_category_item_id': 'Q24905',
@@ -7427,27 +7427,27 @@ templates = collections.OrderedDict([
             {
                 'section_break': True,
                 'label': 'Segunda Pessoa do Singular do Modo Imperativo Afirmativo',
-                'example': '[Canta] tu agora que há tempo.',
+                'example': '[canta] tu agora que há tempo.',
                 'grammatical_features_item_ids': ['Q51929049', 'Q110786', 'Q22716'],
             },
             {
                 'label': 'Terceira Pessoa do Singular do Modo Imperativo Afirmativo',
-                'example': '[Canta] você agora que há tempo.',
+                'example': '[canta] você agora que há tempo.',
                 'grammatical_features_item_ids': ['Q51929074', 'Q110786', 'Q22716'],
             },
             {
                 'label': 'Primeira Pessoa do Plural do Modo Imperativo Afirmativo',
-                'example': '[Cantemos] nós agora que há tempo.',
+                'example': '[cantemos] nós agora que há tempo.',
                 'grammatical_features_item_ids': ['Q21714344', 'Q146786', 'Q22716'],
             },
             {
                 'label': 'Segunda Pessoa do Plural do Modo Imperativo Afirmativo',
-                'example': '[Cantai] vós agora que há tempo.',
+                'example': '[cantai] vós agora que há tempo.',
                 'grammatical_features_item_ids': ['Q51929049', 'Q146786', 'Q22716'],
             },
             {
                 'label': 'Terceira Pessoa do Plural do Modo Imperativo Afirmativo',
-                'example': '[Cantem] vocês agora que há tempo.',
+                'example': '[cantem] vocês agora que há tempo.',
                 'grammatical_features_item_ids': ['Q51929074', 'Q146786', 'Q22716'],
             },
             {
