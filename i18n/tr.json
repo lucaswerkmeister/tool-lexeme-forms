@@ -16,14 +16,16 @@
 	"advanced-partial-forms": "Bazı biçimleri boş bırakabilirsiniz, eklenmeyeceklerdir. Herhangi bir biçimi kazara bırakmadığınızdan emin olun.",
 	"lexeme-id": "Sözcük birim IDsi",
 	"advanced-partial-forms-hint": "Bazı biçimler olmadan sözcük birimi oluşturmak için gelişmiş moda geçin.",
+	"generated-via": "üretildiği URL",
 	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=biçim yok|bir biçim|$2 biçim}} ve {{PLURAL:$3|0=anlam yok|bir anlam|$3 anlam}}",
 	"bulk-link": "toplu mod",
 	"bulk-format-help": "biçimlendirme yardımı",
-	"bulk-not-allowed": "Toplu modu kullanmaya izniniz yok. Üzgünüz.",
+	"bulk-not-allowed": "Toplu modu kullanmaya {{GENDER:$1|izniniz}} yok. Üzgünüz.",
 	"edit-link": "düzenle",
 	"edit-general": "“Düzenleme” modundasınız. Aşağıdaki değerleri değiştirmek hedef sözcük biriminin biçimlerini değiştirebilir, ekleyebilir ya da çıkarabilir.",
 	"edit-mismatch-warning": "Bu sözcük birimi bu şablona uymuyor gözüküyor! Lütfen devam etmeden önce bu şablonun bu sözcük birimi için doğru olduğunu iki-kere kontrol edin.",
 	"edit-ambiguous-warning": "Aşağıdaki sözcük birimi {{PLURAL:$1|biçimi|biçimleri}} birden fazla biçim şablonuna eşit derecede uyuyor:",
 	"edit-unmatched-warning": "Aşağıdaki sözcük birimi {{PLURAL:$1|biçimi|biçimleri}} herhangi bir biçim şablonuna uymuyor:",
+	"edit-form-list-item": "$1, $2, {{PLURAL:$3|0=ifade yok|bir ifade|$3 ifade}}",
 	"no-grammatical-features": "dilbilgisi özelliği yok"
 }
