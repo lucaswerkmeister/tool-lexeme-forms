@@ -19,7 +19,7 @@
 	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=keine Formen|eine Form|$2 Formen}}, {{PLURAL:$3|0=keine Senses|ein Sense|$3 Senses}}",
 	"bulk-link": "Massen-Modus",
 	"bulk-format-help": "Formatierungshilfe",
-	"bulk-not-allowed": "Du darfst den Massen-Modus nicht verwenden. Entschuldigung.",
+	"bulk-not-allowed": "{{GENDER:$1|Du}} darfst den Massen-Modus nicht verwenden. Entschuldigung.",
 	"edit-link": "bearbeiten",
 	"edit-general": "Du befindest dich im „Bearbeiten“-Modus. Wenn du die Werte unten bearbeitest, werden Formen des Ziellexems geändert, hinzugefügt oder entfernt.",
 	"edit-mismatch-warning": "Dieses Lexem scheint nicht zu dieser Vorlage zu passen! Bitte prüfe nochmal genau nach, dass es die richtige Vorlage für dieses Lexem ist, bevor du fortfährst.",

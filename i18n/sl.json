@@ -1,0 +1,30 @@
+{
+	"@metadata": {
+		"authors": [
+			"Eleassar"
+		]
+	},
+	"create": "Ustvari",
+	"csrf-warning": "Tega zahtevka žal ni bilo mogoče obdelati (neuspešna zaščita <abbr title=\"Cross-site request forgery\">CSRF</abbr>). Prosimo, poskusite obrazec poslati znova.",
+	"duplicates-warning": "{{PLURAL:$1|Naslednji obstoječi leksem ima|Naslednja obstoječa leksema imata|Naslednji obstoječi leksemi imajo}} enako lemo in jezikovno oznako kot tisti, ki ga poskušate ustvariti:",
+	"duplicates-instructions": "Če ste prepričani, da se {{PLURAL:$1|razlikuje|razlikujeta|razlikujejo}}, obkljukajte polje na koncu oblike.",
+	"no-duplicate": "To ni podvojitev obstoječega leksema.",
+	"advanced": "Napredno",
+	"advanced-general": "Ste v »naprednem« načinu.",
+	"advanced-lexeme-id": "Vnesete lahko ID leksema, da namesto ustvaritve novega leksema dodate oblike k obstoječemu. Oblike, ki že obstajajo, pustite prazne, sicer bodo podvojene!",
+	"advanced-partial-forms": "Nekatere oblike lahko pustite prazne, da se ne bodo dodale. Preverite, ali niste katere od oblik morda izpustili!",
+	"lexeme-id": "ID leksema",
+	"advanced-partial-forms-hint": "Za ustvaritev leksemov, ki jim nekatere oblike manjkajo, preklopite na napredni način.",
+	"generated-via": "ustvarjeno z",
+	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=brez oblik|1=ena oblika|2=2 obliki|few=$2 oblike|$2 oblik}} in {{PLURAL:$3|0=brez pomenov|1=en pomen|2=2 pomena|few=$2 pomeni|$2 pomenov}}",
+	"bulk-link": "množični način",
+	"bulk-format-help": "pomoč za oblikovanje",
+	"bulk-not-allowed": "Množičnega načina {{GENDER:$1|vam}} žal ni dovoljeno uporabljati.",
+	"edit-link": "uredi",
+	"edit-general": "Ste v načinu urejanja. Sprememba navedenih vrednosti bo spremenila, dodala ali odstranila oblike ciljnega leksema.",
+	"edit-mismatch-warning": "Zdi se, da se ta leksem ne ujema s predlogo! Prosimo, dvakrat preverite, da gre za pravo predlogo za ta leksem, preden nadaljujete.",
+	"edit-ambiguous-warning": "{{PLURAL:$1|1=Naslednja leksemska oblika se enako dobro ujema|2=Naslednji leksemski obliki se enako dobro ujemata|Naslednje leksemske oblike se enako dobro ujemajo}} z več kot eno obliko predloge:",
+	"edit-unmatched-warning": "{{PLURAL:$1|Naslednja leksemska oblika se ne ujema|2=Naslednji leksemski obliki se ne ujemata|Naslednje leksemske oblike se ne ujemajo}} z nobeno od oblik predloge:",
+	"edit-form-list-item": "$1, $2, {{PLURAL:$3|0=brez trditev|ena trditev|few=$3 trditve|$3 trditev}}",
+	"no-grammatical-features": "brez slovničnih lastnosti"
+}
