@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kkairri"
+			"Kkairri",
+			"Tamaki Wakita"
 		]
 	},
 	"create": "作成",
@@ -10,5 +11,6 @@
 	"lexeme-id": "語彙素ID",
 	"bulk-link": "バルクモード",
 	"bulk-format-help": "様式のヘルプ",
+	"bulk-not-allowed": "{{GENDER:$1|You}} のマルクモードの使用は許可されていません。 申し訳ございません。",
 	"edit-link": "編集"
 }

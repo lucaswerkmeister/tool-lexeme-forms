@@ -3,7 +3,8 @@
 		"authors": [
 			"Adrijaned",
 			"Lexicolover",
-			"Matěj Suchánek"
+			"Matěj Suchánek",
+			"Patrik L."
 		]
 	},
 	"create": "Vytvořit",
@@ -25,7 +26,7 @@
 	"edit-link": "editovat",
 	"edit-general": "Nacházíte se v módu editace. Upravování hodnot níže povede k upravení, přidání, nebo odebrání tvarů z cílového lexému.",
 	"edit-mismatch-warning": "Zdá se, že tento lexém neodpovídá tomuto vzoru! Prosím, zkontrolujte si, že opravdu používáte správný vzor před tím, než budete pokračovat!",
-	"edit-ambiguous-warning": "Následující {{PLURAL:$1|tvar|tvary|tvary}} lexému odpovídají více než jednomu vzoru se stejnou pravděpodobností:",
+	"edit-ambiguous-warning": "Následující {{PLURAL:$1|tvar|tvary}} lexému odpovídají více než jednomu vzoru se stejnou pravděpodobností:",
 	"edit-unmatched-warning": "Následující {{PLURAL:$1|tvar|tvary|tvary}} lexému neodpovídají ani jednomu ze vzorů:",
 	"edit-form-list-item": "$1, $2, {{PLURAL:$3|0=žádná tvrzení|jedno tvrzení|$3 tvrzení|$3 tvrzení}}",
 	"no-grammatical-features": "bez gramatických vlastností"

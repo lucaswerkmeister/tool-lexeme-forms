@@ -15,7 +15,7 @@
 	"generated-via": "gerado via",
 	"bulk-link": "modo em massa",
 	"bulk-format-help": "ajuda de formato",
-	"bulk-not-allowed": "Você não tem permissão para usar o modo em massa. Desculpe.",
+	"bulk-not-allowed": "{GENDER:$1|Você}} não tem permissão para usar o modo em massa. Desculpe.",
 	"edit-link": "editar",
 	"edit-mismatch-warning": "Este lexema não parece corresponder a este modelo! Verifique novamente se é o modelo correto para este lexema antes de continuar.",
 	"no-grammatical-features": "sem características gramaticais"
