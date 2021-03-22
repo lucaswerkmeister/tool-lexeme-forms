@@ -5914,7 +5914,7 @@ templates = collections.OrderedDict([
     }),
 
     ('malayalam-noun', {
-        '@attribution': {'users': ['Jsamwrites'], 'title': 'Wikidata:Wikidata Lexeme Forms/Malayalam'},
+        '@attribution': {'users': ['Jsamwrites', 'Vis M', 'Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/Malayalam'},
         'label': 'മലയാളത്തിലെ സാധാരണ നാമം',
         'language_item_id': 'Q36236',
         'language_code': 'ml',
@@ -5923,12 +5923,72 @@ templates = collections.OrderedDict([
             {
                 'label': 'ഏകവചനം',
                 'example': 'ഒരു [ഭാഷ].',
-                'grammatical_features_item_ids': ['Q110786'],
+                'grammatical_features_item_ids': ['Q110786', 'Q131105'],
+            },
+            {
+                'label': 'ഏകവചനം പ്രതിഗ്രാഹിക',
+                'example': 'ഞാൻ [അമ്മയെ] സഹായിച്ചു',
+                'grammatical_features_item_ids': ['Q110786', 'Q146078'],
+            },
+            {
+                'label': 'ഏകവചനം ഉദ്ദേശിക',
+                'example': 'ഞാൻ [അമ്മയ്ക്ക്] പണം അയച്ചു',
+                'grammatical_features_item_ids': ['Q110786', 'Q145599'],
+            },
+            {
+                'label': 'ഏകവചനം ആധാരിക',
+                'example': '[നദിയിൽ] കുളിച്ചു ',
+                'grammatical_features_item_ids': ['Q110786', 'Q202142'],
+            },
+            {
+                'label': 'ഏകവചനം സംയോജിക',
+                'example': '[അമ്മയോട്] സംസാരിച്ചു',
+                'grammatical_features_item_ids': ['Q110786', 'Q3773161'],
+            },
+            {
+                'label': 'ഏകവചനം പ്രയോജിക',
+                'example': 'പുസ്തകം [അമ്മയാൽ] വായിക്കപ്പെട്ടു',
+                'grammatical_features_item_ids': ['Q110786', 'Q192997'],
+            },
+            {
+                'label': 'ഏകവചനം സംബന്ധിക',
+                'example': '[അമ്മയുടെ] പണം',
+                'grammatical_features_item_ids': ['Q110786', 'Q146233'],
             },
             {
                 'label': 'ബഹുവചനം',
                 'example': 'പല [ഭാഷകൾ].',
-                'grammatical_features_item_ids': ['Q146786'],
+                'grammatical_features_item_ids': ['Q146786', 'Q131105'],
+            },
+            {
+                'label': 'ബഹുവചനം പ്രതിഗ്രാഹിക ',
+                'example': '[പശുക്കളെ] മെയ്ച്ചു',
+                'grammatical_features_item_ids': ['Q146786', 'Q146078'],
+            },
+            {
+                'label': 'ബഹുവചനം ഉദ്ദേശിക',
+                'example': '[പൂച്ചകൾക്ക്] പാൽ നല്ലതല്ല',
+                'grammatical_features_item_ids': ['Q146786', 'Q145599'],
+            },
+            {
+                'label': 'ബഹുവചനം ആധാരിക',
+                'example': '[പശുക്കളിൽ] നിന്ന്',
+                'grammatical_features_item_ids': ['Q146786', 'Q202142'],
+            },
+            {
+                'label': 'ബഹുവചനം സംയോജിക',
+                'example': '[കുട്ടികളോട്] പറഞ്ഞു',
+                'grammatical_features_item_ids': ['Q146786', 'Q3773161'],
+            },
+            {
+                'label': 'ബഹുവചനം പ്രയോജിക',
+                'example': 'ചെടികൾ [പശുക്കളാൽ] തിന്നപ്പെട്ടു',
+                'grammatical_features_item_ids': ['Q146786', 'Q192997'],
+            },
+            {
+                'label': 'ബഹുവചനം സംബന്ധിക',
+                'example': '[അമ്മമാരുടെ] പ്രവർത്തി',
+                'grammatical_features_item_ids': ['Q146786', 'Q146233'],
             },
         ],
     }),
