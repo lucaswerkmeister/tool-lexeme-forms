@@ -5913,6 +5913,220 @@ templates = collections.OrderedDict([
         },
     }),
 
+    ('latvian-noun-masculine', {
+        '@attribution': {'users': ['Papuass', 'Lucas Werkmeister', 'Nikki'], 'title': 'Wikidata:Wikidata Lexeme Forms/Latvian'},
+        'label': 'latviešu valodas vīriešu dzimtes lietvārds',
+        'language_item_id': 'Q9078',
+        'language_code': 'lv',
+        'lexical_category_item_id': 'Q1084',
+        'two_column_sections': True,
+        'forms': [
+            {
+                'label': 'vienskaitļa nominatīvs',
+                'example': 'Šis ir [suns].',
+                'grammatical_features_item_ids': ['Q110786', 'Q131105'],
+            },
+            {
+                'label': 'daudzskaitļa nominatīvs',
+                'example': 'Šie ir [suņi].',
+                'grammatical_features_item_ids': ['Q146786', 'Q131105'],
+            },
+            {
+                'section_break': True,
+                'label': 'vienskaitļa ģenitīvs',
+                'example': 'Šī ir [suņa] aste.',
+                'grammatical_features_item_ids': ['Q110786', 'Q146233'],
+            },
+            {
+                'label': 'daudzskaitļa ģenitīvs',
+                'example': 'Šīs ir [suņu] astes.',
+                'grammatical_features_item_ids': ['Q146786', 'Q146233'],
+            },
+            {
+                'section_break': True,
+                'label': 'vienskaitļa datīvs',
+                'example': 'Manam [sunim] ir aste.',
+                'grammatical_features_item_ids': ['Q110786', 'Q145599'],
+            },
+            {
+                'label': 'daudzskaitļa datīvs',
+                'example': 'Maniem [suņiem] ir aste.',
+                'grammatical_features_item_ids': ['Q146786', 'Q145599'],
+            },
+            {
+                'section_break': True,
+                'label': 'vienskaitļa akuzatīvs',
+                'example': 'Aste luncina [suni].',
+                'grammatical_features_item_ids': ['Q110786', 'Q146078'],
+            },
+            {
+                'label': 'daudzskaitļa akuzatīvs',
+                'example': 'Aste luncina [suņus].',
+                'grammatical_features_item_ids': ['Q146786', 'Q146078'],
+            },
+            {
+                'section_break': True,
+                'label': 'vienskaitļa instrumentālis',
+                'example': 'Vislabāk ir [ar suni].',
+                'grammatical_features_item_ids': ['Q110786', 'Q192997'],
+            },
+            {
+                'label': 'daudzskaitļa instrumentālis',
+                'example': 'Vislabāk ir [ar suņiem].',
+                'grammatical_features_item_ids': ['Q146786', 'Q192997'],
+            },
+            {
+                'section_break': True,
+                'label': 'vienskaitļa lokatīvs',
+                'example': 'Katrā [sunī] blusu nav.',
+                'grammatical_features_item_ids': ['Q110786', 'Q202142'],
+            },
+            {
+                'label': 'daudzskaitļa lokatīvs',
+                'example': 'Visos [suņos] blusu nav.',
+                'grammatical_features_item_ids': ['Q146786', 'Q202142'],
+            },
+            {
+                'section_break': True,
+                'label': 'vienskaitļa vokatīvs',
+                'example': 'Hei, [suni]!',
+                'grammatical_features_item_ids': ['Q110786', 'Q185077'],
+            },
+            {
+                'label': 'daudzskaitļa vokatīvs',
+                'example': 'Hei, [suņi]!',
+                'grammatical_features_item_ids': ['Q146786', 'Q185077'],
+            },
+        ],
+        'statements': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q499327',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
+
+    ('latvian-noun-feminine', {
+        '@attribution': {'users': ['Papuass', 'Lucas Werkmeister', 'Nikki'], 'title': 'Wikidata:Wikidata Lexeme Forms/Latvian'},
+        'label': 'latviešu valodas sieviešu dzimtes lietvārds',
+        'language_item_id': 'Q9078',
+        'language_code': 'lv',
+        'lexical_category_item_id': 'Q1084',
+        'two_column_sections': True,
+        'forms': [
+            {
+                'label': 'vienskaitļa nominatīvs',
+                'example': 'Šī ir [roka].',
+                'grammatical_features_item_ids': ['Q110786', 'Q131105'],
+            },
+            {
+                'label': 'daudzskaitļa nominatīvs',
+                'example': 'Šīs ir [rokas].',
+                'grammatical_features_item_ids': ['Q146786', 'Q131105'],
+            },
+            {
+                'section_break': True,
+                'label': 'vienskaitļa ģenitīvs',
+                'example': 'Šie ir kreisās [rokas] pirksti.',
+                'grammatical_features_item_ids': ['Q110786', 'Q146233'],
+            },
+            {
+                'label': 'daudzskaitļa ģenitīvs',
+                'example': 'Šis ir [roku] krēms.',
+                'grammatical_features_item_ids': ['Q146786', 'Q146233'],
+            },
+            {
+                'section_break': True,
+                'label': 'vienskaitļa datīvs',
+                'example': 'Vienai [rokai] ir pieci pirksti.',
+                'grammatical_features_item_ids': ['Q110786', 'Q145599'],
+            },
+            {
+                'label': 'daudzskaitļa datīvs',
+                'example': 'Abām [rokām] kopā ir desmit pirksti.',
+                'grammatical_features_item_ids': ['Q146786', 'Q145599'],
+            },
+            {
+                'section_break': True,
+                'label': 'vienskaitļa akuzatīvs',
+                'example': 'Viņa paspieda [roku].',
+                'grammatical_features_item_ids': ['Q110786', 'Q146078'],
+            },
+            {
+                'label': 'daudzskaitļa akuzatīvs',
+                'example': 'Mazgā [rokas] ar ziepēm.',
+                'grammatical_features_item_ids': ['Q146786', 'Q146078'],
+            },
+            {
+                'section_break': True,
+                'label': 'vienskaitļa instrumentālis',
+                'example': 'Viņa pamāja [ar roku].',
+                'grammatical_features_item_ids': ['Q110786', 'Q192997'],
+            },
+            {
+                'label': 'daudzskaitļa instrumentālis',
+                'example': 'Šo kreklu ir jāmazgā [ar rokām].',
+                'grammatical_features_item_ids': ['Q146786', 'Q192997'],
+            },
+            {
+                'section_break': True,
+                'label': 'vienskaitļa lokatīvs',
+                'example': 'Karogs [rokā] un uz priekšu.',
+                'grammatical_features_item_ids': ['Q110786', 'Q202142'],
+            },
+            {
+                'label': 'daudzskaitļa lokatīvs',
+                'example': 'Abās [rokās] ir cimdi.',
+                'grammatical_features_item_ids': ['Q146786', 'Q202142'],
+            },
+            {
+                'section_break': True,
+                'label': 'vienskaitļa vokatīvs',
+                'example': 'Hei, [roka]!',
+                'grammatical_features_item_ids': ['Q110786', 'Q185077'],
+            },
+            {
+                'label': 'daudzskaitļa vokatīvs',
+                'example': 'Hei, [rokas]!',
+                'grammatical_features_item_ids': ['Q146786', 'Q185077'],
+            },
+        ],
+        'statements': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q1775415',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    }),
+
     ('malayalam-noun', {
         '@attribution': {'users': ['Jsamwrites', 'Vis M', 'Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/Malayalam'},
         'label': 'മലയാളത്തിലെ സാധാരണ നാമം',
