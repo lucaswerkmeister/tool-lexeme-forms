@@ -194,6 +194,8 @@ def language_autonym_with_code(language_code):
         return code_zxx
     return (flask.Markup(r'<span lang="') +
             flask.Markup.escape(language_code) +
+            flask.Markup(r'" id="') +
+            flask.Markup.escape(language_code) +
             flask.Markup(r'" dir="') +
             flask.Markup.escape(text_direction(language_code)) +
             flask.Markup(r'">') +
