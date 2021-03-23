@@ -1,5 +1,6 @@
 import copy
 import flask
+from html.parser import HTMLParser
 import json
 import mwoauth
 import pytest
@@ -1148,3 +1149,29 @@ def test_integration_edit(template_name):
     for index, form in enumerate(matched_template['forms']):
         assert len(form['lexeme_forms']) == 1
         assert form['lexeme_forms'][0]['representations'][template['language_code']]['value'] == str(index)
+
+
+def test_index_ids_distinct():
+    """Test that all id attributes on the index page are distinct.
+
+    We use the language code of a group of templates as the ID,
+    so that people can easily navigate to that group.
+    This test ensures this ID doesn’t accidentally collide with another one,
+    e.g. a hard-coded one (this is <span id=it>it</span>!)."""
+
+    ids = set()
+
+    class UniqueIdsHtmlParser(HTMLParser):
+        def handle_starttag(self, tag, attrs):
+            for name, value in attrs:
+                if name == 'id':
+                    id = value
+                    assert id not in ids
+                    ids.add(id)
+
+    with lexeme_forms.app.test_client() as client:
+        response = client.get('/')
+    assert response.content_type == 'text/html; charset=utf-8'
+    response_text = response.get_data(as_text=True)
+
+    UniqueIdsHtmlParser().feed(response_text)
