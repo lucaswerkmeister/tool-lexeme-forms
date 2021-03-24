@@ -6396,7 +6396,7 @@ templates = collections.OrderedDict([
             },
             {
                 'label': 'superlativ',
-                'example': 'Barnet aller var [flinkest].',
+                'example': 'Barnet var aller [flinkest].',
                 'grammatical_features_item_ids': ['Q1817208'],
             },
             {
