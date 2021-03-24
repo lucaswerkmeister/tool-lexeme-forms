@@ -7784,6 +7784,100 @@ templates = collections.OrderedDict([
         ],
     }),
 
+    ('portuguese-adjective', {
+        '@attribution': {'users': ['EnaldoSS', 'Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/Portuguese'},
+        'label': 'adjetivo em português',
+        'language_item_id': 'Q5146',
+        'language_code': 'pt',
+        'lexical_category_item_id': 'Q34698',
+        'two_column_sections': True,
+        'forms': [
+            {
+                'label': 'singular masculino',
+                'example': 'Eu vi um homem [alto].',
+                'grammatical_features_item_ids': ['Q499327', 'Q110786', 'Q3482678'],
+            },
+            {
+                'label': 'plural masculino',
+                'example': 'Eu vi uns homens [altos].',
+                'grammatical_features_item_ids': ['Q499327', 'Q146786', 'Q3482678'],
+            },
+            {
+                'label': 'singular feminino',
+                'example': 'Eu vi uma mulher [alta].',
+                'grammatical_features_item_ids': ['Q1775415', 'Q110786', 'Q3482678'],
+            },
+            {
+                'label': 'plural feminino',
+                'example': 'Eu vi umas mulheres [altas].',
+                'grammatical_features_item_ids': ['Q1775415', 'Q146786', 'Q3482678'],
+            },
+            {
+                'section_break': True,
+                'label': 'singular masculino superlativo',
+                'example': 'Eu vi um homem [altíssimo].',
+                'grammatical_features_item_ids': ['Q499327', 'Q110786', 'Q1817208'],
+            },
+            {
+                'label': 'plural masculino superlativo',
+                'example': 'Eu vi uns homens [altíssimos].',
+                'grammatical_features_item_ids': ['Q499327', 'Q146786', 'Q1817208'],
+            },
+            {
+                'label': 'singular feminino superlativo',
+                'example': 'Eu vi uma mulher [altíssima].',
+                'grammatical_features_item_ids': ['Q1775415', 'Q110786', 'Q1817208'],
+            },
+            {
+                'label': 'plural feminino superlativo',
+                'example': 'Eu vi umas mulheres [altíssimas].',
+                'grammatical_features_item_ids': ['Q1775415', 'Q146786', 'Q1817208'],
+            },
+            {
+                'section_break': True,
+                'label': 'singular masculino diminutivo',
+                'example': 'Eu vi um homem [altinho].',
+                'grammatical_features_item_ids': ['Q499327', 'Q110786', 'Q108709'],
+            },
+            {
+                'label': 'plural masculino diminutivo',
+                'example': 'Eu vi uns homens [altinhos].',
+                'grammatical_features_item_ids': ['Q499327', 'Q146786', 'Q108709'],
+            },
+            {
+                'label': 'singular feminino diminutivo',
+                'example': 'Eu vi uma mulher [altinha].',
+                'grammatical_features_item_ids': ['Q1775415', 'Q110786', 'Q108709'],
+            },
+            {
+                'label': 'plural feminino diminutivo',
+                'example': 'Eu vi umas mulheres [altinhas].',
+                'grammatical_features_item_ids': ['Q1775415', 'Q146786', 'Q108709'],
+            },
+            {
+                'section_break': True,
+                'label': 'singular masculino aumentativo',
+                'example': 'Eu vi um homem [altão].',
+                'grammatical_features_item_ids': ['Q499327', 'Q110786', 'Q1358239'],
+            },
+            {
+                'label': 'plural masculino aumentativo',
+                'example': 'Eu vi uns homens [altões].',
+                'grammatical_features_item_ids': ['Q499327', 'Q146786', 'Q1358239'],
+            },
+            {
+                'label': 'singular feminino aumentativo',
+                'example': 'Eu vi uma mulher [altona].',
+                'grammatical_features_item_ids': ['Q1775415', 'Q110786', 'Q1358239'],
+            },
+            {
+                'label': 'plural feminino aumentativo',
+                'example': 'Eu vi umas mulheres [altonas].',
+                'grammatical_features_item_ids': ['Q1775415', 'Q146786', 'Q1358239'],
+            },
+        ],
+    }),
+
     ('russian-noun-masculine', {
         '@attribution': {'users': ['Infovarius'], 'title': 'Wikidata:Wikidata Lexeme Forms/Russian'},
         'label': 'русское существительное, мужской род',
