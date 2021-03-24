@@ -6386,22 +6386,22 @@ templates = collections.OrderedDict([
             },
             {
                 'label': 'flertall',
-                'example': 'De [flinke] barna.',
+                'example': 'Alle de [flinke] barna.',
                 'grammatical_features_item_ids': ['Q146786'],
             },
             {
                 'label': 'komparativ',
-                'example': 'En [flinkere] person.',
+                'example': 'Barnet er [flinkere] enn meg.',
                 'grammatical_features_item_ids': ['Q14169499'],
             },
             {
                 'label': 'superlativ',
-                'example': 'Barnet var [flinkest].',
+                'example': 'Barnet aller var [flinkest].',
                 'grammatical_features_item_ids': ['Q1817208'],
             },
             {
                 'label': 'superlativ, bestemt form',
-                'example': 'Det [flinkeste] barnet.',
+                'example': 'Det aller [flinkeste] barnet.',
                 'grammatical_features_item_ids': ['Q1817208', 'Q53997851'],
             },
         ],
