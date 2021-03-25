@@ -66,12 +66,13 @@ def form2input(context, form, first=False, template_language_code=None, represen
         placeholder = '/'.join(lexeme_form['representations'][template_language_code]['value']
                                for lexeme_form in form['lexeme_forms']
                                if template_language_code in lexeme_form['representations'])
+    optional = context['advanced'] or form.get('optional', False)
     return (flask.Markup.escape(prefix) +
             flask.Markup(r'<input type="text" name="form_representation" placeholder="') +
             flask.Markup.escape(placeholder) +
             flask.Markup(r'"') +
             flask.Markup(r' pattern="[^/]+(?:/[^/]+)*"') +
-            (flask.Markup(r' required') if not context['advanced'] else flask.Markup('')) +
+            (flask.Markup(r' required') if not optional else flask.Markup('')) +
             (flask.Markup(r' autofocus') if first else flask.Markup('')) +
             (flask.Markup(r' value="') + flask.Markup.escape(form['value']) + flask.Markup(r'"') if 'value' in form else flask.Markup('')) +
             flask.Markup(r' spellcheck="true"') +
