@@ -59,6 +59,15 @@ def denyFrame(response):
     return response
 
 @app.template_filter()
+def form2label(form):
+    ret = flask.Markup.escape(form['label'])
+    if form.get('optional', False):
+        ret += (flask.Markup(r'<span class="text-muted">') +
+                flask.Markup(message('form_optional')) +
+                flask.Markup(r'</span>'))
+    return ret
+
+@app.template_filter()
 @jinja2.contextfilter
 def form2input(context, form, first=False, template_language_code=None, representation_language_code=None):
     (prefix, placeholder, suffix) = split_example(form)

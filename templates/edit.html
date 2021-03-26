@@ -84,7 +84,7 @@
       <div class="section">
         {% endif %}
         <div class="form">
-          <dt>{{ form.label }}</dt>
+          <dt>{{ form | form2label }}</dt>
           <dd>{{ form | form2input(loop.first, template_language_code, representation_language_code) }}</dd>
         </div>
         {% endfor %}

@@ -9,6 +9,7 @@
 	"duplicates-warning": "The following existing {{PLURAL:$1|lexeme has|lexemes have}} the same lemma and language code as the one you’re trying to create:",
 	"duplicates-instructions": "If you’re sure that {{PLURAL:$1|it’s|they’re}} different, check the box at the bottom of the form.",
 	"no-duplicate": "This is not a duplicate of an existing lexeme.",
+	"form-optional": "&#32;(optional)",
 	"advanced": "Advanced",
 	"advanced-general": "You are in “advanced” mode.",
 	"advanced-lexeme-id": "You can enter a lexeme ID to add forms to an existing lexeme instead of creating a new one. Leave any forms that already exist on the lexeme blank, otherwise they will be duplicated!",

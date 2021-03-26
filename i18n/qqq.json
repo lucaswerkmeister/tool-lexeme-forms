@@ -10,6 +10,7 @@
 	"duplicates-warning": "Header of an error message, followed by an HTML list of duplicate lexemes in the interface.",
 	"duplicates-instructions": "Footer of an error message, following an HTML list of duplicate lexemes in the interface",
 	"no-duplicate": "Label for a checkbox at the bottom of the form.",
+	"form-optional": "Label to indicate that a form is optional and can be left out. This is appended directly to the main label of the form (e.g. “singular”, “present participle”), so in most languages it should start with a space, which must be specified as a numeric character reference (<code>&amp;#32</code>).",
 	"advanced": "Label for the button at the end of the page pointing to the “advanced” version of the tool.",
 	"advanced-general": "Header of notification message, followed by some detailed messages.",
 	"advanced-lexeme-id": "Explanation of one feature of “advanced” mode.",
