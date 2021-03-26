@@ -6170,6 +6170,12 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q110786', 'Q146233'],
             },
             {
+                'label': 'ഏകവചനം സംബോധിക',
+                'example': '[അമ്മേ]!, നോക്കൂ.',
+                'grammatical_features_item_ids': ['Q110786', 'Q185077'],
+                'optional': True,
+            },
+            {
                 'label': 'ബഹുവചനം',
                 'example': 'പല [ഭാഷകൾ].',
                 'grammatical_features_item_ids': ['Q146786', 'Q131105'],
@@ -6203,6 +6209,12 @@ templates = collections.OrderedDict([
                 'label': 'ബഹുവചനം സംബന്ധിക',
                 'example': '[അമ്മമാരുടെ] പ്രവർത്തി',
                 'grammatical_features_item_ids': ['Q146786', 'Q146233'],
+            },
+            {
+                'label': 'ബഹുവചനം സംബോധിക',
+                'example': '[കുട്ടികളേ]!, അവിടെ പോകരുത്.',
+                'grammatical_features_item_ids': ['Q146786', 'Q185077'],
+                'optional': True,
             },
         ],
     }),
