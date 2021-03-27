@@ -6249,36 +6249,6 @@ templates = collections.OrderedDict([
         ],
     }),
 
-    ('malayalam-verb', {
-        '@attribution': {'users': ['Vis M', 'Nikki'], 'title': 'Wikidata:Wikidata Lexeme Forms/Malayalam'},
-        'label': 'മലയാളം ക്രിയ',
-        'language_item_id': 'Q36236',
-        'language_code': 'ml',
-        'lexical_category_item_id': 'Q24905',
-        'forms': [
-            {
-                'label': 'ഇൻഫിനിറ്റീവ്',
-                'example': 'അവൾ [എഴുതുക] ആണ്',
-                'grammatical_features_item_ids': ['Q52434245'],
-            },
-            {
-                'label': 'സാമാന്യ വർത്തമാനകാലം',
-                'example': 'അവൾ [എഴുതുന്നു]',
-                'grammatical_features_item_ids': ['Q3910936'],
-            },
-            {
-                'label': 'സാമാന്യ ഭൂതകാലം',
-                'example': 'അവൾ [എഴുതി]',
-                'grammatical_features_item_ids': ['Q1392475'],
-            },
-            {
-                'label': 'സാമാന്യ ഭൂതകാലം',
-                'example': 'അവൾ [എഴുതും]',
-                'grammatical_features_item_ids': ['Q1475560'],
-            },
-        ],
-    }),
-
     ('bokmål-noun-masculine', {
         '@attribution': {'users': ['Danmichaelo'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Bokmål'},
         'label': 'bokmål hankjønnssubstantiv',
