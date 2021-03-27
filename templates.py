@@ -1,8 +1,6 @@
-import collections
+templates = {
 
-templates = collections.OrderedDict([
-
-    ('asturian-noun-masculine', {
+    'asturian-noun-masculine': {
         '@attribution': {'users': ['Oriciu'], 'title': 'Wikidata:Wikidata Lexeme Forms/Asturian'},
         'label': 'nome común masculín asturianu',
         'language_item_id': 'Q29507',
@@ -40,9 +38,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('asturian-noun-feminine', {
+    'asturian-noun-feminine': {
         '@attribution': {'users': ['Oriciu'], 'title': 'Wikidata:Wikidata Lexeme Forms/Asturian'},
         'label': 'nome común femenín asturianu',
         'language_item_id': 'Q29507',
@@ -80,9 +78,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('bengali-noun-animate', {
+    'bengali-noun-animate': {
         '@attribution': {'users': ['Bodhisattwa', 'Mahir256'], 'title': 'Wikidata:Wikidata Lexeme Forms/Bengali'},
         'label': 'প্রাণীবাচক বিশেষ্য',
         'language_item_id': 'Q9610',
@@ -110,9 +108,9 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q145599'],
             },
         ],
-    }),
+    },
 
-    ('bengali-noun-inanimate-othervowels', {
+    'bengali-noun-inanimate-othervowels': {
         '@attribution': {'users': ['Bodhisattwa', 'Mahir256'], 'title': 'Wikidata:Wikidata Lexeme Forms/Bengali'},
         'label': 'অপ্রাণীবাচক বিশেষ্য (-আ/এ/ও-কারান্ত শব্দ)',
         'language_item_id': 'Q9610',
@@ -140,9 +138,9 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q202142'],
             },
         ],
-    }),
+    },
 
-    ('bengali-noun-inanimate-highvowels', {
+    'bengali-noun-inanimate-highvowels': {
         '@attribution': {'users': ['Bodhisattwa', 'Mahir256'], 'title': 'Wikidata:Wikidata Lexeme Forms/Bengali'},
         'label': 'অপ্রাণীবাচক বিশেষ্য (-ই/ঈ/উ/ঊ/ঐ/ঔ-কারান্ত শব্দ)',
         'language_item_id': 'Q9610',
@@ -170,9 +168,9 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q202142'],
             },
         ],
-    }),
+    },
 
-    ('bengali-noun-inanimate-consonants', {
+    'bengali-noun-inanimate-consonants': {
         '@attribution': {'users': ['Bodhisattwa', 'Mahir256'], 'title': 'Wikidata:Wikidata Lexeme Forms/Bengali'},
         'label': 'অপ্রাণীবাচক বিশেষ্য (ব্যঞ্জনান্ত শব্দ)',
         'language_item_id': 'Q9610',
@@ -200,9 +198,9 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q202142'],
             },
         ],
-    }),
+    },
 
-    ('bengali-adjective-tatsama-property', {
+    'bengali-adjective-tatsama-property': {
         '@attribution': {'users': ['Bodhisattwa', 'Mahir256'], 'title': 'Wikidata:Wikidata Lexeme Forms/Bengali'},
         'label': 'তৎসম গুণবাচক বিশেষণ',
         'language_item_id': 'Q9610',
@@ -225,9 +223,9 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q1817208'],
             },
         ],
-    }),
+    },
 
-    ('bengali-adjective-others', {
+    'bengali-adjective-others': {
         '@attribution': {'users': ['Bodhisattwa'], 'title': 'Wikidata:Wikidata Lexeme Forms/Bengali'},
         'label': 'অন্যান্য বিশেষণ',
         'language_item_id': 'Q9610',
@@ -240,9 +238,9 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q3482678'],
             },
         ],
-    }),
+    },
 
-    ('bengali-adverb', {
+    'bengali-adverb': {
         '@attribution': {'users': ['Mahir256', 'Bodhisattwa'], 'title': 'Wikidata:Wikidata Lexeme Forms/Bengali'},
         'label': 'ক্রিয়া বিশেষণ',
         'language_item_id': 'Q9610',
@@ -255,9 +253,9 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q3482678'],
             },
         ],
-    }),
+    },
 
-    ('bengali-verb', {
+    'bengali-verb': {
         '@attribution': {'users': ['Bodhisattwa', 'Mahir256', 'Tanay barisha'], 'title': 'Wikidata:Wikidata Lexeme Forms/Bengali'},
         'label': 'ক্রিয়াপদ',
         'language_item_id': 'Q9610',
@@ -767,9 +765,9 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146233', 'Q1350145', 'Q20613396'],
             },
         ],
-    }),
+    },
 
-    ('bengali-verb-ano', {
+    'bengali-verb-ano': {
         '@attribution': {'users': ['Bodhisattwa', 'Mahir256', 'Tanay barisha'], 'title': 'Wikidata:Wikidata Lexeme Forms/Bengali'},
         'label': 'ক্রিয়াপদ (সাধিত ধাতু)',
         'language_item_id': 'Q9610',
@@ -1279,9 +1277,9 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146233', 'Q1350145', 'Q20613396'],
             },
         ],
-    }),
+    },
 
-    ('manbhumi-adjective', {
+    'manbhumi-adjective': {
         '@attribution': {'users': ['Bodhisattwa'], 'title': 'Wikidata:Wikidata Lexeme Forms/Manbhumi'},
         'label': 'বিশেষণ',
         'language_item_id': 'Q6747180',
@@ -1294,9 +1292,9 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q3482678'],
             },
         ],
-    }),
+    },
 
-    ('manbhumi-adverb', {
+    'manbhumi-adverb': {
         '@attribution': {'users': ['Bodhisattwa'], 'title': 'Wikidata:Wikidata Lexeme Forms/Manbhumi'},
         'label': 'ক্রিয়া বিশেষণ',
         'language_item_id': 'Q6747180',
@@ -1309,9 +1307,9 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q3482678'],
             },
         ],
-    }),
+    },
 
-    ('manbhumi-verb', {
+    'manbhumi-verb': {
         '@attribution': {'users': ['Bodhisattwa'], 'title': 'Wikidata:Wikidata Lexeme Forms/Manbhumi'},
         'label': 'ক্রিয়াপদ',
         'language_item_id': 'Q6747180',
@@ -1591,9 +1589,9 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q625581', 'Q1050494'],
             },
         ],
-    }),
+    },
 
-    ('breton-noun-without-mutation', {
+    'breton-noun-without-mutation': {
         '@attribution': {'users': ['VIGNERON', 'Fulup'], 'title': 'Wikidata:Wikidata Lexeme Forms/Breton'},
         'label': 'anvioù-kadarn (hep kemmadur)',
         'language_item_id': 'Q12107',
@@ -1611,9 +1609,9 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146786'],
             },
         ],
-    }),
+    },
 
-    ('breton-noun-without-mutation-collective', {
+    'breton-noun-without-mutation-collective': {
         '@attribution': {'users': ['VIGNERON'], 'title': 'Wikidata:Wikidata Lexeme Forms/Breton'},
         'label': 'anvioù-kadarn (strollder, hep kemmadur)',
         'language_item_id': 'Q12107',
@@ -1631,9 +1629,9 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q694268'],
             },
         ],
-    }),
+    },
 
-    ('breton-adjective-without-mutation', {
+    'breton-adjective-without-mutation': {
         '@attribution': {'users': ['VIGNERON', 'Fulup'], 'title': 'Wikidata:Wikidata Lexeme Forms/Breton'},
         'label': 'anvioù-gwan (hep kemmadur)',
         'language_item_id': 'Q12107',
@@ -1661,9 +1659,9 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q93868909'],
             },
         ],
-    }),
+    },
 
-    ('czech-noun-masculine-animate', {
+    'czech-noun-masculine-animate': {
         '@attribution': {'users': ['Lexicolover'], 'title': 'Wikidata:Wikidata Lexeme Forms/Czech'},
         'label': 'české podstatné jméno (rod mužský životný)',
         'language_item_id': 'Q9056',
@@ -1778,9 +1776,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('czech-noun-masculine-inanimate', {
+    'czech-noun-masculine-inanimate': {
         '@attribution': {'users': ['Lexicolover'], 'title': 'Wikidata:Wikidata Lexeme Forms/Czech'},
         'label': 'české podstatné jméno (rod mužský neživotný)',
         'language_item_id': 'Q9056',
@@ -1895,9 +1893,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('czech-noun-feminine', {
+    'czech-noun-feminine': {
         '@attribution': {'users': ['Lexicolover'], 'title': 'Wikidata:Wikidata Lexeme Forms/Czech'},
         'label': 'české podstatné jméno (rod ženský)',
         'language_item_id': 'Q9056',
@@ -1996,9 +1994,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('czech-noun-neuter', {
+    'czech-noun-neuter': {
         '@attribution': {'users': ['Lexicolover'], 'title': 'Wikidata:Wikidata Lexeme Forms/Czech'},
         'label': 'české podstatné jméno (rod střední)',
         'language_item_id': 'Q9056',
@@ -2097,9 +2095,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('czech-adverb', {
+    'czech-adverb': {
         '@attribution': {'users': ['Lexicolover'], 'title': 'Wikidata:Wikidata Lexeme Forms/Czech'},
         'label': 'české příslovce',
         'language_item_id': 'Q9056',
@@ -2122,9 +2120,9 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q1817208'],
             },
         ],
-    }),
+    },
 
-    ('czech-adjective', {
+    'czech-adjective': {
         '@attribution': {'users': ['Strepon', 'Adrijaned'], 'title': 'Wikidata:Wikidata Lexeme Forms/Czech'},
         'label': 'české přídavné jméno',
         'language_item_id': 'Q9056',
@@ -2984,9 +2982,9 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q192997', 'Q146786', 'Q1775461', 'Q1817208'],
             },
         ],
-    }),
+    },
 
-    ('czech-verb-perfective', {
+    'czech-verb-perfective': {
         '@attribution': {'users': ['Adrijaned', 'Strepon', 'Lexicolover'], 'title': 'Wikidata:Wikidata Lexeme Forms/Czech'},
         'label': 'české sloveso dokonavé',
         'language_item_id': 'Q9056',
@@ -3215,9 +3213,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('czech-verb-imperfective', {
+    'czech-verb-imperfective': {
         '@attribution': {'users': ['Lexicolover'], 'title': 'Wikidata:Wikidata Lexeme Forms/Czech'},
         'label': 'české sloveso nedokonavé',
         'language_item_id': 'Q9056',
@@ -3446,9 +3444,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('danish-noun-common', {
+    'danish-noun-common': {
         '@attribution': {'users': ['So9q', 'Fnielsen'], 'title': 'Wikidata:Wikidata Lexeme Forms/Danish'},
         'label': 'dansk substantiv (fælleskøn)',
         'language_item_id': 'Q9035',
@@ -3497,9 +3495,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('danish-noun-neuter', {
+    'danish-noun-neuter': {
         '@attribution': {'users': ['So9q', 'Fnielsen'], 'title': 'Wikidata:Wikidata Lexeme Forms/Danish'},
         'label': 'dansk substantiv (intetkøn)',
         'language_item_id': 'Q9035',
@@ -3548,9 +3546,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('danish-verb', {
+    'danish-verb': {
         '@attribution': {'users': ['So9q'], 'title': 'Wikidata:Wikidata Lexeme Forms/Danish'},
         'label': 'dansk verb',
         'language_item_id': 'Q9035',
@@ -3598,9 +3596,9 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q10345583'],
             },
         ],
-    }),
+    },
 
-    ('german-noun-masculine', {
+    'german-noun-masculine': {
         '@attribution': {'users': ['Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/German'},
         'label': 'deutsches Substantiv (Maskulinum)',
         'language_item_id': 'Q188',
@@ -3669,9 +3667,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('german-noun-feminine', {
+    'german-noun-feminine': {
         '@attribution': {'users': ['Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/German'},
         'label': 'deutsches Substantiv (Femininum)',
         'language_item_id': 'Q188',
@@ -3740,9 +3738,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('german-noun-neuter', {
+    'german-noun-neuter': {
         '@attribution': {'users': ['Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/German'},
         'label': 'deutsches Substantiv (Neutrum)',
         'language_item_id': 'Q188',
@@ -3811,9 +3809,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('german-noun-neuter-toponym', {
+    'german-noun-neuter-toponym': {
         '@attribution': {'users': ['Lucas Werkmeister', 'Nikki'], 'title': 'Wikidata:Wikidata Lexeme Forms/German'},
         'label': 'deutsches Substantiv (Neutrum, Toponym)',
         'language_item_id': 'Q188',
@@ -3895,9 +3893,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('german-noun-pluraletantum', {
+    'german-noun-pluraletantum': {
         '@attribution': {'users': ['Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/German'},
         'label': 'deutsches Substantiv (Pluraletantum, kein Genus)',
         'language_item_id': 'Q188',
@@ -3945,9 +3943,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('german-verb', {
+    'german-verb': {
         '@attribution': {'users': ['Lucas Werkmeister', 'Andreasmperu'], 'title': 'Wikidata:Wikidata Lexeme Forms/German'},
         'label': 'deutsches Verb',
         'language_item_id': 'Q188',
@@ -4102,9 +4100,9 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q12717679'],
             },
         ],
-    }),
+    },
 
-    ('german-adverb', {
+    'german-adverb': {
         '@attribution': {'users': ['Nikki'], 'title': 'Wikidata:Wikidata Lexeme Forms/German'},
         'label': 'deutsches Adverb',
         'language_item_id': 'Q188',
@@ -4117,9 +4115,9 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': [],
             },
         ],
-    }),
+    },
 
-    ('english-noun', {
+    'english-noun': {
         '@attribution': {'users': ['Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/English'},
         'label': 'English noun',
         'language_item_id': 'Q1860',
@@ -4137,9 +4135,9 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146786'],
             },
         ],
-    }),
+    },
 
-    ('english-adverb', {
+    'english-adverb': {
         '@attribution': {'users': ['ArthurPSmith'], 'title': 'Wikidata:Wikidata Lexeme Forms/English'},
         'label': 'English adverb',
         'language_item_id': 'Q1860',
@@ -4152,9 +4150,9 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': [],
             },
         ],
-    }),
+    },
 
-    ('english-adjective', {
+    'english-adjective': {
         '@attribution': {'users': ['ArthurPSmith'], 'title': 'Wikidata:Wikidata Lexeme Forms/English'},
         'label': 'English adjective',
         'language_item_id': 'Q1860',
@@ -4177,9 +4175,9 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q1817208'],
             },
         ],
-    }),
+    },
 
-    ('english-verb', {
+    'english-verb': {
         '@attribution': {'users': ['ArthurPSmith', 'Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/English'},
         'label': 'English verb',
         'language_item_id': 'Q1860',
@@ -4212,9 +4210,9 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q1230649'],
             },
         ],
-    }),
+    },
 
-    ('esperanto-noun', {
+    'esperanto-noun': {
         '@attribution': {'users': ['KaMan', 'Jens Ohlig'], 'title': 'Wikidata:Wikidata Lexeme Forms/Esperanto'},
         'label': 'esperanta substantivo',
         'language_item_id': 'Q143',
@@ -4243,9 +4241,9 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146078', 'Q146786'],
             },
         ],
-    }),
+    },
 
-    ('esperanto-adjective', {
+    'esperanto-adjective': {
         '@attribution': {'users': ['Nikki'], 'title': 'Wikidata:Wikidata Lexeme Forms/Esperanto'},
         'label': 'esperanta adjektivo',
         'language_item_id': 'Q143',
@@ -4274,9 +4272,9 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146078', 'Q146786'],
             },
         ],
-    }),
+    },
 
-    ('esperanto-verb', {
+    'esperanto-verb': {
         '@attribution': {'users': ['Nikki'], 'title': 'Wikidata:Wikidata Lexeme Forms/Esperanto'},
         'label': 'esperanta verbo',
         'language_item_id': 'Q143',
@@ -4317,9 +4315,9 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q22716'],
             },
         ],
-    }),
+    },
 
-    ('spanish-noun-masculine', {
+    'spanish-noun-masculine': {
         '@attribution': {'users': ['Andreasmperu'], 'title': 'Wikidata:Wikidata Lexeme Forms/Spanish'},
         'label': 'sustantivo masculino en español',
         'language_item_id': 'Q1321',
@@ -4357,9 +4355,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('spanish-noun-feminine', {
+    'spanish-noun-feminine': {
         '@attribution': {'users': ['Andreasmperu'], 'title': 'Wikidata:Wikidata Lexeme Forms/Spanish'},
         'label': 'sustantivo femenino en español',
         'language_item_id': 'Q1321',
@@ -4397,9 +4395,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('spanish-adjective', {
+    'spanish-adjective': {
         '@attribution': {'users': ['Andreasmperu'], 'title': 'Wikidata:Wikidata Lexeme Forms/Spanish'},
         'label': 'adjetivo en español',
         'language_item_id': 'Q1321',
@@ -4428,9 +4426,9 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q1775415', 'Q146786'],
             },
         ],
-    }),
+    },
 
-    ('spanish-verb', {
+    'spanish-verb': {
         '@attribution': {'users': ['DemonDays64', 'Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/Spanish'},
         'label': 'verbo en español',
         'language_item_id': 'Q1321',
@@ -4543,9 +4541,9 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q10345583', 'Q51929074', 'Q146786'],
             },
         ],
-    }),
+    },
 
-    ('estonian-noun', {
+    'estonian-noun': {
         '@attribution': {'users': ['Reosarevok'], 'title': 'Wikidata:Wikidata Lexeme Forms/Estonian'},
         'label': 'eesti keele nimisõna',
         'language_item_id': 'Q9072',
@@ -4707,9 +4705,9 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146786', 'Q838581'],
             },
         ],
-    }),
+    },
 
-    ('basque-verb', {
+    'basque-verb': {
         '@attribution': {'users': ['Theklan'], 'title': 'Wikidata:Wikidata Lexeme Forms/Basque'},
         'label': 'euskal aditza',
         'language_item_id': 'Q8752',
@@ -4742,9 +4740,9 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q501405'],
             },
         ],
-    }),
+    },
 
-    ('basque-adjective-comparative', {
+    'basque-adjective-comparative': {
         '@attribution': {'users': ['Theklan'], 'title': 'Wikidata:Wikidata Lexeme Forms/Basque'},
         'label': 'euskal adjektibo konparatibo eta superlatiboak',
         'language_item_id': 'Q8752',
@@ -4767,9 +4765,9 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q1817208'],
             },
         ],
-    }),
+    },
 
-    ('persian-noun', {
+    'persian-noun': {
         '@attribution': {'users': ['Ladsgroup'], 'title': 'Wikidata:Wikidata Lexeme Forms/Persian'},
         'label': 'اسم فارسی',
         'language_item_id': 'Q9168',
@@ -4787,9 +4785,9 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q146786'],
             },
         ],
-    }),
+    },
 
-    ('persian-verb', {
+    'persian-verb': {
         '@attribution': {'users': ['Ladsgroup'], 'title': 'Wikidata:Wikidata Lexeme Forms/Persian'},
         'label': 'فعل فارسی',
         'language_item_id': 'Q9168',
@@ -4828,9 +4826,9 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q51929074', 'Q146786'],
             },
         ],
-    }),
+    },
 
-    ('finnish-noun', {
+    'finnish-noun': {
         '@attribution': {'users': ['Shinnin'], 'title': 'Wikidata:Wikidata Lexeme Forms/Finnish'},
         'label': 'suomen kielen substantiivi',
         'language_item_id': 'Q1412',
@@ -4976,9 +4974,9 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q319822', 'Q146786'],
             },
         ],
-    }),
+    },
 
-    ('french-noun-masculine', {
+    'french-noun-masculine': {
         '@attribution': {'users': ['Djiboun'], 'title': 'Wikidata:Wikidata Lexeme Forms/French'},
         'label': 'nom commun masculin en français',
         'language_item_id': 'Q150',
@@ -5016,9 +5014,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('french-noun-feminine', {
+    'french-noun-feminine': {
         '@attribution': {'users': ['Djiboun'], 'title': 'Wikidata:Wikidata Lexeme Forms/French'},
         'label': 'nom commun féminin en français',
         'language_item_id': 'Q150',
@@ -5056,9 +5054,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('french-adjective', {
+    'french-adjective': {
         '@attribution': {'users': ['Djiboun'], 'title': 'Wikidata:Wikidata Lexeme Forms/French'},
         'label': 'adjectif en français',
         'language_item_id': 'Q150',
@@ -5087,9 +5085,9 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q1775415', 'Q146786'],
             },
         ],
-    }),
+    },
 
-    ('hebrew-noun-masculine', {
+    'hebrew-noun-masculine': {
         '@attribution': {'users': ['Uziel302', 'Uzielbot'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hebrew'},
         'label': 'שם עצם זכר',
         'language_item_id': 'Q9288',
@@ -5127,9 +5125,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('hebrew-noun-feminine', {
+    'hebrew-noun-feminine': {
         '@attribution': {'users': ['Uziel302', 'Uzielbot'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hebrew'},
         'label': 'שם עצם נקבה',
         'language_item_id': 'Q9288',
@@ -5167,9 +5165,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('armenian-noun', {
+    'armenian-noun': {
         '@attribution': {'users': ['Emptyfear'], 'title': 'Wikidata:Wikidata Lexeme Forms/Armenian'},
         'label': 'հայերեն գոյական',
         'language_item_id': 'Q8785',
@@ -5248,9 +5246,9 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q202142', 'Q146786'],
             },
         ],
-    }),
+    },
 
-    ('armenian-noun-singulare-tantum', {
+    'armenian-noun-singulare-tantum': {
         '@attribution': {'users': ['Emptyfear'], 'title': 'Wikidata:Wikidata Lexeme Forms/Armenian'},
         'label': 'հայերեն հավաքական անհոգնական եզակի գոյական',
         'language_item_id': 'Q8785',
@@ -5313,9 +5311,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('italian-noun-feminine', {
+    'italian-noun-feminine': {
         '@attribution': {'users': ['Sannita'], 'title': 'Wikidata:Wikidata Lexeme Forms/Italian'},
         'label': 'sostantivo femminile italiano',
         'language_item_id': 'Q652',
@@ -5353,9 +5351,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('italian-noun-masculine', {
+    'italian-noun-masculine': {
         '@attribution': {'users': ['Sannita'], 'title': 'Wikidata:Wikidata Lexeme Forms/Italian'},
         'label': 'sostantivo maschile italiano',
         'language_item_id': 'Q652',
@@ -5393,9 +5391,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('italian-adjective', {
+    'italian-adjective': {
         '@attribution': {'users': ['Sannita'], 'title': 'Wikidata:Wikidata Lexeme Forms/Italian'},
         'label': 'aggettivo qualificativo italiano',
         'language_item_id': 'Q652',
@@ -5424,9 +5422,9 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q1775415', 'Q146786'],
             },
         ],
-    }),
+    },
 
-    ('kurmanji-noun-feminine', {
+    'kurmanji-noun-feminine': {
         '@attribution': {'users': ['Şêr'], 'title': 'Wikidata:Wikidata Lexeme Forms/Kurdish (Kurmancî)'},
         'label': 'navdêra kurdî (mê)',
         'language_item_id': 'Q36163',
@@ -5531,9 +5529,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('kurmanji-noun-masculine', {
+    'kurmanji-noun-masculine': {
         '@attribution': {'users': ['Şêr'], 'title': 'Wikidata:Wikidata Lexeme Forms/Kurdish (Kurmancî)'},
         'label': 'navdêra kurdî (nêr)',
         'language_item_id': 'Q36163',
@@ -5638,9 +5636,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('latin-noun-masculine', {
+    'latin-noun-masculine': {
         '@attribution': {'users': ['Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/Latin'},
         'label': 'nomen Latinum (masculinum)',
         'language_item_id': 'Q397',
@@ -5729,9 +5727,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('latin-noun-feminine', {
+    'latin-noun-feminine': {
         '@attribution': {'users': ['Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/Latin'},
         'label': 'nomen Latinum (femininum)',
         'language_item_id': 'Q397',
@@ -5820,9 +5818,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('latin-noun-neuter', {
+    'latin-noun-neuter': {
         '@attribution': {'users': ['Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/Latin'},
         'label': 'nomen Latinum (neutrum)',
         'language_item_id': 'Q397',
@@ -5911,9 +5909,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('latvian-noun-masculine', {
+    'latvian-noun-masculine': {
         '@attribution': {'users': ['Papuass', 'Lucas Werkmeister', 'Nikki'], 'title': 'Wikidata:Wikidata Lexeme Forms/Latvian'},
         'label': 'latviešu valodas vīriešu dzimtes lietvārds',
         'language_item_id': 'Q9078',
@@ -6018,9 +6016,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('latvian-noun-feminine', {
+    'latvian-noun-feminine': {
         '@attribution': {'users': ['Papuass', 'Lucas Werkmeister', 'Nikki'], 'title': 'Wikidata:Wikidata Lexeme Forms/Latvian'},
         'label': 'latviešu valodas sieviešu dzimtes lietvārds',
         'language_item_id': 'Q9078',
@@ -6125,9 +6123,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('malayalam-noun', {
+    'malayalam-noun': {
         '@attribution': {'users': ['Jsamwrites', 'Vis M', 'Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/Malayalam'},
         'label': 'മലയാളത്തിലെ സാധാരണ നാമം',
         'language_item_id': 'Q36236',
@@ -6217,9 +6215,9 @@ templates = collections.OrderedDict([
                 'optional': True,
             },
         ],
-    }),
+    },
 
-    ('malayalam-verb', {
+    'malayalam-verb': {
         '@attribution': {'users': ['Vis M', 'Nikki'], 'title': 'Wikidata:Wikidata Lexeme Forms/Malayalam'},
         'label': 'മലയാളം ക്രിയ',
         'language_item_id': 'Q36236',
@@ -6247,9 +6245,9 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q1475560'],
             },
         ],
-    }),
+    },
 
-    ('bokmål-noun-masculine', {
+    'bokmål-noun-masculine': {
         '@attribution': {'users': ['Danmichaelo'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Bokmål'},
         'label': 'bokmål hankjønnssubstantiv',
         'language_item_id': 'Q25167',
@@ -6297,9 +6295,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('bokmål-noun-feminine', {
+    'bokmål-noun-feminine': {
         '@attribution': {'users': ['Danmichaelo', 'Jon Harald Søby'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Bokmål'},
         'label': 'bokmål hunkjønnssubstantiv',
         'language_item_id': 'Q25167',
@@ -6352,9 +6350,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('bokmål-noun-neuter', {
+    'bokmål-noun-neuter': {
         '@attribution': {'users': ['Danmichaelo'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Bokmål'},
         'label': 'bokmål intetkjønnssubstantiv',
         'language_item_id': 'Q25167',
@@ -6402,9 +6400,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('bokmål-adjective', {
+    'bokmål-adjective': {
         '@attribution': {'users': ['Jon Harald Søby'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Bokmål'},
         'label': 'bokmål adjektiv',
         'language_item_id': 'Q25167',
@@ -6450,9 +6448,9 @@ templates = collections.OrderedDict([
                 'optional': True,
             },
         ],
-    }),
+    },
 
-    ('bokmål-verb', {
+    'bokmål-verb': {
         '@attribution': {'users': ['Jon Harald Søby'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Bokmål'},
         'label': 'bokmål verb',
         'language_item_id': 'Q25167',
@@ -6510,9 +6508,9 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q10345583'],
             },
         ],
-    }),
+    },
 
-    ('dutch-neuter-noun', {
+    'dutch-neuter-noun': {
         '@attribution': {'users': ['MarcoSwart'], 'title': 'Wikidata:Wikidata Lexeme Forms/Dutch'},
         'label': 'Nederlands onzijdig zelfstandig naamwoord',
         'language_item_id': 'Q7411',
@@ -6561,9 +6559,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('dutch-masculine-noun', {
+    'dutch-masculine-noun': {
         '@attribution': {'users': ['MarcoSwart'], 'title': 'Wikidata:Wikidata Lexeme Forms/Dutch'},
         'label': 'Nederlands strikt mannelijk zelfstandig naamwoord',
         'language_item_id': 'Q7411',
@@ -6612,9 +6610,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('dutch-feminine-noun', {
+    'dutch-feminine-noun': {
         '@attribution': {'users': ['MarcoSwart'], 'title': 'Wikidata:Wikidata Lexeme Forms/Dutch'},
         'label': 'Nederlands strikt vrouwelijk zelfstandig naamwoord',
         'language_item_id': 'Q7411',
@@ -6663,9 +6661,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('dutch-fem2masc-noun', {
+    'dutch-fem2masc-noun': {
         '@attribution': {'users': ['MarcoSwart'], 'title': 'Wikidata:Wikidata Lexeme Forms/Dutch'},
         'label': 'Nederlands v/m zelfstandig naamwoord',
         'language_item_id': 'Q7411',
@@ -6714,9 +6712,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('nynorsk-noun-feminine', {
+    'nynorsk-noun-feminine': {
         '@attribution': {'users': ['Njardarlogar'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Nynorsk'},
         'label': 'nynorsk hokjønnssubstantiv',
         'language_item_id': 'Q25164',
@@ -6765,9 +6763,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('nynorsk-noun-masculine', {
+    'nynorsk-noun-masculine': {
         '@attribution': {'users': ['Njardarlogar'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Nynorsk'},
         'label': 'nynorsk hankjønnssubstantiv',
         'language_item_id': 'Q25164',
@@ -6816,9 +6814,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('nynorsk-noun-neuter', {
+    'nynorsk-noun-neuter': {
         '@attribution': {'users': ['Njardarlogar'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Nynorsk'},
         'label': 'nynorsk inkjekjønnssubstantiv',
         'language_item_id': 'Q25164',
@@ -6867,9 +6865,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('polish-noun', {
+    'polish-noun': {
         '@attribution': {'users': ['KaMan'], 'title': 'Wikidata:Wikidata Lexeme Forms/Polish'},
         'label': 'polski rzeczownik, prosta odmiana bez wariantów w żadnym z przypadków',
         'language_item_id': 'Q809',
@@ -6948,9 +6946,9 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q185077', 'Q146786'],
             },
         ],
-    }),
+    },
 
-    ('polish-noun-masculine-personal-with-depreciative-forms', {
+    'polish-noun-masculine-personal-with-depreciative-forms': {
         '@attribution': {'users': ['KaMan'], 'title': 'Wikidata:Wikidata Lexeme Forms/Polish'},
         'label': 'polski rzeczownik, rodzaj męskoosobowy z formami ndepr. i depr. w M. i W. lm',
         'language_item_id': 'Q809',
@@ -7138,9 +7136,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('polish-noun-with-potential-plural-forms', {
+    'polish-noun-with-potential-plural-forms': {
         '@attribution': {'users': ['KaMan'], 'title': 'Wikidata:Wikidata Lexeme Forms/Polish'},
         'label': 'polski rzeczownik, potencjalna liczba mnoga',
         'language_item_id': 'Q809',
@@ -7359,9 +7357,9 @@ templates = collections.OrderedDict([
                 },
             },
         ],
-    }),
+    },
 
-    ('portuguese-noun-masculine', {
+    'portuguese-noun-masculine': {
         '@attribution': {'users': ['EnaldoSS'], 'title': 'Wikidata:Wikidata Lexeme Forms/Portuguese'},
         'label': 'substantivo masculino em português',
         'language_item_id': 'Q5146',
@@ -7399,9 +7397,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('portuguese-noun-feminine', {
+    'portuguese-noun-feminine': {
         '@attribution': {'users': ['EnaldoSS'], 'title': 'Wikidata:Wikidata Lexeme Forms/Portuguese'},
         'label': 'substantivo feminino em português',
         'language_item_id': 'Q5146',
@@ -7439,9 +7437,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('portuguese-verb', {
+    'portuguese-verb': {
         '@attribution': {'users': ['Carybe', 'EnaldoSS', 'Joalpe', 'Waldir'], 'title': 'Wikidata:Wikidata Lexeme Forms/Portuguese'},
         'label': 'verbo em português',
         'language_item_id': 'Q5146',
@@ -7827,9 +7825,9 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q51929074', 'Q146786', 'Q179230'],
             },
         ],
-    }),
+    },
 
-    ('portuguese-adjective', {
+    'portuguese-adjective': {
         '@attribution': {'users': ['EnaldoSS', 'Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/Portuguese'},
         'label': 'adjetivo em português',
         'language_item_id': 'Q5146',
@@ -7921,9 +7919,9 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q1775415', 'Q146786', 'Q1358239'],
             },
         ],
-    }),
+    },
 
-    ('russian-noun-masculine', {
+    'russian-noun-masculine': {
         '@attribution': {'users': ['Infovarius'], 'title': 'Wikidata:Wikidata Lexeme Forms/Russian'},
         'label': 'русское существительное, мужской род',
         'language_item_id': 'Q7737',
@@ -8012,9 +8010,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('russian-noun-feminine', {
+    'russian-noun-feminine': {
         '@attribution': {'users': ['Infovarius'], 'title': 'Wikidata:Wikidata Lexeme Forms/Russian'},
         'label': 'русское существительное, женский род',
         'language_item_id': 'Q7737',
@@ -8103,9 +8101,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('russian-noun-neuter', {
+    'russian-noun-neuter': {
         '@attribution': {'users': ['Infovarius'], 'title': 'Wikidata:Wikidata Lexeme Forms/Russian'},
         'label': 'русское существительное, средний род',
         'language_item_id': 'Q7737',
@@ -8194,9 +8192,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('russian-noun-pluraletantum', {
+    'russian-noun-pluraletantum': {
         '@attribution': {'users': ['Infovarius'], 'title': 'Wikidata:Wikidata Lexeme Forms/Russian'},
         'label': 'имя существительное (Pluralia tantum, без рода)',
         'language_item_id': 'Q7737',
@@ -8254,9 +8252,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('russian-adjective', {
+    'russian-adjective': {
         '@attribution': {'users': ['Infovarius'], 'title': 'Wikidata:Wikidata Lexeme Forms/Russian'},
         'label': 'русское прилагательное',
         'language_item_id': 'Q7737',
@@ -8394,9 +8392,9 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q2114906', 'Q146786'],
             },
         ],
-    }),
+    },
 
-    ('swedish-noun-common', {
+    'swedish-noun-common': {
         '@attribution': {'users': ['Vesihiisi'], 'title': 'Wikidata:Wikidata Lexeme Forms/Swedish'},
         'label': 'svenskt substantiv (utrum)',
         'language_item_id': 'Q9027',
@@ -8466,9 +8464,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('swedish-noun-neuter', {
+    'swedish-noun-neuter': {
         '@attribution': {'users': ['Vesihiisi'], 'title': 'Wikidata:Wikidata Lexeme Forms/Swedish'},
         'label': 'svenskt substantiv (neutrum)',
         'language_item_id': 'Q9027',
@@ -8538,9 +8536,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('swedish-verb', {
+    'swedish-verb': {
         '@attribution': {'users': ['Vesihiisi'], 'title': 'Wikidata:Wikidata Lexeme Forms/Swedish'},
         'label': 'svenskt verb',
         'language_item_id': 'Q9027',
@@ -8593,9 +8591,9 @@ templates = collections.OrderedDict([
                 'grammatical_features_item_ids': ['Q548470', 'Q1194697'],
             },
         ],
-    }),
+    },
 
-    ('swedish-absolute-adjective', {
+    'swedish-absolute-adjective': {
         '@attribution': {'users': ['Vesihiisi'], 'title': 'Wikidata:Wikidata Lexeme Forms/Swedish'},
         'label': 'svenskt adjektiv (utan komparativ)',
         'language_item_id': 'Q9027',
@@ -8648,9 +8646,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('ukrainian-noun-masculine', {
+    'ukrainian-noun-masculine': {
         '@attribution': {'users': ['Tohaomg'], 'title': 'Wikidata:Wikidata Lexeme Forms/Ukrainian'},
         'label': 'український іменник, чоловічий рід',
         'language_item_id': 'Q8798',
@@ -8749,9 +8747,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('ukrainian-noun-feminine', {
+    'ukrainian-noun-feminine': {
         '@attribution': {'users': ['Tohaomg'], 'title': 'Wikidata:Wikidata Lexeme Forms/Ukrainian'},
         'label': 'український іменник, жіночий рід',
         'language_item_id': 'Q8798',
@@ -8850,9 +8848,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('ukrainian-noun-neuter', {
+    'ukrainian-noun-neuter': {
         '@attribution': {'users': ['Tohaomg'], 'title': 'Wikidata:Wikidata Lexeme Forms/Ukrainian'},
         'label': 'український іменник, середній рід',
         'language_item_id': 'Q8798',
@@ -8951,9 +8949,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('ukrainian-noun-pluraletantum', {
+    'ukrainian-noun-pluraletantum': {
         '@attribution': {'users': ['Tohaomg', 'Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/Ukrainian'},
         'label': 'український іменник, тільки множина (pluralia tantum)',
         'language_item_id': 'Q8798',
@@ -9016,9 +9014,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-    ('german-noun-neuter-test', {
+    'german-noun-neuter-test': {
         '@attribution': {'users': ['Lucas Werkmeister']},
         'test': True,
         'label': 'deutsches Substantiv (Neutrum), test.wikidata.org',
@@ -9125,9 +9123,9 @@ templates = collections.OrderedDict([
                 }
             ],
         },
-    }),
+    },
 
-])
+}
 
 for template_name, template in templates.items():
     template['@template_name'] = template_name
