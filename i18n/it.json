@@ -10,6 +10,7 @@
 	"duplicates-warning": "Attenzione, {{PLURAL:$1|il seguente lessema ha|i seguenti lessemi hanno}} lo stesso lemma e codice linguistico di quello che hai appena tentato di creare:",
 	"duplicates-instructions": "Se sei sicuro che {{PLURAL:$1|sia diverso|siano diversi}}, spunta la casella alla fine di questo modulo.",
 	"no-duplicate": "Questo NON è un duplicato di un lessema esistente.",
+	"form-optional": "&#32;(facoltativo)",
 	"advanced": "Avanzate",
 	"advanced-general": "Ti trovi nella modalità “avanzata”.",
 	"advanced-lexeme-id": "Puoi inserire un ID di un lessema esistente per aggiungere le forme mancanti, anziché crearne uno nuovo. NON inserire le forme già esistenti, altrimenti creerai un doppione!",

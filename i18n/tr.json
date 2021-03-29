@@ -10,6 +10,7 @@
 	"duplicates-warning": "Aşağıdaki {{PLURAL:$1|sözcük birimi|sözcük birimleri}} oluşturmaya çalıştığınızla aynı başsözcük ve dil koduna sahip:",
 	"duplicates-instructions": "Eğer farklı {{PLURAL:$1|olduğuna|olduklarına}} eminseniz, formun altındaki kutucuğu işaretleyin.",
 	"no-duplicate": "Bu, mevcut bir sözcük biriminin kopyası değil.",
+	"form-optional": "&#32;(isteğe bağlı)",
 	"advanced": "Gelişmiş",
 	"advanced-general": "“Gelişmiş” moddasınız.",
 	"advanced-lexeme-id": "Yeni bir sözcük birimi yaratmak yerine mevcut birine biçim eklemek için sözcük birim ID'si girebilirsiniz. Sözcük biriminde hali hazırda mevcut olan tüm biçimleri boş bırakın, aksi takdirde kopyalar oluşacaktır.",
