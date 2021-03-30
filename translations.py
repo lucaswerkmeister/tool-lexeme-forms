@@ -117,6 +117,7 @@ def mw2py(mw, language, variables, lists):
 skipped_language_codes = {
     'pt-br',
     'qqq',
+    'roa-tara',
     'sa',
     'zh-hant',
 }

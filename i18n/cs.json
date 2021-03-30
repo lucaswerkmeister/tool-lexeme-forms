@@ -9,7 +9,7 @@
 	},
 	"create": "Vytvořit",
 	"csrf-warning": "Bohužel se nám nepodařilo vykonat požadavek (ochrana před <abbr title=\"Cross-site request forgery\">CSRF</abbr> selhala). Zkuste prosím odeslat formulář znovu.",
-	"duplicates-warning": "Pokoušíte se vytvořit lexém, který má stejné lemma a jazyk jako už existující lexémy:",
+	"duplicates-warning": "Pokoušíte se vytvořit lexém, který má stejné lemma a jazyk jako už existující {{PLURAL:$1|lexém|lexémy}}:",
 	"duplicates-instructions": "Jste-li si jisti, že zadávaný lexém je odlišný, zatrhněte pole na konci formuláře.",
 	"no-duplicate": "Tento lexém není duplicitní k již existujícímu lexému.",
 	"advanced": "Pokročilé",
