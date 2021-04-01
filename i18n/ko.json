@@ -5,6 +5,7 @@
 		]
 	},
 	"create": "만들기",
+	"form-optional": "&#32;(선택 사항)",
 	"advanced": "고급",
 	"advanced-general": "\"고급\" 모드입니다.",
 	"bulk-link": "대량 모드",

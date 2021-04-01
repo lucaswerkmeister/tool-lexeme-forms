@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Minh Nguyen"
+		]
+	},
+	"create": "Tạo",
+	"form-optional": "&#32;(tùy chọn)",
+	"advanced": "Nâng cao",
+	"advanced-general": "Chế độ “nâng cao” được kích hoạt.",
+	"lexeme-id": "Số từ vị",
+	"advanced-partial-forms-hint": "Chuyển qua chế độ nâng cao để tạo từ vị thiếu dạng.",
+	"generated-via": "tạo bởi",
+	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=không có dạng|$2 dạng}} và {{PLURAL:$3|0=không có ngữ nghĩa|$3 ngữ nghĩa}}",
+	"bulk-link": "chế độ hàng loạt",
+	"bulk-format-help": "trợ giúp định dạng",
+	"bulk-not-allowed": "Rất tiếc, {{GENDER:$1}}Bạn không được pháp sử dụng chế độ hàng loạt.",
+	"edit-link": "sửa",
+	"edit-general": "Chế độ “sửa đổi” được kích hoạt. Việc thay đổi các giá trị bên dưới sẽ sửa đổi, thêm, hoặc xóa các dạng của từ vị.",
+	"edit-form-list-item": "$1, $2, {{PLURAL:$3|0=không có tuyên bố|$3 tuyên bố}}",
+	"no-grammatical-features": "không có thuộc tính ngữ pháp"
+}
