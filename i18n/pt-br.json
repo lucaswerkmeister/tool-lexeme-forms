@@ -7,6 +7,7 @@
 	"create": "Criar",
 	"csrf-warning": "Desculpe, não foi possível processar essa requisição (proteção contra <abbr title=\"Cross-site request forgery\">CSRF</abbr> falhou). Por favor, tente enviar o formulário novamente.",
 	"no-duplicate": "Isto não é uma duplicata de um lexema existente.",
+	"form-optional": "&#32;(opcional)",
 	"advanced": "Avançado",
 	"advanced-general": "Você está no modo “avançado”.",
 	"advanced-partial-forms": "Você pode deixar algumas formas vazias para evitar que sejam adicionadas. Garanta criar todas as formas necessárias!",
