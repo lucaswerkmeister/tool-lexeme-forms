@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block main_tag_attributes %}{{ super() }} lang="{{ template.language_code }}" dir="{{ template.language_code | text_direction }}"{% endblock main_tag_attributes %}
+{% block main_tag_attributes %}{{ super() }} lang="{{ g.interface_language_code | lang_int2html }}" dir="{{ g.interface_language_code | text_direction }}"{% endblock main_tag_attributes %}
 {% block main %}
   <div class="alert alert-info">
     {{ message_with_kwargs('bulk_not_allowed', user=None) }}

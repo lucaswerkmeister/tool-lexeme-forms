@@ -25,7 +25,7 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='template.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='edit.css') }}">
 {% endblock %}
-{% block main_tag_attributes %}{{ super() }} lang="{{ template.language_code }}" dir="{{ template.language_code | text_direction }}"{% endblock main_tag_attributes %}
+{% block main_tag_attributes %}{{ super() }} lang="{{ g.interface_language_code | lang_int2html }}" dir="{{ g.interface_language_code | text_direction }}"{% endblock main_tag_attributes %}
 {% block main %}
   <h1>{{ template.label }}</h1>
   <h2>

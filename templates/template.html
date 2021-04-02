@@ -7,7 +7,7 @@
 <script defer src="{{ url_for('static', filename='preventDoubleSubmit.js') }}"></script>
 <link rel="stylesheet" href="{{ url_for('static', filename='template.css') }}">
 {% endblock %}
-{% block main_tag_attributes %}{{ super() }} lang="{{ template.language_code }}" dir="{{ template.language_code | text_direction }}" data-template='{{ template | tojson }}'{% endblock main_tag_attributes %}
+{% block main_tag_attributes %}{{ super() }} lang="{{ g.interface_language_code | lang_int2html }}" dir="{{ g.interface_language_code | text_direction }}" data-template='{{ template | tojson }}'{% endblock main_tag_attributes %}
 {% block main %}
   <h1>{{ template.label }}</h1>
   {% if advanced %}
@@ -25,7 +25,7 @@
   </div>
   {% endif %}
   <form method="post" autocapitalize="off">
-    {{ duplicates | render_duplicates(template.language_code, actionable=True, template_name=template['@template_name'], form_representations=submitted_form_representations) | safe }}
+    {{ duplicates | render_duplicates(actionable=True, template_name=template['@template_name'], form_representations=submitted_form_representations) | safe }}
     <input name="_csrf_token" type="hidden" value="{{ csrf_token() }}">
     <input name="_advanced_mode" type="hidden" value="{{ advanced }}">
     {% if advanced %}
@@ -60,7 +60,7 @@
     </div>
     {% endif %}
     {% if duplicates %}
-    {{ render_no_duplicate(template.language_code) | safe }}
+    {{ render_no_duplicate(g.interface_language_code) | safe }}
     {% endif %}
     <button id="submit" class="btn btn-{% if not advanced %}primary{% else %}danger{% endif %}">{{ message( 'create' ) }}</button>
     {% if not advanced %}

@@ -17,6 +17,7 @@ import yaml
 
 from flask_utils import OrderedFlask, TagOrderedMultiDict, TagImmutableOrderedMultiDict
 from formatters import I18nFormatter
+from language import lang_lex2int, lang_int2html, lang_int2babel
 from language_names import autonym
 from matching import match_template_to_lexeme_data, match_lexeme_forms_to_template, match_template_entity_to_lexeme_entity
 from mwapi_utils import T272319RetryingSession
@@ -27,6 +28,9 @@ from translations import translations
 app = OrderedFlask(__name__)
 app.session_interface.serializer.register(TagOrderedMultiDict, index=0)
 app.session_interface.serializer.register(TagImmutableOrderedMultiDict, index=0)
+app.add_template_filter(lang_lex2int)
+app.add_template_filter(lang_int2html)
+app.add_template_filter(lang_int2babel)
 
 user_agent = toolforge.set_user_agent('lexeme-forms', email='mail@lucaswerkmeister.de')
 
@@ -99,7 +103,7 @@ def split_example(form):
         raise Exception('Invalid template: missing [placeholder]: ' + example)
 
 @app.template_filter()
-def render_duplicates(duplicates, language_code, actionable, template_name=None, form_representations=[]):
+def render_duplicates(duplicates, actionable, template_name=None, form_representations=[]):
     return flask.render_template(
         'duplicates.html',
         duplicates=duplicates,
@@ -154,14 +158,11 @@ def render_oauth_username():
 @app.template_global()
 def message(message_code, language_code=None):
     message, language = message_with_language(message_code, language_code)
-    return message
+    return add_lang_if_needed(message, language)
 
 def message_with_language(message_code, language_code=None):
     if not language_code:
         language_code = flask.g.interface_language_code
-    if language_code == 'bn-x-Q6747180':
-        # Manbhumi reuses the standard Bengali messages
-        language_code = 'bn'
     if message_code not in translations.get(language_code, {}):
         language_code = 'en'
     text = translations[language_code][message_code]
@@ -170,26 +171,41 @@ def message_with_language(message_code, language_code=None):
 @app.template_global()
 def message_with_kwargs(message_code, **kwargs):
     template, language = message_with_language(message_code)
-    if language == 'la':
-        language = 'en'  # Latin is not in CLDR, English has same plural forms
-    return I18nFormatter(locale_identifier=language,
-                         get_gender=get_gender).format(template, **kwargs)
+    message = I18nFormatter(locale_identifier=lang_int2babel(language),
+                            get_gender=get_gender).format(template, **kwargs)
+    message = flask.Markup(message)  # TODO propagate Markup through formatter
+    return add_lang_if_needed(message, language)
+
+def add_lang_if_needed(message, language_code):
+    if language_code == flask.g.interface_language_code:
+        return message
+    return (flask.Markup(r'<span lang="') +
+            flask.Markup.escape(lang_int2html(language_code)) +
+            flask.Markup(r'" dir="') +
+            flask.Markup.escape(text_direction(language_code)) +
+            flask.Markup(r'">') +
+            flask.Markup.escape(message) +
+            flask.Markup(r'</span>'))
 
 @app.template_filter()
 def text_direction(language_code):
+    babel_language_code = lang_int2babel(language_code)
     try:
-        locale = babel.Locale.parse(language_code.split('-')[0])  # the -x-Qid stuff is not understood by Babel
+        locale = babel.Locale.parse(babel_language_code)
     except babel.UnknownLocaleError:
+        print(f'Unrecognized Babel language code {babel_language_code} '
+              f'for interface language code {language_code}')
         return 'auto'
     else:
         return locale.text_direction
 
 @app.template_filter()
 def term_span(term):
+    interface_language_code = lang_lex2int(term['language'])
     return (flask.Markup(r'<span lang="') +
-            flask.Markup.escape(term['language']) +
+            flask.Markup.escape(lang_int2html(interface_language_code)) +
             flask.Markup(r'" dir="') +
-            flask.Markup.escape(text_direction(term['language'])) +
+            flask.Markup.escape(text_direction(interface_language_code)) +
             flask.Markup(r'">') +
             flask.Markup.escape(term['value']) +
             flask.Markup(r'</span>'))
@@ -202,10 +218,11 @@ def language_autonym_with_code(language_code):
     language_autonym = autonym(language_code)
     if language_autonym is None:
         return code_zxx
+    interface_language_code = lang_lex2int(language_code)
     return (flask.Markup(r'<span lang="') +
-            flask.Markup.escape(language_code) +
+            flask.Markup.escape(lang_int2html(interface_language_code)) +
             flask.Markup(r'" dir="') +
-            flask.Markup.escape(text_direction(language_code)) +
+            flask.Markup.escape(text_direction(interface_language_code)) +
             flask.Markup(r'">') +
             flask.Markup.escape(language_autonym) +
             flask.Markup(r' (') +
@@ -214,6 +231,7 @@ def language_autonym_with_code(language_code):
 
 @app.route('/')
 def index():
+    flask.g.interface_language_code = 'en'
     return flask.render_template(
         'index.html',
         templates=templates,
@@ -235,7 +253,7 @@ def process_template_advanced(template_name, advanced=True):
         return response
 
     template = templates[template_name]
-    flask.g.interface_language_code = template['language_code']
+    flask.g.interface_language_code = lang_lex2int(template['language_code'])
     form_data = flask.request.form
 
     if (flask.request.method == 'POST' and
@@ -278,12 +296,11 @@ def process_template_bulk(template_name):
         return response
 
     template = templates[template_name]
-    flask.g.interface_language_code = template['language_code']
+    flask.g.interface_language_code = lang_lex2int(template['language_code'])
 
     if not can_use_bulk_mode():
         return flask.render_template(
             'bulk-not-allowed.html',
-            template=template,
         )
 
     if (flask.request.method == 'POST' and
@@ -377,7 +394,7 @@ def process_template_edit(template_name, lexeme_id):
 
     template = templates[template_name]
     template_language_code = template['language_code']
-    flask.g.interface_language_code = template_language_code
+    flask.g.interface_language_code = lang_lex2int(template_language_code)
     representation_language_code = flask.request.args.get('language_code', template_language_code)
     wiki = 'test' if 'test' in template else 'www'
 
@@ -523,14 +540,13 @@ def get_lemma(form_data):
 @app.route('/api/v1/duplicates/<any(www,test):wiki>/<language_code>/<path:lemma>')
 @enableCORS
 def get_duplicates_api(wiki, language_code, lemma):
-    flask.g.interface_language_code = language_code
+    flask.g.interface_language_code = lang_lex2int(language_code)
     matches = get_duplicates(wiki, language_code, lemma)
     if not matches:
         return flask.Response(status=204)
     if flask.request.accept_mimetypes.accept_html:
         return render_duplicates(
             matches,
-            language_code,
             actionable=True,
             template_name=flask.request.args.get('template_name'),
         )
@@ -540,7 +556,7 @@ def get_duplicates_api(wiki, language_code, lemma):
 def get_duplicates(wiki, language_code, lemma):
     session = anonymous_session(f'https://{wiki}.wikidata.org')
 
-    api_language_code = 'bn' if language_code == 'bn-x-Q6747180' else language_code
+    api_language_code = lang_lex2int(language_code)
 
     response = session.get(
         action='wbsearchentities',
@@ -575,14 +591,14 @@ def get_duplicates(wiki, language_code, lemma):
 @app.route('/api/v1/no_duplicate/<language_code>')
 @app.template_global()
 def render_no_duplicate(language_code):
-    flask.g.interface_language_code = language_code
+    flask.g.interface_language_code = lang_lex2int(language_code)
     return flask.render_template(
         'no_duplicate.html',
     )
 
 @app.route('/api/v1/advanced_partial_forms_hint/<language_code>')
 def render_advanced_partial_forms_hint(language_code):
-    flask.g.interface_language_code = language_code
+    flask.g.interface_language_code = lang_lex2int(language_code)
     return flask.render_template(
         'advanced_partial_forms_hint.html',
     )
@@ -852,7 +868,7 @@ def add_labels_to_lexeme_forms_grammatical_features(session, language, lexeme_fo
         response = session.get(action='wbgetentities',
                                ids=chunk,
                                props=['labels'],
-                               languages=[language],
+                               languages=[lang_lex2int(language)],
                                languagefallback=1,  # TODO use True once mediawiki-utilities/python-mwapi#38 is in a released version
                                formatversion=2)
         for item_id, item in response['entities'].items():

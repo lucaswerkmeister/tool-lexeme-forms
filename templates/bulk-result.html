@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block main_tag_attributes %}{{ super() }} lang="{{ template.language_code }}" dir="{{ template.language_code | text_direction }}"{% endblock main_tag_attributes %}
+{% block main_tag_attributes %}{{ super() }} lang="{{ g.interface_language_code | lang_int2html }}" dir="{{ g.interface_language_code | text_direction }}"{% endblock main_tag_attributes %}
 {% block main %}
   <h1>{{ template.label }}</h1>
   <ul>
@@ -10,7 +10,7 @@
     <a href="{{ lexeme_uri }}">{{ lexeme_uri }}</a>
     {% elif result[0] == 'duplicates' %}
     {% set duplicates = result[1] %}
-    {{ duplicates | render_duplicates(template.language_code, actionable=False, template_name=template['@template_name']) | safe }}
+    {{ duplicates | render_duplicates(actionable=False, template_name=template['@template_name']) | safe }}
     {% else %}
     <div class="alert alert-error">Unknown result type {{ result[0] }}!</div>
     {% endif %}
