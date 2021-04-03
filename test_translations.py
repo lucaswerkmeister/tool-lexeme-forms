@@ -2,6 +2,7 @@ import pytest
 import re
 
 import formatters
+from language import lang_int2babel
 import translations
 
 
@@ -61,9 +62,8 @@ def test_message_html_elements(language_code, message_key):
 def test_message_syntax_valid_duplicates_warning(language_code, number):
     if 'duplicates_warning' in translations.translations[language_code]:
         message = translations.translations[language_code]['duplicates_warning']
-        babel_language_code = 'en' if language_code == 'la' else language_code
         formatters.I18nFormatter(
-            locale_identifier=babel_language_code,
+            locale_identifier=lang_int2babel(language_code),
             get_gender=unused,
         ).format(
             message,
@@ -74,9 +74,8 @@ def test_message_syntax_valid_duplicates_warning(language_code, number):
 def test_message_syntax_valid_duplicates_instructions(language_code, number):
     if 'duplicates_instructions' in translations.translations[language_code]:
         message = translations.translations[language_code]['duplicates_instructions']
-        babel_language_code = 'en' if language_code == 'la' else language_code
         formatters.I18nFormatter(
-            locale_identifier=babel_language_code,
+            locale_identifier=lang_int2babel(language_code),
             get_gender=unused,
         ).format(
             message,
@@ -87,9 +86,8 @@ def test_message_syntax_valid_duplicates_instructions(language_code, number):
 def test_message_syntax_valid_description_with_forms_and_senses(language_code, number):
     if 'description_with_forms_and_senses' in translations.translations[language_code]:
         message = translations.translations[language_code]['description_with_forms_and_senses']
-        babel_language_code = 'en' if language_code == 'la' else language_code
         formatters.I18nFormatter(
-            locale_identifier=babel_language_code,
+            locale_identifier=lang_int2babel(language_code),
             get_gender=unused,
         ).format(
             message,
@@ -102,9 +100,8 @@ def test_message_syntax_valid_description_with_forms_and_senses(language_code, n
 def test_message_syntax_valid_edit_ambiguous_warning(language_code, number):
     if 'edit_ambiguous_warning' in translations.translations[language_code]:
         message = translations.translations[language_code]['edit_ambiguous_warning']
-        babel_language_code = 'en' if language_code == 'la' else language_code
         formatters.I18nFormatter(
-            locale_identifier=babel_language_code,
+            locale_identifier=lang_int2babel(language_code),
             get_gender=unused,
         ).format(
             message,
@@ -115,9 +112,8 @@ def test_message_syntax_valid_edit_ambiguous_warning(language_code, number):
 def test_message_syntax_valid_edit_unmatched_warning(language_code, number):
     if 'edit_unmatched_warning' in translations.translations[language_code]:
         message = translations.translations[language_code]['edit_unmatched_warning']
-        babel_language_code = 'en' if language_code == 'la' else language_code
         formatters.I18nFormatter(
-            locale_identifier=babel_language_code,
+            locale_identifier=lang_int2babel(language_code),
             get_gender=unused,
         ).format(
             message,
@@ -128,9 +124,8 @@ def test_message_syntax_valid_edit_unmatched_warning(language_code, number):
 def test_message_syntax_valid_edit_form_list_item(language_code, list, number):
     if 'edit_form_list_item' in translations.translations[language_code]:
         message = translations.translations[language_code]['edit_form_list_item']
-        babel_language_code = 'en' if language_code == 'la' else language_code
         formatters.I18nFormatter(
-            locale_identifier=babel_language_code,
+            locale_identifier=lang_int2babel(language_code),
             get_gender=unused,
         ).format(
             message,
@@ -143,9 +138,8 @@ def test_message_syntax_valid_edit_form_list_item(language_code, list, number):
 def test_message_syntax_valid_bulk_not_allowed(language_code, gender):
     if 'bulk_not_allowed' in translations.translations[language_code]:
         message = translations.translations[language_code]['bulk_not_allowed']
-        babel_language_code = 'en' if language_code == 'la' else language_code
         formatters.I18nFormatter(
-            locale_identifier=babel_language_code,
+            locale_identifier=lang_int2babel(language_code),
             get_gender=lambda value: gender,
         ).format(
             message,
