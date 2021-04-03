@@ -3,6 +3,8 @@ import json
 import os
 import re
 
+from language import lang_int2babel
+
 
 def initial_titlecase(s):
     return s[:1].title() + s[1:]
@@ -68,9 +70,7 @@ def py2mw(py, variables, lists):
 
 
 def mw2py(mw, language, variables, lists):
-    if language == 'la':
-        language = 'en'  # Latin is not in CLDR, English has same plural forms
-    locale = babel.Locale(language)
+    locale = babel.Locale(lang_int2babel(language))
 
     def replace_plural(match):
         nonlocal locale, variables
