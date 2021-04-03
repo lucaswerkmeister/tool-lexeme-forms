@@ -1631,6 +1631,116 @@ templates = {
         ],
     },
 
+    'breton-noun-with-mutation-ktp': {
+        '@attribution': {'users': ['VIGNERON', 'Fulup'], 'title': 'Wikidata:Wikidata Lexeme Forms/Breton'},
+        'label': 'anvioù-kadarn (gant kemmadur, ktp)',
+        'language_item_id': 'Q12107',
+        'language_code': 'br',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'unander',
+                'example': 'Ho [tad] zo amañ.',
+                'grammatical_features_item_ids': ['Q110786', 'Q101252532'],
+            },
+            {
+                'label': 'unander',
+                'example': 'Da [dad] zo amañ.',
+                'grammatical_features_item_ids': ['Q110786', 'Q56648699'],
+            },
+            {
+                'label': 'unander',
+                'example': 'Ma [zad] zo amañ.',
+                'grammatical_features_item_ids': ['Q110786', 'Q56648701'],
+            },
+            {
+                'label': 'liester',
+                'example': 'Hon [tadoù] zo amañ.',
+                'grammatical_features_item_ids': ['Q146786', 'Q101252532'],
+            },
+            {
+                'label': 'liester',
+                'example': 'Da [dadoù] zo amañ.',
+                'grammatical_features_item_ids': ['Q146786', 'Q56648699'],
+            },
+            {
+                'label': 'liester',
+                'example': 'Ma [zadoù] zo amañ.',
+                'grammatical_features_item_ids': ['Q146786', 'Q56648701'],
+            },
+        ],
+    },
+
+    'breton-noun-with-mutation-gdb': {
+        '@attribution': {'users': ['VIGNERON', 'Fulup'], 'title': 'Wikidata:Wikidata Lexeme Forms/Breton'},
+        'label': 'anvioù-kadarn (gant kemmadur, gdb)',
+        'language_item_id': 'Q12107',
+        'language_code': 'br',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'unander',
+                'example': 'Ma [bag] zo amañ.',
+                'grammatical_features_item_ids': ['Q110786', 'Q101252532'],
+            },
+            {
+                'label': 'unander',
+                'example': 'Da [vag] zo amañ.',
+                'grammatical_features_item_ids': ['Q110786', 'Q56648699'],
+            },
+            {
+                'label': 'unander',
+                'example': 'Ho [pag] zo amañ.',
+                'grammatical_features_item_ids': ['Q110786', 'Q56648701'],
+            },
+            {
+                'label': 'liester',
+                'example': 'Ma [bagoù] zo amañ.',
+                'grammatical_features_item_ids': ['Q146786', 'Q101252532'],
+            },
+            {
+                'label': 'liester',
+                'example': 'Da [vagoù] zo amañ.',
+                'grammatical_features_item_ids': ['Q146786', 'Q56648699'],
+            },
+            {
+                'label': 'liester',
+                'example': 'Ho [pagoù] zo amañ.',
+                'grammatical_features_item_ids': ['Q146786', 'Q56648701'],
+            },
+        ],
+    },
+
+    'breton-noun-with-mutation-m': {
+        '@attribution': {'users': ['VIGNERON', 'Fulup'], 'title': 'Wikidata:Wikidata Lexeme Forms/Breton'},
+        'label': 'anvioù-kadarn (gant kemmadur)',
+        'language_item_id': 'Q12107',
+        'language_code': 'br',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'unander',
+                'example': 'Ho [mamm] zo amañ.',
+                'grammatical_features_item_ids': ['Q110786', 'Q101252532'],
+            },
+            {
+                'label': 'unander',
+                'example': 'Ma [vamm] zo amañ.',
+                'grammatical_features_item_ids': ['Q110786', 'Q56648699'],
+            },
+            {
+                'label': 'liester',
+                'example': 'Ho [mammoù] zo amañ.',
+                'grammatical_features_item_ids': ['Q146786', 'Q101252532'],
+            },
+            {
+                'label': 'liester',
+                'example': 'Ma [vammoù] zo amañ.',
+                'grammatical_features_item_ids': ['Q146786', 'Q56648699'],
+            },
+        ],
+    },
+
     'breton-adjective-without-mutation': {
         '@attribution': {'users': ['VIGNERON', 'Fulup'], 'title': 'Wikidata:Wikidata Lexeme Forms/Breton'},
         'label': 'anvioù-gwan (hep kemmadur)',
@@ -1657,6 +1767,21 @@ templates = {
                 'label': 'derez-estlammiñ',
                 'example': '[ledanat] tra !',
                 'grammatical_features_item_ids': ['Q93868909'],
+            },
+        ],
+    },
+
+    'breton-adverb': {
+        '@attribution': {'users': ['VIGNERON'], 'title': 'Wikidata:Wikidata Lexeme Forms/Breton'},
+        'label': 'adverb',
+        'language_item_id': 'Q12107',
+        'language_code': 'br',
+        'lexical_category_item_id': 'Q380057',
+        'forms': [
+            {
+                'label': 'adverb',
+                'example': 'Un dra zo [ivez].',
+                'grammatical_features_item_ids': [],
             },
         ],
     },
