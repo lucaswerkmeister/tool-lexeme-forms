@@ -1,3 +1,4 @@
+from markupsafe import Markup
 import pytest
 
 import formatters
@@ -15,6 +16,7 @@ def test_PluralFormatter_en(count, expected):
         count=count
     ) == expected
 
+
 @pytest.mark.parametrize('size, expected', [
     (1, '1 (0x0001) bajt'),
     (2, '2 (0x0002) bajtaj'),
@@ -28,6 +30,7 @@ def test_PluralFormatter_hsb(size, expected):
         '{size} (0x{size:04X}) {size!p:one=bajt:two=bajtaj:few=bajty:other=bajtow}',
         size=size
     ) == expected
+
 
 @pytest.mark.parametrize('num, expected', [
     (0, 'zero'),
@@ -43,12 +46,14 @@ def test_PluralFormatter_explicit(num, expected):
         num=num
     ) == expected
 
+
 def test_PluralFormatter_explicit_takes_precedence():
     plural_formatter = formatters.PluralFormatter(locale_identifier='en')
     assert plural_formatter.format(
         '{num!p:other=other:0=zero}',
         num=0
     ) == 'zero'
+
 
 @pytest.mark.parametrize('format_spec, type', [
     ('{!p}', KeyError),
@@ -60,10 +65,28 @@ def test_PluralFormatter_invalid_format_spec(format_spec, type):
     with pytest.raises(type):
         plural_formatter.format(format_spec, 1)
 
+
 def test_PluralFormatter_fallback():
     plural_formatter = formatters.PluralFormatter(locale_identifier='en')
     formatted = plural_formatter.format('prefix {val!p:0=zero:other="{val}"} suffix', val=1)
     assert formatted == 'prefix "1" suffix'
+
+
+@pytest.mark.parametrize('format_type, adjective_type, expected_str', [
+    (str, str, 'A single "<strong>cool</strong>" item.'),
+    (Markup, Markup, 'A single "<strong>cool</strong>" item.'),
+    (str, Markup, 'A single "<strong>cool</strong>" item.'),
+    (Markup, str, 'A single "&lt;strong&gt;cool&lt;/strong&gt;" item.'),
+])
+def test_PluralFormatter_MarkupSafe(format_type, adjective_type, expected_str):
+    plural_formatter = formatters.PluralFormatter(locale_identifier='en')
+    formatted = plural_formatter.format(
+        format_type('{count!p:one=A single "{adjective}" item.:other=Several "{adjective}" items.}'),
+        count=1,
+        adjective=adjective_type('<strong>cool</strong>'),
+    )
+    assert formatted == expected_str
+    assert type(formatted) == format_type
 
 
 @pytest.mark.parametrize('list, expected', [
@@ -98,6 +121,64 @@ def test_CommaSeparatedListFormatter_formats_list_items_with_format_spec():
         'The binaries are {sizes!l:04d} bytes large.',
         sizes=[64, 128, 256, 1024, 4096]
     ) == 'The binaries are 0064, 0128, 0256, 1024, and 4096 bytes large.'
+
+
+@pytest.mark.parametrize('format_type, item_type, expected_str', [
+    (str, str, 'I like <i>Python</i>.'),
+    (Markup, Markup, 'I like <i>Python</i>.'),
+    (str, Markup, 'I like <i>Python</i>.'),
+    (Markup, str, 'I like &lt;i&gt;Python&lt;/i&gt;.'),
+])
+def test_CommaSeparatedListFormatter_MarkupSafe_one_item(format_type, item_type, expected_str):
+    comma_separated_list_formatter = formatters.CommaSeparatedListFormatter(locale_identifier='en')
+    formatted = comma_separated_list_formatter.format(
+        format_type('I like {list!l}.'),
+        list=[
+            item_type('<i>Python</i>'),
+        ],
+    )
+    assert formatted == expected_str
+    assert type(formatted) == format_type
+
+
+@pytest.mark.parametrize('format_type, item_one_type, item_two_type, expected_str', [
+    (str, str, str, 'I like <i>Python</i> and <i>Wikidata</i>.'),
+    (Markup, Markup, Markup, 'I like <i>Python</i> and <i>Wikidata</i>.'),
+    (str, Markup, Markup, 'I like <i>Python</i> and <i>Wikidata</i>.'),
+    (Markup, str, str, 'I like &lt;i&gt;Python&lt;/i&gt; and &lt;i&gt;Wikidata&lt;/i&gt;.'),
+    (Markup, Markup, str, 'I like <i>Python</i> and &lt;i&gt;Wikidata&lt;/i&gt;.'),
+    (Markup, str, Markup, 'I like &lt;i&gt;Python&lt;/i&gt; and <i>Wikidata</i>.'),
+])
+def test_CommaSeparatedListFormatter_MarkupSafe_two_items(format_type, item_one_type, item_two_type, expected_str):
+    comma_separated_list_formatter = formatters.CommaSeparatedListFormatter(locale_identifier='en')
+    formatted = comma_separated_list_formatter.format(
+        format_type('I like {list!l}.'),
+        list=[
+            item_one_type('<i>Python</i>'),
+            item_two_type('<i>Wikidata</i>'),
+        ],
+    )
+    assert formatted == expected_str
+    assert type(formatted) == format_type
+
+
+@pytest.mark.parametrize('format_type, item_one_type, item_two_type, item_three_type, expected_str', [
+    (str, str, str, str, 'I like <i>Python</i>, <i>Wikidata</i>, and <i>Music</i>.'),
+    (Markup, Markup, Markup, Markup, 'I like <i>Python</i>, <i>Wikidata</i>, and <i>Music</i>.'),
+    (Markup, str, Markup, str, 'I like &lt;i&gt;Python&lt;/i&gt;, <i>Wikidata</i>, and &lt;i&gt;Music&lt;/i&gt;.'),
+])
+def test_CommaSeparatedListFormatter_MarkupSafe_three_items(format_type, item_one_type, item_two_type, item_three_type, expected_str):
+    comma_separated_list_formatter = formatters.CommaSeparatedListFormatter(locale_identifier='en')
+    formatted = comma_separated_list_formatter.format(
+        format_type('I like {list!l}.'),
+        list=[
+            item_one_type('<i>Python</i>'),
+            item_two_type('<i>Wikidata</i>'),
+            item_three_type('<i>Music</i>'),
+        ],
+    )
+    assert formatted == expected_str
+    assert type(formatted) == format_type
 
 
 @pytest.mark.parametrize('gender, expected', [
@@ -138,10 +219,29 @@ def test_GenderFormatter_fallback(gender):
     ) == 'Thank you!'
 
 
+@pytest.mark.parametrize('format_type, adjective_type, expected_str', [
+    (str, str, 'Please respect <em>their</em> <strong>correct</strong> pronouns.'),
+    (Markup, Markup, 'Please respect <em>their</em> <strong>correct</strong> pronouns.'),
+    (str, Markup, 'Please respect <em>their</em> <strong>correct</strong> pronouns.'),
+    (Markup, str, 'Please respect <em>their</em> &lt;strong&gt;correct&lt;/strong&gt; pronouns.'),
+])
+def test_GenderFormatter_MarkupSafe(format_type, adjective_type, expected_str):
+    gender_formatter = formatters.GenderFormatter(get_gender=lambda _: 'n')
+    formatted = gender_formatter.format(
+        format_type('Please respect {user!g:m=<em>his</em> {adjective}:f=<em>her</em> {adjective}:n=<em>their</em> {adjective}} pronouns.'),
+        user='user',
+        adjective=adjective_type('<strong>correct</strong>'),
+    )
+    assert formatted == expected_str
+    assert type(formatted) == format_type
+
+
+flac = '<abbr title="Free Lossless Audio Codec">FLAC</abbr>'
+
 @pytest.mark.parametrize('formats, user, expected', [
-    (['FLAC'], 'Keith', 'His preferred format is FLAC.'),
-    (['FLAC', 'OGG'], 'Keira', 'Her preferred formats are FLAC and OGG.'),
-    (['FLAC', 'OGG', 'OPUS'], 'Kim', 'Their preferred formats are FLAC, OGG, and OPUS.'),
+    ([Markup(flac)], 'Keith', f'His preferred format is {flac}.'),
+    ([Markup(flac), '"OGG"'], 'Keira', f'Her preferred formats are {flac} and &#34;OGG&#34;.'),
+    ([Markup(flac), '"OGG"', 'OPUS'], 'Kim', f'Their preferred formats are {flac}, &#34;OGG&#34;, and OPUS.'),
 ])
 def test_I18nFormatter_en(formats, user, expected):
     genders = {
@@ -151,9 +251,11 @@ def test_I18nFormatter_en(formats, user, expected):
     }
     i18n_formatter = formatters.I18nFormatter(locale_identifier='en',
                                               get_gender=lambda value: genders[value])
-    assert i18n_formatter.format(
-        '{user!g:m=His:f=Her:n=Their} preferred {count!p:one=format is:other=formats are} {formats!l}.',
+    formatted = i18n_formatter.format(
+        Markup('{user!g:m=His:f=Her:n=Their} preferred {count!p:one=format is:other=formats are} {formats!l}.'),
         user=user,
         count=len(formats),
         formats=formats
-    ) == expected
+    )
+    assert formatted == expected
+    assert isinstance(formatted, Markup)

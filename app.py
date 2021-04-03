@@ -173,7 +173,6 @@ def message_with_kwargs(message_code, **kwargs):
     template, language = message_with_language(message_code)
     message = I18nFormatter(locale_identifier=lang_int2babel(language),
                             get_gender=get_gender).format(template, **kwargs)
-    message = flask.Markup(message)  # TODO propagate Markup through formatter
     return add_lang_if_needed(message, language)
 
 def add_lang_if_needed(message, language_code):
@@ -317,8 +316,7 @@ def process_template_bulk(template_name):
                 'bulk_first_field_not_lexeme_id',
                 num_forms=error.num_forms,
                 num_fields=error.num_fields,
-                # TODO manual escape should not be needed
-                first_field=flask.Markup.escape(error.first_field),
+                first_field=error.first_field,
                 line_number=error.line_number,
             )
         except FirstFieldLexemeIdError as error:
@@ -326,8 +324,7 @@ def process_template_bulk(template_name):
                 'bulk_first_field_lexeme_id',
                 num_forms=error.num_forms,
                 num_fields=error.num_fields,
-                # TODO manual escape should not be needed
-                first_field=flask.Markup.escape(error.first_field),
+                first_field=error.first_field,
                 line_number=error.line_number,
             )
         except WrongNumberOfFieldsError as error:

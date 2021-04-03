@@ -1,13 +1,98 @@
+"""A collection of formatters for i18n messages.
+
+You usually want to use I18nFormatter, which combines all the other
+formatters in this module. Create it like this:
+
+    formatter = I18nFormatter(locale_identifier='en',
+                              get_gender=lambda arg: 'n')
+
+And then use format strings such as:
+
+    formatter.format('You have {count!p:one=one message:other={count} messages} from {users!l}.',
+                     count=len(messages),
+                     users=set(users))
+    formatter.format('Reply to {user!g:m=him:f=her:n=them}?',
+                     user=user)
+
+See the documentation of the other formatter classes for details on
+the supported conversions.
+
+If the markupsafe module is available, then all the formatters defined
+in this module become MarkupSafe-aware: if the format string is
+Markup, then the returned formatted value will also be Markup, and any
+non-Markup arguments will be escaped."""
+
+
 import babel
 import babel.lists
 import string
 
 
-class BaseI18nFormatter(string.Formatter):
-    """Empty base class stripping away constructor arguments."""
+try:
+    import markupsafe
+except ModuleNotFoundError:
+    markup_type = str
 
-    def __init__(self, **kwargs):
-        super().__init__()
+    class BaseI18nFormatter(string.Formatter):
+        """Base class of our i18n formatters."""
+
+        type_of_format_string = str
+
+        def __init__(self, **kwargs):
+            """Strip away all constructor arguments.
+
+            string.Formatter complains if it gets any constructor
+            arguments, but our individual constructors need to pass
+            through their constructor arguments so the classes can be
+            combined freely, so we throw away the arguments here."""
+            super().__init__()
+else:
+    markup_type = markupsafe.Markup
+
+    class BaseI18nFormatter(markupsafe.EscapeFormatter):
+        """Base class of our i18n formatters."""
+
+        """Empty base class stripping away constructor arguments and passing
+        the right escape method to MarkupSafe’s EscapeFormatter."""
+
+        type_of_format_string = None
+
+        def __init__(self, **kwargs):
+            """Use a context-sensitive escape function.
+
+            EscapeFormatter calls the escape function on all fields,
+            since it expects to be reached through Markup.format(),
+            i.e. we know we’ll want to produce Markup and escape
+            strings. We change this so that fields are only escaped if
+            the format string was Markup in the first place.
+
+            Also, throw away other constructor arguments, so that
+            string.Formatter doesn’t complain about them."""
+
+            def escape(s):
+                if issubclass(self.type_of_format_string, markupsafe.Markup):
+                    return markupsafe.Markup.escape(s)
+                else:
+                    return s
+
+            super().__init__(escape=escape)
+
+        def vformat(self, format_string, args, kwargs):
+            """Store the type of the format string and apply it to the result.
+
+            string.Formatter is partially implemented in C, so the
+            format spec when formatting individual fields is always a
+            string, never a Markup object. To still allow fields to
+            properly format themselves as markup, store the type of
+            the format string here. Also, apply it to the final result
+            of string formatting."""
+
+            self.type_of_format_string = type(format_string)
+            try:
+                ret = super().vformat(format_string, args, kwargs)
+                return self.type_of_format_string(ret)
+            finally:
+                self.type_of_format_string = None
 
 
 class PluralFormatter(BaseI18nFormatter):
@@ -49,7 +134,7 @@ class PluralFormatter(BaseI18nFormatter):
 
     def convert_field(self, value, conversion):
         if conversion == 'p':
-            return _Plural(value, self.locale)
+            return _Plural(value, self.locale, self.type_of_format_string)
         return super().convert_field(value, conversion)
 
 
@@ -58,11 +143,13 @@ class _Plural:
 
     This class formats itself as described in PluralFormatter."""
 
-    def __init__(self, value, locale):
+    def __init__(self, value, locale, type_of_format_spec):
         self.value = value
         self.locale = locale
+        self.type_of_format_spec = type_of_format_spec
 
     def __format__(self, format_spec):
+        format_spec = self.type_of_format_spec(format_spec)
         plurals = format_spec.split(':')
         value_eq = str(self.value) + '='
         for plural in plurals:
@@ -99,11 +186,15 @@ class CommaSeparatedListFormatter(BaseI18nFormatter):
     def __init__(self, *, locale_identifier, **kwargs):
         """The locale identifier must be understood by Locale.parse."""
         self.locale = babel.Locale.parse(locale_identifier)
+        # convert Babel’s list patterns to Markup
+        for style in self.locale.list_patterns:
+            for key, pattern in self.locale.list_patterns[style].items():
+                self.locale.list_patterns[style][key] = markup_type(pattern)
         super().__init__(locale_identifier=locale_identifier, **kwargs)
 
     def convert_field(self, value, conversion):
         if conversion == 'l':
-            return _CommaSeparatedList(value, self.locale)
+            return _CommaSeparatedList(value, self.locale, self.type_of_format_string, self.format_field)
         return super().convert_field(value, conversion)
 
 
@@ -112,12 +203,16 @@ class _CommaSeparatedList:
 
     This class formats itself as described in CommaSeparatedListFormatter."""
 
-    def __init__(self, value, locale):
+    def __init__(self, value, locale, type_of_format_spec, format_function):
         self.value = value
         self.locale = locale
+        self.type_of_format_spec = type_of_format_spec
+        self.format_function = format_function
 
     def __format__(self, format_spec):
-        return babel.lists.format_list([format(item, format_spec) for item in self.value], locale=self.locale)
+        format_spec = self.type_of_format_spec(format_spec)
+        formatted_values = [markup_type(self.format_function(item, format_spec)) for item in self.value]
+        return babel.lists.format_list(formatted_values, locale=self.locale)
 
 
 class GenderFormatter(BaseI18nFormatter):
@@ -142,7 +237,7 @@ class GenderFormatter(BaseI18nFormatter):
 
     def convert_field(self, value, conversion):
         if conversion == 'g':
-            return _Gender(value, self.get_gender)
+            return _Gender(value, self.get_gender, self.type_of_format_string)
         return super().convert_field(value, conversion)
 
 
@@ -151,11 +246,13 @@ class _Gender:
 
     This class formats itself as described in GenderFormatter."""
 
-    def __init__(self, value, get_gender):
+    def __init__(self, value, get_gender, type_of_format_spec):
         self.value = value
         self.get_gender = get_gender
+        self.type_of_format_spec = type_of_format_spec
 
     def __format__(self, format_spec):
+        format_spec = self.type_of_format_spec(format_spec)
         replacements = format_spec.split(':')
         gender = self.get_gender(self.value)
         gender_eq = gender + '='
