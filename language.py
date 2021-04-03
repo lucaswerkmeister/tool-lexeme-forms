@@ -36,7 +36,7 @@ def lang_int2html(code):
 
 
 def lang_int2babel(code):
-    """Convert a MediaWiki user language language code to a Babel one."""
+    """Convert a MediaWiki user interface language code to a Babel one."""
 
     # remove everything after -, interpreted differently by Babel
     code, separator, rest = code.partition('-')
