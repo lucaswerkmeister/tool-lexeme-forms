@@ -21,7 +21,7 @@ from language import lang_lex2int, lang_int2html, lang_int2babel
 from language_names import autonym
 from matching import match_template_to_lexeme_data, match_lexeme_forms_to_template, match_template_entity_to_lexeme_entity
 from mwapi_utils import T272319RetryingSession
-from parse_tpsv import parse_lexemes
+from parse_tpsv import parse_lexemes, FirstFieldNotLexemeIdError, FirstFieldLexemeIdError, WrongNumberOfFieldsError
 from templates import templates
 from translations import translations
 
@@ -308,9 +308,37 @@ def process_template_bulk(template_name):
             csrf_token_matches(flask.request.form)):
 
         form_data = flask.request.form
+        parse_error = None
         try:
             lexemes = parse_lexemes(form_data.get('lexemes'), template)
-        except ValueError as parse_error:
+        except FirstFieldNotLexemeIdError as error:
+            parse_error = message_with_kwargs(
+                'bulk_first_field_not_lexeme_id',
+                num_forms=error.num_forms,
+                num_fields=error.num_fields,
+                # TODO manual escape should not be needed
+                first_field=flask.Markup.escape(error.first_field),
+                line_number=error.line_number,
+            )
+        except FirstFieldLexemeIdError as error:
+            parse_error = message_with_kwargs(
+                'bulk_first_field_lexeme_id',
+                num_forms=error.num_forms,
+                num_fields=error.num_fields,
+                # TODO manual escape should not be needed
+                first_field=flask.Markup.escape(error.first_field),
+                line_number=error.line_number,
+            )
+        except WrongNumberOfFieldsError as error:
+            parse_error = message_with_kwargs(
+                'bulk_wrong_number_of_fields',
+                num_forms=error.num_forms,
+                num_fields=error.num_fields,
+                line_number=error.line_number,
+            )
+        except ValueError as error:
+            parse_error = str(error)
+        if parse_error is not None:
             return flask.render_template(
                 'bulk.html',
                 template=template,

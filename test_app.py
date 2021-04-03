@@ -1155,6 +1155,22 @@ def test_integration_edit(template_name):
         assert form['lexeme_forms'][0]['representations'][template['language_code']]['value'] == str(index)
 
 
+def test_bulk_error_no_xss(monkeypatch):
+    monkeypatch.setattr(lexeme_forms, 'if_needs_oauth_redirect', lambda *args, **kwargs: None)
+    monkeypatch.setattr(lexeme_forms, 'can_use_bulk_mode', lambda *args, **kwargs: True)
+    monkeypatch.setattr(lexeme_forms, 'csrf_token_matches', lambda *args, **kwargs: True)
+    with lexeme_forms.app.test_client() as client:
+        response = client.post('/template/english-noun/bulk/',
+                               data={
+                                   'lexemes': '<script>alert("xss")</script>|thing|things',
+                                   '_bulk_mode': '',
+                               })
+    response_text = response.get_data(as_text=True)
+    assert 'script' in response_text
+    assert 'xss' in response_text
+    assert '<script>' not in response_text
+
+
 def test_index_ids_distinct():
     """Test that all id attributes on the index page are distinct.
 

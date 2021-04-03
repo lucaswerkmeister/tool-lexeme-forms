@@ -36,6 +36,7 @@ def unused(*args, **kwargs):
 
 allowed_html_element_names = {
     'abbr',
+    'q',
 }
 
 
