@@ -309,6 +309,7 @@ def process_template_bulk(template_name):
 
         form_data = flask.request.form
         parse_error = None
+        show_optional_forms_hint = False
         try:
             lexemes = parse_lexemes(form_data.get('lexemes'), template)
         except FirstFieldNotLexemeIdError as error:
@@ -330,6 +331,7 @@ def process_template_bulk(template_name):
                 line_number=error.line_number,
             )
         except WrongNumberOfFieldsError as error:
+            show_optional_forms_hint = error.num_fields < error.num_forms
             parse_error = message_with_kwargs(
                 'bulk_wrong_number_of_fields',
                 num_forms=error.num_forms,
@@ -344,6 +346,7 @@ def process_template_bulk(template_name):
                 template=template,
                 value=form_data.get('lexemes'),
                 parse_error=parse_error,
+                show_optional_forms_hint=show_optional_forms_hint,
             )
 
         results = []
@@ -408,6 +411,7 @@ def process_template_bulk(template_name):
             placeholder=placeholder,
             value=value,
             csrf_error=csrf_error,
+            show_optional_forms_hint=False,
         )
 
 @app.route('/template/<template_name>/edit/<lexeme_id>', methods=['GET', 'POST'])

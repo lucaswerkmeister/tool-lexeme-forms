@@ -20,6 +20,11 @@
     {{ parse_error }}
   </div>
   {% endif %}
+  {% if show_optional_forms_hint %}
+  <div class="alert alert-info">
+    {{ message( 'bulk_optional_forms_hint' ) }}
+  </div>
+  {% endif %}
   <form method="post" autocapitalize="off">
     <input name="_csrf_token" type="hidden" value="{{ csrf_token() }}">
     <input name="_bulk_mode" type="hidden" value="">
