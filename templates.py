@@ -6365,7 +6365,7 @@ templates = {
                 'grammatical_features_item_ids': ['Q1392475'],
             },
             {
-                'label': 'സാമാന്യ ഭൂതകാലം',
+                'label': 'സാമാന്യ ഭാവികാലം',
                 'example': 'അവൾ [എഴുതും]',
                 'grammatical_features_item_ids': ['Q1475560'],
             },
