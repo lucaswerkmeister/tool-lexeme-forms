@@ -1713,7 +1713,7 @@ templates = {
 
     'breton-noun-with-mutation-m': {
         '@attribution': {'users': ['VIGNERON', 'Fulup'], 'title': 'Wikidata:Wikidata Lexeme Forms/Breton'},
-        'label': 'anvioù-kadarn (gant kemmadur)',
+        'label': 'anvioù-kadarn (gant kemmadur, m)',
         'language_item_id': 'Q12107',
         'language_code': 'br',
         'lexical_category_item_id': 'Q1084',
