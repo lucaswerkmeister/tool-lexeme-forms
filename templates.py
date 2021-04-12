@@ -1619,14 +1619,14 @@ templates = {
         'lexical_category_item_id': 'Q1084',
         'forms': [
             {
-                'label': 'unanderenn',
-                'example': 'Ma [steredenn] zo amañ.',
-                'grammatical_features_item_ids': ['Q1450795'],
-            },
-            {
                 'label': 'strollder',
                 'example': 'Ma [stered] zo amañ.',
                 'grammatical_features_item_ids': ['Q694268'],
+            },
+            {
+                'label': 'unanderenn',
+                'example': 'Ma [steredenn] zo amañ.',
+                'grammatical_features_item_ids': ['Q1450795'],
             },
         ],
     },
