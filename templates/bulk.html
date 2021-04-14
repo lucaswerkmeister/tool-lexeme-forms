@@ -32,6 +32,11 @@
       <textarea name="lexemes" class="form-control" rows="10" placeholder="{{ placeholder }}" required autofocus spellcheck="true">{% if value %}{{ value }}{% endif %}</textarea>
     </div>
     <!-- TODO generated_via should fit somewhere in here -->
-    <button class="btn btn-danger">{{ message( 'create' ) }}</button>
+    <button class="btn btn-danger"{% if readonly %} disabled {% endif %}>{{ message( 'create' ) }}</button>
+    {% if readonly %}
+    <span class="alert alert-warning">
+      {{ message_with_kwargs( 'login_hint', url=url_for( 'login' ) ) }}
+    </span>
+    {% endif %}
   </form>
 {% endblock main %}

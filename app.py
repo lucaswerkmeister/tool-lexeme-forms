@@ -297,21 +297,20 @@ def process_template_bulk(template_name):
     if response:
         return response
 
-    response = if_needs_oauth_redirect()
-    if response:
-        return response
-
     template = templates[template_name]
     flask.g.interface_language_code = lang_lex2int(template['language_code'])
 
-    if not can_use_bulk_mode():
+    readonly = 'oauth' in app.config and 'oauth_access_token' not in app.config
+
+    if not can_use_bulk_mode() and not readonly:
         return flask.render_template(
             'bulk-not-allowed.html',
         )
 
     if (flask.request.method == 'POST' and
             '_bulk_mode' in flask.request.form and
-            csrf_token_matches(flask.request.form)):
+            csrf_token_matches(flask.request.form) and
+            not readonly):
 
         form_data = flask.request.form
         parse_error = None
@@ -416,6 +415,7 @@ def process_template_bulk(template_name):
             value=value,
             csrf_error=csrf_error,
             show_optional_forms_hint=False,
+            readonly=readonly,
         )
 
 @app.route('/template/<template_name>/edit/<lexeme_id>', methods=['GET', 'POST'])
