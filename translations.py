@@ -64,6 +64,8 @@ def py2mw(py, variables, lists):
         elif conversion == 'l':
             assert variable in lists
             return f'${number}'
+        elif conversion == 'h':
+            return f'[${number} {format_spec}]'
         else:
             raise ValueError(f'Unknown conversion {conversion}')
     return re.sub(r'\{([^{}]|\{[^}]*\})*\}', replace, py)
@@ -104,6 +106,15 @@ def mw2py(mw, language, variables, lists):
             genders.append(f'{gender}={arg}')
         return '{' + variable + '!g:' + ':'.join(genders) + '}'
     py = re.sub(r'\{\{GENDER:\$([1-9][0-9]*)\|([^}]*)\}\}', replace_gender, py)
+
+    def replace_hyperlink(match):
+        nonlocal variables
+        number = int(match[1])
+        variable = variables[number - 1]
+        inner_html = match[2]
+        assert '{' not in inner_html and '}' not in inner_html
+        return '{' + variable + '!h:' + inner_html + '}'
+    py = re.sub(r'\[\$([1-9][0-9]*) ([^]]*)\]', replace_hyperlink, py)
 
     def replace_unconverted(match):
         nonlocal variables
