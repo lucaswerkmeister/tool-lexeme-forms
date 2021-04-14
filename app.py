@@ -147,10 +147,16 @@ def user_link(user_name):
             flask.Markup(r'</a>'))
 
 @app.template_global()
-def render_oauth_username():
+def authentication_area():
+    if 'oauth' not in app.config:
+        return flask.Markup()
+
     userinfo = get_userinfo()
     if userinfo is None:
-        return flask.Markup(r'')
+        return (flask.Markup(r'<a id="login" class="navbar-text" href="') +
+                flask.Markup.escape(flask.url_for('login')) +
+                flask.Markup(r'">Log in</a>'))
+
     return (flask.Markup(r'<span class="navbar-text">Logged in as ') +
             user_link(userinfo['name']) +
             flask.Markup(r'</span>'))

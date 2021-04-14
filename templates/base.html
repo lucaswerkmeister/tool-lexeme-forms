@@ -19,7 +19,7 @@
         <li class="nav-item"><a href="//tools.wmflabs.org/" class="nav-link">Wikimedia Toolforge</a></li>
         <li class="nav-item"><a href="https://phabricator.wikimedia.org/source/tool-lexeme-forms/" class="nav-link">Source code</a></li>
       </ul>
-      {{ render_oauth_username() }}
+      {{ authentication_area() }}
     </nav>
     <main id="main" {% block main_tag_attributes %}class="container mt-3"{% endblock main_tag_attributes %}>
       {% block main %}
