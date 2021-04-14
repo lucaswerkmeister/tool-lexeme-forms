@@ -236,12 +236,36 @@ def test_GenderFormatter_MarkupSafe(format_type, adjective_type, expected_str):
     assert type(formatted) == format_type
 
 
+def test_HyperlinkFormatter():
+    hyperlink_formatter = formatters.HyperlinkFormatter()
+    assert hyperlink_formatter.format(
+        'You need to {url!h:log in} before you can edit.',
+        url='/login',
+    ) == 'You need to <a href="/login">log in</a> before you can edit.'
+
+
+@pytest.mark.parametrize('format_type, url_type, expected_str', [
+    (str, str, 'You need to <a href="/login"">log <em>in</em></a> before you can edit.'),
+    (Markup, Markup, 'You need to <a href="/login"">log <em>in</em></a> before you can edit.'),
+    (str, Markup, 'You need to <a href="/login"">log <em>in</em></a> before you can edit.'),
+    (Markup, str, 'You need to <a href="/login&#34;">log <em>in</em></a> before you can edit.'),
+])
+def test_HyperlinkFormatter_MarkupSafe(format_type, url_type, expected_str):
+    hyperlink_formatter = formatters.HyperlinkFormatter()
+    formatted = hyperlink_formatter.format(
+        format_type('You need to {url!h:log <em>in</em>} before you can edit.'),
+        url=url_type('/login"'),
+    )
+    assert formatted == expected_str
+    assert type(formatted) == format_type
+
+
 flac = '<abbr title="Free Lossless Audio Codec">FLAC</abbr>'
 
 @pytest.mark.parametrize('formats, user, expected', [
-    ([Markup(flac)], 'Keith', f'His preferred format is {flac}.'),
-    ([Markup(flac), '"OGG"'], 'Keira', f'Her preferred formats are {flac} and &#34;OGG&#34;.'),
-    ([Markup(flac), '"OGG"', 'OPUS'], 'Kim', f'Their preferred formats are {flac}, &#34;OGG&#34;, and OPUS.'),
+    ([Markup(flac)], 'Keith', f'His preferred <a href="/wiki/Format">format</a> is {flac}.'),
+    ([Markup(flac), '"OGG"'], 'Keira', f'Her preferred <a href="/wiki/Format">formats</a> are {flac} and &#34;OGG&#34;.'),
+    ([Markup(flac), '"OGG"', 'OPUS'], 'Kim', f'Their preferred <a href="/wiki/Format">formats</a> are {flac}, &#34;OGG&#34;, and OPUS.'),
 ])
 def test_I18nFormatter_en(formats, user, expected):
     genders = {
@@ -252,10 +276,11 @@ def test_I18nFormatter_en(formats, user, expected):
     i18n_formatter = formatters.I18nFormatter(locale_identifier='en',
                                               get_gender=lambda value: genders[value])
     formatted = i18n_formatter.format(
-        Markup('{user!g:m=His:f=Her:n=Their} preferred {count!p:one=format is:other=formats are} {formats!l}.'),
+        Markup('{user!g:m=His:f=Her:n=Their} preferred {count!p:one={url!h:format} is:other={url!h:formats} are} {formats!l}.'),
         user=user,
         count=len(formats),
-        formats=formats
+        formats=formats,
+        url='/wiki/Format',
     )
     assert formatted == expected
     assert isinstance(formatted, Markup)

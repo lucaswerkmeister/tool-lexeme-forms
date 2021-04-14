@@ -73,7 +73,7 @@ def form2label(form):
 
 @app.template_filter()
 @jinja2.contextfilter
-def form2input(context, form, first=False, template_language_code=None, representation_language_code=None):
+def form2input(context, form, first=False, readonly=False, template_language_code=None, representation_language_code=None):
     (prefix, placeholder, suffix) = split_example(form)
     if 'lexeme_forms' in form and template_language_code != representation_language_code:
         placeholder = '/'.join(lexeme_form['representations'][template_language_code]['value']
@@ -86,6 +86,7 @@ def form2input(context, form, first=False, template_language_code=None, represen
             flask.Markup(r'"') +
             flask.Markup(r' pattern="[^/]+(?:/[^/]+)*"') +
             (flask.Markup(r' required') if not optional else flask.Markup('')) +
+            (flask.Markup(r' disabled') if readonly else flask.Markup('')) +
             (flask.Markup(r' autofocus') if first else flask.Markup('')) +
             (flask.Markup(r' value="') + flask.Markup.escape(form['value']) + flask.Markup(r'"') if 'value' in form else flask.Markup('')) +
             flask.Markup(r' spellcheck="true"') +
@@ -253,16 +254,15 @@ def process_template_advanced(template_name, advanced=True):
     if response:
         return response
 
-    response = if_needs_oauth_redirect()
-    if response:
-        return response
-
     template = templates[template_name]
     flask.g.interface_language_code = lang_lex2int(template['language_code'])
     form_data = flask.request.form
 
+    readonly = 'oauth' in app.config and 'oauth_access_token' not in flask.session
+
     if (flask.request.method == 'POST' and
-            form_data.get('_advanced_mode', 'None') == str(advanced)):
+            form_data.get('_advanced_mode', 'None') == str(advanced) and
+            not readonly):
         response = if_has_duplicates_redirect(template, advanced, form_data)
         if response:
             return response
@@ -288,6 +288,7 @@ def process_template_advanced(template_name, advanced=True):
             template=add_form_data_to_template(form_data, template),
             advanced=advanced,
             can_use_bulk_mode=can_use_bulk_mode(),
+            readonly=readonly,
         )
 
 @app.route('/template/<template_name>/bulk/', methods=['GET', 'POST'])
@@ -296,21 +297,20 @@ def process_template_bulk(template_name):
     if response:
         return response
 
-    response = if_needs_oauth_redirect()
-    if response:
-        return response
-
     template = templates[template_name]
     flask.g.interface_language_code = lang_lex2int(template['language_code'])
 
-    if not can_use_bulk_mode():
+    readonly = 'oauth' in app.config and 'oauth_access_token' not in app.config
+
+    if not can_use_bulk_mode() and not readonly:
         return flask.render_template(
             'bulk-not-allowed.html',
         )
 
     if (flask.request.method == 'POST' and
             '_bulk_mode' in flask.request.form and
-            csrf_token_matches(flask.request.form)):
+            csrf_token_matches(flask.request.form) and
+            not readonly):
 
         form_data = flask.request.form
         parse_error = None
@@ -415,15 +415,12 @@ def process_template_bulk(template_name):
             value=value,
             csrf_error=csrf_error,
             show_optional_forms_hint=False,
+            readonly=readonly,
         )
 
 @app.route('/template/<template_name>/edit/<lexeme_id>', methods=['GET', 'POST'])
 def process_template_edit(template_name, lexeme_id):
     response = if_no_such_template_redirect(template_name)
-    if response:
-        return response
-
-    response = if_needs_oauth_redirect()
     if response:
         return response
 
@@ -450,9 +447,12 @@ def process_template_edit(template_name, lexeme_id):
     template['lexeme_id'] = lexeme_id
     template['lexeme_revision'] = lexeme_revision
 
+    readonly = 'oauth' in app.config and 'oauth_access_token' not in flask.session
+
     if (flask.request.method == 'POST' and
             '_edit_mode' in flask.request.form and
-            csrf_token_matches(flask.request.form)):
+            csrf_token_matches(flask.request.form) and
+            not readonly):
         form_data = flask.request.form
         lexeme_data = update_lexeme(lexeme_data, template, form_data, representation_language_code, missing_statements=lexeme_match['missing_statements'])
         summary = build_summary(template, form_data)
@@ -490,6 +490,7 @@ def process_template_edit(template_name, lexeme_id):
         representation_language_code=representation_language_code,
         advanced=True,  # for form2input
         csrf_error=flask.request.method == 'POST',
+        readonly=readonly,
     )
 
 def if_no_such_template_redirect(template_name):
@@ -498,12 +499,6 @@ def if_no_such_template_redirect(template_name):
             'no-such-template.html',
             template_name=template_name,
         )
-    else:
-        return None
-
-def if_needs_oauth_redirect():
-    if 'oauth' in app.config and 'oauth_access_token' not in flask.session:
-        return login(from_other_url=True)
     else:
         return None
 
@@ -521,14 +516,11 @@ def oauth_callback():
     return flask.redirect(redirect_target or flask.url_for('index'))
 
 @app.route('/login')
-def login(from_other_url=False):
+def login():
     if 'oauth' in app.config:
         (redirect, request_token) = mwoauth.initiate('https://www.wikidata.org/w/index.php', consumer_token, user_agent=user_agent)
         flask.session['oauth_request_token'] = dict(zip(request_token._fields, request_token))
-        if from_other_url:
-            # login() is usually called via if_needs_oauth_redirect() from a different URL –
-            # if /login was loaded directly, don’t redirect back to it afterwards
-            flask.session['oauth_redirect_target'] = current_url()
+        flask.session['oauth_redirect_target'] = flask.request.referrer
         return flask.redirect(redirect)
     else:
         return flask.redirect(flask.url_for('index'))

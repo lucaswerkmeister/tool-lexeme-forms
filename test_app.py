@@ -2,7 +2,6 @@ import copy
 import flask
 from html.parser import HTMLParser
 import json
-import mwoauth
 import pytest
 import werkzeug
 
@@ -25,6 +24,10 @@ def test_form2input_optional():
 def test_form2input_first():
     markup = lexeme_forms.form2input({'advanced': True}, {'example': 'Left [placeholder] right.'}, first=True)
     assert str(markup) == 'Left <input type="text" name="form_representation" placeholder="placeholder" pattern="[^/]+(?:/[^/]+)*" autofocus spellcheck="true"> right.'
+
+def test_form2input_readonly():
+    markup = lexeme_forms.form2input({'advanced': False}, {'example': 'Left [placeholder] right.'}, readonly=True)
+    assert str(markup) == 'Left <input type="text" name="form_representation" placeholder="placeholder" pattern="[^/]+(?:/[^/]+)*" required disabled spellcheck="true"> right.'
 
 def test_form2input_preserve_value():
     markup = lexeme_forms.form2input({'advanced': True}, {'example': 'Left [placeholder] right.', 'value': 'value'})
@@ -115,25 +118,6 @@ def test_if_no_such_template_redirect_unknown_template():
     assert type(response) is str
     assert 'alert' in response
     assert template_name in response
-
-def test_if_needs_oauth_redirect_not_configured(monkeypatch):
-    monkeypatch.delitem(lexeme_forms.app.config, 'oauth', raising=False)
-    assert lexeme_forms.if_needs_oauth_redirect() is None
-
-def test_if_needs_oauth_redirect_logged_in(monkeypatch):
-    monkeypatch.setitem(lexeme_forms.app.config, 'oauth', {})
-    with lexeme_forms.app.test_request_context() as context:
-        context.session['oauth_access_token'] = 'test token'
-        assert lexeme_forms.if_needs_oauth_redirect() is None
-
-def test_if_needs_oauth_redirect_not_logged_in(monkeypatch):
-    monkeypatch.setitem(lexeme_forms.app.config, 'oauth', {})
-    monkeypatch.setattr(lexeme_forms, 'consumer_token', mwoauth.ConsumerToken('test key', 'test secret'), raising=False)
-    monkeypatch.setattr(mwoauth, 'initiate', lambda mw_uri, consumer_token, user_agent: ('test redirect', mwoauth.RequestToken('test key', 'test secret')))
-    with lexeme_forms.app.test_request_context() as context:  # noqa: F841
-        response = lexeme_forms.if_needs_oauth_redirect()
-    assert response is not None
-    assert str(response.status_code).startswith('3')
 
 def test_if_has_duplicates_redirect_checkbox_checked():
     assert lexeme_forms.if_has_duplicates_redirect(
@@ -1156,7 +1140,6 @@ def test_integration_edit(template_name):
 
 
 def test_bulk_error_no_xss(monkeypatch):
-    monkeypatch.setattr(lexeme_forms, 'if_needs_oauth_redirect', lambda *args, **kwargs: None)
     monkeypatch.setattr(lexeme_forms, 'can_use_bulk_mode', lambda *args, **kwargs: True)
     monkeypatch.setattr(lexeme_forms, 'csrf_token_matches', lambda *args, **kwargs: True)
     with lexeme_forms.app.test_client() as client:

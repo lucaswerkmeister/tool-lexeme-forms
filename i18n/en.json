@@ -31,5 +31,6 @@
 	"edit-ambiguous-warning": "The following lexeme {{PLURAL:$1|form|forms}} matched more than one template form equally well:",
 	"edit-unmatched-warning": "The following lexeme {{PLURAL:$1|form|forms}} did not match any of the template forms:",
 	"edit-form-list-item": "$1, $2, {{PLURAL:$3|0=no statements|one statement|$3 statements}}",
-	"no-grammatical-features": "no grammatical features"
+	"no-grammatical-features": "no grammatical features",
+	"login-hint": "You need to [$1 log in] before you can make changes using this tool."
 }
