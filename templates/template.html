@@ -10,6 +10,11 @@
 {% block main_tag_attributes %}{{ super() }} lang="{{ g.interface_language_code | lang_int2html }}" dir="{{ g.interface_language_code | text_direction }}" data-template='{{ template | tojson }}'{% endblock main_tag_attributes %}
 {% block main %}
   <h1>{{ template.label }}</h1>
+  {% if readonly %}
+  <div class="alert alert-warning">
+    {{ message_with_kwargs( 'login_hint', url=url_for( 'login' ) ) }}
+  </div>
+  {% endif %}
   {% if advanced %}
   <div class="alert alert-primary">
     {{ message( 'advanced_general' ) }}
@@ -62,17 +67,12 @@
     {% if duplicates %}
     {{ render_no_duplicate(g.interface_language_code) | safe }}
     {% endif %}
-    <button id="submit" class="btn btn-{% if not advanced %}primary{% else %}danger{% endif %}"{% if readonly %} disabled {% endif %}>{{ message( 'create' ) }}</button>
+    <button id="submit" class="btn btn-{% if not advanced %}primary{% else %}danger{% endif %}"{% if readonly %} disabled title="{{ message_with_kwargs( 'login_hint', url=url_for( 'login' ) ) | striptags }}" {% endif %}>{{ message( 'create' ) }}</button>
     {% if not advanced %}
     <button formnovalidate formaction="{{ url_for('process_template_advanced', template_name=template['@template_name']) }}" class="btn btn-secondary">{{ message( 'advanced' ) }}</button>
     {% endif %}
     {% if can_use_bulk_mode %}
     <button formnovalidate formaction="{{ url_for('process_template_bulk', template_name=template['@template_name']) }}" class="btn btn-secondary">{{ message('bulk_button') }}</button>
-    {% endif %}
-    {% if readonly %}
-    <span class="alert alert-warning">
-      {{ message_with_kwargs( 'login_hint', url=url_for( 'login' ) ) }}
-    </span>
     {% endif %}
   </form>
 {% endblock main %}

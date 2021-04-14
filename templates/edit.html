@@ -37,6 +37,11 @@
       ({{ template.lexeme_id }})
     </a>
   </h2>
+  {% if readonly %}
+  <div class="alert alert-warning">
+    {{ message_with_kwargs( 'login_hint', url=url_for( 'login' ) ) }}
+  </div>
+  {% endif %}
   {% if not lexeme_matches_template %}
   <div class="alert alert-danger">
     {{ message( 'edit_mismatch_warning' ) }}
@@ -91,11 +96,6 @@
         <div class="section-spacer"></div>
       </div>
     </dl>
-    <button class="btn btn-primary"{% if readonly %} disabled {% endif %}>{{ message( 'edit_button' ) }}</button>
-    {% if readonly %}
-    <span class="alert alert-warning">
-      {{ message_with_kwargs( 'login_hint', url=url_for( 'login' ) ) }}
-    </span>
-    {% endif %}
+    <button class="btn btn-primary"{% if readonly %} disabled title="{{ message_with_kwargs( 'login_hint', url=url_for( 'login' ) ) | striptags }}" {% endif %}>{{ message( 'edit_button' ) }}</button>
   </form>
 {% endblock main %}
