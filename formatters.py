@@ -46,6 +46,12 @@ except ModuleNotFoundError:
             through their constructor arguments so the classes can be
             combined freely, so we throw away the arguments here."""
             super().__init__()
+
+        def escape(self, s):
+            """No-op function with a signature matching the escape below.
+
+            Used by HyperlinkFormatter / _Hyperlink."""
+            return s
 else:
     markup_type = markupsafe.Markup
 
@@ -266,8 +272,51 @@ class _Gender:
         raise KeyError('No replacement for gender "{}" or "m" found in format spec "{}"!'.format(gender, format_spec))
 
 
-class I18nFormatter(PluralFormatter, CommaSeparatedListFormatter, GenderFormatter):
+class HyperlinkFormatter(BaseI18nFormatter):
+    """A string formatter supporting an !h hyperlink conversion.
 
-    """A string formatter supporting !p (plural), !l (list) and !g (gender) conversions.
+    Format string example:
 
-    See PluralFormatter, CommaSeparatedListFormatter and GenderFormatter for details."""
+        "You need to {url!h:log in} before you can edit."
+
+    The formatted value is interpreted as the href attribute of an
+    HTML <a> element, whose inner HTML is given by the format spec."""
+
+    def convert_field(self, value, conversion):
+        if conversion == 'h':
+            return _Hyperlink(value, self.type_of_format_string, self.escape)
+        return super().convert_field(value, conversion)
+
+
+class _Hyperlink:
+    """Wrapper around a URL with special formatting.
+
+    This class formats itself as described in HyperlinkFormatter."""
+
+    def __init__(self, value, type_of_format_spec, escape):
+        self.value = value
+        self.type_of_format_spec = type_of_format_spec
+        self.escape = escape
+
+    def __format__(self, format_spec):
+        format_spec = self.type_of_format_spec(format_spec)
+        # turn the value into the type of the format spec,
+        # so that if format spec is str and value is Markup,
+        # the value doesn’t escape everything around it –
+        # but first escape the value, in case it’s str
+        # and the format spec is Markup
+        value = self.type_of_format_spec(self.escape(self.value))
+        return (self.type_of_format_spec(r'<a href="') +
+                value +
+                self.type_of_format_spec(r'">') +
+                format_spec +
+                self.type_of_format_spec(r'</a>'))
+
+
+class I18nFormatter(PluralFormatter, CommaSeparatedListFormatter, GenderFormatter, HyperlinkFormatter):
+
+    """A string formatter supporting !p (plural), !l (list),
+    !g (gender) and !h (hyperlink) conversions.
+
+    See PluralFormatter, CommaSeparatedListFormatter,
+    HyperlinkFormatter and GenderFormatter for details."""
