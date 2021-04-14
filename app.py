@@ -254,16 +254,15 @@ def process_template_advanced(template_name, advanced=True):
     if response:
         return response
 
-    response = if_needs_oauth_redirect()
-    if response:
-        return response
-
     template = templates[template_name]
     flask.g.interface_language_code = lang_lex2int(template['language_code'])
     form_data = flask.request.form
 
+    readonly = 'oauth' in app.config and 'oauth_access_token' not in flask.session
+
     if (flask.request.method == 'POST' and
-            form_data.get('_advanced_mode', 'None') == str(advanced)):
+            form_data.get('_advanced_mode', 'None') == str(advanced) and
+            not readonly):
         response = if_has_duplicates_redirect(template, advanced, form_data)
         if response:
             return response
@@ -289,6 +288,7 @@ def process_template_advanced(template_name, advanced=True):
             template=add_form_data_to_template(form_data, template),
             advanced=advanced,
             can_use_bulk_mode=can_use_bulk_mode(),
+            readonly=readonly,
         )
 
 @app.route('/template/<template_name>/bulk/', methods=['GET', 'POST'])
