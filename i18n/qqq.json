@@ -32,5 +32,6 @@
 	"edit-ambiguous-warning": "Warning message displayed in “edit” mode when some forms of the lexeme are ambiguous between multiple forms of the template (e. g. the template has nominative singular and accusative singular, and the form only has grammatical feature singular).\n\nParameters:\n* $1 – the number of affected forms",
 	"edit-unmatched-warning": "Warning message displayed in “edit mode” when some forms of the lexeme don’t match any forms of the template (e. g. the form has no grammatical features).\n\nParameters:\n* $1 – the number of affected forms",
 	"edit-form-list-item": "Template to display a lexeme form in the above two messages.\n\nParameters:\n* $1 – the form representation and ID as a link\n* $2 – the list of its grammatical features\n* $3 – the number of its statements",
-	"no-grammatical-features": "Text used in place of a list of grammatical features when a form has no grammatical features yet."
+	"no-grammatical-features": "Text used in place of a list of grammatical features when a form has no grammatical features yet.",
+	"login-hint": "Message shown to the user when they are not logged in, but are looking at a page that would allow logged-in users to make edits (basically any page other than the index page).\n\nParameters:\n* $1 – the URL for the login link"
 }

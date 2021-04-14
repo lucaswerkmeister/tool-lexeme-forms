@@ -25,6 +25,7 @@ variables = {
     'edit_ambiguous_warning': ['forms'],
     'edit_unmatched_warning': ['forms'],
     'edit_form_list_item': ['form_link', 'grammatical_feature_labels', 'statements'],
+    'login_hint': ['url'],
 }
 lists = {
     'edit_form_list_item': {'grammatical_feature_labels'},

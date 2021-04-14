@@ -73,7 +73,7 @@ def form2label(form):
 
 @app.template_filter()
 @jinja2.contextfilter
-def form2input(context, form, first=False, template_language_code=None, representation_language_code=None):
+def form2input(context, form, first=False, readonly=False, template_language_code=None, representation_language_code=None):
     (prefix, placeholder, suffix) = split_example(form)
     if 'lexeme_forms' in form and template_language_code != representation_language_code:
         placeholder = '/'.join(lexeme_form['representations'][template_language_code]['value']
@@ -86,6 +86,7 @@ def form2input(context, form, first=False, template_language_code=None, represen
             flask.Markup(r'"') +
             flask.Markup(r' pattern="[^/]+(?:/[^/]+)*"') +
             (flask.Markup(r' required') if not optional else flask.Markup('')) +
+            (flask.Markup(r' disabled') if readonly else flask.Markup('')) +
             (flask.Markup(r' autofocus') if first else flask.Markup('')) +
             (flask.Markup(r' value="') + flask.Markup.escape(form['value']) + flask.Markup(r'"') if 'value' in form else flask.Markup('')) +
             flask.Markup(r' spellcheck="true"') +
@@ -423,10 +424,6 @@ def process_template_edit(template_name, lexeme_id):
     if response:
         return response
 
-    response = if_needs_oauth_redirect()
-    if response:
-        return response
-
     template = templates[template_name]
     template_language_code = template['language_code']
     flask.g.interface_language_code = lang_lex2int(template_language_code)
@@ -450,9 +447,12 @@ def process_template_edit(template_name, lexeme_id):
     template['lexeme_id'] = lexeme_id
     template['lexeme_revision'] = lexeme_revision
 
+    readonly = 'oauth' in app.config and 'oauth_access_token' not in flask.session
+
     if (flask.request.method == 'POST' and
             '_edit_mode' in flask.request.form and
-            csrf_token_matches(flask.request.form)):
+            csrf_token_matches(flask.request.form) and
+            not readonly):
         form_data = flask.request.form
         lexeme_data = update_lexeme(lexeme_data, template, form_data, representation_language_code, missing_statements=lexeme_match['missing_statements'])
         summary = build_summary(template, form_data)
@@ -490,6 +490,7 @@ def process_template_edit(template_name, lexeme_id):
         representation_language_code=representation_language_code,
         advanced=True,  # for form2input
         csrf_error=flask.request.method == 'POST',
+        readonly=readonly,
     )
 
 def if_no_such_template_redirect(template_name):

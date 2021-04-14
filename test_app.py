@@ -26,6 +26,10 @@ def test_form2input_first():
     markup = lexeme_forms.form2input({'advanced': True}, {'example': 'Left [placeholder] right.'}, first=True)
     assert str(markup) == 'Left <input type="text" name="form_representation" placeholder="placeholder" pattern="[^/]+(?:/[^/]+)*" autofocus spellcheck="true"> right.'
 
+def test_form2input_readonly():
+    markup = lexeme_forms.form2input({'advanced': False}, {'example': 'Left [placeholder] right.'}, readonly=True)
+    assert str(markup) == 'Left <input type="text" name="form_representation" placeholder="placeholder" pattern="[^/]+(?:/[^/]+)*" required disabled spellcheck="true"> right.'
+
 def test_form2input_preserve_value():
     markup = lexeme_forms.form2input({'advanced': True}, {'example': 'Left [placeholder] right.', 'value': 'value'})
     assert str(markup) == 'Left <input type="text" name="form_representation" placeholder="placeholder" pattern="[^/]+(?:/[^/]+)*" value="value" spellcheck="true"> right.'

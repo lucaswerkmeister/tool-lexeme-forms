@@ -85,12 +85,17 @@
         {% endif %}
         <div class="form">
           <dt>{{ form | form2label }}</dt>
-          <dd>{{ form | form2input(loop.first, template_language_code, representation_language_code) }}</dd>
+          <dd>{{ form | form2input(loop.first, readonly, template_language_code, representation_language_code) }}</dd>
         </div>
         {% endfor %}
         <div class="section-spacer"></div>
       </div>
     </dl>
-    <button class="btn btn-primary">{{ message( 'edit_button' ) }}</button>
+    <button class="btn btn-primary"{% if readonly %} disabled {% endif %}>{{ message( 'edit_button' ) }}</button>
+    {% if readonly %}
+    <span class="alert alert-warning">
+      {{ message_with_kwargs( 'login_hint', url=url_for( 'login' ) ) }}
+    </span>
+    {% endif %}
   </form>
 {% endblock main %}
