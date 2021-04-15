@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Djiboun",
+			"Gomoko",
 			"Scratcheur-2020Send",
 			"Thibaut120094",
 			"Verdy p"
@@ -34,5 +35,6 @@
 	"edit-ambiguous-warning": "{{PLURAL:$1|La forme suivante|Les formes suivantes}} du lexème correspondent bien de la même façon à plusieurs formes modèles :",
 	"edit-unmatched-warning": "{{PLURAL:$1|La forme suivante|Les formes suivantes}} du lexème ne correspondent à aucune forme modèle :",
 	"edit-form-list-item": "$1, $2, {{PLURAL:$3|une déclaration|$3 déclarations}}",
-	"no-grammatical-features": "aucune caractéristique grammaticale"
+	"no-grammatical-features": "aucune caractéristique grammaticale",
+	"login-hint": "Vous devez vous [$1 connecter] avant de pouvoir faire des modifications en utilisant cet outil."
 }
