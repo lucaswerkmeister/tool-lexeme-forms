@@ -300,7 +300,7 @@ def process_template_bulk(template_name):
     template = templates[template_name]
     flask.g.interface_language_code = lang_lex2int(template['language_code'])
 
-    readonly = 'oauth' in app.config and 'oauth_access_token' not in app.config
+    readonly = 'oauth' in app.config and 'oauth_access_token' not in flask.session
 
     if not can_use_bulk_mode() and not readonly:
         return flask.render_template(
