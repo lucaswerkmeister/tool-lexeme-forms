@@ -18,9 +18,10 @@
 	"bulk-link": "modo em massa",
 	"bulk-format-help": "ajuda de formato",
 	"bulk-not-allowed": "{GENDER:$1|Você}} não tem permissão para usar o modo em massa. Desculpe.",
-	"bulk-first-field-lexeme-id": "Como o modelo possui {{PLURAL:$1|um formulário|$1 formulários}} e a linha $4 da inserção contém {{PLURAL:$2|um campo|$2 campos}}, o primeiro campo não deverá parecer com o ID lexeme, mas <q>$3</q> se parece com um. (Você esqueceu um formulário no preenchimento?)",
+	"bulk-first-field-lexeme-id": "Como a predefinição possui {{PLURAL:$1|um formulário|$1 formulários}} e a linha $4 da inserção contém {{PLURAL:$2|um campo|$2 campos}}, o primeiro campo não deverá parecer com o ID lexeme, mas <q>$3</q> se parece com um. (Você esqueceu um formulário no preenchimento?)",
 	"bulk-optional-forms-hint": "Se quiser pular alguns formulários, especifique-os como vazio (Exemplo: <kbd>...|||</kbd> para tres formulários vazios no final)",
 	"edit-link": "editar",
 	"edit-mismatch-warning": "Este lexema não parece corresponder a este modelo! Verifique novamente se é o modelo correto para este lexema antes de continuar.",
-	"no-grammatical-features": "sem características gramaticais"
+	"no-grammatical-features": "sem características gramaticais",
+	"login-hint": "Você precisa [$1 entrar] antes de fazer alterações usando esta ferramenta."
 }
