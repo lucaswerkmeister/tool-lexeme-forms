@@ -8742,6 +8742,46 @@ templates = {
         },
     },
 
+    'swedish-noun-proper': {
+        '@attribution': {'users': ['LA2'], 'title': 'Wikidata:Wikidata Lexeme Forms/Swedish'},
+        'label': 'svenskt egennamn',
+        'language_item_id': 'Q9027',
+        'language_code': 'sv',
+        'lexical_category_item_id': 'Q147276',
+        'forms': [
+            {
+                'label': 'nominativ',
+                'example': 'Jag ser [Sara].',
+                'grammatical_features_item_ids': ['Q131105'],
+            },
+            {
+                'label': 'genitiv',
+                'example': 'Jag imponeras av [Saras] utseende.',
+                'grammatical_features_item_ids': ['Q146233'],
+            },
+        ],
+        'statements': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q1775461',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    },
+
     'swedish-verb': {
         '@attribution': {'users': ['Vesihiisi'], 'title': 'Wikidata:Wikidata Lexeme Forms/Swedish'},
         'label': 'svenskt verb',
