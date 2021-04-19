@@ -31,5 +31,6 @@
 	"edit-ambiguous-warning": "Die {{PLURAL:$1|folgende Lexem-Form passt|folgenden Lexem-Formen passen}} zu mehreren Formen der Vorlage gleich gut:",
 	"edit-unmatched-warning": "Die {{PLURAL:$1|folgende Lexem-Form passt|folgenden Lexem-Formen passen}} zu keinen Formen der Vorlage:",
 	"edit-form-list-item": "$1, $2, {{PLURAL:$3|0=keine Aussagen|eine Aussage|$3 Aussagen}}",
-	"no-grammatical-features": "keine grammatikalischen Funktionen"
+	"no-grammatical-features": "keine grammatikalischen Funktionen",
+	"login-hint": "Du musst dich [$1 anmelden], bevor du mit diesem Werkzeug Änderungen vornehmen kannst."
 }
