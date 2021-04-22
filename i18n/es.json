@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Andreasmperu",
+			"Juan t2905",
 			"ZealousBlaze"
 		]
 	},
@@ -14,5 +15,6 @@
 	"advanced-general": "Estás en el modo \"avanzado\".",
 	"advanced-lexeme-id": "En lugar de crear un nuevo lexema, puedes ingresar el identificador de un lexema existente para añadir las formas faltantes. Deja en blanco las formas ya existentes en el lexema; de lo contrario, ¡se creará un duplicado!",
 	"advanced-partial-forms": "Puedes dejar algunas formas en blanco para evitar que sean añadidas. ¡Asegúrate de crear todas las formas necesarias!",
-	"lexeme-id": "Identificador de lexema"
+	"lexeme-id": "Identificador de lexema",
+	"login-hint": "Necesita [$1 iniciar sesión] antes de que pueda hacer cambios usando esta herramienta."
 }
