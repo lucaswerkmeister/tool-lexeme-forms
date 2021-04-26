@@ -5,12 +5,17 @@
 		]
 	},
 	"create": "Ccreje",
+	"csrf-warning": "Ne despiace, non g'è possibbele processà sta richieste (errore: protezione <abbr title=\"Cross-site request forgery\">CSRF</abbr> fallite). Pruève arrete.",
+	"duplicates-warning": "Attenziò, {{PLURAL:$1|stu lesseme ave|le lesseme onne}} 'u stesse lemme e codece d'a lènghe de quidde ca ave appene pruvate de ccrejà:",
+	"no-duplicate": "Quiste non g'è 'nu duplicate de 'nu lesseme esistende.",
 	"form-optional": "&#32;(facoltative)",
 	"advanced": "Avanzate",
 	"advanced-general": "Te iacchie jndr'à modalità \"avanzate\".",
 	"lexeme-id": "ID d'u lesseme",
 	"generated-via": "generate cu",
+	"bulk-link": "carecamedne de masse",
 	"bulk-format-help": "aijute formattazione",
 	"edit-link": "cange",
+	"edit-form-list-item": "$1, $2, {{PLURAL:$3|0=nisciuna dichiarazione|'na dichiarazione|$3 dichiaraziune}}",
 	"no-grammatical-features": "nisciuna caratteristeche grammatecale"
 }
