@@ -502,7 +502,7 @@ def if_no_such_template_redirect(template_name):
     elif isinstance(templates[template_name], str):
         return flask.redirect(flask.url_for(
             flask.request.endpoint,
-            **(flask.request.view_args | {'template_name': templates[template_name]}),
+            **(dict(flask.request.view_args, template_name=templates[template_name])),
             **flask.request.args.to_dict(flat=False),
         ), code=307)
     else:
