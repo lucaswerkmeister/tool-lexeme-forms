@@ -1,14 +1,16 @@
 {
 	"@metadata": {
 		"authors": [
+			"Bennylin",
 			"Naufal06"
 		]
 	},
 	"create": "Buat",
 	"csrf-warning": "Maaf, kami tidak dapat memproses permohonan ini (proteksi <abbr title=\"Cross-site request forgery\">CSRF</abbr> gagal). Tolong ulangi pengiriman formulir lagi.",
-	"duplicates-warning": "Leksem yang sudah ada berikut memiliki lema dan kode bahasa yang sama dengan yang Anda coba buat:",
-	"duplicates-instructions": "Jika Anda yakin bahwa ini berbeda, centang kotak yang berada di bawah formulir.",
+	"duplicates-warning": "{{PLURAL:$1|Leksem|Leksem}} yang sudah ada berikut memiliki lema dan kode bahasa yang sama dengan yang Anda coba buat:",
+	"duplicates-instructions": "Jika Anda yakin bahwa {{PLURAL:$1|ini|ini}} berbeda, centang kotak yang berada di bawah formulir.",
 	"no-duplicate": "Ini bukanlah sebuah duplikat dari leksem yang sudah ada.",
+	"form-optional": "&#32;(opsional)",
 	"advanced": "Lanjutan",
 	"advanced-general": "Anda sedang berada di mode \"lanjutan\".",
 	"advanced-lexeme-id": "Anda dapat memasukkan ID leksem untuk menambahkan formulir untuk leksem yang sudah ada daripada membuat satu yang baru. Tinggalkan semua formulir yang dari sebelumnya sudah ada di dalam leksem tetap kosong, jika tidak maka mereka akan terduplikat!",
@@ -20,11 +22,16 @@
 	"bulk-link": "mode jumlah banyak",
 	"bulk-format-help": "bantuan format",
 	"bulk-not-allowed": "{{GENDER:$1|Anda}} tidak diperbolehkan menggunakan mode jumlah banyak. Maaf.",
+	"bulk-first-field-not-lexeme-id": "Karena templat ini punya satu {{PLURAL:$1|bentuk|atau lebih bentuk}} dan masukan di baris $4 memiliki satu {{PLURAL:$2|field|atau lebih field}}, maka field pertama harus seperti ID leksem, tapi <q>$3</q> tidak mirip leksem ID.",
+	"bulk-first-field-lexeme-id": "Karena templat ini punya satu {{PLURAL:$1|bentuk|atau lebih bentuk}} dan masukan di baris $4 memiliki satu {{PLURAL:$2|field|atau lebih field}}, maka field pertama harus seperti ID leksem, tapi <q>$3</q> tidak mirip leksem ID.",
+	"bulk-wrong-number-of-fields": "Karena templat ini punya satu {{PLURAL:$1|bentuk|atau lebih bentuk}}, masing-masing baris input harus punya jumlah field yang sama (ketika membuat leksem baru), tapi masukan di baris <q>$3</q> memiliki satu {{PLURAL:$2|field|atau lebih field}}.",
+	"bulk-optional-forms-hint": "Kalau Anda ingin melewati beberapa formulir, masukkan karakter <kbd>...|||</kbd>.",
 	"edit-link": "sunting",
 	"edit-general": "Anda berada di mode \"edit\". Mengganti nilai di bawah akan menyunting, menambah, atau menghilangkan formulir dari leksem target.",
 	"edit-mismatch-warning": "Leksem ini tidak muncul untuk mencocokkan templat ini! Tolong periksa lagi bahwa itu adalah templat yang benar untuk leksem ini sebelum melanjutkan.",
-	"edit-ambiguous-warning": "Formulir leksem berikut cocok dengan lebih dari satu formulir templat yang sama benarnya:",
-	"edit-unmatched-warning": "Formulir leksem berikut tidak cocok dengan formulir templat manapun:",
+	"edit-ambiguous-warning": "Formulir {{PLURAL:$1|leksem|leksem}} berikut cocok dengan lebih dari satu formulir templat yang sama benarnya:",
+	"edit-unmatched-warning": "{{PLURAL:$1|Formulir|Formulir}} leksem berikut tidak cocok dengan formulir templat manapun:",
 	"edit-form-list-item": "$1, $2, {{PLURAL:$3|0=tidak ada pernyataan|satu pernyataan|$3 pernyataan}}",
-	"no-grammatical-features": "tidak ada fitur tata bahasa"
+	"no-grammatical-features": "tidak ada fitur tata bahasa",
+	"login-hint": "Anda perlu [$1 log masuk] sebelum Anda bisa mengubah alat ini."
 }
