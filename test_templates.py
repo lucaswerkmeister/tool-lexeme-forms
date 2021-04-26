@@ -15,7 +15,7 @@ def test_entities_exist():
             for statement in statement_group:
                 entity_ids.add(statement['mainsnak']['datavalue']['value']['id'])
 
-    for template in templates.templates.values():
+    for template in templates.templates_without_redirects.values():
         if template.get('test', False):
             continue
         entity_ids.add(template['language_item_id'])
@@ -43,7 +43,7 @@ def test_entities_exist():
 
 def test_translations_available():
     missing_language_codes = set()
-    for template in templates.templates.values():
+    for template in templates.templates_without_redirects.values():
         language_code = template['language_code']
         if language_code not in translations.translations:
             missing_language_codes.add(language_code)
@@ -56,7 +56,7 @@ def test_translations_available():
 
 def test_template_labels_distinct_per_language():
     template_names_by_language_and_label = {}
-    for template_name, template in templates.templates.items():
+    for template_name, template in templates.templates_without_redirects.items():
         template_names_by_language_and_label\
             .setdefault(template['language_code'], {})\
             .setdefault(template['label'], [])\
@@ -71,8 +71,8 @@ def test_template_labels_distinct_per_language():
 
 @pytest.mark.parametrize('template_name, form', [
     (template_name, form)
-    for template_name in templates.templates.keys()
-    for form in templates.templates[template_name]['forms']
+    for template_name, template in templates.templates_without_redirects.items()
+    for form in template['forms']
 ])
 def test_labels_not_valid_examples(template_name, form):
     fake_form = {'example': form['label']}
@@ -82,8 +82,8 @@ def test_labels_not_valid_examples(template_name, form):
 
 @pytest.mark.parametrize('template_name, form', [
     (template_name, form)
-    for template_name in templates.templates.keys()
-    for form in templates.templates[template_name]['forms']
+    for template_name, template in templates.templates_without_redirects.items()
+    for form in template['forms']
 ])
 def test_examples_valid(template_name, form):
     prefix, placeholder, suffix = app.split_example(form)
@@ -125,9 +125,9 @@ expected_example_counts = {
 }
 
 
-@pytest.mark.parametrize('template_name', templates.templates.keys())
+@pytest.mark.parametrize('template_name', templates.templates_without_redirects.keys())
 def test_examples_distinct(template_name):
-    template = templates.templates[template_name]
+    template = templates.templates_without_redirects[template_name]
     examples = {}
     for form in template['forms']:
         example = form['example']
@@ -139,17 +139,17 @@ def test_examples_distinct(template_name):
 
 @pytest.mark.parametrize('template_name, form', [
     (template_name, form)
-    for template_name in templates.templates.keys()
-    for form in templates.templates[template_name]['forms']
+    for template_name, template in templates.templates_without_redirects.items()
+    for form in template['forms']
 ])
 def test_grammatical_feature_item_ids_distinct(template_name, form):
     grammatical_features_item_ids = form['grammatical_features_item_ids']
     assert len(set(grammatical_features_item_ids)) == len(grammatical_features_item_ids)
 
 
-@pytest.mark.parametrize('template_name', templates.templates.keys())
+@pytest.mark.parametrize('template_name', templates.templates_without_redirects.keys())
 def test_attribution_available(template_name):
-    template = templates.templates[template_name]
+    template = templates.templates_without_redirects[template_name]
     assert '@attribution' in template
     attribution = template['@attribution']
     assert isinstance(attribution, dict)
@@ -164,7 +164,7 @@ def test_attribution_available(template_name):
         assert title
 
 
-@pytest.mark.parametrize('template_name', templates.templates.keys())
+@pytest.mark.parametrize('template_name', templates.templates_without_redirects.keys())
 def test_sections_declared(template_name):
     """Check that every template whose forms contain section breaks also
     declares whether its sections should have two columns or not in
@@ -177,7 +177,7 @@ def test_sections_declared(template_name):
     case, since that would be redundant.
 
     """
-    template = templates.templates[template_name]
+    template = templates.templates_without_redirects[template_name]
     has_section_breaks = False
     for form in template['forms']:
         if form.get('section_break', False):
@@ -187,3 +187,12 @@ def test_sections_declared(template_name):
         assert 'two_column_sections' in template
     else:
         assert template.get('two_column_sections', True)
+
+
+@pytest.mark.parametrize('template_name', templates.templates.keys())
+def test_redirects_resolve_directly(template_name):
+    template = templates.templates[template_name]
+    if not isinstance(template, str):
+        return
+    assert template in templates.templates
+    assert template in templates.templates_without_redirects

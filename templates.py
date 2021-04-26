@@ -6635,7 +6635,8 @@ templates = {
         ],
     },
 
-    'dutch-neuter-noun': {
+    'dutch-neuter-noun': 'dutch-noun-neuter',
+    'dutch-noun-neuter': {
         '@attribution': {'users': ['MarcoSwart'], 'title': 'Wikidata:Wikidata Lexeme Forms/Dutch'},
         'label': 'Nederlands onzijdig zelfstandig naamwoord',
         'language_item_id': 'Q7411',
@@ -6686,7 +6687,8 @@ templates = {
         },
     },
 
-    'dutch-masculine-noun': {
+    'dutch-masculine-noun': 'dutch-noun-masculine',
+    'dutch-noun-masculine': {
         '@attribution': {'users': ['MarcoSwart'], 'title': 'Wikidata:Wikidata Lexeme Forms/Dutch'},
         'label': 'Nederlands strikt mannelijk zelfstandig naamwoord',
         'language_item_id': 'Q7411',
@@ -6737,7 +6739,8 @@ templates = {
         },
     },
 
-    'dutch-feminine-noun': {
+    'dutch-feminine-noun': 'dutch-noun-feminine',
+    'dutch-noun-feminine': {
         '@attribution': {'users': ['MarcoSwart'], 'title': 'Wikidata:Wikidata Lexeme Forms/Dutch'},
         'label': 'Nederlands strikt vrouwelijk zelfstandig naamwoord',
         'language_item_id': 'Q7411',
@@ -6788,7 +6791,8 @@ templates = {
         },
     },
 
-    'dutch-fem2masc-noun': {
+    'dutch-fem2masc-noun': 'dutch-noun-fem2masc',
+    'dutch-noun-fem2masc': {
         '@attribution': {'users': ['MarcoSwart'], 'title': 'Wikidata:Wikidata Lexeme Forms/Dutch'},
         'label': 'Nederlands v/m zelfstandig naamwoord',
         'language_item_id': 'Q7411',
@@ -9371,5 +9375,13 @@ templates = {
 
 }
 
-for template_name, template in templates.items():
+
+templates_without_redirects = {
+    template_name: template
+    for template_name, template in templates.items()
+    if not isinstance(template, str)
+}
+
+
+for template_name, template in templates_without_redirects.items():
     template['@template_name'] = template_name

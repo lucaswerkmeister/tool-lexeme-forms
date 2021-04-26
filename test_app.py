@@ -7,7 +7,7 @@ import werkzeug
 
 import app as lexeme_forms
 import matching
-from templates import templates
+from templates import templates_without_redirects
 
 def test_form2input_basic():
     markup = lexeme_forms.form2input({'advanced': False}, {'example': 'Left [placeholder] right.'})
@@ -89,10 +89,10 @@ def test_template_group_test():
     group = lexeme_forms.template_group({'language_code': 'de', 'test': True})
     assert group == '<span lang="de" dir="ltr">Deutsch (<span lang=zxx>de</span>)</span>, test.wikidata.org'
 
-@pytest.mark.parametrize('template_name', templates.keys())
+@pytest.mark.parametrize('template_name', templates_without_redirects.keys())
 @pytest.mark.parametrize('number', range(-1, 5))
 def test_message_with_kwargs(template_name, number):
-    template = templates[template_name]
+    template = templates_without_redirects[template_name]
     with lexeme_forms.app.test_request_context():
         flask.g.interface_language_code = template['language_code']
         message = lexeme_forms.message_with_kwargs('description_with_forms_and_senses', description='', forms=number, senses=number)  # noqa:F841
@@ -170,7 +170,7 @@ def test_if_has_duplicates_redirect_submitted_form_representations(monkeypatch):
     monkeypatch.setattr(lexeme_forms, 'add_form_data_to_template', lambda form_data, template: True)
     monkeypatch.setattr(flask, 'render_template', render_template)
     assert lexeme_forms.if_has_duplicates_redirect(
-        copy.deepcopy(templates['english-noun']),
+        copy.deepcopy(templates_without_redirects['english-noun']),
         False,
         werkzeug.datastructures.ImmutableMultiDict([('form_representation', 'noun'), ('form_representation', 'nouns')]),
     ) == 'rendered duplicates'
@@ -755,7 +755,7 @@ def test_get_all_templates_api():
     assert response.status_code == 200
     assert response.content_type == 'application/json'
     for template in json.loads(response.get_data(as_text=True)).values():
-        assert '@attribution' in template
+        assert isinstance(template, str) or '@attribution' in template
 
 def test_get_template_api_exists():
     with lexeme_forms.app.test_client() as client:
@@ -764,6 +764,12 @@ def test_get_template_api_exists():
     assert response.content_type == 'application/json'
     template = json.loads(response.get_data(as_text=True))
     assert '@attribution' in template
+
+def test_get_template_api_redirect():
+    with lexeme_forms.app.test_client() as client:
+        response = client.get('/api/v1/template/dutch-feminine-noun')
+    assert response.status_code == 307
+    assert response.headers['location'].endswith('/api/v1/template/dutch-noun-feminine')
 
 def test_get_template_api_missing():
     with lexeme_forms.app.test_client() as client:
@@ -784,7 +790,7 @@ def test_update_lexeme_add_dwarves_dwarrows():
             {'id': 'L22936-F2', 'representations': {'en': {'language': 'en', 'value': 'dwarfs'}}, 'grammaticalFeatures': ['Q146786']},
         ],
     }
-    template = copy.deepcopy(templates['english-noun'])
+    template = copy.deepcopy(templates_without_redirects['english-noun'])
     template['lexeme_revision'] = 123
     template['forms'][0]['lexeme_forms'] = [lexeme_data['forms'][0]]
     template['forms'][1]['lexeme_forms'] = [lexeme_data['forms'][1]]
@@ -811,7 +817,7 @@ def test_update_lexeme_match_forms():
             {'id': 'L22936-F4', 'representations': {'en': {'language': 'en', 'value': 'dwarrows'}}, 'grammaticalFeatures': []},
         ],
     }
-    template = copy.deepcopy(templates['english-noun'])
+    template = copy.deepcopy(templates_without_redirects['english-noun'])
     template['lexeme_revision'] = 123
     template['unmatched_lexeme_forms'] = lexeme_data['forms'][:]
     form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', 'L22936-F1'), ('form_representation', 'L22936-F2/L22936-F3/L22936-F4')])
@@ -834,7 +840,7 @@ def test_update_lexeme_edit_lemma():
             {'id': 'L3280-F1', 'representations': {'en': {'language': 'en', 'value': 'fuschia'}}, 'grammaticalFeatures': ['Q3482678']},
         ],
     }
-    template = copy.deepcopy(templates['english-adjective'])
+    template = copy.deepcopy(templates_without_redirects['english-adjective'])
     template['lexeme_revision'] = 123
     template['forms'][0]['lexeme_forms'] = [lexeme_data['forms'][0]]
     form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', 'fuchsia')])
@@ -852,7 +858,7 @@ def test_update_lexeme_edit_lemma_new_form():
         'lemmas': {'en': {'language': 'en', 'value': 'fuschia'}},
         'forms': [],
     }
-    template = copy.deepcopy(templates['english-adjective'])
+    template = copy.deepcopy(templates_without_redirects['english-adjective'])
     template['lexeme_revision'] = 123
     form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', 'fuchsia')])
     updated_lexeme_data = lexeme_forms.update_lexeme(lexeme_data, template, form_data, 'en')
@@ -879,7 +885,7 @@ def test_update_lexeme_different_language():
             },
         ],
     }
-    template = copy.deepcopy(templates['german-noun-feminine'])
+    template = copy.deepcopy(templates_without_redirects['german-noun-feminine'])
     template['lexeme_revision'] = 123
     template['forms'][0]['lexeme_forms'] = [lexeme_data['forms'][0]]
     form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', 'Strasse')])
@@ -925,7 +931,7 @@ def test_update_lexeme_different_language_for_some_forms():
             },
         ],
     }
-    template = copy.deepcopy(templates['german-verb'])
+    template = copy.deepcopy(templates_without_redirects['german-verb'])
     template['lexeme_revision'] = 123
     template['forms'][0]['lexeme_forms'] = [lexeme_data['forms'][1]]
     template['forms'][1]['lexeme_forms'] = [lexeme_data['forms'][0]]
@@ -966,7 +972,7 @@ def test_update_lexeme_noop():
             {'id': 'L22936-F5', 'representations': {'en': {'language': 'en', 'value': 'dweorgas'}}, 'grammaticalFeatures': ['Q146786']},
         ],
     }
-    template = copy.deepcopy(templates['english-noun'])
+    template = copy.deepcopy(templates_without_redirects['english-noun'])
     template['lexeme_revision'] = 123
     template['forms'][0]['lexeme_forms'] = [lexeme_data['forms'][0]]
     template['forms'][1]['lexeme_forms'] = [lexeme_data['forms'][1], lexeme_data['forms'][2], lexeme_data['forms'][3], lexeme_data['forms'][4]]
@@ -980,7 +986,7 @@ def test_update_lexeme_noop():
 
 def test_update_lexeme_rematch_already_matched_form():
     lexeme_data = {'forms': [{'id': 'L4592-F1', 'representations': {'en': {'language': 'en', 'value': 'gold'}}, 'grammaticalFeatures': ['Q110786']}]}
-    template = copy.deepcopy(templates['english-noun'])
+    template = copy.deepcopy(templates_without_redirects['english-noun'])
     template['lexeme_revision'] = 123
     template['forms'][0]['lexeme_forms'] = [lexeme_data['forms'][0]]
     form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', 'gold'), ('form_representation', 'L4592-F1')])
@@ -989,7 +995,7 @@ def test_update_lexeme_rematch_already_matched_form():
 
 def test_update_lexeme_rematch_same_form_twice():
     lexeme_data = {'forms': [{'id': 'L4592-F1', 'representations': {'en': {'language': 'en', 'value': 'gold'}}, 'grammaticalFeatures': []}]}
-    template = copy.deepcopy(templates['english-noun'])
+    template = copy.deepcopy(templates_without_redirects['english-noun'])
     template['lexeme_revision'] = 123
     template['unmatched_lexeme_forms'] = lexeme_data['forms'][:]
     form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', 'L4592-F1'), ('form_representation', 'L4592-F1')])
@@ -1021,7 +1027,7 @@ def test_update_lexeme_remove_form_representation():
             },
         ],
     }
-    template = copy.deepcopy(templates['german-noun-feminine'])
+    template = copy.deepcopy(templates_without_redirects['german-noun-feminine'])
     template['lexeme_revision'] = 123
     template['forms'][0]['lexeme_forms'] = [lexeme_data['forms'][0]]
     template['forms'][1]['lexeme_forms'] = [lexeme_data['forms'][1]]
@@ -1078,7 +1084,7 @@ def test_update_lexeme_remove_main_form_representation():
             },
         ],
     }
-    template = copy.deepcopy(templates['german-noun-feminine'])
+    template = copy.deepcopy(templates_without_redirects['german-noun-feminine'])
     template['lexeme_revision'] = 123
     template['forms'][0]['lexeme_forms'] = [lexeme_data['forms'][0]]
     template['forms'][1]['lexeme_forms'] = [lexeme_data['forms'][1]]
@@ -1122,13 +1128,13 @@ def test_get_gender(user, expected):
         assert lexeme_forms.get_gender(user) == expected
 
 
-@pytest.mark.parametrize('template_name', templates.keys())
+@pytest.mark.parametrize('template_name', templates_without_redirects.keys())
 def test_integration_edit(template_name):
     """Create a lexeme from a template, then match it against the same template.
 
     If this fails, then there might be a bug when creating or matching lexemes,
     or the template might have ambiguous forms."""
-    template = templates[template_name]
+    template = templates_without_redirects[template_name]
     form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', str(index)) for index in range(0, len(template['forms']))])
     lexeme_data = lexeme_forms.build_lexeme(template, form_data)
     matched_template = matching.match_lexeme_forms_to_template(lexeme_data['forms'], template)

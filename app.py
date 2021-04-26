@@ -22,7 +22,7 @@ from language_names import autonym
 from matching import match_template_to_lexeme_data, match_lexeme_forms_to_template, match_template_entity_to_lexeme_entity
 from mwapi_utils import T272319RetryingSession
 from parse_tpsv import parse_lexemes, FirstFieldNotLexemeIdError, FirstFieldLexemeIdError, WrongNumberOfFieldsError
-from templates import templates
+from templates import templates, templates_without_redirects
 from translations import translations
 
 app = OrderedFlask(__name__)
@@ -240,7 +240,7 @@ def index():
     flask.g.interface_language_code = 'en'
     return flask.render_template(
         'index.html',
-        templates=templates,
+        templates=templates_without_redirects,
         can_use_bulk_mode=can_use_bulk_mode(),
     )
 
@@ -254,7 +254,7 @@ def process_template_advanced(template_name, advanced=True):
     if response:
         return response
 
-    template = templates[template_name]
+    template = templates_without_redirects[template_name]
     flask.g.interface_language_code = lang_lex2int(template['language_code'])
     form_data = flask.request.form
 
@@ -297,7 +297,7 @@ def process_template_bulk(template_name):
     if response:
         return response
 
-    template = templates[template_name]
+    template = templates_without_redirects[template_name]
     flask.g.interface_language_code = lang_lex2int(template['language_code'])
 
     readonly = 'oauth' in app.config and 'oauth_access_token' not in flask.session
@@ -424,7 +424,7 @@ def process_template_edit(template_name, lexeme_id):
     if response:
         return response
 
-    template = templates[template_name]
+    template = templates_without_redirects[template_name]
     template_language_code = template['language_code']
     flask.g.interface_language_code = lang_lex2int(template_language_code)
     representation_language_code = flask.request.args.get('language_code', template_language_code)
@@ -499,6 +499,12 @@ def if_no_such_template_redirect(template_name):
             'no-such-template.html',
             template_name=template_name,
         )
+    elif isinstance(templates[template_name], str):
+        return flask.redirect(flask.url_for(
+            flask.request.endpoint,
+            **(flask.request.view_args | {'template_name': templates[template_name]}),
+            **flask.request.args.to_dict(flat=False),
+        ), code=307)
     else:
         return None
 
@@ -637,7 +643,7 @@ def match_templates_to_lexeme_id(wiki, lexeme_id):
 
     return flask.jsonify({
         template_name: match_template_to_lexeme_data(template, lexeme_data)
-        for template_name, template in templates.items()
+        for template_name, template in templates_without_redirects.items()
     })
 
 @app.route('/api/v1/match_template_to_lexeme/<any(www,test):wiki>/<lexeme_id>/<template_name>')
@@ -646,6 +652,13 @@ def match_template_to_lexeme_id(wiki, lexeme_id, template_name):
     template = templates.get(template_name)
     if not template:
         return 'no such template\n', 404
+    elif isinstance(template, str):
+        return flask.redirect(flask.url_for(
+            'match_template_to_lexeme_id',
+            wiki=wiki,
+            lexeme_id=lexeme_id,
+            template_name=template,
+        ), code=307)
 
     lexeme_data = get_lexeme_data(lexeme_id, wiki)
 
@@ -913,10 +926,15 @@ def get_all_templates_api():
 @enableCORS
 def get_template_api(template_name):
     template = templates.get(template_name)
-    if template:
-        return flask.jsonify(template)
-    else:
+    if template is None:
         return '"no such template"\n', 404
+    elif isinstance(template, str):
+        return flask.redirect(flask.url_for(
+            'get_template_api',
+            template_name=template,
+        ), code=307)
+    else:
+        return flask.jsonify(template)
 
 def get_gender(user):
     if user is None:

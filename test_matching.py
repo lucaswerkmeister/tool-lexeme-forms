@@ -47,7 +47,7 @@ lexeme_data_german_noun_neuter = {
 }
 
 def test_match_template_to_lexeme_data_full_match():
-    template = templates.templates['german-noun-neuter']
+    template = templates.templates_without_redirects['german-noun-neuter']
     match = matching.match_template_to_lexeme_data(template, lexeme_data_german_noun_neuter)
 
     assert match == {
@@ -59,7 +59,7 @@ def test_match_template_to_lexeme_data_full_match():
     }
 
 def test_match_template_to_lexeme_data_missing_statement():
-    template = templates.templates['german-noun-pluraletantum']
+    template = templates.templates_without_redirects['german-noun-pluraletantum']
     match = matching.match_template_to_lexeme_data(template, lexeme_data_german_noun_neuter)
 
     assert match == {
@@ -71,7 +71,7 @@ def test_match_template_to_lexeme_data_missing_statement():
     }
 
 def test_match_template_to_lexeme_data_conflicting_statement():
-    template = templates.templates['german-noun-masculine']
+    template = templates.templates_without_redirects['german-noun-masculine']
     match = matching.match_template_to_lexeme_data(template, lexeme_data_german_noun_neuter)
 
     assert match == {
@@ -83,14 +83,14 @@ def test_match_template_to_lexeme_data_conflicting_statement():
     }
 
 def test_match_template_to_lexeme_data_different_lexical_category():
-    template = templates.templates['german-verb']
+    template = templates.templates_without_redirects['german-verb']
     match = matching.match_template_to_lexeme_data(template, lexeme_data_german_noun_neuter)
 
     assert match['language']
     assert not match['lexical_category']
 
 def test_match_template_to_lexeme_data_different_language():
-    template = templates.templates['english-noun']
+    template = templates.templates_without_redirects['english-noun']
     match = matching.match_template_to_lexeme_data(template, lexeme_data_german_noun_neuter)
 
     assert not match['language']
@@ -99,7 +99,7 @@ def test_match_template_to_lexeme_data_different_language():
 
 def test_properties_exclusive_covers_template_claims_properties():
     missing_property_ids = set()
-    for template in templates.templates.values():
+    for template in templates.templates_without_redirects.values():
         wiki = 'test' if 'test' in template else 'www'
         properties_exclusive_for_template = matching.properties_exclusive[wiki]
         for property_id in template.get('statements', {}).keys():
