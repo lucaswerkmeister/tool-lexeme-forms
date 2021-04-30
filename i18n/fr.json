@@ -3,6 +3,7 @@
 		"authors": [
 			"Djiboun",
 			"Gomoko",
+			"Lucas Werkmeister",
 			"Scratcheur-2020Send",
 			"Thibaut120094",
 			"Verdy p"
@@ -24,7 +25,7 @@
 	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=aucune forme|une forme|$2 formes}} et {{PLURAL:$3|0=aucun|un|$3}} sens",
 	"bulk-link": "Mode en masse",
 	"bulk-format-help": "Aide sur le format",
-	"bulk-not-allowed": "{{GENDER:$1|}}Vous n’avez pas le droit d’utiliser le mode en masse. Désolé.",
+	"bulk-not-allowed": "Vous n’avez pas le droit d’utiliser le mode en masse. Désolé.",
 	"bulk-first-field-not-lexeme-id": "Puisque le modèle a {{PLURAL:$1|une forme|$1 formes}} et la ligne $4 de l’entrée a {{PLURAL:$2|un champ|$2 champs}}, le premier champ devrait être un ID de lexème, mais <q>$3</q> ne semble pas en être un. (Avez-vous spécifié une forme de trop dans l’entrée ?)",
 	"bulk-first-field-lexeme-id": "Puisque le modèle a {{PLURAL:$1|une forme|$1 formes}} et la ligne $4 de l’entrée a {{PLURAL:$2|un champ|$2 champs}}, le premier champ devrait être un ID de lexème, mais <q>$3</q> ne semble pas en être un. (Avez-vous oublié une forme dans l’entrée ?)",
 	"bulk-wrong-number-of-fields": "Puisque le modèle a {{PLURAL:$1|une forme|$1 formes}}, chaque ligne d’entrée devrait comporter soit autant de champs (lors de la création d’un nouveau lexème), soit un champ de plus (lorsque vous spécifiez l’ID d’un lexème existant à modifier) ; mais au lieu de cela, la ligne $3 de l’entrée comprend {{PLURAL:$2|un champ|$2 champs}}.",

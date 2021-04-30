@@ -20,7 +20,7 @@
 	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=keine Formen|eine Form|$2 Formen}}, {{PLURAL:$3|0=keine Senses|ein Sense|$3 Senses}}",
 	"bulk-link": "Massen-Modus",
 	"bulk-format-help": "Formatierungshilfe",
-	"bulk-not-allowed": "{{GENDER:$1|Du}} darfst den Massen-Modus nicht verwenden. Entschuldigung.",
+	"bulk-not-allowed": "Du darfst den Massen-Modus nicht verwenden. Entschuldigung.",
 	"bulk-first-field-not-lexeme-id": "Da die Vorlage {{PLURAL:$1|eine Form|$1 Formen}} und die Zeile $4 der Eingabe {{PLURAL:$2|ein Feld|$2 Felder}} hat, sollte das erste Feld wie eine Lexem-ID aussehen, aber <q>$3</q> sieht nicht wie eine Lexem-ID aus. (Hast du eine Form zu viel in der Eingabe angegeben?)",
 	"bulk-first-field-lexeme-id": "Da die Vorlage {{PLURAL:$1|eine Form|$1 Formen}} und die Zeile $4 der Eingabe {{PLURAL:$2|ein Feld|$2 Felder}} hat, sollte das erste Feld nicht wie eine Lexem-ID aussehen, aber <q>$3</q> sieht wie eine aus. (Hast du eine Form in der Eingabe vergessen?)",
 	"bulk-wrong-number-of-fields": "Da die Vorlage {{PLURAL:$1|eine Form|$1 Formen}} hat, sollte jede Eingabezeile entweder so viele Felder haben (wenn ein neues Lexem erstellt wird) oder eines mehr (wenn die ID eines vorhandenen Lexems zum Bearbeiten angegeben wird), aber Zeile $3 der Eingabe hat stattdessen {{PLURAL:$2|ein Feld|$2 Felder}}.",

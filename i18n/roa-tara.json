@@ -7,6 +7,7 @@
 	"create": "Ccreje",
 	"csrf-warning": "Ne despiace, non g'è possibbele processà sta richieste (errore: protezione <abbr title=\"Cross-site request forgery\">CSRF</abbr> fallite). Pruève arrete.",
 	"duplicates-warning": "Attenziò, {{PLURAL:$1|stu lesseme ave|le lesseme onne}} 'u stesse lemme e codece d'a lènghe de quidde ca ave appene pruvate de ccrejà:",
+	"duplicates-instructions": "Ce sì secure ca {{PLURAL:$1|jè|sò}} diverse, spunde 'a caselle ca ste 'a fine de stu module.",
 	"no-duplicate": "Quiste non g'è 'nu duplicate de 'nu lesseme esistende.",
 	"form-optional": "&#32;(facoltative)",
 	"advanced": "Avanzate",

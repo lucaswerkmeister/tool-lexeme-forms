@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Bennylin",
+			"Lucas Werkmeister",
 			"Naufal06"
 		]
 	},
@@ -21,7 +22,7 @@
 	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=tidak ada formulir|satu formulir|$2 formulir}} dan {{PLURAL:$3|0=tanpa artian|satu artian|$3 artian}}",
 	"bulk-link": "mode jumlah banyak",
 	"bulk-format-help": "bantuan format",
-	"bulk-not-allowed": "{{GENDER:$1|Anda}} tidak diperbolehkan menggunakan mode jumlah banyak. Maaf.",
+	"bulk-not-allowed": "Anda tidak diperbolehkan menggunakan mode jumlah banyak. Maaf.",
 	"bulk-first-field-not-lexeme-id": "Karena templat ini punya satu {{PLURAL:$1|bentuk|atau lebih bentuk}} dan masukan di baris $4 memiliki satu {{PLURAL:$2|field|atau lebih field}}, maka field pertama harus seperti ID leksem, tapi <q>$3</q> tidak mirip leksem ID.",
 	"bulk-first-field-lexeme-id": "Karena templat ini punya satu {{PLURAL:$1|bentuk|atau lebih bentuk}} dan masukan di baris $4 memiliki satu {{PLURAL:$2|field|atau lebih field}}, maka field pertama harus seperti ID leksem, tapi <q>$3</q> tidak mirip leksem ID.",
 	"bulk-wrong-number-of-fields": "Karena templat ini punya satu {{PLURAL:$1|bentuk|atau lebih bentuk}}, masing-masing baris input harus punya jumlah field yang sama (ketika membuat leksem baru), tapi masukan di baris <q>$3</q> memiliki satu {{PLURAL:$2|field|atau lebih field}}.",
