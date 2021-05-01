@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Ainali",
+			"Lucas Werkmeister",
 			"Sabelöga",
 			"Vesihiisi",
 			"WikiPhoenix"
@@ -23,7 +24,7 @@
 	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=ingen form|en form|$2 former}} och {{PLURAL:$3|0=ingen betydelse|en betydelse|$3 betydelser}}",
 	"bulk-link": "masskapa",
 	"bulk-format-help": "formateringshjälp",
-	"bulk-not-allowed": "{{GENDER:$1|Du}} får dessvärre inte masskapa lexem. Beklagar.",
+	"bulk-not-allowed": "Du får dessvärre inte masskapa lexem. Beklagar.",
 	"bulk-optional-forms-hint": "Om du vill hoppa över vissa former kan du helt enkelt ange dem som tomma (t.ex. <kbd>...|||</kbd> för tre tomma former i slutet).",
 	"edit-link": "redigera",
 	"edit-general": "Du är i \"redigeringsläge\". Ändringar i värdena nedan kommer att redigera, lägga till eller ta bort former i det angivna lexemet.",

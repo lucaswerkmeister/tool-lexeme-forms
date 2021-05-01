@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Joseph",
+			"Lucas Werkmeister",
 			"SaldırganSincap"
 		]
 	},
@@ -21,7 +22,7 @@
 	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=biçim yok|bir biçim|$2 biçim}} ve {{PLURAL:$3|0=anlam yok|bir anlam|$3 anlam}}",
 	"bulk-link": "toplu mod",
 	"bulk-format-help": "biçimlendirme yardımı",
-	"bulk-not-allowed": "Toplu modu kullanmaya {{GENDER:$1|izniniz}} yok. Üzgünüz.",
+	"bulk-not-allowed": "Toplu modu kullanmaya izniniz yok. Üzgünüz.",
 	"bulk-first-field-not-lexeme-id": "Şablonun {{PLURAL:$1|bir biçimi|$1 biçimi}} olduğu ve girdinin $4. satırının {{PLURAL:$2|bir alanı|$2 alanı}} olduğu için, ilk alan bir sözcük birim kimliği gibi görünmelidir, ancak <q>$3</q> sözcük birim kimliği gibi görünmüyor. (Girdide bir biçimi çok fazla mı belirttiniz?)",
 	"bulk-first-field-lexeme-id": "Şablonun {{PLURAL:$1|bir biçimi|$1 biçimi}} olduğu ve girdinin $4. satırının {{PLURAL:$2|bir alanı|$2 alanı}} olduğu için, ilk alan bir sözcük birim kimliği gibi görünmemelidir, ancak <q>$3</q> sözcük birim kimliği gibi görünüyor. (Girdide bir biçimi unuttunuz mu?)",
 	"bulk-wrong-number-of-fields": "Şablonun {{PLURAL:$1|bir biçimi|$1 biçimi}} olduğu için, her girdi satırı ya o kadar (yeni bir sözcük birim yaratırken) ya da bir fazla (mevcut bir sözcük birimi değiştirirken kimliğini belirtirken) alana sahip olmalıdır, ancak girdinin $3. satırının {{PLURAL:$2|bir alanı|$2 alanı}} var.",

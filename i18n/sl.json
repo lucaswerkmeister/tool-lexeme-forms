@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Eleassar"
+			"Eleassar",
+			"Lucas Werkmeister"
 		]
 	},
 	"create": "Ustvari",
@@ -20,7 +21,7 @@
 	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=brez oblik|1=ena oblika|2=2 obliki|few=$2 oblike|$2 oblik}} in {{PLURAL:$3|0=brez pomenov|1=en pomen|2=2 pomena|few=$2 pomeni|$2 pomenov}}",
 	"bulk-link": "množični način",
 	"bulk-format-help": "pomoč za oblikovanje",
-	"bulk-not-allowed": "Množičnega načina {{GENDER:$1|vam}} žal ni dovoljeno uporabljati.",
+	"bulk-not-allowed": "Množičnega načina vam žal ni dovoljeno uporabljati.",
 	"edit-link": "uredi",
 	"edit-general": "Ste v načinu urejanja. Sprememba navedenih vrednosti bo spremenila, dodala ali odstranila oblike ciljnega leksema.",
 	"edit-mismatch-warning": "Zdi se, da se ta leksem ne ujema s predlogo! Prosimo, dvakrat preverite, da gre za pravo predlogo za ta leksem, preden nadaljujete.",

@@ -3,6 +3,7 @@
 		"authors": [
 			"Adrijaned",
 			"Lexicolover",
+			"Lucas Werkmeister",
 			"Matěj Suchánek",
 			"Mormegil",
 			"Patrik L."
@@ -24,7 +25,7 @@
 	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=žádné tvary|jeden tvar|$2 tvary|$2 tvarů}} a {{PLURAL:$3|0=žádné významy|jeden význam|$3 významy|$3 významů}}",
 	"bulk-link": "hromadný mód",
 	"bulk-format-help": "nápověda k formátování",
-	"bulk-not-allowed": "Litujeme, ale {{GENDER:$1|nemáte}} oprávnění k použití hromadného módu.",
+	"bulk-not-allowed": "Litujeme, ale nemáte oprávnění k použití hromadného módu.",
 	"bulk-first-field-not-lexeme-id": "Jelikož vzor obsahuje {{PLURAL:$1|jeden tvar|$1 tvary|$1 tvarů}} a $4. řádek vstupu obsahoval {{PLURAL:$2|jedno pole|$2 pole|$2 polí}}, mělo by první pole označovat ID lexému, ale <q>$3</q> nevypadá jako ID lexému. (Neuvedli jste o jeden tvar více, než mělo být?)",
 	"bulk-first-field-lexeme-id": "Jelikož vzor obsahuje {{PLURAL:$1|jeden tvar|$1 tvary|$1 tvarů}} a $4. řádek vstupu obsahoval {{PLURAL:$2|jedno pole|$2 pole|$2 polí}}, nemělo by první pole označovat ID lexému, ale <q>$3</q> vypadá jako ID lexému. (Nezapomněli jste ve vstupu jeden tvar?)",
 	"bulk-wrong-number-of-fields": "Jelikož vzor obsahuje {{PLURAL:$1|jeden tvar|$1 tvary|$1 tvarů}}, každý řádek vstupu by měl mít právě tolik polí (při vytváření nového lexému), anebo o jedno pole více (při uvedení ID existujícího lexému, který se má editovat), ale $3. řádek vstupu obsahuje {{PLURAL:$2|jedno pole|$2 pole|$2 polí}}.",

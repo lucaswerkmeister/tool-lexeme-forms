@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kly"
+			"Kly",
+			"Lucas Werkmeister"
 		]
 	},
 	"create": "建立",
@@ -20,7 +21,7 @@
 	"description-with-forms-and-senses": "$1，{{PLURAL:$2|0=沒有形式|1 個形式|$2 個形式}}，{{PLURAL:$3|0=沒有含意|1 個含意|$3 個含意}}",
 	"bulk-link": "批量模式",
 	"bulk-format-help": "格式說明",
-	"bulk-not-allowed": "很抱歉，{{GENDER:$1|您}}不被允許使用批量模式。",
+	"bulk-not-allowed": "很抱歉，您不被允許使用批量模式。",
 	"edit-link": "編輯",
 	"edit-general": "您目前在「編輯」模式。更改以下的值將會編輯、添加、或是移除目標詞位的形式。",
 	"edit-mismatch-warning": "這個詞位似乎與此模板不相符！在繼續操作之前，請仔細檢查是否為適用此詞位的模板。",
