@@ -4,8 +4,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const template = JSON.parse(document.getElementsByTagName('main')[0].dataset.template),
           baseUrl = document.querySelector('link[rel=index]').href,
           form = document.forms[0],
-          lemmaInput = form.elements['form_representation'][0] || form.elements['form_representation'],
           lexemeIdInput = (form.elements['lexeme_id'] || [])[0];
+    let formRepresentationInputs = form.elements['form_representation'];
+    if (formRepresentationInputs.length === undefined) {
+        formRepresentationInputs = [ formRepresentationInputs ];
+    }
+
+    let lastCheckedLemma = null;
 
     function removeElementById(id) {
         const element = document.getElementById(id);
@@ -14,16 +19,48 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    function checkDuplicates(e) {
+    function removeDuplicatesElements() {
         removeElementById('duplicates-warning');
         removeElementById('no-duplicate');
+    }
 
-        const lemma = e.target.value.split('/', 1)[0];
-        if (lemma === '') {
+    /**
+     * Get the lemma for the lexeme from the given form data.
+     *
+     * The lemma is the first nonempty form representation variant.
+     * (Usually, the first representation variant of the first form,
+     * but in advanced mode, any form may be omitted, including the first one,
+     * which can be useful for e.g. pluralia tantum.)
+     *
+     * This logic is duplicated in app.py::get_lemma –
+     * keep the two in sync!
+     */
+    function getLemma(formRepresentationInputs) {
+        for (const formRepresentationInput of formRepresentationInputs) {
+            for (const formRepresentationVariant of formRepresentationInput.value.split('/')) {
+                if (formRepresentationVariant !== '') {
+                    return formRepresentationVariant;
+                }
+            }
+        }
+        return null;
+    }
+
+    function checkDuplicates() {
+        if (lexemeIdInput && lexemeIdInput.value) {
+            removeDuplicatesElements();
             return;
         }
 
-        if (lexemeIdInput && lexemeIdInput.value) {
+        const lemma = getLemma(formRepresentationInputs);
+
+        if (lemma === lastCheckedLemma) {
+            return;
+        }
+        lastCheckedLemma = lemma;
+
+        if (lemma === null) {
+            removeDuplicatesElements();
             return;
         }
 
@@ -35,11 +72,19 @@ document.addEventListener('DOMContentLoaded', function() {
               };
         fetch(url, init).then(response => response.text()).then(duplicatesWarningHtml => {
             if (duplicatesWarningHtml === '') {
+                removeDuplicatesElements();
                 return;
             }
 
             const url = `${baseUrl}api/v1/no_duplicate/${template.language_code}`;
             return fetch(url, init).then(response => response.text()).then(noDuplicateHtml => {
+                if (lemma !== lastCheckedLemma) {
+                    // it changed in the meantime, maybe the network request was slow
+                    return;
+                }
+
+                removeDuplicatesElements();
+
                 const duplicatesWarning = document.createElement('div');
                 form.insertAdjacentElement('afterbegin', duplicatesWarning);
                 duplicatesWarning.outerHTML = duplicatesWarningHtml;
@@ -67,8 +112,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     const checkDebounced = _.debounce(checkDuplicates, 500);
-    lemmaInput.addEventListener('input', checkDebounced);
-    lemmaInput.addEventListener('change', checkDebounced.flush);
+    for (const formRepresentationInput of formRepresentationInputs) {
+        formRepresentationInput.addEventListener('input', checkDebounced);
+        formRepresentationInput.addEventListener('change', checkDebounced.flush);
+    }
 
-    checkDuplicates({ target: lemmaInput });
+    checkDuplicates();
 });

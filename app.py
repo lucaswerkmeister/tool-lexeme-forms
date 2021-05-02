@@ -564,6 +564,15 @@ def find_duplicates(template, form_data):
         flask.abort(400)
 
 def get_lemma(form_data):
+    """Get the lemma for the lexeme from the given form data.
+
+    The lemma is the first nonempty form representation variant.
+    (Usually, the first representation variant of the first form,
+    but in advanced mode, any form may be omitted, including the first one,
+    which can be useful for e.g. pluralia tantum.)
+
+    This logic is duplicated in findDuplicates.js::getLemma –
+    keep the two in sync!"""
     for form_representation in form_data.getlist('form_representation'):
         for form_representation_variant in form_representation.split('/'):
             if form_representation_variant != '':
