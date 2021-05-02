@@ -4,13 +4,19 @@ document.addEventListener('DOMContentLoaded', function() {
     const template = JSON.parse(document.getElementsByTagName('main')[0].dataset.template),
           baseUrl = document.querySelector('link[rel=index]').href,
           form = document.forms[0],
-          lexemeIdInput = (form.elements['lexeme_id'] || [])[0];
+          lexemeIdInput = (form.elements['lexeme_id'] || [])[0],
+          initAcceptHtml = {
+              headers: {
+                  Accept: 'text/html'
+              }
+          };
     let formRepresentationInputs = form.elements['form_representation'];
     if (formRepresentationInputs.length === undefined) {
         formRepresentationInputs = [ formRepresentationInputs ];
     }
 
     let lastCheckedLemma = null;
+    let cachedNoDuplicateHtml = null;
 
     function removeElementById(id) {
         const element = document.getElementById(id);
@@ -46,6 +52,20 @@ document.addEventListener('DOMContentLoaded', function() {
         return null;
     }
 
+    function noDuplicateHtml() {
+        if (cachedNoDuplicateHtml !== null) {
+            return Promise.resolve(cachedNoDuplicateHtml);
+        }
+
+        const url = `${baseUrl}api/v1/no_duplicate/${template.language_code}`;
+        return fetch(url, initAcceptHtml).then(response => response.text()).then(noDuplicateHtml => {
+            if (cachedNoDuplicateHtml === null) {
+                cachedNoDuplicateHtml = noDuplicateHtml;
+            }
+            return cachedNoDuplicateHtml;
+        });
+    }
+
     function checkDuplicates() {
         if (lexemeIdInput && lexemeIdInput.value) {
             removeDuplicatesElements();
@@ -64,20 +84,14 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        const url = `${baseUrl}api/v1/duplicates/${'test' in template ? 'test' : 'www'}/${template.language_code}/${encodeURIComponent(lemma)}?template_name=${template['@template_name']}`,
-              init = {
-                  headers: {
-                      Accept: 'text/html'
-                  }
-              };
-        fetch(url, init).then(response => response.text()).then(duplicatesWarningHtml => {
+        const url = `${baseUrl}api/v1/duplicates/${'test' in template ? 'test' : 'www'}/${template.language_code}/${encodeURIComponent(lemma)}?template_name=${template['@template_name']}`;
+        fetch(url, initAcceptHtml).then(response => response.text()).then(duplicatesWarningHtml => {
             if (duplicatesWarningHtml === '') {
                 removeDuplicatesElements();
                 return;
             }
 
-            const url = `${baseUrl}api/v1/no_duplicate/${template.language_code}`;
-            return fetch(url, init).then(response => response.text()).then(noDuplicateHtml => {
+            return noDuplicateHtml().then(noDuplicateHtml => {
                 if (lemma !== lastCheckedLemma) {
                     // it changed in the meantime, maybe the network request was slow
                     return;
