@@ -112,8 +112,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         function addFormDataToLink() {
                             const params = new URLSearchParams(link.search);
                             params.delete('form_representation');
-                            for (const form_representation of form.elements['form_representation']) {
-                                params.append('form_representation', form_representation.value);
+                            for (const formRepresentationInput of formRepresentationInputs) {
+                                params.append('form_representation', formRepresentationInput.value);
                             }
                             link.search = params;
                         }
