@@ -4337,6 +4337,66 @@ templates = {
         ],
     },
 
+    'indonesian-noun': {
+        '@attribution': {'users': ['Bennylin'], 'title': 'Wikidata:Wikidata Lexeme Forms/Indonesian'},
+        'label': 'Indonesian noun',
+        'language_item_id': 'Q9240',
+        'language_code': 'id',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'singular',
+                'example': 'Dia punya satu [anak].',
+                'grammatical_features_item_ids': ['Q110786'],
+            },
+            {
+                'label': 'plural',
+                'example': 'Di sekolah, [anak-anak] itu semuanya senang.',
+                'grammatical_features_item_ids': ['Q146786'],
+            },
+        ],
+    },
+
+    'indonesian-adjective': {
+        '@attribution': {'users': ['Bennylin'], 'title': 'Wikidata:Wikidata Lexeme Forms/Indonesian'},
+        'label': 'Indonesian adjective',
+        'language_item_id': 'Q9240',
+        'language_code': 'id',
+        'lexical_category_item_id': 'Q34698',
+        'forms': [
+            {
+                'label': 'positive',
+                'example': 'Orang itu [cantik].',
+                'grammatical_features_item_ids': ['Q3482678'],
+            },
+            {
+                'label': 'comparative',
+                'example': 'Si A [lebih cantik] dari si B.',
+                'grammatical_features_item_ids': ['Q14169499'],
+            },
+            {
+                'label': 'superlative',
+                'example': 'Si C [tercantik] di antara semua.',
+                'grammatical_features_item_ids': ['Q1817208'],
+            },
+        ],
+    },
+
+    'indonesian-verb': {
+        '@attribution': {'users': ['Bennylin'], 'title': 'Wikidata:Wikidata Lexeme Forms/Indonesian'},
+        'label': 'Indonesian verb',
+        'language_item_id': 'Q9240',
+        'language_code': 'id',
+        'lexical_category_item_id': 'Q24905',
+        'forms': [
+            {
+                'label': 'simple',
+                'example': 'Aku [bangun] tidur.',
+                'grammatical_features_item_ids': ['Q3910936'],
+            },
+        ],
+    },
+
     'esperanto-noun': {
         '@attribution': {'users': ['KaMan', 'Jens Ohlig'], 'title': 'Wikidata:Wikidata Lexeme Forms/Esperanto'},
         'label': 'esperanta substantivo',
