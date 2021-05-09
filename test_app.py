@@ -3,6 +3,7 @@ import flask
 from html.parser import HTMLParser
 import json
 import pytest
+import re
 import werkzeug
 
 import app as lexeme_forms
@@ -1158,6 +1159,24 @@ def test_bulk_error_no_xss(monkeypatch):
     assert 'script' in response_text
     assert 'xss' in response_text
     assert '<script>' not in response_text
+
+
+def test_index_lang_dir():
+    """Test the lang= and dir= attributes of at least one group and template.
+
+    The group and template being tested are arbitrary,
+    but we should at least test one each."""
+
+    with lexeme_forms.app.test_client() as client:
+        response = client.get('/')
+    assert response.content_type == 'text/html; charset=utf-8'
+    response_text = response.get_data(as_text=True)
+
+    # group
+    assert '<span lang="fa" dir="rtl">فارسی (<span lang=zxx>fa</span>)</span>' in response_text
+    # template
+    print(response_text)
+    assert re.search(r'<span lang="fa" dir="rtl">\s*<a href="[^"]*/template/persian-noun/">اسم فارسی</a>', response_text)
 
 
 def test_index_ids_distinct():
