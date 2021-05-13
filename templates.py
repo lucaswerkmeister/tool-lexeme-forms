@@ -6527,6 +6527,89 @@ templates = {
         },
     },
 
+    'bokmål-noun-masculine-neuter': {
+        '@attribution': {'users': ['Jon Harald Søby'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Bokmål'},
+        'label': 'bokmål han- og intetkjønnssubstantiv',
+        'language_item_id': 'Q25167',
+        'language_code': 'nb',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'ubestemt entall',
+                'example': 'Nå kommer en/et [rap].',
+                'grammatical_features_item_ids': ['Q110786', 'Q53997857'],
+            },
+            {
+                'label': 'bestemt entall, hankjønn',
+                'example': 'Den [rapen] var ekkel.',
+                'grammatical_features_item_ids': ['Q110786', 'Q53997851', 'Q499327'],
+            },
+            {
+                'label': 'bestemt entall, intetkjønn',
+                'example': 'Det [rapet] var ekkelt.',
+                'grammatical_features_item_ids': ['Q110786', 'Q53997851', 'Q1775461'],
+            },
+            {
+                'label': 'ubestemt flertall, hankjønn',
+                'example': 'Flere [raper] på rad.',
+                'grammatical_features_item_ids': ['Q146786', 'Q53997857', 'Q499327'],
+            },
+            {
+                # note: the part in parenetheses here is more usage instructions than label, could maybe be split into a different field later
+                'label': 'ubestemt flertall, intetkjønn (utelat denne formen hvis den er identisk med den forrige, og fjern «hankjønn» fra forrige etter at leksemet er opprettet)',
+                'example': 'Flere [rap] på rad.',
+                'grammatical_features_item_ids': ['Q146786', 'Q53997857', 'Q1775461'],
+                'optional': True,
+            },
+            {
+                'label': 'bestemt flertall, han- og intetkjønn',
+                'example': 'Alle de illeluktende [rapene].',
+                'grammatical_features_item_ids': ['Q146786', 'Q53997851', 'Q499327', 'Q1775461'],
+            },
+            {
+                'label': 'bestemt flertall, intetkjønn',
+                'example': 'Alle de illeluktende [rapa].',
+                'grammatical_features_item_ids': ['Q146786', 'Q53997851', 'Q1775461'],
+            },
+        ],
+        'statements': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q499327',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                },
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q1775461',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                },
+            ],
+        },
+    },
+
     'bokmål-adjective': {
         '@attribution': {'users': ['Jon Harald Søby'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Bokmål'},
         'label': 'bokmål adjektiv',
