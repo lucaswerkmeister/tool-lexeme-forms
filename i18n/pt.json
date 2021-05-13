@@ -2,19 +2,25 @@
 	"@metadata": {
 		"authors": [
 			"Ederporto",
+			"GoEThe",
 			"Lucas Werkmeister"
 		]
 	},
 	"create": "Criar",
 	"csrf-warning": "Desculpe, não foi possível processar essa requisição (proteção contra <abbr title=\"Cross-site request forgery\">CSRF</abbr> falhou). Por favor, tente submeter o formulário novamente.",
-	"duplicates-warning": "Os seguintes lexemas têm o mesmo lema e código de língua que o lema que você está tentando criar:",
-	"duplicates-instructions": "Se você tem certeza que eles são diferentes, selecione a caixa no final do formulário.",
+	"duplicates-warning": "{{PLURAL:$1|O seguinte lexema tem|Os seguintes lexemas têm}} o mesmo lema e código de língua que o lema que você está tentando criar:",
+	"duplicates-instructions": "Se tem a certeza que {{PLURAL:$1|é diferente|são diferentes}}, selecione a caixa no final do formulário.",
 	"no-duplicate": "Isto não é uma duplicata de um lexema existente.",
+	"form-optional": "&#32;(opcional)",
 	"advanced": "Avançado",
 	"advanced-general": "Você está no modo «Avançado».",
 	"advanced-lexeme-id": "No lugar de criar um novo lexema, você pode adicionar um identificador de um lexema existente para adicionar as formas faltantes. Deixe em branco as formas já existentes no lexema; Do contrário, será criada uma duplicata!",
 	"advanced-partial-forms": "Você pode deixar algumas formas vazias para evitar que sejam adicionadas. Garanta criar todas as formas necessárias!",
 	"lexeme-id": "Identificador de lexema",
 	"advanced-partial-forms-hint": "Para criar lexemas com algumas formas faltando, mude para o modo avançado.",
-	"generated-via": "gerado via"
+	"generated-via": "gerado via",
+	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=nenhuma forma|uma forma|$2 formas}} e {{PLURAL:$3|0=zero sentidos|um sentido|$3 sentidos}}",
+	"bulk-link": "modo em massa",
+	"bulk-format-help": "ajuda sobre o formato",
+	"bulk-not-allowed": "Não tem permissão para usar o modo em massa. Desculpe."
 }
