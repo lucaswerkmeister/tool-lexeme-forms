@@ -8924,7 +8924,8 @@ templates = {
         ],
     },
 
-    'swedish-absolute-adjective': {
+    'swedish-absolute-adjective': 'swedish-adjective-absolute',
+    'swedish-adjective-absolute': {
         '@attribution': {'users': ['Vesihiisi'], 'title': 'Wikidata:Wikidata Lexeme Forms/Swedish'},
         'label': 'svenskt adjektiv (utan komparativ)',
         'language_item_id': 'Q9027',
