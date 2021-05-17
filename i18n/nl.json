@@ -2,13 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"MarcoSwart",
-			"Mbch331"
+			"Mbch331",
+			"Nickthijssen1994"
 		]
 	},
 	"create": "Aanmaken",
 	"csrf-warning": "Sorry, we konden dit niet verwerken (door de <abbr title=\"Cross-site request forgery\">CSRF</abbr>-bescherming). Probeer het webformulier nog eens aan te bieden.",
 	"duplicates-warning": "De volgende bestaande {{PLURAL:$1|lexeem heeft|lexemen hebben}} hetzelfde lemmawoord en taalcode als degene die je probeert aan te maken:",
-	"duplicates-instructions": "Weet je zeker dat je echt iets anders aanmaakt? Kruis dan het vakje voor de laatste regel aan.",
+	"duplicates-instructions": "Als je zeker weet dat {{PLURAL:$1|het verschilt|ze verschillen}}, kruis dan het vakje onderaan het formulier aan.",
 	"no-duplicate": "Dit is geen doublure van een lexeem dat al bestaat.",
 	"advanced": "Geavanceerd",
 	"advanced-general": "Geavanceerde mogelijkheden.",
@@ -16,5 +17,7 @@
 	"advanced-partial-forms": "Als je woordvormen niet invult, worden ze niet toegevoegd. Let op dat je niet per ongeluk een woordvorm vergeet!",
 	"lexeme-id": "Lexeem-ID",
 	"advanced-partial-forms-hint": "Ga naar \"Geavanceerd\" als je een lexeem wil maken waarin een of meer woordvormen ontbreken.",
-	"generated-via": "gegenereerd door"
+	"generated-via": "gegenereerd door",
+	"edit-link": "bewerken",
+	"login-hint": "U moet [$1 inloggen] om wijzigingen te kunnen maken met deze tool."
 }
