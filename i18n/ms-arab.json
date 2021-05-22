@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Tofeiku"
+		]
+	},
+	"create": "چيڤتا",
+	"no-duplicate": "اين بوکن ڤندوا ليکسيم يڠ اد.",
+	"form-optional": "&#32;(ڤيليهن)",
+	"advanced": "ماجو",
+	"advanced-general": "اندا دالم مود “ماجو”.",
+	"lexeme-id": "اءي. دي. ليکسيم",
+	"advanced-partial-forms-hint": "اونتوق منچيڤتا ليکسيم دڠن ببراڤ بنتوق هيلڠ، اليه کمود ماجو.",
+	"generated-via": "ترجان ملالوءي",
+	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=تياد بنتوق|ساتو بنتوق|$2 بنتوق}} دان {{PLURAL:$3|0=تياد مقصود|ساتو مقصود|$3 مقصود}}",
+	"bulk-link": "مود ڤوکل",
+	"bulk-format-help": "بنتوان فورمت",
+	"bulk-not-allowed": "{{GENDER:$1|اندا}} تيدق دبنرکن مڠݢوناکن مود ڤوکل. معاف.",
+	"edit-link": "سونتيڠ",
+	"edit-unmatched-warning": "{{PLURAL:$1|بنتوق}} ليکسيم برايکوت تيدق سڤادن دڠن سبارڠ بنتوق تمڤلت:",
+	"edit-form-list-item": "$1، $2، {{PLURAL:$3|0=تياد کڽاتاءن|ساتو کڽاتاءن|$3 کڽاتاءن}}",
+	"no-grammatical-features": "تياد چيري تاتابهاس",
+	"login-hint": "اندا ڤرلو [$1 لوݢ ماسوق] سبلوم اندا بوليه ممبوات ڤروبهن مڠݢوناکن الت اين."
+}
