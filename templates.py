@@ -8212,6 +8212,41 @@ templates = {
         ],
     },
 
+    'portuguese-adverb-modal': {
+        '@attribution': {'users': ['EnaldoSS'], 'title': 'Wikidata:Wikidata Lexeme Forms/Portuguese'},
+        'label': 'advérbio de modo em português',
+        'language_item_id': 'Q5146',
+        'language_code': 'pt',
+        'lexical_category_item_id': 'Q380057',
+        'forms': [
+            {
+                'label': 'Advérbio de modo',
+                'example': 'A prova estava [extremamente] difícil.',
+                'grammatical_features_item_ids': [],
+            },
+        ],
+        'statements': {
+            'P31': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P31',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q1941737',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    },
+
     'russian-noun-masculine': {
         '@attribution': {'users': ['Infovarius'], 'title': 'Wikidata:Wikidata Lexeme Forms/Russian'},
         'label': 'русское существительное, мужской род',
