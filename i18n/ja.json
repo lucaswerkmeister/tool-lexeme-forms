@@ -4,7 +4,8 @@
 			"Kkairri",
 			"Lucas Werkmeister",
 			"RYU N",
-			"Tamaki Wakita"
+			"Tamaki Wakita",
+			"Tmv"
 		]
 	},
 	"create": "作成",
@@ -14,5 +15,6 @@
 	"bulk-link": "バルクモード",
 	"bulk-format-help": "様式のヘルプ",
 	"bulk-not-allowed": "あなたのバルクモードの使用は許可されていません。 申し訳ございません。",
-	"edit-link": "編集"
+	"edit-link": "編集",
+	"no-grammatical-features": "文法的特徴がない"
 }

@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"create": "Crear",
+	"csrf-warning": "Regrettabilemente, nos non pote processar iste requesta (le protection anti-<abbr title=\"Cross-site request forgery = falsification de requestas inter sitos\">CSRF</abbr> ha fallite). Per favor tenta inviar iste formulario de novo.",
+	"duplicates-warning": "Le sequente {{PLURAL:$1|lexema|lexemas}} existente ha le mesme lemma e codice de lingua como le que tu tenta crear:",
+	"duplicates-instructions": "Si tu es secur que {{PLURAL:$1|illo|illos}} es differente, marca le quadrato al fin del formulario.",
+	"no-duplicate": "Isto non es un duplicato de un lexema existente.",
+	"form-optional": "&#32;(optional)",
+	"advanced": "Avantiate",
+	"advanced-general": "Tu es un modo \"avantiate\".",
+	"advanced-lexeme-id": "Tu pote entrar un ID de lexema pro adder formas a un lexema existente in loco de crear un nove. Lassa vacue omne formas que jam existe in le lexema, alteremente illos essera duplicate!",
+	"advanced-partial-forms": "Tu pote lassar alcun formas vacue pro evitar de adder los. Assecura te de crear tote le formas necessari!",
+	"lexeme-id": "ID de lexema",
+	"advanced-partial-forms-hint": "Pro crear lexemas con alcun formas mancante, cambia al modo avantiate.",
+	"generated-via": "generate con",
+	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=sin formas|un forma|$2 formas}} e {{PLURAL:$3|0=sin sensos|un senso|$3 sensos}}",
+	"bulk-link": "modo in massa",
+	"bulk-format-help": "adjuta sur le formato"
+}
