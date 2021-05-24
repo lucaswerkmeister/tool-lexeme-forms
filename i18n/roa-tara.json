@@ -17,10 +17,14 @@
 	"lexeme-id": "ID d'u lesseme",
 	"advanced-partial-forms-hint": "Pe ccrejà lesseme cu de le forme mangande, cange jndr'à modalità avanzate.",
 	"generated-via": "generate cu",
+	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=nisciuna|'na|$2}} forme e {{PLURAL:$3|0=nisciune|'nu|$3}} sienze",
 	"bulk-link": "carecamedne de masse",
 	"bulk-format-help": "aijute formattazione",
 	"bulk-not-allowed": "Non ge {{GENDER:$1|sì}} autorizzate a ausà 'u carecamende de masse. Ne despiace.",
 	"edit-link": "cange",
+	"edit-ambiguous-warning": "{{PLURAL:$1|'A|Le}} forme d'u lesseme s'accocchiane cu cchiù de 'na forme jndr'à 'u template:",
+	"edit-unmatched-warning": "{{PLURAL:$1|'A|Le}} forme d'u lesseme non ge s'accocchiane cu nisciuna forme jndr'à 'u template:",
 	"edit-form-list-item": "$1, $2, {{PLURAL:$3|0=nisciuna dichiarazione|'na dichiarazione|$3 dichiaraziune}}",
-	"no-grammatical-features": "nisciuna caratteristeche grammatecale"
+	"no-grammatical-features": "nisciuna caratteristeche grammatecale",
+	"login-hint": "E' abbesògne de [$1 trasè] apprime ca puè ffà cangiaminde ausanne stu strumende."
 }
