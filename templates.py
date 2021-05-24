@@ -9015,6 +9015,69 @@ templates = {
         },
     },
 
+    'swedish-adjective': {
+        '@attribution': {'users': ['Belteshassar', 'Ainali'], 'title': 'Wikidata:Wikidata Lexeme Forms/Swedish'},
+        'label': 'svenskt adjektiv (med komparativ)',
+        'language_item_id': 'Q9027',
+        'language_code': 'sv',
+        'lexical_category_item_id': 'Q34698',
+        'two_column_sections': False,
+        'forms': [
+            {
+                'label': 'positiv obestämd singular, utrum',
+                'example': 'en [ung] pojke',
+                'grammatical_features_item_ids': ['Q53997857', 'Q110786', 'Q1305037', 'Q3482678'],
+            },
+            {
+                'label': 'positiv obestämd singular, neutrum',
+                'example': 'ett [ungt] barn',
+                'grammatical_features_item_ids': ['Q53997857', 'Q110786', 'Q1775461', 'Q3482678'],
+            },
+            {
+                'label': 'positiv bestämd singular, maskulinum',
+                'example': 'den [unge] pojken',
+                'grammatical_features_item_ids': ['Q53997851', 'Q110786', 'Q499327', 'Q3482678'],
+            },
+            {
+                'label': 'positiv bestämd singular, utrum/neutrum',
+                'example': 'det [unga] barnet',
+                'grammatical_features_item_ids': ['Q53997851', 'Q110786', 'Q3482678'],
+            },
+            {
+                'label': 'positiv plural',
+                'example': 'de [unga] barnen',
+                'grammatical_features_item_ids': ['Q146786', 'Q3482678'],
+            },
+            {
+                'section_break': True,
+                'label': 'komparativ (kongruensböjs inte)',
+                'example': 'pojken är [yngre] än flickan',
+                'grammatical_features_item_ids': ['Q14169499'],
+            },
+            {
+                'section_break': True,
+                'label': 'superlativ predikativ',
+                'example': 'pojken är [yngst] av alla barnen',
+                'grammatical_features_item_ids': ['Q1817208', 'Q1931259'],
+            },
+            {
+                'label': 'superlativ singular attributiv bestämd maskulinum',
+                'example': 'den [yngste] pojken i klassen',
+                'grammatical_features_item_ids': ['Q1817208', 'Q110786', 'Q53997851', 'Q499327', 'Q4818723'],
+            },
+            {
+                'label': 'superlativ singular attributiv bestämd',
+                'example': 'det [yngsta] barnet i klassen',
+                'grammatical_features_item_ids': ['Q1817208', 'Q110786', 'Q53997851', 'Q4818723'],
+            },
+            {
+                'label': 'superlativ plural attributiv',
+                'example': 'de [yngsta] pojkarna i klassen',
+                'grammatical_features_item_ids': ['Q1817208', 'Q146786', 'Q4818723'],
+            },
+        ],
+    },
+
     'ukrainian-noun-masculine': {
         '@attribution': {'users': ['Tohaomg'], 'title': 'Wikidata:Wikidata Lexeme Forms/Ukrainian'},
         'label': 'український іменник, чоловічий рід',
