@@ -4435,9 +4435,9 @@ templates = {
                 'grammatical_features_item_ids': ['Q625581'],
             },
             {
-                'label': 'imperativo',
+                'label': 'volitivo',
                 'example': 'Ne [dormu]!',
-                'grammatical_features_item_ids': ['Q22716'],
+                'grammatical_features_item_ids': ['Q10716592'],
             },
         ],
     },
