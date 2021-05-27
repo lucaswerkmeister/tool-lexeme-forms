@@ -19,5 +19,18 @@
 	"generated-via": "generate con",
 	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=sin formas|un forma|$2 formas}} e {{PLURAL:$3|0=sin sensos|un senso|$3 sensos}}",
 	"bulk-link": "modo in massa",
-	"bulk-format-help": "adjuta sur le formato"
+	"bulk-format-help": "adjuta sur le formato",
+	"bulk-not-allowed": "{{GENDER:$1|Tu}} non es autorisate a usar le modo in massa. Guai.",
+	"bulk-first-field-not-lexeme-id": "Perque le patrono ha {{PLURAL:$1|un forma|$1 formas}} e le linea $4 del entrata ha {{PLURAL:$2|un campo|$2 campos}}, le prime campo debe resimilar un ID de lexema, ma <q>$3</q> non resimila un tal. (Ha tu specificate un forma in excesso in le entrata?)",
+	"bulk-first-field-lexeme-id": "Perque le patrono ha {{PLURAL:$1|un forma|$1 formas}} e le linea $4 del entrata ha {{PLURAL:$2|un campo|$2 campos}}, le prime campo non debe resimilar un ID de lexema, ma <q>$3</q> resimila un tal. (Ha tu oblidate un forma in le entrata?)",
+	"bulk-wrong-number-of-fields": "Pois que le patrono ha {{PLURAL:$1|un forma|$1 formas}}, cata linea de entrata deberea haber o tante campos (si se crea un nove lexema), o un campo de plus (si se specifica le ID de un lexema existente a modificar); ma le linea $3 del entrata ha {{PLURAL:$2|un campo|$2 campos}}.",
+	"bulk-optional-forms-hint": "Si tu vole omitter certe formas, specifica los como vacue (p.ex. <kbd>...|||</kbd> pro tres formas vacue al fin).",
+	"edit-link": "modificar",
+	"edit-general": "Tu es in modo “modification”. Cambia le valores hic infra pro modificar, adder o remover formas del lexema.",
+	"edit-mismatch-warning": "Iste lexema non pare corresponder a iste patrono. Verifica novemente que iste es le patrono appropriate pro iste lexema ante de continuar.",
+	"edit-ambiguous-warning": "Le sequente {{PLURAL:$1|forma|formas}} de lexema corresponde in mesura equal a plure patronos:",
+	"edit-unmatched-warning": "Le sequente {{PLURAL:$1|forma|formas}} de lexema non corresponde a alcun del formas del patrono:",
+	"edit-form-list-item": "$1, $2, {{PLURAL:$3|0=sin declarationes|un declaration|$3 declarationes}}",
+	"no-grammatical-features": "sin characteristicas grammatical",
+	"login-hint": "Tu debe [$1 aperir session] pro poter facer modificationes con iste utensile."
 }
