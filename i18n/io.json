@@ -1,0 +1,36 @@
+{
+	"@metadata": {
+		"authors": [
+			"Joao Xavier"
+		]
+	},
+	"create": "Kreez",
+	"csrf-warning": "Pardonez! Ni ne povis atendar ca demando (<abbr title=\"Cross-site request forgery\">CSRF</abbr> protekto faliis). Probez itere sendar la formulario.",
+	"duplicates-warning": "La sequanta {{PLURAL:$1|lexemo|lexemi}} havas la sama lemo e linguala kodeko kam l'altru quan vu deziras krear:",
+	"duplicates-instructions": "Se vu kredas ke {{PLURAL:$1|ol|li}} esas diferanta, facez 'check' che la buxo an l'infra parto di ca formulario.",
+	"no-duplicate": "To ne esas duplikato di existanta lexemo.",
+	"form-optional": "&#32;(fakultativa)",
+	"advanced": "Plura utensili",
+	"advanced-general": "Vu esas en \"modo avancata\".",
+	"advanced-lexeme-id": "You can enter a lexeme ID to add forms to an existing lexeme instead of creating a new one. Leave any forms that already exist on the lexeme blank, otherwise they will be duplicated!",
+	"advanced-partial-forms": "You can leave some forms blank so that they will not be added. Make sure you’re not accidentally leaving out any forms!",
+	"lexeme-id": "Lexemal idendifikilo (ID)",
+	"advanced-partial-forms-hint": "Por krear lexemi mankanta kelka formularii, komutez a la modo avancata.",
+	"generated-via": "kreita per",
+	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=nula formulario|1 formulario|$2 formularii}} e {{PLURAL:$3|0=nula senco|1 senco|$3 senci}}",
+	"bulk-link": "bulk mode",
+	"bulk-format-help": "helpo pri quale formatar",
+	"bulk-not-allowed": "{{GENDER:$1|Vu}} ne darfas uzar ''bulk mode''. Pardonez.",
+	"bulk-first-field-not-lexeme-id": "Since the template has {{PLURAL:$1|one form|$1 forms}} and line $4 of the input has {{PLURAL:$2|one field|$2 fields}}, the first field should look like a lexeme ID, but <q>$3</q> does not look like a lexeme ID. (Did you specify one form too many in the input?)",
+	"bulk-first-field-lexeme-id": "Since the template has {{PLURAL:$1|one form|$1 forms}} and line $4 of the input has {{PLURAL:$2|one field|$2 fields}}, the first field should not look like a lexeme ID, but <q>$3</q> does look like one. (Did you forget a form in the input?)",
+	"bulk-wrong-number-of-fields": "Since the template has {{PLURAL:$1|one form|$1 forms}}, each input line should have either that many fields (when creating a new lexeme) or one more (when specifying the ID of an existing lexeme to edit), but line $3 of the input has {{PLURAL:$2|one field|$2 fields}} instead.",
+	"bulk-optional-forms-hint": "If you want to skip some forms, specify them as empty (e.g. <kbd>...|||</kbd> for three empty forms at the end).",
+	"edit-link": "redaktar",
+	"edit-general": "Vu esas en la modo \"redakto\". Se vu modifikos l'informi adinfre, vu adjuntos od eliminos formularii, o la lexemo.",
+	"edit-mismatch-warning": "This lexeme does not appear to match this template! Please double-check that it is the right template for this lexeme before continuing.",
+	"edit-ambiguous-warning": "The following lexeme {{PLURAL:$1|form|forms}} matched more than one template form equally well:",
+	"edit-unmatched-warning": "The following lexeme {{PLURAL:$1|form|forms}} did not match any of the template forms:",
+	"edit-form-list-item": "$1, $2, {{PLURAL:$3|0=nula deklaro|1 deklaro|$3 deklari}}",
+	"no-grammatical-features": "nula gramatikala traiti",
+	"login-hint": "You need to [$1 log in] before you can make changes using this tool."
+}
