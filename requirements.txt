@@ -2,7 +2,7 @@ babel
 decorator
 flake8
 flask
-jinja2
+jinja2 >= 3.0.0
 mwapi
 mwoauth
 pytest

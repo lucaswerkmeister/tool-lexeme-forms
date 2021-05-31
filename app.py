@@ -72,7 +72,7 @@ def form2label(form):
     return ret
 
 @app.template_filter()
-@jinja2.contextfilter
+@jinja2.pass_context
 def form2input(context, form, first=False, readonly=False, template_language_code=None, representation_language_code=None):
     (prefix, placeholder, suffix) = split_example(form)
     if 'lexeme_forms' in form and template_language_code != representation_language_code:
