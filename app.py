@@ -217,6 +217,11 @@ def term_span(term):
             flask.Markup(r'</span>'))
 
 @app.template_filter()
+def lemmas_spans(lemmas):
+    return flask.Markup(r'/').join(term_span(lemma)
+                                   for lemma in lemmas.values())
+
+@app.template_filter()
 def language_autonym_with_code(language_code):
     code_zxx = (flask.Markup(r'<span lang=zxx>') +
                 flask.Markup.escape(language_code) +
@@ -275,7 +280,7 @@ def process_template_advanced(template_name, advanced=True):
         summary = build_summary(template, form_data)
 
         if 'oauth' in app.config:
-            lexeme_uri = submit_lexeme(template, lexeme_data, summary)
+            lexeme_id, lexeme_uri = submit_lexeme(template, lexeme_data, summary)
             return flask.redirect(lexeme_uri, code=303)
         else:
             print(summary)
@@ -358,17 +363,25 @@ def process_template_bulk(template_name):
             if not lexeme.get('lexeme_id'):
                 duplicates = find_duplicates(template, lexeme)
                 if duplicates:
-                    results.append(('duplicates', duplicates))
+                    results.append({
+                        'duplicates': duplicates,
+                    })
                     continue
             lexeme_data = build_lexeme(template, lexeme)
             summary = build_summary(template, form_data)
 
             if 'oauth' in app.config:
-                lexeme_uri = submit_lexeme(template, lexeme_data, summary)
-                results.append(('lexeme_uri', lexeme_uri))
+                lexeme_id, lexeme_uri = submit_lexeme(template, lexeme_data, summary)
+                results.append({
+                    'lexeme_data': lexeme_data,
+                    'lexeme_id': lexeme_id,
+                    'lexeme_uri': lexeme_uri,
+                })
             else:
                 print(summary)
-                results.append(('lexeme_data', lexeme_data))
+                results.append({
+                    'lexeme_data': lexeme_data,
+                })
 
         if 'oauth' in app.config:
             return flask.render_template(
@@ -377,7 +390,7 @@ def process_template_bulk(template_name):
                 results=results,
             )
         else:
-            return flask.jsonify([result[1] for result in results])
+            return flask.jsonify(results)
 
     else:
         placeholder = ''
@@ -458,7 +471,7 @@ def process_template_edit(template_name, lexeme_id):
         summary = build_summary(template, form_data)
 
         if 'oauth' in app.config:
-            lexeme_uri = submit_lexeme(template, lexeme_data, summary)
+            lexeme_id, lexeme_uri = submit_lexeme(template, lexeme_data, summary)
             return flask.redirect(lexeme_uri, code=303)
         else:
             print(summary)
@@ -904,7 +917,8 @@ def submit_lexeme(template, lexeme_data, summary):
     )
     lexeme_id = response['entity']['id']
 
-    return host + '/entity/' + lexeme_id
+    lexeme_uri = host + '/entity/' + lexeme_id
+    return lexeme_id, lexeme_uri
 
 def add_labels_to_lexeme_forms_grammatical_features(session, language, lexeme_forms):
     grammatical_features_item_ids = set()

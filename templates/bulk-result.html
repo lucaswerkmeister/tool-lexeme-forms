@@ -5,15 +5,14 @@
   <ul>
     {% for result in results %}
     <li>
-    {% if result[0] == 'lexeme_uri' %}
-    {% set lexeme_uri = result[1] %}
-    <a href="{{ lexeme_uri }}">{{ lexeme_uri }}</a>
-    {% elif result[0] == 'duplicates' %}
-    {% set duplicates = result[1] %}
-    {{ duplicates | render_duplicates(actionable=False, template_name=template['@template_name']) | safe }}
-    {% else %}
-    <div class="alert alert-error">Unknown result type {{ result[0] }}!</div>
-    {% endif %}
+      {% if result.duplicates %}
+      {{ result.duplicates | render_duplicates(actionable=False, template_name=template['@template_name']) | safe }}
+      {% else %}
+      <a href="{{ result.lexeme_uri }}">
+        {{ result.lexeme_data.lemmas | lemmas_spans }}
+        ({{ result.lexeme_id }})
+      </a>
+      {% endif %}
     </li>
     {% endfor %}
   </ul>
