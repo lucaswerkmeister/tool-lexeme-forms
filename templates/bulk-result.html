@@ -10,6 +10,7 @@
       {% else %}
       <a href="{{ result.lexeme_uri }}">
         {{ result.lexeme_data.lemmas | lemmas_spans }}
+        ({{ result.lexeme_id }})
       </a>
       {% endif %}
     </li>

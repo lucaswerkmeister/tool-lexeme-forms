@@ -280,7 +280,7 @@ def process_template_advanced(template_name, advanced=True):
         summary = build_summary(template, form_data)
 
         if 'oauth' in app.config:
-            lexeme_uri = submit_lexeme(template, lexeme_data, summary)
+            lexeme_id, lexeme_uri = submit_lexeme(template, lexeme_data, summary)
             return flask.redirect(lexeme_uri, code=303)
         else:
             print(summary)
@@ -371,9 +371,10 @@ def process_template_bulk(template_name):
             summary = build_summary(template, form_data)
 
             if 'oauth' in app.config:
-                lexeme_uri = submit_lexeme(template, lexeme_data, summary)
+                lexeme_id, lexeme_uri = submit_lexeme(template, lexeme_data, summary)
                 results.append({
                     'lexeme_data': lexeme_data,
+                    'lexeme_id': lexeme_id,
                     'lexeme_uri': lexeme_uri,
                 })
             else:
@@ -470,7 +471,7 @@ def process_template_edit(template_name, lexeme_id):
         summary = build_summary(template, form_data)
 
         if 'oauth' in app.config:
-            lexeme_uri = submit_lexeme(template, lexeme_data, summary)
+            lexeme_id, lexeme_uri = submit_lexeme(template, lexeme_data, summary)
             return flask.redirect(lexeme_uri, code=303)
         else:
             print(summary)
@@ -916,7 +917,8 @@ def submit_lexeme(template, lexeme_data, summary):
     )
     lexeme_id = response['entity']['id']
 
-    return host + '/entity/' + lexeme_id
+    lexeme_uri = host + '/entity/' + lexeme_id
+    return lexeme_id, lexeme_uri
 
 def add_labels_to_lexeme_forms_grammatical_features(session, language, lexeme_forms):
     grammatical_features_item_ids = set()
