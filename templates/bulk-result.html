@@ -8,7 +8,9 @@
       {% if result.duplicates %}
       {{ result.duplicates | render_duplicates(actionable=False, template_name=template['@template_name']) | safe }}
       {% else %}
-      <a href="{{ result.lexeme_uri }}">{{ result.lexeme_uri }}</a>
+      <a href="{{ result.lexeme_uri }}">
+        {{ result.lexeme_data.lemmas | lemmas_spans }}
+      </a>
       {% endif %}
     </li>
     {% endfor %}
