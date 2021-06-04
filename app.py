@@ -363,17 +363,24 @@ def process_template_bulk(template_name):
             if not lexeme.get('lexeme_id'):
                 duplicates = find_duplicates(template, lexeme)
                 if duplicates:
-                    results.append(('duplicates', duplicates))
+                    results.append({
+                        'duplicates': duplicates,
+                    })
                     continue
             lexeme_data = build_lexeme(template, lexeme)
             summary = build_summary(template, form_data)
 
             if 'oauth' in app.config:
                 lexeme_uri = submit_lexeme(template, lexeme_data, summary)
-                results.append(('lexeme_uri', lexeme_uri))
+                results.append({
+                    'lexeme_data': lexeme_data,
+                    'lexeme_uri': lexeme_uri,
+                })
             else:
                 print(summary)
-                results.append(('lexeme_data', lexeme_data))
+                results.append({
+                    'lexeme_data': lexeme_data,
+                })
 
         if 'oauth' in app.config:
             return flask.render_template(
@@ -382,7 +389,7 @@ def process_template_bulk(template_name):
                 results=results,
             )
         else:
-            return flask.jsonify([result[1] for result in results])
+            return flask.jsonify(results)
 
     else:
         placeholder = ''
