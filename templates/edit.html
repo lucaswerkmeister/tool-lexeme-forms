@@ -30,10 +30,7 @@
   <h1>{{ template.label }}</h1>
   <h2>
     <a href="https://{{ 'test' if template.test else 'www' }}.wikidata.org/wiki/Lexeme:{{ template.lexeme_id }}">
-      {% for lemma in lemmas.values() -%}
-      {{ lemma | term_span }}
-      {%- if not loop.last %}/{% endif -%}
-      {%- endfor %}
+      {{ lemmas | lemmas_spans }}
       ({{ template.lexeme_id }})
     </a>
   </h2>

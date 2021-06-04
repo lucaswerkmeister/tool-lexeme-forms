@@ -217,6 +217,11 @@ def term_span(term):
             flask.Markup(r'</span>'))
 
 @app.template_filter()
+def lemmas_spans(lemmas):
+    return flask.Markup(r'/').join(term_span(lemma)
+                                   for lemma in lemmas.values())
+
+@app.template_filter()
 def language_autonym_with_code(language_code):
     code_zxx = (flask.Markup(r'<span lang=zxx>') +
                 flask.Markup.escape(language_code) +
