@@ -592,6 +592,17 @@ def get_lemma(form_data):
                 return form_representation_variant
     return None
 
+def build_lemmas(template, form_data):
+    """Build the lemmas value for the given form data, if any.
+
+    The value returned by this function can contain at most one lemma,
+    but its format can be used in contexts that also handle several lemmas."""
+    lemma = get_lemma(form_data)
+    if lemma is None:
+        return None
+    lang = template['language_code']
+    return {lang: {'language': lang, 'value': lemma}}
+
 @app.route('/api/v1/duplicates/<any(www,test):wiki>/<language_code>/<path:lemma>')
 @enableCORS
 def get_duplicates_api(wiki, language_code, lemma):
@@ -771,11 +782,11 @@ def build_lexeme(template, form_data):
         # TODO warn if match['conflicting_statements']?
         lexeme_data['claims'] = match['missing_statements']
     else:
-        lemma = get_lemma(form_data)
-        if lemma is None:
+        lemmas = build_lemmas(template, form_data)
+        if lemmas is None:
             flask.abort(400)
         lexeme_data.update({
-            'lemmas': {lang: {'language': lang, 'value': lemma}},
+            'lemmas': lemmas,
             'language': template['language_item_id'],
             'lexicalCategory': template['lexical_category_item_id'],
             'claims': template.get('statements', {}),

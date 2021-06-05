@@ -191,6 +191,12 @@ def test_get_lemma_no_form_representation():
     lemma = lexeme_forms.get_lemma(form_data)
     assert lemma is None
 
+def test_build_lemmas():
+    template = {'language_code': 'en'}
+    form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', 'noun')])
+    lemmas = lexeme_forms.build_lemmas(template, form_data)
+    assert lemmas == {'en': {'language': 'en', 'value': 'noun'}}
+
 def test_get_duplicates_api_json(monkeypatch):
     duplicates = [{'id': 'L1', 'uri': 'http://www.wikidata.org/wiki/Lexeme:L1', 'label': 'lemma', 'description': 'a lexeme', 'forms_count': None, 'senses_count': None}]
     monkeypatch.setattr(lexeme_forms, 'get_duplicates', lambda wiki, language_code, lemma: duplicates)
