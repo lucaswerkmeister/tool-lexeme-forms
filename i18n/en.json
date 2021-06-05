@@ -32,5 +32,9 @@
 	"edit-unmatched-warning": "The following lexeme {{PLURAL:$1|form|forms}} did not match any of the template forms:",
 	"edit-form-list-item": "$1, $2, {{PLURAL:$3|0=no statements|one statement|$3 statements}}",
 	"no-grammatical-features": "no grammatical features",
+	"title-create": "$1 (create)",
+	"title-advanced": "$1 (advanced)",
+	"title-bulk": "$1 (bulk)",
+	"title-edit": "$1 (edit)",
 	"login-hint": "You need to [$1 log in] before you can make changes using this tool."
 }

@@ -1,4 +1,13 @@
 {% extends "base.html" %}
+{% block title_tag_attributes %}{{ super() }} lang="{{ g.interface_language_code | lang_int2html }}" dir="{{ g.interface_language_code | text_direction }}"{% endblock title_tag_attributes %}
+{% block title %}
+{% if lemmas %}
+{{ lemmas | lemmas_spans | striptags }} {% if lexeme_id %}({{ lexeme_id }}){% endif %} –
+{% elif lexeme_id %}
+{{ lexeme_id }} –
+{% endif %}
+{{ message_with_kwargs( 'title_advanced' if advanced else 'title_create', template_label=template.label ) | striptags }} – {{ super() }}
+{% endblock title %}
 {% block head %}
 {{ super() }}
 <script defer src="https://tools-static.wmflabs.org/cdnjs/ajax/libs/lodash.js/4.17.20/lodash.min.js" integrity="sha384-EnW5v27oxpPV45dNJxtnA2OWfHpDTXuO/EzFl+c1vzZcB1aWeANNH0pFZLJ6Gsbr" crossorigin="anonymous"></script>

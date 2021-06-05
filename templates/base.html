@@ -3,7 +3,7 @@
   <head>
     {% block head %}
     <meta charset="utf-8">
-    <title>{% block title %}Wikidata Lexeme Forms{% endblock title %}</title>
+    <title {% block title_tag_attributes %}{% endblock title_tag_attributes %}>{% block title %}Wikidata Lexeme Forms{% endblock title %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://tools-static.wmflabs.org/cdnjs/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ url_for('static', filename='tool.css') }}">
