@@ -18,7 +18,7 @@
                             statements=form.get('claims', {}) | length ) | safe }}
   </li>
 {% endmacro %}
-{% block title_tag_attributes %}{{ super () }} lang="{{ g.interface_language_code | lang_int2html }}" dir="{{ g.interface_language_code | text_direction }}"{% endblock title_tag_attributes %}
+{% block title_tag_attributes %}{{ super() }} lang="{{ g.interface_language_code | lang_int2html }}" dir="{{ g.interface_language_code | text_direction }}"{% endblock title_tag_attributes %}
 {% block title %}
 {{ lemmas | lemmas_spans | striptags }} ({{ template.lexeme_id }}) –
 {{ message_with_kwargs( 'title_edit', template_label=template.label ) | striptags }} –
