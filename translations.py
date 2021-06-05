@@ -25,6 +25,10 @@ variables = {
     'edit_ambiguous_warning': ['forms'],
     'edit_unmatched_warning': ['forms'],
     'edit_form_list_item': ['form_link', 'grammatical_feature_labels', 'statements'],
+    'title_create': ['template_label'],
+    'title_advanced': ['template_label'],
+    'title_bulk': ['template_label'],
+    'title_edit': ['template_label'],
     'login_hint': ['url'],
 }
 lists = {
