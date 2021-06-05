@@ -19,7 +19,11 @@
   </li>
 {% endmacro %}
 {% block title_tag_attributes %}{{ super () }} lang="{{ g.interface_language_code | lang_int2html }}" dir="{{ g.interface_language_code | text_direction }}"{% endblock title_tag_attributes %}
-{% block title %}{{ message_with_kwargs( 'title_edit', template_label=template.label ) | striptags }} – {{ super() }}{% endblock title %}
+{% block title %}
+{{ lemmas | lemmas_spans | striptags }} ({{ template.lexeme_id }}) –
+{{ message_with_kwargs( 'title_edit', template_label=template.label ) | striptags }} –
+{{ super() }}
+{% endblock title %}
 {% block head %}
 {{ super() }}
 <script defer src="{{ url_for('static', filename='edit.js') }}"></script>
