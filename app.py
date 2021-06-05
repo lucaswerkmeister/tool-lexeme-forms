@@ -292,6 +292,7 @@ def process_template_advanced(template_name, advanced=True):
             'template.html',
             template=add_form_data_to_template(form_data, template),
             lemmas=build_lemmas(template, form_data),
+            lexeme_id=form_data.get('lexeme_id'),
             advanced=advanced,
             can_use_bulk_mode=can_use_bulk_mode(),
             readonly=readonly,
