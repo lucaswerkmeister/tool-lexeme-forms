@@ -73,6 +73,9 @@
       </label>
     </div>
     {% endif %}
+    {% if template.target_hash %}
+    <input name="target_hash" type="hidden" value="{{ template.target_hash }}">
+    {% endif %}
     {% if duplicates %}
     {{ render_no_duplicate(g.interface_language_code) | safe }}
     {% endif %}

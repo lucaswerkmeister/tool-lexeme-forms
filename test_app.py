@@ -350,6 +350,18 @@ def test_add_form_data_to_template_lexeme_id():
     new_template = lexeme_forms.add_form_data_to_template(form_data, template)
     assert new_template['lexeme_id'] == 'L123'
 
+def test_add_form_data_to_template_generated_via():
+    form_data = werkzeug.datastructures.ImmutableMultiDict([('generated_via', 'something')])
+    template = {'forms': []}
+    new_template = lexeme_forms.add_form_data_to_template(form_data, template)
+    assert new_template['generated_via'] == 'something'
+
+def test_add_form_data_to_template_target_hash():
+    form_data = werkzeug.datastructures.ImmutableMultiDict([('target_hash', 'something')])
+    template = {'forms': []}
+    new_template = lexeme_forms.add_form_data_to_template(form_data, template)
+    assert new_template['target_hash'] == 'something'
+
 def test_add_form_data_to_template_no_template_modification():
     form_data = werkzeug.datastructures.ImmutableMultiDict([('lexeme_id', 'L123')])
     template = {'forms': []}
@@ -755,6 +767,13 @@ def test_build_summary_generated_via():
     with lexeme_forms.app.test_request_context(base_url='https://lexeme-forms.toolforge.org/'):
         summary = lexeme_forms.build_summary(template, form_data)
     assert summary == '[[toolforge:lexeme-forms/template/foo/|foo]], generated via [[toolforge:other/bar|other tool, bar]]'
+
+@pytest.mark.parametrize('uri, hash, expected', [
+    ('https://example.com/', None, 'https://example.com/'),
+    ('https://example.com/', 'abc', 'https://example.com/#abc'),
+])
+def test_add_hash_to_uri(uri, hash, expected):
+    assert lexeme_forms.add_hash_to_uri(uri, hash) == expected
 
 def test_get_all_templates_api():
     with lexeme_forms.app.test_client() as client:

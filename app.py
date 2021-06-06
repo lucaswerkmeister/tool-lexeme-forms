@@ -281,7 +281,8 @@ def process_template_advanced(template_name, advanced=True):
 
         if 'oauth' in app.config:
             lexeme_id, lexeme_uri = submit_lexeme(template, lexeme_data, summary)
-            return flask.redirect(lexeme_uri, code=303)
+            target = add_hash_to_uri(lexeme_uri, form_data.get('target_hash'))
+            return flask.redirect(target, code=303)
         else:
             print(summary)
             return flask.jsonify(lexeme_data)
@@ -725,6 +726,8 @@ def add_form_data_to_template(form_data, template, overwrite=True):
         template['lexeme_id'] = form_data['lexeme_id']
     if 'generated_via' in form_data:
         template['generated_via'] = form_data['generated_via']
+    if 'target_hash' in form_data:
+        template['target_hash'] = form_data['target_hash']
     return template
 
 def if_needs_csrf_redirect(template, advanced, form_data):
@@ -932,6 +935,12 @@ def submit_lexeme(template, lexeme_data, summary):
 
     lexeme_uri = host + '/entity/' + lexeme_id
     return lexeme_id, lexeme_uri
+
+def add_hash_to_uri(uri, hash):
+    assert '#' not in uri
+    if hash is not None:
+        uri += '#' + hash
+    return uri
 
 def add_labels_to_lexeme_forms_grammatical_features(session, language, lexeme_forms):
     grammatical_features_item_ids = set()
