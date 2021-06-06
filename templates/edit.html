@@ -99,6 +99,9 @@
         <div class="section-spacer"></div>
       </div>
     </dl>
+    {% if template.target_hash %}
+    <input name="target_hash" type="hidden" value="{{ template.target_hash }}">
+    {% endif %}
     <button class="btn btn-primary"{% if readonly %} disabled title="{{ message_with_kwargs( 'login_hint', url=url_for( 'login' ) ) | striptags }}" {% endif %}>{{ message( 'edit_button' ) }}</button>
   </form>
 {% endblock main %}

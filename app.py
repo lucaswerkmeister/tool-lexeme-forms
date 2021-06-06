@@ -475,7 +475,8 @@ def process_template_edit(template_name, lexeme_id):
 
         if 'oauth' in app.config:
             lexeme_id, lexeme_uri = submit_lexeme(template, lexeme_data, summary)
-            return flask.redirect(lexeme_uri, code=303)
+            target = add_hash_to_uri(lexeme_uri, form_data.get('target_hash'))
+            return flask.redirect(target, code=303)
         else:
             print(summary)
             return flask.jsonify(lexeme_data)
