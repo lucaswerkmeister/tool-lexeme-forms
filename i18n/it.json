@@ -28,5 +28,8 @@
 	"edit-ambiguous-warning": "{{PLURAL:$1|La seguente forma|Le seguenti forme}} del lessema combaciano con più di una forma nel template:",
 	"edit-unmatched-warning": "{{PLURAL:$1|La seguente forma|Le seguenti forme}} del lessema non combaciano con alcuna delle forme nel template:",
 	"edit-form-list-item": "$1, $2, {{PLURAL:$3|0=nessuna dichiarazione|una dichiarazione|$3 dichiarazioni}}",
-	"no-grammatical-features": "nessuna caratteristica grammaticale"
+	"no-grammatical-features": "nessuna caratteristica grammaticale",
+	"title-create": "$1 (crea)",
+	"title-advanced": "$1 (avanzato)",
+	"title-edit": "$1 (modifica)"
 }

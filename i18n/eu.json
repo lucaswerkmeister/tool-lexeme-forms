@@ -1,13 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
+			"An13sa",
 			"Theklan"
 		]
 	},
 	"create": "Sortu",
 	"csrf-warning": "Barkatu, ezin izan dugu zure eskaera prozesatu (<abbr title=\"Cross-site request forgery\">CSRF</abbr> babesak huts egin du). Saia zaitez berriro ere eskaera bidaltzen.",
-	"duplicates-warning": "Dagoeneko badugu hizkuntza kode berberarekin lema berdina duten lexema hauek:",
-	"duplicates-instructions": "Ziur bazaude lexema ezberdina dela, klik egin goian dagoen formularioko kutxan.",
+	"duplicates-warning": "Hurrengo {{PLURAL:$1|lexemak|lexemek}} lemma eta hizkuntza kode berdina dute:",
+	"duplicates-instructions": "Ziur bazaude {{PLURAL:$1|ezberdina dela|ezberdinak direla}}, klik egin goian dagoen formularioko kutxan.",
 	"no-duplicate": "Hau ez da bikoiztutako lexema bat.",
 	"advanced": "Aurreratua",
 	"advanced-general": "Modu \"aurrearatuan\" zaude.",
@@ -16,5 +17,6 @@
 	"lexeme-id": "Lexema ID",
 	"advanced-partial-forms-hint": "Forma batzuk falta dituzten lexemak sortzeko, aukeratu modu aurreratua",
 	"generated-via": "honen bidez sortua",
-	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=formarik ez|forma bat|$2 forma}} eta {{PLURAL:$3|0=esanahirik ez|esanahi bat|$3 esanahi}}"
+	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=formarik ez|forma bat|$2 forma}} eta {{PLURAL:$3|0=esanahirik ez|esanahi bat|$3 esanahi}}",
+	"edit-link": "aldatu"
 }
