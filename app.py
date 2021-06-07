@@ -368,6 +368,7 @@ def process_template_bulk(template_name):
                 if duplicates:
                     results.append({
                         'duplicates': duplicates,
+                        'form_representations': lexeme.getlist('form_representation'),
                     })
                     continue
             lexeme_data = build_lexeme(template, lexeme)

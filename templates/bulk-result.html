@@ -6,7 +6,7 @@
     {% for result in results %}
     <li>
       {% if result.duplicates %}
-      {{ result.duplicates | render_duplicates(actionable=False, template_name=template['@template_name']) | safe }}
+      {{ result.duplicates | render_duplicates(actionable=False, template_name=template['@template_name'], form_representations=result.form_representations) | safe }}
       {% else %}
       <a href="{{ result.lexeme_uri }}">
         {{ result.lexeme_data.lemmas | lemmas_spans }}
