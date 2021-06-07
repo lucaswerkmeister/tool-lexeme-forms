@@ -9,4 +9,4 @@ pytest
 pyyaml
 requests_oauthlib
 toolforge ~= 4.2
-werkzeug
+werkzeug >= 2.0.0
