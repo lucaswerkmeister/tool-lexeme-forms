@@ -39,7 +39,7 @@
   </div>
   {% endif %}
   <form method="post" autocapitalize="off">
-    {{ duplicates | render_duplicates(actionable=True, template_name=template['@template_name'], form_representations=submitted_form_representations) | safe }}
+    {{ duplicates | render_duplicates(in_bulk_mode=False, template_name=template['@template_name'], form_representations=submitted_form_representations) | safe }}
     <input name="_csrf_token" type="hidden" value="{{ csrf_token() }}">
     <input name="_advanced_mode" type="hidden" value="{{ advanced }}">
     {% if advanced %}

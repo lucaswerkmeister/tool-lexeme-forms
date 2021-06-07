@@ -8,6 +8,7 @@
 	"csrf-warning": "Sorry, we couldn’t process this request (<abbr title=\"Cross-site request forgery\">CSRF</abbr> protection failed). Please try submitting the form again.",
 	"duplicates-warning": "The following existing {{PLURAL:$1|lexeme has|lexemes have}} the same lemma and language code as the one you’re trying to create:",
 	"duplicates-instructions": "If you’re sure that {{PLURAL:$1|it’s|they’re}} different, check the box at the bottom of the form.",
+	"duplicates-create": "Create a new lexeme anyway.",
 	"no-duplicate": "This is not a duplicate of an existing lexeme.",
 	"form-optional": "&#32;(optional)",
 	"advanced": "Advanced",

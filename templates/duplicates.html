@@ -1,5 +1,5 @@
 {% if duplicates %}
-<div {% if actionable %} id="duplicates-warning" {% endif %} class="alert alert-warning">
+<div {% if not in_bulk_mode %} id="duplicates-warning" {% endif %} class="alert alert-warning">
   {{ message_with_kwargs( 'duplicates_warning', lexemes=duplicates | length ) }}
   <ul>
     {% for duplicate in duplicates %}
@@ -12,7 +12,11 @@
     </li>
     {% endfor %}
   </ul>
-  {% if actionable %}
+  {% if in_bulk_mode %}
+  <a href="{{ url_for( 'process_template', template_name=template_name, form_representation=form_representations ) }}">
+    {{ message( 'duplicates_create' ) }}
+  </a>
+  {% else %}
   {{ message_with_kwargs( 'duplicates_instructions', lexemes=duplicates | length ) }}
   {% endif %}
 </div>

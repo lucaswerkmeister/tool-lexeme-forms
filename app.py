@@ -104,11 +104,11 @@ def split_example(form):
         raise Exception('Invalid template: missing [placeholder]: ' + example)
 
 @app.template_filter()
-def render_duplicates(duplicates, actionable, template_name=None, form_representations=[]):
+def render_duplicates(duplicates, in_bulk_mode, template_name=None, form_representations=[]):
     return flask.render_template(
         'duplicates.html',
         duplicates=duplicates,
-        actionable=actionable,
+        in_bulk_mode=in_bulk_mode,
         template_name=template_name,
         form_representations=form_representations,
     )
@@ -618,7 +618,7 @@ def get_duplicates_api(wiki, language_code, lemma):
     if flask.request.accept_mimetypes.accept_html:
         return render_duplicates(
             matches,
-            actionable=True,
+            in_bulk_mode=False,
             template_name=flask.request.args.get('template_name'),
         )
     else:
