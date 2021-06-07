@@ -34,5 +34,9 @@
 	"edit-unmatched-warning": "Aşağıdaki sözcük birimi {{PLURAL:$1|biçimi|biçimleri}} herhangi bir biçim şablonuna uymuyor:",
 	"edit-form-list-item": "$1, $2, {{PLURAL:$3|0=ifade yok|bir ifade|$3 ifade}}",
 	"no-grammatical-features": "dilbilgisi özelliği yok",
+	"title-create": "$1 (oluştur)",
+	"title-advanced": "$1 (gelişmiş)",
+	"title-bulk": "$1 (toplu)",
+	"title-edit": "$1 (düzenle)",
 	"login-hint": "Bu aracı kullanarak değişiklik yapmadan önce [$1 giriş yapmalısınız]."
 }

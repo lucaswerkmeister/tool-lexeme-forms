@@ -37,5 +37,9 @@
 	"edit-unmatched-warning": "{{PLURAL:$1|La forme suivante|Les formes suivantes}} du lexème ne correspondent à aucune forme modèle :",
 	"edit-form-list-item": "$1, $2, {{PLURAL:$3|une déclaration|$3 déclarations}}",
 	"no-grammatical-features": "aucune caractéristique grammaticale",
+	"title-create": "$1 (créer)",
+	"title-advanced": "$1 (avancé)",
+	"title-bulk": "$1 (lot)",
+	"title-edit": "$1 (modifier)",
 	"login-hint": "Vous devez vous [$1 connecter] avant de pouvoir faire des modifications en utilisant cet outil."
 }
