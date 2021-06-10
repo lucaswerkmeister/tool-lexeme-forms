@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Joquliina",
+			"MITO",
 			"Shinnin"
 		]
 	},
@@ -17,5 +18,7 @@
 	"advanced-partial-forms": "Voit jättää jotkin taivutusmuodoista tyhjiksi. Varmista kuitenkin, että ne ovat tyhjiä tarkoituksella eivätkä vahingossa.",
 	"lexeme-id": "Lekseemi-tunniste",
 	"advanced-partial-forms-hint": "Luodaksesi lekseemin ilman joitakin taivutusmuotoja, siirry laajennettuun muokkaustilaan.",
-	"edit-link": "muokkaa"
+	"edit-link": "muokkaa",
+	"title-create": "$1 (luo)",
+	"title-edit": "$1 (muokkaa)"
 }
