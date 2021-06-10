@@ -8,6 +8,7 @@
 	"csrf-warning": "Entschuldigung, wir konnten diese Anfrage nicht verarbeiten (<abbr title=\"Cross-site request forgery\">CSRF</abbr>-Schutz schlug fehl). Bitte versuche, das Formular nochmal abzuschicken.",
 	"duplicates-warning": "{{PLURAL:$1|Das folgende, bereits bestehende Lexem hat|Die folgenden, bereits bestehenden Lexeme haben}} das gleiche Lemma und den gleichen Sprachcode wie das, was du erstellen willst:",
 	"duplicates-instructions": "Wenn du sicher bist, dass es {{PLURAL:$1|ein unterschiedliches Lexem ist|unterschiedliche Lexeme sind}}, kreuze das Kästchen am Ende des Formulars an.",
+	"duplicates-create": "Lege trotzdem ein neues Lexem an.",
 	"no-duplicate": "Dies ist kein Duplikat eines existierenden Lexems.",
 	"form-optional": "&#32;(optional)",
 	"advanced": "Erweitert",
@@ -34,7 +35,7 @@
 	"no-grammatical-features": "keine grammatikalischen Funktionen",
 	"title-create": "$1 (erstellen)",
 	"title-advanced": "$1 (erweitert)",
-	"title-bulk": "$1 (Bulk)",
+	"title-bulk": "$1 (Massen-Modus)",
 	"title-edit": "$1 (bearbeiten)",
 	"login-hint": "Du musst dich [$1 anmelden], bevor du mit diesem Werkzeug Änderungen vornehmen kannst."
 }

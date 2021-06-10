@@ -14,5 +14,7 @@
 	"advanced-partial-forms-hint": "Lai izveidotu leksēmas ar trūkstošām formām, pārslēdzies uz paplašināto režīmu.",
 	"generated-via": "ģenerēts ar",
 	"bulk-format-help": "formatēšanas palīdzība",
-	"edit-link": "labot"
+	"edit-link": "labot",
+	"title-create": "$1 (izveidot)",
+	"title-edit": "$1 (labot)"
 }

@@ -8,6 +8,7 @@
 	"csrf-warning": "Regrettabilemente, nos non pote processar iste requesta (le protection anti-<abbr title=\"Cross-site request forgery = falsification de requestas inter sitos\">CSRF</abbr> ha fallite). Per favor tenta inviar iste formulario de novo.",
 	"duplicates-warning": "Le sequente {{PLURAL:$1|lexema|lexemas}} existente ha le mesme lemma e codice de lingua como le que tu tenta crear:",
 	"duplicates-instructions": "Si tu es secur que {{PLURAL:$1|illo|illos}} es differente, marca le quadrato al fin del formulario.",
+	"duplicates-create": "Crear un nove lexema in omne caso.",
 	"no-duplicate": "Isto non es un duplicato de un lexema existente.",
 	"form-optional": "&#32;(optional)",
 	"advanced": "Avantiate",
@@ -32,5 +33,9 @@
 	"edit-unmatched-warning": "Le sequente {{PLURAL:$1|forma|formas}} de lexema non corresponde a alcun del formas del patrono:",
 	"edit-form-list-item": "$1, $2, {{PLURAL:$3|0=sin declarationes|un declaration|$3 declarationes}}",
 	"no-grammatical-features": "sin characteristicas grammatical",
+	"title-create": "$1 (crear)",
+	"title-advanced": "$1 (avantiate)",
+	"title-bulk": "$1 (lot)",
+	"title-edit": "$1 (modificar)",
 	"login-hint": "Tu debe [$1 aperir session] pro poter facer modificationes con iste utensile."
 }

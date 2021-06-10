@@ -12,5 +12,9 @@
 	"bulk-link": "대량 모드",
 	"bulk-format-help": "포맷 도움말",
 	"bulk-not-allowed": "대량 모드 사용 권한이 없습니다. 죄송합니다.",
-	"edit-link": "편집"
+	"edit-link": "편집",
+	"title-create": "$1 (만들기)",
+	"title-advanced": "$1 (고급)",
+	"title-bulk": "$1 (대량)",
+	"title-edit": "$1 (편집)"
 }

@@ -13,6 +13,7 @@
 	"csrf-warning": "Désolé, cette requête n’a pas pu être traitée (la protection anti-<abbr title=\"Cross-site request forgery\">CSRF</abbr> a échoué). Essayez de renvoyer le formulaire.",
 	"duplicates-warning": "{{PLURAL:$1|Le lexème suivant possède|Les lexèmes suivants possèdent}} déjà un lemme et un code de langue identiques à ceux que vous souhaitez créer :",
 	"duplicates-instructions": "Si vous avez l’assurance {{PLURAL:$1|qu’il est différent|qu’ils sont différents}}, cochez la case située en fin de formulaire.",
+	"duplicates-create": "Créer un nouveau lexème quoi qu’il en soit.",
 	"no-duplicate": "Ceci n’est un doublon d’un lexème existant.",
 	"form-optional": "&#32;(facultatif)",
 	"advanced": "Avancé",

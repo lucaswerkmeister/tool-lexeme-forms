@@ -35,8 +35,8 @@
 	"edit-form-list-item": "Template to display a lexeme form in the above two messages.\n\nParameters:\n* $1 – the form representation and ID as a link\n* $2 – the list of its grammatical features\n* $3 – the number of its statements",
 	"no-grammatical-features": "Text used in place of a list of grammatical features when a form has no grammatical features yet.",
 	"title-create": "Part of the title of the tool when in “create” or “regular” mode.\n\nParameters:\n* $1 – the label of the template",
-	"title-advanced": "Part of the title of the tool when in “advanced” mode.\n\nParameters:\n* $1 – the label of the template",
-	"title-bulk": "Part of the title of the tool when in “bulk” mode.\n\nParameters:\n* $1 – the label of the template",
-	"title-edit": "Part of the title of the tool when in “edit” mode.\n\nParameters:\n* $1 – the label of the template",
+	"title-advanced": "Part of the title of the tool when in “advanced” mode (compare {{msg-wm|wikidata-lexeme-forms-advanced}}).\n\nParameters:\n* $1 – the label of the template",
+	"title-bulk": "Part of the title of the tool when in “bulk” mode (compare {{msg-wm|wikidata-lexeme-forms-bulk-link}}).\n\nParameters:\n* $1 – the label of the template",
+	"title-edit": "Part of the title of the tool when in “edit” mode (compare {{msg-wm|wikidata-lexeme-forms-edit-link}}).\n\nParameters:\n* $1 – the label of the template",
 	"login-hint": "Message shown to the user when they are not logged in, but are looking at a page that would allow logged-in users to make edits (basically any page other than the index page).\n\nParameters:\n* $1 – the URL for the login link"
 }

@@ -8,6 +8,7 @@
 	"csrf-warning": "Ne despiace, non g'è possibbele processà sta richieste (errore: protezione <abbr title=\"Cross-site request forgery\">CSRF</abbr> fallite). Pruève arrete.",
 	"duplicates-warning": "Attenziò, {{PLURAL:$1|stu lesseme ave|le lesseme onne}} 'u stesse lemme e codece d'a lènghe de quidde ca ave appene pruvate de ccrejà:",
 	"duplicates-instructions": "Ce sì secure ca {{PLURAL:$1|jè|sò}} diverse, spunde 'a caselle ca ste 'a fine de stu module.",
+	"duplicates-create": "Ccrèje 'u stesse 'nu lesseme nuève.",
 	"no-duplicate": "Quiste non g'è 'nu duplicate de 'nu lesseme esistende.",
 	"form-optional": "&#32;(facoltative)",
 	"advanced": "Avanzate",
@@ -26,5 +27,9 @@
 	"edit-unmatched-warning": "{{PLURAL:$1|'A|Le}} forme d'u lesseme non ge s'accocchiane cu nisciuna forme jndr'à 'u template:",
 	"edit-form-list-item": "$1, $2, {{PLURAL:$3|0=nisciuna dichiarazione|'na dichiarazione|$3 dichiaraziune}}",
 	"no-grammatical-features": "nisciuna caratteristeche grammatecale",
+	"title-create": "$1 (ccreje)",
+	"title-advanced": "$1 (avanzate)",
+	"title-bulk": "$1 (massive)",
+	"title-edit": "$1 (cange)",
 	"login-hint": "E' abbesògne de [$1 trasè] apprime ca puè ffà cangiaminde ausanne stu strumende."
 }
