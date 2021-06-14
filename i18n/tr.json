@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Hedda",
 			"Joseph",
 			"Lucas Werkmeister",
 			"SaldırganSincap"
@@ -10,13 +11,14 @@
 	"csrf-warning": "Üzgünüz, bu isteği işleyemedik (<abbr title=\"Cross-site request forgery\">CSRF</abbr> koruması başarısız oldu). Lütfen formu tekrar göndermeyi deneyin.",
 	"duplicates-warning": "Aşağıdaki {{PLURAL:$1|sözcük birimi|sözcük birimleri}} oluşturmaya çalıştığınızla aynı başsözcük ve dil koduna sahip:",
 	"duplicates-instructions": "Eğer farklı {{PLURAL:$1|olduğuna|olduklarına}} eminseniz, formun altındaki kutucuğu işaretleyin.",
+	"duplicates-create": "Yine de yeni bir sözcük birimi oluşturun.",
 	"no-duplicate": "Bu, mevcut bir sözcük biriminin kopyası değil.",
 	"form-optional": "&#32;(isteğe bağlı)",
 	"advanced": "Gelişmiş",
 	"advanced-general": "“Gelişmiş” moddasınız.",
 	"advanced-lexeme-id": "Yeni bir sözcük birimi yaratmak yerine mevcut birine biçim eklemek için sözcük birim ID'si girebilirsiniz. Sözcük biriminde hali hazırda mevcut olan tüm biçimleri boş bırakın, aksi takdirde kopyalar oluşacaktır.",
 	"advanced-partial-forms": "Bazı biçimleri boş bırakabilirsiniz, eklenmeyeceklerdir. Herhangi bir biçimi kazara bırakmadığınızdan emin olun.",
-	"lexeme-id": "Sözcük birim IDsi",
+	"lexeme-id": "Sözcük birim kimliği",
 	"advanced-partial-forms-hint": "Bazı biçimler olmadan sözcük birimi oluşturmak için gelişmiş moda geçin.",
 	"generated-via": "üretildiği URL",
 	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=biçim yok|bir biçim|$2 biçim}} ve {{PLURAL:$3|0=anlam yok|bir anlam|$3 anlam}}",
