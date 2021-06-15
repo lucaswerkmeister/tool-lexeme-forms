@@ -4451,16 +4451,19 @@ templates = {
                 'label': 'indikativo, prezenco',
                 'example': 'Ili nun [dormas].',
                 'grammatical_features_item_ids': ['Q682111', 'Q192613'],
+                'grammatical_features_item_ids_optional': set(['Q682111']),
             },
             {
                 'label': 'indikativo, preterito',
                 'example': 'Ili [dormis] hieraŭ.',
                 'grammatical_features_item_ids': ['Q682111', 'Q1994301'],
+                'grammatical_features_item_ids_optional': set(['Q682111']),
             },
             {
                 'label': 'indikativo, futuro',
                 'example': 'Ili [dormos] morgaŭ.',
                 'grammatical_features_item_ids': ['Q682111', 'Q501405'],
+                'grammatical_features_item_ids_optional': set(['Q682111']),
             },
             {
                 'section_break': True,
