@@ -15,7 +15,7 @@ import string
 import toolforge
 import yaml
 
-from flask_utils import OrderedFlask, TagOrderedMultiDict, TagImmutableOrderedMultiDict
+from flask_utils import OrderedFlask, TagOrderedMultiDict, TagImmutableOrderedMultiDict, SetJSONEncoder
 from formatters import I18nFormatter
 from language import lang_lex2int, lang_int2html, lang_int2babel
 from language_names import autonym
@@ -28,6 +28,7 @@ from translations import translations
 app = OrderedFlask(__name__)
 app.session_interface.serializer.register(TagOrderedMultiDict, index=0)
 app.session_interface.serializer.register(TagImmutableOrderedMultiDict, index=0)
+app.json_encoder = SetJSONEncoder
 app.add_template_filter(lang_lex2int)
 app.add_template_filter(lang_int2html)
 app.add_template_filter(lang_int2babel)
@@ -839,7 +840,7 @@ def update_lexeme(lexeme_data, template, form_data, representation_language_code
             for property_id, statements in form_missing_statements.items():
                 lexeme_form.setdefault('claims', {}).setdefault(property_id, []).extend(statements)
             form_data_representation_variants.remove(form_data_representation_variant)
-        # find and remove matching forms (no modification necessary)
+        # find and remove matching forms (usually no modification necessary)
         for lexeme_form in reversed(lexeme_forms):  # reversed so that the remove within the loop doesn’t disturb the iteration
             if representation_language_code not in lexeme_form['representations']:
                 continue
@@ -847,6 +848,14 @@ def update_lexeme(lexeme_data, template, form_data, representation_language_code
             if lexeme_form_representation['value'] in form_data_representation_variants:
                 lexeme_forms.remove(lexeme_form)
                 form_data_representation_variants.remove(lexeme_form_representation['value'])
+                if template_form.get('grammatical_features_item_ids_optional', set()):
+                    # the lexeme form may be missing optional grammatical features, add them
+                    lexeme_form = find_form(lexeme_data, lexeme_form['id'])
+                    for grammatical_feature_item_id in template_form['grammatical_features_item_ids']:
+                        if grammatical_feature_item_id not in lexeme_form['grammaticalFeatures']:
+                            assert grammatical_feature_item_id in template_form['grammatical_features_item_ids_optional'], \
+                                'Only optional grammatical features may be missing from a matched form'
+                            lexeme_form['grammaticalFeatures'].append(grammatical_feature_item_id)
                 break
         # overwrite remaining lexeme forms with form data as long as we have both
         # currently simply in order, cleverer matching via edit distance may be possible but likely not necessary

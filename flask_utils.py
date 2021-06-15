@@ -1,4 +1,5 @@
 import flask
+import flask.json
 import flask.json.tag
 import werkzeug.datastructures
 
@@ -30,3 +31,9 @@ class TagImmutableOrderedMultiDict(TagOrderedMultiDict):
 
     def to_python(self, value):
         return werkzeug.datastructures.ImmutableOrderedMultiDict(value)
+
+class SetJSONEncoder(flask.json.JSONEncoder):
+    def default(self, o):
+        if isinstance(o, set):
+            return list(o)
+        return super().default(o)

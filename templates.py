@@ -3947,21 +3947,25 @@ templates = {
                 'label': 'Nominativ Singular',
                 'example': 'Das heutige [Berlin].',
                 'grammatical_features_item_ids': ['Q131105', 'Q110786'],
+                'grammatical_features_item_ids_optional': set(['Q110786']),
             },
             {
                 'label': 'Genitiv Singular',
                 'example': 'Fotos des damaligen [Berlins/Berlin].',
                 'grammatical_features_item_ids': ['Q146233', 'Q110786'],
+                'grammatical_features_item_ids_optional': set(['Q110786']),
             },
             {
                 'label': 'Dativ Singular',
                 'example': 'Fotos vom damaligen [Berlin].',
                 'grammatical_features_item_ids': ['Q145599', 'Q110786'],
+                'grammatical_features_item_ids_optional': set(['Q110786']),
             },
             {
                 'label': 'Akkusativ Singular',
                 'example': 'Pläne für das zukünftige [Berlin].',
                 'grammatical_features_item_ids': ['Q146078', 'Q110786'],
+                'grammatical_features_item_ids_optional': set(['Q110786']),
             },
         ],
         'statements': {
