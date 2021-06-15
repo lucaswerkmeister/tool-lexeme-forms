@@ -15,7 +15,7 @@ import string
 import toolforge
 import yaml
 
-from flask_utils import OrderedFlask, TagOrderedMultiDict, TagImmutableOrderedMultiDict
+from flask_utils import OrderedFlask, TagOrderedMultiDict, TagImmutableOrderedMultiDict, SetJSONEncoder
 from formatters import I18nFormatter
 from language import lang_lex2int, lang_int2html, lang_int2babel
 from language_names import autonym
@@ -28,6 +28,7 @@ from translations import translations
 app = OrderedFlask(__name__)
 app.session_interface.serializer.register(TagOrderedMultiDict, index=0)
 app.session_interface.serializer.register(TagImmutableOrderedMultiDict, index=0)
+app.json_encoder = SetJSONEncoder
 app.add_template_filter(lang_lex2int)
 app.add_template_filter(lang_int2html)
 app.add_template_filter(lang_int2babel)
