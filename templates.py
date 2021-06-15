@@ -4244,13 +4244,13 @@ templates = {
                 'label': '2. Person Singular Imperativ',
                 'example': 'He du da, [trag/trage]!',
                 'grammatical_features_item_ids': ['Q51929049', 'Q110786', 'Q22716', 'Q192613', 'Q1317831'],
-                'grammatical_features_item_ids_optional': set(['Q1317831']),
+                'grammatical_features_item_ids_optional': set(['Q1317831', 'Q192613']),
             },
             {
                 'label': '2. Person Plural Imperativ',
                 'example': 'He ihr da, [tragt]!',
                 'grammatical_features_item_ids': ['Q51929049', 'Q146786', 'Q22716', 'Q192613', 'Q1317831'],
-                'grammatical_features_item_ids_optional': set(['Q1317831']),
+                'grammatical_features_item_ids_optional': set(['Q1317831', 'Q192613']),
             },
             {
                 'section_break': True,
