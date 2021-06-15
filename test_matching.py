@@ -145,6 +145,55 @@ def test_match_lexeme_forms_to_template():
     assert template['ambiguous_lexeme_forms'] == [singular_plural_lexeme_form]
     assert template['unmatched_lexeme_forms'] == [nothing_lexeme_form]
 
+def test_match_lexeme_forms_to_template_with_optional_grammatical_features():
+    nominative_singular_lexeme_form = {'id': 'nominative singular', 'grammaticalFeatures': ['Q1', 'Q3']}
+    accusative_lexeme_form = {'id': 'accusative', 'grammaticalFeatures': ['Q2']}
+    accusative_singular_lexeme_form = {'id': 'accusative singular', 'grammaticalFeatures': ['Q2', 'Q3']}
+    nominative_accusative_singular_lexeme_form = {'id': 'nominative+accusative singular', 'grammaticalFeatures': ['Q1', 'Q2', 'Q3']}
+    singular_lexeme_form = {'id': 'singular', 'grammaticalFeatures': ['Q3']}
+    nothing_lexeme_form = {'id': 'nothing', 'grammaticalFeatures': []}
+
+    lexeme_forms = [
+        nominative_singular_lexeme_form,
+        accusative_lexeme_form,
+        accusative_singular_lexeme_form,
+        nominative_accusative_singular_lexeme_form,
+        singular_lexeme_form,
+        nothing_lexeme_form,
+    ]
+
+    nominative_singular_template_form = {
+        'grammatical_features_item_ids': ['Q1', 'Q3'],
+        'grammatical_features_item_ids_optional': set(['Q3']),
+    }
+    accusative_singular_template_form = {
+        'grammatical_features_item_ids': ['Q2', 'Q3'],
+        'grammatical_features_item_ids_optional': set(['Q3']),
+    }
+    template = {'forms': [
+        nominative_singular_template_form,
+        accusative_singular_template_form,
+    ]}
+
+    template = matching.match_lexeme_forms_to_template(lexeme_forms, template)
+    nominative_singular_template_form = template['forms'][0]
+    accusative_singular_template_form = template['forms'][1]
+
+    assert nominative_singular_template_form['lexeme_forms'] == [
+        nominative_singular_lexeme_form,
+    ]
+    assert accusative_singular_template_form['lexeme_forms'] == [
+        accusative_lexeme_form,
+        accusative_singular_lexeme_form,
+    ]
+    assert template['ambiguous_lexeme_forms'] == [
+        nominative_accusative_singular_lexeme_form,
+    ]
+    assert template['unmatched_lexeme_forms'] == [
+        singular_lexeme_form,
+        nothing_lexeme_form,
+    ]
+
 
 def test_match_lexeme_form_to_template_forms():
     lexeme_form = {
@@ -166,6 +215,10 @@ def test_match_lexeme_form_to_template_forms():
         'grammatical_features_item_ids': ['Q1'],
         'statements': {'P31': [make_statement('P31', 'Q4115189')]},
     }
+    template_form_match_two_grammatical_features_one_optional = {
+        'grammatical_features_item_ids': ['Q1', 'Q2', 'Q4'],
+        'grammatical_features_item_ids_optional': set(['Q4']),
+    }
     template_form_match_one_grammatical_feature_no_statement = {
         'grammatical_features_item_ids': ['Q1'],
     }
@@ -174,13 +227,34 @@ def test_match_lexeme_form_to_template_forms():
         template_form_missing_statement,
         template_form_match_two_grammatical_features_no_statement,
         template_form_match_one_grammatical_feature_one_statement,
+        template_form_match_two_grammatical_features_one_optional,
         template_form_match_one_grammatical_feature_no_statement,
     ]
     best_template_forms = matching.match_lexeme_form_to_template_forms(False, lexeme_form, template_forms)
     assert best_template_forms == [
         template_form_match_two_grammatical_features_no_statement,
         template_form_match_one_grammatical_feature_one_statement,
+        template_form_match_two_grammatical_features_one_optional,
     ]
+
+def test_match_lexeme_form_to_template_forms_optional_grammatical_feature():
+    lexeme_form = {
+        'grammaticalFeatures': ['Q1', 'Q2'],
+    }
+    template_form_optional_feature_present = {
+        'grammatical_features_item_ids': ['Q1', 'Q2'],
+        'grammatical_features_item_ids_optional': set(['Q2']),
+    }
+    template_form_optional_feature_absent = {
+        'grammatical_features_item_ids': ['Q1', 'Q3'],
+        'grammatical_features_item_ids_optional': set(['Q3']),
+    }
+    template_forms = [
+        template_form_optional_feature_present,
+        template_form_optional_feature_absent,
+    ]
+    best_template_forms = matching.match_lexeme_form_to_template_forms(False, lexeme_form, template_forms)
+    assert best_template_forms == [template_form_optional_feature_present]
 
 def test_match_lexeme_form_to_template_forms_one_featureless_form():
     lexeme_form = {'id': 'L1-F1'}
@@ -229,3 +303,32 @@ def test_match_lexeme_form_to_template_form_counts_grammatical_features_and_stat
         },
     }
     assert matching.match_lexeme_form_to_template_form(False, lexeme_form, template_form) == 4
+
+def test_match_lexeme_form_to_template_form_optional_features_undefined():
+    lexeme_form = {
+        'grammaticalFeatures': ['Q1']
+    }
+    template_form = {
+        'grammatical_features_item_ids': ['Q1']
+    }
+    assert matching.match_lexeme_form_to_template_form(False, lexeme_form, template_form) == 1
+
+def test_match_lexeme_form_to_template_form_optional_feature_missing():
+    lexeme_form = {
+        'grammaticalFeatures': ['Q1'],
+    }
+    template_form = {
+        'grammatical_features_item_ids': ['Q1', 'Q2'],
+        'grammatical_features_item_ids_optional': set(['Q2'])
+    }
+    assert matching.match_lexeme_form_to_template_form(False, lexeme_form, template_form) == 1
+
+def test_match_lexeme_form_to_template_form_optional_feature_present():
+    lexeme_form = {
+        'grammaticalFeatures': ['Q1', 'Q2'],
+    }
+    template_form = {
+        'grammatical_features_item_ids': ['Q1', 'Q2'],
+        'grammatical_features_item_ids_optional': set(['Q2'])
+    }
+    assert matching.match_lexeme_form_to_template_form(False, lexeme_form, template_form) == 2

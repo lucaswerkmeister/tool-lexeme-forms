@@ -859,6 +859,36 @@ def test_update_lexeme_match_forms():
         'base_revision_id': 123,
     }
 
+def test_update_lexeme_match_forms_optional_features():
+    lexeme_data = {
+        'lemmas': {'de': {'language': 'de', 'value': 'Berlin'}},
+        'forms': [
+            {'id': 'L297059-F1', 'representations': {'de': {'language': 'de', 'value': 'Berlin'}}, 'grammaticalFeatures': ['Q131105']},
+            {'id': 'L297059-F2', 'representations': {'de': {'language': 'de', 'value': 'Berlins'}}, 'grammaticalFeatures': ['Q146233']},
+            {'id': 'L297059-F3', 'representations': {'de': {'language': 'de', 'value': 'Berlin'}}, 'grammaticalFeatures': ['Q145599']},
+            {'id': 'L297059-F4', 'representations': {'de': {'language': 'de', 'value': 'Berlin'}}, 'grammaticalFeatures': ['Q146078']},
+        ],
+    }
+    template = copy.deepcopy(templates_without_redirects['german-noun-neuter-toponym'])
+    template['lexeme_revision'] = 123
+    template['forms'][0]['lexeme_forms'] = [lexeme_data['forms'][0]]
+    template['forms'][1]['lexeme_forms'] = [lexeme_data['forms'][1]]
+    template['forms'][2]['lexeme_forms'] = [lexeme_data['forms'][2]]
+    template['forms'][3]['lexeme_forms'] = [lexeme_data['forms'][3]]
+    form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', 'Berlin'), ('form_representation', 'Berlins'), ('form_representation', 'Berlin'), ('form_representation', 'Berlin')])
+    updated_lexeme_data = lexeme_forms.update_lexeme(lexeme_data, template, form_data, 'de')
+    assert updated_lexeme_data == {
+        'lemmas': {'de': {'language': 'de', 'value': 'Berlin'}},
+        'forms': [
+            {'id': 'L297059-F1', 'representations': {'de': {'language': 'de', 'value': 'Berlin'}}, 'grammaticalFeatures': ['Q131105', 'Q110786']},
+            {'id': 'L297059-F2', 'representations': {'de': {'language': 'de', 'value': 'Berlins'}}, 'grammaticalFeatures': ['Q146233', 'Q110786']},
+            {'id': 'L297059-F3', 'representations': {'de': {'language': 'de', 'value': 'Berlin'}}, 'grammaticalFeatures': ['Q145599', 'Q110786']},
+            {'id': 'L297059-F4', 'representations': {'de': {'language': 'de', 'value': 'Berlin'}}, 'grammaticalFeatures': ['Q146078', 'Q110786']},
+        ],
+        'base_revision_id': 123,
+    }
+
+
 def test_update_lexeme_edit_lemma():
     lexeme_data = {
         'lemmas': {'en': {'language': 'en', 'value': 'fuschia'}},

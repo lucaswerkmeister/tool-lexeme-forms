@@ -117,6 +117,8 @@ def match_lexeme_form_to_template_form(test, lexeme_form, template_form):
     for grammatical_feature_item_id in template_form['grammatical_features_item_ids']:
         if grammatical_feature_item_id in lexeme_form['grammaticalFeatures']:
             matching_features += 1
+        elif grammatical_feature_item_id in template_form.get('grammatical_features_item_ids_optional', set()):
+            pass
         else:
             return 0
 

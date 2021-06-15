@@ -147,6 +147,21 @@ def test_grammatical_feature_item_ids_distinct(template_name, form):
     assert len(set(grammatical_features_item_ids)) == len(grammatical_features_item_ids)
 
 
+@pytest.mark.parametrize('template_name, form', [
+    (template_name, form)
+    for template_name, template in templates.templates_without_redirects.items()
+    for form in template['forms']
+    if 'grammatical_features_item_ids_optional' in form
+])
+def test_optional_grammatical_features_subset(template_name, form):
+    """Check that grammatical features specified as optional are actually
+    grammatical features of the form.
+
+    It doesn’t make sense to have an optional feature which is not
+    going to be added or used for matching."""
+    assert form['grammatical_features_item_ids_optional'].issubset(form['grammatical_features_item_ids'])
+
+
 @pytest.mark.parametrize('template_name', templates.templates_without_redirects.keys())
 def test_attribution_available(template_name):
     template = templates.templates_without_redirects[template_name]
