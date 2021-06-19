@@ -6386,6 +6386,57 @@ templates = {
         ],
     },
 
+    'malayalam-noun-proper': {
+        '@attribution': {'users': ['Vis M'], 'title': 'Wikidata:Wikidata Lexeme Forms/Malayalam'},
+        'label': 'മലയാളം സംജ്ഞാനാമം (proper noun)',
+        'language_item_id': 'Q36236',
+        'language_code': 'ml',
+        'lexical_category_item_id': 'Q147276',
+        'forms': [
+            {
+                'label': 'ഏകവചനം',
+                'example': '[സീത] പഠിക്കുന്നു.',
+                'grammatical_features_item_ids': ['Q110786', 'Q131105'],
+            },
+            {
+                'label': 'ഏകവചനം പ്രതിഗ്രാഹിക',
+                'example': 'ഞാൻ [സീതയെ] സഹായിച്ചു',
+                'grammatical_features_item_ids': ['Q110786', 'Q146078'],
+            },
+            {
+                'label': 'ഏകവചനം ഉദ്ദേശിക',
+                'example': 'ഞാൻ [സീതയ്ക്ക്] പണം അയച്ചു',
+                'grammatical_features_item_ids': ['Q110786', 'Q145599'],
+            },
+            {
+                'label': 'ഏകവചനം ആധാരിക',
+                'example': 'ഞാൻ [കേരളത്തിൽ] എത്തി',
+                'grammatical_features_item_ids': ['Q110786', 'Q202142'],
+            },
+            {
+                'label': 'ഏകവചനം സംയോജിക',
+                'example': 'ഞാൻ [സീതയോട്] വിവരം പറഞ്ഞു',
+                'grammatical_features_item_ids': ['Q110786', 'Q3773161'],
+            },
+            {
+                'label': 'ഏകവചനം പ്രയോജിക',
+                'example': 'വാഹനം [സീതയാൽ] ഓടിക്കപ്പെട്ടു',
+                'grammatical_features_item_ids': ['Q110786', 'Q192997'],
+            },
+            {
+                'label': 'ഏകവചനം സംബന്ധിക',
+                'example': '[സീതയുടെ] പണം',
+                'grammatical_features_item_ids': ['Q110786', 'Q146233'],
+            },
+            {
+                'label': 'ഏകവചനം സംബോധിക',
+                'example': '[സീതേ]!, നോക്കൂ.',
+                'grammatical_features_item_ids': ['Q110786', 'Q185077'],
+                'optional': True,
+            },
+        ],
+    },
+
     'malayalam-verb': {
         '@attribution': {'users': ['Vis M', 'Nikki'], 'title': 'Wikidata:Wikidata Lexeme Forms/Malayalam'},
         'label': 'മലയാളം ക്രിയ',
