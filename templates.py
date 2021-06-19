@@ -4092,6 +4092,11 @@ templates = {
                 'grammatical_features_item_ids': ['Q179230'],
             },
             {
+                'label': 'Infinitiv mit zu',
+                'example': 'Es ist gut, [zu tragen].',
+                'grammatical_features_item_ids': ['Q100952920'],
+            },
+            {
                 'section_break': True,
                 'label': '1. Person Singular Präsens',
                 'example': 'Ich [trage] heute.',
