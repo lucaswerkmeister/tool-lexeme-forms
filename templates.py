@@ -6303,22 +6303,22 @@ templates = {
         'forms': [
             {
                 'label': 'ഏകവചനം',
-                'example': 'ഒരു [ഭാഷ].',
+                'example': 'ഒരു [പശു].',
                 'grammatical_features_item_ids': ['Q110786', 'Q131105'],
             },
             {
                 'label': 'ഏകവചനം പ്രതിഗ്രാഹിക',
-                'example': 'ഞാൻ [അമ്മയെ] സഹായിച്ചു',
+                'example': 'ഞാൻ [പശുവിനെ] മെയ്ച്ചു',
                 'grammatical_features_item_ids': ['Q110786', 'Q146078'],
             },
             {
                 'label': 'ഏകവചനം ഉദ്ദേശിക',
-                'example': 'ഞാൻ [അമ്മയ്ക്ക്] പണം അയച്ചു',
+                'example': 'ഞാൻ [പശുവിന്] പുല്ലു കൊടുത്തു',
                 'grammatical_features_item_ids': ['Q110786', 'Q145599'],
             },
             {
                 'label': 'ഏകവചനം ആധാരിക',
-                'example': '[നദിയിൽ] കുളിച്ചു ',
+                'example': '[പുഴയിൽ] കുളിച്ചു ',
                 'grammatical_features_item_ids': ['Q110786', 'Q202142'],
             },
             {
@@ -6328,12 +6328,12 @@ templates = {
             },
             {
                 'label': 'ഏകവചനം പ്രയോജിക',
-                'example': 'പുസ്തകം [അമ്മയാൽ] വായിക്കപ്പെട്ടു',
+                'example': 'ചെടികൾ [പശുവാൽ] തിന്നപ്പെട്ടു',
                 'grammatical_features_item_ids': ['Q110786', 'Q192997'],
             },
             {
                 'label': 'ഏകവചനം സംബന്ധിക',
-                'example': '[അമ്മയുടെ] പണം',
+                'example': '[അമ്മയുടെ] സ്നേഹം',
                 'grammatical_features_item_ids': ['Q110786', 'Q146233'],
             },
             {
@@ -6344,22 +6344,22 @@ templates = {
             },
             {
                 'label': 'ബഹുവചനം',
-                'example': 'പല [ഭാഷകൾ].',
+                'example': 'അനേകം [പശുക്കൾ].',
                 'grammatical_features_item_ids': ['Q146786', 'Q131105'],
             },
             {
                 'label': 'ബഹുവചനം പ്രതിഗ്രാഹിക ',
-                'example': '[പശുക്കളെ] മെയ്ച്ചു',
+                'example': 'ഞാൻ [പശുക്കളെ] മെയ്ച്ചു',
                 'grammatical_features_item_ids': ['Q146786', 'Q146078'],
             },
             {
                 'label': 'ബഹുവചനം ഉദ്ദേശിക',
-                'example': '[പൂച്ചകൾക്ക്] പാൽ നല്ലതല്ല',
+                'example': 'ഞാൻ [പശുക്കൾക്ക്] പുല്ലു കൊടുത്തു',
                 'grammatical_features_item_ids': ['Q146786', 'Q145599'],
             },
             {
                 'label': 'ബഹുവചനം ആധാരിക',
-                'example': '[പശുക്കളിൽ] നിന്ന്',
+                'example': 'പല [വയലുകളിൽ] കളിച്ചു',
                 'grammatical_features_item_ids': ['Q146786', 'Q202142'],
             },
             {
@@ -6374,7 +6374,7 @@ templates = {
             },
             {
                 'label': 'ബഹുവചനം സംബന്ധിക',
-                'example': '[അമ്മമാരുടെ] പ്രവർത്തി',
+                'example': '[കുട്ടികളുടെ] പ്രവർത്തി',
                 'grammatical_features_item_ids': ['Q146786', 'Q146233'],
             },
             {
