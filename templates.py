@@ -4079,7 +4079,7 @@ templates = {
     },
 
     'german-verb': {
-        '@attribution': {'users': ['Lucas Werkmeister', 'Andreasmperu'], 'title': 'Wikidata:Wikidata Lexeme Forms/German'},
+        '@attribution': {'users': ['Lucas Werkmeister', 'Andreasmperu', 'Nikki'], 'title': 'Wikidata:Wikidata Lexeme Forms/German'},
         'label': 'deutsches Verb',
         'language_item_id': 'Q188',
         'language_code': 'de',
@@ -4090,6 +4090,11 @@ templates = {
                 'label': 'Infinitiv',
                 'example': '[tragen]',
                 'grammatical_features_item_ids': ['Q179230'],
+            },
+            {
+                'label': 'Infinitiv mit zu',
+                'example': 'Es ist gut, [zu tragen].',
+                'grammatical_features_item_ids': ['Q100952920'],
             },
             {
                 'section_break': True,
@@ -4254,6 +4259,11 @@ templates = {
             },
             {
                 'section_break': True,
+                'label': 'Partizip I',
+                'example': 'Es ging vorbei, etwas [tragend].',
+                'grammatical_features_item_ids': ['Q10345583'],
+            },
+            {
                 'label': 'Partizip II',
                 'example': 'Ich werde [getragen].',
                 'grammatical_features_item_ids': ['Q12717679'],
