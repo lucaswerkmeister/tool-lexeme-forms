@@ -19,5 +19,6 @@
 	"advanced-partial-forms-hint": "Aby utworzyć leksemy z pominięciem niektórych form, przełącz się na tryb zaawansowany.",
 	"generated-via": "wygenerowane przez",
 	"bulk-link": "tryb zbiorczy",
-	"bulk-not-allowed": "Nie {{GENDER:$1|możesz}} używać trybu zbiorczego."
+	"bulk-not-allowed": "Nie {{GENDER:$1|możesz}} używać trybu zbiorczego.",
+	"login-hint": "Aby wprowadzić zmiany za pomocą tego narzędzia, musisz się [$1 zalogować]."
 }
