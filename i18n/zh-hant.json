@@ -9,6 +9,7 @@
 	"csrf-warning": "很抱歉，我們無法處理這個請求（<abbr title=\"Cross-site request forgery\">CSRF</abbr> 保護失敗）。請嘗試重新提交。",
 	"duplicates-warning": "以下現存的{{PLURAL:$1|詞位}}，與您現在建立的詞位剛好有相同詞元與語言代碼：",
 	"duplicates-instructions": "如果您確定{{PLURAL:$1|這個|它們}}不相同，請勾選在形式下方的方框。",
+	"duplicates-create": "無論如何，建立一個新的詞位。",
 	"no-duplicate": "這不是現有詞位的重複內容。",
 	"form-optional": "&#32;（選填）",
 	"advanced": "進階",
@@ -28,5 +29,10 @@
 	"edit-ambiguous-warning": "以下詞位{{PLURAL:$1|形式}}相符一個以上模板形式而引起歧義：",
 	"edit-unmatched-warning": "以下詞位{{PLURAL:$1|形式}}不符合任一模板形式：",
 	"edit-form-list-item": "$1，$2，{{PLURAL:$3|0=沒有陳述|1 個陳述|$3 個陳述}}",
-	"no-grammatical-features": "沒有語法特徵"
+	"no-grammatical-features": "沒有語法特徵",
+	"title-create": "$1（建立）",
+	"title-advanced": "$1（進階）",
+	"title-bulk": "$1（批量）",
+	"title-edit": "$1（編輯）",
+	"login-hint": "在您使用此工具來做出更改前，您需要[$1 登入]。"
 }
