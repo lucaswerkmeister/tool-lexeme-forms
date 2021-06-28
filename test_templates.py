@@ -51,9 +51,6 @@ def test_translations_available():
     # compare message_with_language()
     missing_language_codes.remove('bn-x-Q6747180')
 
-    # lack of translations accepted for now
-    missing_language_codes.remove('ig')
-
     assert not missing_language_codes
 
 
