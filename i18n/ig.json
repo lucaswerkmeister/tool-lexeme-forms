@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"EnaldoSS"
+		]
+	},
+	"create": "Kee",
+	"duplicates-create": "Mepụta lexeme ọhụụ.",
+	"no-duplicate": "Nke a abụghị mbipụta abụọ nke lexeme dị ugbu a.",
+	"form-optional": "&#32;(nhọrọ)",
+	"advanced": "Ogo dị elu",
+	"advanced-general": "Ị nọ n' \"ogo dị elu\".",
+	"advanced-partial-forms-hint": "Iji mepụta lexemes n'ụdị ụfọdụ na-anọghị, gbanwee gaa n'ogo dị elu",
+	"generated-via": "emere site",
+	"bulk-link": "nnukwu mode",
+	"bulk-format-help": "usoro enyemaka",
+	"bulk-optional-forms-hint": "Ọ bụrụ n’ịchọrọ ịhapụ ụdị ụfọdụ, kọwaa ha dị ka ihe efu (ịmaatụ <kbd>...|||</kbd> maka ụdị efu atọ na njedebe).",
+	"edit-link": "mezie",
+	"edit-mismatch-warning": "Lexeme a adabaghị na ndebiri a! Biko lee anya ugboro abụọ na ọ bụ ndebiri nke dị mma maka lexeme a tupu ịga n’ihu.",
+	"no-grammatical-features": "enweghị atụmatụasụsụ",
+	"title-create": "$1 (kee)",
+	"title-advanced": "$1 (ogo dị elu)",
+	"title-bulk": "$1 (nnukwu)",
+	"title-edit": "$1 (mezie)"
+}
