@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Bennylin",
+			"FenyMufyd",
 			"Lucas Werkmeister",
 			"Naufal06"
 		]
@@ -10,6 +11,7 @@
 	"csrf-warning": "Maaf, kami tidak dapat memproses permohonan ini (proteksi <abbr title=\"Cross-site request forgery\">CSRF</abbr> gagal). Tolong ulangi pengiriman formulir lagi.",
 	"duplicates-warning": "{{PLURAL:$1|Leksem|Leksem}} yang sudah ada berikut memiliki lema dan kode bahasa yang sama dengan yang Anda coba buat:",
 	"duplicates-instructions": "Jika Anda yakin bahwa {{PLURAL:$1|ini|ini}} berbeda, centang kotak yang berada di bawah formulir.",
+	"duplicates-create": "Tetap buat leksem baru.",
 	"no-duplicate": "Ini bukanlah sebuah duplikat dari leksem yang sudah ada.",
 	"form-optional": "&#32;(opsional)",
 	"advanced": "Lanjutan",
@@ -34,5 +36,7 @@
 	"edit-unmatched-warning": "{{PLURAL:$1|Formulir|Formulir}} leksem berikut tidak cocok dengan formulir templat manapun:",
 	"edit-form-list-item": "$1, $2, {{PLURAL:$3|0=tidak ada pernyataan|satu pernyataan|$3 pernyataan}}",
 	"no-grammatical-features": "tidak ada fitur tata bahasa",
+	"title-create": "$1 (buat)",
+	"title-advanced": "$1 (lanjutan)",
 	"login-hint": "Anda perlu [$1 log masuk] sebelum Anda bisa mengubah alat ini."
 }
