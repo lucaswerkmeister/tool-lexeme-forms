@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Andreasmperu",
+			"Jackiezelaya",
 			"Juan t2905",
 			"ZealousBlaze"
 		]
@@ -10,11 +11,16 @@
 	"csrf-warning": "Lo sentimos, no pudimos procesar esta solicitud (<abbr title=\"Cross-site request forgery\">CSRF</abbr> protection failed). Por favor, intenta enviar el formulario nuevamente.",
 	"duplicates-warning": "Los lexemas siguientes ya tienen un lema y un código lingüístico idéntico a aquel que estás intentado crear:",
 	"duplicates-instructions": "Si estás seguro que {{PLURAL:$1|es diferente|son diferentes}}, marca la casilla al final del formato.",
+	"duplicates-create": "Cree un nuevo lexema de todos modos.",
 	"no-duplicate": "Este no es un duplicado de un lexema existente.",
 	"advanced": "Avanzado",
 	"advanced-general": "Estás en el modo \"avanzado\".",
 	"advanced-lexeme-id": "En lugar de crear un nuevo lexema, puedes ingresar el identificador de un lexema existente para añadir las formas faltantes. Deja en blanco las formas ya existentes en el lexema; de lo contrario, ¡se creará un duplicado!",
 	"advanced-partial-forms": "Puedes dejar algunas formas en blanco para evitar que sean añadidas. ¡Asegúrate de crear todas las formas necesarias!",
 	"lexeme-id": "Identificador de lexema",
+	"title-create": "$1 (crear)",
+	"title-advanced": "$1 (avanzado)",
+	"title-bulk": "$1 (a granel)",
+	"title-edit": "Tipo de ediciones: $1",
 	"login-hint": "Necesita [$1 iniciar sesión] antes de que pueda hacer cambios usando esta herramienta."
 }
