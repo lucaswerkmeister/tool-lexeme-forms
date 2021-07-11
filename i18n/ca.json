@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Vfc"
+		]
+	},
+	"create": "Crea",
+	"no-duplicate": "Això no és un duplicat d'un lexema ja existent.",
+	"advanced": "Avançat",
+	"advanced-general": "Estàs en mode «avançat».",
+	"lexeme-id": "Identificador del lexema",
+	"generated-via": "generat mitjançant",
+	"edit-link": "edita",
+	"title-create": "$1 (crear)",
+	"title-advanced": "$1 (avançat)",
+	"title-edit": "$1 (edita)"
+}
