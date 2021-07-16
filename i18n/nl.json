@@ -3,14 +3,17 @@
 		"authors": [
 			"MarcoSwart",
 			"Mbch331",
-			"Nickthijssen1994"
+			"Nickthijssen1994",
+			"Romaine"
 		]
 	},
 	"create": "Aanmaken",
 	"csrf-warning": "Sorry, we konden dit niet verwerken (door de <abbr title=\"Cross-site request forgery\">CSRF</abbr>-bescherming). Probeer het webformulier nog eens aan te bieden.",
 	"duplicates-warning": "De volgende bestaande {{PLURAL:$1|lexeem heeft|lexemen hebben}} hetzelfde lemmawoord en taalcode als degene die je probeert aan te maken:",
 	"duplicates-instructions": "Als je zeker weet dat {{PLURAL:$1|het verschilt|ze verschillen}}, kruis dan het vakje onderaan het formulier aan.",
+	"duplicates-create": "Maak toch een nieuw lexeem.",
 	"no-duplicate": "Dit is geen doublure van een lexeem dat al bestaat.",
+	"form-optional": "&#32;(optioneel)",
 	"advanced": "Geavanceerd",
 	"advanced-general": "Geavanceerde mogelijkheden.",
 	"advanced-lexeme-id": "Vul een lexeem ID in om woordvormen aan een bestaand lexeem toe te voegen. Woordvormen die het lexeem al heeft hier niet invullen, want dat geeft een doublure.",
@@ -18,6 +21,24 @@
 	"lexeme-id": "Lexeem-ID",
 	"advanced-partial-forms-hint": "Ga naar \"Geavanceerd\" als je een lexeem wil maken waarin een of meer woordvormen ontbreken.",
 	"generated-via": "gegenereerd door",
+	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=geen vormen|één vorm|$2 vormen}} en {{PLURAL:$3|0=geen betekenissen|één betekenis|$3 betekenissen}}",
+	"bulk-link": "bulkmodus",
+	"bulk-format-help": "help bij het opmaken",
+	"bulk-not-allowed": "U mag de bulkmodus niet gebruiken. Sorry.",
+	"bulk-first-field-not-lexeme-id": "Aangezien het sjabloon {{PLURAL:$1|één vorm|$1 vormen}} heeft en regel $4 van de invoer {{PLURAL:$2| één veld| $2 velden}}, zou het eerste veld eruit moeten zien als een lexeem-ID, maar <q>$3</q> ziet er niet uit als een lexeem-ID. (Heeft u één vorm te veel opgegeven in de invoer?)",
+	"bulk-first-field-lexeme-id": "Aangezien het sjabloon {{PLURAL:$1|één vorm|$1 vormen}} heeft en regel $4 van de invoer {{PLURAL:$2| één veld| $2 velden}}, zou het eerste veld er niet uit moeten zien als een lexeem-ID, maar <q>$3</q> ziet er uit als een lexeem-ID. (Heeft u een vorm vergeten op te geven in de invoer?)",
+	"bulk-wrong-number-of-fields": "Aangezien het sjabloon {{PLURAL:$1| één vorm| $1 vormen}} heeft, moet elke invoerregel ofwel zoveel velden hebben (bij het maken van een nieuw lexeem) of één meer (bij het specificeren van de ID van een bestaand lexeem om deze te bewerken), maar regel $3 van de invoer heeft in plaats daarvan {{PLURAL:$2| één veld| $2 velden}}.",
+	"bulk-optional-forms-hint": "Als u enkele vormen wilt overslaan, specificeer ze dan als leeg (bijv. <kbd>...|||</kbd> voor drie lege vormen aan het einde).",
 	"edit-link": "bewerken",
+	"edit-general": "U bevindt zich in de \"bewerk\"-modus. Door de onderstaande waarden te wijzigen, worden vormen van het doellexeem bewerkt, toegevoegd of verwijderd.",
+	"edit-mismatch-warning": "Dit lexeem lijkt niet overeen te komen met dit sjabloon! Controleer nogmaals of dit het juiste sjabloon is voor dit lexeem voordat u verdergaat.",
+	"edit-ambiguous-warning": "De volgende lexeem{{PLURAL:$1|vorm kwam|vormen kwamen}} even goed overeen met meer dan één sjabloonformulier:",
+	"edit-unmatched-warning": "De volgende lexeem{{PLURAL:$1|vorm kwam|vormen kwamen}} niet overeen met een van de sjabloonformulieren:",
+	"edit-form-list-item": "$1, $2, {{PLURAL:$3|0=geen verklaringen|een verklaring|$3 verklaringen}}",
+	"no-grammatical-features": "geen grammaticale kenmerken",
+	"title-create": "$1 (aanmaken)",
+	"title-advanced": "$1 (geavanceerd)",
+	"title-bulk": "$1 (bulk)",
+	"title-edit": "$1 (bewerken)",
 	"login-hint": "U moet [$1 inloggen] om wijzigingen te kunnen maken met deze tool."
 }
