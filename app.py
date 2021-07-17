@@ -7,7 +7,6 @@ import jinja2
 import json
 import mwapi
 import mwoauth
-import os
 import random
 import re
 import requests_oauthlib
@@ -35,12 +34,10 @@ app.add_template_filter(lang_int2babel)
 
 user_agent = toolforge.set_user_agent('lexeme-forms', email='mail@lucaswerkmeister.de')
 
-__dir__ = os.path.dirname(__file__)
-try:
-    with open(os.path.join(__dir__, 'config.yaml')) as config_file:
-        app.config.update(yaml.safe_load(config_file))
-        consumer_token = mwoauth.ConsumerToken(app.config['oauth']['consumer_key'], app.config['oauth']['consumer_secret'])
-except FileNotFoundError:
+has_config = app.config.from_file('config.yaml', load=yaml.safe_load, silent=True)
+if has_config:
+    consumer_token = mwoauth.ConsumerToken(app.config['OAUTH']['consumer_key'], app.config['OAUTH']['consumer_secret'])
+else:
     print('config.yaml file not found, assuming local development setup')
     app.secret_key = 'fake'
 
@@ -150,7 +147,7 @@ def user_link(user_name):
 
 @app.template_global()
 def authentication_area():
-    if 'oauth' not in app.config:
+    if 'OAUTH' not in app.config:
         return flask.Markup()
 
     userinfo = get_userinfo()
@@ -264,7 +261,7 @@ def process_template_advanced(template_name, advanced=True):
     flask.g.interface_language_code = lang_lex2int(template['language_code'])
     form_data = flask.request.form
 
-    readonly = 'oauth' in app.config and 'oauth_access_token' not in flask.session
+    readonly = 'OAUTH' in app.config and 'oauth_access_token' not in flask.session
 
     if (flask.request.method == 'POST' and
             form_data.get('_advanced_mode', 'None') == str(advanced) and
@@ -280,7 +277,7 @@ def process_template_advanced(template_name, advanced=True):
         lexeme_data = build_lexeme(template, form_data)
         summary = build_summary(template, form_data)
 
-        if 'oauth' in app.config:
+        if 'OAUTH' in app.config:
             lexeme_id, lexeme_uri = submit_lexeme(template, lexeme_data, summary)
             target = add_hash_to_uri(lexeme_uri, form_data.get('target_hash'))
             return flask.redirect(target, code=303)
@@ -309,7 +306,7 @@ def process_template_bulk(template_name):
     template = templates_without_redirects[template_name]
     flask.g.interface_language_code = lang_lex2int(template['language_code'])
 
-    readonly = 'oauth' in app.config and 'oauth_access_token' not in flask.session
+    readonly = 'OAUTH' in app.config and 'oauth_access_token' not in flask.session
 
     if not can_use_bulk_mode() and not readonly:
         return flask.render_template(
@@ -375,7 +372,7 @@ def process_template_bulk(template_name):
             lexeme_data = build_lexeme(template, lexeme)
             summary = build_summary(template, form_data)
 
-            if 'oauth' in app.config:
+            if 'OAUTH' in app.config:
                 lexeme_id, lexeme_uri = submit_lexeme(template, lexeme_data, summary)
                 results.append({
                     'lexeme_data': lexeme_data,
@@ -388,7 +385,7 @@ def process_template_bulk(template_name):
                     'lexeme_data': lexeme_data,
                 })
 
-        if 'oauth' in app.config:
+        if 'OAUTH' in app.config:
             return flask.render_template(
                 'bulk-result.html',
                 template=template,
@@ -465,7 +462,7 @@ def process_template_edit(template_name, lexeme_id):
     template['lexeme_id'] = lexeme_id
     template['lexeme_revision'] = lexeme_revision
 
-    readonly = 'oauth' in app.config and 'oauth_access_token' not in flask.session
+    readonly = 'OAUTH' in app.config and 'oauth_access_token' not in flask.session
 
     if (flask.request.method == 'POST' and
             '_edit_mode' in flask.request.form and
@@ -475,7 +472,7 @@ def process_template_edit(template_name, lexeme_id):
         lexeme_data = update_lexeme(lexeme_data, template, form_data, representation_language_code, missing_statements=lexeme_match['missing_statements'])
         summary = build_summary(template, form_data)
 
-        if 'oauth' in app.config:
+        if 'OAUTH' in app.config:
             lexeme_id, lexeme_uri = submit_lexeme(template, lexeme_data, summary)
             target = add_hash_to_uri(lexeme_uri, form_data.get('target_hash'))
             return flask.redirect(target, code=303)
@@ -542,7 +539,7 @@ def oauth_callback():
 
 @app.route('/login')
 def login():
-    if 'oauth' in app.config:
+    if 'OAUTH' in app.config:
         (redirect, request_token) = mwoauth.initiate('https://www.wikidata.org/w/index.php', consumer_token, user_agent=user_agent)
         flask.session['oauth_request_token'] = dict(zip(request_token._fields, request_token))
         flask.session['oauth_redirect_target'] = flask.request.referrer
@@ -762,7 +759,7 @@ def current_url():
 
 @app.template_global()
 def can_use_bulk_mode():
-    if 'oauth' not in app.config:
+    if 'OAUTH' not in app.config:
         return True
     userinfo = get_userinfo()
     return userinfo is not None and 'autoconfirmed' in userinfo['groups']
