@@ -5501,7 +5501,7 @@ templates = {
         'forms': [
             {
                 'label': 'aha',
-                'example': 'O nwere [ụlọ].',
+                'example': 'Ọ nwere [ụlọ].',
                 'grammatical_features_item_ids': [],
             }
         ],
