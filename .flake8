@@ -2,7 +2,8 @@
 [flake8]
 ignore =
     # expected 2 blank lines
-    E302
+    E302 # between functions and classes
+    E305 # after functions and classes
     # line too long
     E501
     # line break after binary operator
