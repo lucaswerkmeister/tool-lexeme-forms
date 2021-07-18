@@ -5507,6 +5507,21 @@ templates = {
         ],
     },
 
+    'igbo-adjective': {
+        '@attribution': {'users': ['EnaldoSS', 'Tochiprecious'], 'title': 'Wikidata:Wikidata Lexeme Forms/Igbo'},
+        'label': 'Nkọwaaha n\'Igbo',
+        'language_item_id': 'Q33578',
+        'language_code': 'ig',
+        'lexical_category_item_id': 'Q34698',
+        'forms': [
+            {
+                'label': 'nkọwaaha',
+                'example': 'Nwanyị [ọcha].',
+                'grammatical_features_item_ids': [],
+            }
+        ],
+    },
+
     'italian-noun-feminine': {
         '@attribution': {'users': ['Sannita'], 'title': 'Wikidata:Wikidata Lexeme Forms/Italian'},
         'label': 'sostantivo femminile italiano',
