@@ -1,5 +1,5 @@
 :root.dragging input[name=form_representation] {
-    border: 2px dashed red;
+    outline: 2px dashed red; /* should be border but see #74 on GitHub */
 }
 
 :root.draggable .grabbable {
