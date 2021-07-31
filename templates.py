@@ -5507,6 +5507,77 @@ templates = {
         ],
     },
 
+    'igbo-verb': {
+        '@attribution': {'users': ['EnaldoSS', 'Tochiprecious'], 'title': 'Wikidata:Wikidata Lexeme Forms/Igbo'},
+        'label': 'Ngwaa n\'Igbo',
+        'language_item_id': 'Q33578',
+        'language_code': 'ig',
+        'lexical_category_item_id': 'Q24905',
+        'two_column_sections': True,
+        'forms': [
+            {
+                'label': 'ntimiwu',
+                'example': 'Biko [rie].',
+                'grammatical_features_item_ids': ['Q22716'],
+            },
+            {
+                'label': 'njụ ntimiwu',
+                'example': 'Biko [erila] nri.',
+                'grammatical_features_item_ids': ['Q22716', 'Q1478451'],
+            },
+            {
+                'section_break': True,
+                'label': 'ndịugbua',
+                'example': 'Ọ [na-eri] nri.',
+                'grammatical_features_item_ids': ['Q192613'],
+            },
+            {
+                'label': 'njụ ndịugbua',
+                'example': 'Ọ [naghị eri].',
+                'grammatical_features_item_ids': ['Q192613', 'Q1478451'],
+            },
+            {
+                'section_break': True,
+                'label': 'ndịnazụ',
+                'example': 'Ọ [riri].',
+                'grammatical_features_item_ids': ['Q1994301'],
+            },
+            {
+                'label': 'njụ ndịnazụ',
+                'example': 'Ọ [righị].',
+                'grammatical_features_item_ids': ['Q1994301', 'Q1478451'],
+            },
+            {
+                'section_break': True,
+                'label': 'ndịniihu',
+                'example': 'Ọ [ga-eri] nri.',
+                'grammatical_features_item_ids': ['Q501405'],
+            },
+            {
+                'label': 'njụ ndịniihu',
+                'example': 'Ọ [gaghị eri].',
+                'grammatical_features_item_ids': ['Q501405', 'Q1478451'],
+            },
+            {
+                'section_break': True,
+                'label': 'mmekangwaa',
+                'example': 'Ọ [riwa] nri.',
+                'grammatical_features_item_ids': ['Q814722'],
+            },
+            {
+                'label': 'njụ mmekangwaa',
+                'example': 'Ọ [naghị eri].',
+                'grammatical_features_item_ids': ['Q814722', 'Q1478451'],
+            },
+            {
+                'section_break': True,
+                'label': 'mfinitivu',
+                'example': 'Gbalịa [iri] nri.',
+                'grammatical_features_item_ids': ['Q179230'],
+            },
+        ],
+    },
+
     'igbo-adjective': {
         '@attribution': {'users': ['EnaldoSS', 'Tochiprecious'], 'title': 'Wikidata:Wikidata Lexeme Forms/Igbo'},
         'label': 'Nkọwaaha n\'Igbo',
