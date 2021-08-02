@@ -1,0 +1,41 @@
+{
+	"@metadata": {
+		"authors": [
+			"Yardom78"
+		]
+	},
+	"create": "Vytvoriť",
+	"csrf-warning": "Je nám ľúto, ale túto požiadavku nebolo možné spracovať ( <abbr title=\"Cross-site žiadosť o falšovanie\">ochrana CSRF</abbr> zlyhala). Skúste formulár odoslať znova.",
+	"duplicates-warning": "Nasledujúce existujúce {{PLURAL:$1| lexéma má | lexémy majú}} rovnakú lemmu a jazykový kód ako ten, ktorý sa pokúšate vytvoriť:",
+	"duplicates-instructions": "Ak ste si istí, že {{PLURAL:$1| je to | sú}} odlišné, začiarknite políčko v dolnej časti formulára.",
+	"duplicates-create": "Vytvoriť novú lexému aj tak.",
+	"no-duplicate": "Nejde o duplikát existujúcej lexémy.",
+	"form-optional": "&#32;(voliteľné)",
+	"advanced": "Pokročilé",
+	"advanced-general": "Nachádzate sa v „pokročilom“ režime.",
+	"advanced-lexeme-id": "Môžete zadať ID lexémy a namiesto vytvorenia novej pridať formuláre do existujúcej lexémy. Formuláre, ktoré už v lexéme existujú, nechajte prázdne, inak sa duplikujú!",
+	"advanced-partial-forms": "Niektoré formuláre môžete nechať prázdne, aby sa nedali pridať. Uistite sa, že náhodou nevynecháte žiadne formuláre!",
+	"lexeme-id": "ID lexémy",
+	"advanced-partial-forms-hint": "Ak chcete vytvoriť lexémy, v ktorých niektoré formy chýbajú, prepnite do pokročilého režimu.",
+	"generated-via": "generované prostredníctvom",
+	"description-with-forms-and-senses": "$1 , {{PLURAL:$2| 0 = žiadne formuláre | jeden formulár | $2 formuláre | $2 formulárov}} a {{PLURAL:$3| 0 = žiaden význam | jeden význam | $3 významy | $3 významov}}",
+	"bulk-link": "hromadný režim",
+	"bulk-format-help": "pomoc s formátom",
+	"bulk-not-allowed": "{{GENDER:$1| Nemáte}} povolenie na použitie hromadného režimu.",
+	"bulk-first-field-not-lexeme-id": "Pretože šablóna obsahuje {{PLURAL:$1| jeden formulár | $1 formuláre | $1 formulárov}} a riadok $4 na vstupe má {{PLURAL:$2| jedno políčko | $2 políčka | $2 políčok}}, prvé políčko by malo vyzerať ako ID lexémy, ale <q>$3</q> nevyzerá ako ID lexémy.",
+	"bulk-first-field-lexeme-id": "Pretože šablóna obsahuje {{PLURAL:$1| jeden formulár | $1 formuláre | $1 formulárov}} a riadok $4 na vstupe má {{PLURAL:$2| jedno políčko | $2 políčka | $2 políčok}}, prvé políčko by nemalo vyzerať ako ID lexémy, ale <q>$3</q> ako jedno vyzerá.",
+	"bulk-wrong-number-of-fields": "Pretože šablóna obsahuje {{PLURAL:$1| jeden formulár | $1 formuláre | $1 formulárov}}, každý vstupný riadok by mal mať buď toľko políčok (pri vytváraní novej lexémy), alebo jedno ďalšie (pri zadávaní ID existujúcej lexémy, ktorú chcete upraviť), ale riadok $3 vstupu má {{PLURAL:$2| jedno políčko | $2 políčka | $2 políčok}}.",
+	"bulk-optional-forms-hint": "Ak chcete niektoré formuláre preskočiť, zadajte ich ako prázdne (napr. <kbd>... |||</kbd> pre tri prázdne formuláre na konci).",
+	"edit-link": "upraviť",
+	"edit-general": "Nachádzate sa v režime „úprav“. Pri zmene nižšie uvedených hodnôt sa upravia, pridajú alebo odstránia formy cieľovej lexémy.",
+	"edit-mismatch-warning": "Zdá sa, že táto lexéma nezodpovedá tejto šablóne! Pred pokračovaním si prosím dôkladne skontrolujte, či je to správna šablóna pre túto lexému.",
+	"edit-ambiguous-warning": "{{PLURAL:$1| Formulár | Formuláre}} pre nasledovné lexémy sa zhodovali s viac ako jedným formulárom šablóny:",
+	"edit-unmatched-warning": "{{PLURAL:$1| Formulár | Formuláre}} nasledovných lexém nezodpovedá/jú žiadnemu z formulárov šablón:",
+	"edit-form-list-item": "$1 $2 , {{PLURAL:$3| 0 = žiaden výpis | jeden výpis | $3  výpisy | $3 výpisov }}",
+	"no-grammatical-features": "bez gramatických znakov",
+	"title-create": "$1 (vytvoriť)",
+	"title-advanced": "$1 (pokročilý)",
+	"title-bulk": "$1 (hromadne)",
+	"title-edit": "$1 (upraviť)",
+	"login-hint": "Pred vykonaním zmien pomocou tohto nástroja sa musíte [ $1 prihlásiť]."
+}
