@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Winstonza"
+		]
+	},
+	"create": "Skep",
+	"csrf-warning": "Jammer, ons kon nie dié versoek verwerk nie (<abbr title=\"Cross-site request forgery\">CSRF</abbr>-beskerming het misluk). Probeer asseblief weer die vorm stuur.",
+	"duplicates-warning": "Die volgende bestaande {{PLURAL:$1|lekseem het|lekseme het}} dieselfde lemma en taalkode as die een wat jy probeer skep:",
+	"duplicates-instructions": "As jy seker is {{PLURAL:$1|dit|hulle}} verskil, tik die blokkie onderaan die vorm af.",
+	"duplicates-create": "Skep in elk geval 'n nuwe lekseem.",
+	"no-duplicate": "Dit is nie 'n duplikaat dié van 'n bestaande lekseem nie.",
+	"form-optional": "&#32;(opsioneel)",
+	"advanced": "Gevorderd",
+	"advanced-general": "Jy is in \"gevorderde\" modus.",
+	"lexeme-id": "Lekseem-ID",
+	"bulk-format-help": "formaathulp",
+	"edit-link": "redigeer",
+	"title-create": "$1 (skep)",
+	"title-advanced": "$1 (gevorderd)",
+	"title-edit": "$1 (redigeer)",
+	"login-hint": "Jy moet [$1 aanmeld] voordat jy veranderings met hierdie werktuig kan aanbring."
+}
