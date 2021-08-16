@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Ainali",
+			"Belteshassar",
 			"Lucas Werkmeister",
 			"Sabelöga",
 			"Vesihiisi",
@@ -12,6 +13,7 @@
 	"csrf-warning": "Din begäran kunde inte utföras på grund av ett <abbr title=\"Cross-site request forgery\">CSRF</abbr>-fel. Var god försök igen.",
 	"duplicates-warning": "{{PLURAL:$1|Detta befintliga lexem|Dessa befintliga lexem}} har samma lemma och språkkod som lexemet du försöker skapa:",
 	"duplicates-instructions": "Om du är säker på att {{PLURAL:$1|det är olikt|de är olika}}, markera i kryssrutan längst ner i formuläret.",
+	"duplicates-create": "Skapa ett nytt lexem ändå.",
 	"no-duplicate": "Duplicerar ej ett befintligt lexem.",
 	"form-optional": "&#32;(valfri)",
 	"advanced": "Avancerat läge",
@@ -25,6 +27,7 @@
 	"bulk-link": "masskapa",
 	"bulk-format-help": "formateringshjälp",
 	"bulk-not-allowed": "Du får dessvärre inte masskapa lexem. Beklagar.",
+	"bulk-first-field-not-lexeme-id": "Eftersom mallen har {{PLURAL:$1|en form|$1 former}} och rad $4 av inmatningen har {{PLURAL:$2|ett fält|$2 fält}} så ska det första fältet ha formen av ett lexem-ID, men <q>$3</q> har inte formen av ett lexem-ID. (Angav du en form för mycket i inmatningen?)",
 	"bulk-optional-forms-hint": "Om du vill hoppa över vissa former kan du helt enkelt ange dem som tomma (t.ex. <kbd>...|||</kbd> för tre tomma former i slutet).",
 	"edit-link": "redigera",
 	"edit-general": "Du är i \"redigeringsläge\". Ändringar i värdena nedan kommer att redigera, lägga till eller ta bort former i det angivna lexemet.",
