@@ -499,8 +499,7 @@ def process_template_edit(template_name, lexeme_id):
             return flask.jsonify(lexeme_data)
 
     for template_form in template['forms']:
-        lexeme_forms = template_form.get('lexeme_forms')
-        if lexeme_forms:  # TODO use walrus operator in Python 3.8
+        if lexeme_forms := template_form.get('lexeme_forms'):
             template_form['value'] = '/'.join(lexeme_form['representations'][representation_language_code]['value']
                                               for lexeme_form in lexeme_forms
                                               if representation_language_code in lexeme_form['representations'])
@@ -904,8 +903,7 @@ def update_lexeme(lexeme_data, template, form_data, representation_language_code
 
     first_form = next(iter(template['forms'][0].get('lexeme_forms', [])), None)
     if first_form:
-        first_form_id = first_form.get('id')
-        if first_form_id:  # TODO use walrus operator in Python 3.8+
+        if first_form_id := first_form.get('id'):
             first_form = find_form(lexeme_data, first_form_id)  # find edited version
         else:
             # it’s a new form, first_form is already the edited version
@@ -926,8 +924,7 @@ def find_form(lexeme_data, form_id):
 def build_summary(template, form_data):
     template_name = template['@template_name']
     url = flask.url_for('process_template', template_name=template_name, _external=True)
-    toolforge_match = re.match(r'https://([a-z0-9-_]+).toolforge.org/(.*)$', url)
-    if toolforge_match:  # TODO use walrus operator in Python 3.8+
+    if toolforge_match := re.match(r'https://([a-z0-9-_]+).toolforge.org/(.*)$', url):
         tool_name = toolforge_match.group(1)
         rest = toolforge_match.group(2)
         summary = '[[toolforge:%s/%s|%s]]' % (tool_name, rest, template_name)
