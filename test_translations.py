@@ -1,3 +1,4 @@
+import builtins
 import pytest
 import re
 
@@ -42,14 +43,14 @@ allowed_html_element_names = {
 }
 
 
-def test_message_keys(language_code):
+def test_message_keys(language_code: str):
     language_keys = set(translations.translations[language_code].keys())
     english_keys = set(translations.translations['en'].keys())
     extra_keys = language_keys.difference(english_keys)
     assert not extra_keys
 
 
-def test_message_html_elements(language_code, message_key):
+def test_message_html_elements(language_code: str, message_key: str):
     message = translations.translations[language_code].get(message_key)
     if message is None:
         return
@@ -59,7 +60,7 @@ def test_message_html_elements(language_code, message_key):
     assert not html_element_names
 
 
-def test_message_syntax_valid_duplicates_warning(language_code, number):
+def test_message_syntax_valid_duplicates_warning(language_code: str, number: int):
     if 'duplicates_warning' in translations.translations[language_code]:
         message = translations.translations[language_code]['duplicates_warning']
         formatters.I18nFormatter(
@@ -71,7 +72,7 @@ def test_message_syntax_valid_duplicates_warning(language_code, number):
         )
 
 
-def test_message_syntax_valid_duplicates_instructions(language_code, number):
+def test_message_syntax_valid_duplicates_instructions(language_code: str, number: int):
     if 'duplicates_instructions' in translations.translations[language_code]:
         message = translations.translations[language_code]['duplicates_instructions']
         formatters.I18nFormatter(
@@ -83,7 +84,7 @@ def test_message_syntax_valid_duplicates_instructions(language_code, number):
         )
 
 
-def test_message_syntax_valid_description_with_forms_and_senses(language_code, number):
+def test_message_syntax_valid_description_with_forms_and_senses(language_code: str, number: int):
     if 'description_with_forms_and_senses' in translations.translations[language_code]:
         message = translations.translations[language_code]['description_with_forms_and_senses']
         formatters.I18nFormatter(
@@ -97,7 +98,7 @@ def test_message_syntax_valid_description_with_forms_and_senses(language_code, n
         )
 
 
-def test_message_syntax_valid_edit_ambiguous_warning(language_code, number):
+def test_message_syntax_valid_edit_ambiguous_warning(language_code: str, number: int):
     if 'edit_ambiguous_warning' in translations.translations[language_code]:
         message = translations.translations[language_code]['edit_ambiguous_warning']
         formatters.I18nFormatter(
@@ -109,7 +110,7 @@ def test_message_syntax_valid_edit_ambiguous_warning(language_code, number):
         )
 
 
-def test_message_syntax_valid_edit_unmatched_warning(language_code, number):
+def test_message_syntax_valid_edit_unmatched_warning(language_code: str, number: int):
     if 'edit_unmatched_warning' in translations.translations[language_code]:
         message = translations.translations[language_code]['edit_unmatched_warning']
         formatters.I18nFormatter(
@@ -121,7 +122,7 @@ def test_message_syntax_valid_edit_unmatched_warning(language_code, number):
         )
 
 
-def test_message_syntax_valid_edit_form_list_item(language_code, list, number):
+def test_message_syntax_valid_edit_form_list_item(language_code: str, list: builtins.list[str], number: int):
     if 'edit_form_list_item' in translations.translations[language_code]:
         message = translations.translations[language_code]['edit_form_list_item']
         formatters.I18nFormatter(
@@ -135,7 +136,7 @@ def test_message_syntax_valid_edit_form_list_item(language_code, list, number):
         )
 
 
-def test_message_syntax_valid_bulk_not_allowed(language_code, gender):
+def test_message_syntax_valid_bulk_not_allowed(language_code: str, gender: str):
     if 'bulk_not_allowed' in translations.translations[language_code]:
         message = translations.translations[language_code]['bulk_not_allowed']
         formatters.I18nFormatter(

@@ -2,16 +2,16 @@ import babel
 import json
 import os
 import re
-from typing import Dict
+from typing import Any
 
 from language import lang_int2babel
 
 
-def initial_titlecase(s):
+def initial_titlecase(s: str) -> str:
     return s[:1].title() + s[1:]
 
 
-def identity(s):
+def identity(s: Any) -> Any:
     return s
 
 
@@ -42,8 +42,8 @@ derived_messages = {
 }
 
 
-def py2mw(py, variables, lists):
-    def replace(match):
+def py2mw(py: str, variables: list[str], lists: set[str]) -> str:
+    def replace(match: re.Match) -> str:
         nonlocal variables, lists
         inner = match[0][1:-1]  # strip away braces
         variable, _, rest = inner.partition('!')
@@ -77,10 +77,10 @@ def py2mw(py, variables, lists):
     return re.sub(r'\{([^{}]|\{[^}]*\})*\}', replace, py)
 
 
-def mw2py(mw, language, variables, lists):
+def mw2py(mw: str, language: str, variables: list[str], lists: set[str]) -> str:
     locale = babel.Locale(lang_int2babel(language))
 
-    def replace_plural(match):
+    def replace_plural(match: re.Match) -> str:
         nonlocal locale, variables
         number = int(match[1])
         variable = variables[number - 1]
@@ -102,7 +102,7 @@ def mw2py(mw, language, variables, lists):
         return '{' + variable + '!p:' + ':'.join(plurals) + '}'
     py = re.sub(r'\{\{PLURAL:\$([1-9][0-9]*)\|([^}]*)\}\}', replace_plural, mw)
 
-    def replace_gender(match):
+    def replace_gender(match: re.Match) -> str:
         nonlocal variables
         number = int(match[1])
         variable = variables[number - 1]
@@ -113,7 +113,7 @@ def mw2py(mw, language, variables, lists):
         return '{' + variable + '!g:' + ':'.join(genders) + '}'
     py = re.sub(r'\{\{GENDER:\$([1-9][0-9]*)\|([^}]*)\}\}', replace_gender, py)
 
-    def replace_hyperlink(match):
+    def replace_hyperlink(match: re.Match) -> str:
         nonlocal variables
         number = int(match[1])
         variable = variables[number - 1]
@@ -122,7 +122,7 @@ def mw2py(mw, language, variables, lists):
         return '{' + variable + '!h:' + inner_html + '}'
     py = re.sub(r'\[\$([1-9][0-9]*) ([^]]*)\]', replace_hyperlink, py)
 
-    def replace_unconverted(match):
+    def replace_unconverted(match: re.Match) -> str:
         nonlocal variables
         number = int(match[1])
         variable = variables[number - 1]
@@ -144,7 +144,7 @@ skipped_language_codes = {
 }
 
 
-translations: Dict[str, Dict[str, str]] = {}
+translations: dict[str, dict[str, str]] = {}
 for entry in os.scandir('i18n/'):
     if not entry.is_file():
         continue
