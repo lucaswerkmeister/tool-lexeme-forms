@@ -2,7 +2,7 @@ import matching
 import templates
 
 
-def make_statement(property_id, item_id):
+def make_statement(property_id: str, item_id: str) -> dict:
     return {
         'mainsnak': {
             'snaktype': 'value',

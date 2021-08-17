@@ -1,4 +1,25 @@
 import copy
+from typing import cast, TypedDict, Union
+
+from templates import Form, Template
+
+
+class MatchedForm(Form, total=False):
+    lexeme_forms: list[dict]
+
+
+class MatchedTemplate(Template, total=False):
+    # forms: list[MatchedForm]  # overwriting field is not allowed
+    ambiguous_lexeme_forms: list[dict]
+    unmatched_lexeme_forms: list[dict]
+
+
+class OverallMatch(TypedDict):
+    language: bool
+    lexical_category: bool
+    matched_statements: dict[str, list[dict]]
+    missing_statements: dict[str, list[dict]]
+    conflicting_statements: dict[str, list[dict]]
 
 
 # whether the presence of some statement for a property
@@ -25,7 +46,7 @@ properties_exclusive = {
 }
 
 
-def match_template_to_lexeme_data(template, lexeme_data):
+def match_template_to_lexeme_data(template: Template, lexeme_data: dict) -> OverallMatch:
     language_matches = template['language_item_id'] == lexeme_data['language']
     lexical_category_matches = template['lexical_category_item_id'] == lexeme_data['lexicalCategory']
     matched_statements, missing_statements, conflicting_statements = match_template_entity_to_lexeme_entity('test' in template, template, lexeme_data)
@@ -39,10 +60,14 @@ def match_template_to_lexeme_data(template, lexeme_data):
     }
 
 
-def match_template_entity_to_lexeme_entity(test, template_entity, lexeme_entity):  # may be template + lexeme or template form + lexeme form
-    matched_statements = {}
-    missing_statements = {}
-    conflicting_statements = {}
+def match_template_entity_to_lexeme_entity(  # may be template + lexeme or template form + lexeme form
+        test: bool,
+        template_entity: Union[Template, Form],
+        lexeme_entity: dict,
+) -> tuple[dict[str, list[dict]], dict[str, list[dict]], dict[str, list[dict]]]:
+    matched_statements: dict[str, list[dict]] = {}
+    missing_statements: dict[str, list[dict]] = {}
+    conflicting_statements: dict[str, list[dict]] = {}
 
     properties_exclusive_for_template_entity = properties_exclusive['test' if test else 'www']
     for property_id in template_entity.get('statements', {}):
@@ -68,7 +93,7 @@ def match_template_entity_to_lexeme_entity(test, template_entity, lexeme_entity)
     return matched_statements, missing_statements, conflicting_statements
 
 
-def match_statement(template_statement, lexeme_statement):
+def match_statement(template_statement: dict, lexeme_statement: dict) -> bool:
     # so far, we only compare the main snak (ignoring qualifiers and references),
     # and only support entity ID values, because that’s all the templates use
     if lexeme_statement['mainsnak']['snaktype'] == 'value':
@@ -79,12 +104,12 @@ def match_statement(template_statement, lexeme_statement):
         return False
 
 
-def match_lexeme_forms_to_template(lexeme_forms, template):
-    template = copy.deepcopy(template)
+def match_lexeme_forms_to_template(lexeme_forms: list, template: Template) -> MatchedTemplate:
+    template = cast(MatchedTemplate, copy.deepcopy(template))
     for lexeme_form in lexeme_forms:
         best_template_forms = match_lexeme_form_to_template_forms('test' in template, lexeme_form, template['forms'])
         if len(best_template_forms) == 1:
-            best_template_form = best_template_forms[0]
+            best_template_form = cast(MatchedForm, best_template_forms[0])
             best_template_form.setdefault('lexeme_forms', []).append(lexeme_form)
         elif best_template_forms:
             template.setdefault('ambiguous_lexeme_forms', []).append(lexeme_form)
@@ -93,7 +118,7 @@ def match_lexeme_forms_to_template(lexeme_forms, template):
     return template
 
 
-def match_lexeme_form_to_template_forms(test, lexeme_form, template_forms):
+def match_lexeme_form_to_template_forms(test: bool, lexeme_form: dict, template_forms: list[Form]) -> list[Form]:
     best_template_forms = []
     best_matching_features = 0
     for template_form in template_forms:
@@ -109,7 +134,7 @@ def match_lexeme_form_to_template_forms(test, lexeme_form, template_forms):
     return best_template_forms
 
 
-def match_lexeme_form_to_template_form(test, lexeme_form, template_form):
+def match_lexeme_form_to_template_form(test: bool, lexeme_form: dict, template_form: Form) -> int:
     matching_features = 0
 
     for grammatical_feature_item_id in template_form['grammatical_features_item_ids']:
@@ -129,7 +154,7 @@ def match_lexeme_form_to_template_form(test, lexeme_form, template_form):
     return matching_features
 
 
-def matchable_features(template_form):
+def matchable_features(template_form: Form) -> int:
     features = len(template_form['grammatical_features_item_ids'])
     for property_id in template_form.get('statements', {}):
         features += len(template_form['statements'][property_id])
