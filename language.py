@@ -18,7 +18,7 @@ conversions; rather, it only implements conversions to less specific
 codes, which may lose some information."""
 
 
-def lang_lex2int(code):
+def lang_lex2int(code: str) -> str:
     """Convert a MediaWiki language code from lexicographical data usage
     to user interface usage."""
 
@@ -28,14 +28,14 @@ def lang_lex2int(code):
     }.get(code, code)
 
 
-def lang_int2html(code):
+def lang_int2html(code: str) -> str:
     """Convert a MediaWiki user interface language code to an HTML one."""
 
     # no changes needed so far
     return code
 
 
-def lang_int2babel(code):
+def lang_int2babel(code: str) -> str:
     """Convert a MediaWiki user interface language code to a Babel one."""
 
     # remove everything after -, interpreted differently by Babel
