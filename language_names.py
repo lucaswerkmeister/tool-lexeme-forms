@@ -1,4 +1,5 @@
 import sys
+from typing import Optional
 
 import mwapi  # type: ignore
 import toolforge
@@ -21,7 +22,7 @@ def load_language_info():
               file=sys.stderr)
     return response['query']['languageinfo']
 
-def autonym(code):
+def autonym(code: str) -> Optional[str]:
     global _language_info
     if _language_info is None:
         _language_info = load_language_info()

@@ -1,4 +1,5 @@
 import pytest
+from typing import Optional
 
 from language_names import autonym
 
@@ -8,5 +9,5 @@ from language_names import autonym
     ('fa', 'فارسی'),
     ('bn-x-Q6747180', None)
 ])
-def test_autonym(code, expected):
+def test_autonym(code: str, expected: Optional[str]):
     assert autonym(code) == expected
