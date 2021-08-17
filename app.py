@@ -5,12 +5,12 @@ import decorator
 import flask
 import jinja2
 import json
-import mwapi
-import mwoauth
+import mwapi  # type: ignore
+import mwoauth  # type: ignore
 import os
 import random
 import re
-import requests_oauthlib
+import requests_oauthlib  # type: ignore
 import stat
 import string
 import toolforge
@@ -87,7 +87,7 @@ def form2label(form):
                 flask.Markup(r'</span>'))
     return ret
 
-@app.template_filter()
+@app.template_filter()  # type: ignore
 @jinja2.pass_context
 def form2input(context, form, first=False, readonly=False, template_language_code=None, representation_language_code=None):
     (prefix, placeholder, suffix) = split_example(form)
@@ -119,7 +119,7 @@ def split_example(form):
     else:
         raise Exception('Invalid template: missing [placeholder]: ' + example)
 
-@app.template_filter()
+@app.template_filter()  # type: ignore
 def render_duplicates(duplicates, in_bulk_mode, template_name=None, form_representations=[]):
     return flask.render_template(
         'duplicates.html',
@@ -129,7 +129,7 @@ def render_duplicates(duplicates, in_bulk_mode, template_name=None, form_represe
         form_representations=form_representations,
     )
 
-@app.template_filter()
+@app.template_filter()  # type: ignore
 def augment_description(description, forms_count, senses_count):
     if forms_count is None or senses_count is None:
         return description
@@ -146,7 +146,7 @@ def csrf_token():
         flask.session['_csrf_token'] = ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(64))
     return flask.session['_csrf_token']
 
-@app.template_global()
+@app.template_global()  # type: ignore
 def template_group(template):
     group = language_autonym_with_code(template['language_code'])
     if 'test' in template:
@@ -178,7 +178,7 @@ def authentication_area():
             user_link(userinfo['name']) +
             flask.Markup(r'</span>'))
 
-@app.template_global()
+@app.template_global()  # type: ignore
 def message(message_code, language_code=None):
     message, language = message_with_language(message_code, language_code)
     return add_lang_if_needed(message, language)
@@ -191,7 +191,7 @@ def message_with_language(message_code, language_code=None):
     text = translations[language_code][message_code]
     return flask.Markup(text), language_code
 
-@app.template_global()
+@app.template_global()  # type: ignore
 def message_with_kwargs(message_code, **kwargs):
     template, language = message_with_language(message_code)
     message = I18nFormatter(locale_identifier=lang_int2babel(language),
@@ -674,7 +674,7 @@ def get_duplicates(wiki, language_code, lemma):
 
     return list(matches.values())  # list() to turn odict_values (not JSON serializable) into plain list
 
-@app.route('/api/v1/no_duplicate/<language_code>')
+@app.route('/api/v1/no_duplicate/<language_code>')  # type: ignore
 @app.template_global()
 def render_no_duplicate(language_code):
     flask.g.interface_language_code = lang_lex2int(language_code)

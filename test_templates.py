@@ -1,4 +1,4 @@
-import mwapi
+import mwapi  # type: ignore
 import pytest
 
 import app

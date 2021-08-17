@@ -8,8 +8,8 @@ import flask_utils
 
 @pytest.mark.parametrize('value', [
     {'a': 1, 'b': 2},
-    werkzeug.datastructures.OrderedMultiDict([('a', 1), ('a', 2), ('c', 4), ('b', 3)]),
-    werkzeug.datastructures.ImmutableOrderedMultiDict([('a', 1), ('a', 2), ('c', 4), ('b', 3)]),
+    werkzeug.datastructures.OrderedMultiDict([('a', 1), ('a', 2), ('c', 4), ('b', 3)]),  # type: ignore
+    werkzeug.datastructures.ImmutableOrderedMultiDict([('a', 1), ('a', 2), ('c', 4), ('b', 3)]),  # type: ignore
 ])
 def test_serializer(value):
     serializer = flask.json.tag.TaggedJSONSerializer()

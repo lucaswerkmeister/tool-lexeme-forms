@@ -5,8 +5,12 @@ flask >= 2.0.0
 jinja2 >= 3.0.0
 mwapi
 mwoauth
+mypy
 pytest
-pyyaml
+PyYAML
 requests_oauthlib
 toolforge ~= 4.2
+types-babel
+types-decorator
+types-PyYAML
 werkzeug >= 2.0.0

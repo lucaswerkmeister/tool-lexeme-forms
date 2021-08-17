@@ -1,4 +1,40 @@
-templates = {
+from typing import Dict, List, Optional, Set, TypedDict, Union
+
+
+class CoreForm(TypedDict):
+    label: str
+    example: str
+    grammatical_features_item_ids: List[str]
+
+class Form(CoreForm, total=False):
+    section_break: bool
+    optional: bool
+    grammatical_features_item_ids_optional: Set[str]
+    statements: dict
+
+class CoreTemplate(TypedDict):
+    label: str
+    language_item_id: str
+    language_code: str
+    lexical_category_item_id: str
+    forms: List[Form]
+
+class Attribution(TypedDict):
+    users: List[str]
+    title: Optional[str]
+
+MetaTemplate = TypedDict('MetaTemplate', {
+    '@attribution': Attribution,
+    '@template_name': str,
+}, total=False)
+
+class Template(CoreTemplate, MetaTemplate, total=False):
+    test: bool
+    two_column_sections: bool
+    statements: dict
+
+
+templates: Dict[str, Union[str, Template]] = {
 
     'asturian-noun-masculine': {
         '@attribution': {'users': ['Oriciu'], 'title': 'Wikidata:Wikidata Lexeme Forms/Asturian'},
@@ -9600,7 +9636,7 @@ templates = {
     },
 
     'german-noun-neuter-test': {
-        '@attribution': {'users': ['Lucas Werkmeister']},
+        '@attribution': {'users': ['Lucas Werkmeister'], 'title': None},
         'test': True,
         'label': 'deutsches Substantiv (Neutrum), test.wikidata.org',
         'language_item_id': 'Q348',

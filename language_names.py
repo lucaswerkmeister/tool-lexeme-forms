@@ -1,6 +1,6 @@
 import sys
 
-import mwapi
+import mwapi  # type: ignore
 import toolforge
 
 _language_info = None

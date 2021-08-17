@@ -1,4 +1,4 @@
-import mwapi
+import mwapi  # type: ignore
 import sys
 
 class T272319RetryingSession(mwapi.Session):

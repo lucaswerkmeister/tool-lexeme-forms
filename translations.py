@@ -2,6 +2,7 @@ import babel
 import json
 import os
 import re
+from typing import Dict
 
 from language import lang_int2babel
 
@@ -143,7 +144,7 @@ skipped_language_codes = {
 }
 
 
-translations = {}
+translations: Dict[str, Dict[str, str]] = {}
 for entry in os.scandir('i18n/'):
     if not entry.is_file():
         continue

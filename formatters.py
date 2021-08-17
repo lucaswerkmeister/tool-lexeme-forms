@@ -53,9 +53,9 @@ except ModuleNotFoundError:
             Used by HyperlinkFormatter / _Hyperlink."""
             return s
 else:
-    markup_type = markupsafe.Markup
+    markup_type = markupsafe.Markup  # type: ignore
 
-    class BaseI18nFormatter(markupsafe.EscapeFormatter):
+    class BaseI18nFormatter(markupsafe.EscapeFormatter):  # type: ignore
         """Base class of our i18n formatters."""
 
         """Empty base class stripping away constructor arguments and passing
