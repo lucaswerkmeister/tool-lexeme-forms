@@ -8,6 +8,7 @@
 	"csrf-warning": "Pardonez! Ni ne povis atendar ca demando (<abbr title=\"Cross-site request forgery\">CSRF</abbr> protekto faliis). Probez itere sendar la formulario.",
 	"duplicates-warning": "La sequanta {{PLURAL:$1|lexemo|lexemi}} havas la sama lemo e linguala kodeko kam l'altru quan vu deziras krear:",
 	"duplicates-instructions": "Se vu kredas ke {{PLURAL:$1|ol|li}} esas diferanta, facez 'check' che la buxo an l'infra parto di ca formulario.",
+	"duplicates-create": "Irgamaniere, kreez nova lexemo*.",
 	"no-duplicate": "To ne esas duplikato di existanta lexemo.",
 	"form-optional": "&#32;(fakultativa)",
 	"advanced": "Plura utensili",
@@ -32,5 +33,9 @@
 	"edit-unmatched-warning": "The following lexeme {{PLURAL:$1|form|forms}} did not match any of the template forms:",
 	"edit-form-list-item": "$1, $2, {{PLURAL:$3|0=nula deklaro|1 deklaro|$3 deklari}}",
 	"no-grammatical-features": "nula gramatikala traiti",
+	"title-create": "$1 (kreez)",
+	"title-advanced": "$1 (avancinta)",
+	"title-bulk": "$1 (porciono)",
+	"title-edit": "$1 (redaktez)",
 	"login-hint": "You need to [$1 log in] before you can make changes using this tool."
 }

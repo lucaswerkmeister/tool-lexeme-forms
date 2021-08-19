@@ -23,6 +23,7 @@
 	"bulk-link": "批量模式",
 	"bulk-format-help": "格式說明",
 	"bulk-not-allowed": "很抱歉，您不被允許使用批量模式。",
+	"bulk-optional-forms-hint": "若您想略過某些詞位，請將其指定為空（例如：<kbd>...|||</kbd> 代表在結尾處有三個空詞位）。",
 	"edit-link": "編輯",
 	"edit-general": "您目前在「編輯」模式。更改以下的值將會編輯、添加、或是移除目標詞位的形式。",
 	"edit-mismatch-warning": "這個詞位似乎與此模板不相符！在繼續操作之前，請仔細檢查是否為適用此詞位的模板。",
