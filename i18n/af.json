@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Taalvalk",
 			"Winstonza"
 		]
 	},
@@ -9,7 +10,7 @@
 	"duplicates-warning": "Die volgende bestaande {{PLURAL:$1|lekseem het|lekseme het}} dieselfde lemma en taalkode as die een wat jy probeer skep:",
 	"duplicates-instructions": "As jy seker is {{PLURAL:$1|dit|hulle}} verskil, tik die blokkie onderaan die vorm af.",
 	"duplicates-create": "Skep in elk geval 'n nuwe lekseem.",
-	"no-duplicate": "Dit is nie 'n duplikaat dié van 'n bestaande lekseem nie.",
+	"no-duplicate": "Hierdie is nie 'n duplikaat van 'n bestaande lekseem nie.",
 	"form-optional": "&#32;(opsioneel)",
 	"advanced": "Gevorderd",
 	"advanced-general": "Jy is in \"gevorderde\" modus.",
