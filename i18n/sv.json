@@ -36,5 +36,9 @@
 	"edit-unmatched-warning": "Följande {{PLURAL:$1|lexemform|lexemformer}} matchade inte något mallformulär:",
 	"edit-form-list-item": "$1, $2, {{PLURAL:$3|0=inget uttalande|ett uttalande|$3 uttalanden}}",
 	"no-grammatical-features": "inga grammatiska funktioner",
+	"title-create": "$1 (skapa)",
+	"title-advanced": "$1 (avancerad)",
+	"title-bulk": "$1 (masskapa)",
+	"title-edit": "$1 (redigera)",
 	"login-hint": "Du måste [$1 logga in] innan du kan göra ändringar med detta verktyg."
 }

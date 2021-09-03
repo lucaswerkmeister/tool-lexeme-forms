@@ -1,0 +1,41 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ivi104"
+		]
+	},
+	"create": "Stvori",
+	"csrf-warning": "Nažalost, nismo uspjeli obraditi ovaj zahtjev, (<abbr title=\"Cross-site request forgery\">CSRF</abbr> zaštita neuspješna). Molimo pokušajte ponovno.",
+	"duplicates-warning": "Sljedeći postojeći {{PLURAL:$1|leksem ima|leksemi imaju}} isti predmet i jezični kod kao i onaj koji pokušavate stvoriti:",
+	"duplicates-instructions": "Ako ste sigurni da je riječ o {{PLURAL:$1|različitom predmetu|različitim predmetima}}, označite kučicu na dnu obrasca.",
+	"duplicates-create": "Ipak stvori novi leksem",
+	"no-duplicate": "Ovo nije duplikat postojećeg leksema",
+	"form-optional": "&#32;(neobvezno)",
+	"advanced": "Napredno",
+	"advanced-general": "Uređujete u naprednom načinu",
+	"advanced-lexeme-id": "Možete unijeti ID leksema kako biste dodali obrasce na postojeći leksem umjesto stvaranja novog leksema. Sve stavke koje već postoje molimo ostavite praznima, u protivnom će biti udvostručene!",
+	"advanced-partial-forms": "Obrasci koje ostavite prazne neće biti dodani. Budite sigurni da obrasci koje želite popuniti nisu prazni!",
+	"lexeme-id": "ID leksema",
+	"advanced-partial-forms-hint": "Da biste stvorili leksem s nekim praznim poljima, molimo prebacite način uređivanja u napredno.",
+	"generated-via": "stvoreno pomoću",
+	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=nema obrazaca|jedan obrazac|$2 obrazaca}} i {{PLURAL:$3|0=bez značenja|jednim značenjem|$3 značenja}}",
+	"bulk-link": "skupni način",
+	"bulk-format-help": "Pomoć za oblikovanje",
+	"bulk-not-allowed": "{{GENDER:$1|Nije}} vam dozvoljena upotreba skupnog načina. Isprike.",
+	"bulk-first-field-not-lexeme-id": "S obzirom da predložak ima {{PLURAL:$1|jedan obrazac|$1 obrazaca}} a linija $4 na ulazu ima {{PLURAL:$2|jedno polje|$2 polja}}, prvo polje bi trebalo izgledati kao ID leksema, što za <q>$3</q> nije slučaj. (Jeste li pri unosu naveli obrazac previše?)",
+	"bulk-first-field-lexeme-id": "S obzirom da predložak ima {{PLURAL:$1|jedan obrazac|$1 obrazaca}} a linija $4 na ulazu ima {{PLURAL:$2|jedno polje|$2 polja}}, prvo polje ne bi trebalo izgledati kao ID leksema, što za <q>$3</q> nije slučaj. (Jeste li pri unosu zaboravili navesti obrazac?)",
+	"bulk-wrong-number-of-fields": "S obzirom da predložak ima {{PLURAL:$1|jedan obrazac|$1 obrazaca}} ulaz bi trebao sadržavati barem toliko polja (pri stvaranju novog leksema), ili još jedno polje više (pri uređivanju postoječeg lelkema), ali linija $3 u ulazu sadrži {{PLURAL:$2|jedno polje|$2 polja}}.",
+	"bulk-optional-forms-hint": "Ako želite preskočiti neke oblike, odredite ih kao prazne (npr. <kbd>...|||</kbd> za tri prazna oblika na kraju).",
+	"edit-link": "uredi",
+	"edit-general": "Trenutno ste u načinu uređivanja. Promjena vrijednosti niže uredit će, dodati ili ukloniti oblike odabranog leksema.",
+	"edit-mismatch-warning": "Ovaj se leksem ne poklapa s pruženim predloškom! Molimo ponovno provjerite da ste odabrali ispravan predložak.",
+	"edit-ambiguous-warning": "Sljedeći {{PLURAL:$1|oblik poklapa|oblici poklapaju}} se s više od jednog predloška:",
+	"edit-unmatched-warning": "Sljedeći {{PLURAL:$1|oblik|oblici}} leksema ne poklapaju se ni s jednim predloškom:",
+	"edit-form-list-item": "$1, $2, {{PLURAL:$3|0=nema izjava|jedna izjava|$3 izjave}}",
+	"no-grammatical-features": "nema gramatičkih mogućnosti",
+	"title-create": "$1 (stvori)",
+	"title-advanced": "$1 (napredno)",
+	"title-bulk": "$1 (skupno)",
+	"title-edit": "$1 (uredi)",
+	"login-hint": "Trebate se [$1 prijaviti] prije korištenja ovog alata."
+}
