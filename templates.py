@@ -6839,12 +6839,12 @@ templates: Dict[str, Union[str, Template]] = {
             {
                 'label': 'infinitiv',
                 'example': 'Å [hilse].',
-                'grammatical_features_item_ids': ['Q179230'],
+                'grammatical_features_item_ids': ['Q179230', 'Q1317831'],
             },
             {
                 'label': 'presens',
                 'example': 'Jeg [hilser].',
-                'grammatical_features_item_ids': ['Q192613'],
+                'grammatical_features_item_ids': ['Q192613', 'Q1317831'],
             },
             {
                 'label': 'preteritum',
@@ -6885,6 +6885,16 @@ templates: Dict[str, Union[str, Template]] = {
                 'label': 'presens partisipp',
                 'example': 'En [hilsende] person.',
                 'grammatical_features_item_ids': ['Q10345583'],
+            },
+            {
+                'label': 'passiv infinitiv',
+                'example': 'X må ikke [hilses].',
+                'grammatical_features_item_ids': ['Q179230', 'Q1194697'],
+            },
+            {
+                'label': 'passiv presens',
+                'example': 'X [hilses] av meg.',
+                'grammatical_features_item_ids': ['Q192613', 'Q1194697'],
             },
         ],
     },
