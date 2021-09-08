@@ -1,13 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ivi104"
+			"Bugoslav",
+			"Ivi104",
+			"Lucas Werkmeister"
 		]
 	},
 	"create": "Stvori",
 	"csrf-warning": "Nažalost, nismo uspjeli obraditi ovaj zahtjev, (<abbr title=\"Cross-site request forgery\">CSRF</abbr> zaštita neuspješna). Molimo pokušajte ponovno.",
 	"duplicates-warning": "Sljedeći postojeći {{PLURAL:$1|leksem ima|leksemi imaju}} isti predmet i jezični kod kao i onaj koji pokušavate stvoriti:",
-	"duplicates-instructions": "Ako ste sigurni da je riječ o {{PLURAL:$1|različitom predmetu|različitim predmetima}}, označite kučicu na dnu obrasca.",
+	"duplicates-instructions": "Ako ste sigurni da je riječ o {{PLURAL:$1|različitom predmetu|različitim predmetima}}, označite kućicu na dnu obrasca.",
 	"duplicates-create": "Ipak stvori novi leksem",
 	"no-duplicate": "Ovo nije duplikat postojećeg leksema",
 	"form-optional": "&#32;(neobvezno)",
@@ -21,7 +23,7 @@
 	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=nema obrazaca|jedan obrazac|$2 obrazaca}} i {{PLURAL:$3|0=bez značenja|jednim značenjem|$3 značenja}}",
 	"bulk-link": "skupni način",
 	"bulk-format-help": "Pomoć za oblikovanje",
-	"bulk-not-allowed": "{{GENDER:$1|Nije}} vam dozvoljena upotreba skupnog načina. Isprike.",
+	"bulk-not-allowed": "Nije vam dozvoljena upotreba skupnog načina. Isprike.",
 	"bulk-first-field-not-lexeme-id": "S obzirom da predložak ima {{PLURAL:$1|jedan obrazac|$1 obrazaca}} a linija $4 na ulazu ima {{PLURAL:$2|jedno polje|$2 polja}}, prvo polje bi trebalo izgledati kao ID leksema, što za <q>$3</q> nije slučaj. (Jeste li pri unosu naveli obrazac previše?)",
 	"bulk-first-field-lexeme-id": "S obzirom da predložak ima {{PLURAL:$1|jedan obrazac|$1 obrazaca}} a linija $4 na ulazu ima {{PLURAL:$2|jedno polje|$2 polja}}, prvo polje ne bi trebalo izgledati kao ID leksema, što za <q>$3</q> nije slučaj. (Jeste li pri unosu zaboravili navesti obrazac?)",
 	"bulk-wrong-number-of-fields": "S obzirom da predložak ima {{PLURAL:$1|jedan obrazac|$1 obrazaca}} ulaz bi trebao sadržavati barem toliko polja (pri stvaranju novog leksema), ili još jedno polje više (pri uređivanju postoječeg lelkema), ali linija $3 u ulazu sadrži {{PLURAL:$2|jedno polje|$2 polja}}.",
