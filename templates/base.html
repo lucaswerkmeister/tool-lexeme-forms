@@ -14,16 +14,22 @@
     <a href="#main" class="sr-only sr-only-focusable">Skip to main content</a>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
       <a href="{{ url_for('index') }}" class="navbar-brand">Wikidata Lexeme Forms</a>
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item"><a href="https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms" class="nav-link">Documentation</a></li>
-        <li class="nav-item"><a href="//tools.wmflabs.org/" class="nav-link">Wikimedia Toolforge</a></li>
-        <li class="nav-item"><a href="https://phabricator.wikimedia.org/source/tool-lexeme-forms/" class="nav-link">Source code</a></li>
-      </ul>
-      {{ authentication_area() }}
+      <button hidden class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsible-menu" aria-controls="collapsible-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="collapsible-menu" class="nojs">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a href="https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms" class="nav-link">Documentation</a></li>
+          <li class="nav-item"><a href="//tools.wmflabs.org/" class="nav-link">Wikimedia Toolforge</a></li>
+          <li class="nav-item"><a href="https://phabricator.wikimedia.org/source/tool-lexeme-forms/" class="nav-link">Source code</a></li>
+        </ul>
+        {{ authentication_area() }}
+      </div>
     </nav>
     <main id="main" {% block main_tag_attributes %}class="container mt-3"{% endblock main_tag_attributes %}>
       {% block main %}
       {% endblock main %}
     </main>
+    <script defer src="{{ url_for('static', filename='menu.js') }}"></script>
   </body>
 </html>
