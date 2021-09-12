@@ -5539,12 +5539,12 @@ templates = {
             {
                 'section_break': True,
                 'label': 'ndịnazụ',
-                'example': 'Ọ [riri].',
+                'example': 'O [riri].',
                 'grammatical_features_item_ids': ['Q1994301'],
             },
             {
                 'label': 'njụ ndịnazụ',
-                'example': 'Ọ [righị].',
+                'example': 'O [righị].',
                 'grammatical_features_item_ids': ['Q1994301', 'Q1478451'],
             },
             {
@@ -5561,7 +5561,7 @@ templates = {
             {
                 'section_break': True,
                 'label': 'mmekangwaa',
-                'example': 'Ọ [riwa] nri.',
+                'example': 'O [riwa] nri.',
                 'grammatical_features_item_ids': ['Q814722'],
             },
             {
