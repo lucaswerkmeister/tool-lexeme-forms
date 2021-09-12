@@ -34,6 +34,33 @@ class Template(CoreTemplate, MetaTemplate, total=False):
     statements: dict
 
 
+def statement(property_id: str, item_id: str) -> dict:
+    return {
+        'mainsnak': {
+            'snaktype': 'value',
+            'property': property_id,
+            'datatype': 'wikibase-item',
+            'datavalue': {
+                'type': 'wikibase-entityid',
+                'value': {
+                    'entity-type': 'item',
+                    'id': item_id,
+                },
+            },
+        },
+        'type': 'statement',
+        'rank': 'normal',
+    }
+
+
+def statements(property_id: str, item_id: str) -> dict:
+    return {
+        property_id: [
+            statement(property_id, item_id),
+        ],
+    }
+
+
 templates: Dict[str, Union[str, Template]] = {
 
     'asturian-noun-masculine': {
@@ -54,26 +81,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q146786'],
             },
         ],
-        'statements': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q499327',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P5185', 'Q499327'),
     },
 
     'asturian-noun-feminine': {
@@ -94,26 +102,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q146786'],
             },
         ],
-        'statements': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q1775415',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P5185', 'Q1775415'),
     },
 
     'bengali-noun-animate': {
@@ -1903,38 +1892,8 @@ templates: Dict[str, Union[str, Template]] = {
         ],
         'statements': {
             'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q499327',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                },
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q54020116',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
+                statement('P5185', 'Q499327'),
+                statement('P5185', 'Q54020116'),
             ],
         },
     },
@@ -2020,38 +1979,8 @@ templates: Dict[str, Union[str, Template]] = {
         ],
         'statements': {
             'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q499327',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                },
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q52943434',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
+                statement('P5185', 'Q499327'),
+                statement('P5185', 'Q52943434'),
             ],
         },
     },
@@ -2135,26 +2064,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q192997', 'Q146786'],
             },
         ],
-        'statements': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q1775415',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P5185', 'Q1775415'),
     },
 
     'czech-noun-neuter': {
@@ -2236,26 +2146,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q192997', 'Q146786'],
             },
         ],
-        'statements': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q1775461',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P5185', 'Q1775461'),
     },
 
     'czech-adverb': {
@@ -3162,26 +3053,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'label': 'infinitiv',
                 'example': '[postaviti].',
                 'grammatical_features_item_ids': ['Q179230'],
-                'statements': {
-                    'P6191': [
-                        {
-                            'mainsnak': {
-                                'snaktype': 'value',
-                                'property': 'P6191',
-                                'datatype': 'wikibase-item',
-                                'datavalue': {
-                                    'type': 'wikibase-entityid',
-                                    'value': {
-                                        'entity-type': 'item',
-                                        'id': 'Q61857234',
-                                    },
-                                },
-                            },
-                            'type': 'statement',
-                            'rank': 'normal',
-                        }
-                    ],
-                },
+                'statements': statements('P6191', 'Q61857234'),
             },
             {
                 'section_break': True,
@@ -3354,26 +3226,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q65540485', 'Q1775461', 'Q146786'],
             },
         ],
-        'statements': {
-            'P7486': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P7486',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q1424306',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P7486', 'Q1424306'),
     },
 
     'czech-verb-imperfective': {
@@ -3393,26 +3246,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'label': 'infinitiv',
                 'example': '[zpívati].',
                 'grammatical_features_item_ids': ['Q179230'],
-                'statements': {
-                    'P6191': [
-                        {
-                            'mainsnak': {
-                                'snaktype': 'value',
-                                'property': 'P6191',
-                                'datatype': 'wikibase-item',
-                                'datavalue': {
-                                    'type': 'wikibase-entityid',
-                                    'value': {
-                                        'entity-type': 'item',
-                                        'id': 'Q61857234',
-                                    },
-                                },
-                            },
-                            'type': 'statement',
-                            'rank': 'normal',
-                        }
-                    ],
-                },
+                'statements': statements('P6191', 'Q61857234'),
             },
             {
                 'section_break': True,
@@ -3585,26 +3419,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q65540125', 'Q1775461', 'Q146786'],
             },
         ],
-        'statements': {
-            'P7486': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P7486',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q371427',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P7486', 'Q371427'),
     },
 
     'danish-noun-common': {
@@ -3636,26 +3451,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q146786', 'Q53997851'],
             },
         ],
-        'statements': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q1305037',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P5185', 'Q1305037'),
     },
 
     'danish-noun-neuter': {
@@ -3687,26 +3483,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q146786', 'Q53997851'],
             },
         ],
-        'statements': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q1775461',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P5185', 'Q1775461'),
     },
 
     'danish-verb': {
@@ -3808,26 +3585,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q146078', 'Q146786'],
             },
         ],
-        'statements': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q499327',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P5185', 'Q499327'),
     },
 
     'german-noun-feminine': {
@@ -3879,26 +3637,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q146078', 'Q146786'],
             },
         ],
-        'statements': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q1775415',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P5185', 'Q1775415'),
     },
 
     'german-noun-neuter': {
@@ -3950,26 +3689,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q146078', 'Q146786'],
             },
         ],
-        'statements': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q1775461',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P5185', 'Q1775461'),
     },
 
     'german-noun-neuter-toponym': {
@@ -4006,56 +3726,11 @@ templates: Dict[str, Union[str, Template]] = {
         ],
         'statements': {
             'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q1775461',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
+                statement('P5185', 'Q1775461'),
             ],
             'P31': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P31',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q604984',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                },
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P31',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q7884789',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
+                statement('P31', 'Q604984'),
+                statement('P31', 'Q7884789'),
             ],
         },
     },
@@ -4092,26 +3767,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids_optional': set(['Q146786']),
             },
         ],
-        'statements': {
-            'P31': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P31',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q138246',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P31', 'Q138246'),
     },
 
     'german-verb': {
@@ -4543,26 +4199,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q146786'],
             },
         ],
-        'statements': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q499327',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P5185', 'Q499327'),
     },
 
     'spanish-noun-feminine': {
@@ -4583,26 +4220,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q146786'],
             },
         ],
-        'statements': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q1775415',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P5185', 'Q1775415'),
     },
 
     'spanish-adjective': {
@@ -5202,26 +4820,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q146786'],
             },
         ],
-        'statements': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q499327',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P5185', 'Q499327'),
     },
 
     'french-noun-feminine': {
@@ -5242,26 +4841,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q146786'],
             },
         ],
-        'statements': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q1775415',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P5185', 'Q1775415'),
     },
 
     'french-adjective': {
@@ -5313,26 +4893,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q146786'],
             },
         ],
-        'statements': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q499327',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P5185', 'Q499327'),
     },
 
     'hebrew-noun-feminine': {
@@ -5353,26 +4914,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q146786'],
             },
         ],
-        'statements': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q1775415',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P5185', 'Q1775415'),
     },
 
     'croatian-noun-masculine': {
@@ -5806,26 +5348,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids_optional': set(['Q110786']),
             },
         ],
-        'statements': {
-            'P31': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P31',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q604984',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P31', 'Q604984'),
     },
 
     'igbo-noun': {
@@ -5876,26 +5399,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q146786'],
             },
         ],
-        'statements': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q1775415',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P5185', 'Q1775415'),
     },
 
     'italian-noun-masculine': {
@@ -5916,26 +5420,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q146786'],
             },
         ],
-        'statements': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q499327',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P5185', 'Q499327'),
     },
 
     'italian-adjective': {
@@ -6054,26 +5539,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q185077', 'Q146786'],
             },
         ],
-        'statements': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q1775415',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P5185', 'Q1775415'),
     },
 
     'kurmanji-noun-masculine': {
@@ -6161,26 +5627,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q185077', 'Q146786'],
             },
         ],
-        'statements': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q499327',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P5185', 'Q499327'),
     },
 
     'latin-noun-masculine': {
@@ -6252,26 +5699,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q185077', 'Q146786'],
             },
         ],
-        'statements': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q499327',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P5185', 'Q499327'),
     },
 
     'latin-noun-feminine': {
@@ -6343,26 +5771,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q185077', 'Q146786'],
             },
         ],
-        'statements': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q1775415',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P5185', 'Q1775415'),
     },
 
     'latin-noun-neuter': {
@@ -6434,26 +5843,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q185077', 'Q146786'],
             },
         ],
-        'statements': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q1775461',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P5185', 'Q1775461'),
     },
 
     'latvian-noun-masculine': {
@@ -6541,26 +5931,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q146786', 'Q185077'],
             },
         ],
-        'statements': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q499327',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P5185', 'Q499327'),
     },
 
     'latvian-noun-feminine': {
@@ -6648,26 +6019,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q146786', 'Q185077'],
             },
         ],
-        'statements': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q1775415',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P5185', 'Q1775415'),
     },
 
     'malayalam-noun': {
@@ -6871,26 +6223,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q146786', 'Q53997851'],
             },
         ],
-        'statements': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q499327',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P5185', 'Q499327'),
     },
 
     'bokmål-noun-feminine': {
@@ -6926,26 +6259,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q146786', 'Q53997851'],
             },
         ],
-        'statements': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q1775415',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P5185', 'Q1775415'),
     },
 
     'bokmål-noun-neuter': {
@@ -6976,26 +6290,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q146786', 'Q53997851'],
             },
         ],
-        'statements': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q1775461',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P5185', 'Q1775461'),
     },
 
     'bokmål-noun-masculine-neuter': {
@@ -7045,38 +6340,8 @@ templates: Dict[str, Union[str, Template]] = {
         ],
         'statements': {
             'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q499327',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                },
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q1775461',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                },
+                statement('P5185', 'Q499327'),
+                statement('P5185', 'Q1775461'),
             ],
         },
     },
@@ -7229,26 +6494,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q108709', 'Q146786'],
             },
         ],
-        'statements': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q1775461',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P5185', 'Q1775461'),
     },
 
     'dutch-masculine-noun': 'dutch-noun-masculine',
@@ -7281,26 +6527,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q108709', 'Q146786'],
             },
         ],
-        'statements': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q499327',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P5185', 'Q499327'),
     },
 
     'dutch-feminine-noun': 'dutch-noun-feminine',
@@ -7333,26 +6560,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q108709', 'Q146786'],
             },
         ],
-        'statements': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q1775415',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P5185', 'Q1775415'),
     },
 
     'dutch-fem2masc-noun': 'dutch-noun-fem2masc',
@@ -7385,26 +6593,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q108709', 'Q146786'],
             },
         ],
-        'statements': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q64448167',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P5185', 'Q64448167'),
     },
 
     'nynorsk-noun-feminine': {
@@ -7436,26 +6625,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q146786', 'Q53997851'],
             },
         ],
-        'statements': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q1775415',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P5185', 'Q1775415'),
     },
 
     'nynorsk-noun-masculine': {
@@ -7487,26 +6657,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q146786', 'Q53997851'],
             },
         ],
-        'statements': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q499327',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P5185', 'Q499327'),
     },
 
     'nynorsk-noun-neuter': {
@@ -7538,26 +6689,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q146786', 'Q53997851'],
             },
         ],
-        'statements': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q1775461',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P5185', 'Q1775461'),
     },
 
     'polish-noun': {
@@ -7687,51 +6819,13 @@ templates: Dict[str, Union[str, Template]] = {
                 'label': 'mianownik, liczba mnoga, forma niedeprecjatywna',
                 'example': 'To są ci [robotnicy].',
                 'grammatical_features_item_ids': ['Q131105', 'Q146786'],
-                'statements': {
-                    'P31': [
-                        {
-                            'mainsnak': {
-                                'snaktype': 'value',
-                                'property': 'P31',
-                                'datatype': 'wikibase-item',
-                                'datavalue': {
-                                    'type': 'wikibase-entityid',
-                                    'value': {
-                                        'entity-type': 'item',
-                                        'id': 'Q54948995',
-                                    },
-                                },
-                            },
-                            'type': 'statement',
-                            'rank': 'normal',
-                        }
-                    ]
-                },
+                'statements': statements('P31', 'Q54948995'),
             },
             {
                 'label': 'mianownik, liczba mnoga, forma deprecjatywna',
                 'example': 'To są te [robotniki].',
                 'grammatical_features_item_ids': ['Q131105', 'Q146786'],
-                'statements': {
-                    'P31': [
-                        {
-                            'mainsnak': {
-                                'snaktype': 'value',
-                                'property': 'P31',
-                                'datatype': 'wikibase-item',
-                                'datavalue': {
-                                    'type': 'wikibase-entityid',
-                                    'value': {
-                                        'entity-type': 'item',
-                                        'id': 'Q54948374',
-                                    },
-                                },
-                            },
-                            'type': 'statement',
-                            'rank': 'normal',
-                        }
-                    ]
-                },
+                'statements': statements('P31', 'Q54948374'),
             },
             {
                 'label': 'dopełniacz, liczba mnoga',
@@ -7762,73 +6856,16 @@ templates: Dict[str, Union[str, Template]] = {
                 'label': 'wołacz, liczba mnoga, forma niedeprecjatywna',
                 'example': 'ci [robotnicy]',
                 'grammatical_features_item_ids': ['Q185077', 'Q146786'],
-                'statements': {
-                    'P31': [
-                        {
-                            'mainsnak': {
-                                'snaktype': 'value',
-                                'property': 'P31',
-                                'datatype': 'wikibase-item',
-                                'datavalue': {
-                                    'type': 'wikibase-entityid',
-                                    'value': {
-                                        'entity-type': 'item',
-                                        'id': 'Q54948995',
-                                    },
-                                },
-                            },
-                            'type': 'statement',
-                            'rank': 'normal',
-                        }
-                    ]
-                },
+                'statements': statements('P31', 'Q54948995'),
             },
             {
                 'label': 'wołacz, liczba mnoga, forma deprecjatywna',
                 'example': 'te [robotniki]',
                 'grammatical_features_item_ids': ['Q185077', 'Q146786'],
-                'statements': {
-                    'P31': [
-                        {
-                            'mainsnak': {
-                                'snaktype': 'value',
-                                'property': 'P31',
-                                'datatype': 'wikibase-item',
-                                'datavalue': {
-                                    'type': 'wikibase-entityid',
-                                    'value': {
-                                        'entity-type': 'item',
-                                        'id': 'Q54948374',
-                                    },
-                                },
-                            },
-                            'type': 'statement',
-                            'rank': 'normal',
-                        }
-                    ]
-                },
+                'statements': statements('P31', 'Q54948374'),
             },
         ],
-        'statements': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q27918551',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P5185', 'Q27918551'),
     },
 
     'polish-noun-with-potential-plural-forms': {
@@ -7878,176 +6915,43 @@ templates: Dict[str, Union[str, Template]] = {
                 'label': 'mianownik, liczba mnoga, forma potencjalna',
                 'example': 'To są [językoznawstwa].',
                 'grammatical_features_item_ids': ['Q131105', 'Q146786'],
-                'statements': {
-                    'P31': [
-                        {
-                            'mainsnak': {
-                                'snaktype': 'value',
-                                'property': 'P31',
-                                'datatype': 'wikibase-item',
-                                'datavalue': {
-                                    'type': 'wikibase-entityid',
-                                    'value': {
-                                        'entity-type': 'item',
-                                        'id': 'Q54944750',
-                                    },
-                                },
-                            },
-                            'type': 'statement',
-                            'rank': 'normal',
-                        }
-                    ]
-                },
+                'statements': statements('P31', 'Q54944750'),
             },
             {
                 'label': 'dopełniacz, liczba mnoga, forma potencjalna',
                 'example': 'Wśród nas nie ma [językoznawstw].',
                 'grammatical_features_item_ids': ['Q146233', 'Q146786'],
-                'statements': {
-                    'P31': [
-                        {
-                            'mainsnak': {
-                                'snaktype': 'value',
-                                'property': 'P31',
-                                'datatype': 'wikibase-item',
-                                'datavalue': {
-                                    'type': 'wikibase-entityid',
-                                    'value': {
-                                        'entity-type': 'item',
-                                        'id': 'Q54944750',
-                                    },
-                                },
-                            },
-                            'type': 'statement',
-                            'rank': 'normal',
-                        }
-                    ]
-                },
+                'statements': statements('P31', 'Q54944750'),
             },
             {
                 'label': 'celownik, liczba mnoga, forma potencjalna',
                 'example': 'Przyglądam się [językoznawstwom].',
                 'grammatical_features_item_ids': ['Q145599', 'Q146786'],
-                'statements': {
-                    'P31': [
-                        {
-                            'mainsnak': {
-                                'snaktype': 'value',
-                                'property': 'P31',
-                                'datatype': 'wikibase-item',
-                                'datavalue': {
-                                    'type': 'wikibase-entityid',
-                                    'value': {
-                                        'entity-type': 'item',
-                                        'id': 'Q54944750',
-                                    },
-                                },
-                            },
-                            'type': 'statement',
-                            'rank': 'normal',
-                        }
-                    ]
-                },
+                'statements': statements('P31', 'Q54944750'),
             },
             {
                 'label': 'biernik, liczba mnoga, forma potencjalna',
                 'example': 'Widzę [językoznawstwa].',
                 'grammatical_features_item_ids': ['Q146078', 'Q146786'],
-                'statements': {
-                    'P31': [
-                        {
-                            'mainsnak': {
-                                'snaktype': 'value',
-                                'property': 'P31',
-                                'datatype': 'wikibase-item',
-                                'datavalue': {
-                                    'type': 'wikibase-entityid',
-                                    'value': {
-                                        'entity-type': 'item',
-                                        'id': 'Q54944750',
-                                    },
-                                },
-                            },
-                            'type': 'statement',
-                            'rank': 'normal',
-                        }
-                    ]
-                },
+                'statements': statements('P31', 'Q54944750'),
             },
             {
                 'label': 'narzędnik, liczba mnoga, forma potencjalna',
                 'example': 'Idę z [językoznawstwami].',
                 'grammatical_features_item_ids': ['Q192997', 'Q146786'],
-                'statements': {
-                    'P31': [
-                        {
-                            'mainsnak': {
-                                'snaktype': 'value',
-                                'property': 'P31',
-                                'datatype': 'wikibase-item',
-                                'datavalue': {
-                                    'type': 'wikibase-entityid',
-                                    'value': {
-                                        'entity-type': 'item',
-                                        'id': 'Q54944750',
-                                    },
-                                },
-                            },
-                            'type': 'statement',
-                            'rank': 'normal',
-                        }
-                    ]
-                },
+                'statements': statements('P31', 'Q54944750'),
             },
             {
                 'label': 'miejscownik, liczba mnoga, forma potencjalna',
                 'example': 'Myślę o [językoznawstwach].',
                 'grammatical_features_item_ids': ['Q202142', 'Q146786'],
-                'statements': {
-                    'P31': [
-                        {
-                            'mainsnak': {
-                                'snaktype': 'value',
-                                'property': 'P31',
-                                'datatype': 'wikibase-item',
-                                'datavalue': {
-                                    'type': 'wikibase-entityid',
-                                    'value': {
-                                        'entity-type': 'item',
-                                        'id': 'Q54944750',
-                                    },
-                                },
-                            },
-                            'type': 'statement',
-                            'rank': 'normal',
-                        }
-                    ]
-                },
+                'statements': statements('P31', 'Q54944750'),
             },
             {
                 'label': 'wołacz, liczba mnoga, forma potencjalna',
                 'example': '[językoznawstwa]',
                 'grammatical_features_item_ids': ['Q185077', 'Q146786'],
-                'statements': {
-                    'P31': [
-                        {
-                            'mainsnak': {
-                                'snaktype': 'value',
-                                'property': 'P31',
-                                'datatype': 'wikibase-item',
-                                'datavalue': {
-                                    'type': 'wikibase-entityid',
-                                    'value': {
-                                        'entity-type': 'item',
-                                        'id': 'Q54944750',
-                                    },
-                                },
-                            },
-                            'type': 'statement',
-                            'rank': 'normal',
-                        }
-                    ]
-                },
+                'statements': statements('P31', 'Q54944750'),
             },
         ],
     },
@@ -8097,26 +7001,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'optional': True,
             },
         ],
-        'statements': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q499327',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P5185', 'Q499327'),
     },
 
     'portuguese-noun-feminine': {
@@ -8177,26 +7062,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'optional': True,
             },
         ],
-        'statements': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q1775415',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P5185', 'Q1775415'),
     },
 
     'portuguese-verb': {
@@ -8706,26 +7572,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': [],
             },
         ],
-        'statements': {
-            'P31': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P31',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q1941737',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P31', 'Q1941737'),
     },
 
     'russian-noun-masculine': {
@@ -8797,26 +7644,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q2114906', 'Q146786'],
             },
         ],
-        'statements': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q499327',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P5185', 'Q499327'),
     },
 
     'russian-noun-feminine': {
@@ -8888,26 +7716,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q2114906', 'Q146786'],
             },
         ],
-        'statements': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q1775415',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P5185', 'Q1775415'),
     },
 
     'russian-noun-neuter': {
@@ -8979,26 +7788,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q2114906', 'Q146786'],
             },
         ],
-        'statements': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q1775461',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P5185', 'Q1775461'),
     },
 
     'russian-noun-pluraletantum': {
@@ -9045,26 +7835,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids_optional': set(['Q146786']),
             },
         ],
-        'statements': {
-            'P31': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P31',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q138246',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P31', 'Q138246'),
     },
 
     'russian-adjective': {
@@ -9257,26 +8028,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q146233', 'Q146786', 'Q53997851'],
             },
         ],
-        'statements': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q1305037',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P5185', 'Q1305037'),
     },
 
     'swedish-noun-neuter': {
@@ -9329,26 +8081,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q146233', 'Q146786', 'Q53997851'],
             },
         ],
-        'statements': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q1775461',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P5185', 'Q1775461'),
     },
 
     'swedish-noun-proper': {
@@ -9369,26 +8102,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q146233'],
             },
         ],
-        'statements': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q1775461',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P5185', 'Q1775461'),
     },
 
     'swedish-verb': {
@@ -9485,26 +8199,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids_optional': set(['Q3482678']),
             },
         ],
-        'statements': {
-            'P31': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P31',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q332375',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P31', 'Q332375'),
     },
 
     'swedish-adjective': {
@@ -9649,26 +8344,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q146786', 'Q185077'],
             },
         ],
-        'statements': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q499327',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P5185', 'Q499327'),
     },
 
     'ukrainian-noun-feminine': {
@@ -9750,26 +8426,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q146786', 'Q185077'],
             },
         ],
-        'statements': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q1775415',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P5185', 'Q1775415'),
     },
 
     'ukrainian-noun-neuter': {
@@ -9851,26 +8508,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q146786', 'Q185077'],
             },
         ],
-        'statements': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q1775461',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P5185', 'Q1775461'),
     },
 
     'ukrainian-noun-pluraletantum': {
@@ -9923,26 +8561,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids_optional': set(['Q146786']),
             },
         ],
-        'statements': {
-            'P31': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P31',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q138246',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P31', 'Q138246'),
     },
 
     'german-noun-neuter-test': {
@@ -9957,26 +8576,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'label': 'Nominativ Singular',
                 'example': 'Das ist das [Kind].',
                 'grammatical_features_item_ids': ['Q163012', 'Q163014'],
-                'statements': {
-                    'P82': [
-                        {
-                            'mainsnak': {
-                                'snaktype': 'value',
-                                'property': 'P82',
-                                'datatype': 'wikibase-item',
-                                'datavalue': {
-                                    'type': 'wikibase-entityid',
-                                    'value': {
-                                        'entity-type': 'item',
-                                        'id': 'Q1249',
-                                    },
-                                },
-                            },
-                            'type': 'statement',
-                            'rank': 'normal',
-                        }
-                    ],
-                },
+                'statements': statements('P82', 'Q1249'),
             },
             {
                 'label': 'Genitiv Singular',
@@ -9987,26 +8587,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'label': 'Dativ Singular',
                 'example': 'Das gehört dem [Kind].',
                 'grammatical_features_item_ids': ['Q163016', 'Q163014'],
-                'statements': {
-                    'P82': [
-                        {
-                            'mainsnak': {
-                                'snaktype': 'value',
-                                'property': 'P82',
-                                'datatype': 'wikibase-item',
-                                'datavalue': {
-                                    'type': 'wikibase-entityid',
-                                    'value': {
-                                        'entity-type': 'item',
-                                        'id': 'Q74568',
-                                    },
-                                },
-                            },
-                            'type': 'statement',
-                            'rank': 'normal',
-                        }
-                    ],
-                },
+                'statements': statements('P82', 'Q74568'),
             },
             {
                 'label': 'Akkusativ Singular',
@@ -10034,26 +8615,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q163017', 'Q160570'],
             },
         ],
-        'statements': {
-            'P73601': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P73601',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q163008',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P73601', 'Q163008'),
     },
 
 }
