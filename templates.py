@@ -5375,6 +5375,306 @@ templates: Dict[str, Union[str, Template]] = {
         },
     },
 
+    'croatian-noun-masculine': {
+        '@attribution': {'users': ['Ivi104'], 'title': 'Wikidata:Wikidata Lexeme Forms/Croatian'},
+        'label': 'hrvatske imenice (muški rod)',
+        'language_item_id': 'Q6654',
+        'language_code': 'hr',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'nominativ jednine',
+                'example': 'Ovo je [miš].',
+                'grammatical_features_item_ids': ['Q131105', 'Q110786'],
+            },
+            {
+                'label': 'genitiv jednine',
+                'example': 'Nema [miša].',
+                'grammatical_features_item_ids': ['Q146233', 'Q110786'],
+            },
+            {
+                'label': 'dativ jednine',
+                'example': 'Prilazim [mišu].',
+                'grammatical_features_item_ids': ['Q145599', 'Q110786'],
+            },
+            {
+                'label': 'akuzativ jednine',
+                'example': 'Vidim [miša].',
+                'grammatical_features_item_ids': ['Q146078', 'Q110786'],
+            },
+            {
+                'label': 'vokativ jednine',
+                'example': 'Zar i ti, [mišu]?',
+                'grammatical_features_item_ids': ['Q185077', 'Q110786'],
+            },
+            {
+                'label': 'lokativ jednine',
+                'example': 'Govorim o [mišu].',
+                'grammatical_features_item_ids': ['Q202142', 'Q110786'],
+            },
+            {
+                'label': 'instrumental jednine',
+                'example': 'Vozim se s(a) [mišem].',
+                'grammatical_features_item_ids': ['Q192997', 'Q110786'],
+            },
+            {
+                'label': 'nominativ množine',
+                'example': 'Ovo su [miševi].',
+                'grammatical_features_item_ids': ['Q131105', 'Q146786'],
+            },
+            {
+                'label': 'genitiv množine',
+                'example': 'Nema [miševa].',
+                'grammatical_features_item_ids': ['Q146233', 'Q146786'],
+            },
+            {
+                'label': 'dativ množine',
+                'example': 'Prilazim [miševima].',
+                'grammatical_features_item_ids': ['Q145599', 'Q146786'],
+            },
+            {
+                'label': 'akuzativ množine',
+                'example': 'Vidim [miševe].',
+                'grammatical_features_item_ids': ['Q146078', 'Q146786'],
+            },
+            {
+                'label': 'vokativ množine',
+                'example': 'Zar i vi, [miševi]?',
+                'grammatical_features_item_ids': ['Q185077', 'Q146786'],
+            },
+            {
+                'label': 'lokativ množine',
+                'example': 'Govorim o [miševima].',
+                'grammatical_features_item_ids': ['Q202142', 'Q146786'],
+            },
+            {
+                'label': 'instrumental množine',
+                'example': 'Vozim se s(a) [miševima].',
+                'grammatical_features_item_ids': ['Q192997', 'Q146786'],
+            },
+        ],
+        'statements': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q499327',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    },
+
+    'croatian-noun-feminine': {
+        '@attribution': {'users': ['Ivi104'], 'title': 'Wikidata:Wikidata Lexeme Forms/Croatian'},
+        'label': 'hrvatske imenice (ženski rod)',
+        'language_item_id': 'Q6654',
+        'language_code': 'hr',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'nominativ jednine',
+                'example': 'Ovo je [žirafa].',
+                'grammatical_features_item_ids': ['Q131105', 'Q110786'],
+            },
+            {
+                'label': 'genitiv jednine',
+                'example': 'Nema [žirafe].',
+                'grammatical_features_item_ids': ['Q146233', 'Q110786'],
+            },
+            {
+                'label': 'dativ jednine',
+                'example': 'Prilazim [žirafi].',
+                'grammatical_features_item_ids': ['Q145599', 'Q110786'],
+            },
+            {
+                'label': 'akuzativ jednine',
+                'example': 'Vidim [žirafu].',
+                'grammatical_features_item_ids': ['Q146078', 'Q110786'],
+            },
+            {
+                'label': 'vokativ jednine',
+                'example': 'Zar i ti, [žirafo]?',
+                'grammatical_features_item_ids': ['Q185077', 'Q110786'],
+            },
+            {
+                'label': 'lokativ jednine',
+                'example': 'Govorim o [žirafi].',
+                'grammatical_features_item_ids': ['Q202142', 'Q110786'],
+            },
+            {
+                'label': 'instrumental jednine',
+                'example': 'Vozim se s(a) [žirafom].',
+                'grammatical_features_item_ids': ['Q192997', 'Q110786'],
+            },
+            {
+                'label': 'nominativ množine',
+                'example': 'Ovo su [žirafe].',
+                'grammatical_features_item_ids': ['Q131105', 'Q146786'],
+            },
+            {
+                'label': 'genitiv množine',
+                'example': 'Nema [žirafa].',
+                'grammatical_features_item_ids': ['Q146233', 'Q146786'],
+            },
+            {
+                'label': 'dativ množine',
+                'example': 'Prilazim [žirafama].',
+                'grammatical_features_item_ids': ['Q145599', 'Q146786'],
+            },
+            {
+                'label': 'akuzativ množine',
+                'example': 'Vidim [žirafe].',
+                'grammatical_features_item_ids': ['Q146078', 'Q146786'],
+            },
+            {
+                'label': 'vokativ množine',
+                'example': 'Zar i vi, [žirafe]?',
+                'grammatical_features_item_ids': ['Q185077', 'Q146786'],
+            },
+            {
+                'label': 'lokativ množine',
+                'example': 'Govorim o [žirafama].',
+                'grammatical_features_item_ids': ['Q202142', 'Q146786'],
+            },
+            {
+                'label': 'instrumental množine',
+                'example': 'Vozim se s(a) [žirafama].',
+                'grammatical_features_item_ids': ['Q192997', 'Q146786'],
+            },
+        ],
+        'statements': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q1775415',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    },
+
+    'croatian-noun-neuter': {
+        '@attribution': {'users': ['Ivi104'], 'title': 'Wikidata:Wikidata Lexeme Forms/Croatian'},
+        'label': 'hrvatske imenice (srednji rod)',
+        'language_item_id': 'Q6654',
+        'language_code': 'hr',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'nominativ jednine',
+                'example': 'Ovo je [staklo].',
+                'grammatical_features_item_ids': ['Q131105', 'Q110786'],
+            },
+            {
+                'label': 'genitiv jednine',
+                'example': 'Nema [stakla].',
+                'grammatical_features_item_ids': ['Q146233', 'Q110786'],
+            },
+            {
+                'label': 'dativ jednine',
+                'example': 'Prilazim [staklu].',
+                'grammatical_features_item_ids': ['Q145599', 'Q110786'],
+            },
+            {
+                'label': 'akuzativ jednine',
+                'example': 'Vidim [staklo].',
+                'grammatical_features_item_ids': ['Q146078', 'Q110786'],
+            },
+            {
+                'label': 'vokativ jednine',
+                'example': 'Zar i ti, [staklo]?',
+                'grammatical_features_item_ids': ['Q185077', 'Q110786'],
+            },
+            {
+                'label': 'lokativ jednine',
+                'example': 'Govorim o [staklu].',
+                'grammatical_features_item_ids': ['Q202142', 'Q110786'],
+            },
+            {
+                'label': 'instrumental jednine',
+                'example': 'Vozim se s(a) [staklom].',
+                'grammatical_features_item_ids': ['Q192997', 'Q110786'],
+            },
+            {
+                'label': 'nominativ množine',
+                'example': 'Ovo su [stakla].',
+                'grammatical_features_item_ids': ['Q131105', 'Q146786'],
+            },
+            {
+                'label': 'genitiv množine',
+                'example': 'Nema [stakala].',
+                'grammatical_features_item_ids': ['Q146233', 'Q146786'],
+            },
+            {
+                'label': 'dativ množine',
+                'example': 'Prilazim [staklima].',
+                'grammatical_features_item_ids': ['Q145599', 'Q146786'],
+            },
+            {
+                'label': 'akuzativ množine',
+                'example': 'Vidim [stakla].',
+                'grammatical_features_item_ids': ['Q146078', 'Q146786'],
+            },
+            {
+                'label': 'vokativ množine',
+                'example': 'Zar i vi, [stakla]?',
+                'grammatical_features_item_ids': ['Q185077', 'Q146786'],
+            },
+            {
+                'label': 'lokativ množine',
+                'example': 'Govorim o [staklima].',
+                'grammatical_features_item_ids': ['Q202142', 'Q146786'],
+            },
+            {
+                'label': 'instrumental množine',
+                'example': 'Vozim se s(a) [staklima].',
+                'grammatical_features_item_ids': ['Q192997', 'Q146786'],
+            },
+        ],
+        'statements': {
+            'P5185': [
+                {
+                    'mainsnak': {
+                        'snaktype': 'value',
+                        'property': 'P5185',
+                        'datatype': 'wikibase-item',
+                        'datavalue': {
+                            'type': 'wikibase-entityid',
+                            'value': {
+                                'entity-type': 'item',
+                                'id': 'Q1775415',
+                            },
+                        },
+                    },
+                    'type': 'statement',
+                    'rank': 'normal',
+                }
+            ],
+        },
+    },
+
     'armenian-noun': {
         '@attribution': {'users': ['Emptyfear'], 'title': 'Wikidata:Wikidata Lexeme Forms/Armenian'},
         'label': 'հայերեն գոյական',
