@@ -1,6 +1,10 @@
-let menu = document.getElementById("collapsible-menu");
-menu.classList = "collapse navbar-collapse";
+document.addEventListener('DOMContentLoaded', function() {
+    'use strict';
 
-let button = document.querySelector("nav .navbar-toggler");
-button.toggleAttribute("hidden");
-button.addEventListener("click", () => { menu.classList.toggle("show") });
+    const menu = document.getElementById('collapsible-menu');
+    menu.classList = 'collapse navbar-collapse';
+
+    const button = document.querySelector('nav .navbar-toggler');
+    button.hidden = false;
+    button.addEventListener('click', () => { menu.classList.toggle('show') });
+});
