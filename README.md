@@ -12,27 +12,30 @@ logs end up in `~/uwsgi.log`.
 The `uwsgi.ini` configuration file in the source code repository
 is symlinked into `~/www/python/uwsgi.ini`.
 
-If the web service is not running for some reason, run the following command:
+To update the tool, assuming there were no changes in the Python environment:
 ```
-webservice start
+git fetch
+git log -p @..@{u} # inspect changes
+git rebase
+kubectl rollout restart deployment lexeme-forms
 ```
-If it’s acting up, try the same command with `restart` instead of `start`.
-Both should pull their config from the `service.template` file,
-which is symlinked from the source code directory into the tool home directory.
 
-To update the service, run the following commands after becoming the tool account:
+If there were new changes in the Python environment (e.g. new dependencies),
+add the following steps after the `git rebase`:
 ```
 webservice shell
 source ~/www/python/venv/bin/activate
-cd ~/www/python/src
-git fetch
-git diff @ @{u} # inspect changes
-git merge --ff-only @{u}
-pip3 install -r requirements.txt
-webservice restart
+pip install -r ~/www/python/src/requirements.txt # maybe add --upgrade
 ```
-However, the `venv` and `pip3` parts are only necessary when new packages are required –
-if only `templates.py` and/or `translations.py` were updated, you can skip those.
+
+If you’re fully restarting the webservice,
+also update the Kubernetes deployment created by the `webservice` command afterwards:
+```
+webservice stop
+# do whatever you need to do (new Python version -> new venv?)
+webservice start
+kubectl patch deployment lexeme-forms -p "$(<~/www/python/src/patch-add-readiness-probe.yml)"
+```
 
 ## Local development setup
 

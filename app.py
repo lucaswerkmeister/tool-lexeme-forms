@@ -1004,6 +1004,10 @@ def get_template_api(template_name):
     else:
         return flask.jsonify(template)
 
+@app.route('/healthz')
+def health():
+    return ''
+
 def get_gender(user):
     if user is None:
         gender_option = gender_option_of_user()

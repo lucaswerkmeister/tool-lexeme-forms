@@ -1,0 +1,10 @@
+spec:
+  template:
+    spec:
+      containers:
+        - name: webservice
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: http
+            periodSeconds: 1
