@@ -9963,6 +9963,7 @@ templates: Dict[str, Union[str, Template]] = {
                             'mainsnak': {
                                 'snaktype': 'value',
                                 'property': 'P82',
+                                'datatype': 'wikibase-item',
                                 'datavalue': {
                                     'type': 'wikibase-entityid',
                                     'value': {
@@ -9992,6 +9993,7 @@ templates: Dict[str, Union[str, Template]] = {
                             'mainsnak': {
                                 'snaktype': 'value',
                                 'property': 'P82',
+                                'datatype': 'wikibase-item',
                                 'datavalue': {
                                     'type': 'wikibase-entityid',
                                     'value': {
