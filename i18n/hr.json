@@ -20,7 +20,7 @@
 	"lexeme-id": "ID leksema",
 	"advanced-partial-forms-hint": "Da biste stvorili leksem s nekim praznim poljima, molimo prebacite način uređivanja u napredno.",
 	"generated-via": "stvoreno pomoću",
-	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=nema obrazaca|jedan obrazac|$2 obrazaca}} i {{PLURAL:$3|0=bez značenja|jednim značenjem|$3 značenja}}",
+	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=nema oblika|jedan oblik|$2 oblika}} i {{PLURAL:$3|0=bez značenja|jednim značenjem|$3 značenja}}",
 	"bulk-link": "skupni način",
 	"bulk-format-help": "Pomoć za oblikovanje",
 	"bulk-not-allowed": "Nije vam dozvoljena upotreba skupnog načina. Isprike.",
