@@ -29,9 +29,13 @@
 	"edit-link": "editar",
 	"edit-general": "Está no modo \"edição\". Mudar estes valores abaixo irá editar, adicionar ou remover formas do lexema-alvo.",
 	"edit-mismatch-warning": "Este lexema não parece corresponder a este modelo! Verifique novamente se é o modelo correto para este lexema antes de continuar.",
-	"edit-ambiguous-warning": "{{PLURAL:$1|A seguinte forma|As seguintes formas}} do lexema correspondem a mais de que um formulário de predefinição igualmente bem:",
-	"edit-unmatched-warning": "{{PLURAL:$1|A seguinte forma|As seguintes formas}} do lexema não correspondem a nenhum formulário de predefinição:",
+	"edit-ambiguous-warning": "{{PLURAL:$1|A seguinte forma|As seguintes formas}} do lexema correspondem igualmente bem a mais de uma forma do modelo:",
+	"edit-unmatched-warning": "{{PLURAL:$1|A seguinte forma|As seguintes formas}} do lexema não correspondem a nenhuma forma do modelo:",
 	"edit-form-list-item": "$1, $2, {{PLURAL:$3|0=sem declarações|uma declaração|$3 declarações}}",
 	"no-grammatical-features": "sem funcionalidades gramaticais",
+	"title-create": "$1 (criar)",
+	"title-advanced": "$1 (avançado)",
+	"title-bulk": "$1 (em massa)",
+	"title-edit": "$1 (editar)",
 	"login-hint": "Precisa [$1 iniciar sessão] antes de poder fazer mudanças com esta ferramenta."
 }
