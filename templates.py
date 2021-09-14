@@ -5157,7 +5157,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q192997', 'Q146786'],
             },
         ],
-        'statements': statements('P5185', 'Q1775415'),
+        'statements': statements('P5185', 'Q1775461'),
     },
 
     'armenian-noun': {
