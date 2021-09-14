@@ -4995,26 +4995,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q192997', 'Q146786'],
             },
         ],
-        'statements': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q499327',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P5185', 'Q499327'),
     },
 
     'croatian-noun-feminine': {
@@ -5095,26 +5076,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q192997', 'Q146786'],
             },
         ],
-        'statements': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q1775415',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P5185', 'Q1775415'),
     },
 
     'croatian-noun-neuter': {
@@ -5195,26 +5157,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': ['Q192997', 'Q146786'],
             },
         ],
-        'statements': {
-            'P5185': [
-                {
-                    'mainsnak': {
-                        'snaktype': 'value',
-                        'property': 'P5185',
-                        'datatype': 'wikibase-item',
-                        'datavalue': {
-                            'type': 'wikibase-entityid',
-                            'value': {
-                                'entity-type': 'item',
-                                'id': 'Q1775415',
-                            },
-                        },
-                    },
-                    'type': 'statement',
-                    'rank': 'normal',
-                }
-            ],
-        },
+        'statements': statements('P5185', 'Q1775415'),
     },
 
     'armenian-noun': {
