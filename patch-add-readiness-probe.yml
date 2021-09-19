@@ -3,7 +3,7 @@ spec:
     spec:
       containers:
         - name: webservice
-          readinessProbe:
+          startupProbe:
             httpGet:
               path: /healthz
               port: http
