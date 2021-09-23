@@ -24,7 +24,7 @@
 	"generated-via": "vía generada",
 	"bulk-link": "modo masivo",
 	"bulk-format-help": "ayuda de formato",
-	"bulk-not-allowed": "Usted no pueden usar el modo masivo. Perdón.",
+	"bulk-not-allowed": "Usted no puede usar el modo masivo. Perdón.",
 	"bulk-optional-forms-hint": "Si quieres saltarte algunos campos, especifícalos como vacíos (por ej. <kbd>...|||</kbd> para tres campos vacíos al final).",
 	"edit-link": "editar",
 	"edit-general": "Estás en modo de \"edición\". Cambiar los valores editará, añadirá o removerá campos del lexema objetivo.",
