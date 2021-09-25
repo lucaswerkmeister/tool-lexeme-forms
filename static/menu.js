@@ -7,5 +7,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const button = document.querySelector('nav .navbar-toggler');
     button.hidden = false;
-    button.addEventListener('click', () => { menu.classList.toggle('show') });
+    button.addEventListener('click', () => { menu.classList.toggle('show'); });
 });
