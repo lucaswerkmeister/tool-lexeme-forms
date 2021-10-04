@@ -140,6 +140,7 @@ skipped_language_codes = {
     'qqq',
     'roa-tara',
     'sa',
+    'xmf',
     'zh-hant',
 }
 
