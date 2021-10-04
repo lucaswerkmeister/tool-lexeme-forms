@@ -1,17 +1,24 @@
 {
 	"@metadata": {
 		"authors": [
+			"Toniher",
 			"Vfc"
 		]
 	},
 	"create": "Crea",
+	"duplicates-create": "Crea un lexema nou de totes maneres.",
 	"no-duplicate": "Això no és un duplicat d'un lexema ja existent.",
+	"form-optional": "&#32;(opcional)",
 	"advanced": "Avançat",
 	"advanced-general": "Estàs en mode «avançat».",
 	"lexeme-id": "Identificador del lexema",
 	"generated-via": "generat mitjançant",
+	"bulk-link": "mode massiu",
+	"bulk-format-help": "ajuda del format",
 	"edit-link": "edita",
+	"no-grammatical-features": "sense característiques gramaticals",
 	"title-create": "$1 (crear)",
 	"title-advanced": "$1 (avançat)",
+	"title-bulk": "$1 (massiu)",
 	"title-edit": "$1 (edita)"
 }
