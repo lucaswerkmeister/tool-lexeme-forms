@@ -842,7 +842,7 @@ def update_lexeme(lexeme_data, template, form_data, representation_language_code
             elif lexeme_form in template.get('ambiguous_lexeme_forms', []):
                 template['ambiguous_lexeme_forms'].remove(lexeme_form)
             else:
-                raise Exception('Form %s is neither unmatched nor ambiguous, refusing to re-match it to a different template form' % form_data_representation_variant)
+                flask.abort(400, 'Form %s is neither unmatched nor ambiguous, refusing to re-match it to a different template form' % form_data_representation_variant)
             # add missing grammatical features
             for grammatical_feature_item_id in template_form['grammatical_features_item_ids']:
                 if grammatical_feature_item_id not in lexeme_form['grammaticalFeatures']:
@@ -850,7 +850,7 @@ def update_lexeme(lexeme_data, template, form_data, representation_language_code
             # add missing statements (and complain about conflicting ones)
             form_matched_statements, form_missing_statements, form_conflicting_statements = match_template_entity_to_lexeme_entity('test' in template, template_form, lexeme_form)
             if form_conflicting_statements:
-                raise Exception('Conflicting statements!')  # TODO better error reporting
+                flask.abort(400, 'Conflicting statements!')  # TODO better error reporting
             for property_id, statements in form_missing_statements.items():
                 lexeme_form.setdefault('claims', {}).setdefault(property_id, []).extend(statements)
             form_data_representation_variants.remove(form_data_representation_variant)
