@@ -34,7 +34,7 @@ also update the Kubernetes deployment created by the `webservice` command afterw
 webservice stop
 # do whatever you need to do (new Python version -> new venv?)
 webservice start
-kubectl patch deployment lexeme-forms -p "$(<~/www/python/src/patch-add-readiness-probe.yml)"
+kubectl patch deployment lexeme-forms -p "$(<~/www/python/src/patch-add-startup-probe.yml)"
 ```
 
 ## Local development setup
