@@ -85,7 +85,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         const url = `${baseUrl}api/v1/duplicates/${'test' in template ? 'test' : 'www'}/${template.language_code}/${encodeURIComponent(lemma).replace(/^\./, '%2E')}?template_name=${template['@template_name']}`;
-        fetch(url, initAcceptHtml).then(response => response.text()).then(duplicatesWarningHtml => {
+        fetch(url, initAcceptHtml).then(response => {
+            if (response.ok) {
+                return response.text();
+            } else {
+                // just bail out and let server-side no-JS duplicate detection take over
+                throw response;
+            }
+        }).then(duplicatesWarningHtml => {
             if (duplicatesWarningHtml === '') {
                 removeDuplicatesElements();
                 return;
