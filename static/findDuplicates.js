@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        const url = `${baseUrl}api/v1/duplicates/${'test' in template ? 'test' : 'www'}/${template.language_code}/${encodeURIComponent(lemma)}?template_name=${template['@template_name']}`;
+        const url = `${baseUrl}api/v1/duplicates/${'test' in template ? 'test' : 'www'}/${template.language_code}/${encodeURIComponent(lemma).replace(/^\./, '%2E')}?template_name=${template['@template_name']}`;
         fetch(url, initAcceptHtml).then(response => response.text()).then(duplicatesWarningHtml => {
             if (duplicatesWarningHtml === '') {
                 removeDuplicatesElements();
