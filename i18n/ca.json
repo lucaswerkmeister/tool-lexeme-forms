@@ -1,26 +1,44 @@
 {
 	"@metadata": {
 		"authors": [
+			"Lucas Werkmeister",
+			"Mguix",
 			"Toniher",
 			"Vfc"
 		]
 	},
 	"create": "Crea",
+	"csrf-warning": "No hem pogut processar aquesta sol·licitud (<abbr title=\"Cross-site request forgery\">CSRF</abbr> ha fallat). Intenteu tornar a enviar el formulari.",
+	"duplicates-warning": "{{PLURAL:$1|El següent lexema té|Els següents lexemes tenen}} el mateix lema i codi d'idioma que el que intenteu crear:",
+	"duplicates-instructions": "Si esteu segur que {{PLURAL:$1|és diferent|són diferents}}, marqueu la casella que hi ha a la part inferior del formulari.",
 	"duplicates-create": "Crea un lexema nou de totes maneres.",
 	"no-duplicate": "Això no és un duplicat d'un lexema ja existent.",
 	"form-optional": "&#32;(opcional)",
 	"advanced": "Avançat",
 	"advanced-general": "Estàs en mode «avançat».",
+	"advanced-lexeme-id": "Podeu introduir un identificador de lexema per afegir formes a un lexema existent en lloc de crear-ne un de nou. Deixeu en blanc els formularis que ja existeixen al lexema, en cas contrari es duplicaran.",
+	"advanced-partial-forms": "Podeu deixar alguns formularis en blanc perquè no s’afegeixin. Assegureu-vos que no deixeu de banda cap formulari per accident.",
 	"lexeme-id": "Identificador del lexema",
 	"advanced-partial-forms-hint": "Per a crear lexemes que no tenen algunes formes, canvieu a mode avançat.",
 	"generated-via": "generat mitjançant",
+	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=sense formularis|un formulari|$2 formularis}} ' {{PLURAL:$3|0=sense sentits|un sentit|$3 sentits}}",
 	"bulk-link": "mode massiu",
 	"bulk-format-help": "ajuda del format",
 	"bulk-not-allowed": "No teniu permisos per a utilitzar el mode massiu.",
+	"bulk-first-field-not-lexeme-id": "Com que la plantilla té {{PLURAL: $1|un formulari|$1 formularis}} i la línia $4 de l'entrada té {{PLURAL:$2|un camp|$2 camps}}, el primer camp hauria de semblar un identificador de lexema, però <q>$3</q> no sembla un identificador de lexema. (Heu especificat massa formularis a l'entrada?)",
+	"bulk-first-field-lexeme-id": "Com que la plantilla té {{PLURAL:$1|un formulari|$1 formularis}} i la línia $4 de l'entrada té {{PLURAL:$2|un camp|$2 camps}}, el primer camp no hauria de semblar un ID de lexema, però <q>$3</q> en sembla un. (Heu oblidat cap formulari a l'entrada?)",
+	"bulk-wrong-number-of-fields": "Com que la plantilla té {{PLURAL:$1|un formulari|$1 formularis}}, cada línia d'entrada hauria de tenir o bé molts camps (quan es crea un nou lexema) o un més (quan s'especifica l'ID d'un lexema existent per editar), però la línia $3 de l'entrada té {{PLURAL:$2|un camp|$2 camps}} en el seu lloc.",
+	"bulk-optional-forms-hint": "Si voleu saltar alguns formularis, especifiqueu-los com a buits (p. ex. <kbd>...|||</kbd> per a tres formularis buits al final).",
 	"edit-link": "edita",
+	"edit-general": "Esteu en mode “editar”. Canvieu els valors següents editant, afegint o eliminant formularis del lexema de destinació.",
+	"edit-mismatch-warning": "Sembla que aquest lexema no coincideix amb aquesta plantilla! Comproveu que és la plantilla correcta per a aquest lexema abans de continuar.",
+	"edit-ambiguous-warning": "{{PLURAL:$1|El següent formulari|Els següents formularis}} de lexemes coincideix amb més d'una plantilla:",
+	"edit-unmatched-warning": "{{PLURAL:$1|El següent formulari|Els següents formularis}} de lexemes no coincideix amb cap dels formularis de plantilla:",
+	"edit-form-list-item": "$1, $2, {{PLURAL:$3|0=cap declaració|una declaració|$3 declaracions}}",
 	"no-grammatical-features": "sense característiques gramaticals",
 	"title-create": "$1 (crear)",
 	"title-advanced": "$1 (avançat)",
 	"title-bulk": "$1 (massiu)",
-	"title-edit": "$1 (edita)"
+	"title-edit": "$1 (edita)",
+	"login-hint": "Cal que [$1 inicieu sessió] abans de poder fer canvis utilitzant aquesta eina."
 }
