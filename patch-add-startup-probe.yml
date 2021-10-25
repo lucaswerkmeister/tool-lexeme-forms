@@ -8,3 +8,4 @@ spec:
               path: /healthz
               port: http
             periodSeconds: 1
+            failureThreshold: 10
