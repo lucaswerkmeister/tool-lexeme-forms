@@ -19,7 +19,7 @@ import yaml
 from flask_utils import OrderedFlask, TagOrderedMultiDict, TagImmutableOrderedMultiDict, SetJSONEncoder
 from formatters import I18nFormatter
 from language import lang_lex2int, lang_int2html, lang_int2babel
-from language_names import autonym
+from language_names import autonym, label
 from matching import match_template_to_lexeme_data, match_lexeme_forms_to_template, match_template_entity_to_lexeme_entity
 from mwapi_utils import T272319RetryingSession
 from parse_tpsv import parse_lexemes, FirstFieldNotLexemeIdError, FirstFieldLexemeIdError, WrongNumberOfFieldsError
@@ -148,7 +148,7 @@ def csrf_token():
 
 @app.template_global()
 def template_group(template):
-    group = language_autonym_with_code(template['language_code'])
+    group = language_name_with_code(template['language_code'])
     if 'test' in template:
         group += ', test.wikidata.org'
     return group
@@ -238,12 +238,14 @@ def lemmas_spans(lemmas):
                                    for lemma in lemmas.values())
 
 @app.template_filter()
-def language_autonym_with_code(language_code):
+def language_name_with_code(language_code):
     code_zxx = (flask.Markup(r'<span lang=zxx>') +
                 flask.Markup.escape(language_code) +
                 flask.Markup(r'</span>'))
-    language_autonym = autonym(language_code)
-    if language_autonym is None:
+    language_name = autonym(language_code)
+    if language_name is None:
+        language_name = label(language_code)
+    if language_name is None:
         return code_zxx
     interface_language_code = lang_lex2int(language_code)
     return (flask.Markup(r'<span lang="') +
@@ -251,7 +253,7 @@ def language_autonym_with_code(language_code):
             flask.Markup(r'" dir="') +
             flask.Markup.escape(text_direction(interface_language_code)) +
             flask.Markup(r'">') +
-            flask.Markup.escape(language_autonym) +
+            flask.Markup.escape(language_name) +
             flask.Markup(r' (') +
             code_zxx +
             flask.Markup(r')</span>'))
