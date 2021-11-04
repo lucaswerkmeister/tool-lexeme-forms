@@ -13,6 +13,7 @@
 	"csrf-warning": "Bohužel se nám nepodařilo vykonat požadavek (ochrana před <abbr title=\"Cross-site request forgery\">CSRF</abbr> selhala). Zkuste prosím odeslat formulář znovu.",
 	"duplicates-warning": "Pokoušíte se vytvořit lexém, který má stejné lemma a jazyk jako už existující {{PLURAL:$1|lexém|lexémy}}:",
 	"duplicates-instructions": "Jste-li si jisti, že {{PLURAL:$1|zadávaný lexém je odlišný|zadávané lexémy jsou odlišné}}, zatrhněte pole na konci formuláře.",
+	"duplicates-create": "Přesto založit nový lexém.",
 	"no-duplicate": "Tento lexém není duplicitní k již existujícímu lexému.",
 	"form-optional": "&#32;(nepovinný)",
 	"advanced": "Pokročilé",
@@ -37,5 +38,9 @@
 	"edit-unmatched-warning": "Následující {{PLURAL:$1|tvar|tvary}} lexému neodpovídají ani jednomu ze vzorů:",
 	"edit-form-list-item": "$1, $2, {{PLURAL:$3|0=žádná tvrzení|jedno tvrzení|$3 tvrzení}}",
 	"no-grammatical-features": "bez gramatických vlastností",
+	"title-create": "$1 (vytváření)",
+	"title-advanced": "$1 (pokročilé)",
+	"title-bulk": "$1 (hromadně)",
+	"title-edit": "$1 (editace)",
 	"login-hint": "Než pomocí tohoto nástroje budete moci dělat změny, musíte se [$1 přihlásit]."
 }
