@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Chinamoonroll"
+		]
+	},
+	"create": "Kardi",
+	"form-optional": "&#32;(dadi-dadi)",
+	"advanced": "Lanturan",
+	"bulk-link": "modé makéh",
+	"bulk-format-help": "wantuan format",
+	"edit-link": "uah",
+	"title-create": "$1 (kardi)",
+	"title-advanced": "$1 (lantur)",
+	"title-bulk": "$1 (makéh)",
+	"title-edit": "$1 (uah)"
+}
