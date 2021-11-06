@@ -13,7 +13,7 @@
         <span lang="{{ template.language_code | lang_lex2int | lang_int2html }}" dir="{{ template.language_code | lang_lex2int | text_direction }}">
           <a href="{{ url_for('process_template', template_name=template_name) }}">{{ template.label }}</a>
           {% if can_use_bulk_mode %}
-          (<a href="{{ url_for('process_template_bulk', template_name=template_name) }}">{{ message('bulk_link', template.language_code) }}</a>)
+          (<a href="{{ url_for('process_template_bulk', template_name=template_name) }}">{{ message('bulk_link', template.language_code | lang_lex2int) }}</a>)
           {% endif %}
         </span>
       </li>
