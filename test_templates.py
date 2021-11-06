@@ -2,6 +2,7 @@ import mwapi  # type: ignore
 import pytest
 
 import app
+from language import lang_lex2int
 import templates
 import translations
 
@@ -44,12 +45,9 @@ def test_entities_exist():
 def test_translations_available():
     missing_language_codes = set()
     for template in templates.templates_without_redirects.values():
-        language_code = template['language_code']
+        language_code = lang_lex2int(template['language_code'])
         if language_code not in translations.translations:
             missing_language_codes.add(language_code)
-
-    # compare message_with_language()
-    missing_language_codes.remove('bn-x-Q6747180')
 
     assert not missing_language_codes
 
