@@ -7518,6 +7518,22 @@ templates: Dict[str, Union[str, Template]] = {
         'statements': statements('P31', 'Q1941737'),
     },
 
+    'portuguese-idiom': {
+        '@attribution': {'users': ['EnaldoSS'], 'title': 'Wikidata:Wikidata Lexeme Forms/Portuguese'},
+        'label': 'expressão idiomática em português',
+        'language_item_id': 'Q5146',
+        'language_code': 'pt',
+        'lexical_category_item_id': 'Q184511',
+        'forms': [
+            {
+                'label': 'Expressão idiomática',
+                'example': 'João não entendeu muito bem o que ela quis dizer com "[abandonar o barco]".',
+                'grammatical_features_item_ids': [],
+            },
+        ],
+        'statements': statements('P31', 'Q1941737'),
+    },
+
     'russian-noun-masculine': {
         '@attribution': {'users': ['Infovarius'], 'title': 'Wikidata:Wikidata Lexeme Forms/Russian'},
         'label': 'русское существительное, мужской род',
