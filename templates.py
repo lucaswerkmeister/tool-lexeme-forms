@@ -7531,7 +7531,6 @@ templates: Dict[str, Union[str, Template]] = {
                 'grammatical_features_item_ids': [],
             },
         ],
-        'statements': statements('P31', 'Q1941737'),
     },
 
     'russian-noun-masculine': {
