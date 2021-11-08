@@ -7527,7 +7527,7 @@ templates: Dict[str, Union[str, Template]] = {
         'forms': [
             {
                 'label': 'Expressão idiomática',
-                'example': 'João não entendeu muito bem o que ela quis dizer com "[abandonar o barco]".',
+                'example': 'João não entendeu muito bem o que ela quis dizer com [abandonar o barco].',
                 'grammatical_features_item_ids': [],
             },
         ],
