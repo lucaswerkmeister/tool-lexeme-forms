@@ -8522,6 +8522,21 @@ templates: Dict[str, Union[str, Template]] = {
         'statements': statements('P31', 'Q138246'),
     },
 
+    'yoruba-noun': {
+        '@attribution': {'users': ['T Cells'], 'title': 'Wikidata:Wikidata Lexeme Forms/Yoruba'},
+        'label': 'Orúkọ Yorùbá',
+        'language_item_id': 'Q34311',
+        'language_code': 'yo',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'kan',
+                'example': 'mo tẹ̀lé ọkunrin [kan] lọ oko.',
+                'grammatical_features_item_ids': [],
+            },
+        ],
+    },
+
     'german-noun-neuter-test': {
         '@attribution': {'users': ['Lucas Werkmeister'], 'title': None},
         'test': True,
