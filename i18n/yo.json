@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Lucas Werkmeister",
+			"Wikicology"
+		]
+	},
+	"create": "Ṣ'ẹ̀dá",
+	"csrf-warning": "Jọ̀wọ́, a kò lè tẹ síwájú pẹ̀lú ìbéèrè rẹ (<abbr title=\"Cross-site request forgery\">CSRF</abbr> protection failed). Jọ̀wọ́ gbìyànjú kí o tèẹ́ wọlé si.",
+	"duplicates-warning": "{{PLURAL:$1|àkọtán|àwọn àkọtàn}} tí ó ti wà nílẹ̀ tẹ́lẹ́ ní lẹ́mà àti kóòdù kan náà pẹ̀lú èyí tí ò ń gbìyànjú láti ṣẹ̀dá:",
+	"duplicates-instructions": "Tí ó bá dá ọ lójú wípé {{PLURAL:$1|òun|àwọn ni}} yàtò, ṣe àyẹ̀wò bọ́ọ̀sì tí ó wà ń ìsàlè fọ́ọ̀mù yẹn.",
+	"duplicates-create": "S'ẹ̀dá àkọtọ́ tuntun síbẹ̀ síbẹ̀.",
+	"no-duplicate": "Èyí kìí ṣe ẹ̀dà àkọtọ́ tí ó ti wà nílẹ̀ tẹ́lẹ́.",
+	"form-optional": "&#32;(kò pọn dandan)",
+	"advanced": "gíga",
+	"advanced-general": "O ti wà ní ìpele gíga.",
+	"advanced-lexeme-id": "O lè ṣàtẹ̀wọlẹ́ àkọtọ́ tuntun kí ó lè fi àwọn fọ́ọ̀mù sí àkọtọ́ tí ó ti wà nílẹ̀ láì ṣẹ̀dá òmíràn. Fi èyíkéyìí àwọn fọ́ọ̀mù tí ó bá ti wà nílẹ̀ tẹ́lẹ́ sílẹ̀, lai jẹ bẹ́ẹ̀ ó máa di ẹ̀dà!",
+	"advanced-partial-forms": "O lè fi àwọn fọ́ọ̀mù kan sílẹ̀ lai kọ ohunkóhun si nítorí pé kí wọn má báa fi wọn kún. Ríi dájú wípé o kò fi fọ́ọ̀mù kankan sílẹ̀!",
+	"lexeme-id": "Ìdánimọ̀ àkọtọ́",
+	"advanced-partial-forms-hint": "Tí o bá fẹ́ ṣẹ̀dá àkọtọ́ pẹ̀lú àwọn fọ́ọ̀mù tí kò sí, bọ́sí ìpele giga.",
+	"generated-via": "a ṣe àkójọ rẹ̀ nínú",
+	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=kò sí àwọn fọ́ọ̀mù|fọ́ọ̀mù kan|$2 àwọn fọ́ọ̀mù}} àti {{PLURAL:$3|0=kò sí àwọn lílò rẹ̀|lílò kan|$3 lílò}}"
+}
