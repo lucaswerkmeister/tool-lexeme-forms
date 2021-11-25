@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
+			"Ajeje Brazorf",
 			"Lucas Werkmeister",
 			"Robby"
 		]
 	},
-	"create": "Label for the button to create a new lexeme.",
+	"create": "Label for the button to create a new lexeme.\n\n{{Identical|Create}}",
 	"csrf-warning": "A hopefully rare error message; “CSRF” is usually not translated, but the “protection failed” is.",
 	"duplicates-warning": "Header of an error message, followed by an HTML list of duplicate lexemes in the interface.",
 	"duplicates-instructions": "Footer of an error message, following an HTML list of duplicate lexemes in the interface",
