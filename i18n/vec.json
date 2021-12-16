@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Fierodelveneto"
+		]
+	},
+	"create": "Crea",
+	"csrf-warning": "Eror inte el salvar (eror: <abbr title=\"Cross-site request forgery\">CSRF</abbr> protection failed). par piazer, riproa",
+	"duplicates-warning": "Atension, {{PLURAL:$1|el lesema che vien el ga|i lesemi che vien i ga}} el isteso lema e còdaze lenguìstego de cuel che te ghè pena proà crear:",
+	"duplicates-instructions": "Se ti ze seguro che {{PLURAL:$1|el|i}} sìpia difarente, struca ła cazeta inte ła fin de sto mòduło.",
+	"duplicates-create": "Crea isteso un novo lesema.",
+	"no-duplicate": "Sto cuà NO EL ZE un duplegà del lesema ezistente.",
+	"form-optional": "&#32;(facoltativo)",
+	"advanced": "Vansada",
+	"advanced-general": "Te si inte ła modałità \"vansada\""
+}
