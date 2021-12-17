@@ -41,6 +41,7 @@ def lang_int2babel(code: str) -> str:
     # remove everything after -, interpreted differently by Babel
     code, separator, rest = code.partition('-')
     return {
-        # Latin is not in CLDR, English is similar for our purposes
-        'la': 'en',
+        # Latin and Venetian are not in CLDR, Italian is similar for our purposes
+        'la': 'it',
+        'vec': 'it',
     }.get(code, code)
