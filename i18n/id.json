@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Bennylin",
+			"Daud I.F. Argana",
 			"FenyMufyd",
 			"Lucas Werkmeister",
 			"Naufal06"
@@ -38,5 +39,7 @@
 	"no-grammatical-features": "tidak ada fitur tata bahasa",
 	"title-create": "$1 (buat)",
 	"title-advanced": "$1 (lanjutan)",
+	"title-bulk": "$1 (jumlah banyak)",
+	"title-edit": "$1 (sunting)",
 	"login-hint": "Anda perlu [$1 log masuk] sebelum Anda bisa mengubah alat ini."
 }

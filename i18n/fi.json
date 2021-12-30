@@ -10,6 +10,7 @@
 	"csrf-warning": "Anteeksi, pyynnön käsittely ei onnistunut (<abbr title=\"Cross-site request forgery\">CSRF</abbr> suojaus epäonnistui). Yritä tallentaa kaavake uudestaan, kiitos.",
 	"duplicates-warning": "Seuraavilla lekseemeillä on sama lemma ja kieli kuin sillä, jota yrität luoda:",
 	"duplicates-instructions": "Jos olet varma, että ne ovat eri lekseemeitä, laita rasti kaavakkeen lopussa olevaan laatikkoon.",
+	"duplicates-create": "Luo uusi lekseemi joka tapauksessa.",
 	"no-duplicate": "Tämä ei ole kaksoiskappale olemassa olevasta lekseemistä.",
 	"form-optional": "&#32;(valinnainen)",
 	"advanced": "Laajenna",
@@ -20,5 +21,7 @@
 	"advanced-partial-forms-hint": "Luodaksesi lekseemin ilman joitakin taivutusmuotoja, siirry laajennettuun muokkaustilaan.",
 	"edit-link": "muokkaa",
 	"title-create": "$1 (luo)",
-	"title-edit": "$1 (muokkaa)"
+	"title-advanced": "$1 (kehittynyt)",
+	"title-edit": "$1 (muokkaa)",
+	"login-hint": "Sinun on [$1 kirjauduttava sisään] ennen kuin voit tehdä muutoksia käyttämällä tätä työkalua."
 }
