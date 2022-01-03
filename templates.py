@@ -3433,7 +3433,7 @@ templates: Dict[str, Union[str, Template]] = {
             {
                 'label': 'nominativ ental, ubestemt',
                 'example': 'Det her er en [bil].',
-                'grammatical_features_item_ids': ['Q110786', 'Q16123764'],
+                'grammatical_features_item_ids': ['Q110786', 'Q53997857'],
             },
             {
                 'label': 'nominativ ental, bestemt',
@@ -3443,7 +3443,7 @@ templates: Dict[str, Union[str, Template]] = {
             {
                 'label': 'nominativ flertal, ubestemt',
                 'example': 'Jag ser flere [biler].',
-                'grammatical_features_item_ids': ['Q146786', 'Q16123764'],
+                'grammatical_features_item_ids': ['Q146786', 'Q53997857'],
             },
             {
                 'label': 'nominativ flertal, bestemt',
@@ -3465,7 +3465,7 @@ templates: Dict[str, Union[str, Template]] = {
             {
                 'label': 'nominativ ental, ubestemt',
                 'example': 'Det her er et [bord].',
-                'grammatical_features_item_ids': ['Q110786', 'Q16123764'],
+                'grammatical_features_item_ids': ['Q110786', 'Q53997857'],
             },
             {
                 'label': 'nominativ ental, bestemt',
@@ -3475,7 +3475,7 @@ templates: Dict[str, Union[str, Template]] = {
             {
                 'label': 'nominativ flertal, ubestemt',
                 'example': 'Jeg ser flere [bord].',
-                'grammatical_features_item_ids': ['Q146786', 'Q16123764'],
+                'grammatical_features_item_ids': ['Q146786', 'Q53997857'],
             },
             {
                 'label': 'nominativ flertal, bestemt',
@@ -5441,34 +5441,34 @@ templates: Dict[str, Union[str, Template]] = {
                 'section_break': True,
                 'label': 'Rewşa navkî ya yekjimar a nebinavkirî',
                 'example': 'Ev [pisîkek] e.',
-                'grammatical_features_item_ids': ['Q1751855', 'Q110786', 'Q16123764'],
+                'grammatical_features_item_ids': ['Q1751855', 'Q110786', 'Q53997857'],
             },
             {
                 'label': 'Rewşa navkî ya pirjimar a nebinavkirî',
                 'example': 'Ev [pisîkin] in.',
-                'grammatical_features_item_ids': ['Q1751855', 'Q146786', 'Q16123764'],
+                'grammatical_features_item_ids': ['Q1751855', 'Q146786', 'Q53997857'],
             },
             {
                 'section_break': True,
                 'label': 'Rewşa çemandî ya yekjimar ya nebinavkirî',
                 'example': 'Ez [pisîkekê] dibînim.',
-                'grammatical_features_item_ids': ['Q1233197', 'Q110786', 'Q16123764'],
+                'grammatical_features_item_ids': ['Q1233197', 'Q110786', 'Q53997857'],
             },
             {
                 'label': 'Rewşa çemandî ya pirjimar ya nebinavkirî',
                 'example': 'Ez [pisîkinan] dibînim.',
-                'grammatical_features_item_ids': ['Q1233197', 'Q146786', 'Q16123764'],
+                'grammatical_features_item_ids': ['Q1233197', 'Q146786', 'Q53997857'],
             },
             {
                 'section_break': True,
                 'label': 'Rewşa îzafe ya yekjimar a nebinavkirî',
                 'example': 'Ev [pisîkeke] nû ye.',
-                'grammatical_features_item_ids': ['Q18794', 'Q110786', 'Q16123764'],
+                'grammatical_features_item_ids': ['Q18794', 'Q110786', 'Q53997857'],
             },
             {
                 'label': 'Rewşa îzafe ya pirjimar a nebinavkirî',
                 'example': 'Ez [pisîkine] nû dibînim.',
-                'grammatical_features_item_ids': ['Q18794', 'Q146786', 'Q16123764'],
+                'grammatical_features_item_ids': ['Q18794', 'Q146786', 'Q53997857'],
             },
             {
                 'section_break': True,
@@ -5529,34 +5529,34 @@ templates: Dict[str, Union[str, Template]] = {
                 'section_break': True,
                 'label': 'Rewşa navkî ya yekjimar a nebinavkirî',
                 'example': 'Ev [gundek] e.',
-                'grammatical_features_item_ids': ['Q1751855', 'Q110786', 'Q16123764'],
+                'grammatical_features_item_ids': ['Q1751855', 'Q110786', 'Q53997857'],
             },
             {
                 'label': 'Rewşa navkî ya pirjimar a nebinavkirî',
                 'example': 'Ev [gundin] in.',
-                'grammatical_features_item_ids': ['Q1751855', 'Q146786', 'Q16123764'],
+                'grammatical_features_item_ids': ['Q1751855', 'Q146786', 'Q53997857'],
             },
             {
                 'section_break': True,
                 'label': 'Rewşa çemandî ya yekjimar ya nebinavkirî',
                 'example': 'Ez [gundekî] dibînim.',
-                'grammatical_features_item_ids': ['Q1233197', 'Q110786', 'Q16123764'],
+                'grammatical_features_item_ids': ['Q1233197', 'Q110786', 'Q53997857'],
             },
             {
                 'label': 'Rewşa çemandî ya pirjimar ya nebinavkirî',
                 'example': 'Ez [gundinan] dibînim.',
-                'grammatical_features_item_ids': ['Q1233197', 'Q146786', 'Q16123764'],
+                'grammatical_features_item_ids': ['Q1233197', 'Q146786', 'Q53997857'],
             },
             {
                 'section_break': True,
                 'label': 'Rewşa îzafe ya yekjimar a nebinavkirî',
                 'example': 'Ev [gundekî] nû ye.',
-                'grammatical_features_item_ids': ['Q18794', 'Q110786', 'Q16123764'],
+                'grammatical_features_item_ids': ['Q18794', 'Q110786', 'Q53997857'],
             },
             {
                 'label': 'Rewşa îzafe ya pirjimar a nebinavkirî',
                 'example': 'Ez [gundine] nû dibînim.',
-                'grammatical_features_item_ids': ['Q18794', 'Q146786', 'Q16123764'],
+                'grammatical_features_item_ids': ['Q18794', 'Q146786', 'Q53997857'],
             },
             {
                 'section_break': True,
@@ -6148,7 +6148,7 @@ templates: Dict[str, Union[str, Template]] = {
             {
                 'label': 'ubestemt entall',
                 'example': 'Dette er en [båt].',
-                'grammatical_features_item_ids': ['Q110786', 'Q16123764'],
+                'grammatical_features_item_ids': ['Q110786', 'Q53997857'],
             },
             {
                 'label': 'bestemt entall',
@@ -6158,7 +6158,7 @@ templates: Dict[str, Union[str, Template]] = {
             {
                 'label': 'ubestemt flertall',
                 'example': 'Dette er noen [båter].',
-                'grammatical_features_item_ids': ['Q146786', 'Q16123764'],
+                'grammatical_features_item_ids': ['Q146786', 'Q53997857'],
             },
             {
                 'label': 'bestemt flertall',
@@ -6179,7 +6179,7 @@ templates: Dict[str, Union[str, Template]] = {
             {
                 'label': 'ubestemt entall',
                 'example': 'Dette er ei [liste].',
-                'grammatical_features_item_ids': ['Q110786', 'Q16123764'],
+                'grammatical_features_item_ids': ['Q110786', 'Q53997857'],
             },
             {
                 'label': 'bestemt entall hunkjønn',
@@ -6194,7 +6194,7 @@ templates: Dict[str, Union[str, Template]] = {
             {
                 'label': 'ubestemt flertall',
                 'example': 'Dette er noen [lister].',
-                'grammatical_features_item_ids': ['Q146786', 'Q16123764'],
+                'grammatical_features_item_ids': ['Q146786', 'Q53997857'],
             },
             {
                 'label': 'bestemt flertall',
@@ -6215,7 +6215,7 @@ templates: Dict[str, Union[str, Template]] = {
             {
                 'label': 'ubestemt entall',
                 'example': 'Dette er et [hus].',
-                'grammatical_features_item_ids': ['Q110786', 'Q16123764'],
+                'grammatical_features_item_ids': ['Q110786', 'Q53997857'],
             },
             {
                 'label': 'bestemt entall',
@@ -6225,7 +6225,7 @@ templates: Dict[str, Union[str, Template]] = {
             {
                 'label': 'ubestemt flertall',
                 'example': 'Dette er noen [hus].',
-                'grammatical_features_item_ids': ['Q146786', 'Q16123764'],
+                'grammatical_features_item_ids': ['Q146786', 'Q53997857'],
             },
             {
                 'label': 'bestemt flertall',
@@ -6246,7 +6246,7 @@ templates: Dict[str, Union[str, Template]] = {
             {
                 'label': 'ubestemt entall',
                 'example': 'Nå kommer en/et [rap].',
-                'grammatical_features_item_ids': ['Q110786', 'Q16123764'],
+                'grammatical_features_item_ids': ['Q110786', 'Q53997857'],
             },
             {
                 'label': 'bestemt entall, hankjønn',
@@ -6261,13 +6261,13 @@ templates: Dict[str, Union[str, Template]] = {
             {
                 'label': 'ubestemt flertall, hankjønn',
                 'example': 'Flere [raper] på rad.',
-                'grammatical_features_item_ids': ['Q146786', 'Q16123764', 'Q499327'],
+                'grammatical_features_item_ids': ['Q146786', 'Q53997857', 'Q499327'],
             },
             {
                 # note: the part in parenetheses here is more usage instructions than label, could maybe be split into a different field later
                 'label': 'ubestemt flertall, intetkjønn (utelat denne formen hvis den er identisk med den forrige, og fjern «hankjønn» fra forrige etter at leksemet er opprettet)',
                 'example': 'Flere [rap] på rad.',
-                'grammatical_features_item_ids': ['Q146786', 'Q16123764', 'Q1775461'],
+                'grammatical_features_item_ids': ['Q146786', 'Q53997857', 'Q1775461'],
                 'optional': True,
             },
             {
@@ -6299,12 +6299,12 @@ templates: Dict[str, Union[str, Template]] = {
             {
                 'label': 'ubestemt hankjønn og hunkjønn',
                 'example': 'En [flink] person.',
-                'grammatical_features_item_ids': ['Q110786', 'Q16123764', 'Q499327', 'Q1775415'],
+                'grammatical_features_item_ids': ['Q110786', 'Q53997857', 'Q499327', 'Q1775415'],
             },
             {
                 'label': 'ubestemt intetkjønn',
                 'example': 'Et [flinkt] barn.',
-                'grammatical_features_item_ids': ['Q110786', 'Q16123764', 'Q1775461'],
+                'grammatical_features_item_ids': ['Q110786', 'Q53997857', 'Q1775461'],
             },
             {
                 'label': 'bestemt entall',
@@ -6372,12 +6372,12 @@ templates: Dict[str, Union[str, Template]] = {
             {
                 'label': 'perfektum partisipp, hankjønn og hunkjønn',
                 'example': 'En [hilst] person.',
-                'grammatical_features_item_ids': ['Q12717679', 'Q110786', 'Q16123764', 'Q499327', 'Q1775415'],
+                'grammatical_features_item_ids': ['Q12717679', 'Q110786', 'Q53997857', 'Q499327', 'Q1775415'],
             },
             {
                 'label': 'perfektum partisipp, intetkjønn',
                 'example': 'Et [hilst] barn.',
-                'grammatical_features_item_ids': ['Q12717679', 'Q110786', 'Q16123764', 'Q1775461'],
+                'grammatical_features_item_ids': ['Q12717679', 'Q110786', 'Q53997857', 'Q1775461'],
             },
             {
                 'label': 'perfektum partisipp, bestemt form',
@@ -6550,7 +6550,7 @@ templates: Dict[str, Union[str, Template]] = {
             {
                 'label': 'ubunde eintal',
                 'example': 'Dette er ei [liste].',
-                'grammatical_features_item_ids': ['Q110786', 'Q16123764'],
+                'grammatical_features_item_ids': ['Q110786', 'Q53997857'],
             },
             {
                 'label': 'bunde eintal',
@@ -6560,7 +6560,7 @@ templates: Dict[str, Union[str, Template]] = {
             {
                 'label': 'ubunde fleirtal',
                 'example': 'Dette er nokre [lister].',
-                'grammatical_features_item_ids': ['Q146786', 'Q16123764'],
+                'grammatical_features_item_ids': ['Q146786', 'Q53997857'],
             },
             {
                 'label': 'bunde fleirtal',
@@ -6582,7 +6582,7 @@ templates: Dict[str, Union[str, Template]] = {
             {
                 'label': 'ubunde eintal',
                 'example': 'Dette er ein [båt].',
-                'grammatical_features_item_ids': ['Q110786', 'Q16123764'],
+                'grammatical_features_item_ids': ['Q110786', 'Q53997857'],
             },
             {
                 'label': 'bunde eintal',
@@ -6592,7 +6592,7 @@ templates: Dict[str, Union[str, Template]] = {
             {
                 'label': 'ubunde fleirtal',
                 'example': 'Dette er nokre [båtar].',
-                'grammatical_features_item_ids': ['Q146786', 'Q16123764'],
+                'grammatical_features_item_ids': ['Q146786', 'Q53997857'],
             },
             {
                 'label': 'bunde fleirtal',
@@ -6614,7 +6614,7 @@ templates: Dict[str, Union[str, Template]] = {
             {
                 'label': 'ubunde eintal',
                 'example': 'Dette er eit [hus].',
-                'grammatical_features_item_ids': ['Q110786', 'Q16123764'],
+                'grammatical_features_item_ids': ['Q110786', 'Q53997857'],
             },
             {
                 'label': 'bunde eintal',
@@ -6624,7 +6624,7 @@ templates: Dict[str, Union[str, Template]] = {
             {
                 'label': 'ubunde fleirtal',
                 'example': 'Dette er nokre [hus].',
-                'grammatical_features_item_ids': ['Q146786', 'Q16123764'],
+                'grammatical_features_item_ids': ['Q146786', 'Q53997857'],
             },
             {
                 'label': 'bunde fleirtal',
@@ -7947,7 +7947,7 @@ templates: Dict[str, Union[str, Template]] = {
             {
                 'label': 'nominativ singular, obestämd',
                 'example': 'Det här är en [bil].',
-                'grammatical_features_item_ids': ['Q131105', 'Q110786', 'Q16123764'],
+                'grammatical_features_item_ids': ['Q131105', 'Q110786', 'Q53997857'],
             },
             {
                 'label': 'nominativ singular, bestämd',
@@ -7957,7 +7957,7 @@ templates: Dict[str, Union[str, Template]] = {
             {
                 'label': 'nominativ plural, obestämd',
                 'example': 'Jag ser flera [bilar].',
-                'grammatical_features_item_ids': ['Q131105', 'Q146786', 'Q16123764'],
+                'grammatical_features_item_ids': ['Q131105', 'Q146786', 'Q53997857'],
             },
             {
                 'label': 'nominativ plural, bestämd',
@@ -7968,7 +7968,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'section_break': True,
                 'label': 'genitiv singular, obestämd',
                 'example': 'En [bils] utseende.',
-                'grammatical_features_item_ids': ['Q146233', 'Q110786', 'Q16123764'],
+                'grammatical_features_item_ids': ['Q146233', 'Q110786', 'Q53997857'],
             },
             {
                 'label': 'genitiv singular, bestämd',
@@ -7978,7 +7978,7 @@ templates: Dict[str, Union[str, Template]] = {
             {
                 'label': 'genitiv plural, obestämd',
                 'example': 'Många [bilars] utseende.',
-                'grammatical_features_item_ids': ['Q146233', 'Q146786', 'Q16123764'],
+                'grammatical_features_item_ids': ['Q146233', 'Q146786', 'Q53997857'],
             },
             {
                 'label': 'genitiv plural, bestämd',
@@ -8000,7 +8000,7 @@ templates: Dict[str, Union[str, Template]] = {
             {
                 'label': 'nominativ singular, obestämd',
                 'example': 'Det här är ett [bord].',
-                'grammatical_features_item_ids': ['Q131105', 'Q110786', 'Q16123764'],
+                'grammatical_features_item_ids': ['Q131105', 'Q110786', 'Q53997857'],
             },
             {
                 'label': 'nominativ singular, bestämd',
@@ -8010,7 +8010,7 @@ templates: Dict[str, Union[str, Template]] = {
             {
                 'label': 'nominativ plural, obestämd',
                 'example': 'Jag ser flera [bord].',
-                'grammatical_features_item_ids': ['Q131105', 'Q146786', 'Q16123764'],
+                'grammatical_features_item_ids': ['Q131105', 'Q146786', 'Q53997857'],
             },
             {
                 'label': 'nominativ plural, bestämd',
@@ -8021,7 +8021,7 @@ templates: Dict[str, Union[str, Template]] = {
                 'section_break': True,
                 'label': 'genitiv singular, obestämd',
                 'example': 'Ett [bords] utseende.',
-                'grammatical_features_item_ids': ['Q146233', 'Q110786', 'Q16123764'],
+                'grammatical_features_item_ids': ['Q146233', 'Q110786', 'Q53997857'],
             },
             {
                 'label': 'genitiv singular, bestämd',
@@ -8031,7 +8031,7 @@ templates: Dict[str, Union[str, Template]] = {
             {
                 'label': 'genitiv plural, obestämd',
                 'example': 'Många [bords] utseende.',
-                'grammatical_features_item_ids': ['Q146233', 'Q146786', 'Q16123764'],
+                'grammatical_features_item_ids': ['Q146233', 'Q146786', 'Q53997857'],
             },
             {
                 'label': 'genitiv plural, bestämd',
@@ -8129,13 +8129,13 @@ templates: Dict[str, Union[str, Template]] = {
             {
                 'label': 'obestämd singular, utrum',
                 'example': 'en [tolvårig] pojke',
-                'grammatical_features_item_ids': ['Q16123764', 'Q110786', 'Q1305037', 'Q3482678'],
+                'grammatical_features_item_ids': ['Q53997857', 'Q110786', 'Q1305037', 'Q3482678'],
                 'grammatical_features_item_ids_optional': set(['Q3482678']),
             },
             {
                 'label': 'obestämd singular, neutrum',
                 'example': 'ett [tolvårigt] barn',
-                'grammatical_features_item_ids': ['Q16123764', 'Q110786', 'Q1775461', 'Q3482678'],
+                'grammatical_features_item_ids': ['Q53997857', 'Q110786', 'Q1775461', 'Q3482678'],
                 'grammatical_features_item_ids_optional': set(['Q3482678']),
             },
             {
@@ -8171,12 +8171,12 @@ templates: Dict[str, Union[str, Template]] = {
             {
                 'label': 'positiv obestämd singular, utrum',
                 'example': 'en [ung] pojke',
-                'grammatical_features_item_ids': ['Q16123764', 'Q110786', 'Q1305037', 'Q3482678'],
+                'grammatical_features_item_ids': ['Q53997857', 'Q110786', 'Q1305037', 'Q3482678'],
             },
             {
                 'label': 'positiv obestämd singular, neutrum',
                 'example': 'ett [ungt] barn',
-                'grammatical_features_item_ids': ['Q16123764', 'Q110786', 'Q1775461', 'Q3482678'],
+                'grammatical_features_item_ids': ['Q53997857', 'Q110786', 'Q1775461', 'Q3482678'],
             },
             {
                 'label': 'positiv bestämd singular, maskulinum',
