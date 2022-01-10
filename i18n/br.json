@@ -3,7 +3,8 @@
 		"authors": [
 			"Fulup",
 			"Iriep",
-			"VIGNERON"
+			"VIGNERON",
+			"Y-M D"
 		]
 	},
 	"create": "Krouiñ",
@@ -24,5 +25,7 @@
 	"edit-link": "aozañ",
 	"edit-general": "Emaoc'h er mod “aozañ”. Ma cheñchit an talvoudoù dindan e vo aozet, ouzhpennet pe dilamet furmoù 'zo eus al leksem pal.",
 	"edit-mismatch-warning": "Evit doare ne glot ket al leksem-mañ gant ar patrom! Gwiriit mat eo ar patrom a zere evit al leksem a-raok kenderc'hel ganti.",
-	"no-grammatical-features": "perzh yezhadurel ebet"
+	"no-grammatical-features": "perzh yezhadurel ebet",
+	"title-create": "$1 (krouiñ)",
+	"title-edit": "$1 (kemmañ)"
 }
