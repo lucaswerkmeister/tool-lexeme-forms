@@ -6635,6 +6635,66 @@ templates: Dict[str, Union[str, Template]] = {
         'statements': statements('P5185', 'Q1775461'),
     },
 
+    'odia-adjective-nongendered': {
+        '@attribution': {'users': ['Psubhashish'], 'title': 'Wikidata:Wikidata Lexeme Forms/Odia'},
+        'label': 'ଲିଙ୍ଗବିହୀନ',
+        'language_item_id': 'Q33810',
+        'language_code': 'or',
+        'lexical_category_item_id': 'Q34698',
+        'forms': [
+            {
+                'label': 'ଅସ୍ତିବାଚକ',
+                'example': 'ଏଇଟି ଏକ [କ୍ଷୀପ୍ର] କୁକୁର ।',
+                'grammatical_features_item_ids': ['Q3482678'],
+            },
+            {
+                'label': 'ତୁଳନାତ୍ମକ-ମଧ୍ୟ',
+                'example': 'ଏ କୁକରଟି ଆର କୁକୁରଠାରୁ [କ୍ଷୀପ୍ରତର] ।',
+                'grammatical_features_item_ids': ['Q14169499'],
+            },
+            {
+                'label': 'ତୁଳନାତ୍ମକ-ଶ୍ରେଷ୍ଠ',
+                'example': 'ଏ କୁକୁର ଦୁନିଆର ସବୁ କୁକୁରଙ୍କ ଭିତରେ [କ୍ଷୀପ୍ରତମ] ।',
+                'grammatical_features_item_ids': ['Q1817208'],
+            },
+        ],
+    },
+
+    'odia-adjective-gendered': {
+        '@attribution': {'users': ['Psubhashish'], 'title': 'Wikidata:Wikidata Lexeme Forms/Odia'},
+        'label': 'ଲିଙ୍ଗସୂଚକ ବିଶେଷଣ',
+        'language_item_id': 'Q33810',
+        'language_code': 'or',
+        'lexical_category_item_id': 'Q34698',
+        'forms': [
+            {
+                'label': 'ବିଶେଷଣ-ମହିଳା',
+                'example': 'ସେ ଗୋଟିଏ [ଜ୍ଞାନବତୀ] ଝିଅ ।',
+                'grammatical_features_item_ids': ['Q1775415'],
+            },
+            {
+                'label': 'ବିଶେଷଣ-ପୁରୁଷ',
+                'example': 'ସେ ଗୋଟିଏ [ଜ୍ଞାନବାନ] ପିଲା ।',
+                'grammatical_features_item_ids': ['Q499327'],
+            },
+        ],
+    },
+
+    'odia-adverb': {
+        '@attribution': {'users': ['Psubhashish'], 'title': 'Wikidata:Wikidata Lexeme Forms/Odia'},
+        'label': 'ଓଡ଼ିଆ କ୍ରିୟା ବିଶେଷଣ',
+        'language_item_id': 'Q33810',
+        'language_code': 'or',
+        'lexical_category_item_id': 'Q380057',
+        'forms': [
+            {
+                'label': 'କ୍ରିୟା ବିଶେଷଣ',
+                'example': 'ସେ ଆଜି [ଧୀରେଧୀରେ] ହକି ଖେଳୁଛନ୍ତି ।',
+                'grammatical_features_item_ids': [],
+            },
+        ],
+    },
+
     'polish-noun': {
         '@attribution': {'users': ['KaMan'], 'title': 'Wikidata:Wikidata Lexeme Forms/Polish'},
         'label': 'polski rzeczownik, prosta odmiana bez wariantów w żadnym z przypadków',
