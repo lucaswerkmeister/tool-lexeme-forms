@@ -6884,7 +6884,7 @@ templates: Dict[str, Union[str, Template]] = {
         'forms': [
             {
                 'label': 'କ୍ରିୟା ବିଶେଷଣ',
-                'example': 'ସେ ଆଜି [ଧୀରେଧୀରେ] ହକି ଖେଳୁଛନ୍ତି ।',
+                'example': 'ସେ [ଧୀରେ] ଚାଲୁଛନ୍ତି ।',
                 'grammatical_features_item_ids': [],
             },
         ],
