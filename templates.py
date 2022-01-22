@@ -6830,6 +6830,101 @@ templates: Dict[str, Union[str, Template]] = {
         'statements': statements('P5185', 'Q1775461'),
     },
 
+    'odia-noun-human': {
+        '@attribution': {'users': ['Psubhashish'], 'title': 'Wikidata:Wikidata Lexeme Forms/Odia'},
+        'label': 'ବ୍ୟକ୍ତିବାଚକ ବିଶେଷ୍ୟ',
+        'language_item_id': 'Q33810',
+        'language_code': 'or',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'କର୍ତ୍ତୃବାଚ୍ଯ/କର୍ତ୍ତାକାରକ',
+                'example': '[ଖେଳାଳି] ହକି ଖେଳୁଛନ୍ତି ।',
+                'grammatical_features_item_ids': ['Q131105'],
+            },
+            {
+                'label': 'କର୍ମ କାରକ',
+                'example': 'ସେ [ଖେଳାଳିଙ୍କୁ] ଉତ୍ସାହିତ କଲେ ।',
+                'grammatical_features_item_ids': ['Q146078'],
+            },
+            {
+                'label': 'କରଣ କାରକ',
+                'example': 'ସେ [ଖେଳାଳିଙ୍କଦ୍ୱାରା] ହକିର ପ୍ରସାର ହୋଇଛି ।',
+                'grammatical_features_item_ids': ['Q192997'],
+            },
+            {
+                'label': 'ସମ୍ପ୍ରଦାନ କାରକ',
+                'example': 'ସେ [ଖେଳାଳିଙ୍କୁ] ପୁରସ୍କାର ଦେଲେ ।',
+                'grammatical_features_item_ids': ['Q145599'],
+            },
+            {
+                'label': 'ଅପାଦାନ କାରକ',
+                'example': 'ସେ [ଖେଳାଳିଙ୍କଠାରୁ] ଭଲ ଖେଳାଳି ଏଠି ଆଉ କାହିଁ?',
+                'grammatical_features_item_ids': ['Q156986'],
+            },
+            {
+                'label': 'ସମ୍ବନ୍ଧ ପଦ',
+                'example': 'ଏ [ଖେଳାଳିଙ୍କ] ସ୍ଥାନ ଫରୱାର୍ଡ଼ ।',
+                'grammatical_features_item_ids': ['Q146233'],
+            },
+            {
+                'label': 'ଅଧିକରଣ କାରକ',
+                'example': 'ଏ [ଖେଳାଳିଙ୍କଠାରେ] ଦଳର ଭାରି ବିଶ୍ୱାସ ।',
+                'grammatical_features_item_ids': ['Q202142'],
+            },
+        ],
+    },
+
+    'odia-noun-nonhuman': {
+        '@attribution': {'users': ['Psubhashish'], 'title': 'Wikidata:Wikidata Lexeme Forms/Odia'},
+        'label': 'ପ୍ରାଣୀବାଚକ ଓ ଅପ୍ରାଣୀବାଚକ ବିଶେଷ୍ୟ',
+        'language_item_id': 'Q33810',
+        'language_code': 'or',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'କର୍ତ୍ତୃବାଚ୍ଯ/କର୍ତ୍ତାକାରକ',
+                'example': '[କୁକୁରଟି] ମାଂସ ଖାଉଛି ।',
+                'grammatical_features_item_ids': ['Q131105'],
+            },
+            {
+                'label': 'କର୍ମ କାରକ',
+                'example': 'ସେ [କୁକୁରକୁ] ଖେଳାଉଛନ୍ତି ।',
+                'grammatical_features_item_ids': ['Q146078'],
+            },
+            {
+                'label': 'କରଣ କାରକ',
+                'example': '[କୁକୁରଦ୍ୱାରା] ପୋଲିସ ଅନୁସନ୍ଧାନ କରୁଛି ।',
+                'grammatical_features_item_ids': ['Q192997'],
+            },
+            {
+                'label': 'ସମ୍ପ୍ରଦାନ କାରକ',
+                'example': '[କୁକୁରକୁ] ଆଉ ଦୁଇଖଣ୍ଡ ମାଂସ ଦିଅ ।',
+                'grammatical_features_item_ids': ['Q145599'],
+            },
+            {
+                'label': 'ଅପାଦାନ କାରକ',
+                'example': '[କୁକୁରଠାରୁ] ବଳି ସାଙ୍ଗ କିଏ?',
+                'grammatical_features_item_ids': ['Q156986'],
+            },
+            {
+                'label': 'ସମ୍ବନ୍ଧ ପଦ',
+                'example': 'ଆମ [କୁକୁରର] ଭୁକିବା ଶୁଭୁଛି ।',
+                'grammatical_features_item_ids': ['Q146233'],
+            },
+            {
+                'label': 'ଅଧିକରଣ କାରକ',
+                'example': 'ତାଙ୍କର ଏ [କୁକୁରଠାରେ] ଭାରୀ ଭାବ ।',
+                'grammatical_features_item_ids': ['Q202142'],
+            },
+            {
+                'label': 'ସମ୍ବୋଧକ କାରକ',
+                'example': '[କୁକୁରରେ] କୁକୁର! କେଉଁଠି ଅଛୁ?',
+                'grammatical_features_item_ids': ['Q185077'],
+            },
+        ],
+    },
+
     'odia-adjective-nongendered': {
         '@attribution': {'users': ['Psubhashish'], 'title': 'Wikidata:Wikidata Lexeme Forms/Odia'},
         'label': 'ଲିଙ୍ଗବିହୀନ',
