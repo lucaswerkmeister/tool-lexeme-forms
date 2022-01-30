@@ -6927,7 +6927,7 @@ templates: Dict[str, Union[str, Template]] = {
 
     'odia-adjective-nongendered': {
         '@attribution': {'users': ['Psubhashish'], 'title': 'Wikidata:Wikidata Lexeme Forms/Odia'},
-        'label': 'ଲିଙ୍ଗବିହୀନ',
+        'label': 'ଲିଙ୍ଗବିହୀନ ବିଶେଷଣ',
         'language_item_id': 'Q33810',
         'language_code': 'or',
         'lexical_category_item_id': 'Q34698',
