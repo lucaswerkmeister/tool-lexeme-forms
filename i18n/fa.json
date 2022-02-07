@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ladsgroup"
+			"Ladsgroup",
+			"LordProfo"
 		]
 	},
 	"create": "ایجاد",
@@ -19,5 +20,9 @@
 	"description-with-forms-and-senses": "$1، {{PLURAL:$2|0=بدون فرم|یک فرم|$2 فرم}} و {{PLURAL:$3|0=بدون معنی|یک معنی|$3 معنی}}",
 	"bulk-link": "ویرایش انبوه",
 	"bulk-format-help": "راهنمای قالب‌بندی",
-	"bulk-not-allowed": "شما دسترسی لازم برای استفاده از ویرایش انبوه را ندارید. شرمنده."
+	"bulk-not-allowed": "شما دسترسی لازم برای استفاده از ویرایش انبوه را ندارید. شرمنده.",
+	"edit-link": "ویرایش",
+	"title-create": "$1 (ایجاد کردن)",
+	"title-advanced": "$1 (پیشرفته)",
+	"title-edit": "$1 (ویرایش)"
 }
