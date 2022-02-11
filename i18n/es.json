@@ -13,7 +13,6 @@
 	"csrf-warning": "Lo sentimos, no pudimos procesar esta solicitud (<abbr title=\"Cross-site request forgery\">CSRF</abbr> protection failed). Por favor, intenta enviar el formulario nuevamente.",
 	"duplicates-warning": "Los lexemas siguientes ya tienen un lema y un código lingüístico idéntico a aquel que estás intentado crear:",
 	"duplicates-instructions": "Si estás seguro que {{PLURAL:$1|es diferente|son diferentes}}, marca la casilla al final del formato.",
-	"duplicates-create": "Cree un nuevo lexema de todos modos.",
 	"no-duplicate": "Este no es un duplicado de un lexema existente.",
 	"form-optional": "&#32;(opcional)",
 	"advanced": "Avanzado",
@@ -30,9 +29,5 @@
 	"edit-general": "Estás en modo de \"edición\". Cambiar los valores editará, añadirá o removerá campos del lexema objetivo.",
 	"edit-mismatch-warning": "¡Este lexema parece no quedar muy bien con esta plantilla! Por favor revisa de nuevo que es la plantilla correcta para este lexema antes de continuar.",
 	"no-grammatical-features": "sin características gramaticales",
-	"title-create": "$1 (crear)",
-	"title-advanced": "$1 (avanzado)",
-	"title-bulk": "$1 (a granel)",
-	"title-edit": "Tipo de ediciones: $1",
 	"login-hint": "Necesita [$1 iniciar sesión] antes de que pueda hacer cambios usando esta herramienta."
 }
