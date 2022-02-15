@@ -10,14 +10,19 @@
 	"csrf-warning": "Pardonu, ni ne povis procesi ĉi tiun peton (protekto kontraŭ <abbr title=\"Cross-site request forgery\">CSRF</abbr> malsucesis). Bonvolu provi submeti la formularon denove.",
 	"duplicates-warning": "La {{PLURAL:$1|jena ekzistanta leksemo|jenaj ekzistantaj leksemoj}} havas saman lemo kaj lingva kodo kiel tiu kiun vi provis krei:",
 	"duplicates-instructions": "Se vi certas, ke {{PLURAL:$1|ĝi estas malsama|ili estas malsamaj}}, marku la markobutonon ĉe la malsupro de la formo.",
+	"duplicates-create": "Krei novan leksemon ĉiuokaze.",
 	"no-duplicate": "Ĉi tiu ne estas duplikato de ekzistanta leksemo.",
+	"form-optional": "&#32;(nedeviga)",
 	"advanced": "Altnivela reĝimo",
 	"advanced-general": "Vi estas en “altnivela” reĝimo.",
 	"advanced-lexeme-id": "Vi povas enmeti lekseman identifikilon por aldoni formojn al ekzistanta leksemo anstataŭ krei novan leksemon. Lasu formojn kiuj jam ekzistas pri tio leksemo malplenajn, alie la formoj estos duobligitaj!",
 	"advanced-partial-forms": "Vi povas lasi iujn formojn malplenaj por ke ili ne aldoniĝos. Certiĝu, ke vi hazarde ne lasas iun formojn!",
 	"lexeme-id": "Leksema identifikilo",
 	"advanced-partial-forms-hint": "Por krei leksemojn kun mankantaj formoj, ŝanĝu al altnivela reĝimo.",
+	"generated-via": "generita per",
 	"edit-link": "redakti",
 	"edit-form-list-item": "$1, $2, {{PLURAL:$3|0=neniu deklaro|unu deklaro|$3 deklaroj}}",
-	"no-grammatical-features": "neniu gramatika trajto"
+	"no-grammatical-features": "neniu gramatika trajto",
+	"title-create": "$1 (krei)",
+	"title-edit": "$1 (redakti)"
 }
