@@ -10,8 +10,11 @@
 	"bulk-link": "modé makéh",
 	"bulk-format-help": "wantuan format",
 	"edit-link": "uah",
+	"edit-form-list-item": "$1, $2, {{PLURAL:$3|0=nénten wénten penampen|asiki penampen|$3 penampen}}",
+	"no-grammatical-features": "nénten wénten pawigunaan tata basa",
 	"title-create": "$1 (kardi)",
 	"title-advanced": "$1 (lantur)",
 	"title-bulk": "$1 (makéh)",
-	"title-edit": "$1 (uah)"
+	"title-edit": "$1 (uah)",
+	"login-hint": "Ragané perlu [$1 manjing log] mangda ragané prasida ngentosin alat puniki."
 }
