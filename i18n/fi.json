@@ -3,6 +3,7 @@
 		"authors": [
 			"Joquliina",
 			"MITO",
+			"Markus Mikkonen",
 			"Shinnin"
 		]
 	},
@@ -20,6 +21,7 @@
 	"lexeme-id": "Lekseemi-tunniste",
 	"advanced-partial-forms-hint": "Luodaksesi lekseemin ilman joitakin taivutusmuotoja, siirry laajennettuun muokkaustilaan.",
 	"edit-link": "muokkaa",
+	"no-grammatical-features": "ei kieliopillisia ominaisuuksia",
 	"title-create": "$1 (luo)",
 	"title-advanced": "$1 (kehittynyt)",
 	"title-edit": "$1 (muokkaa)",
