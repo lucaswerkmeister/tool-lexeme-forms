@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Abijeet Patro",
+			"AnupamM",
 			"Saurmandal"
 		]
 	},
@@ -33,7 +34,7 @@
 	"edit-ambiguous-warning": "{{PLURAL:$1|यह लेक्सिमे रूप|ये लेक्सिमे रूप}} एक से ज़्यादा साँचों के रूपों से समान मेल {{PLURAL:$1|खाता है|खाते हैं}}।",
 	"edit-unmatched-warning": "{{PLURAL:$1|इस लेक्सिमे रूप|इन लेक्सिमे रूपों}} ने किसी भी साँचे के रूप के साथ मेल नहीं खाया:",
 	"edit-form-list-item": "$1, $2, {{PLURAL:$3|0=कोई बयान नहीं है|एक बयान है|$3 बयान हैं}}",
-	"no-grammatical-features": "कोई व्याकरणिक लक्षण नहीं है",
+	"no-grammatical-features": "कोई व्याकरणिक विशेषता नहीं है",
 	"title-create": "$1 (बनाएँ)",
 	"title-advanced": "$1 (आधुनिक)",
 	"title-bulk": "$1 (सामूहिक)",
