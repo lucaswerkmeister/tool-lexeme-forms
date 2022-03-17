@@ -28,6 +28,8 @@
 	"bulk-format-help": "formateringshjälp",
 	"bulk-not-allowed": "Du får dessvärre inte masskapa lexem. Beklagar.",
 	"bulk-first-field-not-lexeme-id": "Eftersom mallen har {{PLURAL:$1|en form|$1 former}} och rad $4 av inmatningen har {{PLURAL:$2|ett fält|$2 fält}} så ska det första fältet ha formen av ett lexem-ID, men <q>$3</q> har inte formen av ett lexem-ID. (Angav du en form för mycket i inmatningen?)",
+	"bulk-first-field-lexeme-id": "Då mallen har {{PLURAL:$1|en form|$1 former}} och rad $4 i inmatningen har {{PLURAL:$2|ett fält|$2 fält}} borde det första fältet inte se ut som ett lexem-ID, men det gör <q>$3</q>. (glömde du en form i inmatningen?)",
+	"bulk-wrong-number-of-fields": "Då mallen har {{PLURAL:$1|en form|$1 former}} borde varje inmatningsrad antingen ha så många fält (när man skapar ett nytt lexem) eller ett till (när man anger ett befintligt lexems ID att redigera), men rad $3 har i inmatningen har {{PLURAL:$2|ett fält|$2 fält}} istället.",
 	"bulk-optional-forms-hint": "Om du vill hoppa över vissa former kan du helt enkelt ange dem som tomma (t.ex. <kbd>...|||</kbd> för tre tomma former i slutet).",
 	"edit-link": "redigera",
 	"edit-general": "Du är i \"redigeringsläge\". Ändringar i värdena nedan kommer att redigera, lägga till eller ta bort former i det angivna lexemet.",
