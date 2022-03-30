@@ -10,6 +10,9 @@ class OrderedFlask(flask.Flask):
     """Flask subclass to use ordered parameter storage for requests"""
     request_class = OrderedRequest
 
+    # specific type needed to have access to .serializer
+    session_interface: flask.sessions.SecureCookieSessionInterface
+
 class TagOrderedMultiDict(flask.json.tag.JSONTag):
     __slots__ = ('serializer',)
     key = ' omd'
