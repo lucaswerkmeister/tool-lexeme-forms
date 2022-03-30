@@ -25,7 +25,7 @@ add the following steps after the `git rebase`:
 ```
 webservice shell
 source ~/www/python/venv/bin/activate
-pip install -r ~/www/python/src/requirements.txt # maybe add --upgrade
+pip-sync ~/www/python/src/requirements.txt
 ```
 
 If you’re fully restarting the webservice,
