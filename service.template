@@ -2,4 +2,3 @@
 # Provide default arguments for `webservice start` commands for this tool.
 backend: kubernetes
 type: python3.9
-canonical: True
