@@ -47,7 +47,7 @@ Note that a local setup will not actually perform edits unless you create a `con
 git clone https://phabricator.wikimedia.org/source/tool-lexeme-forms.git
 cd tool-lexeme-forms
 pip3 install -r requirements.txt
-FLASK_APP=app.py FLASK_ENV=development flask run --extra-files i18n/
+FLASK_APP=app.py FLASK_ENV=development flask run --extra-files i18n/en.json
 ```
 
 If you want, you can do this inside some virtualenv too.
