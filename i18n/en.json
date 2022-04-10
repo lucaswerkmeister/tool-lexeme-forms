@@ -37,5 +37,6 @@
 	"title-advanced": "$1 (advanced)",
 	"title-bulk": "$1 (bulk)",
 	"title-edit": "$1 (edit)",
-	"login-hint": "You need to [$1 log in] before you can make changes using this tool."
+	"login-hint": "You need to [$1 log in] before you can make changes using this tool.",
+	"ambiguous-template": "The template $1 no longer exists; it has been replaced by the following templates:"
 }

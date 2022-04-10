@@ -111,6 +111,12 @@ def test_text_direction(language_code, expected_direction):
 def test_if_no_such_template_redirect_known_template():
     assert lexeme_forms.if_no_such_template_redirect('english-noun') is None
 
+def test_if_no_such_template_redirect_renamed_template():
+    with lexeme_forms.app.test_client() as client:
+        response = client.get('/template/dutch-feminine-noun/')
+    assert response.status_code == 307
+    assert response.headers['location'].endswith('/template/dutch-noun-feminine/')
+
 def test_if_no_such_template_redirect_unknown_template():
     template_name = 'no-such-template'
     with lexeme_forms.app.test_request_context():
@@ -781,7 +787,7 @@ def test_get_all_templates_api():
     assert response.status_code == 200
     assert response.content_type == 'application/json'
     for template in json.loads(response.get_data(as_text=True)).values():
-        assert isinstance(template, str) or '@attribution' in template
+        assert isinstance(template, (str, list)) or '@attribution' in template
 
 def test_get_template_api_exists():
     with lexeme_forms.app.test_client() as client:

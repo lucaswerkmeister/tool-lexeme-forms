@@ -540,6 +540,17 @@ def if_no_such_template_redirect(template_name):
             **(dict(flask.request.view_args, template_name=templates[template_name])),
             **flask.request.args.to_dict(flat=False),
         ), code=307)
+    elif isinstance(templates[template_name], list):
+        replacement_templates = [
+            templates[replacement_name]
+            for replacement_name in templates[template_name]
+        ]
+        flask.g.interface_language_code = lang_lex2int(replacement_templates[0]['language_code'])
+        return flask.render_template(
+            'ambiguous-template.html',
+            template_name=template_name,
+            replacement_templates=replacement_templates,
+        )
     else:
         return None
 
@@ -716,6 +727,12 @@ def match_template_to_lexeme_id(wiki, lexeme_id, template_name):
         ), code=307)
 
     lexeme_data = get_lexeme_data(lexeme_id, wiki)
+
+    if isinstance(template, list):
+        return flask.jsonify([
+            match_template_to_lexeme_data(templates[replacement_name], lexeme_data)
+            for replacement_name in template
+        ])
 
     return flask.jsonify(match_template_to_lexeme_data(template, lexeme_data))
 
@@ -1003,6 +1020,11 @@ def get_template_api(template_name):
             'get_template_api',
             template_name=template,
         ), code=307)
+    elif isinstance(template, list):
+        return flask.jsonify([
+            templates[replacement_name]
+            for replacement_name in template
+        ])
     else:
         return flask.jsonify(template)
 

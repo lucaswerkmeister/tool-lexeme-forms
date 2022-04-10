@@ -61,7 +61,7 @@ def statements(property_id: str, item_id: str) -> dict:
     }
 
 
-templates: Dict[str, Union[str, Template]] = {
+templates: Dict[str, Union[str, list[str], Template]] = {
 
     'asturian-noun-masculine': {
         '@attribution': {'users': ['Oriciu'], 'title': 'Wikidata:Wikidata Lexeme Forms/Asturian'},
@@ -8947,7 +8947,7 @@ templates: Dict[str, Union[str, Template]] = {
 templates_without_redirects = {
     template_name: template
     for template_name, template in templates.items()
-    if not isinstance(template, str)
+    if isinstance(template, dict)
 }
 
 

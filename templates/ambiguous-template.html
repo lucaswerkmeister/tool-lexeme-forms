@@ -1,0 +1,13 @@
+{% from 'template_li.html' import template_li %}
+{% extends "base.html" %}
+{% block title %}Ambiguous template {{ template_name }} – {{ super() }}{% endblock title %}
+{% block main %}
+<div class="alert alert-primary" role="alert" lang="{{ g.interface_language_code | lang_int2html }}" dir="{{ g.interface_language_code | text_direction }}">
+  <p>{{ message_with_kwargs( 'ambiguous_template', template_name=template_name, replacement_templates_count=replacement_templates | length ) }}</p>
+  <ul>
+    {% for replacement_template in replacement_templates %}
+    {{ template_li( replacement_template ) }}
+    {% endfor %}
+  </ul>
+</div>
+{% endblock main %}

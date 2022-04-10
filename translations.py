@@ -31,6 +31,7 @@ variables = {
     'title_bulk': ['template_label'],
     'title_edit': ['template_label'],
     'login_hint': ['url'],
+    'ambiguous_template': ['template_name', 'replacement_templates_count'],
 }
 lists = {
     'edit_form_list_item': {'grammatical_feature_labels'},
