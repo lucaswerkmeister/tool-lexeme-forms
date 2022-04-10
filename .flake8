@@ -1,5 +1,7 @@
 # -*- mode: conf; -*-
 [flake8]
+exclude =
+    venv
 ignore =
     # expected 2 blank lines
     E302 # between functions and classes
