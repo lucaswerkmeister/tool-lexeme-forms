@@ -727,7 +727,7 @@ def get_lexeme_data(lexeme_id, wiki, revision=None):
         entities_data = session.session.get(
             f'{host}/wiki/Special:EntityData/{lexeme_id}.json?revision={revision}',
         ).json()
-    else:  # TODO when T128486 is fixed, use Special:EntityData without revision too, for better caching
+    else:
         entities_data = session.get(
             action='wbgetentities',
             ids=[lexeme_id],
