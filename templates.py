@@ -7258,12 +7258,12 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'two_column_sections': True,
         'forms': [
             {
-                'label': 'singular',
+                'label': 'singular normal',
                 'example': 'Ele tem um [nariz].',
                 'grammatical_features_item_ids': ['Q110786', 'Q3482678'],
             },
             {
-                'label': 'plural',
+                'label': 'plural normal',
                 'example': 'Eles têm uns [narizes].',
                 'grammatical_features_item_ids': ['Q146786', 'Q3482678'],
             },
@@ -7306,12 +7306,12 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'two_column_sections': True,
         'forms': [
             {
-                'label': 'singular feminino',
+                'label': 'singular feminino normal',
                 'example': 'Ela tem uma [boca].',
                 'grammatical_features_item_ids': ['Q110786', 'Q3482678'],
             },
             {
-                'label': 'plural feminino',
+                'label': 'plural feminino normal',
                 'example': 'Elas têm umas [bocas].',
                 'grammatical_features_item_ids': ['Q146786', 'Q3482678'],
             },
@@ -7755,22 +7755,22 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'two_column_sections': True,
         'forms': [
             {
-                'label': 'singular masculino',
+                'label': 'singular masculino normal',
                 'example': 'Eu vi um homem [alto].',
                 'grammatical_features_item_ids': ['Q499327', 'Q110786', 'Q3482678'],
             },
             {
-                'label': 'plural masculino',
+                'label': 'plural masculino normal',
                 'example': 'Eu vi uns homens [altos].',
                 'grammatical_features_item_ids': ['Q499327', 'Q146786', 'Q3482678'],
             },
             {
-                'label': 'singular feminino',
+                'label': 'singular feminino normal',
                 'example': 'Eu vi uma mulher [alta].',
                 'grammatical_features_item_ids': ['Q1775415', 'Q110786', 'Q3482678'],
             },
             {
-                'label': 'plural feminino',
+                'label': 'plural feminino normal',
                 'example': 'Eu vi umas mulheres [altas].',
                 'grammatical_features_item_ids': ['Q1775415', 'Q146786', 'Q3482678'],
             },
