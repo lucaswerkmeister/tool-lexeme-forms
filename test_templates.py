@@ -202,17 +202,24 @@ def test_sections_declared(template_name):
         assert template.get('two_column_sections', True)
 
 
-@pytest.mark.parametrize('template_name', templates.templates.keys())
+@pytest.mark.parametrize('template_name', [
+    template_name
+    for template_name, template in templates.templates.items()
+    if isinstance(template, (str, list))
+])
 def test_redirects_resolve_directly(template_name):
     template = templates.templates[template_name]
     if isinstance(template, str):
         template = [template]
-    if isinstance(template, list):
-        for target in template:
-            assert target in templates.templates
-            assert target in templates.templates_without_redirects
+    for target in template:
+        assert target in templates.templates
+        assert target in templates.templates_without_redirects
 
-@pytest.mark.parametrize('template_name', templates.templates.keys())
+@pytest.mark.parametrize('template_name', [
+    template_name
+    for template_name, template in templates.templates.items()
+    if isinstance(template, list)
+])
 def test_ambiguous_templates(template_name):
     """Check that ambiguous templates (where the replacement is a list)
     are actually ambiguous, i.e. have more than one replacement template.
@@ -220,6 +227,4 @@ def test_ambiguous_templates(template_name):
     Otherwise, the single replacement should be specified as a string instead,
     so that we can directly redirect to it."""
     template = templates.templates[template_name]
-    if not isinstance(template, list):
-        return
     assert len(template) > 1
