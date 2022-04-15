@@ -7249,6 +7249,87 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         ],
     },
 
+    'portuguese-noun-biform': {
+        '@attribution': {'users': ['EnaldoSS'], 'title': 'Wikidata:Wikidata Lexeme Forms/Portuguese'},
+        'label': 'substantivo biforme em português',
+        'language_item_id': 'Q5146',
+        'language_code': 'pt',
+        'lexical_category_item_id': 'Q1084',
+        'two_column_sections': True,
+        'forms': [
+            {
+                'label': 'masculino singular normal',
+                'example': 'Eu vi um [amigo] seu.',
+                'grammatical_features_item_ids': ['Q499327', 'Q110786', 'Q3482678'],
+            },
+            {
+                'label': 'masculino plural normal',
+                'example': 'Eu vi uns [amigos] seus.',
+                'grammatical_features_item_ids': ['Q499327', 'Q146786', 'Q3482678'],
+            },
+            {
+                'label': 'feminino singular normal',
+                'example': 'Eu vi uma [amiga] sua.',
+                'grammatical_features_item_ids': ['Q1775415', 'Q110786', 'Q3482678'],
+            },
+            {
+                'label': 'feminino plural normal',
+                'example': 'Eu vi umas [amigas] suas.',
+                'grammatical_features_item_ids': ['Q1775415', 'Q146786', 'Q3482678'],
+            },
+            {
+                'section_break': True,
+                'label': 'masculino singular diminutivo',
+                'example': 'Eu vi um [amiguinho] seu.',
+                'grammatical_features_item_ids': ['Q499327', 'q110786', 'Q108709'],
+                'optional': True,
+            },
+            {
+                'label': 'masculino plural diminutivo',
+                'example': 'Eu vi uns [amiguinhos] seus.',
+                'grammatical_features_item_ids': ['Q499327', 'Q146786', 'Q108709'],
+                'optional': True,
+            },
+            {
+                'label': 'feminino singular diminutivo',
+                'example': 'Eu vi uma [amiguinha] sua.',
+                'grammatical_features_item_ids': ['Q1775415', 'Q110786', 'Q108709'],
+                'optional': True,
+            },
+            {
+                'label': 'feminino plural diminutivo',
+                'example': 'Eu vi umas [amiguinhas] suas.',
+                'grammatical_features_item_ids': ['Q1775415', 'Q146786', 'Q108709'],
+                'optional': True,
+            },
+            {
+                'section_break': True,
+                'label': 'masculino singular aumentativo',
+                'example': 'Eu vi um [amigão] seu.',
+                'grammatical_features_item_ids': ['Q499327', 'Q110786', 'Q1358239'],
+                'optional': True,
+            },
+            {
+                'label': 'masculino plural aumentativo',
+                'example': 'Eu vi uns [amigões] seus.',
+                'grammatical_features_item_ids': ['Q499327', 'Q146786', 'Q1358239'],
+                'optional': True,
+            },
+            {
+                'label': 'feminino singular aumentativo',
+                'example': 'Eu vi uma [amigona] sua.',
+                'grammatical_features_item_ids': ['Q1775415', 'Q110786', 'Q1358239'],
+                'optional': True,
+            },
+            {
+                'label': 'feminino plural aumentativo',
+                'example': 'Eu vi umas [amigonas] suas.',
+                'grammatical_features_item_ids': ['Q1775415', 'Q146786', 'Q1358239'],
+                'optional': True,
+            },
+        ],
+    },
+
     'portuguese-noun-masculine': {
         '@attribution': {'users': ['EnaldoSS'], 'title': 'Wikidata:Wikidata Lexeme Forms/Portuguese'},
         'label': 'substantivo masculino em português',
@@ -7356,6 +7437,28 @@ templates: Dict[str, Union[str, list[str], Template]] = {
             },
         ],
         'statements': statements('P5185', 'Q1775415'),
+    },
+
+    'portuguese-noun-uniform': {
+        '@attribution': {'users': ['EnaldoSS'], 'title': 'Wikidata:Wikidata Lexeme Forms/Portuguese'},
+        'label': 'substantivo uniforme em português',
+        'language_item_id': 'Q5146',
+        'language_code': 'pt',
+        'lexical_category_item_id': 'Q1084',
+        'two_column_sections': True,
+        'forms': [
+            {
+                'label': 'uniforme singular normal',
+                'example': 'Nós temos que encontrar aquele(a) [motorista] hoje mesmo.',
+                'grammatical_features_item_ids': ['Q110786', 'Q3482678'],
+            },
+            {
+                'label': 'uniforme plural normal',
+                'example': 'Nós temos que encontrar aqueles(as) [motoristas] hoje mesmo.',
+                'grammatical_features_item_ids': ['Q146786', 'Q3482678'],
+            },
+        ],
+        'statements': statements('P5185', 'Q18478758'),
     },
 
     'portuguese-verb': {
@@ -7746,9 +7849,14 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         ],
     },
 
-    'portuguese-adjective': {
+    'portuguese-adjective': [
+        'portuguese-adjective-biform',
+        'portuguese-adjective-uniform',
+    ],
+
+    'portuguese-adjective-biform': {
         '@attribution': {'users': ['EnaldoSS', 'Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/Portuguese'},
-        'label': 'adjetivo em português',
+        'label': 'adjetivo biforme em português',
         'language_item_id': 'Q5146',
         'language_code': 'pt',
         'lexical_category_item_id': 'Q34698',
@@ -7852,6 +7960,28 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         ],
     },
 
+    'portuguese-adjective-uniform': {
+        '@attribution': {'users': ['EnaldoSS', 'Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/Portuguese'},
+        'label': 'adjetivo uniforme em português',
+        'language_item_id': 'Q5146',
+        'language_code': 'pt',
+        'lexical_category_item_id': 'Q34698',
+        'two_column_sections': True,
+        'forms': [
+            {
+                'label': 'uniforme singular normal',
+                'example': 'Acho sim que ele(a) é um(a) bom(a) [artista].',
+                'grammatical_features_item_ids': ['Q110786', 'Q3482678'],
+            },
+            {
+                'label': 'uniforme plural normal',
+                'example': 'Acho sim que eles(as) são bons(as) [artistas].',
+                'grammatical_features_item_ids': ['Q146786', 'Q3482678'],
+            },
+        ],
+        'statements': statements('P5185', 'Q18478758'),
+    },
+
     'portuguese-adverb-modal': {
         '@attribution': {'users': ['EnaldoSS'], 'title': 'Wikidata:Wikidata Lexeme Forms/Portuguese'},
         'label': 'advérbio de modo em português',
@@ -7868,16 +7998,83 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'statements': statements('P31', 'Q1941737'),
     },
 
-    'portuguese-idiom': {
+    'portuguese-idiom': [
+        'portuguese-phrase-nominal',
+        'portuguese-phrase-verbal',
+        'portuguese-phrase-adjectival',
+        'portuguese-phrase-adverbial',
+    ],
+
+    'portuguese-phrase-nominal': {
         '@attribution': {'users': ['EnaldoSS'], 'title': 'Wikidata:Wikidata Lexeme Forms/Portuguese'},
-        'label': 'expressão idiomática em português',
+        'label': 'frase nominal em português',
         'language_item_id': 'Q5146',
         'language_code': 'pt',
-        'lexical_category_item_id': 'Q184511',
+        'lexical_category_item_id': 'Q1401131',
         'forms': [
             {
-                'label': 'Expressão idiomática',
+                'label': 'Frase nominal',
+                'example': 'João não entendeu muito bem o que ela quis dizer com [fundo do poço].',
+                'grammatical_features_item_ids': [],
+            },
+        ],
+    },
+
+    'portuguese-phrase-verbal': {
+        '@attribution': {'users': ['EnaldoSS'], 'title': 'Wikidata:Wikidata Lexeme Forms/Portuguese'},
+        'label': 'frase verbal em português',
+        'language_item_id': 'Q5146',
+        'language_code': 'pt',
+        'lexical_category_item_id': 'Q1778442',
+        'forms': [
+            {
+                'label': 'Frase verbal',
                 'example': 'João não entendeu muito bem o que ela quis dizer com [abandonar o barco].',
+                'grammatical_features_item_ids': [],
+            },
+        ],
+    },
+
+    'portuguese-phrase-adjectival': {
+        '@attribution': {'users': ['EnaldoSS'], 'title': 'Wikidata:Wikidata Lexeme Forms/Portuguese'},
+        'label': 'frase adjetival em português',
+        'language_item_id': 'Q5146',
+        'language_code': 'pt',
+        'lexical_category_item_id': 'Q357760',
+        'forms': [
+            {
+                'label': 'Frase adjetival',
+                'example': 'João não entendeu muito bem o que ela quis dizer com [fora de moda].',
+                'grammatical_features_item_ids': [],
+            },
+        ],
+    },
+
+    'portuguese-phrase-adverbial': {
+        '@attribution': {'users': ['EnaldoSS'], 'title': 'Wikidata:Wikidata Lexeme Forms/Portuguese'},
+        'label': 'frase adverbial em português',
+        'language_item_id': 'Q5146',
+        'language_code': 'pt',
+        'lexical_category_item_id': 'Q3734650',
+        'forms': [
+            {
+                'label': 'Frase adverbial',
+                'example': 'João não entendeu muito bem o que ela quis dizer com [no dia de São Nunca].',
+                'grammatical_features_item_ids': [],
+            },
+        ],
+    },
+
+    'portuguese-proverb': {
+        '@attribution': {'users': ['EnaldoSS'], 'title': 'Wikidata:Wikidata Lexeme Forms/Portuguese'},
+        'label': 'provérbio em português',
+        'language_item_id': 'Q5146',
+        'language_code': 'pt',
+        'lexical_category_item_id': 'Q35102',
+        'forms': [
+            {
+                'label': 'Provérbio',
+                'example': 'Se ela estivesse aqui, diria que [em boca fechada não entra mosca].',
                 'grammatical_features_item_ids': [],
             },
         ],
