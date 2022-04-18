@@ -40,5 +40,6 @@
 	"title-advanced": "$1 (gelişmiş)",
 	"title-bulk": "$1 (toplu)",
 	"title-edit": "$1 (düzenle)",
-	"login-hint": "Bu aracı kullanarak değişiklik yapmadan önce [$1 giriş yapmalısınız]."
+	"login-hint": "Bu aracı kullanarak değişiklik yapmadan önce [$1 giriş yapmalısınız].",
+	"ambiguous-template": "$1 şablonu artık mevcut değil; şu şablonlarla değiştirilmiş:"
 }

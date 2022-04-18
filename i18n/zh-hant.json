@@ -38,5 +38,6 @@
 	"title-advanced": "$1（進階）",
 	"title-bulk": "$1（批量）",
 	"title-edit": "$1（編輯）",
-	"login-hint": "在您使用此工具來做出更改前，您需要[$1 登入]。"
+	"login-hint": "在您使用此工具來做出更改前，您需要[$1 登入]。",
+	"ambiguous-template": "模板 $1 已不存在，可能是被以下模板替換："
 }

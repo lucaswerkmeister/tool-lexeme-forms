@@ -1,0 +1,42 @@
+{
+	"@metadata": {
+		"authors": [
+			"Tofeiku"
+		]
+	},
+	"create": "Cipta",
+	"csrf-warning": "Maaf, kami tidak dapat memproseskan permohonan ini (<abbr title=\"Cross-site request forgery\">CSRF</abbr> perlindungan gagal). Sila cuba menyerahkan borang lagi.",
+	"duplicates-warning": "The following existing {{PLURAL:$1|Leksem}} yang ada berikut mempunyai lema dan kod bahasa yang sama seperti yang anda cuba cipta:",
+	"duplicates-instructions": "Jika anda pasti {{PLURAL:$1|ia}} berbeza, tanda kotak di bawah borang.",
+	"duplicates-create": "Cipta leksem baru sahaja.",
+	"no-duplicate": "Ini bukan pendua leksem yang ada.",
+	"form-optional": "&#32;(pilihan)",
+	"advanced": "Maju",
+	"advanced-general": "Anda dalam mod “maju”.",
+	"advanced-lexeme-id": "Anda boleh masukkan ID leksem untuk menambahkan bentuk ke leksem yang ada daripada mencipta yang baru. Tinggalkan sebarang bentuk yang sudah wujud di leksem yang kosong. Kalau tidak, ia akan diduplikasikan!",
+	"advanced-partial-forms": "Anda boleh meninggalkan beberapa bentuk kosong agar tidak akan ditambah. Pastikan anda tidak tertinggal mana-mana bentuk!",
+	"lexeme-id": "ID Leksem",
+	"advanced-partial-forms-hint": "Untuk mencipta leksem dengan beberapa bentuk yang hilang, tukar ke mod maju.",
+	"generated-via": "dijana dengan",
+	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=tiada bentuk|satu bentuk|$2 bentuk}} dan {{PLURAL:$3|0=tiada maksud|satu maksud|$3 maksud}}",
+	"bulk-link": "mod pukal",
+	"bulk-format-help": "bantuan format",
+	"bulk-not-allowed": "{{GENDER:$1|Anda}} tidak dibenarkan menggunakan mod pukal. Maaf.",
+	"bulk-first-field-not-lexeme-id": "Memandangkan templat tersebut mempunyai {{PLURAL:$1|satu bentuk|$1 bentuk}} dan baris $4 masukan mempunyai {{PLURAL:$2|satu medan|$2 medan}}, medan pertama patut rupa seperti ID leksem tetapi <q>$3</q> tidak rupa seperti ID leksem. (Adakah anda tentukan satu bentuk terlalu banyak dalam masukan?)",
+	"bulk-first-field-lexeme-id": "Memandangkan templat tersebut mempunyai {{PLURAL:$1|satu bentuk|$1 bentuk}} dan baris $4 masukan mempunyai {{PLURAL:$2|satu medan|$2 medan}}, medan pertama sepatutnya tidak rupa seperti ID leksem tetapi <q>$3</q> rupa seperti satu. (Adakah anda lupa bentuk dalam masukan?)",
+	"bulk-wrong-number-of-fields": "Memandangkan templat tersebut mempunyai {{PLURAL:$1|satu bentuk|$1 bentuk}}, setiap baris masukan patut mempunyai sama ada banyak medan (apabila mencipta leksem baru) atau satu lagi (apabila menentukan ID leksem yang ada untuk menyunting), tetapi baris $3 masukan mempunyai {{PLURAL:$2|satu medan|$2 medan}} sahaja.",
+	"bulk-optional-forms-hint": "Jika anda mahu melangkau beberapa bentuk, tentukannya sebagai kosong (contohnya, <kbd>...|||</kbd> untuk tiga bentuk kosong di hujung).",
+	"edit-link": "sunting",
+	"edit-general": "Anda dalam mod “sunting”. Mengubah nilai di bawah akan menyunting, menambah atau membuang bentuk leksem sasaran.",
+	"edit-mismatch-warning": "Leksem ini tidak nampak sepadan dengan templat ini! Sila periksa lagi bahawa ia templat yang betul untuk leksem ini sebelum meneruskan.",
+	"edit-ambiguous-warning": "The following lexeme {{PLURAL:$1|Bentuk}} leksem berikut padan dengan lebih daripada satu bentuk templat sama-sama baik:",
+	"edit-unmatched-warning": "{{PLURAL:$1|Bentuk}} leksem berikut tidak padan dnegan sebarang bentuk templat:",
+	"edit-form-list-item": "$1, $2, {{PLURAL:$3|0=tiada kenyataan|satu kenyataan|$3 kenyataan}}",
+	"no-grammatical-features": "tiada ciri tatabahasa",
+	"title-create": "$1 (cipta)",
+	"title-advanced": "$1 (lanjut)",
+	"title-bulk": "$1 (pukal)",
+	"title-edit": "$1 (sunting)",
+	"login-hint": "Anda perlu [$1 log masuk] sebelum anda boleh buat perubahan menggunakan alat ini.",
+	"ambiguous-template": "Templat $1 tidak lagi wujud; ia telah diganti oleh templat berikut:"
+}
