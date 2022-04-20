@@ -41,5 +41,6 @@
 	"title-advanced": "$1 (avançado)",
 	"title-bulk": "$1 (em massa)",
 	"title-edit": "$1 (editar)",
-	"login-hint": "Precisa [$1 iniciar sessão] antes de poder fazer mudanças com esta ferramenta."
+	"login-hint": "Precisa [$1 iniciar sessão] antes de poder fazer mudanças com esta ferramenta.",
+	"ambiguous-template": "O modelo $1 já não existe; foi substituído pelos seguintes modelos:"
 }

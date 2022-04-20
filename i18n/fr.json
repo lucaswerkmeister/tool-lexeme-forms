@@ -12,7 +12,7 @@
 	"create": "Créer",
 	"csrf-warning": "Désolé, cette requête n’a pas pu être traitée (la protection anti-<abbr title=\"Cross-site request forgery\">CSRF</abbr> a échoué). Essayez de renvoyer le formulaire.",
 	"duplicates-warning": "{{PLURAL:$1|Le lexème suivant possède|Les lexèmes suivants possèdent}} déjà un lemme et un code de langue identiques à ceux que vous souhaitez créer :",
-	"duplicates-instructions": "Si vous avez l’assurance {{PLURAL:$1|qu’il est différent|qu’ils sont différents}}, cochez la case située en fin de formulaire.",
+	"duplicates-instructions": "Si vous avez l’assurance {{PLURAL:$1|qu’il est différent|qu’ils sont différents}}, cochez la case située en bas du formulaire.",
 	"duplicates-create": "Créer un nouveau lexème malgré tout.",
 	"no-duplicate": "Ceci n’est pas un doublon d’un lexème existant.",
 	"form-optional": "&#32;(facultatif)",
@@ -42,5 +42,6 @@
 	"title-advanced": "$1 (avancé)",
 	"title-bulk": "$1 (lot)",
 	"title-edit": "$1 (modifier)",
-	"login-hint": "Vous devez vous [$1 connecter] avant de pouvoir faire des modifications en utilisant cet outil."
+	"login-hint": "Vous devez vous [$1 connecter] avant de pouvoir faire des modifications en utilisant cet outil.",
+	"ambiguous-template": "Le modèle $1 n’existe plus ; il a été remplacé par les modèles suivants :"
 }
