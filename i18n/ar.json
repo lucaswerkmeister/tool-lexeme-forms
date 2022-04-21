@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"FiberAhmed",
 			"Kawayashu",
 			"زكريا"
 		]
@@ -10,9 +11,11 @@
 	"duplicates-warning": "أضفت كلمة ورمزا لمادة موجودة",
 	"duplicates-instructions": "المادة مختلفة؟ استعمل المربع أسفل الصفحة",
 	"no-duplicate": "المادة غير مكررة",
+	"form-optional": "&#32;(خياري)",
 	"advanced": "المزيد",
 	"advanced-general": "المزيد",
 	"advanced-lexeme-id": "أكتب معرفا للمادة لإغناء المادة الموجودة عوض إنشاء مادة جديدة. لا تكتب في المربعات الموجودة قبلا في المادة وإلا سوف تتكرر.",
 	"advanced-partial-forms": "لا تكتب في المربعات التي لا تريد إضافتها",
-	"lexeme-id": "معرف الكلمة"
+	"lexeme-id": "معرف الكلمة",
+	"edit-link": "عدّل"
 }
