@@ -37,5 +37,6 @@
 	"title-advanced": "$1 (pokročilý)",
 	"title-bulk": "$1 (hromadne)",
 	"title-edit": "$1 (upraviť)",
-	"login-hint": "Pred vykonaním zmien pomocou tohto nástroja sa musíte [ $1 prihlásiť]."
+	"login-hint": "Pred vykonaním zmien pomocou tohto nástroja sa musíte [ $1 prihlásiť].",
+	"ambiguous-template": "Šablóna $1 už neexistuje; bola nahradená nasledovnou šablónou:"
 }
