@@ -42,5 +42,6 @@
 	"title-advanced": "$1 (avancerad)",
 	"title-bulk": "$1 (masskapa)",
 	"title-edit": "$1 (redigera)",
-	"login-hint": "Du måste [$1 logga in] innan du kan göra ändringar med detta verktyg."
+	"login-hint": "Du måste [$1 logga in] innan du kan göra ändringar med detta verktyg.",
+	"ambiguous-template": "Mallen $1 finns inte längre. Den har ersatts av följande mallar:"
 }

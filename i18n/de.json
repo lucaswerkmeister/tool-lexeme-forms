@@ -37,5 +37,6 @@
 	"title-advanced": "$1 (erweitert)",
 	"title-bulk": "$1 (Massen-Modus)",
 	"title-edit": "$1 (bearbeiten)",
-	"login-hint": "Du musst dich [$1 anmelden], bevor du mit diesem Werkzeug Änderungen vornehmen kannst."
+	"login-hint": "Du musst dich [$1 anmelden], bevor du mit diesem Werkzeug Änderungen vornehmen kannst.",
+	"ambiguous-template": "Die Vorlage $1 existiert nicht mehr; sie wurde durch die folgenden Vorlagen ersetzt:"
 }
