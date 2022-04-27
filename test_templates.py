@@ -49,6 +49,9 @@ def test_translations_available():
         if language_code not in translations.translations:
             missing_language_codes.add(language_code)
 
+    # language code disabled on translatewiki.net, needs more consideration?
+    missing_language_codes.remove('zh')
+
     assert not missing_language_codes
 
 

@@ -29,6 +29,9 @@ properties_exclusive = {
     'www': {
         # other “instance of” are likely unrelated and okay
         'P31': False,
+        # other “has quality” are incompatible
+        # (used to distinguish between some templates in Mandarin)
+        'P1552': True,
         # other “grammatical gender” are incompatible
         'P5185': True,
         # other “language style” are incompatible

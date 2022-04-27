@@ -9084,6 +9084,173 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         ],
     },
 
+    'mandarin-noun': {
+        '@attribution': {'users': ['白布飘扬'], 'title': 'Wikidata:Wikidata Lexeme Forms/Mandarin'},
+        'label': '漢語名詞',
+        'language_item_id': 'Q727694',
+        'language_code': 'zh',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': '形音一',
+                'example': '這就是[大夫]。',
+                'grammatical_features_item_ids': [],
+            },
+        ],
+    },
+
+    'mandarin-pronoun': {
+        '@attribution': {'users': ['白布飘扬'], 'title': 'Wikidata:Wikidata Lexeme Forms/Mandarin'},
+        'label': '漢語代詞',
+        'language_item_id': 'Q727694',
+        'language_code': 'zh',
+        'lexical_category_item_id': 'Q36224',
+        'forms': [
+            {
+                'label': '形音一',
+                'example': '就是[這兒]。',
+                'grammatical_features_item_ids': [],
+            },
+        ],
+    },
+
+    'mandarin-verb': {
+        '@attribution': {'users': ['白布飘扬'], 'title': 'Wikidata:Wikidata Lexeme Forms/Mandarin'},
+        'label': '漢語動詞',
+        'language_item_id': 'Q727694',
+        'language_code': 'zh',
+        'lexical_category_item_id': 'Q24905',
+        'forms': [
+            {
+                'label': '形音一',
+                'example': '那個[看]了嗎？',
+                'grammatical_features_item_ids': [],
+            },
+        ],
+    },
+
+    'mandarin-adjective': {
+        '@attribution': {'users': ['白布飘扬'], 'title': 'Wikidata:Wikidata Lexeme Forms/Mandarin'},
+        'label': '漢語形容詞',
+        'language_item_id': 'Q727694',
+        'language_code': 'zh',
+        'lexical_category_item_id': 'Q34698',
+        'forms': [
+            {
+                'label': '形音一',
+                'example': '這東西很[好]。',
+                'grammatical_features_item_ids': [],
+            },
+        ],
+    },
+
+    'mandarin-adjective-non-predicative': {
+        '@attribution': {'users': ['白布飘扬'], 'title': 'Wikidata:Wikidata Lexeme Forms/Mandarin'},
+        'label': '漢語區別詞',
+        'language_item_id': 'Q727694',
+        'language_code': 'zh',
+        'lexical_category_item_id': 'Q34698',
+        'forms': [
+            {
+                'label': '形音一',
+                'example': '這東西是[雄]的。',
+                'grammatical_features_item_ids': [],
+            },
+        ],
+        'statements': statements('P1552', 'Q110106987'),
+    },
+
+    'mandarin-adverb': {
+        '@attribution': {'users': ['白布飘扬'], 'title': 'Wikidata:Wikidata Lexeme Forms/Mandarin'},
+        'label': '漢語副詞',
+        'language_item_id': 'Q727694',
+        'language_code': 'zh',
+        'lexical_category_item_id': 'Q380057',
+        'forms': [
+            {
+                'label': '形音一',
+                'example': '這[已經]做了。',
+                'grammatical_features_item_ids': [],
+            },
+        ],
+    },
+
+    'mandarin-interjection': {
+        '@attribution': {'users': ['白布飘扬'], 'title': 'Wikidata:Wikidata Lexeme Forms/Mandarin'},
+        'label': '漢語感歎詞',
+        'language_item_id': 'Q727694',
+        'language_code': 'zh',
+        'lexical_category_item_id': 'Q83034',
+        'forms': [
+            {
+                'label': '形音一',
+                'example': '[啊]，這個……。',
+                'grammatical_features_item_ids': [],
+            },
+        ],
+    },
+
+    'mandarin-preposition': {
+        '@attribution': {'users': ['白布飘扬'], 'title': 'Wikidata:Wikidata Lexeme Forms/Mandarin'},
+        'label': '漢語介詞',
+        'language_item_id': 'Q727694',
+        'language_code': 'zh',
+        'lexical_category_item_id': 'Q4833830',
+        'forms': [
+            {
+                'label': '形音一',
+                'example': '這個[跟]那個這樣發生了。',
+                'grammatical_features_item_ids': [],
+            },
+        ],
+    },
+
+    'mandarin-classifier': {
+        '@attribution': {'users': ['白布飘扬'], 'title': 'Wikidata:Wikidata Lexeme Forms/Mandarin'},
+        'label': '漢語量詞',
+        'language_item_id': 'Q727694',
+        'language_code': 'zh',
+        'lexical_category_item_id': 'Q63153',
+        'forms': [
+            {
+                'label': '形音一',
+                'example': '這是一[件]什麽東西來著？',
+                'grammatical_features_item_ids': [],
+            },
+        ],
+        'statements': statements('P1552', 'Q849760'),
+    },
+
+    'mandarin-numeral': {
+        '@attribution': {'users': ['白布飘扬'], 'title': 'Wikidata:Wikidata Lexeme Forms/Mandarin'},
+        'label': '漢語數詞',
+        'language_item_id': 'Q727694',
+        'language_code': 'zh',
+        'lexical_category_item_id': 'Q63116',
+        'forms': [
+            {
+                'label': '形音一',
+                'example': '這裡有[一]個字。',
+                'grammatical_features_item_ids': [],
+            },
+        ],
+    },
+
+    'mandarin-particle': {
+        '@attribution': {'users': ['白布飘扬'], 'title': 'Wikidata:Wikidata Lexeme Forms/Mandarin'},
+        'label': '漢語助詞',
+        'language_item_id': 'Q727694',
+        'language_code': 'zh',
+        'lexical_category_item_id': 'Q184943',
+        'forms': [
+            {
+                'label': '形音一',
+                'example': '[了]',
+                'grammatical_features_item_ids': [],
+            },
+        ],
+    },
+
     'german-noun-neuter-test': {
         '@attribution': {'users': ['Lucas Werkmeister'], 'title': None},
         'test': True,
