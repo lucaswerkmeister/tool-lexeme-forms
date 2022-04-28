@@ -6561,7 +6561,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
             },
             {
                 'label': 'imperativ',
-                'example': '[Hils]!',
+                'example': 'Vennligst [hils] nå!',
                 'grammatical_features_item_ids': ['Q22716'],
             },
             {
@@ -6600,6 +6600,42 @@ templates: Dict[str, Union[str, list[str], Template]] = {
                 'grammatical_features_item_ids': ['Q192613', 'Q1194697'],
             },
         ],
+    },
+
+    'bokmål-verb-passive': {
+        '@attribution': {'users': ['Jon Harald Søby'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Bokmål'},
+        'label': 'bokmål s-verb',
+        'language_item_id': 'Q25167',
+        'language_code': 'nb',
+        'lexical_category_item_id': 'Q24905',
+        'forms': [
+            {
+                'label': 'infinitiv',
+                'example': 'Det er bra å [trives].',
+                'grammatical_features_item_ids': ['Q179230', 'Q1194697'],
+            },
+            {
+                'label': 'presens',
+                'example': 'Jeg [trives] på skolen.',
+                'grammatical_features_item_ids': ['Q192613', 'Q1194697'],
+            },
+            {
+                'label': 'preteritum',
+                'example': 'Jeg [trivdes] med det.',
+                'grammatical_features_item_ids': ['Q442485', 'Q1194697'],
+            },
+            {
+                'label': 'presens perfektum',
+                'example': 'Jeg har [trivdes] med å være der…',
+                'grammatical_features_item_ids': ['Q1240211', 'Q1194697'],
+            },
+            {
+                'label': 'imperativ',
+                'example': 'Vennligst [trives] nå!',
+                'grammatical_features_item_ids': ['Q22716', 'Q1194697'],
+            },
+        ],
+        'statements': statements('P31', 'Q54557461'),
     },
 
     'dutch-neuter-noun': 'dutch-noun-neuter',
