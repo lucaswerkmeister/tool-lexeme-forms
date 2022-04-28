@@ -37,5 +37,6 @@
 	"title-advanced": "$1 (avancinta)",
 	"title-bulk": "$1 (porciono)",
 	"title-edit": "$1 (redaktez)",
-	"login-hint": "You need to [$1 log in] before you can make changes using this tool."
+	"login-hint": "You need to [$1 log in] before you can make changes using this tool.",
+	"ambiguous-template": "Shablono $1 ne pluse existas; ol remplasesis da la sequanta shabloni:"
 }
