@@ -91,6 +91,19 @@ def test_examples_valid(template_name, form):
     assert placeholder != ''
 
 
+@pytest.mark.parametrize('template_name, form', [
+    (template_name, form)
+    for template_name, template in templates.templates_without_redirects.items()
+    if not template_name.startswith('armenian-')  # https://www.wikidata.org/wiki/Wikidata_talk:Wikidata_Lexeme_Forms/Armenian#Initial_uppercase_in_some_examples
+    for form in template['forms']
+])
+def test_examples_no_misleading_capitalization(template_name, form):
+    """Examples like '[Come] here.' can mislead users
+    into entering forms with wrong capitalization."""
+    prefix, placeholder, suffix = app.split_example(form)
+    assert prefix != '' or placeholder.lower() == placeholder
+
+
 expected_example_counts = {
     'bengali-verb': {
         'তুমি [দেখো]।': 2,
