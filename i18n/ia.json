@@ -37,5 +37,6 @@
 	"title-advanced": "$1 (avantiate)",
 	"title-bulk": "$1 (lot)",
 	"title-edit": "$1 (modificar)",
-	"login-hint": "Tu debe [$1 aperir session] pro poter facer modificationes con iste utensile."
+	"login-hint": "Tu debe [$1 aperir session] pro poter facer modificationes con iste utensile.",
+	"ambiguous-template": "Le patrono $1 non existe plus. Illo ha essite reimplaciate per le sequente patronos:"
 }
