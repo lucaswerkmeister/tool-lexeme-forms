@@ -42,5 +42,6 @@
 	"title-advanced": "$1 (pokročilé)",
 	"title-bulk": "$1 (hromadně)",
 	"title-edit": "$1 (editace)",
-	"login-hint": "Než pomocí tohoto nástroje budete moci dělat změny, musíte se [$1 přihlásit]."
+	"login-hint": "Než pomocí tohoto nástroje budete moci dělat změny, musíte se [$1 přihlásit].",
+	"ambiguous-template": "Šablona $1 už neexistuje; byla nahrazena následujícími šablonami:"
 }
