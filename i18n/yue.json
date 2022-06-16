@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Z423x5c6"
+		]
+	},
+	"form-optional": "&#32;（選填）",
+	"advanced": "進階",
+	"advanced-general": "你依家喺「進階」模式。",
+	"bulk-link": "批量模式",
+	"bulk-format-help": "格式說明",
+	"title-create": "$1（建立）",
+	"title-advanced": "$1（進階）",
+	"title-bulk": "$1（批量）",
+	"title-edit": "$1（編輯）"
+}

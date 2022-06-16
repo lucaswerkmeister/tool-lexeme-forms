@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Dnlweijers",
 			"MarcoSwart",
 			"Mbch331",
 			"Nickthijssen1994",
@@ -40,5 +41,6 @@
 	"title-advanced": "$1 (geavanceerd)",
 	"title-bulk": "$1 (bulk)",
 	"title-edit": "$1 (bewerken)",
-	"login-hint": "U moet [$1 inloggen] om wijzigingen te kunnen maken met deze tool."
+	"login-hint": "U moet [$1 inloggen] om wijzigingen te kunnen maken met deze tool.",
+	"ambiguous-template": "Het sjabloon $1 bestaat niet meer; het is vervangen door de volgende sjablonen:"
 }
