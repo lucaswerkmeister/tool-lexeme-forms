@@ -5504,6 +5504,36 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         ],
     },
 
+    'igbo-verb': {
+        '@attribution': {'users': ['EnaldoSS', 'Tochiprecious'], 'title': 'Wikidata:Wikidata Lexeme Forms/Igbo'},
+        'label': 'Ngwaa n\'Igbo',
+        'language_item_id': 'Q33578',
+        'language_code': 'ig',
+        'lexical_category_item_id': 'Q24905',
+        'forms': [
+            {
+                'label': 'ntimiwu',
+                'example': 'Biko [rie].',
+                'grammatical_features_item_ids': [],
+            },
+        ],
+    },
+
+    'igbo-pronoun': {
+        '@attribution': {'users': ['EnaldoSS', 'Tochiprecious'], 'title': 'Wikidata:Wikidata Lexeme Forms/Igbo'},
+        'label': 'Nnọchiaha n\'Igbo',
+        'language_item_id': 'Q33578',
+        'language_code': 'ig',
+        'lexical_category_item_id': 'Q36224',
+        'forms': [
+            {
+                'label': 'nnọchiaha',
+                'example': 'Onye nkụzi ka [ọ] bụ.',
+                'grammatical_features_item_ids': [],
+            },
+        ],
+    },
+
     'igbo-adjective': {
         '@attribution': {'users': ['EnaldoSS', 'Tochiprecious'], 'title': 'Wikidata:Wikidata Lexeme Forms/Igbo'},
         'label': 'Nkọwaaha n\'Igbo',
