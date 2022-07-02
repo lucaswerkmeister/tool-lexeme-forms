@@ -5,6 +5,7 @@
 		]
 	},
 	"create": "Tạo",
+	"duplicates-create": "Cứ tạo từ vị mới.",
 	"form-optional": "&#32;(tùy chọn)",
 	"advanced": "Nâng cao",
 	"advanced-general": "Chế độ “nâng cao” được kích hoạt.",
@@ -18,5 +19,11 @@
 	"edit-link": "sửa",
 	"edit-general": "Chế độ “sửa đổi” được kích hoạt. Việc thay đổi các giá trị bên dưới sẽ sửa đổi, thêm, hoặc xóa các dạng của từ vị.",
 	"edit-form-list-item": "$1, $2, {{PLURAL:$3|0=không có tuyên bố|$3 tuyên bố}}",
-	"no-grammatical-features": "không có thuộc tính ngữ pháp"
+	"no-grammatical-features": "không có thuộc tính ngữ pháp",
+	"title-create": "$1 (tạo)",
+	"title-advanced": "$1 (nâng cao)",
+	"title-bulk": "$1 (hàng loạt)",
+	"title-edit": "$1 (sửa đổi)",
+	"login-hint": "Bạn phải [$1 đăng nhập] trước khi có thể thực hiện sửa đổi dùng công cụ này.",
+	"ambiguous-template": "Bản mẫu $1 không còn tồn tại; nó đã được thay thế bằng các bản mẫu sau:"
 }
