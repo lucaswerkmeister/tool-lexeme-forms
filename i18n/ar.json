@@ -3,6 +3,7 @@
 		"authors": [
 			"FiberAhmed",
 			"Kawayashu",
+			"Mohanad Kh",
 			"أَحمد",
 			"زكريا"
 		]
@@ -11,12 +12,15 @@
 	"csrf-warning": "لم يحفظ (تعذرت الحماية من \"تزوير الطلب عبر المواقع\"). أعد المحاولة",
 	"duplicates-warning": "أضفت كلمة ورمزا لمادة موجودة",
 	"duplicates-instructions": "المادة مختلفة؟ استعمل المربع أسفل الصفحة",
-	"no-duplicate": "المادة غير مكررة",
-	"form-optional": "&#32;(خياري)",
-	"advanced": "المزيد",
-	"advanced-general": "المزيد",
+	"duplicates-create": "أنشئ مفردة جديدة رغم ذلك.",
+	"no-duplicate": "هذه ليست مكررة عن مفردة موجودة.",
+	"form-optional": "&#32;(اختياري)",
+	"advanced": "متقدّم",
+	"advanced-general": "أنت في الوضع \"المتقدّم\".",
 	"advanced-lexeme-id": "أكتب معرفا للمادة لإغناء المادة الموجودة عوض إنشاء مادة جديدة. لا تكتب في المربعات الموجودة قبلا في المادة وإلا سوف تتكرر.",
 	"advanced-partial-forms": "لا تكتب في المربعات التي لا تريد إضافتها",
-	"lexeme-id": "معرف الكلمة",
-	"edit-link": "عدّل"
+	"lexeme-id": "معرّف المفردة",
+	"edit-link": "عدّل",
+	"title-bulk": "$1 (بالجملة)",
+	"title-edit": "$1 (عدّل)"
 }
