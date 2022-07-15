@@ -14,6 +14,8 @@ import requests_oauthlib  # type: ignore
 import stat
 import string
 import toolforge
+from typing import cast, Optional, Tuple
+import werkzeug
 import yaml
 
 from flask_utils import OrderedFlask, TagOrderedMultiDict, TagImmutableOrderedMultiDict, SetJSONEncoder
@@ -23,8 +25,9 @@ from language_names import autonym, label
 from matching import match_template_to_lexeme_data, match_lexeme_forms_to_template, match_template_entity_to_lexeme_entity
 from mwapi_utils import T272319RetryingSession
 from parse_tpsv import parse_lexemes, FirstFieldNotLexemeIdError, FirstFieldLexemeIdError, WrongNumberOfFieldsError
-from templates import templates, templates_without_redirects
+from templates import templates, templates_without_redirects, Form, Template
 from translations import translations
+from wikibase_types import Lemmas, Term
 
 app = OrderedFlask(__name__)
 app.session_interface.serializer.register(TagOrderedMultiDict, index=0)
@@ -67,7 +70,7 @@ def enableCORS(func, *args, **kwargs):
     return response
 
 @app.after_request
-def denyFrame(response):
+def denyFrame(response: werkzeug.Response) -> werkzeug.Response:
     """Disallow embedding the tool’s pages in other websites.
 
     If other websites can embed this tool’s pages, e. g. in <iframe>s,
@@ -79,7 +82,7 @@ def denyFrame(response):
     return response
 
 @app.template_filter()
-def form2label(form):
+def form2label(form: Form) -> flask.Markup:
     ret = flask.Markup.escape(form['label'])
     if form.get('optional', False):
         ret += (flask.Markup(r'<span class="text-muted">') +
@@ -110,7 +113,7 @@ def form2input(context, form, first=False, readonly=False, template_language_cod
             flask.Markup(r'>') +
             flask.Markup.escape(suffix))
 
-def split_example(form):
+def split_example(form: Form) -> Tuple[str, str, str]:
     example = form['example']
     match = re.match(r'^(.*)\[(.*)\](.*)$', example)
     if match:
@@ -141,20 +144,20 @@ def augment_description(description, forms_count, senses_count):
     )
 
 @app.template_global()
-def csrf_token():
+def csrf_token() -> str:
     if '_csrf_token' not in flask.session:
         flask.session['_csrf_token'] = ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(64))
     return flask.session['_csrf_token']
 
 @app.template_global()
-def template_group(template):
+def template_group(template: Template) -> str:
     group = language_name_with_code(template['language_code'])
     if 'test' in template:
         group += ', test.wikidata.org'
     return group
 
 @app.template_filter()
-def user_link(user_name):
+def user_link(user_name: str) -> flask.Markup:
     return (flask.Markup(r'<a href="https://www.wikidata.org/wiki/User:') +
             flask.Markup.escape(user_name.replace(' ', '_')) +
             flask.Markup(r'">') +
@@ -164,7 +167,7 @@ def user_link(user_name):
             flask.Markup(r'</a>'))
 
 @app.template_global()
-def authentication_area():
+def authentication_area() -> flask.Markup:
     if 'OAUTH' not in app.config:
         return flask.Markup()
 
@@ -179,26 +182,27 @@ def authentication_area():
             flask.Markup(r'</span>'))
 
 @app.template_global()
-def message(message_code, language_code=None):
+def message(message_code: str, language_code: Optional[str] = None) -> flask.Markup:
     message, language = message_with_language(message_code, language_code)
     return add_lang_if_needed(message, language)
 
-def message_with_language(message_code, language_code=None):
+def message_with_language(message_code: str, language_code: Optional[str] = None) -> Tuple[flask.Markup, str]:
     if not language_code:
-        language_code = flask.g.interface_language_code
+        language_code = cast(str, flask.g.interface_language_code)
     if message_code not in translations.get(language_code, {}):
         language_code = 'en'
     text = translations[language_code][message_code]
     return flask.Markup(text), language_code
 
 @app.template_global()
-def message_with_kwargs(message_code, **kwargs):
+def message_with_kwargs(message_code: str, **kwargs) -> flask.Markup:
     template, language = message_with_language(message_code)
     message = I18nFormatter(locale_identifier=lang_int2babel(language),
                             get_gender=get_gender).format(template, **kwargs)
+    message = cast(flask.Markup, message)  # I18nFormatter returns Markup given Markup
     return add_lang_if_needed(message, language)
 
-def add_lang_if_needed(message, language_code):
+def add_lang_if_needed(message: flask.Markup, language_code: str) -> flask.Markup:
     if language_code == flask.g.interface_language_code:
         return message
     return (flask.Markup(r'<span lang="') +
@@ -210,7 +214,7 @@ def add_lang_if_needed(message, language_code):
             flask.Markup(r'</span>'))
 
 @app.template_filter()
-def text_direction(language_code):
+def text_direction(language_code: str) -> str:
     babel_language_code = lang_int2babel(language_code)
     try:
         locale = babel.Locale.parse(babel_language_code)
@@ -222,7 +226,7 @@ def text_direction(language_code):
         return locale.text_direction
 
 @app.template_filter()
-def term_span(term):
+def term_span(term: Term) -> flask.Markup:
     interface_language_code = lang_lex2int(term['language'])
     return (flask.Markup(r'<span lang="') +
             flask.Markup.escape(lang_int2html(interface_language_code)) +
@@ -233,12 +237,12 @@ def term_span(term):
             flask.Markup(r'</span>'))
 
 @app.template_filter()
-def lemmas_spans(lemmas):
+def lemmas_spans(lemmas: Lemmas) -> flask.Markup:
     return flask.Markup(r'/').join(term_span(lemma)
                                    for lemma in lemmas.values())
 
 @app.template_filter()
-def language_name_with_code(language_code):
+def language_name_with_code(language_code: str) -> flask.Markup:
     code_zxx = (flask.Markup(r'<span lang=zxx>') +
                 flask.Markup.escape(language_code) +
                 flask.Markup(r'</span>'))
@@ -259,7 +263,7 @@ def language_name_with_code(language_code):
             flask.Markup(r')</span>'))
 
 @app.route('/')
-def index():
+def index() -> flask.typing.ResponseValue:
     flask.g.interface_language_code = 'en'
     return flask.render_template(
         'index.html',
@@ -268,18 +272,18 @@ def index():
     )
 
 @app.route('/template/<template_name>/', methods=['GET', 'POST'])
-def process_template(template_name):
+def process_template(template_name: str) -> flask.typing.ResponseValue:
     return process_template_advanced(template_name=template_name, advanced=False)
 
 @app.route('/template/<template_name>/advanced/', methods=['GET', 'POST'])
-def process_template_advanced(template_name, advanced=True):
+def process_template_advanced(template_name: str, advanced: bool = True) -> flask.typing.ResponseValue:
     response = if_no_such_template_redirect(template_name)
     if response:
         return response
 
     template = templates_without_redirects[template_name]
     flask.g.interface_language_code = lang_lex2int(template['language_code'])
-    form_data = flask.request.form
+    form_data = flask.request.form  # type: werkzeug.datastructures.MultiDict
 
     readonly = 'OAUTH' in app.config and 'oauth_access_token' not in flask.session
 
@@ -318,7 +322,7 @@ def process_template_advanced(template_name, advanced=True):
         )
 
 @app.route('/template/<template_name>/bulk/', methods=['GET', 'POST'])
-def process_template_bulk(template_name):
+def process_template_bulk(template_name: str) -> flask.typing.ResponseValue:
     response = if_no_such_template_redirect(template_name)
     if response:
         return response
@@ -342,7 +346,7 @@ def process_template_bulk(template_name):
         parse_error = None
         show_optional_forms_hint = False
         try:
-            lexemes = parse_lexemes(form_data.get('lexemes'), template)
+            lexemes = parse_lexemes(form_data['lexemes'], template)
         except FirstFieldNotLexemeIdError as error:
             parse_error = message_with_kwargs(
                 'bulk_first_field_not_lexeme_id',
@@ -373,7 +377,7 @@ def process_template_bulk(template_name):
             return flask.render_template(
                 'bulk.html',
                 template=template,
-                value=form_data.get('lexemes'),
+                value=form_data['lexemes'],
                 parse_error=parse_error,
                 show_optional_forms_hint=show_optional_forms_hint,
             )
@@ -438,7 +442,7 @@ def process_template_bulk(template_name):
                     value += '\n'  # for convenience when adding more
             else:
                 # user came from bulk mode with CSRF error
-                value = form_data.get('lexemes')
+                value = form_data['lexemes']
                 csrf_error = True
         else:
             value = None
