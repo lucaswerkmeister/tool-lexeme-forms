@@ -1,12 +1,12 @@
 from typing import Dict, List, Optional, Set, TypedDict, Union
 
 
-class CoreForm(TypedDict):
+class CoreTemplateForm(TypedDict):
     label: str
     example: str
     grammatical_features_item_ids: List[str]
 
-class Form(CoreForm, total=False):
+class TemplateForm(CoreTemplateForm, total=False):
     section_break: bool
     optional: bool
     grammatical_features_item_ids_optional: Set[str]
@@ -17,7 +17,7 @@ class CoreTemplate(TypedDict):
     language_item_id: str
     language_code: str
     lexical_category_item_id: str
-    forms: List[Form]
+    forms: List[TemplateForm]
 
 class Attribution(TypedDict):
     users: List[str]

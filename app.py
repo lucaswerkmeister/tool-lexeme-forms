@@ -25,7 +25,7 @@ from language_names import autonym, label
 from matching import match_template_to_lexeme_data, match_lexeme_forms_to_template, match_template_entity_to_lexeme_entity
 from mwapi_utils import T272319RetryingSession
 from parse_tpsv import parse_lexemes, FirstFieldNotLexemeIdError, FirstFieldLexemeIdError, WrongNumberOfFieldsError
-from templates import templates, templates_without_redirects, Form, Template
+from templates import templates, templates_without_redirects, Template, TemplateForm
 from translations import translations
 from wikibase_types import Lemmas, Term
 
@@ -82,7 +82,7 @@ def denyFrame(response: werkzeug.Response) -> werkzeug.Response:
     return response
 
 @app.template_filter()
-def form2label(form: Form) -> flask.Markup:
+def form2label(form: TemplateForm) -> flask.Markup:
     ret = flask.Markup.escape(form['label'])
     if form.get('optional', False):
         ret += (flask.Markup(r'<span class="text-muted">') +
@@ -113,7 +113,7 @@ def form2input(context, form, first=False, readonly=False, template_language_cod
             flask.Markup(r'>') +
             flask.Markup.escape(suffix))
 
-def split_example(form: Form) -> Tuple[str, str, str]:
+def split_example(form: TemplateForm) -> Tuple[str, str, str]:
     example = form['example']
     match = re.match(r'^(.*)\[(.*)\](.*)$', example)
     if match:
