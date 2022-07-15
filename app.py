@@ -14,7 +14,7 @@ import requests_oauthlib  # type: ignore
 import stat
 import string
 import toolforge
-from typing import cast, Optional, Tuple
+from typing import cast, Any, Optional, Tuple
 import werkzeug
 import yaml
 
@@ -22,7 +22,7 @@ from flask_utils import OrderedFlask, TagOrderedMultiDict, TagImmutableOrderedMu
 from formatters import I18nFormatter
 from language import lang_lex2int, lang_int2html, lang_int2babel
 from language_names import autonym, label
-from matching import match_template_to_lexeme_data, match_lexeme_forms_to_template, match_template_entity_to_lexeme_entity
+from matching import match_template_to_lexeme_data, match_lexeme_forms_to_template, match_template_entity_to_lexeme_entity, MatchedTemplate, MatchedTemplateForm
 from mwapi_utils import T272319RetryingSession
 from parse_tpsv import parse_lexemes, FirstFieldNotLexemeIdError, FirstFieldLexemeIdError, WrongNumberOfFieldsError
 from templates import templates, templates_without_redirects, Template, TemplateForm
@@ -61,6 +61,13 @@ if has_config:
 else:
     print('config.yaml file not found, assuming local development setup')
     app.secret_key = 'fake'
+
+class BoundTemplate(MatchedTemplate):
+    lexeme_id: str
+    lexeme_revision: str
+
+class EditedTemplateForm(TemplateForm):
+    value: str
 
 @decorator.decorator
 def enableCORS(func, *args, **kwargs):
@@ -458,7 +465,7 @@ def process_template_bulk(template_name: str) -> flask.typing.ResponseValue:
         )
 
 @app.route('/template/<template_name>/edit/<lexeme_id>', methods=['GET', 'POST'])
-def process_template_edit(template_name, lexeme_id):
+def process_template_edit(template_name: str, lexeme_id: str) -> flask.typing.ResponseValue:
     response = if_no_such_template_redirect(template_name)
     if response:
         return response
@@ -483,6 +490,7 @@ def process_template_edit(template_name, lexeme_id):
         not lexeme_match['conflicting_statements']
     )
     template = match_lexeme_forms_to_template(lexeme_data['forms'], template)
+    template = cast(BoundTemplate, template)
     template['lexeme_id'] = lexeme_id
     template['lexeme_revision'] = lexeme_revision
 
@@ -505,7 +513,9 @@ def process_template_edit(template_name, lexeme_id):
             return flask.jsonify(lexeme_data)
 
     for template_form in template['forms']:
+        template_form = cast(MatchedTemplateForm, template_form)
         if lexeme_forms := template_form.get('lexeme_forms'):
+            template_form = cast(EditedTemplateForm, template_form)
             template_form['value'] = '/'.join(lexeme_form['representations'][representation_language_code]['value']
                                               for lexeme_form in lexeme_forms
                                               if representation_language_code in lexeme_form['representations'])
@@ -513,6 +523,7 @@ def process_template_edit(template_name, lexeme_id):
         template = add_form_data_to_template(flask.request.form, template)
     elif flask.request.args:
         template = add_form_data_to_template(flask.request.args, template, overwrite=False)
+    template = cast(BoundTemplate, template)
 
     add_labels_to_lexeme_forms_grammatical_features(
         anonymous_session(f'https://{wiki}.wikidata.org'),
@@ -532,7 +543,7 @@ def process_template_edit(template_name, lexeme_id):
         readonly=readonly,
     )
 
-def if_no_such_template_redirect(template_name):
+def if_no_such_template_redirect(template_name: str) -> Optional[flask.typing.ResponseValue]:
     if template_name not in templates:
         return flask.render_template(
             'no-such-template.html',
@@ -540,13 +551,13 @@ def if_no_such_template_redirect(template_name):
         )
     elif isinstance(templates[template_name], str):
         return flask.redirect(flask.url_for(
-            flask.request.endpoint,
-            **(dict(flask.request.view_args, template_name=templates[template_name])),
+            cast(str, flask.request.endpoint),
+            **(dict(cast(dict[str, Any], flask.request.view_args), template_name=templates[template_name])),
             **flask.request.args.to_dict(flat=False),
         ), code=307)
     elif isinstance(templates[template_name], list):
         replacement_templates = [
-            templates[replacement_name]
+            templates_without_redirects[replacement_name]
             for replacement_name in templates[template_name]
         ]
         flask.g.interface_language_code = lang_lex2int(replacement_templates[0]['language_code'])
@@ -559,7 +570,7 @@ def if_no_such_template_redirect(template_name):
         return None
 
 @app.route('/oauth/callback')
-def oauth_callback():
+def oauth_callback() -> flask.typing.ResponseValue:
     oauth_request_token = flask.session.pop('oauth_request_token', None)
     if oauth_request_token is None:
         return flask.render_template('error-oauth-callback.html',
@@ -572,7 +583,7 @@ def oauth_callback():
     return flask.redirect(redirect_target or flask.url_for('index'))
 
 @app.route('/login')
-def login():
+def login() -> flask.typing.ResponseValue:
     if 'OAUTH' in app.config:
         (redirect, request_token) = mwoauth.initiate('https://www.wikidata.org/w/index.php', consumer_token, user_agent=user_agent)
         flask.session['oauth_request_token'] = dict(zip(request_token._fields, request_token))
@@ -582,11 +593,15 @@ def login():
         return flask.redirect(flask.url_for('index'))
 
 @app.route('/logout')
-def logout():
+def logout() -> flask.typing.ResponseValue:
     flask.session.pop('oauth_access_token', None)
     return flask.redirect(flask.url_for('index'))
 
-def if_has_duplicates_redirect(template, advanced, form_data):
+def if_has_duplicates_redirect(
+        template: Template,
+        advanced: bool,
+        form_data: werkzeug.datastructures.MultiDict,
+) -> Optional[flask.typing.ResponseValue]:
     if 'no_duplicate' in form_data:
         return None
     if 'lexeme_id' in form_data and form_data['lexeme_id']:
@@ -604,7 +619,7 @@ def if_has_duplicates_redirect(template, advanced, form_data):
     else:
         return None
 
-def find_duplicates(template, form_data):
+def find_duplicates(template: Template, form_data: werkzeug.datastructures.MultiDict):
     wiki = 'test' if 'test' in template else 'www'
     language_code = template['language_code']
     lemma = get_lemma(form_data)
