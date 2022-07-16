@@ -2,25 +2,6 @@ import matching
 import templates
 
 
-def make_statement(property_id: str, item_id: str) -> dict:
-    return {
-        'mainsnak': {
-            'snaktype': 'value',
-            'property': property_id,
-            'datatype': 'wikibase-item',
-            'datavalue': {
-                'type': 'wikibase-entityid',
-                'value': {
-                    'entity-type': 'item',
-                    'id': item_id,
-                },
-            },
-        },
-        'type': 'statement',
-        'rank': 'normal',
-    }
-
-
 lexeme_data_german_noun_neuter = {
     'lexicalCategory': 'Q1084',
     'language': 'Q188',
@@ -198,22 +179,22 @@ def test_match_lexeme_forms_to_template_with_optional_grammatical_features():
 def test_match_lexeme_form_to_template_forms():
     lexeme_form = {
         'grammaticalFeatures': ['Q1', 'Q2', 'Q3'],
-        'claims': {'P31': [make_statement('P31', 'Q4115189')]},
+        'claims': templates.statements('P31', 'Q4115189'),
     }
     template_form_missing_grammatical_feature = {
         'grammatical_features_item_ids': ['Q1', 'Q2', 'Q3', 'Q4'],
-        'statements': {'P31': [make_statement('P31', 'Q4115189')]},
+        'statements': templates.statements('P31', 'Q4115189'),
     }
     template_form_missing_statement = {
         'grammatical_features_item_ids': ['Q1', 'Q2'],
-        'statements': {'P31': [make_statement('P31', 'Q4115189'), make_statement('P31', 'Q13406268')]},
+        'statements': {'P31': [templates.statement('P31', 'Q4115189'), templates.statement('P31', 'Q13406268')]},
     }
     template_form_match_two_grammatical_features_no_statement = {
         'grammatical_features_item_ids': ['Q1', 'Q2'],
     }
     template_form_match_one_grammatical_feature_one_statement = {
         'grammatical_features_item_ids': ['Q1'],
-        'statements': {'P31': [make_statement('P31', 'Q4115189')]},
+        'statements': templates.statements('P31', 'Q4115189'),
     }
     template_form_match_two_grammatical_features_one_optional = {
         'grammatical_features_item_ids': ['Q1', 'Q2', 'Q4'],
@@ -272,18 +253,18 @@ def test_match_lexeme_form_to_template_form_missing_statement():
     lexeme_form = {'grammaticalFeatures': ['Q1']}
     template_form = {
         'grammatical_features_item_ids': ['Q1'],
-        'statements': {'P31': [make_statement('P31', 'Q4115189')]},
+        'statements': templates.statements('P31', 'Q4115189'),
     }
     assert matching.match_lexeme_form_to_template_form(False, lexeme_form, template_form) == 0
 
 def test_match_lexeme_form_to_template_form_conflicting_statement():
     lexeme_form = {
         'grammaticalFeatures': ['Q1'],
-        'claims': {'P5185': [make_statement('P5185', 'Q4115189'), make_statement('P5185', 'Q13406268')]},
+        'claims': {'P5185': [templates.statement('P5185', 'Q4115189'), templates.statement('P5185', 'Q13406268')]},
     }
     template_form = {
         'grammatical_features_item_ids': ['Q1'],
-        'statements': {'P5185': [make_statement('P5185', 'Q4115189')]},
+        'statements': templates.statements('P5185', 'Q4115189'),
     }
     assert matching.match_lexeme_form_to_template_form(False, lexeme_form, template_form) == 0
 
@@ -291,15 +272,15 @@ def test_match_lexeme_form_to_template_form_counts_grammatical_features_and_stat
     lexeme_form = {
         'grammaticalFeatures': ['Q1', 'Q2', 'Q3', 'Q4'],
         'claims': {
-            'P31': [make_statement('P31', 'Q4115189'), make_statement('P31', 'Q13406268')],
-            'P5185': [make_statement('P5185', 'Q4115189')],
+            'P31': [templates.statement('P31', 'Q4115189'), templates.statement('P31', 'Q13406268')],
+            'P5185': [templates.statement('P5185', 'Q4115189')],
         },
     }
     template_form = {
         'grammatical_features_item_ids': ['Q1', 'Q2'],
         'statements': {
-            'P31': [make_statement('P31', 'Q4115189')],
-            'P5185': [make_statement('P5185', 'Q4115189')],
+            'P31': [templates.statement('P31', 'Q4115189')],
+            'P5185': [templates.statement('P5185', 'Q4115189')],
         },
     }
     assert matching.match_lexeme_form_to_template_form(False, lexeme_form, template_form) == 4
