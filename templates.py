@@ -1,5 +1,7 @@
 from typing import Dict, List, Optional, Set, TypedDict, Union
 
+from wikibase_types import Statement, Statements
+
 
 class CoreTemplateForm(TypedDict):
     label: str
@@ -31,10 +33,10 @@ MetaTemplate = TypedDict('MetaTemplate', {
 class Template(CoreTemplate, MetaTemplate, total=False):
     test: bool
     two_column_sections: bool
-    statements: dict
+    statements: Statements
 
 
-def statement(property_id: str, item_id: str) -> dict:
+def statement(property_id: str, item_id: str) -> Statement:
     return {
         'mainsnak': {
             'snaktype': 'value',
@@ -53,7 +55,7 @@ def statement(property_id: str, item_id: str) -> dict:
     }
 
 
-def statements(property_id: str, item_id: str) -> dict:
+def statements(property_id: str, item_id: str) -> Statements:
     return {
         property_id: [
             statement(property_id, item_id),

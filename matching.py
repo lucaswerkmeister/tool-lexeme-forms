@@ -2,6 +2,7 @@ import copy
 from typing import cast, TypedDict, Union
 
 from templates import Template, TemplateForm
+from wikibase_types import Statement, Statements
 
 
 class MatchedTemplateForm(TemplateForm, total=False):
@@ -17,9 +18,9 @@ class MatchedTemplate(Template, total=False):
 class OverallMatch(TypedDict):
     language: bool
     lexical_category: bool
-    matched_statements: dict[str, list[dict]]
-    missing_statements: dict[str, list[dict]]
-    conflicting_statements: dict[str, list[dict]]
+    matched_statements: Statements
+    missing_statements: Statements
+    conflicting_statements: Statements
 
 
 # whether the presence of some statement for a property
@@ -67,10 +68,10 @@ def match_template_entity_to_lexeme_entity(  # may be template + lexeme or templ
         test: bool,
         template_entity: Union[Template, TemplateForm],
         lexeme_entity: dict,
-) -> tuple[dict[str, list[dict]], dict[str, list[dict]], dict[str, list[dict]]]:
-    matched_statements: dict[str, list[dict]] = {}
-    missing_statements: dict[str, list[dict]] = {}
-    conflicting_statements: dict[str, list[dict]] = {}
+) -> tuple[Statements, Statements, Statements]:
+    matched_statements: Statements = {}
+    missing_statements: Statements = {}
+    conflicting_statements: Statements = {}
 
     properties_exclusive_for_template_entity = properties_exclusive['test' if test else 'www']
     for property_id in template_entity.get('statements', {}):
@@ -96,7 +97,7 @@ def match_template_entity_to_lexeme_entity(  # may be template + lexeme or templ
     return matched_statements, missing_statements, conflicting_statements
 
 
-def match_statement(template_statement: dict, lexeme_statement: dict) -> bool:
+def match_statement(template_statement: Statement, lexeme_statement: Statement) -> bool:
     # so far, we only compare the main snak (ignoring qualifiers and references),
     # and only support entity ID values, because that’s all the templates use
     if lexeme_statement['mainsnak']['snaktype'] == 'value':
