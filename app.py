@@ -2,6 +2,7 @@ import babel
 import copy
 import decorator
 import flask
+from flask.typing import ResponseReturnValue as RRV
 import jinja2
 import json
 import mwapi  # type: ignore
@@ -143,7 +144,7 @@ def render_duplicates(
         in_bulk_mode: bool,
         template_name: Optional[str] = None,
         form_representations: list[str] = [],
-) -> flask.typing.ResponseValue:
+) -> RRV:
     return flask.render_template(
         'duplicates.html',
         duplicates=duplicates,
@@ -283,7 +284,7 @@ def language_name_with_code(language_code: str) -> flask.Markup:
             flask.Markup(r')</span>'))
 
 @app.route('/')
-def index() -> flask.typing.ResponseValue:
+def index() -> RRV:
     flask.g.interface_language_code = 'en'
     return flask.render_template(
         'index.html',
@@ -292,11 +293,11 @@ def index() -> flask.typing.ResponseValue:
     )
 
 @app.route('/template/<template_name>/', methods=['GET', 'POST'])
-def process_template(template_name: str) -> flask.typing.ResponseValue:
+def process_template(template_name: str) -> RRV:
     return process_template_advanced(template_name=template_name, advanced=False)
 
 @app.route('/template/<template_name>/advanced/', methods=['GET', 'POST'])
-def process_template_advanced(template_name: str, advanced: bool = True) -> flask.typing.ResponseValue:
+def process_template_advanced(template_name: str, advanced: bool = True) -> RRV:
     response = if_no_such_template_redirect(template_name)
     if response:
         return response
@@ -342,7 +343,7 @@ def process_template_advanced(template_name: str, advanced: bool = True) -> flas
         )
 
 @app.route('/template/<template_name>/bulk/', methods=['GET', 'POST'])
-def process_template_bulk(template_name: str) -> flask.typing.ResponseValue:
+def process_template_bulk(template_name: str) -> RRV:
     response = if_no_such_template_redirect(template_name)
     if response:
         return response
@@ -478,7 +479,7 @@ def process_template_bulk(template_name: str) -> flask.typing.ResponseValue:
         )
 
 @app.route('/template/<template_name>/edit/<lexeme_id>', methods=['GET', 'POST'])
-def process_template_edit(template_name: str, lexeme_id: str) -> flask.typing.ResponseValue:
+def process_template_edit(template_name: str, lexeme_id: str) -> RRV:
     response = if_no_such_template_redirect(template_name)
     if response:
         return response
@@ -556,7 +557,7 @@ def process_template_edit(template_name: str, lexeme_id: str) -> flask.typing.Re
         readonly=readonly,
     )
 
-def if_no_such_template_redirect(template_name: str) -> Optional[flask.typing.ResponseValue]:
+def if_no_such_template_redirect(template_name: str) -> Optional[RRV]:
     if template_name not in templates:
         return flask.render_template(
             'no-such-template.html',
@@ -583,7 +584,7 @@ def if_no_such_template_redirect(template_name: str) -> Optional[flask.typing.Re
         return None
 
 @app.route('/oauth/callback')
-def oauth_callback() -> flask.typing.ResponseValue:
+def oauth_callback() -> RRV:
     oauth_request_token = flask.session.pop('oauth_request_token', None)
     if oauth_request_token is None:
         return flask.render_template('error-oauth-callback.html',
@@ -596,7 +597,7 @@ def oauth_callback() -> flask.typing.ResponseValue:
     return flask.redirect(redirect_target or flask.url_for('index'))
 
 @app.route('/login')
-def login() -> flask.typing.ResponseValue:
+def login() -> RRV:
     if 'OAUTH' in app.config:
         (redirect, request_token) = mwoauth.initiate('https://www.wikidata.org/w/index.php', consumer_token, user_agent=user_agent)
         flask.session['oauth_request_token'] = dict(zip(request_token._fields, request_token))
@@ -606,7 +607,7 @@ def login() -> flask.typing.ResponseValue:
         return flask.redirect(flask.url_for('index'))
 
 @app.route('/logout')
-def logout() -> flask.typing.ResponseValue:
+def logout() -> RRV:
     flask.session.pop('oauth_access_token', None)
     return flask.redirect(flask.url_for('index'))
 
@@ -614,7 +615,7 @@ def if_has_duplicates_redirect(
         template: Template,
         advanced: bool,
         form_data: werkzeug.datastructures.MultiDict,
-) -> Optional[flask.typing.ResponseValue]:
+) -> Optional[RRV]:
     if 'no_duplicate' in form_data:
         return None
     if 'lexeme_id' in form_data and form_data['lexeme_id']:
@@ -676,7 +677,7 @@ def build_lemmas(
 
 @app.route('/api/v1/duplicates/<any(www,test):wiki>/<language_code>/<path:lemma>')
 @enableCORS
-def get_duplicates_api(wiki: str, language_code: str, lemma: str) -> flask.typing.ResponseValue:
+def get_duplicates_api(wiki: str, language_code: str, lemma: str) -> RRV:
     flask.g.interface_language_code = lang_lex2int(language_code)
     matches = get_duplicates(wiki, language_code, lemma)
     if not matches:
@@ -733,14 +734,14 @@ def get_duplicates(wiki: str, language_code: str, lemma: str) -> list[Duplicate]
 
 @app.route('/api/v1/no_duplicate/<language_code>')
 @app.template_global()
-def render_no_duplicate(language_code: str) -> flask.typing.ResponseValue:
+def render_no_duplicate(language_code: str) -> RRV:
     flask.g.interface_language_code = lang_lex2int(language_code)
     return flask.render_template(
         'no_duplicate.html',
     )
 
 @app.route('/api/v1/advanced_partial_forms_hint/<language_code>')
-def render_advanced_partial_forms_hint(language_code: str) -> flask.typing.ResponseValue:
+def render_advanced_partial_forms_hint(language_code: str) -> RRV:
     flask.g.interface_language_code = lang_lex2int(language_code)
     return flask.render_template(
         'advanced_partial_forms_hint.html',
@@ -748,7 +749,7 @@ def render_advanced_partial_forms_hint(language_code: str) -> flask.typing.Respo
 
 @app.route('/api/v1/match_template_to_lexeme/<any(www,test):wiki>/<lexeme_id>')
 @enableCORS
-def match_templates_to_lexeme_id(wiki: str, lexeme_id: str) -> flask.typing.ResponseValue:
+def match_templates_to_lexeme_id(wiki: str, lexeme_id: str) -> RRV:
     lexeme_data = get_lexeme_data(lexeme_id, wiki)
 
     return flask.jsonify({
@@ -758,7 +759,7 @@ def match_templates_to_lexeme_id(wiki: str, lexeme_id: str) -> flask.typing.Resp
 
 @app.route('/api/v1/match_template_to_lexeme/<any(www,test):wiki>/<lexeme_id>/<template_name>')
 @enableCORS
-def match_template_to_lexeme_id(wiki, lexeme_id, template_name):
+def match_template_to_lexeme_id(wiki: str, lexeme_id: str, template_name: str) -> RRV:
     template = templates.get(template_name)
     if not template:
         return 'no such template\n', 404
@@ -774,7 +775,7 @@ def match_template_to_lexeme_id(wiki, lexeme_id, template_name):
 
     if isinstance(template, list):
         return flask.jsonify([
-            match_template_to_lexeme_data(templates[replacement_name], lexeme_data)
+            match_template_to_lexeme_data(templates_without_redirects[replacement_name], lexeme_data)
             for replacement_name in template
         ])
 
