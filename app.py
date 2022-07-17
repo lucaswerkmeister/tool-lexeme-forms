@@ -27,7 +27,7 @@ from mwapi_utils import T272319RetryingSession
 from parse_tpsv import parse_lexemes, FirstFieldNotLexemeIdError, FirstFieldLexemeIdError, WrongNumberOfFieldsError
 from templates import templates, templates_without_redirects, Template, TemplateForm
 from translations import translations
-from wikibase_types import LexemeLemmas, Term
+from wikibase_types import Lexeme, LexemeForm, LexemeLemmas, Statements, Term
 
 app = OrderedFlask(__name__)
 app.session_interface.serializer.register(TagOrderedMultiDict, index=0)
@@ -403,7 +403,7 @@ def process_template_bulk(template_name: str) -> RRV:
                 show_optional_forms_hint=show_optional_forms_hint,
             )
 
-        results = []
+        results = []  # type: list[dict]
 
         for lexeme in lexemes:
             if not lexeme.get('lexeme_id'):
@@ -495,7 +495,7 @@ def process_template_edit(template_name: str, lexeme_id: str) -> RRV:
         lexeme_data = get_lexeme_data(lexeme_id, wiki, lexeme_revision)
     else:
         lexeme_data = get_lexeme_data(lexeme_id, wiki)
-        lexeme_revision = lexeme_data['lastrevid']
+        lexeme_revision = str(lexeme_data['lastrevid'])
 
     lexeme_match = match_template_to_lexeme_data(template, lexeme_data)
     lexeme_matches_template = (
@@ -781,7 +781,7 @@ def match_template_to_lexeme_id(wiki: str, lexeme_id: str, template_name: str) -
 
     return flask.jsonify(match_template_to_lexeme_data(template, lexeme_data))
 
-def get_lexeme_data(lexeme_id, wiki, revision=None):
+def get_lexeme_data(lexeme_id: str, wiki: str, revision: Optional[str] = None) -> Lexeme:
     host = f'https://{wiki}.wikidata.org'
     session = anonymous_session(host)
 
@@ -798,7 +798,11 @@ def get_lexeme_data(lexeme_id, wiki, revision=None):
     lexeme_data = entities_data['entities'][lexeme_id]
     return lexeme_data
 
-def add_form_data_to_template(form_data, template, overwrite=True):
+def add_form_data_to_template(
+        form_data: werkzeug.datastructures.MultiDict,
+        template,  # no static type – some vague kind of Template
+        overwrite: bool = True,
+):  # no static return type – some vague kind of Template
     template = copy.deepcopy(template)
     for (form_representation, form) in zip(form_data.getlist('form_representation'), template['forms']):
         if overwrite or not form.get('value'):
@@ -811,7 +815,11 @@ def add_form_data_to_template(form_data, template, overwrite=True):
         template['target_hash'] = form_data['target_hash']
     return template
 
-def if_needs_csrf_redirect(template, advanced, form_data):
+def if_needs_csrf_redirect(
+        template: Template,
+        advanced: bool,
+        form_data: werkzeug.datastructures.MultiDict,
+) -> Optional[RRV]:
     if not csrf_token_matches(form_data):
         return flask.render_template(
             'template.html',
@@ -822,30 +830,30 @@ def if_needs_csrf_redirect(template, advanced, form_data):
     else:
         return None
 
-def csrf_token_matches(form_data):
+def csrf_token_matches(form_data: werkzeug.datastructures.MultiDict) -> bool:
     token = flask.session.get('_csrf_token')
     if not token or token != form_data.get('_csrf_token'):
         return False
     else:
         return True
 
-def current_url():
+def current_url() -> str:
     return flask.url_for(
-        flask.request.endpoint,
+        cast(str, flask.request.endpoint),
         _external=True,
         _scheme=flask.request.headers.get('X-Forwarded-Proto', 'http'),
-        **flask.request.view_args,
+        **cast(dict, flask.request.view_args),
         **flask.request.args.to_dict(flat=False),
     ).replace('+', '%20')
 
 @app.template_global()
-def can_use_bulk_mode():
+def can_use_bulk_mode() -> bool:
     if 'OAUTH' not in app.config:
         return True
     userinfo = get_userinfo()
     return userinfo is not None and 'autoconfirmed' in userinfo['groups']
 
-def build_lexeme(template, form_data):
+def build_lexeme(template: Template, form_data: werkzeug.datastructures.MultiDict) -> Lexeme:
     lang = template['language_code']
     forms = []
     form_representations = form_data.getlist('form_representation')
@@ -856,10 +864,10 @@ def build_lexeme(template, form_data):
             if not form_representation_variant:
                 flask.abort(400)
             forms.append(build_form(form, lang, form_representation_variant))
-    lexeme_data = {
+    lexeme_data = cast(Lexeme, {
         'type': 'lexeme',
         'forms': forms,
-    }
+    })
     lexeme_id = form_data.get('lexeme_id', '')
     if lexeme_id:
         lexeme_data['id'] = lexeme_id
@@ -879,7 +887,7 @@ def build_lexeme(template, form_data):
         })
     return lexeme_data
 
-def build_form(template_form, template_language, form_representation):
+def build_form(template_form: TemplateForm, template_language: str, form_representation: str) -> LexemeForm:
     return {
         'add': '',
         'representations': {template_language: {'language': template_language, 'value': form_representation}},
@@ -887,11 +895,18 @@ def build_form(template_form, template_language, form_representation):
         'claims': template_form.get('statements', {})
     }
 
-def update_lexeme(lexeme_data, template, form_data, representation_language_code, missing_statements=None):
+def update_lexeme(
+        lexeme_data: Lexeme,
+        template: BoundTemplate,
+        form_data: werkzeug.datastructures.MultiDict,
+        representation_language_code: str,
+        missing_statements: Optional[Statements] = None,
+) -> Lexeme:
     lexeme_data = copy.deepcopy(lexeme_data)
     lexeme_data['base_revision_id'] = template['lexeme_revision']
 
     for form_data_representation, template_form in zip(form_data.getlist('form_representation'), template['forms']):
+        template_form = cast(MatchedTemplateForm, template_form)
         form_data_representation_variants = form_data_representation.split('/')
         if form_data_representation_variants == ['']:
             form_data_representation_variants = []
@@ -965,10 +980,11 @@ def update_lexeme(lexeme_data, template, form_data, representation_language_code
     for property_id, statements in (missing_statements or {}).items():
         lexeme_data.setdefault('claims', {}).setdefault(property_id, []).extend(statements)
 
-    first_form = next(iter(template['forms'][0].get('lexeme_forms', [])), None)
+    first_form = next(iter(cast(MatchedTemplateForm, template['forms'][0]).get('lexeme_forms', [])), None)
     if first_form:
         if first_form_id := first_form.get('id'):
             first_form = find_form(lexeme_data, first_form_id)  # find edited version
+            assert first_form is not None
         else:
             # it’s a new form, first_form is already the edited version
             pass

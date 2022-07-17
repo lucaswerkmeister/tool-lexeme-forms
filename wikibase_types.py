@@ -63,3 +63,4 @@ class CoreLexeme(TypedDict):
 class Lexeme(CoreLexeme, total=False):
     id: str  # only needed when editing
     base_revision_id: str  # only needed when editing
+    lastrevid: int  # only available when data returned by API
