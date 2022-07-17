@@ -8,9 +8,11 @@ mwoauth
 mypy
 pytest
 PyYAML
+requests
 requests_oauthlib
 toolforge ~= 4.2
 types-babel
 types-decorator
 types-PyYAML
+types-requests
 werkzeug >= 2.0.0

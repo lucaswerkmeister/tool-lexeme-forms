@@ -4,8 +4,10 @@ import re
 from typing import List
 import werkzeug.datastructures
 
+from templates import Template
 
-def parse_lexemes(tpsv: str, template: dict) -> List[werkzeug.datastructures.MultiDict]:
+
+def parse_lexemes(tpsv: str, template: Template) -> List[werkzeug.datastructures.MultiDict]:
     lexemes = []
     for n, line in enumerate(tpsv.split('\n')):
         line = line.rstrip('\r')
@@ -15,7 +17,7 @@ def parse_lexemes(tpsv: str, template: dict) -> List[werkzeug.datastructures.Mul
     return lexemes
 
 
-def parse_lexeme(line: str, template: dict, line_number: int) -> werkzeug.datastructures.MultiDict:
+def parse_lexeme(line: str, template: Template, line_number: int) -> werkzeug.datastructures.MultiDict:
     fields = [field.strip() for field in line.replace('\t', '|').split('|')]
     if len(fields) == len(template['forms']) + 1:
         [lexeme_id, *form_representations] = fields
