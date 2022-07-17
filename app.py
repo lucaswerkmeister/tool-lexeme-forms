@@ -1,5 +1,4 @@
 import babel
-import collections
 import copy
 import decorator
 import flask
@@ -14,7 +13,7 @@ import requests_oauthlib  # type: ignore
 import stat
 import string
 import toolforge
-from typing import cast, Any, Optional, Tuple
+from typing import cast, Any, Optional, Tuple, TypedDict
 import werkzeug
 import yaml
 
@@ -68,6 +67,15 @@ class BoundTemplate(MatchedTemplate):
 
 class EditedTemplateForm(TemplateForm):
     value: str
+
+class Duplicate(TypedDict):
+    id: str
+    uri: str
+    # TODO use display (w.wiki/5Tna) to have terms as label/description
+    label: str
+    description: str
+    forms_count: str
+    senses_count: str
 
 @decorator.decorator
 def enableCORS(func, *args, **kwargs):
@@ -130,7 +138,12 @@ def split_example(form: TemplateForm) -> Tuple[str, str, str]:
         raise Exception('Invalid template: missing [placeholder]: ' + example)
 
 @app.template_filter()
-def render_duplicates(duplicates, in_bulk_mode, template_name=None, form_representations=[]):
+def render_duplicates(
+        duplicates: list[Duplicate],
+        in_bulk_mode: bool,
+        template_name: Optional[str] = None,
+        form_representations: list[str] = [],
+) -> flask.typing.ResponseValue:
     return flask.render_template(
         'duplicates.html',
         duplicates=duplicates,
@@ -619,7 +632,10 @@ def if_has_duplicates_redirect(
     else:
         return None
 
-def find_duplicates(template: Template, form_data: werkzeug.datastructures.MultiDict):
+def find_duplicates(
+        template: Template,
+        form_data: werkzeug.datastructures.MultiDict,
+) -> list[Duplicate]:
     wiki = 'test' if 'test' in template else 'www'
     language_code = template['language_code']
     lemma = get_lemma(form_data)
@@ -657,7 +673,7 @@ def build_lemmas(template, form_data):
 
 @app.route('/api/v1/duplicates/<any(www,test):wiki>/<language_code>/<path:lemma>')
 @enableCORS
-def get_duplicates_api(wiki, language_code, lemma):
+def get_duplicates_api(wiki: str, language_code: str, lemma: str) -> flask.typing.ResponseValue:
     flask.g.interface_language_code = lang_lex2int(language_code)
     matches = get_duplicates(wiki, language_code, lemma)
     if not matches:
@@ -671,7 +687,7 @@ def get_duplicates_api(wiki, language_code, lemma):
     else:
         return flask.jsonify(matches)
 
-def get_duplicates(wiki, language_code, lemma):
+def get_duplicates(wiki: str, language_code: str, lemma: str) -> list[Duplicate]:
     session = anonymous_session(f'https://{wiki}.wikidata.org')
 
     api_language_code = lang_lex2int(language_code)
@@ -684,12 +700,18 @@ def get_duplicates(wiki, language_code, lemma):
         type='lexeme',
         limit=50,
     )
-    matches = collections.OrderedDict()
+    matches: dict[str, Duplicate] = {}
     for result in response['search']:
         if (result.get('label') == lemma and
             (result['match']['language'] == language_code or
              (len(language_code) > 2 and result['match']['language'] == 'und'))):  # T230833
-            matches[result['id']] = {'id': result['id'], 'uri': result['concepturi'], 'label': result['label'], 'description': result['description']}
+            match = {
+                'id': result['id'],
+                'uri': result['concepturi'],
+                'label': result['label'],
+                'description': result['description'],
+            }
+            matches[result['id']] = cast(Duplicate, match)  # missing forms_count, senses_count added below
 
     if matches:
         response = session.get(  # no, this can’t be combined with the previous call by using generator=wbsearch – then we don’t get the match language
