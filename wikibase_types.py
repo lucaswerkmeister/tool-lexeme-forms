@@ -1,9 +1,13 @@
 from typing import Literal, TypedDict
 
 
-class Term(TypedDict):
+class CoreTerm(TypedDict):
     language: str
     value: str
+
+
+class Term(CoreTerm, total=False):
+    remove: Literal['']  # only needed when editing
 
 
 WikibaseEntityIdDataValueValue = TypedDict('WikibaseEntityIdDataValueValue', {
@@ -48,6 +52,7 @@ class CoreLexemeForm(TypedDict):
 class LexemeForm(CoreLexemeForm, total=False):
     add: Literal['']  # only needed when creating
     remove: Literal['']  # only needed when editing
+    id: Literal['']  # only present when editing
 
 
 class CoreLexeme(TypedDict):

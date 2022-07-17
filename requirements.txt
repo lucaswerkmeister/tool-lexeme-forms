@@ -70,6 +70,7 @@ pyyaml==6.0
     # via -r requirements.in
 requests==2.27.1
     # via
+    #   -r requirements.in
     #   mwapi
     #   mwoauth
     #   requests-oauthlib
@@ -94,6 +95,10 @@ types-pytz==2021.3.6
     # via types-babel
 types-pyyaml==6.0.5
     # via -r requirements.in
+types-requests==2.28.1
+    # via -r requirements.in
+types-urllib3==1.26.16
+    # via types-requests
 typing-extensions==4.1.1
     # via mypy
 urllib3==1.26.9

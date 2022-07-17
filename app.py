@@ -10,6 +10,7 @@ import mwoauth  # type: ignore
 import os
 import random
 import re
+import requests
 import requests_oauthlib  # type: ignore
 import stat
 import string
@@ -955,7 +956,11 @@ def update_lexeme(
         overwritten_forms = 0
         for form_data_representation_variant, lexeme_form in zip(form_data_representation_variants, lexeme_forms):
             lexeme_form = find_form(lexeme_data, lexeme_form['id'])
-            lexeme_form_representation = lexeme_form['representations'].setdefault(representation_language_code, {'language': representation_language_code})
+            lexeme_form_representation = lexeme_form['representations']\
+                .setdefault(representation_language_code, {
+                    'language': representation_language_code,
+                    'value': '',  # overridden immediately below
+                })
             assert form_data_representation_variant, 'Representation cannot be empty'
             lexeme_form_representation['value'] = form_data_representation_variant
             overwritten_forms += 1
@@ -995,13 +1000,13 @@ def update_lexeme(
 
     return lexeme_data
 
-def find_form(lexeme_data, form_id):
+def find_form(lexeme_data: Lexeme, form_id: str) -> LexemeForm:
     for form in lexeme_data['forms']:
         if form['id'] == form_id:
             return form
     raise LookupError(f'Form {form_id} not found in lexeme data for {lexeme_data["id"]}')
 
-def build_summary(template, form_data):
+def build_summary(template: Template, form_data: werkzeug.datastructures.MultiDict) -> str:
     template_name = template['@template_name']
     url = flask.url_for('process_template', template_name=template_name, _external=True)
     if toolforge_match := re.match(r'https://([a-z0-9-_]+).toolforge.org/(.*)$', url):
@@ -1016,7 +1021,7 @@ def build_summary(template, form_data):
 
     return summary
 
-def submit_lexeme(template, lexeme_data, summary):
+def submit_lexeme(template: Template, lexeme_data: Lexeme, summary: str) -> tuple[str, str]:
     if 'test' in template:
         host = 'https://test.wikidata.org'
     else:
@@ -1039,7 +1044,7 @@ def submit_lexeme(template, lexeme_data, summary):
     lexeme_uri = host + '/entity/' + lexeme_id
     return lexeme_id, lexeme_uri
 
-def add_hash_to_uri(uri, hash):
+def add_hash_to_uri(uri: str, hash: Optional[str]) -> str:
     assert '#' not in uri
     if hash is not None:
         uri += '#' + hash
@@ -1067,12 +1072,12 @@ def add_labels_to_lexeme_forms_grammatical_features(session, language, lexeme_fo
 
 @app.route('/api/v1/template/')
 @enableCORS
-def get_all_templates_api():
+def get_all_templates_api() -> RRV:
     return flask.jsonify(templates)
 
 @app.route('/api/v1/template/<template_name>')
 @enableCORS
-def get_template_api(template_name):
+def get_template_api(template_name: str) -> RRV:
     template = templates.get(template_name)
     if template is None:
         return '"no such template"\n', 404
@@ -1090,10 +1095,10 @@ def get_template_api(template_name):
         return flask.jsonify(template)
 
 @app.route('/healthz')
-def health():
+def health() -> RRV:
     return ''
 
-def get_gender(user):
+def get_gender(user: Optional[str]) -> str:
     if user is None:
         gender_option = gender_option_of_user()
     else:
@@ -1104,7 +1109,7 @@ def get_gender(user):
         'unknown': 'n',
     }[gender_option]
 
-def gender_option_of_user_name(user_name):
+def gender_option_of_user_name(user_name: str) -> str:
     session = anonymous_session('https://www.wikidata.org')
     response = session.get(action='query',
                            list=['users'],
@@ -1113,27 +1118,27 @@ def gender_option_of_user_name(user_name):
                            formatversion=2)
     return response['query']['users'][0]['gender']
 
-def gender_option_of_user():
+def gender_option_of_user() -> str:
     userinfo = get_userinfo()
     if userinfo is None:
         return 'unknown'
 
     return userinfo['options']['gender']
 
-def authenticated_session(host):
+def authenticated_session(host: str) -> mwapi.Session:
     return T272319RetryingSession(
         host=host,
         auth=generate_auth(),
         user_agent=user_agent,
     )
 
-def anonymous_session(host):
+def anonymous_session(host: str) -> mwapi.Session:
     return mwapi.Session(
         host=host,
         user_agent=user_agent,
     )
 
-def generate_auth():
+def generate_auth() -> requests.auth.AuthBase:
     access_token = mwoauth.AccessToken(**flask.session['oauth_access_token'])
     return requests_oauthlib.OAuth1(
         client_key=consumer_token.key,
@@ -1142,13 +1147,13 @@ def generate_auth():
         resource_owner_secret=access_token.secret,
     )
 
-def get_userinfo():
+def get_userinfo() -> Optional[dict]:
     if 'userinfo' not in flask.g:
         flask.g.userinfo = query_userinfo()
 
     return flask.g.userinfo
 
-def query_userinfo():
+def query_userinfo() -> Optional[dict]:
     if 'oauth_access_token' not in flask.session:
         return None
     session = authenticated_session('https://www.wikidata.org')
@@ -1161,7 +1166,7 @@ def query_userinfo():
     return userinfo
 
 @app.errorhandler(mwapi.errors.APIError)
-def handle_api_error(e):
+def handle_api_error(e: mwapi.errors.APIError) -> RRV:
     app.log_exception(e)
     return flask.render_template('error-api.html',
                                  error=e), 500
