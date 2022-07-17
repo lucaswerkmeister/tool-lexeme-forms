@@ -27,7 +27,7 @@ from mwapi_utils import T272319RetryingSession
 from parse_tpsv import parse_lexemes, FirstFieldNotLexemeIdError, FirstFieldLexemeIdError, WrongNumberOfFieldsError
 from templates import templates, templates_without_redirects, Template, TemplateForm
 from translations import translations
-from wikibase_types import Lemmas, Term
+from wikibase_types import LexemeLemmas, Term
 
 app = OrderedFlask(__name__)
 app.session_interface.serializer.register(TagOrderedMultiDict, index=0)
@@ -237,7 +237,7 @@ def term_span(term: Term) -> flask.Markup:
             flask.Markup(r'</span>'))
 
 @app.template_filter()
-def lemmas_spans(lemmas: Lemmas) -> flask.Markup:
+def lemmas_spans(lemmas: LexemeLemmas) -> flask.Markup:
     return flask.Markup(r'/').join(term_span(lemma)
                                    for lemma in lemmas.values())
 

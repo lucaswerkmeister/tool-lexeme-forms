@@ -6,9 +6,6 @@ class Term(TypedDict):
     value: str
 
 
-Lemmas = dict[str, Term]
-
-
 WikibaseEntityIdDataValueValue = TypedDict('WikibaseEntityIdDataValueValue', {
     'entity-type': Literal['item'],
     'id': str,
@@ -36,3 +33,33 @@ class Statement(TypedDict):
 
 StatementGroup = list[Statement]
 Statements = dict[str, StatementGroup]
+
+
+LexemeFormRepresentations = dict[str, Term]
+LexemeLemmas = dict[str, Term]
+
+
+class CoreLexemeForm(TypedDict):
+    representations: LexemeFormRepresentations
+    grammaticalFeatures: list[str]
+    claims: Statements
+
+
+class LexemeForm(CoreLexemeForm, total=False):
+    add: Literal['']  # only needed when creating
+    remove: Literal['']  # only needed when editing
+
+
+class CoreLexeme(TypedDict):
+    type: Literal['lexeme']
+    lemmas: LexemeLemmas
+    language: str
+    lexicalCategory: str
+    claims: Statements
+    forms: list[LexemeForm]
+    # senses not used in this tool
+
+
+class Lexeme(CoreLexeme, total=False):
+    id: str  # only needed when editing
+    base_revision_id: str  # only needed when editing
