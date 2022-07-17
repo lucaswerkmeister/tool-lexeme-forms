@@ -644,7 +644,7 @@ def find_duplicates(
     else:
         flask.abort(400)
 
-def get_lemma(form_data):
+def get_lemma(form_data: werkzeug.datastructures.MultiDict) -> Optional[str]:
     """Get the lemma for the lexeme from the given form data.
 
     The lemma is the first nonempty form representation variant.
@@ -660,7 +660,10 @@ def get_lemma(form_data):
                 return form_representation_variant
     return None
 
-def build_lemmas(template, form_data):
+def build_lemmas(
+        template: Template,
+        form_data: werkzeug.datastructures.MultiDict,
+) -> Optional[LexemeLemmas]:
     """Build the lemmas value for the given form data, if any.
 
     The value returned by this function can contain at most one lemma,
@@ -730,14 +733,14 @@ def get_duplicates(wiki: str, language_code: str, lemma: str) -> list[Duplicate]
 
 @app.route('/api/v1/no_duplicate/<language_code>')
 @app.template_global()
-def render_no_duplicate(language_code):
+def render_no_duplicate(language_code: str) -> flask.typing.ResponseValue:
     flask.g.interface_language_code = lang_lex2int(language_code)
     return flask.render_template(
         'no_duplicate.html',
     )
 
 @app.route('/api/v1/advanced_partial_forms_hint/<language_code>')
-def render_advanced_partial_forms_hint(language_code):
+def render_advanced_partial_forms_hint(language_code: str) -> flask.typing.ResponseValue:
     flask.g.interface_language_code = lang_lex2int(language_code)
     return flask.render_template(
         'advanced_partial_forms_hint.html',
@@ -745,7 +748,7 @@ def render_advanced_partial_forms_hint(language_code):
 
 @app.route('/api/v1/match_template_to_lexeme/<any(www,test):wiki>/<lexeme_id>')
 @enableCORS
-def match_templates_to_lexeme_id(wiki, lexeme_id):
+def match_templates_to_lexeme_id(wiki: str, lexeme_id: str) -> flask.typing.ResponseValue:
     lexeme_data = get_lexeme_data(lexeme_id, wiki)
 
     return flask.jsonify({
