@@ -88,6 +88,14 @@ def enableCORS(func, *args, **kwargs):
     response.headers['Access-Control-Allow-Origin'] = '*'
     return response
 
+@app.before_request
+def init_interface_language_code():
+    if flask.session.get('interface_language_code') in translations:
+        flask.g.interface_language_code = flask.session['interface_language_code']
+    else:
+        flask.g.interface_language_code = flask.request.accept_languages\
+                                                       .best_match(translations.keys(), 'en')
+
 @app.after_request
 def denyFrame(response: werkzeug.Response) -> werkzeug.Response:
     """Disallow embedding the tool’s pages in other websites.
@@ -290,7 +298,6 @@ def language_name_with_code(language_code: str) -> Markup:
 
 @app.route('/')
 def index() -> RRV:
-    flask.g.interface_language_code = 'en'
     return flask.render_template(
         'index.html',
         templates=templates_without_redirects,
@@ -308,7 +315,6 @@ def process_template_advanced(template_name: str, advanced: bool = True) -> RRV:
         return response
 
     template = templates_without_redirects[template_name]
-    flask.g.interface_language_code = lang_lex2int(template['language_code'])
     form_data = flask.request.form  # type: werkzeug.datastructures.MultiDict
 
     readonly = 'OAUTH' in app.config and 'oauth_access_token' not in flask.session
@@ -354,7 +360,6 @@ def process_template_bulk(template_name: str) -> RRV:
         return response
 
     template = templates_without_redirects[template_name]
-    flask.g.interface_language_code = lang_lex2int(template['language_code'])
 
     readonly = 'OAUTH' in app.config and 'oauth_access_token' not in flask.session
 
@@ -491,7 +496,6 @@ def process_template_edit(template_name: str, lexeme_id: str) -> RRV:
 
     template = templates_without_redirects[template_name]
     template_language_code = template['language_code']
-    flask.g.interface_language_code = lang_lex2int(template_language_code)
     representation_language_code = flask.request.args.get('language_code', template_language_code)
     wiki = 'test' if 'test' in template else 'www'
 
@@ -579,7 +583,6 @@ def if_no_such_template_redirect(template_name: str) -> Optional[RRV]:
             templates_without_redirects[replacement_name]
             for replacement_name in templates[template_name]
         ]
-        flask.g.interface_language_code = lang_lex2int(replacement_templates[0]['language_code'])
         return flask.render_template(
             'ambiguous-template.html',
             template_name=template_name,
@@ -683,7 +686,6 @@ def build_lemmas(
 @app.route('/api/v1/duplicates/<any(www,test):wiki>/<language_code>/<path:lemma>')
 @enableCORS
 def get_duplicates_api(wiki: str, language_code: str, lemma: str) -> RRV:
-    flask.g.interface_language_code = lang_lex2int(language_code)
     matches = get_duplicates(wiki, language_code, lemma)
     if not matches:
         return flask.Response(status=204)
@@ -742,14 +744,12 @@ def get_duplicates(wiki: str, language_code: str, lemma: str) -> list[Duplicate]
 @app.route('/api/v1/no_duplicate/<language_code>')
 @app.template_global()
 def render_no_duplicate(language_code: str) -> RRV:
-    flask.g.interface_language_code = lang_lex2int(language_code)
     return flask.render_template(
         'no_duplicate.html',
     )
 
 @app.route('/api/v1/advanced_partial_forms_hint/<language_code>')
 def render_advanced_partial_forms_hint(language_code: str) -> RRV:
-    flask.g.interface_language_code = lang_lex2int(language_code)
     return flask.render_template(
         'advanced_partial_forms_hint.html',
     )
