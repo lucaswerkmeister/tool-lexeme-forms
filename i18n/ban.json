@@ -1,12 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Chinamoonroll"
+			"Chinamoonroll",
+			"Joseagush"
 		]
 	},
 	"create": "Kardi",
 	"form-optional": "&#32;(dadi-dadi)",
 	"advanced": "Lanturan",
+	"lexeme-id": "ID Léksém",
+	"generated-via": "kaasilang nganggén",
 	"bulk-link": "modé makéh",
 	"bulk-format-help": "wantuan format",
 	"edit-link": "uah",
