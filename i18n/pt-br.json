@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Duke of Wikipädia",
 			"Eduardoaddad",
 			"EnaldoSS",
 			"Gustavo.moraes",
@@ -25,7 +26,9 @@
 	"bulk-link": "modo em massa",
 	"bulk-format-help": "ajuda de formato",
 	"bulk-not-allowed": "Você não tem permissão para usar o modo em massa. Desculpe.",
+	"bulk-first-field-not-lexeme-id": "Como a predefinição possui {{PLURAL:$1|um formulário|$1 formulários}} e a linha $4 da inserção contém {{PLURAL:$2|um campo|$2 campos}}, o primeiro campo deveria parecer com o ID lexeme, mas <q>$3</q> não se parece com um. (Você especificou um formulário a mais na entrada?)",
 	"bulk-first-field-lexeme-id": "Como a predefinição possui {{PLURAL:$1|um formulário|$1 formulários}} e a linha $4 da inserção contém {{PLURAL:$2|um campo|$2 campos}}, o primeiro campo não deverá parecer com o ID lexeme, mas <q>$3</q> se parece com um. (Você esqueceu um formulário no preenchimento?)",
+	"bulk-wrong-number-of-fields": "Dado que o modelo tem {{PLURAL:$1|uma forma|$1 formas}} cada linha da entrada deveria ter esse número de campos (ao criar um lexema novo) ou esse número de campos mais um (ao especificar o ID de um lexema existente para editar), mas em vez disso a linha $3 da entrada tem {{PLURAL:$2|um campo|$2 campos}}.",
 	"bulk-optional-forms-hint": "Se quiser pular alguns formulários, especifique-os como vazio (Exemplo: <kbd>...|||</kbd> para tres formulários vazios no final)",
 	"edit-link": "editar",
 	"edit-general": "Está no modo \"edição\". Alterar os valores abaixo irá editar, adicionar ou remover formas do lexema-alvo.",
@@ -38,5 +41,6 @@
 	"title-advanced": "$1 (avançado)",
 	"title-bulk": "$1 (em massa)",
 	"title-edit": "$1 (editar)",
-	"login-hint": "Você precisa [$1 entrar] antes de fazer alterações usando esta ferramenta."
+	"login-hint": "Você precisa [$1 entrar] antes de fazer alterações usando esta ferramenta.",
+	"ambiguous-template": "O modelo $1 já não existe; foi substituído pelos seguintes modelos:"
 }

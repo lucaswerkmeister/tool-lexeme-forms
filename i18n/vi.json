@@ -18,7 +18,7 @@
 	"bulk-not-allowed": "Rất tiếc, bạn không được pháp sử dụng chế độ hàng loạt.",
 	"edit-link": "sửa",
 	"edit-general": "Chế độ “sửa đổi” được kích hoạt. Việc thay đổi các giá trị bên dưới sẽ sửa đổi, thêm, hoặc xóa các dạng của từ vị.",
-	"edit-form-list-item": "$1, $2, {{PLURAL:$3|0=không có tuyên bố|$3 tuyên bố}}",
+	"edit-form-list-item": "$1, $2, {{PLURAL:$3|0=không có lời phát biểu|$3 lời phát biểu}}",
 	"no-grammatical-features": "không có thuộc tính ngữ pháp",
 	"title-create": "$1 (tạo)",
 	"title-advanced": "$1 (nâng cao)",
