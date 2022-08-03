@@ -43,6 +43,18 @@ allowed_html_element_names = {
 }
 
 
+def test_english_messages_exist():
+    """English is hard-coded as the final language fallback,
+    so English messages must exist."""
+    assert 'en' in translations.translations
+
+
+def test_language_code_leq_20(language_code: str):
+    """We use 20 characters as an arbitrary limit for language setting length,
+    so actual language codes must not be longer than that."""
+    assert len(language_code) <= 20
+
+
 def test_message_keys(language_code: str):
     language_keys = set(translations.translations[language_code].keys())
     english_keys = set(translations.translations['en'].keys())

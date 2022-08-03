@@ -92,6 +92,8 @@ def enableCORS(func, *args, **kwargs):
 def init_interface_language_code():
     if flask.session.get('interface_language_code') in translations:
         flask.g.interface_language_code = flask.session['interface_language_code']
+        if flask.g.interface_language_code not in translations:
+            flask.g.interface_language_code = 'en'
     else:
         flask.g.interface_language_code = flask.request.accept_languages\
                                                        .best_match(translations.keys(), 'en')
@@ -303,6 +305,22 @@ def index() -> RRV:
         templates=templates_without_redirects,
         can_use_bulk_mode=can_use_bulk_mode(),
     )
+
+@app.route('/settings/')
+def settings() -> RRV:
+    return flask.render_template(
+        'settings.html',
+        languages={
+            language_code: autonym(language_code)
+            for language_code in translations
+        },
+    )
+
+@app.route('/settings/', methods=['POST'])
+def settings_save() -> RRV:
+    if 'interface-language-code' in flask.request.form:
+        flask.session['interface_language_code'] = flask.request.form['interface-language-code'][:20]
+    return flask.redirect(flask.url_for('index'))
 
 @app.route('/template/<template_name>/', methods=['GET', 'POST'])
 def process_template(template_name: str) -> RRV:
