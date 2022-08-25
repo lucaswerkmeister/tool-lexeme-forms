@@ -44,4 +44,6 @@ def lang_int2babel(code: str) -> str:
         # Latin and Venetian are not in CLDR, Italian is similar for our purposes
         'la': 'it',
         'vec': 'it',
+        # Serbo-Croatian is not in CLDR, Croatian is closest for our purposes
+        'sh': 'hr',
     }.get(code, code)
