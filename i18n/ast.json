@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
+			"Lucas Werkmeister",
 			"Oriciu"
 		]
 	},
 	"create": "Crear",
 	"csrf-warning": "Sentímoslo, nun pudimos procesar la solicitú (falló la protección escontra <abbr title=\"Cross-site request forgery\">CSRF</abbr>). Tenta volver a unviar el formulariu.",
-	"duplicates-warning": "Los lexemes siguientes tienen yá un llema y códigu d'idioma iguales que'l que tentes crear:",
+	"duplicates-warning": "{{PLURAL:$1|El lexema siguiente tien|Los lexemes siguientes tienen}} yá un llema y códigu d'idioma iguales que'l que tentes de crear:",
 	"duplicates-instructions": "Si tas seguru de que son distintos, marca'l caxellu d'abaxo del formulariu.",
 	"no-duplicate": "Esti lexema nun ye un duplicáu d'otru esistente.",
 	"advanced": "Avanzao",
