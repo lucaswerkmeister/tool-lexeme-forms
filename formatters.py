@@ -260,6 +260,10 @@ class _Gender:
     def __format__(self, format_spec):
         format_spec = self.type_of_format_spec(format_spec)
         replacements = format_spec.split(':')
+        if len(replacements) == 1:
+            replacement = replacements[0]
+            assert replacement.startswith('m=')
+            return replacement[len('m='):]
         gender = self.get_gender(self.value)
         gender_eq = gender + '='
         for replacement in replacements:

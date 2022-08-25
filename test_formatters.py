@@ -214,6 +214,20 @@ def test_GenderFormatter_fallback(gender):
 
     gender_formatter = formatters.GenderFormatter(get_gender=get_gender)
     assert gender_formatter.format(
+        'Thank {user!g:m=you:o=unused}!',  # o(ther) only included in format spec to make this test different from _unused below
+        user=user
+    ) == 'Thank you!'
+
+
+def test_GenderFormatter_unused():
+    user = 'opaque value'
+
+    def get_gender(value):
+        # pointless to call get_gender() when format spec only has one replacement
+        raise AssertionError('Should not be called at all!')
+
+    gender_formatter = formatters.GenderFormatter(get_gender=get_gender)
+    assert gender_formatter.format(
         'Thank {user!g:m=you}!',
         user=user
     ) == 'Thank you!'
