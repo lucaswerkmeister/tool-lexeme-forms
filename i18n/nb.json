@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Danmichaelo",
-			"Jon Harald Søby"
+			"Jon Harald Søby",
+			"Lucas Werkmeister"
 		]
 	},
 	"create": "Opprett",
@@ -22,7 +23,7 @@
 	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=ingen former|én form|$2 former}} og {{PLURAL:$3|0=ingen betydninger|én betydning|$3 betydninger}}",
 	"bulk-link": "masseinnleggingsmodus",
 	"bulk-format-help": "formathjelp",
-	"bulk-not-allowed": "{{GENDER:$1|Du}} har dessverre ikke tillatelse til å bruke masseinnleggingsmodus.",
+	"bulk-not-allowed": "Du har dessverre ikke tillatelse til å bruke masseinnleggingsmodus.",
 	"bulk-first-field-not-lexeme-id": "Fordi malen har {{PLURAL:$1|én form|$1 former}} og linje $4 i innputten har {{PLURAL:$2|ett|$2}} felt bør det første feltet se ut som en leksem-ID, men <q>$3</q> ser ikke ut som en leksem-ID. (Anga du én form for mye i innputten?)",
 	"bulk-first-field-lexeme-id": "Fordi malen har {{PLURAL:$1|én form|$1 former}} og linje $4 i innputten har {{PLURAL:$2|ett|$2}} felt burde ikke det første feltet se ut som en leksem-ID, men <q>$3</q> ser ut som en. (Glemte du en form i innputten?)",
 	"bulk-wrong-number-of-fields": "Siden malen har {{PLURAL:$1|én form|$1 former}} bør hver innputtlinje ha enten så mange felt (når man oppretter nye leksemer) eller ett ekstra (når man angir ID-en til et eksisterende leksem som skal redigeres), men linje $3 i innputten har {{PLURAL:$2|ett|$2}} felt i stedet.",
