@@ -44,7 +44,7 @@ You can also run the tool locally, which is much more convenient for development
 Note that a local setup will not actually perform edits unless you create a `config.yaml` file.
 
 ```
-git clone https://phabricator.wikimedia.org/source/tool-lexeme-forms.git
+git clone https://gitlab.wikimedia.org/toolforge-repos/lexeme-forms.git
 cd tool-lexeme-forms
 pip3 install -r requirements.txt
 FLASK_APP=app.py FLASK_ENV=development flask run --extra-files i18n/en.json
@@ -64,19 +64,10 @@ and follow the instructions there.
 
 ### Code
 
-To send a patch, you can use any of the following methods:
-
-* [Submit a pull request on GitHub.](https://github.com/lucaswerkmeister/tool-lexeme-forms)
-* Use `git send-email`.
-  (Send the patch(es) to the email address from the Git commit history.)
-* Upload the changes to a repository of your own and use `git request-pull` (same email address).
-* Upload a diff on [GitHub Gist](https://gist.github.com/)
-  and send the link to the tool’s maintainer(s) via email, Twitter, on-wiki message, or whatever.
-* [Create a Diff on Phabricator.](https://phabricator.wikimedia.org/differential/diff/create/)
-  Make sure to add @LucasWerkmeister as subscriber.
-
-They’re listed in the maintainer(s)’ order of preference, from most to least preferred,
-but feel free to use any of these methods as it best suits you.
+To send a patch, you can submit a
+[pull request on GitHub](https://github.com/lucaswerkmeister/tool-lexeme-forms) or a
+[merge request on GitLab](https://gitlab.wikimedia.org/toolforge-repos/lexeme-forms/-/merge_requests).
+(E-mail / patch-based workflows are also acceptable.)
 It’s best to reach out to the maintainer(s) in advance, though,
 to see if the contribution is likely to be accepted or not.
 
