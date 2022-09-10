@@ -66,7 +66,7 @@ and follow the instructions there.
 
 To send a patch, you can submit a
 [pull request on GitHub](https://github.com/lucaswerkmeister/tool-lexeme-forms) or a
-[merge request on GitLab](https://gitlab.wikimedia.org/toolforge-repos/lexeme-forms/-/merge_requests).
+[merge request on GitLab](https://gitlab.wikimedia.org/toolforge-repos/lexeme-forms).
 (E-mail / patch-based workflows are also acceptable.)
 It’s best to reach out to the maintainer(s) in advance, though,
 to see if the contribution is likely to be accepted or not.
