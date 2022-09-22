@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Bikarhêner",
+			"Biyolojiyabikurdi",
 			"Şêr"
 		]
 	},
@@ -12,7 +13,7 @@
 	"no-duplicate": "Ev ne dubareya leksema heye ye.",
 	"advanced": "Pêşketî",
 	"advanced-general": "Tu di beşa rewşa \"pêşketî\" de yî.",
-	"advanced-lexeme-id": "Di şûna çêkirina leksemeke nû de, tu dikarî IDya leksemeke/bêjeyeke heye binivîsî ji bo lêzêdekirina forman li leksemeke heye. Ji kerema ma wan beşên ku di leksema heye de vala bihêle, da ku ev dubare neyên lêzêdekirin!",
+	"advanced-lexeme-id": "Di şûna çêkirina leksemeke nû de, tu dikarî IDya leksemeke/bêjeyeke heye binivîsî ji bo lêzêdekirina forman li leksemeke heye. Ji kerema xwe wan beşên ku di leksema heye de vala bihêle, da ku ev dubare neyên lêzêdekirin!",
 	"advanced-partial-forms": "Tu dikarî hin forman vala bihêlî, da ku ev lê zêde nebin. Lê hay jê hebe ku tu hin forman bi şaşî/xeletî ji bîr nekî (jê nebî)!",
 	"lexeme-id": "Lexem-ID",
 	"advanced-partial-forms-hint": "Ji bo çêkirina leksemên/bêjeyên nû derbasî rewşa pêşketî bibe.",

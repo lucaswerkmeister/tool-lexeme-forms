@@ -9,6 +9,7 @@
 	"csrf-warning": "Tega zahtevka žal ni bilo mogoče obdelati (neuspešna zaščita <abbr title=\"Cross-site request forgery\">CSRF</abbr>). Prosimo, poskusite obrazec poslati znova.",
 	"duplicates-warning": "{{PLURAL:$1|Naslednji obstoječi leksem ima|Naslednja obstoječa leksema imata|Naslednji obstoječi leksemi imajo}} enako lemo in jezikovno oznako kot tisti, ki ga poskušate ustvariti:",
 	"duplicates-instructions": "Če ste prepričani, da se {{PLURAL:$1|razlikuje|razlikujeta|razlikujejo}}, obkljukajte polje na koncu oblike.",
+	"duplicates-create": "Vseeno ustvari nov leksem.",
 	"no-duplicate": "To ni podvojitev obstoječega leksema.",
 	"form-optional": "&#32;(izbirno)",
 	"advanced": "Napredno",
@@ -25,11 +26,18 @@
 	"bulk-first-field-not-lexeme-id": "Ker ima predloga {{PLURAL:$1|eno obliko|dve obliki|$1 oblike|$1 oblik}} in ima vrstica $4 vnosa {{PLURAL:$2|eno polje|dve polji|$2 polja|$2 polj}}, mora biti prvo polje videti kot ID leksema, toda <q>$3</q> ni videti kot ID leksema. (Ali ste v vnosu določili eno obliko preveč?)",
 	"bulk-first-field-lexeme-id": "Ker ima predloga {{PLURAL:$1|eno obliko|dve obliki|$1 oblike|$1 oblik}} in vrstica $4 vnosa {{PLURAL:$2|eno polje|dve polji|$2 polja|$2 polj}}, prvo polje ne sme biti videti kot ID leksema, toda <q>$3</q> je videti tako. (Ali ste v vnosu pozabili vpisati eno obliko?)",
 	"bulk-wrong-number-of-fields": "Ker ima predloga {{PLURAL:$1|eno obliko|dve obliki|$1 oblike|$1 oblik}}, mora vsaka vnosna vrstica imeti toliko (pri ustvarjanju novega leksema) ali več polj (pri določanju ID-ja obstoječega leksema za urejanje), toda vrstica $3 vnosa ima {{PLURAL:$2|eno polje|dve polji|$2 polja|$2 polj}}.",
+	"bulk-optional-forms-hint": "Če želite nekatere obrazce preskočiti, jih določite kot prazne (npr. <kbd>...|||</kbd> za tri prazne obrazce na koncu).",
 	"edit-link": "uredi",
 	"edit-general": "Ste v načinu urejanja. Sprememba navedenih vrednosti bo spremenila, dodala ali odstranila oblike ciljnega leksema.",
 	"edit-mismatch-warning": "Zdi se, da se ta leksem ne ujema s predlogo! Prosimo, dvakrat preverite, da gre za pravo predlogo za ta leksem, preden nadaljujete.",
 	"edit-ambiguous-warning": "{{PLURAL:$1|1=Naslednja leksemska oblika se enako dobro ujema|2=Naslednji leksemski obliki se enako dobro ujemata|Naslednje leksemske oblike se enako dobro ujemajo}} z več kot eno obliko predloge:",
 	"edit-unmatched-warning": "{{PLURAL:$1|Naslednja leksemska oblika se ne ujema|2=Naslednji leksemski obliki se ne ujemata|Naslednje leksemske oblike se ne ujemajo}} z nobeno od oblik predloge:",
 	"edit-form-list-item": "$1, $2, {{PLURAL:$3|0=brez trditev|ena trditev|few=$3 trditve|$3 trditev}}",
-	"no-grammatical-features": "brez slovničnih lastnosti"
+	"no-grammatical-features": "brez slovničnih lastnosti",
+	"title-create": "$1 (ustvari)",
+	"title-advanced": "$1 (napredno)",
+	"title-bulk": "$1 (množično)",
+	"title-edit": "$1 (uredi)",
+	"login-hint": "Pred spreminjanjem s tem orodjem se morate [$1 prijaviti].",
+	"ambiguous-template": "Predloga $1 ne obstaja več; zamenjana je bila z naslednjimi predlogami:"
 }
