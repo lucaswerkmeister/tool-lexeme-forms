@@ -27,3 +27,12 @@ def test_ordered_request():
     app = flask_utils.OrderedFlask(__name__)
     with app.test_request_context('/?a=1&a=2&c=4&b=3'):
         assert list(flask.request.args.items(multi=True)) == [('a', '1'), ('a', '2'), ('c', '4'), ('b', '3')]
+
+
+def test_set_json_support():
+    app = flask.Flask(__name__)
+    app.json_encoder = flask_utils.SetJSONEncoder
+    with app.test_request_context('/'):
+        expected = flask.jsonify(['x'])
+        actual = flask.jsonify(set(['x']))
+    assert expected.get_data(as_text=True) == actual.get_data(as_text=True)
