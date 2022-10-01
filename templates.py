@@ -5114,6 +5114,36 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'statements': statements('P5185', 'Q1775415'),
     },
 
+    'hebrew-adjective': {
+        '@attribution': {'users': ['Ijon'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hebrew'},
+        'label': 'Hebrew adjective',
+        'language_item_id': 'Q9288',
+        'language_code': 'he',
+        'lexical_category_item_id': 'Q34698',
+        'forms': [
+            {
+                'label': 'יחיד',
+                'example': 'חתול [גדול] חצה את הכביש.',
+                'grammatical_features_item_ids': ['Q110786', 'Q3482678', 'Q499327'],
+            },
+            {
+                'label': 'רבים',
+                'example': 'חתולים [גדולים] חצו את הכביש.',
+                'grammatical_features_item_ids': ['Q146786', 'Q3482678', 'Q499327'],
+            },
+            {
+                'label': 'יחידה',
+                'example': 'חתולה [גדולה] חצתה את הכביש.',
+                'grammatical_features_item_ids': ['Q110786', 'Q3482678', 'Q1775415'],
+            },
+            {
+                'label': 'רבות',
+                'example': 'חתולות [גדולות] חצו את הכביש.',
+                'grammatical_features_item_ids': ['Q146786', 'Q3482678', 'Q1775415'],
+            },
+        ],
+    },
+
     'croatian-noun-masculine': {
         '@attribution': {'users': ['Ivi104'], 'title': 'Wikidata:Wikidata Lexeme Forms/Croatian'},
         'label': 'hrvatske imenice (muški rod)',
