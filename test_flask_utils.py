@@ -31,7 +31,7 @@ def test_ordered_request():
 
 def test_set_json_support():
     app = flask.Flask(__name__)
-    app.json_encoder = flask_utils.SetJSONEncoder
+    app.json = flask_utils.SetJSONProvider(app)
     with app.test_request_context('/'):
         expected = flask.jsonify(['x'])
         actual = flask.jsonify(set(['x']))

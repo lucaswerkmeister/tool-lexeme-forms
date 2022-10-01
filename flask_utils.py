@@ -35,8 +35,9 @@ class TagImmutableOrderedMultiDict(TagOrderedMultiDict):
     def to_python(self, value):
         return werkzeug.datastructures.ImmutableOrderedMultiDict(value)
 
-class SetJSONEncoder(flask.json.JSONEncoder):
-    def default(self, o):
+class SetJSONProvider(flask.json.provider.DefaultJSONProvider):
+    @staticmethod
+    def default(o):
         if isinstance(o, set):
             return list(o)
         return super().default(o)

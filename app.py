@@ -19,7 +19,7 @@ from typing import cast, Any, Optional, Tuple, TypedDict
 import werkzeug
 import yaml
 
-from flask_utils import OrderedFlask, TagOrderedMultiDict, TagImmutableOrderedMultiDict, SetJSONEncoder
+from flask_utils import OrderedFlask, TagOrderedMultiDict, TagImmutableOrderedMultiDict, SetJSONProvider
 from formatters import I18nFormatter
 from language import lang_lex2int, lang_int2html, lang_int2babel
 from language_names import autonym, label
@@ -33,7 +33,7 @@ from wikibase_types import Lexeme, LexemeForm, LexemeLemmas, Statements, Term
 app = OrderedFlask(__name__)
 app.session_interface.serializer.register(TagOrderedMultiDict, index=0)
 app.session_interface.serializer.register(TagImmutableOrderedMultiDict, index=0)
-app.json_encoder = SetJSONEncoder
+app.json = SetJSONProvider(app)
 app.add_template_filter(lang_lex2int)
 app.add_template_filter(lang_int2html)
 app.add_template_filter(lang_int2babel)
@@ -394,7 +394,7 @@ def process_template_bulk(template_name: str) -> RRV:
                 line_number=error.line_number,
             )
         except ValueError as error:
-            parse_error = str(error)
+            parse_error = flask.Markup.escape(error)
         if parse_error is not None:
             return flask.render_template(
                 'bulk.html',
@@ -568,7 +568,7 @@ def if_no_such_template_redirect(template_name: str) -> Optional[RRV]:
         return flask.redirect(flask.url_for(
             cast(str, flask.request.endpoint),
             **(dict(cast(dict[str, Any], flask.request.view_args), template_name=templates[template_name])),
-            **flask.request.args.to_dict(flat=False),
+            **flask.request.args.to_dict(flat=False),  # type: ignore
         ), code=307)
     elif isinstance(templates[template_name], list):
         replacement_templates = [
@@ -844,7 +844,7 @@ def current_url() -> str:
         _external=True,
         _scheme=flask.request.headers.get('X-Forwarded-Proto', 'http'),
         **cast(dict, flask.request.view_args),
-        **flask.request.args.to_dict(flat=False),
+        **flask.request.args.to_dict(flat=False),  # type: ignore
     ).replace('+', '%20')
 
 @app.template_global()
