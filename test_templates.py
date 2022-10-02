@@ -70,6 +70,22 @@ def test_template_labels_distinct_per_language():
     assert not ambiguous_template_names_by_language_and_label
 
 
+def test_template_language_lexical_category_item_ids_disjoint():
+    language_item_ids = {}
+    lexical_category_item_ids = {}
+    for template_name, template in templates.templates_without_redirects.items():
+        language_item_ids.setdefault(template['language_item_id'], set())\
+                         .add(template_name)
+        lexical_category_item_ids.setdefault(template['lexical_category_item_id'], set())\
+                                 .add(template_name)
+    shared = {
+        item_id: (language_item_ids[item_id], lexical_category_item_ids[item_id])
+        for item_id in language_item_ids
+        if item_id in lexical_category_item_ids
+    }
+    assert not shared
+
+
 @pytest.mark.parametrize('template_name, form', [
     (template_name, form)
     for template_name, template in templates.templates_without_redirects.items()
