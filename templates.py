@@ -4184,7 +4184,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     },
 
     'spanish-noun-masculine': {
-        '@attribution': {'users': ['Andreasmperu'], 'title': 'Wikidata:Wikidata Lexeme Forms/Spanish'},
+        '@attribution': {'users': ['Andreasmperu', 'Hameryko'], 'title': 'Wikidata:Wikidata Lexeme Forms/Spanish'},
         'label': 'sustantivo masculino en español',
         'language_item_id': 'Q1321',
         'language_code': 'es',
@@ -4193,19 +4193,19 @@ templates: Dict[str, Union[str, list[str], Template]] = {
             {
                 'label': 'singular',
                 'example': 'Este es un [libro].',
-                'grammatical_features_item_ids': ['Q110786'],
+                'grammatical_features_item_ids': ['Q110786', 'Q499327'],
             },
             {
                 'label': 'plural',
                 'example': 'Estos son unos [libros].',
-                'grammatical_features_item_ids': ['Q146786'],
+                'grammatical_features_item_ids': ['Q146786', 'Q499327'],
             },
         ],
         'statements': statements('P5185', 'Q499327'),
     },
 
     'spanish-noun-feminine': {
-        '@attribution': {'users': ['Andreasmperu'], 'title': 'Wikidata:Wikidata Lexeme Forms/Spanish'},
+        '@attribution': {'users': ['Andreasmperu', 'Hameryko'], 'title': 'Wikidata:Wikidata Lexeme Forms/Spanish'},
         'label': 'sustantivo femenino en español',
         'language_item_id': 'Q1321',
         'language_code': 'es',
@@ -4214,15 +4214,51 @@ templates: Dict[str, Union[str, list[str], Template]] = {
             {
                 'label': 'singular',
                 'example': 'Esta es una [manzana].',
-                'grammatical_features_item_ids': ['Q110786'],
+                'grammatical_features_item_ids': ['Q110786', 'Q1775415'],
             },
             {
                 'label': 'plural',
                 'example': 'Estas son unas [manzanas].',
-                'grammatical_features_item_ids': ['Q146786'],
+                'grammatical_features_item_ids': ['Q146786', 'Q1775415'],
             },
         ],
         'statements': statements('P5185', 'Q1775415'),
+    },
+
+    'spanish-noun-masculine-feminine': {
+        '@attribution': {'users': ['Hameryko'], 'title': 'Wikidata:Wikidata Lexeme Forms/Spanish'},
+        'label': 'sustantivo masculino y femenino en español',
+        'language_item_id': 'Q1321',
+        'language_code': 'es',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'masculino singular',
+                'example': 'Ese [poeta] es bueno.',
+                'grammatical_features_item_ids': ['Q499327', 'Q110786'],
+            },
+            {
+                'label': 'masculino plural',
+                'example': 'Esos [poetas] son buenos.',
+                'grammatical_features_item_ids': ['Q499327', 'Q146786'],
+            },
+            {
+                'label': 'femenino singular',
+                'example': 'Esa [poetisa] es buena.',
+                'grammatical_features_item_ids': ['Q1775415', 'Q110786'],
+            },
+            {
+                'label': 'femenino plural',
+                'example': 'Esas [poetisas] son buenas.',
+                'grammatical_features_item_ids': ['Q1775415', 'Q146786'],
+            },
+        ],
+        'statements': {
+            'P5185': [
+                statement('P5185', 'Q499327'),
+                statement('P5185', 'Q1775415'),
+            ],
+        },
     },
 
     'spanish-adjective': {
@@ -4279,6 +4315,11 @@ templates: Dict[str, Union[str, list[str], Template]] = {
                 'label': 'segunda persona singular presente',
                 'example': 'Tú [cantas] todos los días.',
                 'grammatical_features_item_ids': ['Q192613', 'Q682111', 'Q51929049', 'Q110786'],
+            },
+            {
+                'label': 'segunda persona (vos) singular presente',
+                'example': 'Vos [cantás] todos los días.',
+                'grammatical_features_item_ids': ['Q192613', 'Q682111', 'Q51929049', 'Q110786', 'Q1070730'],
             },
             {
                 'label': 'tercera persona singular presente',
@@ -4369,9 +4410,25 @@ templates: Dict[str, Union[str, list[str], Template]] = {
                 'grammatical_features_item_ids': ['Q1923028'],
             },
             {
-                'label': 'participio',
+                'section_break': True,
+                'label': 'participio masculino singular',
                 'example': 'Yo he [cantado].',
-                'grammatical_features_item_ids': ['Q814722'],
+                'grammatical_features_item_ids': ['Q814722', 'Q499327', 'Q110786'],
+            },
+            {
+                'label': 'participio masculino plural',
+                'example': 'Esos fueron [cantados].',
+                'grammatical_features_item_ids': ['Q814722', 'Q499327', 'Q146786'],
+            },
+            {
+                'label': 'participio femenino singular',
+                'example': 'Esa fue [cantada].',
+                'grammatical_features_item_ids': ['Q814722', 'Q1775415', 'Q110786'],
+            },
+            {
+                'label': 'participio femenino plural',
+                'example': 'Esas fueron [cantadas].',
+                'grammatical_features_item_ids': ['Q814722', 'Q1775415', 'Q146786'],
             },
             {
                 'section_break': True,
@@ -4562,6 +4619,159 @@ templates: Dict[str, Union[str, list[str], Template]] = {
                 'label': 'segunda persona plural del imperativo',
                 'example': 'Por favor, [canten] ustedes.',
                 'grammatical_features_item_ids': ['Q51929049', 'Q146786', 'Q22716', 'Q6158182'],
+            },
+        ],
+    },
+
+    'spanish-adverb': {
+        '@attribution': {'users': ['Hameryko'], 'title': 'Wikidata:Wikidata Lexeme Forms/Spanish'},
+        'label': 'adverbio en español',
+        'language_item_id': 'Q1321',
+        'language_code': 'es',
+        'lexical_category_item_id': 'Q380057',
+        'forms': [
+            {
+                'label': 'adverbio',
+                'example': 'Yo tengo [únicamente] ese libro.',
+                'grammatical_features_item_ids': [],
+            },
+        ],
+    },
+
+    'spanish-interjection': {
+        '@attribution': {'users': ['Hameryko'], 'title': 'Wikidata:Wikidata Lexeme Forms/Spanish'},
+        'label': 'interjección en español',
+        'language_item_id': 'Q1321',
+        'language_code': 'es',
+        'lexical_category_item_id': 'Q83034',
+        'forms': [
+            {
+                'label': 'interjección',
+                'example': 'No me lo esperaba, ¡[cáspita]!.',
+                'grammatical_features_item_ids': [],
+            },
+        ],
+    },
+
+    'spanish-phrase-nominal-masculine': {
+        '@attribution': {'users': ['Hameryko'], 'title': 'Wikidata:Wikidata Lexeme Forms/Spanish'},
+        'label': 'locución sustantiva masculina en español',
+        'language_item_id': 'Q1321',
+        'language_code': 'es',
+        'lexical_category_item_id': 'Q29888377',
+        'forms': [
+            {
+                'label': 'singular',
+                'example': 'Lo importante es el [santo y seña].',
+                'grammatical_features_item_ids': ['Q110786', 'Q499327'],
+            },
+            {
+                'label': 'plural',
+                'example': 'Lo importante son los [santos y señas].',
+                'grammatical_features_item_ids': ['Q146786', 'Q499327'],
+            },
+        ],
+        'statements': statements('P5185', 'Q499327'),
+    },
+
+    'spanish-phrase-nominal-feminine': {
+        '@attribution': {'users': ['Hameryko'], 'title': 'Wikidata:Wikidata Lexeme Forms/Spanish'},
+        'label': 'locución sustantiva femenina en español',
+        'language_item_id': 'Q1321',
+        'language_code': 'es',
+        'lexical_category_item_id': 'Q29888377',
+        'forms': [
+            {
+                'label': 'singular',
+                'example': 'Lo importante es la [caja de caudales].',
+                'grammatical_features_item_ids': ['Q110786', 'Q1775415'],
+            },
+            {
+                'label': 'plural',
+                'example': 'Lo importante son las [cajas de caudales].',
+                'grammatical_features_item_ids': ['Q146786', 'Q1775415'],
+            },
+        ],
+        'statements': statements('P5185', 'Q1775415'),
+    },
+
+    'spanish-phrase-attributive': {
+        '@attribution': {'users': ['Hameryko'], 'title': 'Wikidata:Wikidata Lexeme Forms/Spanish'},
+        'label': 'locución adjetiva en español',
+        'language_item_id': 'Q1321',
+        'language_code': 'es',
+        'lexical_category_item_id': 'Q12734432',
+        'forms': [
+            {
+                'label': 'masculino singular',
+                'example': 'Eso está [sano y salvo].',
+                'grammatical_features_item_ids': ['Q110786', 'Q499327'],
+            },
+            {
+                'label': 'masculino plural',
+                'example': 'Esos están [sanos y salvos].',
+                'grammatical_features_item_ids': ['Q146786', 'Q499327'],
+            },
+            {
+                'label': 'femenino singular',
+                'example': 'Esa está [sana y salva].',
+                'grammatical_features_item_ids': ['Q110786', 'Q1775415'],
+            },
+            {
+                'label': 'femenino plural',
+                'example': 'Esas están [sanas y salvas].',
+                'grammatical_features_item_ids': ['Q146786', 'Q1775415'],
+            },
+        ],
+        'statements': {
+            'P5185': [
+                statement('P5185', 'Q499327'),
+                statement('P5185', 'Q1775415'),
+            ],
+        },
+    },
+
+    'spanish-locution-prepositional': {
+        '@attribution': {'users': ['Hameryko'], 'title': 'Wikidata:Wikidata Lexeme Forms/Spanish'},
+        'label': 'locución preposicional en español',
+        'language_item_id': 'Q1321',
+        'language_code': 'es',
+        'lexical_category_item_id': 'Q10319522',
+        'forms': [
+            {
+                'label': 'locución preposicional',
+                'example': 'Ellas hablaron [detrás de] (el) edificio.',
+                'grammatical_features_item_ids': [],
+            },
+        ],
+    },
+
+    'spanish-locution-interjectional': {
+        '@attribution': {'users': ['Hameryko'], 'title': 'Wikidata:Wikidata Lexeme Forms/Spanish'},
+        'label': 'locución interjectiva en español',
+        'language_item_id': 'Q1321',
+        'language_code': 'es',
+        'lexical_category_item_id': 'Q10319520',
+        'forms': [
+            {
+                'label': 'locución interjectiva',
+                'example': 'No me lo esperaba, ¡[vaya por Dios]!.',
+                'grammatical_features_item_ids': [],
+            },
+        ],
+    },
+
+    'spanish-locution-adverbial': {
+        '@attribution': {'users': ['Hameryko'], 'title': 'Wikidata:Wikidata Lexeme Forms/Spanish'},
+        'label': 'locución adverbial en español',
+        'language_item_id': 'Q1321',
+        'language_code': 'es',
+        'lexical_category_item_id': 'Q5978303',
+        'forms': [
+            {
+                'label': 'locución adverbial',
+                'example': 'Él lo dijo [a posteriori].',
+                'grammatical_features_item_ids': [],
             },
         ],
     },
