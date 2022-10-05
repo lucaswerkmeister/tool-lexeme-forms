@@ -5326,7 +5326,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
 
     'hebrew-adjective': {
         '@attribution': {'users': ['Ijon'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hebrew'},
-        'label': 'Hebrew adjective',
+        'label': 'שם תואר עברי',
         'language_item_id': 'Q9288',
         'language_code': 'he',
         'lexical_category_item_id': 'Q34698',
