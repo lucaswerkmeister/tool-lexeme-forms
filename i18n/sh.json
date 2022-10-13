@@ -4,6 +4,10 @@
 			"Vlad5250"
 		]
 	},
+	"create": "Napravi",
+	"csrf-warning": "Nažalost, nismo uspjeli obraditi ovaj zahtjev (<abbr title=\"Cross-site request forgery\">CSRF</abbr> zaštita neuspješna). Molimo pokušajte ponovno.",
+	"duplicates-warning": "Sljedeći postojeći {{PLURAL:$1|leksem ima|leksemi imaju}} isti predmet i jezični kod kao i onaj koji pokušavate stvoriti:",
+	"duplicates-instructions": "Ako ste sigurni da je riječ o {{PLURAL:$1|različitom predmetu|različitim predmetima}}, označite kućicu na dnu obrasca.",
 	"edit-link": "uredi",
 	"edit-general": "Trenutno ste u načinu uređivanja. Promjena vrijednosti niže uredit će, dodati ili ukloniti oblike odabranog leksema.",
 	"edit-mismatch-warning": "Ovaj se leksem ne poklapa s pruženim predloškom! Molimo ponovno provjerite da ste odabrali ispravan predložak.",
