@@ -7,7 +7,7 @@
 	},
 	"create": "Ustvari",
 	"csrf-warning": "Tega zahtevka žal ni bilo mogoče obdelati (neuspešna zaščita <abbr title=\"Cross-site request forgery\">CSRF</abbr>). Prosimo, poskusite obrazec poslati znova.",
-	"duplicates-warning": "{{PLURAL:$1|Naslednji obstoječi leksem ima|Naslednja obstoječa leksema imata|Naslednji obstoječi leksemi imajo}} enako lemo in jezikovno oznako kot tisti, ki ga poskušate ustvariti:",
+	"duplicates-warning": "{{PLURAL:$1|Naslednji obstoječi leksem ima|Naslednja obstoječa leksema imata|Naslednji obstoječi leksemi imajo}} enako lemo in oznako jezika kot tisti, ki ga poskušate ustvariti:",
 	"duplicates-instructions": "Če ste prepričani, da se {{PLURAL:$1|razlikuje|razlikujeta|razlikujejo}}, obkljukajte polje na koncu oblike.",
 	"duplicates-create": "Vseeno ustvari nov leksem.",
 	"no-duplicate": "To ni podvojitev obstoječega leksema.",
