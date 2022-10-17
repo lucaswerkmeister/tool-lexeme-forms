@@ -6,10 +6,12 @@
 			"RYU N",
 			"Sai10ukazuki",
 			"Tamaki Wakita",
-			"Tmv"
+			"Tmv",
+			"春春眠眠"
 		]
 	},
 	"create": "作成",
+	"duplicates-create": "とにかく新しい語彙素を作成します。",
 	"advanced": "アドバンス",
 	"advanced-general": "現在「アドバンス」モードです。",
 	"lexeme-id": "語彙素ID",
