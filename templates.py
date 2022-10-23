@@ -5282,6 +5282,282 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         ],
     },
 
+    'french-verb': {
+        '@attribution': {'users': ['Envlh', 'Djiboun', 'VIGNERON'], 'title': 'Wikidata:Wikidata Lexeme Forms/French'},
+        'label': 'verbe en français',
+        'language_item_id': 'Q150',
+        'language_code': 'fr',
+        'lexical_category_item_id': 'Q24905',
+        'two_column_sections': True,
+        'forms': [
+            {
+                'label': 'infinitif',
+                'example': 'Iel sait [chanter].',
+                'grammatical_features_item_ids': ['Q179230'],
+            },
+            {
+                'section_break': True,
+                'label': 'participe présent',
+                'example': 'C\'est en [chantant] que l\'on devient forgeron.',
+                'grammatical_features_item_ids': ['Q814722', 'Q192613'],
+            },
+            {
+                'section_break': True,
+                'label': 'participe passé singulier masculin',
+                'example': 'Il est [chanté].',
+                'grammatical_features_item_ids': ['Q814722', 'Q1994301', 'Q110786', 'Q499327'],
+            },
+            {
+                'label': 'participe passé singulier féminin',
+                'example': 'Elle est [chantée].',
+                'grammatical_features_item_ids': ['Q814722', 'Q1994301', 'Q110786', 'Q1775415'],
+            },
+            {
+                'label': 'participe passé pluriel masculin',
+                'example': 'Ils sont [chantés].',
+                'grammatical_features_item_ids': ['Q814722', 'Q1994301', 'Q146786', 'Q499327'],
+            },
+            {
+                'label': 'participe passé pluriel féminin',
+                'example': 'Elles sont [chantées].',
+                'grammatical_features_item_ids': ['Q814722', 'Q1994301', 'Q146786', 'Q1775415'],
+            },
+            {
+                'section_break': True,
+                'label': 'indicatif présent singulier première personne',
+                'example': 'Aujourd\'hui, je (j\') [chante].',
+                'grammatical_features_item_ids': ['Q682111', 'Q192613', 'Q110786', 'Q21714344'],
+            },
+            {
+                'label': 'indicatif présent singulier deuxième personne',
+                'example': 'Aujourd\'hui, tu [chantes].',
+                'grammatical_features_item_ids': ['Q682111', 'Q192613', 'Q110786', 'Q51929049'],
+            },
+            {
+                'label': 'indicatif présent singulier troisième personne',
+                'example': 'Aujourd\'hui, iel [chante].',
+                'grammatical_features_item_ids': ['Q682111', 'Q192613', 'Q110786', 'Q51929074'],
+            },
+            {
+                'label': 'indicatif présent pluriel première personne',
+                'example': 'Aujourd\'hui, nous [chantons].',
+                'grammatical_features_item_ids': ['Q682111', 'Q192613', 'Q146786', 'Q21714344'],
+            },
+            {
+                'label': 'indicatif présent pluriel deuxième personne',
+                'example': 'Aujourd\'hui, vous [chantez].',
+                'grammatical_features_item_ids': ['Q682111', 'Q192613', 'Q146786', 'Q51929049'],
+            },
+            {
+                'label': 'indicatif présent pluriel troisième personne',
+                'example': 'Aujourd\'hui, iels [chantent].',
+                'grammatical_features_item_ids': ['Q682111', 'Q192613', 'Q146786', 'Q51929074'],
+            },
+            {
+                'section_break': True,
+                'label': 'indicatif passé simple singulier première personne',
+                'example': 'Hier, je (j\') [chantai] une fois.',
+                'grammatical_features_item_ids': ['Q682111', 'Q442485', 'Q110786', 'Q21714344'],
+            },
+            {
+                'label': 'indicatif passé simple singulier deuxième personne',
+                'example': 'Hier, tu [chantas] une fois.',
+                'grammatical_features_item_ids': ['Q682111', 'Q442485', 'Q110786', 'Q51929049'],
+            },
+            {
+                'label': 'indicatif passé simple singulier troisième personne',
+                'example': 'Hier, iel [chanta] une fois.',
+                'grammatical_features_item_ids': ['Q682111', 'Q442485', 'Q110786', 'Q51929074'],
+            },
+            {
+                'label': 'indicatif passé simple pluriel première personne',
+                'example': 'Hier, nous [chantâmes] une fois.',
+                'grammatical_features_item_ids': ['Q682111', 'Q442485', 'Q146786', 'Q21714344'],
+            },
+            {
+                'label': 'indicatif passé simple pluriel deuxième personne',
+                'example': 'Hier, vous [chantâtes] une fois.',
+                'grammatical_features_item_ids': ['Q682111', 'Q442485', 'Q146786', 'Q51929049'],
+            },
+            {
+                'label': 'indicatif passé simple pluriel troisième personne',
+                'example': 'Hier, iels [chantèrent] une fois.',
+                'grammatical_features_item_ids': ['Q682111', 'Q442485', 'Q146786', 'Q51929074'],
+            },
+            {
+                'section_break': True,
+                'label': 'indicatif imparfait singulier première personne',
+                'example': 'Hier, je (j\') [chantais] toute la journée.',
+                'grammatical_features_item_ids': ['Q682111', 'Q108524486', 'Q110786', 'Q21714344'],
+            },
+            {
+                'label': 'indicatif imparfait singulier deuxième personne',
+                'example': 'Hier, tu [chantais] toute la journée.',
+                'grammatical_features_item_ids': ['Q682111', 'Q108524486', 'Q110786', 'Q51929049'],
+            },
+            {
+                'label': 'indicatif imparfait singulier troisième personne',
+                'example': 'Hier, iel [chantait] toute la journée.',
+                'grammatical_features_item_ids': ['Q682111', 'Q108524486', 'Q110786', 'Q51929074'],
+            },
+            {
+                'label': 'indicatif imparfait pluriel première personne',
+                'example': 'Hier, nous [chantions] toute la journée.',
+                'grammatical_features_item_ids': ['Q682111', 'Q108524486', 'Q146786', 'Q21714344'],
+            },
+            {
+                'label': 'indicatif imparfait pluriel deuxième personne',
+                'example': 'Hier, vous [chantiez] toute la journée.',
+                'grammatical_features_item_ids': ['Q682111', 'Q108524486', 'Q146786', 'Q51929049'],
+            },
+            {
+                'label': 'indicatif imparfait pluriel troisième personne',
+                'example': 'Hier, iels [chantaient] toute la journée.',
+                'grammatical_features_item_ids': ['Q682111', 'Q108524486', 'Q146786', 'Q51929074'],
+            },
+            {
+                'section_break': True,
+                'label': 'indicatif futur simple singulier première personne',
+                'example': 'Demain, je (j\') [chanterai].',
+                'grammatical_features_item_ids': ['Q682111', 'Q1475560', 'Q110786', 'Q21714344'],
+            },
+            {
+                'label': 'indicatif futur simple singulier deuxième personne',
+                'example': 'Demain, tu [chanteras].',
+                'grammatical_features_item_ids': ['Q682111', 'Q1475560', 'Q110786', 'Q51929049'],
+            },
+            {
+                'label': 'indicatif futur simple singulier troisième personne',
+                'example': 'Demain, iel [chantera].',
+                'grammatical_features_item_ids': ['Q682111', 'Q1475560', 'Q110786', 'Q51929074'],
+            },
+            {
+                'label': 'indicatif futur simple pluriel première personne',
+                'example': 'Demain, nous [chanterons].',
+                'grammatical_features_item_ids': ['Q682111', 'Q1475560', 'Q146786', 'Q21714344'],
+            },
+            {
+                'label': 'indicatif futur simple pluriel deuxième personne',
+                'example': 'Demain, vous [chanterez].',
+                'grammatical_features_item_ids': ['Q682111', 'Q1475560', 'Q146786', 'Q51929049'],
+            },
+            {
+                'label': 'indicatif futur simple pluriel troisième personne',
+                'example': 'Demain, iels [chanteront].',
+                'grammatical_features_item_ids': ['Q682111', 'Q1475560', 'Q146786', 'Q51929074'],
+            },
+            {
+                'section_break': True,
+                'label': 'subjonctif présent singulier première personne',
+                'example': 'Il faut que je (j\') [chante].',
+                'grammatical_features_item_ids': ['Q473746', 'Q192613', 'Q110786', 'Q21714344'],
+            },
+            {
+                'label': 'subjonctif présent singulier deuxième personne',
+                'example': 'Il faut que tu [chantes].',
+                'grammatical_features_item_ids': ['Q473746', 'Q192613', 'Q110786', 'Q51929049'],
+            },
+            {
+                'label': 'subjonctif présent singulier troisième personne',
+                'example': 'Il faut qu\'iel [chante].',
+                'grammatical_features_item_ids': ['Q473746', 'Q192613', 'Q110786', 'Q51929074'],
+            },
+            {
+                'label': 'subjonctif présent pluriel première personne',
+                'example': 'Il faut que nous [chantions].',
+                'grammatical_features_item_ids': ['Q473746', 'Q192613', 'Q146786', 'Q21714344'],
+            },
+            {
+                'label': 'subjonctif présent pluriel deuxième personne',
+                'example': 'Il faut que vous [chantiez].',
+                'grammatical_features_item_ids': ['Q473746', 'Q192613', 'Q146786', 'Q51929049'],
+            },
+            {
+                'label': 'subjonctif présent pluriel troisième personne',
+                'example': 'Il faut qu\'iels [chantent].',
+                'grammatical_features_item_ids': ['Q473746', 'Q192613', 'Q146786', 'Q51929074'],
+            },
+            {
+                'section_break': True,
+                'label': 'subjonctif imparfait singulier première personne',
+                'example': 'Il fallait que je (j\') [chantasse].',
+                'grammatical_features_item_ids': ['Q473746', 'Q108524486', 'Q110786', 'Q21714344'],
+            },
+            {
+                'label': 'subjonctif imparfait singulier deuxième personne',
+                'example': 'Il fallait que tu [chantasses].',
+                'grammatical_features_item_ids': ['Q473746', 'Q108524486', 'Q110786', 'Q51929049'],
+            },
+            {
+                'label': 'subjonctif imparfait singulier troisième personne',
+                'example': 'Il fallait qu\'iel [chantât].',
+                'grammatical_features_item_ids': ['Q473746', 'Q108524486', 'Q110786', 'Q51929074'],
+            },
+            {
+                'label': 'subjonctif imparfait pluriel première personne',
+                'example': 'Il fallait que nous [chantassions].',
+                'grammatical_features_item_ids': ['Q473746', 'Q108524486', 'Q146786', 'Q21714344'],
+            },
+            {
+                'label': 'subjonctif imparfait pluriel deuxième personne',
+                'example': 'Il fallait que vous [chantassiez].',
+                'grammatical_features_item_ids': ['Q473746', 'Q108524486', 'Q146786', 'Q51929049'],
+            },
+            {
+                'label': 'subjonctif imparfait pluriel troisième personne',
+                'example': 'Il fallait qu\'iels [chantassent].',
+                'grammatical_features_item_ids': ['Q473746', 'Q108524486', 'Q146786', 'Q51929074'],
+            },
+            {
+                'section_break': True,
+                'label': 'conditionnel présent singulier première personne',
+                'example': 'Si je savais, je (j\') [chanterais].',
+                'grammatical_features_item_ids': ['Q625581', 'Q192613', 'Q110786', 'Q21714344'],
+            },
+            {
+                'label': 'conditionnel présent singulier deuxième personne',
+                'example': 'Si tu savais, tu [chanterais].',
+                'grammatical_features_item_ids': ['Q625581', 'Q192613', 'Q110786', 'Q51929049'],
+            },
+            {
+                'label': 'conditionnel présent singulier troisième personne',
+                'example': 'S\'iel savait, iel [chanterait].',
+                'grammatical_features_item_ids': ['Q625581', 'Q192613', 'Q110786', 'Q51929074'],
+            },
+            {
+                'label': 'conditionnel présent pluriel première personne',
+                'example': 'Si nous savions, nous [chanterions].',
+                'grammatical_features_item_ids': ['Q625581', 'Q192613', 'Q146786', 'Q21714344'],
+            },
+            {
+                'label': 'conditionnel présent pluriel deuxième personne',
+                'example': 'Si vous saviez, vous [chanteriez].',
+                'grammatical_features_item_ids': ['Q625581', 'Q192613', 'Q146786', 'Q51929049'],
+            },
+            {
+                'label': 'conditionnel présent pluriel troisième personne',
+                'example': 'S\'iels savaient, iels [chanteraient].',
+                'grammatical_features_item_ids': ['Q625581', 'Q192613', 'Q146786', 'Q51929074'],
+            },
+            {
+                'section_break': True,
+                'label': 'impératif présent singulier deuxième personne',
+                'example': 'Maintenant, [chante] !',
+                'grammatical_features_item_ids': ['Q22716', 'Q192613', 'Q110786', 'Q51929049'],
+            },
+            {
+                'label': 'impératif présent pluriel première personne',
+                'example': 'Maintenant, [chantons] !',
+                'grammatical_features_item_ids': ['Q22716', 'Q192613', 'Q146786', 'Q21714344'],
+            },
+            {
+                'label': 'impératif présent pluriel deuxième personne',
+                'example': 'Maintenant, [chantez] !',
+                'grammatical_features_item_ids': ['Q22716', 'Q192613', 'Q146786', 'Q51929049'],
+            },
+        ],
+    },
+
     'hebrew-noun-masculine': {
         '@attribution': {'users': ['Uziel302', 'Uzielbot'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hebrew'},
         'label': 'שם עצם זכר',
