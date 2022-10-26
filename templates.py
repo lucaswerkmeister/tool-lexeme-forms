@@ -1,39 +1,34 @@
 from typing import Dict, List, Optional, Set, TypedDict, Union
+from typing_extensions import NotRequired
 
 from wikibase_types import Statement, Statements
 
 
-class CoreTemplateForm(TypedDict):
+class TemplateForm(TypedDict):
+    section_break: NotRequired[bool]
     label: str
     example: str
     grammatical_features_item_ids: List[str]
-
-class TemplateForm(CoreTemplateForm, total=False):
-    section_break: bool
-    optional: bool
-    grammatical_features_item_ids_optional: Set[str]
-    statements: dict
-
-class CoreTemplate(TypedDict):
-    label: str
-    language_item_id: str
-    language_code: str
-    lexical_category_item_id: str
-    forms: List[TemplateForm]
+    grammatical_features_item_ids_optional: NotRequired[Set[str]]
+    optional: NotRequired[bool]
+    statements: NotRequired[dict]
 
 class Attribution(TypedDict):
     users: List[str]
     title: Optional[str]
 
-MetaTemplate = TypedDict('MetaTemplate', {
-    '@attribution': Attribution,
-    '@template_name': str,
-}, total=False)
-
-class Template(CoreTemplate, MetaTemplate, total=False):
-    test: bool
-    two_column_sections: bool
-    statements: Statements
+Template = TypedDict('Template', {
+    '@attribution': NotRequired[Attribution],
+    'test': NotRequired[bool],
+    'label': str,
+    'language_item_id': str,
+    'language_code': str,
+    'lexical_category_item_id': str,
+    'two_column_sections': NotRequired[bool],
+    'forms': List[TemplateForm],
+    'statements': NotRequired[Statements],
+    '@template_name': NotRequired[str],
+})
 
 
 def statement(property_id: str, item_id: str) -> Statement:

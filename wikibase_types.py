@@ -1,13 +1,11 @@
 from typing import Literal, TypedDict
+from typing_extensions import NotRequired
 
 
-class CoreTerm(TypedDict):
+class Term(TypedDict):
     language: str
     value: str
-
-
-class Term(CoreTerm, total=False):
-    remove: Literal['']  # only needed when editing
+    remove: NotRequired[Literal['']]  # only needed when editing
 
 
 WikibaseEntityIdDataValueValue = TypedDict('WikibaseEntityIdDataValueValue', {
@@ -43,19 +41,16 @@ LexemeFormRepresentations = dict[str, Term]
 LexemeLemmas = dict[str, Term]
 
 
-class CoreLexemeForm(TypedDict):
+class LexemeForm(TypedDict):
     representations: LexemeFormRepresentations
     grammaticalFeatures: list[str]
     claims: Statements
+    add: NotRequired[Literal['']]  # only needed when creating
+    remove: NotRequired[Literal['']]  # only needed when editing
+    id: NotRequired[Literal['']]  # only present when editing
 
 
-class LexemeForm(CoreLexemeForm, total=False):
-    add: Literal['']  # only needed when creating
-    remove: Literal['']  # only needed when editing
-    id: Literal['']  # only present when editing
-
-
-class CoreLexeme(TypedDict):
+class Lexeme(TypedDict):
     type: Literal['lexeme']
     lemmas: LexemeLemmas
     language: str
@@ -63,9 +58,6 @@ class CoreLexeme(TypedDict):
     claims: Statements
     forms: list[LexemeForm]
     # senses not used in this tool
-
-
-class Lexeme(CoreLexeme, total=False):
-    id: str  # only needed when editing
-    base_revision_id: str  # only needed when editing
-    lastrevid: int  # only available when data returned by API
+    id: NotRequired[str]  # only needed when editing
+    base_revision_id: NotRequired[str]  # only needed when editing
+    lastrevid: NotRequired[int]  # only available when data returned by API
