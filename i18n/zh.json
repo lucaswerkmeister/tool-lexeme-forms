@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Evesiesta",
+			"GuoPC",
+			"Njzjz",
+			"Si109",
+			"Zhang8569"
+		]
+	},
+	"create": "创建",
+	"csrf-warning": "抱歉，我们无法处理此请求（<abbr title=\"Cross-site request forgery\">CSRF</abbr>保护失败）。请尝试再次提交表单。",
+	"duplicates-create": "无论怎么样，创造一个新的词位。",
+	"advanced": "高级",
+	"lexeme-id": "词位编号",
+	"edit-link": "编辑",
+	"title-create": "$1（创建）",
+	"title-advanced": "$1（高级）",
+	"title-edit": "$1（编辑）"
+}
