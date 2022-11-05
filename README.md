@@ -46,7 +46,7 @@ Note that a local setup will not actually perform edits unless you create a `con
 ```
 git clone https://gitlab.wikimedia.org/toolforge-repos/lexeme-forms.git
 cd tool-lexeme-forms
-pip3 install -r requirements.txt
+pip3 install -r requirements.txt -r dev-requirements.txt
 flask --debug run --extra-files i18n/en.json
 ```
 
