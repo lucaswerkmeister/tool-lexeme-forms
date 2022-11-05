@@ -83,6 +83,44 @@ def test_template_language_lexical_category_item_ids_disjoint():
     assert not shared
 
 
+expected_label_counts = {
+    'breton-noun-with-mutation-ktp': {
+        'unander': 3,
+        'liester': 3,
+    },
+    'breton-noun-with-mutation-gdb': {
+        'unander': 3,
+        'liester': 3,
+    },
+    'breton-noun-with-mutation-m': {
+        'unander': 2,
+        'liester': 2,
+    },
+    'czech-verb-perfective': {
+        'infinitiv': 2,
+    },
+    'czech-verb-imperfective': {
+        'infinitiv': 2,
+    },
+    'spanish-verb': {
+        'segunda persona singular del imperativo': 3,
+        'segunda persona plural del imperativo': 2,
+    },
+}
+
+
+@pytest.mark.parametrize('template_name', templates.templates_without_redirects.keys())
+def test_labels_distinct(template_name):
+    template = templates.templates_without_redirects[template_name]
+    labels = {}
+    for form in template['forms']:
+        label = form['label']
+        labels[label] = labels.get(label, 0) + 1
+    actual_counts = {label: count for label, count in labels.items() if count > 1}
+    expected_counts = expected_label_counts.get(template_name, {})
+    assert actual_counts == expected_counts
+
+
 @pytest.mark.parametrize('template_name, form', [
     (template_name, form)
     for template_name, template in templates.templates_without_redirects.items()
