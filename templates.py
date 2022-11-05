@@ -3428,24 +3428,44 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'two_column_sections': True,
         'forms': [
             {
-                'label': 'nominativ ental, ubestemt',
+                'label': 'nominativ ental, ubestemt, ikke-ejefald',
                 'example': 'Det her er en [bil].',
-                'grammatical_features_item_ids': ['Q110786', 'Q53997857'],
+                'grammatical_features_item_ids': ['Q110786', 'Q53997857', 'Q98946930'],
             },
             {
-                'label': 'nominativ ental, bestemt',
-                'example': 'Den nye [bil].',
-                'grammatical_features_item_ids': ['Q110786', 'Q53997851'],
+                'label': 'nominativ ental, bestemt, ikke-ejefald',
+                'example': '[bilen] er ny.',
+                'grammatical_features_item_ids': ['Q110786', 'Q53997851', 'Q98946930'],
             },
             {
-                'label': 'nominativ flertal, ubestemt',
-                'example': 'Jag ser flere [biler].',
-                'grammatical_features_item_ids': ['Q146786', 'Q53997857'],
+                'label': 'nominativ flertal, ubestemt, ikke-ejefald',
+                'example': 'Jeg ser flere [biler].',
+                'grammatical_features_item_ids': ['Q146786', 'Q53997857', 'Q98946930'],
             },
             {
                 'label': 'nominativ flertal, bestemt',
                 'example': 'De nye [biler].',
-                'grammatical_features_item_ids': ['Q146786', 'Q53997851'],
+                'grammatical_features_item_ids': ['Q146786', 'Q53997851', 'Q98946930'],
+            },
+            {
+                'label': 'nominativ ental,  ubestemt, ejefald',
+                'example': 'Det her er en [bil]s hjul.',  # TODO s outside []?
+                'grammatical_features_item_ids': ['Q110786', 'Q53997857', 'Q146233'],
+            },
+            {
+                'label': 'nominativ ental, bestemt, ejefald',
+                'example': 'Jeg ser [bilens] hjul.',
+                'grammatical_features_item_ids': ['Q110786', 'Q53997851', 'Q146233'],
+            },
+            {
+                'label': 'nominativ flertal, ubestemt, ejefald',
+                'example': 'Jeg ser flere [biler]s lys.',  # TODO s outside []?
+                'grammatical_features_item_ids': ['Q146786', 'Q53997857', 'Q146233'],
+            },
+            {
+                'label': 'nominativ flertal, bestemt, ejefald',
+                'example': 'Jeg ser alle [bilernes] lys.',
+                'grammatical_features_item_ids': ['Q146786', 'Q53997851', 'Q146233'],
             },
         ],
         'statements': statements('P5185', 'Q1305037'),
@@ -3460,24 +3480,44 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'two_column_sections': True,
         'forms': [
             {
-                'label': 'nominativ ental, ubestemt',
+                'label': 'ental,  ubestemt, ikke-ejefald',
                 'example': 'Det her er et [bord].',
-                'grammatical_features_item_ids': ['Q110786', 'Q53997857'],
+                'grammatical_features_item_ids': ['Q110786', 'Q53997857', 'Q98946930'],
             },
             {
-                'label': 'nominativ ental, bestemt',
-                'example': 'Det nye [bord].',
-                'grammatical_features_item_ids': ['Q110786', 'Q53997851'],
+                'label': 'ental, bestemt, ikke-ejefald',
+                'example': 'Der er [bordet] som det eneste.',
+                'grammatical_features_item_ids': ['Q110786', 'Q53997851', 'Q98946930'],
             },
             {
-                'label': 'nominativ flertal, ubestemt',
-                'example': 'Jeg ser flere [bord].',
-                'grammatical_features_item_ids': ['Q146786', 'Q53997857'],
+                'label': 'flertal, ubestemt, ikke-ejefald',
+                'example': 'Jeg ser flere [borde].',
+                'grammatical_features_item_ids': ['Q146786', 'Q53997857', 'Q98946930'],
             },
             {
-                'label': 'nominativ flertal, bestemt',
-                'example': 'De nye [bord].',
-                'grammatical_features_item_ids': ['Q146786', 'Q53997851'],
+                'label': 'flertal, bestemt, ikke-ejefald',
+                'example': 'Alle [bordene] er væk.',
+                'grammatical_features_item_ids': ['Q146786', 'Q53997851', 'Q98946930'],
+            },
+            {
+                'label': 'ental,  ubestemt, ejefald',
+                'example': 'Her er et [bords] ejer.',
+                'grammatical_features_item_ids': ['Q110786', 'Q53997857', 'Q146233'],
+            },
+            {
+                'label': 'ental, bestemt, ejefald',
+                'example': 'Nu er [bordets] ejer gået.',
+                'grammatical_features_item_ids': ['Q110786', 'Q53997851', 'Q146233'],
+            },
+            {
+                'label': 'flertal, ubestemt, ejefald',
+                'example': 'Jeg skriver til flere [bordes] ejere.',
+                'grammatical_features_item_ids': ['Q146786', 'Q53997857', 'Q146233'],
+            },
+            {
+                'label': 'flertal, bestemt, ejefald',
+                'example': 'Alle [bordenes] ejere er gået.',
+                'grammatical_features_item_ids': ['Q146786', 'Q53997851', 'Q146233'],
             },
         ],
         'statements': statements('P5185', 'Q1775461'),
@@ -3514,6 +3554,11 @@ templates: Dict[str, Union[str, list[str], Template]] = {
                 'label': 'imperativ (bydeform, bydemåde)',
                 'example': '[læs] nu!',
                 'grammatical_features_item_ids': ['Q22716'],
+            },
+            {
+                'label': 'infinitiv passiv (infinitiv lideform)',
+                'example': 'Det kan [læses] hver dag.',
+                'grammatical_features_item_ids': ['Q179230', 'Q1194697'],
             },
             {
                 'label': 'presens passiv (nutid lideform)',
