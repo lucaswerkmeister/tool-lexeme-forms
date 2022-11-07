@@ -7,6 +7,7 @@
 			"Jackiezelaya",
 			"Juan t2905",
 			"Lucas Werkmeister",
+			"SpikeShroom",
 			"ZealousBlaze"
 		]
 	},
@@ -28,10 +29,21 @@
 	"bulk-link": "modo masivo",
 	"bulk-format-help": "ayuda de formato",
 	"bulk-not-allowed": "Usted no puede usar el modo masivo. Perdón.",
+	"bulk-first-field-not-lexeme-id": "Ya que la plantilla tiene {{PLURAL:$1|una forma|$1 formas}} y la línea $4 de la entrada tiene {{PLURAL:$2|un cuadro|$2 cuadros}}, el primer cuadro se debe parecer como una ID de lexema, pero <q>$3</q> no parece una ID de lexema. (¿Especificó usted una forma demasiada en la entrada?)",
+	"bulk-first-field-lexeme-id": "Ya que la plantilla tiene {{PLURAL:$1|una forma|$1 formas}} y la línea $4 de la entrada tiene {{PLURAL:$2|un cuadro|$2 cuadros}}, el primer cuadro no se debe parecer como una ID de lexema, pero <q>$3</q> sí parece una ID de lexema. (¿Olvidó usted una forma en la entrada?)",
+	"bulk-wrong-number-of-fields": "Ya que la plantilla tiene {{PLURAL:$1|una forma|$1 formas}}, cada línea de entrada debe tener ese número de cuadros (al crear un lexema nuevo) o uno más (al especificar el ID de un lexema existente para editar), pero la línea $3 de la entrada tiene {{PLURAL:$2|un cuadro|$2 cuadros}} en su lugar.",
 	"bulk-optional-forms-hint": "Si quieres saltarte algunos campos, especifícalos como vacíos (por ej. <kbd>...|||</kbd> para tres campos vacíos al final).",
 	"edit-link": "editar",
 	"edit-general": "Estás en modo de \"edición\". Cambiar los valores editará, añadirá o removerá campos del lexema objetivo.",
 	"edit-mismatch-warning": "¡Este lexema parece no quedar muy bien con esta plantilla! Por favor revisa de nuevo que es la plantilla correcta para este lexema antes de continuar.",
+	"edit-ambiguous-warning": "{{PLURAL:$1|La siguiente forma|Las siguientes formas}} de lexema {{PLURAL:$1|coincidió|coincidieron}} con más de una forma de plantilla igualmente bien:",
+	"edit-unmatched-warning": "{{PLURAL:$1|La siguiente forma|Las siguientes formas}} de lexema no {{PLURAL:$1|coincide|coinciden}} con ninguno de las formas de plantilla:",
+	"edit-form-list-item": "$1, $2, {{PLURAL:$3|0=sin declaraciones|una declaración|$3 declaraciones}}",
 	"no-grammatical-features": "sin características gramaticales",
-	"login-hint": "Necesita [$1 iniciar sesión] antes de que pueda hacer cambios usando esta herramienta."
+	"title-create": "$1 (crear)",
+	"title-advanced": "$1 (avanzado)",
+	"title-bulk": "$1 (a granel)",
+	"title-edit": "$1 (editar)",
+	"login-hint": "Necesita [$1 iniciar sesión] antes de que pueda hacer cambios usando esta herramienta.",
+	"ambiguous-template": "La plantilla $1 ya no existe; ha sido reemplazada por las siguientes plantillas:"
 }
