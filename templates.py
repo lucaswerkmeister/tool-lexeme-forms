@@ -7828,6 +7828,232 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         ],
     },
 
+    'polish-adjective-positive': {
+        '@attribution': {'users': ['Powerek38'], 'title': 'Wikidata:Wikidata Lexeme Forms/Polish'},
+        'label': 'polski przymiotnik, stopień równy',
+        'language_item_id': 'Q809',
+        'language_code': 'pl',
+        'lexical_category_item_id': 'Q34698',
+        'two_column_sections': False,
+        'forms': [
+            {
+                'label': 'liczba pojedyncza, rodzaj męski nieżywotny, mianownik',
+                'example': 'To jest [wysoki] płot.',
+                'grammatical_features_item_ids': ['Q110786', 'Q52943434', 'Q131105', 'Q3482678'],
+            },
+            {
+                'label': 'liczba pojedyncza, rodzaj męski nieżywotny, dopełniacz',
+                'example': 'Nie ma tu [wysokiego] płotu.',
+                'grammatical_features_item_ids': ['Q110786', 'Q52943434', 'Q146233', 'Q3482678'],
+            },
+            {
+                'label': 'liczba pojedyncza, rodzaj męski nieżywotny, celownik',
+                'example': 'Przyglądam się [wysokiemu] płotowi.',
+                'grammatical_features_item_ids': ['Q110786', 'Q52943434', 'Q145599', 'Q3482678'],
+            },
+            {
+                'label': 'liczba pojedyncza, rodzaj męski nieżywotny, biernik',
+                'example': 'Widzę [wysoki] płot.',
+                'grammatical_features_item_ids': ['Q110786', 'Q52943434', 'Q146078', 'Q3482678'],
+            },
+            {
+                'label': 'liczba pojedyncza, rodzaj męski nieżywotny, narzędnik',
+                'example': 'Zderzył się z [wysokim] płotem.',
+                'grammatical_features_item_ids': ['Q110786', 'Q52943434', 'Q192997', 'Q3482678'],
+            },
+            {
+                'label': 'liczba pojedyncza, rodzaj męski nieżywotny, miejscownik',
+                'example': 'Myślę o [wysokim] płocie.',
+                'grammatical_features_item_ids': ['Q110786', 'Q52943434', 'Q202142', 'Q3482678'],
+            },
+            {
+                'label': 'liczba pojedyncza, rodzaj męski nieżywotny, wołacz',
+                'example': 'Och, mój [wysoki] płocie!',
+                'grammatical_features_item_ids': ['Q110786', 'Q52943434', 'Q185077', 'Q3482678'],
+            },
+            {
+                'section_break': True,
+                'label': 'liczba pojedyncza, rodzaj męski żywotny, mianownik',
+                'example': 'To jest [wysoki] mężczyzna.',
+                'grammatical_features_item_ids': ['Q110786', 'Q54020116', 'Q131105', 'Q3482678'],
+            },
+            {
+                'label': 'liczba pojedyncza, rodzaj męski żywotny, dopełniacz',
+                'example': 'Nie ma tu [wysokiego] mężczyzny.',
+                'grammatical_features_item_ids': ['Q110786', 'Q54020116', 'Q146233', 'Q3482678'],
+            },
+            {
+                'label': 'liczba pojedyncza, rodzaj męski żywotny, celownik',
+                'example': 'Przyglądam się [wysokiemu] mężczyźnie.',
+                'grammatical_features_item_ids': ['Q110786', 'Q54020116', 'Q145599', 'Q3482678'],
+            },
+            {
+                'label': 'liczba pojedyncza, rodzaj męski żywotny, biernik',
+                'example': 'Widzę [wysokiego] mężczyznę.',
+                'grammatical_features_item_ids': ['Q110786', 'Q54020116', 'Q146078', 'Q3482678'],
+            },
+            {
+                'label': 'liczba pojedyncza, rodzaj męski żywotny, narzędnik',
+                'example': 'Spotkała się z [wysokim] mężczyzną.',
+                'grammatical_features_item_ids': ['Q110786', 'Q54020116', 'Q192997', 'Q3482678'],
+            },
+            {
+                'label': 'liczba pojedyncza, rodzaj rodzaj męski żywotny, miejscownik',
+                'example': 'Myślę o [wysokim] mężczyźnie.',
+                'grammatical_features_item_ids': ['Q110786', 'Q54020116', 'Q202142', 'Q3482678'],
+            },
+            {
+                'label': 'liczba pojedyncza, rodzaj męski żywotny, wołacz',
+                'example': 'Och, mój [wysoki] mężczyzno!',
+                'grammatical_features_item_ids': ['Q110786', 'Q54020116', 'Q185077', 'Q3482678'],
+            },
+            {
+                'section_break': True,
+                'label': 'liczba pojedyncza, rodzaj żeński, mianownik',
+                'example': 'To jest [wysoka] kobieta.',
+                'grammatical_features_item_ids': ['Q110786', 'Q1775415', 'Q131105', 'Q3482678'],
+            },
+            {
+                'label': 'liczba pojedyncza, rodzaj żeński, dopełniacz',
+                'example': 'Nie ma tu [wysokiej] kobiety.',
+                'grammatical_features_item_ids': ['Q110786', 'Q1775415', 'Q146233', 'Q3482678'],
+            },
+            {
+                'label': 'liczba pojedyncza, rodzaj żeński, celownik',
+                'example': 'Przyglądam się [wysokiej] kobiecie.',
+                'grammatical_features_item_ids': ['Q110786', 'Q1775415', 'Q145599', 'Q3482678'],
+            },
+            {
+                'label': 'liczba pojedyncza, rodzaj żeński, biernik',
+                'example': 'Widzę [wysoką] kobietę.',
+                'grammatical_features_item_ids': ['Q110786', 'Q1775415', 'Q146078', 'Q3482678'],
+            },
+            {
+                'label': 'liczba pojedyncza, rodzaj żeński, narzędnik',
+                'example': 'Spotkałem się z [wysoką] kobietą.',
+                'grammatical_features_item_ids': ['Q110786', 'Q1775415', 'Q192997', 'Q3482678'],
+            },
+            {
+                'label': 'liczba pojedyncza, rodzaj żeński, miejscownik',
+                'example': 'Myślę o [wysokiej] kobiecie.',
+                'grammatical_features_item_ids': ['Q110786', 'Q1775415', 'Q202142', 'Q3482678'],
+            },
+            {
+                'label': 'liczba pojedyncza, rodzaj żeński, wołacz',
+                'example': 'Och, moja [wysoka] kobieto!',
+                'grammatical_features_item_ids': ['Q110786', 'Q1775415', 'Q185077', 'Q3482678'],
+            },
+            {
+                'section_break': True,
+                'label': 'liczba pojedyncza, rodzaj nijaki, mianownik',
+                'example': 'To jest [wysokie] dziecko.',
+                'grammatical_features_item_ids': ['Q110786', 'Q1775461', 'Q131105', 'Q3482678'],
+            },
+            {
+                'label': 'liczba pojedyncza, rodzaj nijaki, dopełniacz',
+                'example': 'Nie ma tu [wysokiego] dziecka.',
+                'grammatical_features_item_ids': ['Q110786', 'Q1775461', 'Q146233', 'Q3482678'],
+            },
+            {
+                'label': 'liczba pojedyncza, rodzaj nijaki, celownik',
+                'example': 'Przyglądam się [wysokiemu] dziecku.',
+                'grammatical_features_item_ids': ['Q110786', 'Q1775461', 'Q145599', 'Q3482678'],
+            },
+            {
+                'label': 'liczba pojedyncza, rodzaj nijaki, biernik',
+                'example': 'Widzę [wysokie] dziecko.',
+                'grammatical_features_item_ids': ['Q110786', 'Q1775461', 'Q146078', 'Q3482678'],
+            },
+            {
+                'label': 'liczba pojedyncza, rodzaj nijaki, narzędnik',
+                'example': 'Spotkałam się z [wysokim] dzieckiem.',
+                'grammatical_features_item_ids': ['Q110786', 'Q1775461', 'Q192997', 'Q3482678'],
+            },
+            {
+                'label': 'liczba pojedyncza, rodzaj nijaki, miejscownik',
+                'example': 'Myślę o [wysokim] dziecku.',
+                'grammatical_features_item_ids': ['Q110786', 'Q1775461', 'Q202142', 'Q3482678'],
+            },
+            {
+                'label': 'liczba pojedyncza, rodzaj nijaki, wołacz',
+                'example': 'Och, moje [wysokie] dziecko!',
+                'grammatical_features_item_ids': ['Q110786', 'Q1775461', 'Q185077', 'Q3482678'],
+            },
+            {
+                'section_break': True,
+                'label': 'liczba mnoga, rodzaj męskoosobowy, mianownik',
+                'example': 'To są [wysocy] mężczyźni.',
+                'grammatical_features_item_ids': ['Q146786', 'Q27918551', 'Q131105', 'Q3482678'],
+            },
+            {
+                'label': 'liczba mnoga, rodzaj męskoosobowy, dopełniacz',
+                'example': 'Nie ma tu [wysokich] mężczyzn.',
+                'grammatical_features_item_ids': ['Q146786', 'Q27918551', 'Q146233', 'Q3482678'],
+            },
+            {
+                'label': 'liczba mnoga, rodzaj męskoosobowy, celownik',
+                'example': 'Przyglądam się [wysokim] mężczyznom.',
+                'grammatical_features_item_ids': ['Q146786', 'Q27918551', 'Q145599', 'Q3482678'],
+            },
+            {
+                'label': 'liczba mnoga, rodzaj męskoosobowy, biernik',
+                'example': 'Widzę [wysokich] mężczyzn.',
+                'grammatical_features_item_ids': ['Q146786', 'Q27918551', 'Q146078', 'Q3482678'],
+            },
+            {
+                'label': 'liczba mnoga, rodzaj męskoosobowy, narzędnik',
+                'example': 'Spotkałem się z [wysokimi] mężczyznami.',
+                'grammatical_features_item_ids': ['Q146786', 'Q27918551', 'Q192997', 'Q3482678'],
+            },
+            {
+                'label': 'liczba mnoga, rodzaj męskoosobowy, miejscownik',
+                'example': 'Myślę o [wysokich] mężczyznach.',
+                'grammatical_features_item_ids': ['Q146786', 'Q27918551', 'Q202142', 'Q3482678'],
+            },
+            {
+                'label': 'liczba mnoga, rodzaj męskoosobowy, wołacz',
+                'example': 'Och, moi [wysocy] mężczyźni!',
+                'grammatical_features_item_ids': ['Q146786', 'Q27918551', 'Q185077', 'Q3482678'],
+            },
+            {
+                'section_break': True,
+                'label': 'liczba mnoga, rodzaj niemęskoosobowy, mianownik',
+                'example': 'To są [wysokie] kobiety.',
+                'grammatical_features_item_ids': ['Q146786', 'Q54152717', 'Q131105', 'Q3482678'],
+            },
+            {
+                'label': 'liczba mnoga, rodzaj niemęskoosobowy, dopełniacz',
+                'example': 'Nie ma tu [wysokich] kobiet.',
+                'grammatical_features_item_ids': ['Q146786', 'Q54152717', 'Q146233', 'Q3482678'],
+            },
+            {
+                'label': 'liczba mnoga, rodzaj niemęskoosobowy, celownik',
+                'example': 'Przyglądam się [wysokim] kobietom.',
+                'grammatical_features_item_ids': ['Q146786', 'Q54152717', 'Q145599', 'Q3482678'],
+            },
+            {
+                'label': 'liczba mnoga, rodzaj niemęskoosobowy, biernik',
+                'example': 'Widzę [wysokie] kobiety.',
+                'grammatical_features_item_ids': ['Q146786', 'Q54152717', 'Q146078', 'Q3482678'],
+            },
+            {
+                'label': 'liczba mnoga, rodzaj niemęskoosobowy, narzędnik',
+                'example': 'Spotkałam się z [wysokimi] kobietami.',
+                'grammatical_features_item_ids': ['Q146786', 'Q54152717', 'Q192997', 'Q3482678'],
+            },
+            {
+                'label': 'liczba mnoga, rodzaj niemęskoosobowy, miejscownik',
+                'example': 'Myślę o [wysokich] kobietach.',
+                'grammatical_features_item_ids': ['Q146786', 'Q54152717', 'Q202142', 'Q3482678'],
+            },
+            {
+                'label': 'liczba mnoga, rodzaj niemęskoosobowy, wołacz',
+                'example': 'Och, moje [wysokie] kobiety!',
+                'grammatical_features_item_ids': ['Q146786', 'Q54152717', 'Q185077', 'Q3482678'],
+            },
+        ],
+    },
+
     'portuguese-noun-biform': {
         '@attribution': {'users': ['EnaldoSS'], 'title': 'Wikidata:Wikidata Lexeme Forms/Portuguese'},
         'label': 'substantivo biforme em português',
