@@ -16,6 +16,7 @@ import stat
 import string
 import toolforge
 from typing import cast, Any, Optional, Tuple, TypedDict
+import unicodedata
 import werkzeug
 import yaml
 
@@ -695,6 +696,7 @@ def get_duplicates_api(wiki: str, language_code: str, lemma: str) -> RRV:
 def get_duplicates(wiki: str, language_code: str, lemma: str) -> list[Duplicate]:
     session = anonymous_session(f'https://{wiki}.wikidata.org')
 
+    lemma = unicodedata.normalize('NFC', lemma)
     api_language_code = lang_lex2int(language_code)
 
     response = session.get(
