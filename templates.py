@@ -7226,6 +7226,36 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'statements': statements('P31', 'Q54557461'),
     },
 
+    'bokmål-interjection': {
+        '@attribution': {'users': ['Jon Harald Søby'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Bokmål'},
+        'label': 'bokmål interjeksjon',
+        'language_item_id': 'Q25167',
+        'language_code': 'nb',
+        'lexical_category_item_id': 'Q83034',
+        'forms': [
+            {
+                'label': 'interjeksjon',
+                'example': 'Kvinna sa [hei].',
+                'grammatical_features_item_ids': [],
+            },
+        ],
+    },
+
+    'bokmål-adverb': {
+        '@attribution': {'users': ['Jon Harald Søby'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Bokmål'},
+        'label': 'bokmål adverb',
+        'language_item_id': 'Q25167',
+        'language_code': 'nb',
+        'lexical_category_item_id': 'Q380057',
+        'forms': [
+            {
+                'label': 'adverb',
+                'example': 'Gutten snakket [mye].',
+                'grammatical_features_item_ids': [],
+            },
+        ],
+    },
+
     'dutch-neuter-noun': 'dutch-noun-neuter',
     'dutch-noun-neuter': {
         '@attribution': {'users': ['MarcoSwart'], 'title': 'Wikidata:Wikidata Lexeme Forms/Dutch'},
@@ -7452,6 +7482,190 @@ templates: Dict[str, Union[str, list[str], Template]] = {
             },
         ],
         'statements': statements('P5185', 'Q1775461'),
+    },
+
+    'nynorsk-adjective': {
+        '@attribution': {'users': ['Jon Harald Søby'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Nynorsk'},
+        'label': 'nynorsk adjektiv',
+        'language_item_id': 'Q25164',
+        'language_code': 'nn',
+        'lexical_category_item_id': 'Q34698',
+        'forms': [
+            {
+                'label': 'ubunde hankjønn og hokjønn',
+                'example': 'Ein [flink] person.',
+                'grammatical_features_item_ids': ['Q110786', 'Q53997857', 'Q499327', 'Q1775415'],
+            },
+            {
+                'label': 'ubunde inkjekjønn',
+                'example': 'Eit [flinkt] barn.',
+                'grammatical_features_item_ids': ['Q110786', 'Q53997857', 'Q1775461'],
+            },
+            {
+                'label': 'bunde eintall',
+                'example': 'Det [flinke] barnet.',
+                'grammatical_features_item_ids': ['Q110786', 'Q53997851'],
+            },
+            {
+                'label': 'fleirtall',
+                'example': 'Alle dei [flinke] borna.',
+                'grammatical_features_item_ids': ['Q146786'],
+            },
+            {
+                'label': 'komparativ',
+                'example': 'Barnet er [flinkare] enn meg.',
+                'grammatical_features_item_ids': ['Q14169499'],
+                'optional': True,
+            },
+            {
+                'label': 'superlativ',
+                'example': 'Barnet mitt var aller [flinkast].',
+                'grammatical_features_item_ids': ['Q1817208'],
+                'optional': True,
+            },
+            {
+                'label': 'superlativ, bestemt form',
+                'example': 'Det aller [flinkaste] barnet.',
+                'grammatical_features_item_ids': ['Q1817208', 'Q53997851'],
+                'optional': True,
+            },
+        ],
+    },
+
+    'nynorsk-verb': {
+        '@attribution': {'users': ['Njardarlogar', 'Jon Harald Søby'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Nynorsk'},
+        'label': 'nynorsk verb',
+        'language_item_id': 'Q25164',
+        'language_code': 'nn',
+        'lexical_category_item_id': 'Q24905',
+        'forms': [
+            {
+                'label': 'a-infinitiv',
+                'example': 'Å [helsa].',
+                'grammatical_features_item_ids': ['Q179230', 'Q1317831', 'Q115223950'],
+            },
+            {
+                'label': 'e-infinitiv',
+                'example': 'Å [helse].',
+                'grammatical_features_item_ids': ['Q179230', 'Q1317831', 'Q115223951'],
+            },
+            {
+                'label': 'notid',
+                'example': 'Eg [helsar/helser].',
+                'grammatical_features_item_ids': ['Q192613', 'Q1317831'],
+            },
+            {
+                'label': 'fortid',
+                'example': 'Eg [helsa/helste].',
+                'grammatical_features_item_ids': ['Q442485'],
+            },
+            {
+                'label': 'presens og preteritum perfektum',
+                'example': 'Eg har/hadde [helsa/helst].',
+                'grammatical_features_item_ids': ['Q625420', 'Q442485', 'Q192613'],
+            },
+            {
+                'label': 'imperativ',
+                'example': 'Ikkje [hels] på dei!',
+                'grammatical_features_item_ids': ['Q22716'],
+            },
+            {
+                'label': 'perfektum partisipp, hankjønn og hokjønn',
+                'example': 'Ein [helsa/helst] person.',
+                'grammatical_features_item_ids': ['Q12717679', 'Q110786', 'Q53997857', 'Q499327', 'Q1775415'],
+            },
+            {
+                'label': 'perfektum partisipp, inkjekjønn',
+                'example': 'Eit [helsa/helst] barn.',
+                'grammatical_features_item_ids': ['Q12717679', 'Q110786', 'Q53997857', 'Q1775461'],
+            },
+            {
+                'label': 'perfektum partisipp, bunden form',
+                'example': 'Den [helsa/helste] personen.',
+                'grammatical_features_item_ids': ['Q12717679', 'Q110786', 'Q53997851'],
+            },
+            {
+                'label': 'perfektum partisipp, fleirtal',
+                'example': 'Alle dei [helsa/helste] gjestane.',
+                'grammatical_features_item_ids': ['Q12717679', 'Q146786'],
+            },
+            {
+                'label': 'presens partisipp',
+                'example': 'Ein [helsande] person.',
+                'grammatical_features_item_ids': ['Q10345583'],
+            },
+            {
+                'label': 'passiv infinitiv',
+                'example': 'Det er triveleg å [helsast].',
+                'grammatical_features_item_ids': ['Q179230', 'Q1194697'],
+            },
+            {
+                'label': 'passiv presens',
+                'example': 'Ho [helsast] av gjesten.',
+                'grammatical_features_item_ids': ['Q192613', 'Q1194697'],
+            },
+        ],
+    },
+
+    'nynorsk-verb-passive': {
+        '@attribution': {'users': ['Njardarlogar', 'Jon Harald Søby'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Nynorsk'},
+        'label': 'nynorsk st-verb',
+        'language_item_id': 'Q25164',
+        'language_code': 'nn',
+        'lexical_category_item_id': 'Q24905',
+        'forms': [
+            {
+                'label': 'infinitiv',
+                'example': 'Det er bra å [trivast].',
+                'grammatical_features_item_ids': ['Q179230', 'Q1194697'],
+            },
+            {
+                'label': 'presens',
+                'example': 'Eg [trivst] på skulen.',
+                'grammatical_features_item_ids': ['Q192613', 'Q1194697'],
+            },
+            {
+                'label': 'preteritum',
+                'example': 'Eg [treivst] med det.',
+                'grammatical_features_item_ids': ['Q442485', 'Q1194697'],
+            },
+            {
+                'label': 'presens perfektum',
+                'example': 'Eg har [trivest] med å vere der…',
+                'grammatical_features_item_ids': ['Q1240211', 'Q1194697'],
+            },
+        ],
+        'statements': statements('P31', 'Q54557461'),
+    },
+
+    'nynorsk-interjection': {
+        '@attribution': {'users': ['Jon Harald Søby'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Nynorsk'},
+        'label': 'nynorsk interjeksjon',
+        'language_item_id': 'Q25164',
+        'language_code': 'nn',
+        'lexical_category_item_id': 'Q83034',
+        'forms': [
+            {
+                'label': 'interjeksjon',
+                'example': 'Kvinna sa [hei].',
+                'grammatical_features_item_ids': [],
+            },
+        ],
+    },
+
+    'nynorsk-adverb': {
+        '@attribution': {'users': ['Jon Harald Søby'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Nynorsk'},
+        'label': 'nynorsk adverb',
+        'language_item_id': 'Q25164',
+        'language_code': 'nn',
+        'lexical_category_item_id': 'Q380057',
+        'forms': [
+            {
+                'label': 'adverb',
+                'example': 'Guten snakka [mye].',
+                'grammatical_features_item_ids': [],
+            },
+        ],
     },
 
     'odia-noun-human': {
