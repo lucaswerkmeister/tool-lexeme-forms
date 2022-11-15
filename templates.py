@@ -3449,7 +3449,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
             },
             {
                 'label': 'nominativ ental,  ubestemt, ejefald',
-                'example': 'Det her er en [bil]s hjul.',  # TODO s outside []?
+                'example': 'Det her er en [bils] hjul.',
                 'grammatical_features_item_ids': ['Q110786', 'Q53997857', 'Q146233'],
             },
             {
@@ -3459,7 +3459,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
             },
             {
                 'label': 'nominativ flertal, ubestemt, ejefald',
-                'example': 'Jeg ser flere [biler]s lys.',  # TODO s outside []?
+                'example': 'Jeg ser flere [bilers] lys.',
                 'grammatical_features_item_ids': ['Q146786', 'Q53997857', 'Q146233'],
             },
             {
