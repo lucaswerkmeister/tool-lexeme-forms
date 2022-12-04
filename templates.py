@@ -7484,6 +7484,159 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'statements': statements('P5185', 'Q1775461'),
     },
 
+    'nynorsk-noun-feminine-masculine': {
+        '@attribution': {'users': ['Jon Harald Søby'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Nynorsk'},
+        'label': 'nynorsk ho- og hankjønnssubstantiv',
+        'language_item_id': 'Q25164',
+        'language_code': 'nn',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'ubunde eintal',
+                'example': 'Du har ei/ein fin [dialekt].',
+                'grammatical_features_item_ids': ['Q110786', 'Q53997857'],
+            },
+            {
+                'label': 'bunde eintal, hokjønn',
+                'example': 'Eg likar [dialekta] di.',
+                'grammatical_features_item_ids': ['Q110786', 'Q53997851', 'Q1775415'],
+            },
+            {
+                'label': 'bunde eintal, hankjønn',
+                'example': 'Eg likar [dialekten] din.',
+                'grammatical_features_item_ids': ['Q110786', 'Q53997851', 'Q499327'],
+            },
+            {
+                'label': 'ubunde fleirtal, hokjønn',
+                'example': 'Dei har forskjellige [dialekter].',
+                'grammatical_features_item_ids': ['Q146786', 'Q53997857', 'Q1775415'],
+            },
+            {
+                'label': 'ubunde fleirtal, hankjønn',
+                'example': 'Dei har forskjellige [dialektar].',
+                'grammatical_features_item_ids': ['Q146786', 'Q53997857', 'Q499327'],
+            },
+            {
+                'label': 'bunde fleirtal, hokjønn',
+                'example': 'Eg forstår ikkje dei [dialektene].',
+                'grammatical_features_item_ids': ['Q146786', 'Q53997851', 'Q1775415'],
+            },
+            {
+                'label': 'binde fleirtal, hankjønn',
+                'example': 'Eg forstår ikkje dei [dialektane].',
+                'grammatical_features_item_ids': ['Q146786', 'Q53997851', 'Q499327'],
+            },
+        ],
+        'statements': {
+            'P5185': [
+                statement('P5185', 'Q1775415'),
+                statement('P5185', 'Q499327'),
+            ],
+        },
+    },
+
+    'nynorsk-noun-feminine-neuter': {
+        '@attribution': {'users': ['Jon Harald Søby'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Nynorsk'},
+        'label': 'nynorsk ho- og inkjekjønnssubstantiv',
+        'language_item_id': 'Q25164',
+        'language_code': 'nn',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'ubunde eintal',
+                'example': 'Eg såg ei/eit [my].',
+                'grammatical_features_item_ids': ['Q110786', 'Q53997857'],
+            },
+            {
+                'label': 'bunde eintal, hokjønn',
+                'example': 'Slå i hel [mya]!',
+                'grammatical_features_item_ids': ['Q110786', 'Q53997851', 'Q1775415'],
+            },
+            {
+                'label': 'bunde eintal, inkjekjønn',
+                'example': 'Slå i hel [myet]!',
+                'grammatical_features_item_ids': ['Q110786', 'Q53997851', 'Q1775461'],
+            },
+            {
+                'label': 'ubunde fleirtal, hokjønn',
+                'example': 'Det er ikkje mange [myer] her.',
+                'grammatical_features_item_ids': ['Q146786', 'Q53997857', 'Q1775415'],
+            },
+            {
+                'label': 'ubunde fleirtal, inkjekjønn',
+                'example': 'Det er ikkje mange [my] her.',
+                'grammatical_features_item_ids': ['Q146786', 'Q53997857', 'Q1775461'],
+            },
+            {
+                'label': 'bunde fleirtal, hokjønn',
+                'example': 'Har du drepe [myene]?',
+                'grammatical_features_item_ids': ['Q146786', 'Q53997851', 'Q1775415'],
+            },
+            {
+                'label': 'binde fleirtal, inkjekjønn',
+                'example': 'Har du drepe [mya]?',
+                'grammatical_features_item_ids': ['Q146786', 'Q53997851', 'Q1775461'],
+            },
+        ],
+        'statements': {
+            'P5185': [
+                statement('P5185', 'Q1775415'),
+                statement('P5185', 'Q1775461'),
+            ],
+        },
+    },
+
+    'nynorsk-noun-masculine-neuter': {
+        '@attribution': {'users': ['Jon Harald Søby'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Nynorsk'},
+        'label': 'nynorsk han- og inkjekjønnssubstantiv',
+        'language_item_id': 'Q25164',
+        'language_code': 'nn',
+        'lexical_category_item_id': 'Q1084',
+        'forms': [
+            {
+                'label': 'ubunde eintal',
+                'example': 'Har du ein/eit [sekund]?',
+                'grammatical_features_item_ids': ['Q110786', 'Q53997857'],
+            },
+            {
+                'label': 'bunde eintal, hankjønn',
+                'example': 'Den første [sekunden].',
+                'grammatical_features_item_ids': ['Q110786', 'Q53997851', 'Q499327'],
+            },
+            {
+                'label': 'bunde eintal, inkjekjønn',
+                'example': 'Det første [sekundet].',
+                'grammatical_features_item_ids': ['Q110786', 'Q53997851', 'Q1775461'],
+            },
+            {
+                'label': 'ubunde fleirtal, hankjønn',
+                'example': 'Kor mange [sekundar] har du?',
+                'grammatical_features_item_ids': ['Q146786', 'Q53997857', 'Q499327'],
+            },
+            {
+                'label': 'ubunde fleirtal, inkjekjønn',
+                'example': 'Kor mange [sekund] har du?',
+                'grammatical_features_item_ids': ['Q146786', 'Q53997857', 'Q1775461'],
+            },
+            {
+                'label': 'bunde fleirtal, hankjønn',
+                'example': 'Dei har brukt opp alle [sekundane].',
+                'grammatical_features_item_ids': ['Q146786', 'Q53997851', 'Q499327'],
+            },
+            {
+                'label': 'binde fleirtal, inkjekjønn',
+                'example': 'Dei har brukt opp alle [sekunda].',
+                'grammatical_features_item_ids': ['Q146786', 'Q53997851', 'Q1775461'],
+            },
+        ],
+        'statements': {
+            'P5185': [
+                statement('P5185', 'Q499327'),
+                statement('P5185', 'Q1775461'),
+            ],
+        },
+    },
+
     'nynorsk-adjective': {
         '@attribution': {'users': ['Jon Harald Søby'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Nynorsk'},
         'label': 'nynorsk adjektiv',
