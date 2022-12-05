@@ -25,6 +25,8 @@ def lang_lex2int(code: str) -> str:
     return {
         # Manbhumi reuses the standard Bengali messages
         'bn-x-Q6747180': 'bn',
+        # Hindko reuses the standard Punjabi messages
+        'pnb-x-Q382273': 'pnb',
     }.get(code, code)
 
 
@@ -44,6 +46,10 @@ def lang_int2babel(code: str) -> str:
         # Latin and Venetian are not in CLDR, Italian is similar for our purposes
         'la': 'it',
         'vec': 'it',
+        # pnb (Western Punjabi) is not in CLDR,
+        # and its replacement lah (Lahnda) is not in Babel;
+        # Urdu seems close for our purposes
+        'pnb': 'ur',
         # Serbo-Croatian is not in CLDR, Croatian is closest for our purposes
         'sh': 'hr',
     }.get(code, code)
