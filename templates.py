@@ -8005,6 +8005,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
                 'grammatical_features_item_ids': ['Q499327', 'Q1233197', 'Q146786'],
             },
         ],
+        'statements': statements('P5185', 'Q499327'),
     },
 
     'hindko-noun-feminine': {
@@ -8036,6 +8037,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
                 'grammatical_features_item_ids': ['Q1775415', 'Q1233197', 'Q146786'],
             },
         ],
+        'statements': statements('P5185', 'Q1775415'),
     },
 
     'polish-noun': {
