@@ -8017,22 +8017,22 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'forms': [
             {
                 'label': 'واحد، فاعلی',
-                'example': 'او اساں دی [تحِصیل] اے۔',
+                'example': 'او اساں دی [تحصِیل] اے۔',
                 'grammatical_features_item_ids': ['Q1775415', 'Q1751855', 'Q110786'],
             },
             {
                 'label': 'جمع، فاعلی',
-                'example': 'اوہ اساں دیاں [تحِصیلاں] نیں۔',
+                'example': 'اوہ اساں دیاں [تحصِیلاں] نیں۔',
                 'grammatical_features_item_ids': ['Q1775415', 'Q1751855', 'Q146786'],
             },
             {
                 'label': 'واحد، مفعولی',
-                'example': 'اِس [تحِصیلی] کول او گیا اے۔',
+                'example': 'اِس [تحصِیلی] کول او گیا اے۔',
                 'grammatical_features_item_ids': ['Q1775415', 'Q1233197', 'Q110786'],
             },
             {
                 'label': 'جمع، مفعولی',
-                'example': 'انہاں [تحِصیلاں] کول اوہ گئے نیں۔',
+                'example': 'انہاں [تحصِیلاں] کول اوہ گئے نیں۔',
                 'grammatical_features_item_ids': ['Q1775415', 'Q1233197', 'Q146786'],
             },
         ],
