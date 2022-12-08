@@ -9,6 +9,7 @@
 	"csrf-warning": "Niestety przetworzenie tego żądania było niemożliwe (ochrona <abbr title=\"Cross-site request forgery\">CSRF</abbr>). Proszę spróbować przesłać formularz ponownie.",
 	"duplicates-warning": "Następujące istniejące leksemy mają tę samą formę kanoniczną i kod języka jak ten, który próbujesz utworzyć:",
 	"duplicates-instructions": "Jeśli masz pewność, że one są różne, zaznacz kratkę u dołu formularza.",
+	"duplicates-create": "Mimo to utwórz nowy leksem.",
 	"no-duplicate": "To nie jest duplikat istniejącego leksemu.",
 	"form-optional": "&#32;(opcjonalnie)",
 	"advanced": "Zaawansowane",

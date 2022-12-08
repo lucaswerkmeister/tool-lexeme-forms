@@ -1,0 +1,42 @@
+{
+	"@metadata": {
+		"authors": [
+			"Toliño"
+		]
+	},
+	"create": "Crear",
+	"csrf-warning": "Sentímolo, non puidemos procesar esta solicitude (fallou a protección <abbr title=\"Cross-site request forgery\">CSRF</abbr>). Intente enviar o formulario de novo.",
+	"duplicates-warning": "{{PLURAL:$1|O seguinte lexema existente ten|Os seguintes lexemas existentes teñen}} o mesmo lema e código de lingua que o que está a crear:",
+	"duplicates-instructions": "Se ten a certeza de que {{PLURAL:$1|é diferente|son diferentes}}, marque a caixa da parte inferior do formulario.",
+	"duplicates-create": "Crear un novo lexema de todos os xeitos.",
+	"no-duplicate": "Isto non é un duplicado dun lexema existente.",
+	"form-optional": "&#32;(opcional)",
+	"advanced": "Avanzado",
+	"advanced-general": "Está en modo \"avanzado\".",
+	"advanced-lexeme-id": "Pode introducir un identificador de lexema para engadir formas a un lexema existente en lugar de crear un novo. Deixe en branco as formas que xa existan no lexema para non duplicalas!",
+	"advanced-partial-forms": "Pode deixar algunha forma en branco para que non se engadan. Asegúrese de non omitir ningunha forma accidentalmente!",
+	"lexeme-id": "Identificador do lexema",
+	"advanced-partial-forms-hint": "Para crear lexemas con algunhas formas que faltan, cambia ao modo avanzado.",
+	"generated-via": "xerado mediante",
+	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=sen formas|unha forma|$2 formas}} e {{PLURAL:$3|0=sen significados|un significado|$3 significados}}",
+	"bulk-link": "modo masivo",
+	"bulk-format-help": "axuda co formato",
+	"bulk-not-allowed": "Non {{GENDER:$1|tes}} permiso para usar o modo masivo. Sentímolo.",
+	"bulk-first-field-not-lexeme-id": "Como o modelo ten {{PLURAL:$1|unha forma|$1 formas}} e a liña $4 da entrada ten {{PLURAL:$2|un campo|$2 campos}}, o primeiro campo debería parecer un identificador de lexema, pero <q>$3</q> non parece un identificador de lexema. (Especificaría demasiadas formas na entrada?)",
+	"bulk-first-field-lexeme-id": "Como o modelo ten {{PLURAL:$1|unha forma|$1 formas}} e a liña $4 da entrada ten {{PLURAL:$2|un campo|$2 campos}}, o primeiro campo non debería parecer un identificador de lexema, pero <q>$3</q> si parece un identificador de lexema. (Esquecería algunha forma na entrada?)",
+	"bulk-wrong-number-of-fields": "Como o modelo ten {{PLURAL:$1|unha forma|$1 formas}}, cada entrada debería ter ese número de campos (ao crear un novo lexema) ou un máis (ao especificar o identificador dun lexema a editar), pero a liña $3 da entrada ten {{PLURAL:$2|un campo|$2 campos}}.",
+	"bulk-optional-forms-hint": "Se quere saltar algunhas formas, déixaas baleiras (por exemplo, <kbd>...|||</kbd> para tres formas baleiras ao final).",
+	"edit-link": "editar",
+	"edit-general": "Está no modo \"editar\". Cambiar os valores a continuación editará, engadirá ou eliminará formas do lexema de destino.",
+	"edit-mismatch-warning": "Este lexema non parece coincidir con este modelo! Comprobe que é o modelo correcto para este lexema antes de continuar.",
+	"edit-ambiguous-warning": "{{PLURAL:$1|A seguinte forma|As seguintes formas}} do lexema {{PLURAL:$1|coincidiu|coincidiron}} con máis dunha forma:",
+	"edit-unmatched-warning": "{{PLURAL:$1|A seguinte forma|As seguintes formas}} do lexema non {{PLURAL:$1|coincidiu|coincidiron}} con ningunha forma do modelo:",
+	"edit-form-list-item": "$1, $2, {{PLURAL:$3|0=sen declaracións|unha declaración|$3 declaracións}}",
+	"no-grammatical-features": "sen características gramaticais",
+	"title-create": "$1 (crear)",
+	"title-advanced": "$1 (avanzado)",
+	"title-bulk": "$1 (masivo)",
+	"title-edit": "$1 (editar)",
+	"login-hint": "Debe [ $1 acceder ao sistema] para facer cambios usando esta ferramenta.",
+	"ambiguous-template": "O modelo $1 xa non existe; substituíuse polos seguintes modelos:"
+}
