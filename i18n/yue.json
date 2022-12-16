@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Al12si",
 			"Z423x5c6"
 		]
 	},
@@ -12,5 +13,6 @@
 	"title-create": "$1（建立）",
 	"title-advanced": "$1（進階）",
 	"title-bulk": "$1（批量）",
-	"title-edit": "$1（編輯）"
+	"title-edit": "$1（編輯）",
+	"login-hint": "你要[$1 簽到]先可以用爾個架生改嘢。"
 }
