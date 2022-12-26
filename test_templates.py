@@ -145,7 +145,6 @@ def test_examples_valid(template_name, form):
 @pytest.mark.parametrize('template_name, form', [
     (template_name, form)
     for template_name, template in templates.templates_without_redirects.items()
-    if not template_name.startswith('armenian-')  # https://www.wikidata.org/wiki/Wikidata_talk:Wikidata_Lexeme_Forms/Armenian#Initial_uppercase_in_some_examples
     for form in template['forms']
 ])
 def test_examples_no_misleading_capitalization(template_name, form):
