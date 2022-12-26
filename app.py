@@ -146,6 +146,7 @@ def render_duplicates(
         in_bulk_mode: bool,
         template_name: Optional[str] = None,
         form_representations: list[str] = [],
+        target_hash: Optional[str] = None,
 ) -> RRV:
     return flask.render_template(
         'duplicates.html',
@@ -153,6 +154,7 @@ def render_duplicates(
         in_bulk_mode=in_bulk_mode,
         template_name=template_name,
         form_representations=form_representations,
+        target_hash=target_hash,
     )
 
 @app.template_filter()
@@ -689,6 +691,7 @@ def get_duplicates_api(wiki: str, language_code: str, lemma: str) -> RRV:
             matches,
             in_bulk_mode=False,
             template_name=flask.request.args.get('template_name'),
+            target_hash=flask.request.args.get('target_hash'),
         )
     else:
         return flask.jsonify(matches)

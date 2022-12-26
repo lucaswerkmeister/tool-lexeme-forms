@@ -84,7 +84,14 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        const url = `${baseUrl}api/v1/duplicates/${'test' in template ? 'test' : 'www'}/${template.language_code}/${encodeURIComponent(lemma).replace(/^\./, '%2E')}?template_name=${template['@template_name']}`;
+        const wiki = 'test' in template ? 'test' : 'www';
+        const lang = template.language_code;
+        const encodedLemma = encodeURIComponent(lemma).replace(/^\./, '%2E');
+        const templateName = template['@template_name'];
+        let url = `${baseUrl}api/v1/duplicates/${wiki}/${lang}/${encodedLemma}?template_name=${templateName}`;
+        if (template.target_hash) {
+            url += `&target_hash=${template.target_hash}`;
+        }
         fetch(url, initAcceptHtml).then(response => {
             if (response.ok) {
                 return response.text();
