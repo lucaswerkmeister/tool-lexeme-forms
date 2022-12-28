@@ -9,8 +9,13 @@
       {{ result.duplicates | render_duplicates(in_bulk_mode=True, template_name=template['@template_name'], form_representations=result.form_representations) | safe }}
       {% else %}
       <a href="{{ result.lexeme_uri }}">
+        {% if result.lexeme_data.lemmas %}
         {{ result.lexeme_data.lemmas | lemmas_spans }}
         ({{ result.lexeme_id }})
+        {% else %}
+        {# when editing an existing lexeme, we currently don’t have the lemmas #}
+        {{ result.lexeme_id }}
+        {% endif %}
       </a>
       {% endif %}
     </li>
