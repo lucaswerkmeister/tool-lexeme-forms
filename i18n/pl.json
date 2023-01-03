@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Chrumps",
-			"KaMan"
+			"KaMan",
+			"Luku123"
 		]
 	},
 	"create": "Utwórz",
@@ -21,5 +22,10 @@
 	"generated-via": "wygenerowane przez",
 	"bulk-link": "tryb zbiorczy",
 	"bulk-not-allowed": "Nie {{GENDER:$1|możesz}} używać trybu zbiorczego.",
-	"login-hint": "Aby wprowadzić zmiany za pomocą tego narzędzia, musisz się [$1 zalogować]."
+	"edit-link": "edytuj",
+	"title-create": "$1 (stwórz)",
+	"title-advanced": "$1 (zaawansowane)",
+	"title-edit": "$1 (edytuj)",
+	"login-hint": "Aby wprowadzić zmiany za pomocą tego narzędzia, musisz się [$1 zalogować].",
+	"ambiguous-template": "Szablon $1 już nie istnieje; został on zastąpiony przez następujące szablony"
 }
