@@ -3578,6 +3578,51 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         ],
     },
 
+    'danish-adjective': {
+        '@attribution': {'users': ['Fnielsen', 'So9q'], 'title': 'Wikidata:Wikidata Lexeme Forms/Danish'},
+        'label': 'dansk adjektiv',
+        'language_item_id': 'Q9035',
+        'language_code': 'da',
+        'lexical_category_item_id': 'Q34698',
+        'forms': [
+            {
+                'label': 'ubestemt ental fælleskøn 1. grad',
+                'example': 'en [høj] dreng',
+                'grammatical_features_item_ids': ['Q53997857', 'Q110786', 'Q1305037', 'Q3482678'],
+            },
+            {
+                'label': 'ubestemt ental intetkøn 1. grad',
+                'example': 'et [højt] barn',
+                'grammatical_features_item_ids': ['Q53997857', 'Q110786', 'Q1775461', 'Q3482678'],
+            },
+            {
+                'label': 'bestemt ental 1. grad',
+                'example': 'den [høje] dreng',
+                'grammatical_features_item_ids': ['Q53997851', 'Q110786', 'Q3482678'],
+            },
+            {
+                'label': 'flertal 1. grad',
+                'example': 'de [høje] børn',
+                'grammatical_features_item_ids': ['Q146786', 'Q3482678'],
+            },
+            {
+                'label': '2. grad',
+                'example': 'det [højere] barn',
+                'grammatical_features_item_ids': ['Q14169499'],
+            },
+            {
+                'label': 'ubestemt 3. grad',
+                'example': 'dit barn er [højest]',
+                'grammatical_features_item_ids': ['Q53997857', 'Q1817208'],
+            },
+            {
+                'label': 'bestemt 3. grad',
+                'example': 'de [højeste] børn',
+                'grammatical_features_item_ids': ['Q53997851', 'Q1817208'],
+            },
+        ],
+    },
+
     'german-noun-masculine': {
         '@attribution': {'users': ['Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/German'},
         'label': 'deutsches Substantiv (Maskulinum)',
