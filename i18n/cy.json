@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Afalau"
+		]
+	},
+	"create": "Creu",
+	"form-optional": "&#32;(dewisol)",
+	"advanced": "Uwch",
+	"lexeme-id": "ID y Geirem",
+	"bulk-format-help": "cymorth fformatio",
+	"edit-link": "golygu",
+	"title-create": "$1 (creu)",
+	"title-advanced": "$1 (uwch)",
+	"title-edit": "$1 (golygu)"
+}
