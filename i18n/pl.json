@@ -3,6 +3,7 @@
 		"authors": [
 			"Chrumps",
 			"KaMan",
+			"Lucas Werkmeister",
 			"Luku123"
 		]
 	},
@@ -24,7 +25,7 @@
 	"bulk-not-allowed": "Nie {{GENDER:$1|możesz}} używać trybu zbiorczego.",
 	"edit-link": "edytuj",
 	"edit-general": "Jesteś w trybie „edycji”. Zmiana poniższych wartości spowoduje edycję, dodanie lub usunięcie form leksemu docelowego.",
-	"edit-form-list-item": "$1 , $2 , {{PLURAL:$3|0=brak deklaracji|jedna deklaracja||$3 deklaracje|$3 deklaracji}}",
+	"edit-form-list-item": "$1 , $2 , {{PLURAL:$3|0=brak deklaracji|jedna deklaracja|$3 deklaracje|$3 deklaracji}}",
 	"no-grammatical-features": "brak cech gramatycznych",
 	"title-create": "$1 (stwórz)",
 	"title-advanced": "$1 (zaawansowane)",
