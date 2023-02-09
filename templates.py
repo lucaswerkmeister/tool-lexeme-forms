@@ -3443,8 +3443,8 @@ templates: Dict[str, Union[str, list[str], Template]] = {
                 'grammatical_features_item_ids': ['Q146786', 'Q53997857', 'Q98946930'],
             },
             {
-                'label': 'nominativ flertal, bestemt',
-                'example': 'De nye [biler].',
+                'label': 'nominativ flertal, bestemt, ikke-ejefald',
+                'example': 'Alle [bilerne] er væk.',
                 'grammatical_features_item_ids': ['Q146786', 'Q53997851', 'Q98946930'],
             },
             {
