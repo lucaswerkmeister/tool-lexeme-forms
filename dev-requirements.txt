@@ -4,49 +4,47 @@
 #
 #    pip-compile dev-requirements.in
 #
-attrs==22.1.0
+attrs==22.2.0
     # via
     #   -c requirements.txt
     #   pytest
-exceptiongroup==1.0.1
+exceptiongroup==1.1.0
     # via pytest
-flake8==5.0.4
+flake8==6.0.0
     # via -r dev-requirements.in
-iniconfig==1.1.1
+iniconfig==2.0.0
     # via pytest
 mccabe==0.7.0
     # via flake8
-mypy==0.982
+mypy==1.0.0
     # via -r dev-requirements.in
-mypy-extensions==0.4.3
+mypy-extensions==1.0.0
     # via mypy
-packaging==21.3
+packaging==23.0
     # via pytest
 pluggy==1.0.0
     # via pytest
-pycodestyle==2.9.1
+pycodestyle==2.10.0
     # via flake8
-pyflakes==2.5.0
+pyflakes==3.0.1
     # via flake8
-pyparsing==3.0.9
-    # via packaging
-pytest==7.2.0
+pytest==7.2.1
     # via -r dev-requirements.in
 tomli==2.0.1
     # via
     #   mypy
     #   pytest
-types-babel==2.11.0.1
+types-babel==2.11.0.9
     # via -r dev-requirements.in
-types-decorator==5.1.8.1
+types-decorator==5.1.8.2
     # via -r dev-requirements.in
-types-pytz==2022.6.0.1
+types-pytz==2022.7.1.0
     # via types-babel
-types-pyyaml==6.0.12.1
+types-pyyaml==6.0.12.6
     # via -r dev-requirements.in
-types-requests==2.28.11.2
+types-requests==2.28.11.12
     # via -r dev-requirements.in
-types-urllib3==1.26.25.1
+types-urllib3==1.26.25.5
     # via types-requests
 typing-extensions==4.4.0
     # via

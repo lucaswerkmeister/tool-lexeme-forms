@@ -3,9 +3,11 @@
 exclude =
     venv
 ignore =
-    # expected 2 blank lines
-    E302 # between functions and classes
-    E305 # after functions and classes
+    # expected 2 blank lines...
+    # ...between functions and classes
+    E302
+    # ...after functions and classes
+    E305
     # line too long
     E501
     # line break after binary operator
