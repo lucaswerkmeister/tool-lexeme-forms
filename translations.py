@@ -137,6 +137,7 @@ def mw2py(mw: str, language: str, variables: list[str], lists: set[str]) -> str:
 
 skipped_language_codes = {
     'ban',
+    'hno',
     'io',
     'krc',
     'pt-br',
