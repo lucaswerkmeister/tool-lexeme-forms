@@ -294,3 +294,35 @@ def test_ambiguous_templates(template_name):
     so that we can directly redirect to it."""
     template = templates.templates[template_name]
     assert len(template) > 1
+
+
+@pytest.mark.parametrize('hi_template_name', [
+    template_name
+    for template_name, template in templates.templates_without_redirects.items()
+    if template['language_code'] == 'hi'
+])
+def test_hindustani_templates_match(hi_template_name):
+    """Test that Hindustani template pairs match.
+
+    Hindustani is modeled via pairs of templates,
+    one for Hindi (hi) and one for Urdu (ur);
+    apart from the labels and examples (different scripts),
+    they should be identical."""
+    assert hi_template_name.endswith('-hi')
+    ur_template_name = hi_template_name[:-len('-hi')] + '-ur'
+    assert ur_template_name in templates.templates
+    hi_template = templates.templates[hi_template_name]
+    ur_template = templates.templates[ur_template_name]
+    assert hi_template['language_item_id'] == 'Q11051'
+    assert ur_template['language_item_id'] == 'Q11051'
+    assert hi_template['language_code'] == 'hi'
+    assert ur_template['language_code'] == 'ur'
+    assert hi_template['lexical_category_item_id'] == ur_template['lexical_category_item_id']
+    assert hi_template.get('two_column_sections') == ur_template.get('two_column_sections')
+    assert hi_template.get('statements') == ur_template.get('statements')
+    assert len(hi_template['forms']) == len(ur_template['forms'])
+    for hi_form, ur_form in zip(hi_template['forms'], ur_template['forms']):
+        assert hi_form['grammatical_features_item_ids'] == ur_form['grammatical_features_item_ids']
+        assert hi_form.get('grammatical_features_item_ids_optional') == ur_form.get('grammatical_features_item_ids_optional')
+        assert hi_form.get('optional') == ur_form.get('optional')
+        assert hi_form.get('statements') == ur_form.get('statements')

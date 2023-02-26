@@ -5715,6 +5715,604 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         ],
     },
 
+    'hindustani-noun-masculine-hi': {
+        '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindustani'},
+        'label': 'हिंदुस्तानी नाउँ पुलिंग',
+        'language_item_id': 'Q11051',
+        'language_code': 'hi',
+        'lexical_category_item_id': 'Q1084',
+        'two_column_sections': True,
+        'forms': [
+            {
+                'label': 'एक बचन, फाइली',
+                'example': 'वह [परिंदा] खूबसुरत था।',
+                'grammatical_features_item_ids': ['Q499327', 'Q1751855', 'Q110786'],
+                'grammatical_features_item_ids_optional': set(['Q499327']),
+            },
+            {
+                'label': 'बहु बचन, फाइली',
+                'example': 'वह [परिंदे] खूबसुरत थे।',
+                'grammatical_features_item_ids': ['Q499327', 'Q1751855', 'Q146786'],
+                'grammatical_features_item_ids_optional': set(['Q499327']),
+            },
+            {
+                'label': 'एक बचन, मफऊली',
+                'example': 'इस [परिंदे] ने किया।',
+                'grammatical_features_item_ids': ['Q499327', 'Q1233197', 'Q110786'],
+                'grammatical_features_item_ids_optional': set(['Q499327']),
+            },
+            {
+                'label': 'बहु बचन, मफऊली',
+                'example': 'उस [परिंदों] ने किया।',
+                'grammatical_features_item_ids': ['Q499327', 'Q1233197', 'Q146786'],
+                'grammatical_features_item_ids_optional': set(['Q499327']),
+            },
+            {
+                'section_break': True,
+                'label': 'एक बचन, पुकाने',
+                'example': 'अए, यहाँ आओ मेरे [परिंदे]!',
+                'grammatical_features_item_ids': ['Q499327', 'Q185077', 'Q110786'],
+                'grammatical_features_item_ids_optional': set(['Q499327']),
+                'optional': True,
+            },
+            {
+                'label': 'बहु बचन, पुकाने',
+                'example': 'अए, यहाँ आओ मेरे [परिंदो]!',
+                'grammatical_features_item_ids': ['Q499327', 'Q185077', 'Q146786'],
+                'grammatical_features_item_ids_optional': set(['Q499327']),
+                'optional': True,
+            },
+        ],
+        'statements': statements('P5185', 'Q499327'),
+    },
+
+    'hindustani-noun-feminine-hi': {
+        '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindustani'},
+        'label': 'हिंदुस्तानी नाउँ इसतरी लिंग',
+        'language_item_id': 'Q11051',
+        'language_code': 'hi',
+        'lexical_category_item_id': 'Q1084',
+        'two_column_sections': True,
+        'forms': [
+            {
+                'label': 'एक बचन, फाइली',
+                'example': 'वह [बिल्ली] खूबसुरत थी।',
+                'grammatical_features_item_ids': ['Q1775415', 'Q1751855', 'Q110786'],
+                'grammatical_features_item_ids_optional': set(['Q1775415']),
+            },
+            {
+                'label': 'बहु बचन, फाइली',
+                'example': 'वह [बिल्लियाँ] खूबसुरत थीं।',
+                'grammatical_features_item_ids': ['Q1775415', 'Q1751855', 'Q146786'],
+                'grammatical_features_item_ids_optional': set(['Q1775415']),
+            },
+            {
+                'label': 'एक बचन, मफऊली',
+                'example': 'यह इस [बिल्ली] से आया है।',
+                'grammatical_features_item_ids': ['Q1775415', 'Q1233197', 'Q110786'],
+                'grammatical_features_item_ids_optional': set(['Q1775415']),
+            },
+            {
+                'label': 'बहु बचन, मफऊली',
+                'example': 'यह उन [बिल्लियों] से आया है।',
+                'grammatical_features_item_ids': ['Q1775415', 'Q1233197', 'Q146786'],
+                'grammatical_features_item_ids_optional': set(['Q1775415']),
+            },
+            {
+                'section_break': True,
+                'label': 'एक बचन, पुकाने',
+                'example': 'अए, यहाँ आओ मेरी [बिल्ली]!',
+                'grammatical_features_item_ids': ['Q1775415', 'Q185077', 'Q110786'],
+                'grammatical_features_item_ids_optional': set(['Q1775415']),
+                'optional': True,
+            },
+            {
+                'label': 'बहु बचन, पुकाने',
+                'example': 'अए, यहाँ आओ मेरी [बिल्लियो]!',
+                'grammatical_features_item_ids': ['Q1775415', 'Q185077', 'Q146786'],
+                'grammatical_features_item_ids_optional': set(['Q1775415']),
+                'optional': True,
+            },
+        ],
+        'statements': statements('P5185', 'Q1775415'),
+    },
+
+    'hindustani-adjective-red-hi': {
+        '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindustani'},
+        'label': 'हिंदुसतानी लाल गुन नाउँ',
+        'language_item_id': 'Q11051',
+        'language_code': 'hi',
+        'lexical_category_item_id': 'Q34698',
+        'forms': [
+            {
+                'label': 'मुफरद',
+                'example': 'मेरे [लाल] परिंदों को देखो।',
+                'grammatical_features_item_ids': [],
+            },
+        ],
+        'statements': {
+            'P31': [statement('P31', 'Q58691134')],
+            'P5911': [statement('P5911', 'Q116767029')],
+        },
+    },
+
+    'hindustani-adjective-black-hi': {
+        '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindustani'},
+        'label': 'हिंदुसतानी काला गुन नाउँ',
+        'language_item_id': 'Q11051',
+        'language_code': 'hi',
+        'lexical_category_item_id': 'Q34698',
+        'two_column_sections': True,
+        'forms': [
+            {
+                'label': 'पुलिंग, एक बचन, फाइली',
+                'example': 'मेरा [काला] परिंदा है।',
+                'grammatical_features_item_ids': ['Q499327', 'Q1751855', 'Q110786'],
+            },
+            {
+                'label': 'पुलिंग, बहु बचन, फाइली',
+                'example': 'मेरे [काले] परिंदे हैं।',
+                'grammatical_features_item_ids': ['Q499327', 'Q1751855', 'Q146786'],
+            },
+            {
+                'label': 'पुलिंग, एक बचन, मफऊली',
+                'example': 'मेरे [काले] परिंदे को देखो।',
+                'grammatical_features_item_ids': ['Q499327', 'Q1233197', 'Q110786'],
+            },
+            {
+                'label': 'पुलिंग, बहु बचन, मफऊली',
+                'example': 'मेरे [काले] परिंदों को देखो।',
+                'grammatical_features_item_ids': ['Q499327', 'Q1233197', 'Q146786'],
+            },
+            {
+                'label': 'पुलिंग, एक बचन, पुकाने',
+                'example': 'अए, यहाँ आओ मेरे [काले] परिंदे!؜',
+                'grammatical_features_item_ids': ['Q499327', 'Q185077', 'Q110786'],
+                'optional': True,
+            },
+            {
+                'label': 'पुलिंग, बहु बचन, पुकाने',
+                'example': 'अए, यहाँ आओ मेरे [काले] परिंदो!؜',
+                'grammatical_features_item_ids': ['Q499327', 'Q185077', 'Q146786'],
+                'optional': True,
+            },
+            {
+                'section_break': True,
+                'label': 'इसतरी लिंग, एक बचन, फाइली',
+                'example': 'मेरी [काली] बिल्ली है।',
+                'grammatical_features_item_ids': ['Q1775415', 'Q1751855', 'Q110786'],
+            },
+            {
+                'label': 'इसतरी लिंग, बहु बचन, फाइली',
+                'example': 'मेरी [काली] बिल्लियाँ हैं।',
+                'grammatical_features_item_ids': ['Q1775415', 'Q1751855', 'Q146786'],
+            },
+            {
+                'label': 'इसतरी लिंग, एक बचन, मफऊली',
+                'example': 'मेरी [काली] बिल्ली को देखो।',
+                'grammatical_features_item_ids': ['Q1775415', 'Q1233197', 'Q110786'],
+            },
+            {
+                'label': 'इसतरी लिंग, बहु बचन, मफऊली',
+                'example': 'मेरी [काली] बिल्लियाँ को देखो।',
+                'grammatical_features_item_ids': ['Q1775415', 'Q1233197', 'Q146786'],
+            },
+            {
+                'label': 'इसतरी लिंग, एक बचन, पुकाने',
+                'example': 'अए, यहाँ आओ मेरी [काली] बिल्ली!؜',
+                'grammatical_features_item_ids': ['Q1775415', 'Q185077', 'Q110786'],
+                'optional': True,
+            },
+            {
+                'label': 'इसतरी लिंग, बहु बचन, पुकाने',
+                'example': 'अए, यहाँ आओ मेरी [काली] बिल्लीओ!',
+                'grammatical_features_item_ids': ['Q1775415', 'Q185077', 'Q146786'],
+                'optional': True,
+            },
+        ],
+        'statements': {
+            'P31': [statement('P31', 'Q113064567')],
+            'P5911': [statement('P5911', 'Q116767013')],
+        },
+    },
+
+    'hindustani-adjective-handsomest-hi': {
+        '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindustani'},
+        'label': 'हिंदुसतानी गुन नाउँ तफजील',
+        'language_item_id': 'Q11051',
+        'language_code': 'hi',
+        'lexical_category_item_id': 'Q34698',
+        'forms': [
+            {
+                'label': 'नफीस',
+                'example': 'यह परिंदा [ख़ूब] है।',
+                'grammatical_features_item_ids': ['Q3482678'],
+            },
+            {
+                'label': 'बाज',
+                'example': 'यह परिंदा भी [ख़ूब तर] है।',
+                'grammatical_features_item_ids': ['Q14169499'],
+            },
+            {
+                'label': 'कुल',
+                'example': 'लेकिन मेरा परिंदा [ख़ूब तरीन] है।',
+                'grammatical_features_item_ids': ['Q1817208'],
+            },
+        ],
+        'statements': {
+            'P31': [statement('P31', 'Q106394384')],
+            'P5911': [statement('P5911', 'Q116767037')],
+        },
+    },
+
+    'hindustani-adverb-indeclinable-hi': {
+        '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindustani'},
+        'label': 'हिंदुसतानी आम गुन फैल',
+        'language_item_id': 'Q11051',
+        'language_code': 'hi',
+        'lexical_category_item_id': 'Q380057',
+        'forms': [
+            {
+                'label': 'मुफरद',
+                'example': 'वे [हौले हौले] चलते हैं।',
+                'grammatical_features_item_ids': [],
+            },
+        ],
+        'statements': statements('P31', 'Q106086193'),
+    },
+
+    'hindustani-adverb-declinable-hi': {
+        '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindustani'},
+        'label': 'हिंदुसतानी ऐसा बदल करता गुन फैल',
+        'language_item_id': 'Q11051',
+        'language_code': 'hi',
+        'lexical_category_item_id': 'Q380057',
+        'two_column_sections': True,
+        'forms': [
+            {
+                'label': 'पुलिंग, एक बचन, फाइली',
+                'example': 'पकोड़ा [ऐसा] पका खाया न गिया।',
+                'grammatical_features_item_ids': ['Q499327', 'Q1751855', 'Q110786'],
+            },
+            {
+                'label': 'पुलिंग, बहु बचन, फाइली',
+                'example': 'पकोड़े [ऐसे] पके खाये न गये।',
+                'grammatical_features_item_ids': ['Q499327', 'Q1751855', 'Q146786'],
+            },
+            {
+                'label': 'पुलिंग, एक बचन, मफऊली',
+                'example': 'पकोड़े [ऐसे] पके के खाने लिए अच्छा है।',
+                'grammatical_features_item_ids': ['Q499327', 'Q1233197', 'Q110786'],
+            },
+            {
+                'label': 'पुलिंग, बहु बचन, मफऊली',
+                'example': 'पकोड़ों [ऐसे] पके के खाने लिए अच्छा है।',
+                'grammatical_features_item_ids': ['Q499327', 'Q1233197', 'Q146786'],
+            },
+            {
+                'section_break': True,
+                'label': 'इसतरी लिंग, एक बचन, फाइली',
+                'example': 'रोटी [ऐसी] पकी खायी न गयी।',
+                'grammatical_features_item_ids': ['Q1775415', 'Q1751855', 'Q110786'],
+            },
+            {
+                'label': 'इसतरी लिंग, बहु बचन, फाइली',
+                'example': 'रोटियाँ [ऐसी] पकी खायीं न गयीं।',
+                'grammatical_features_item_ids': ['Q1775415', 'Q1751855', 'Q146786'],
+            },
+            {
+                'label': 'इसतरी लिंग, एक बचन, मफऊली',
+                'example': 'रोटी [ऐसी] पकी के खाने लिए अच्छा है।',
+                'grammatical_features_item_ids': ['Q1775415', 'Q1233197', 'Q110786'],
+            },
+            {
+                'label': 'इसतरी लिंग, बहु बचन, मफऊली',
+                'example': 'रोटियाँ [ऐसी] पकी के खाने लिए अच्छा है।',
+                'grammatical_features_item_ids': ['Q1775415', 'Q1233197', 'Q146786'],
+            },
+        ],
+        'statements': statements('P31', 'Q115721946'),
+    },
+
+    'hindustani-noun-masculine-ur': {
+        '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindustani'},
+        'label': 'ہندوستانی ناؤں مذکر',
+        'language_item_id': 'Q11051',
+        'language_code': 'ur',
+        'lexical_category_item_id': 'Q1084',
+        'two_column_sections': True,
+        'forms': [
+            {
+                'label': 'واحد، فاعلی',
+                'example': 'وہ [پرِندہ] خوبصورت تھا۔',
+                'grammatical_features_item_ids': ['Q499327', 'Q1751855', 'Q110786'],
+                'grammatical_features_item_ids_optional': set(['Q499327']),
+            },
+            {
+                'label': 'جمع، فاعلی',
+                'example': 'وہ [پرِندے] خوبصورت تھے۔',
+                'grammatical_features_item_ids': ['Q499327', 'Q1751855', 'Q146786'],
+                'grammatical_features_item_ids_optional': set(['Q499327']),
+            },
+            {
+                'label': 'واحد، مفعولی',
+                'example': 'اس [پرِندے] نے کیا۔',
+                'grammatical_features_item_ids': ['Q499327', 'Q1233197', 'Q110786'],
+                'grammatical_features_item_ids_optional': set(['Q499327']),
+            },
+            {
+                'label': 'جمع، مفعولی',
+                'example': 'ان [پرِندوں] نے کیا۔',
+                'grammatical_features_item_ids': ['Q499327', 'Q1233197', 'Q146786'],
+                'grammatical_features_item_ids_optional': set(['Q499327']),
+            },
+            {
+                'section_break': True,
+                'label': 'واحد، پکانے',
+                'example': 'اے، یہاں آو میرے [پرِندے]!؜',
+                'grammatical_features_item_ids': ['Q499327', 'Q185077', 'Q110786'],
+                'grammatical_features_item_ids_optional': set(['Q499327']),
+                'optional': True,
+            },
+            {
+                'label': 'جمع، پکانے',
+                'example': 'اے، یہاں آو میرے [پرِندو]!؜',
+                'grammatical_features_item_ids': ['Q499327', 'Q185077', 'Q146786'],
+                'grammatical_features_item_ids_optional': set(['Q499327']),
+                'optional': True,
+            }
+        ],
+        'statements': statements('P5185', 'Q499327'),
+    },
+
+    'hindustani-noun-feminine-ur': {
+        '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindustani'},
+        'label': 'ہندوستانی ناؤں مؤنث',
+        'language_item_id': 'Q11051',
+        'language_code': 'ur',
+        'lexical_category_item_id': 'Q1084',
+        'two_column_sections': True,
+        'forms': [
+            {
+                'label': 'واحد، فاعلی',
+                'example': 'وہ [بِلّی] خوبصورت تھی۔',
+                'grammatical_features_item_ids': ['Q1775415', 'Q1751855', 'Q110786'],
+                'grammatical_features_item_ids_optional': set(['Q1775415']),
+            },
+            {
+                'label': 'جمع، فاعلی',
+                'example': 'وہ [بِلّیاں] خوبصورت تھیں۔',
+                'grammatical_features_item_ids': ['Q1775415', 'Q1751855', 'Q146786'],
+                'grammatical_features_item_ids_optional': set(['Q1775415']),
+            },
+            {
+                'label': 'واحد، مفعولی',
+                'example': 'یہ اس [بِلّی] سے آیا ہے۔',
+                'grammatical_features_item_ids': ['Q1775415', 'Q1233197', 'Q110786'],
+                'grammatical_features_item_ids_optional': set(['Q1775415']),
+            },
+            {
+                'label': 'جمع، مفعولی',
+                'example': 'یہ ان [بِلّیوں] سے آیا ہے۔',
+                'grammatical_features_item_ids': ['Q1775415', 'Q1233197', 'Q146786'],
+                'grammatical_features_item_ids_optional': set(['Q1775415']),
+            },
+            {
+                'section_break': True,
+                'label': 'واحد، پکانے',
+                'example': 'اے، یہاں آو میری [بِلّی]!؜',
+                'grammatical_features_item_ids': ['Q1775415', 'Q185077', 'Q110786'],
+                'grammatical_features_item_ids_optional': set(['Q1775415']),
+                'optional': True,
+            },
+            {
+                'label': 'جمع، پکانے',
+                'example': 'اے، یہاں آو میری [بِلّیو]!؜',
+                'grammatical_features_item_ids': ['Q1775415', 'Q185077', 'Q146786'],
+                'grammatical_features_item_ids_optional': set(['Q1775415']),
+                'optional': True,
+            }
+        ],
+        'statements': statements('P5185', 'Q1775415'),
+    },
+
+    'hindustani-adjective-red-ur': {
+        '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindustani'},
+        'label': 'ہندوستانی لال گن ناؤں',
+        'language_item_id': 'Q11051',
+        'language_code': 'ur',
+        'lexical_category_item_id': 'Q34698',
+        'forms': [
+            {
+                'label': 'مفرد',
+                'example': 'میرے [لال] پرندوں کو دیکھو۔',
+                'grammatical_features_item_ids': [],
+            },
+        ],
+        'statements': {
+            'P31': [statement('P31', 'Q58691134')],
+            'P5911': [statement('P5911', 'Q116767029')],
+        },
+    },
+
+    'hindustani-adjective-black-ur': {
+        '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindustani'},
+        'label': 'ہندوستانی کالا گن ناؤں',
+        'language_item_id': 'Q11051',
+        'language_code': 'ur',
+        'lexical_category_item_id': 'Q34698',
+        'two_column_sections': True,
+        'forms': [
+            {
+                'label': 'مذکر، واحد، فاعلی',
+                'example': 'میرا [کالا] پرندہ ہے۔',
+                'grammatical_features_item_ids': ['Q499327', 'Q1751855', 'Q110786'],
+            },
+            {
+                'label': 'مذکر، جمع، فاعلی',
+                'example': 'میرے [کالے] پرندے ہیں۔',
+                'grammatical_features_item_ids': ['Q499327', 'Q1751855', 'Q146786'],
+            },
+            {
+                'label': 'مذکر، واحد، مفعولی',
+                'example': 'میرے [کالے] پرندے کو دیکھو۔',
+                'grammatical_features_item_ids': ['Q499327', 'Q1233197', 'Q110786'],
+            },
+            {
+                'label': 'مذکر، جمع، مفعولی',
+                'example': 'میرے [کالے] پرندوں کو دیکھو۔',
+                'grammatical_features_item_ids': ['Q499327', 'Q1233197', 'Q146786'],
+            },
+            {
+                'label': 'مذکر، واحد، پکانے',
+                'example': 'اے، یہاں آو میرے [کالے] پرندے!؜',
+                'grammatical_features_item_ids': ['Q499327', 'Q185077', 'Q110786'],
+                'optional': True,
+            },
+            {
+                'label': 'مذکر، جمع، پکانے',
+                'example': 'اے، یہاں آو میرے [کالے] پرندو!؜',
+                'grammatical_features_item_ids': ['Q499327', 'Q185077', 'Q146786'],
+                'optional': True,
+            },
+            {
+                'section_break': True,
+                'label': 'مؤنث واحد، فاعلی',
+                'example': 'میری [کالی] بلی ہے۔',
+                'grammatical_features_item_ids': ['Q1775415', 'Q1751855', 'Q110786'],
+            },
+            {
+                'label': 'مؤنث، جمع، فاعلی',
+                'example': 'میری [کالی] بلیاں ہیں۔',
+                'grammatical_features_item_ids': ['Q1775415', 'Q1751855', 'Q146786'],
+            },
+            {
+                'label': 'مؤنث، واحد، مفعولی',
+                'example': 'میری [کالی] بلی کو دیکھو۔',
+                'grammatical_features_item_ids': ['Q1775415', 'Q1233197', 'Q110786'],
+            },
+            {
+                'label': 'مؤنث، جمع، مفعولی',
+                'example': 'میری [کالی] بلیاں کو دیکھو۔',
+                'grammatical_features_item_ids': ['Q1775415', 'Q1233197', 'Q146786'],
+            },
+            {
+                'label': 'مؤنث، واحد، پکانے',
+                'example': 'اے، یہاں آو میری [کالی] پبلی!؜',
+                'grammatical_features_item_ids': ['Q1775415', 'Q185077', 'Q110786'],
+                'optional': True,
+            },
+            {
+                'label': 'مؤنث، جمع، پکانے',
+                'example': 'اے، یہاں آو میری [کالی] پبلیو!؜',
+                'grammatical_features_item_ids': ['Q1775415', 'Q185077', 'Q146786'],
+                'optional': True,
+            },
+        ],
+        'statements': {
+            'P31': [statement('P31', 'Q113064567')],
+            'P5911': [statement('P5911', 'Q116767013')],
+        },
+    },
+
+    'hindustani-adjective-handsomest-ur': {
+        '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindustani'},
+        'label': 'ہندوستانی گن ناؤں تفضیل',
+        'language_item_id': 'Q11051',
+        'language_code': 'ur',
+        'lexical_category_item_id': 'Q34698',
+        'forms': [
+            {
+                'label': 'نفسی',
+                'example': 'یہ پرندہ [خُوب] ہے۔',
+                'grammatical_features_item_ids': ['Q3482678'],
+            },
+            {
+                'label': 'بعض',
+                'example': 'یہ پرندہ بھی [خُوب تر] ہے۔',
+                'grammatical_features_item_ids': ['Q14169499'],
+            },
+            {
+                'label': 'کُل',
+                'example': 'لیکن میرا پرندہ [خُوب ترِین] ہے۔',
+                'grammatical_features_item_ids': ['Q1817208'],
+            },
+        ],
+        'statements': {
+            'P31': [statement('P31', 'Q106394384')],
+            'P5911': [statement('P5911', 'Q116767037')],
+        },
+    },
+
+    'hindustani-adverb-indeclinable-ur': {
+        '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindustani'},
+        'label': 'ہندوستانی عام گن فعل',
+        'language_item_id': 'Q11051',
+        'language_code': 'ur',
+        'lexical_category_item_id': 'Q380057',
+        'forms': [
+            {
+                'label': 'مفرد',
+                'example': 'وے [ہَولے ہَولے] چلتے ہیں۔',
+                'grammatical_features_item_ids': [],
+            },
+        ],
+        'statements': statements('P31', 'Q106086193'),
+    },
+
+    'hindustani-adverb-declinable-ur': {
+        '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindustani'},
+        'label': 'ہندوستانی ایسا بدل کرتا گن فعل',
+        'language_item_id': 'Q11051',
+        'language_code': 'ur',
+        'lexical_category_item_id': 'Q380057',
+        'two_column_sections': True,
+        'forms': [
+            {
+                'label': 'مذکر، واحد، فاعلی',
+                'example': 'پکوڑا [اَیسا] پکا کھایا نہ گیا۔',
+                'grammatical_features_item_ids': ['Q499327', 'Q1751855', 'Q110786'],
+            },
+            {
+                'label': 'مذکر، جمع، فاعلی',
+                'example': 'پکوڑے [اَیسے] پکے کھائے نہ گئے۔',
+                'grammatical_features_item_ids': ['Q499327', 'Q1751855', 'Q146786'],
+            },
+            {
+                'label': 'مذکر، واحد، مفعولی',
+                'example': 'پکوڑے [اَیسے] پکے کے کھانے لئے اچھا ہے۔',
+                'grammatical_features_item_ids': ['Q499327', 'Q1233197', 'Q110786'],
+            },
+            {
+                'label': 'مذکر، جمع، مفعولی',
+                'example': 'پکوڑوں [اَیسے] پکے کے کھانے لئے اچھا ہے۔',
+                'grammatical_features_item_ids': ['Q499327', 'Q1233197', 'Q146786'],
+            },
+            {
+                'section_break': True,
+                'label': 'مؤنث، واحد، فاعلی',
+                'example': 'روٹی [اَیسی] پکی کھائی نہ گئی۔',
+                'grammatical_features_item_ids': ['Q1775415', 'Q1751855', 'Q110786'],
+            },
+            {
+                'label': 'مؤنث، جمع، فاعلی',
+                'example': 'روٹیاں [اَیسی] پکی کھائیں نہ گئیں۔',
+                'grammatical_features_item_ids': ['Q1775415', 'Q1751855', 'Q146786'],
+            },
+            {
+                'label': 'مؤنث، واحد، مفعولی',
+                'example': 'روٹی [اَیسی] پکی کے کھانے لئے اچھا ہے۔',
+                'grammatical_features_item_ids': ['Q1775415', 'Q1233197', 'Q110786'],
+            },
+            {
+                'label': 'مؤنث، جمع، مفعولی',
+                'example': 'روٹیاں [اَیسی] پکی کے کھانے لئے اچھا ہے۔',
+                'grammatical_features_item_ids': ['Q1775415', 'Q1233197', 'Q146786'],
+            },
+        ],
+        'statements': statements('P31', 'Q115721946'),
+    },
+
     'croatian-noun-masculine': {
         '@attribution': {'users': ['Ivi104'], 'title': 'Wikidata:Wikidata Lexeme Forms/Croatian'},
         'label': 'hrvatske imenice (muški rod)',
@@ -10394,6 +10992,8 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         ],
         'statements': statements('P31', 'Q138246'),
     },
+
+    # note: Urdu (ur) templates are under hindustani-*, grouping Hindi (hi) and Urdu (ur) together
 
     'yoruba-noun': {
         '@attribution': {'users': ['T Cells'], 'title': 'Wikidata:Wikidata Lexeme Forms/Yoruba'},
