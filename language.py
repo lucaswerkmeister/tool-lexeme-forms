@@ -25,8 +25,9 @@ def lang_lex2int(code: str) -> str:
     return {
         # Manbhumi reuses the standard Bengali messages
         'bn-x-Q6747180': 'bn',
-        # Hindko reuses the standard Punjabi messages
-        'pnb-x-Q382273': 'pnb',
+        # hno (Hindko) is supported on translatewiki.net but not on Wikidata,
+        # so the templates have to use the -x- language code
+        'pnb-x-Q382273': 'hno',
     }.get(code, code)
 
 
@@ -52,4 +53,8 @@ def lang_int2babel(code: str) -> str:
         'pnb': 'ur',
         # Serbo-Croatian is not in CLDR, Croatian is closest for our purposes
         'sh': 'hr',
+        # hno (Hindko) is not in Babel, nor is lah (Lahnda);
+        # use Urdu just like for pnb (Western Punjabi) above,
+        # as pnb is said to be mutually intellegible (https://w.wiki/6Nu7)
+        'hno': 'ur',
     }.get(code, code)
