@@ -1,7 +1,7 @@
 from typing import Dict, List, Optional, Set, TypedDict, Union
 from typing_extensions import NotRequired
 
-from wikibase_types import Statement, Statements
+from wikibase_types import Snak, Statement, Statements
 
 
 class TemplateForm(TypedDict):
@@ -31,9 +31,16 @@ Template = TypedDict('Template', {
 })
 
 
-def statement(property_id: str, item_id: str) -> Statement:
-    return {
-        'mainsnak': {
+def statement(property_id: str, item_id: Optional[str]) -> Statement:
+    snak: Snak
+    if item_id is None:
+        snak = {
+            'snaktype': 'novalue',
+            'property': property_id,
+            'datatype': 'wikibase-item',
+        }
+    else:
+        snak = {
             'snaktype': 'value',
             'property': property_id,
             'datatype': 'wikibase-item',
@@ -44,13 +51,15 @@ def statement(property_id: str, item_id: str) -> Statement:
                     'id': item_id,
                 },
             },
-        },
+        }
+    return {
+        'mainsnak': snak,
         'type': 'statement',
         'rank': 'normal',
     }
 
 
-def statements(property_id: str, item_id: str) -> Statements:
+def statements(property_id: str, item_id: Optional[str]) -> Statements:
     return {
         property_id: [
             statement(property_id, item_id),

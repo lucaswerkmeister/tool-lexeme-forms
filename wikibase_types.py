@@ -1,4 +1,4 @@
-from typing import Literal, TypedDict
+from typing import Literal, TypedDict, Union
 from typing_extensions import NotRequired
 
 
@@ -19,11 +19,28 @@ class WikibaseEntityIdDataValue(TypedDict):
     value: WikibaseEntityIdDataValueValue
 
 
-class Snak(TypedDict):
-    snaktype: Literal['value']  # other snak types not used in this tool
+class PropertyValueSnak(TypedDict):
+    snaktype: Literal['value']
     property: str
     datatype: Literal['wikibase-item']  # other data types not used in this tool
     datavalue: WikibaseEntityIdDataValue
+
+
+class PropertySomeValueSnak(TypedDict):
+    snaktype: Literal['somevalue']
+    property: str
+    datatype: Literal['wikibase-item']  # other data types not used in this tool
+    # no datavalue
+
+
+class PropertyNoValueSnak(TypedDict):
+    snaktype: Literal['novalue']
+    property: str
+    datatype: Literal['wikibase-item']  # other data types not used in this tool
+    # no datavalue
+
+
+Snak = Union[PropertyValueSnak, PropertySomeValueSnak, PropertyNoValueSnak]
 
 
 class Statement(TypedDict):

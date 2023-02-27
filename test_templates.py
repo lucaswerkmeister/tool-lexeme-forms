@@ -5,16 +5,18 @@ import app
 from language import lang_lex2int
 import templates
 import translations
+from wikibase_types import Statements
 
 
 def test_entities_exist():
     entity_ids = set()
 
-    def add_from_statements(statements):
+    def add_from_statements(statements: Statements):
         for property_id, statement_group in statements.items():
             entity_ids.add(property_id)
             for statement in statement_group:
-                entity_ids.add(statement['mainsnak']['datavalue']['value']['id'])
+                if statement['mainsnak']['snaktype'] == 'value':
+                    entity_ids.add(statement['mainsnak']['datavalue']['value']['id'])
 
     for template in templates.templates_without_redirects.values():
         if template.get('test', False):

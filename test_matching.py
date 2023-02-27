@@ -268,6 +268,54 @@ def test_match_lexeme_form_to_template_form_conflicting_statement():
     }
     assert matching.match_lexeme_form_to_template_form(False, lexeme_form, template_form) == 0
 
+def test_match_lexeme_form_to_template_form_novalue_statement():
+    lexeme_form = {
+        'grammaticalFeatures': ['Q1'],
+        'claims': templates.statements('P7486', None),
+    }
+    template_form = {
+        'grammatical_features_item_ids': ['Q1'],
+        'statements': templates.statements('P7486', None),
+    }
+    assert matching.match_lexeme_form_to_template_form(False, lexeme_form, template_form) == 2
+
+def test_match_lexeme_form_to_template_form_value_novalue_statements():
+    lexeme_form = {
+        'grammaticalFeatures': ['Q1'],
+        'claims': templates.statements('P7486', 'Q28130104'),
+    }
+    template_form = {
+        'grammatical_features_item_ids': ['Q1'],
+        'statements': templates.statements('P7486', None),
+    }
+    assert matching.match_lexeme_form_to_template_form(False, lexeme_form, template_form) == 0
+
+def test_match_lexeme_form_to_template_form_novalue_value_statements():
+    lexeme_form = {
+        'grammaticalFeatures': ['Q1'],
+        'claims': templates.statements('P7486', None),
+    }
+    template_form = {
+        'grammatical_features_item_ids': ['Q1'],
+        'statements': templates.statements('P7486', 'Q28130104'),
+    }
+    assert matching.match_lexeme_form_to_template_form(False, lexeme_form, template_form) == 0
+
+def test_match_lexeme_form_to_template_form_somevalue_novalue_statements():
+    lexeme_form = {
+        'grammaticalFeatures': ['Q1'],
+        'claims': {'P7486': [{
+            'mainsnak': {'snaktype': 'somevalue', 'property': 'P7486', 'datatype': 'wikibase-item'},
+            'type': 'statement',
+            'rank': 'normal',
+        }]},
+    }
+    template_form = {
+        'grammatical_features_item_ids': ['Q1'],
+        'statements': templates.statements('P7486', None),
+    }
+    assert matching.match_lexeme_form_to_template_form(False, lexeme_form, template_form) == 0
+
 def test_match_lexeme_form_to_template_form_counts_grammatical_features_and_statements():
     lexeme_form = {
         'grammaticalFeatures': ['Q1', 'Q2', 'Q3', 'Q4'],

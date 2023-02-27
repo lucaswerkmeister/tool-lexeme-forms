@@ -103,11 +103,13 @@ def match_statement(template_statement: Statement, lexeme_statement: Statement) 
     # so far, we only compare the main snak (ignoring qualifiers and references),
     # and only support entity ID values, because that’s all the templates use
     if lexeme_statement['mainsnak']['snaktype'] == 'value':
+        if template_statement['mainsnak']['snaktype'] != 'value':
+            return False
         template_statement_value_id = template_statement['mainsnak']['datavalue']['value']['id']
         lexeme_statement_value_id = lexeme_statement['mainsnak']['datavalue']['value']['id']
         return template_statement_value_id == lexeme_statement_value_id
     else:
-        return False
+        return lexeme_statement['mainsnak']['snaktype'] == template_statement['mainsnak']['snaktype']
 
 
 def match_lexeme_forms_to_template(lexeme_forms: list, template: Template) -> MatchedTemplate:
