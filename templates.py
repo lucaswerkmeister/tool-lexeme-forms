@@ -11,7 +11,7 @@ class TemplateForm(TypedDict):
     grammatical_features_item_ids: List[str]
     grammatical_features_item_ids_optional: NotRequired[Set[str]]
     optional: NotRequired[bool]
-    statements: NotRequired[dict]
+    statements: NotRequired[Statements]
 
 class Attribution(TypedDict):
     users: List[str]
