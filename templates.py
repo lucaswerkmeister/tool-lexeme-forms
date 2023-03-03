@@ -5819,7 +5819,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
 
     'hindustani-adjective-red-hi': {
         '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindustani'},
-        'label': 'हिंदुसतानी लाल गुन नाउँ',
+        'label': 'हिंदुस्तानी लाल गुन नाउँ',
         'language_item_id': 'Q11051',
         'language_code': 'hi',
         'lexical_category_item_id': 'Q34698',
@@ -5838,7 +5838,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
 
     'hindustani-adjective-black-hi': {
         '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindustani'},
-        'label': 'हिंदुसतानी काला गुन नाउँ',
+        'label': 'हिंदुस्तानी काला गुन नाउँ',
         'language_item_id': 'Q11051',
         'language_code': 'hi',
         'lexical_category_item_id': 'Q34698',
@@ -5918,7 +5918,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
 
     'hindustani-adjective-handsomest-hi': {
         '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindustani'},
-        'label': 'हिंदुसतानी गुन नाउँ तफजील',
+        'label': 'हिंदुस्तानी गुन नाउँ तफजील',
         'language_item_id': 'Q11051',
         'language_code': 'hi',
         'lexical_category_item_id': 'Q34698',
@@ -5947,7 +5947,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
 
     'hindustani-adverb-indeclinable-hi': {
         '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindustani'},
-        'label': 'हिंदुसतानी आम गुन फैल',
+        'label': 'हिंदुस्तानी आम गुन फैल',
         'language_item_id': 'Q11051',
         'language_code': 'hi',
         'lexical_category_item_id': 'Q380057',
@@ -5963,7 +5963,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
 
     'hindustani-adverb-declinable-hi': {
         '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindustani'},
-        'label': 'हिंदुसतानी ऐसा बदल करता गुन फैल',
+        'label': 'हिंदुस्तानी ऐसा बदल करता गुन फैल',
         'language_item_id': 'Q11051',
         'language_code': 'hi',
         'lexical_category_item_id': 'Q380057',
