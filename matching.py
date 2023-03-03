@@ -42,6 +42,8 @@ properties_exclusive = {
         'P6191': True,
         # other “grammatical aspect” are incompatible
         'P7486': True,
+        # other “transitivity” are incompatible
+        'P9295': True,
     },
     'test': {
         # other “instance of” are likely unrelated and okay
