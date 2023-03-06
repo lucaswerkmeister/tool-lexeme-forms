@@ -7425,7 +7425,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
             },
             {
                 'label': 'مشروط، سننے والا، مؤنث، واحد',
-                'example': 'تو [پھَیلوگی] ہے۔',
+                'example': 'تو [پھَیلےگی] ہے۔',
                 'grammatical_features_item_ids': ['Q113330960', 'Q113330736', 'Q473746', 'Q53997851', 'Q51929049', 'Q1775415', 'Q110786'],
                 'grammatical_features_item_ids_optional': set(['Q113330960', 'Q113330736']),
                 'statements': statements('P7486', None),
@@ -7721,7 +7721,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
             },
             {
                 'label': 'مشروط، سننے والا، مؤنث، واحد',
-                'example': 'تو وہ [دھاروگی] ہے۔',
+                'example': 'تو وہ [دھارےگی] ہے۔',
                 'grammatical_features_item_ids': ['Q113330960', 'Q113330733', 'Q473746', 'Q53997851', 'Q51929049', 'Q1775415', 'Q110786'],
                 'grammatical_features_item_ids_optional': set(['Q113330960', 'Q113330733']),
                 'statements': statements('P7486', None),
@@ -8017,7 +8017,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
             },
             {
                 'label': 'مشروط، سننے والا، مؤنث، واحد',
-                'example': 'تو وہ [پھَیلاؤگی] ہے۔',
+                'example': 'تو وہ [پھَیلائےگی] ہے۔',
                 'grammatical_features_item_ids': ['Q113330729', 'Q113330733', 'Q473746', 'Q53997851', 'Q51929049', 'Q1775415', 'Q110786'],
                 'grammatical_features_item_ids_optional': set(['Q113330729', 'Q113330733']),
                 'statements': statements('P7486', None),
