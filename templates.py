@@ -8983,7 +8983,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
 
     'hindustani-verb-additive-causative-double-ur': {
         '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindustani'},
-        'label': 'hindustani-verb-additive-causative-double-ur',
+        'label': 'ہندوستانی فعل متعدی کا دوسرا تعدیہ',
         'language_item_id': 'Q11051',
         'language_code': 'ur',
         'lexical_category_item_id': 'Q24905',

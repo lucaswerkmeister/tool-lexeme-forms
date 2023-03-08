@@ -54,6 +54,12 @@ def test_translations_available():
     assert not missing_language_codes
 
 
+@pytest.mark.parametrize('template_name', templates.templates_without_redirects.keys())
+def test_template_labels_not_identifiers(template_name):
+    template = templates.templates_without_redirects[template_name]
+    assert template_name != template['label']
+
+
 def test_template_labels_distinct_per_language():
     template_names_by_language_and_label = {}
     for template_name, template in templates.templates_without_redirects.items():
