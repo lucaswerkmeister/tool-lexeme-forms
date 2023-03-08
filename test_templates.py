@@ -40,6 +40,9 @@ def test_entities_exist():
         for entity_id, entity in result['entities'].items():
             if 'missing' in entity:
                 missing_entity_ids.add(entity_id)
+        for entity_id in chunk:
+            if entity_id not in result['entities']:
+                missing_entity_ids.add(entity_id)
 
     assert not missing_entity_ids
 

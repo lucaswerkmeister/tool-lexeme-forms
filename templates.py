@@ -12168,7 +12168,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
                 'section_break': True,
                 'label': 'masculino singular diminutivo',
                 'example': 'Eu vi um [amiguinho] seu.',
-                'grammatical_features_item_ids': ['Q499327', 'q110786', 'Q108709'],
+                'grammatical_features_item_ids': ['Q499327', 'Q110786', 'Q108709'],
                 'optional': True,
             },
             {
