@@ -4,13 +4,14 @@
 			"Joquliina",
 			"MITO",
 			"Markus Mikkonen",
+			"Pyscowicz",
 			"Shinnin"
 		]
 	},
 	"create": "Julkaise",
 	"csrf-warning": "Anteeksi, pyynnön käsittely ei onnistunut (<abbr title=\"Cross-site request forgery\">CSRF</abbr> suojaus epäonnistui). Yritä tallentaa kaavake uudestaan, kiitos.",
-	"duplicates-warning": "Seuraavilla lekseemeillä on sama lemma ja kieli kuin sillä, jota yrität luoda:",
-	"duplicates-instructions": "Jos olet varma, että ne ovat eri lekseemeitä, laita rasti kaavakkeen lopussa olevaan laatikkoon.",
+	"duplicates-warning": "{{PLURAL:$1|Seuraavalla lekseemillä|Seuraavilla lekseemeillä}} on sama lemma ja kieli kuin sillä, jota yrität luoda:",
+	"duplicates-instructions": "Jos olet varma, että {{PLURAL:$1|se on eri lekseemi|ne ovat eri lekseemeitä}}, laita rasti kaavakkeen lopussa olevaan laatikkoon.",
 	"duplicates-create": "Luo uusi lekseemi joka tapauksessa.",
 	"no-duplicate": "Tämä ei ole kaksoiskappale olemassa olevasta lekseemistä.",
 	"form-optional": "&#32;(valinnainen)",
