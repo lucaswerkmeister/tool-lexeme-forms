@@ -11586,7 +11586,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindko'},
         'label': 'ہندکو اِسم مذکر',
         'language_item_id': 'Q382273',
-        'language_code': 'pnb-x-Q382273',
+        'language_code': 'hno',
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
         'forms': [
@@ -11618,7 +11618,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindko'},
         'label': 'ہندکو اِسم مونث',
         'language_item_id': 'Q382273',
-        'language_code': 'pnb-x-Q382273',
+        'language_code': 'hno',
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
         'forms': [

@@ -25,9 +25,6 @@ def lang_lex2int(code: str) -> str:
     return {
         # Manbhumi reuses the standard Bengali messages
         'bn-x-Q6747180': 'bn',
-        # hno (Hindko) is supported on translatewiki.net but not on Wikidata,
-        # so the templates have to use the -x- language code
-        'pnb-x-Q382273': 'hno',
     }.get(code, code)
 
 
