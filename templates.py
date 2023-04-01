@@ -9276,6 +9276,70 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         ],
     },
 
+    'hindko-noun-masculine': {
+        '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindko'},
+        'label': 'ہندکو اِسم مذکر',
+        'language_item_id': 'Q382273',
+        'language_code': 'hno',
+        'lexical_category_item_id': 'Q1084',
+        'two_column_sections': True,
+        'forms': [
+            {
+                'label': 'واحد، فاعلی',
+                'example': 'ایہہ [بٹّہ] اے۔',
+                'grammatical_features_item_ids': ['Q499327', 'Q1751855', 'Q110786'],
+            },
+            {
+                'label': 'جمع، فاعلی',
+                'example': 'ایہہ [بٹّے] نیں۔',
+                'grammatical_features_item_ids': ['Q499327', 'Q1751855', 'Q146786'],
+            },
+            {
+                'label': 'واحد، مفعولی',
+                'example': 'میں [بٹّے] آں ویکھیا۔',
+                'grammatical_features_item_ids': ['Q499327', 'Q1233197', 'Q110786'],
+            },
+            {
+                'label': 'جمع، مفعولی',
+                'example': 'میں [بٹّیاں] آں ویکھے۔',
+                'grammatical_features_item_ids': ['Q499327', 'Q1233197', 'Q146786'],
+            },
+        ],
+        'statements': statements('P5185', 'Q499327'),
+    },
+
+    'hindko-noun-feminine': {
+        '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindko'},
+        'label': 'ہندکو اِسم مونث',
+        'language_item_id': 'Q382273',
+        'language_code': 'hno',
+        'lexical_category_item_id': 'Q1084',
+        'two_column_sections': True,
+        'forms': [
+            {
+                'label': 'واحد، فاعلی',
+                'example': 'او اساں دی [تحصِیل] اے۔',
+                'grammatical_features_item_ids': ['Q1775415', 'Q1751855', 'Q110786'],
+            },
+            {
+                'label': 'جمع، فاعلی',
+                'example': 'اوہ اساں دیاں [تحصِیلاں] نیں۔',
+                'grammatical_features_item_ids': ['Q1775415', 'Q1751855', 'Q146786'],
+            },
+            {
+                'label': 'واحد، مفعولی',
+                'example': 'اِس [تحصِیلی] کول او گیا اے۔',
+                'grammatical_features_item_ids': ['Q1775415', 'Q1233197', 'Q110786'],
+            },
+            {
+                'label': 'جمع، مفعولی',
+                'example': 'انہاں [تحصِیلاں] کول اوہ گئے نیں۔',
+                'grammatical_features_item_ids': ['Q1775415', 'Q1233197', 'Q146786'],
+            },
+        ],
+        'statements': statements('P5185', 'Q1775415'),
+    },
+
     'croatian-noun-masculine': {
         '@attribution': {'users': ['Ivi104'], 'title': 'Wikidata:Wikidata Lexeme Forms/Croatian'},
         'label': 'hrvatske imenice (muški rod)',
@@ -11580,70 +11644,6 @@ templates: Dict[str, Union[str, list[str], Template]] = {
                 'grammatical_features_item_ids': [],
             },
         ],
-    },
-
-    'hindko-noun-masculine': {
-        '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindko'},
-        'label': 'ہندکو اِسم مذکر',
-        'language_item_id': 'Q382273',
-        'language_code': 'hno',
-        'lexical_category_item_id': 'Q1084',
-        'two_column_sections': True,
-        'forms': [
-            {
-                'label': 'واحد، فاعلی',
-                'example': 'ایہہ [بٹّہ] اے۔',
-                'grammatical_features_item_ids': ['Q499327', 'Q1751855', 'Q110786'],
-            },
-            {
-                'label': 'جمع، فاعلی',
-                'example': 'ایہہ [بٹّے] نیں۔',
-                'grammatical_features_item_ids': ['Q499327', 'Q1751855', 'Q146786'],
-            },
-            {
-                'label': 'واحد، مفعولی',
-                'example': 'میں [بٹّے] آں ویکھیا۔',
-                'grammatical_features_item_ids': ['Q499327', 'Q1233197', 'Q110786'],
-            },
-            {
-                'label': 'جمع، مفعولی',
-                'example': 'میں [بٹّیاں] آں ویکھے۔',
-                'grammatical_features_item_ids': ['Q499327', 'Q1233197', 'Q146786'],
-            },
-        ],
-        'statements': statements('P5185', 'Q499327'),
-    },
-
-    'hindko-noun-feminine': {
-        '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindko'},
-        'label': 'ہندکو اِسم مونث',
-        'language_item_id': 'Q382273',
-        'language_code': 'hno',
-        'lexical_category_item_id': 'Q1084',
-        'two_column_sections': True,
-        'forms': [
-            {
-                'label': 'واحد، فاعلی',
-                'example': 'او اساں دی [تحصِیل] اے۔',
-                'grammatical_features_item_ids': ['Q1775415', 'Q1751855', 'Q110786'],
-            },
-            {
-                'label': 'جمع، فاعلی',
-                'example': 'اوہ اساں دیاں [تحصِیلاں] نیں۔',
-                'grammatical_features_item_ids': ['Q1775415', 'Q1751855', 'Q146786'],
-            },
-            {
-                'label': 'واحد، مفعولی',
-                'example': 'اِس [تحصِیلی] کول او گیا اے۔',
-                'grammatical_features_item_ids': ['Q1775415', 'Q1233197', 'Q110786'],
-            },
-            {
-                'label': 'جمع، مفعولی',
-                'example': 'انہاں [تحصِیلاں] کول اوہ گئے نیں۔',
-                'grammatical_features_item_ids': ['Q1775415', 'Q1233197', 'Q146786'],
-            },
-        ],
-        'statements': statements('P5185', 'Q1775415'),
     },
 
     'polish-noun': {
