@@ -328,12 +328,40 @@ def test_hindustani_templates_match(hi_template_name):
     assert ur_template['language_item_id'] == 'Q11051'
     assert hi_template['language_code'] == 'hi'
     assert ur_template['language_code'] == 'ur'
-    assert hi_template['lexical_category_item_id'] == ur_template['lexical_category_item_id']
-    assert hi_template.get('two_column_sections') == ur_template.get('two_column_sections')
-    assert hi_template.get('statements') == ur_template.get('statements')
-    assert len(hi_template['forms']) == len(ur_template['forms'])
-    for hi_form, ur_form in zip(hi_template['forms'], ur_template['forms']):
-        assert hi_form['grammatical_features_item_ids'] == ur_form['grammatical_features_item_ids']
-        assert hi_form.get('grammatical_features_item_ids_optional') == ur_form.get('grammatical_features_item_ids_optional')
-        assert hi_form.get('optional') == ur_form.get('optional')
-        assert hi_form.get('statements') == ur_form.get('statements')
+    assert_templates_match(hi_template, ur_template)
+
+
+@pytest.mark.parametrize('pnb_template_name', [
+    template_name
+    for template_name, template in templates.templates_without_redirects.items()
+    if template['language_code'] == 'pnb'
+])
+def test_punjabi_templates_match(pnb_template_name):
+    """Test that Punjabi template pairs match.
+
+    Punjabi is modeled via pairs of templates,
+    one for Shahmukhi (pnb) and one for Gurmukhi (pa);
+    apart from the labels and examples (different scripts),
+    they should be identical."""
+    assert pnb_template_name.endswith('-shah')
+    pa_template_name = pnb_template_name[:-len('-shah')] + '-guru'
+    assert pa_template_name in templates.templates
+    pnb_template = templates.templates[pnb_template_name]
+    pa_template = templates.templates[pa_template_name]
+    assert pnb_template['language_item_id'] == 'Q58635'
+    assert pa_template['language_item_id'] == 'Q58635'
+    assert pnb_template['language_code'] == 'pnb'
+    assert pa_template['language_code'] == 'pa'
+    assert_templates_match(pnb_template, pa_template)
+
+
+def assert_templates_match(a_template, b_template):
+    assert a_template['lexical_category_item_id'] == b_template['lexical_category_item_id']
+    assert a_template.get('two_column_sections') == b_template.get('two_column_sections')
+    assert a_template.get('statements') == b_template.get('statements')
+    assert len(a_template['forms']) == len(b_template['forms'])
+    for a_form, b_form in zip(a_template['forms'], b_template['forms']):
+        assert a_form['grammatical_features_item_ids'] == b_form['grammatical_features_item_ids']
+        assert a_form.get('grammatical_features_item_ids_optional') == b_form.get('grammatical_features_item_ids_optional')
+        assert a_form.get('optional') == b_form.get('optional')
+        assert a_form.get('statements') == b_form.get('statements')

@@ -224,6 +224,14 @@ language_Malayalam: Language = {
     'language_item_id': Malayalam,
     'language_code': 'ml',
 }
+language_Shahmukhi: Language = {
+    'language_item_id': Punjabi,
+    'language_code': 'pnb',
+}
+language_Gurmukhi: Language = {
+    'language_item_id': Punjabi,
+    'language_code': 'pa',
+}
 language_Hindko: Language = {
     'language_item_id': Hindko,
     'language_code': 'hno',
@@ -12151,6 +12159,148 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
                 'grammatical_features_item_ids': [plural, not_masculine_personal, vocative_case, positive],
             },
         ],
+    },
+
+    'punjabi-noun-masculine-shah': {
+        '@attribution': {'users': ['Satdeep Gill', 'عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Punjabi'},
+        'label': 'پنجابی ناؤں مذکر',
+        'language': language_Shahmukhi,
+        'lexical_category_item_id': 'Q1084',
+        'two_column_sections': True,
+        'forms': [
+            {
+                'label': 'واحد، فاعلی',
+                'example': 'اوہ میرا [ہتھّ] اے۔',
+                'grammatical_features_item_ids': [masculine, direct_case, singular],
+            },
+            {
+                'label': 'جمع، فاعلی',
+                'example': 'اوہ میرے [ہتھّ] ہن۔',
+                'grammatical_features_item_ids': [masculine, direct_case, plural],
+            },
+            {
+                'label': 'واحد، مفعولی',
+                'example': 'میرے [ہتھّ] نوں ویکھو۔',
+                'grammatical_features_item_ids': [masculine, oblique_case, singular],
+            },
+            {
+                'label': 'جمع، مفعولی',
+                'example': 'میریاں [ہتھّاں] نوں ویکھو۔',
+                'grammatical_features_item_ids': [masculine, oblique_case, plural],
+            },
+            {
+                'section_break': True,
+                'label': 'واحد، اپادان',
+                'example': 'اوہ [ہتھّوں] بھیجا جا سکدا اے۔؜',
+                'grammatical_features_item_ids': [masculine, ablative_case, singular],
+                'optional': True,
+            },
+            {
+                'section_break': True,
+                'label': 'واحد، پکارن',
+                'example': 'وے او [ہتھّا]!؜',
+                'grammatical_features_item_ids': [masculine, vocative_case, singular],
+                'optional': True,
+            },
+            {
+                'label': 'جمع، پکارن',
+                'example': 'ہے حسین [ہتھّو]!؜',
+                'grammatical_features_item_ids': [masculine, vocative_case, plural],
+                'optional': True,
+            },
+            {
+                'section_break': True,
+                'label': 'واحد، وسنیک',
+                'example': 'میں [ہتھّے] آ گیا۔؜',
+                'grammatical_features_item_ids': [masculine, locative_case, singular],
+                'optional': True,
+            },
+            {
+                'label': 'جمع، وسنیک',
+                'example': 'اسیں [ہتھِّیں] آ گئے۔',
+                'grammatical_features_item_ids': [masculine, locative_case, plural],
+                'optional': True,
+            },
+            {
+                'section_break': True,
+                'label': 'دو وچن، کرن',
+                'example': 'اوہ [ہتھِّیں] کیتا کم اے۔',
+                'grammatical_features_item_ids': [masculine, instrumental_case, dual],
+                'optional': True,
+            },
+        ],
+        'statements': statements(grammatical_gender, masculine),
+    },
+
+    'punjabi-noun-masculine-guru': {
+        '@attribution': {'users': ['Satdeep Gill', 'عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Punjabi'},
+        'label': 'ਪੰਜਾਬੀ ਨਾਂਵ ਪੁਲਿੰਗ',
+        'language': language_Gurmukhi,
+        'lexical_category_item_id': 'Q1084',
+        'two_column_sections': True,
+        'forms': [
+            {
+                'label': 'ਇੱਕ ਵਚਨ, ਫਾਇਲੀ',
+                'example': 'ਉਹ ਮੇਰਾ [ਹੱਥ] ਏ।',
+                'grammatical_features_item_ids': [masculine, direct_case, singular],
+            },
+            {
+                'label': 'ਬਹੁ ਵਚਨ, ਫਾਇਲੀ',
+                'example': 'ਉਹ ਮੇਰੇ [ਹੱਥ] ਹਨ।',
+                'grammatical_features_item_ids': [masculine, direct_case, plural],
+            },
+            {
+                'label': 'ਇੱਕ ਵਚਨ, ਮਫਊਲੀ',
+                'example': 'ਮੇਰੇ [ਹੱਥ] ਨੂੰ ਵੇਖੋ।',
+                'grammatical_features_item_ids': [masculine, oblique_case, singular],
+            },
+            {
+                'label': 'ਬਹੁ ਵਚਨ, ਮਫਊਲੀ',
+                'example': 'ਮੇਰਿਆਂ [ਹੱਥਾਂ] ਨੂੰ ਵੇਖੋ।',
+                'grammatical_features_item_ids': [masculine, oblique_case, plural],
+            },
+            {
+                'section_break': True,
+                'label': 'ਇੱਕ ਵਚਨ, ਅਪਾਦਾਨ',
+                'example': 'ਉਹ [ਹੱਥੋਂ] ਭੇਜਾ ਜਾ ਸਕਦਾ ਏ।؜',
+                'grammatical_features_item_ids': [masculine, ablative_case, singular],
+                'optional': True,
+            },
+            {
+                'section_break': True,
+                'label': 'ਇੱਕ ਵਚਨ, ਪਕਾਰਨ',
+                'example': 'ਵੇ ਓ [ਹੱਥਾ]!؜',
+                'grammatical_features_item_ids': [masculine, vocative_case, singular],
+                'optional': True,
+            },
+            {
+                'label': 'ਬਹੁ ਵਚਨ, ਪਕਾਰਨ',
+                'example': 'ਹੇ ਹਸੀਨ [ਹੱਥੋ]!؜',
+                'grammatical_features_item_ids': [masculine, vocative_case, plural],
+                'optional': True,
+            },
+            {
+                'section_break': True,
+                'label': 'ਇੱਕ ਵਚਨ, ਵਸਨੀਕ',
+                'example': 'ਮੈਂ [ਹੱਥੇ] ਆ ਗਿਆ।؜',
+                'grammatical_features_item_ids': [masculine, locative_case, singular],
+                'optional': True,
+            },
+            {
+                'label': 'ਬਹੁ ਵਚਨ, ਵਸਨੀਕ',
+                'example': 'ਅਸੀਂ [ਹੱਥੀਂ] ਆ ਗਏ।',
+                'grammatical_features_item_ids': [masculine, locative_case, plural],
+                'optional': True,
+            },
+            {
+                'section_break': True,
+                'label': 'ਦੋ ਵਚਨ, ਕਰਨ',
+                'example': 'ਉਹ [ਹੱਥੀਂ] ਕੀਤਾ ਕੰਮ ਏ।',
+                'grammatical_features_item_ids': [masculine, instrumental_case, dual],
+                'optional': True,
+            },
+        ],
+        'statements': statements(grammatical_gender, masculine),
     },
 
     'portuguese-noun-biform': {
