@@ -34,7 +34,7 @@ def _main():
     content: "{var}";
     font-size: 0.875rem;
     font-family: monospace;
-    background: #fee7e6;
+    background: #fef6e7;
 }}'''.strip() + '\n')
 
 if __name__ == '__main__':
