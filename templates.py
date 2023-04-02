@@ -75,7 +75,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'nome común masculín asturianu',
         'language_item_id': Asturian,
         'language_code': 'ast',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'forms': [
             {
                 'label': 'singular',
@@ -96,7 +96,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'nome común femenín asturianu',
         'language_item_id': Asturian,
         'language_code': 'ast',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'forms': [
             {
                 'label': 'singular',
@@ -117,7 +117,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'প্রাণীবাচক বিশেষ্য',
         'language_item_id': Bengali,
         'language_code': 'bn',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'forms': [
             {
                 'label': 'কর্তৃকারক',
@@ -147,7 +147,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'অপ্রাণীবাচক বিশেষ্য (-আ/এ/ও-কারান্ত শব্দ)',
         'language_item_id': Bengali,
         'language_code': 'bn',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'forms': [
             {
                 'label': 'কর্তৃকারক',
@@ -177,7 +177,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'অপ্রাণীবাচক বিশেষ্য (-ই/ঈ/উ/ঊ/ঐ/ঔ-কারান্ত শব্দ)',
         'language_item_id': Bengali,
         'language_code': 'bn',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'forms': [
             {
                 'label': 'কর্তৃকারক',
@@ -207,7 +207,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'অপ্রাণীবাচক বিশেষ্য (ব্যঞ্জনান্ত শব্দ)',
         'language_item_id': Bengali,
         'language_code': 'bn',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'forms': [
             {
                 'label': 'কর্তৃকারক',
@@ -237,7 +237,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'তৎসম গুণবাচক বিশেষণ',
         'language_item_id': Bengali,
         'language_code': 'bn',
-        'lexical_category_item_id': 'Q34698',
+        'lexical_category_item_id': adjective,
         'forms': [
             {
                 'label': 'সাধারণ',
@@ -262,7 +262,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'অন্যান্য বিশেষণ',
         'language_item_id': Bengali,
         'language_code': 'bn',
-        'lexical_category_item_id': 'Q34698',
+        'lexical_category_item_id': adjective,
         'forms': [
             {
                 'label': 'সাধারণ',
@@ -277,7 +277,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'ক্রিয়া বিশেষণ',
         'language_item_id': Bengali,
         'language_code': 'bn',
-        'lexical_category_item_id': 'Q380057',
+        'lexical_category_item_id': adverb,
         'forms': [
             {
                 'label': 'সাধারণ',
@@ -292,7 +292,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'ক্রিয়াপদ',
         'language_item_id': Bengali,
         'language_code': 'bn',
-        'lexical_category_item_id': 'Q24905',
+        'lexical_category_item_id': verb,
         'two_column_sections': True,
         'forms': [
             {
@@ -804,7 +804,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'ক্রিয়াপদ (সাধিত ধাতু)',
         'language_item_id': Bengali,
         'language_code': 'bn',
-        'lexical_category_item_id': 'Q24905',
+        'lexical_category_item_id': verb,
         'two_column_sections': True,
         'forms': [
             {
@@ -1316,7 +1316,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'বিশেষণ',
         'language_item_id': Manbhumi,
         'language_code': 'bn-x-Q6747180',
-        'lexical_category_item_id': 'Q34698',
+        'lexical_category_item_id': adjective,
         'forms': [
             {
                 'label': 'সাধারণ',
@@ -1331,7 +1331,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'ক্রিয়া বিশেষণ',
         'language_item_id': Manbhumi,
         'language_code': 'bn-x-Q6747180',
-        'lexical_category_item_id': 'Q380057',
+        'lexical_category_item_id': adverb,
         'forms': [
             {
                 'label': 'সাধারণ',
@@ -1346,7 +1346,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'ক্রিয়াপদ',
         'language_item_id': Manbhumi,
         'language_code': 'bn-x-Q6747180',
-        'lexical_category_item_id': 'Q24905',
+        'lexical_category_item_id': verb,
         'two_column_sections': True,
         'forms': [
             {
@@ -1628,7 +1628,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'anvioù-kadarn (hep kemmadur)',
         'language_item_id': Breton,
         'language_code': 'br',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'forms': [
             {
                 'label': 'unander',
@@ -1648,7 +1648,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'anvioù-kadarn (strollder, hep kemmadur)',
         'language_item_id': Breton,
         'language_code': 'br',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'forms': [
             {
                 'label': 'strollder',
@@ -1668,7 +1668,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'anvioù-kadarn (gant kemmadur, ktp)',
         'language_item_id': Breton,
         'language_code': 'br',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'forms': [
             {
                 'label': 'unander',
@@ -1708,7 +1708,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'anvioù-kadarn (gant kemmadur, gdb)',
         'language_item_id': Breton,
         'language_code': 'br',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'forms': [
             {
                 'label': 'unander',
@@ -1748,7 +1748,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'anvioù-kadarn (gant kemmadur, m)',
         'language_item_id': Breton,
         'language_code': 'br',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'forms': [
             {
                 'label': 'unander',
@@ -1778,7 +1778,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'anvioù-gwan (hep kemmadur)',
         'language_item_id': Breton,
         'language_code': 'br',
-        'lexical_category_item_id': 'Q34698',
+        'lexical_category_item_id': adjective,
         'forms': [
             {
                 'label': 'derez-plaen',
@@ -1808,7 +1808,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'adverb',
         'language_item_id': Breton,
         'language_code': 'br',
-        'lexical_category_item_id': 'Q380057',
+        'lexical_category_item_id': adverb,
         'forms': [
             {
                 'label': 'adverb',
@@ -1823,7 +1823,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'české podstatné jméno (rod mužský životný)',
         'language_item_id': Czech,
         'language_code': 'cs',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'two_column_sections': True,
         'forms': [
             {
@@ -1910,7 +1910,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'české podstatné jméno (rod mužský neživotný)',
         'language_item_id': Czech,
         'language_code': 'cs',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'two_column_sections': True,
         'forms': [
             {
@@ -1997,7 +1997,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'české podstatné jméno (rod ženský)',
         'language_item_id': Czech,
         'language_code': 'cs',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'two_column_sections': True,
         'forms': [
             {
@@ -2079,7 +2079,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'české podstatné jméno (rod střední)',
         'language_item_id': Czech,
         'language_code': 'cs',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'two_column_sections': True,
         'forms': [
             {
@@ -2161,7 +2161,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'české příslovce',
         'language_item_id': Czech,
         'language_code': 'cs',
-        'lexical_category_item_id': 'Q380057',
+        'lexical_category_item_id': adverb,
         'forms': [
             {
                 'label': 'pozitiv (1. stupeň)',
@@ -2186,7 +2186,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'české přídavné jméno',
         'language_item_id': Czech,
         'language_code': 'cs',
-        'lexical_category_item_id': 'Q34698',
+        'lexical_category_item_id': adjective,
         'two_column_sections': True,
         'forms': [
             {
@@ -3048,7 +3048,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'české sloveso dokonavé',
         'language_item_id': Czech,
         'language_code': 'cs',
-        'lexical_category_item_id': 'Q24905',
+        'lexical_category_item_id': verb,
         'two_column_sections': False,
         'forms': [
             {
@@ -3241,7 +3241,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'české sloveso nedokonavé',
         'language_item_id': Czech,
         'language_code': 'cs',
-        'lexical_category_item_id': 'Q24905',
+        'lexical_category_item_id': verb,
         'two_column_sections': False,
         'forms': [
             {
@@ -3434,7 +3434,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'dansk substantiv (fælleskøn)',
         'language_item_id': Danish,
         'language_code': 'da',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'two_column_sections': True,
         'forms': [
             {
@@ -3486,7 +3486,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'dansk substantiv (intetkøn)',
         'language_item_id': Danish,
         'language_code': 'da',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'two_column_sections': True,
         'forms': [
             {
@@ -3538,7 +3538,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'dansk verb',
         'language_item_id': Danish,
         'language_code': 'da',
-        'lexical_category_item_id': 'Q24905',
+        'lexical_category_item_id': verb,
         'forms': [
             {
                 'label': 'infinitiv aktiv (navnemåde)',
@@ -3593,7 +3593,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'dansk adjektiv',
         'language_item_id': Danish,
         'language_code': 'da',
-        'lexical_category_item_id': 'Q34698',
+        'lexical_category_item_id': adjective,
         'forms': [
             {
                 'label': 'ubestemt ental fælleskøn 1. grad',
@@ -3638,7 +3638,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'deutsches Substantiv (Maskulinum)',
         'language_item_id': German,
         'language_code': 'de',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'two_column_sections': True,
         'forms': [
             {
@@ -3690,7 +3690,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'deutsches Substantiv (Femininum)',
         'language_item_id': German,
         'language_code': 'de',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'two_column_sections': True,
         'forms': [
             {
@@ -3742,7 +3742,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'deutsches Substantiv (Neutrum)',
         'language_item_id': German,
         'language_code': 'de',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'two_column_sections': True,
         'forms': [
             {
@@ -3794,7 +3794,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'deutsches Substantiv (Neutrum, Toponym)',
         'language_item_id': German,
         'language_code': 'de',
-        'lexical_category_item_id': 'Q147276',
+        'lexical_category_item_id': proper_noun,
         'forms': [
             {
                 'label': 'Nominativ Singular',
@@ -3837,7 +3837,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'deutsches Substantiv (Pluraletantum, kein Genus)',
         'language_item_id': German,
         'language_code': 'de',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'forms': [
             {
                 'label': 'Nominativ Plural',
@@ -3872,7 +3872,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'deutsches Verb',
         'language_item_id': German,
         'language_code': 'de',
-        'lexical_category_item_id': 'Q24905',
+        'lexical_category_item_id': verb,
         'two_column_sections': True,
         'forms': [
             {
@@ -4065,7 +4065,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'deutsches Adverb',
         'language_item_id': German,
         'language_code': 'de',
-        'lexical_category_item_id': 'Q380057',
+        'lexical_category_item_id': adverb,
         'forms': [
             {
                 'label': 'Lemma',
@@ -4080,7 +4080,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'English noun',
         'language_item_id': English,
         'language_code': 'en',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'forms': [
             {
                 'label': 'singular',
@@ -4100,7 +4100,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'English adverb',
         'language_item_id': English,
         'language_code': 'en',
-        'lexical_category_item_id': 'Q380057',
+        'lexical_category_item_id': adverb,
         'forms': [
             {
                 'label': 'lexeme',
@@ -4115,7 +4115,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'English adjective',
         'language_item_id': English,
         'language_code': 'en',
-        'lexical_category_item_id': 'Q34698',
+        'lexical_category_item_id': adjective,
         'forms': [
             {
                 'label': 'positive',
@@ -4140,7 +4140,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'English verb',
         'language_item_id': English,
         'language_code': 'en',
-        'lexical_category_item_id': 'Q24905',
+        'lexical_category_item_id': verb,
         'forms': [
             {
                 'label': 'present',
@@ -4175,7 +4175,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'esperanta substantivo',
         'language_item_id': Esperanto,
         'language_code': 'eo',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'two_column_sections': True,
         'forms': [
             {
@@ -4206,7 +4206,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'esperanta adjektivo',
         'language_item_id': Esperanto,
         'language_code': 'eo',
-        'lexical_category_item_id': 'Q34698',
+        'lexical_category_item_id': adjective,
         'two_column_sections': True,
         'forms': [
             {
@@ -4237,7 +4237,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'esperanta verbo',
         'language_item_id': Esperanto,
         'language_code': 'eo',
-        'lexical_category_item_id': 'Q24905',
+        'lexical_category_item_id': verb,
         'two_column_sections': False,
         'forms': [
             {
@@ -4283,7 +4283,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'sustantivo masculino en español',
         'language_item_id': Spanish,
         'language_code': 'es',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'forms': [
             {
                 'label': 'singular',
@@ -4304,7 +4304,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'sustantivo femenino en español',
         'language_item_id': Spanish,
         'language_code': 'es',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'forms': [
             {
                 'label': 'singular',
@@ -4325,7 +4325,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'sustantivo masculino y femenino en español',
         'language_item_id': Spanish,
         'language_code': 'es',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'forms': [
             {
                 'label': 'masculino singular',
@@ -4361,7 +4361,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'adjetivo en español',
         'language_item_id': Spanish,
         'language_code': 'es',
-        'lexical_category_item_id': 'Q34698',
+        'lexical_category_item_id': adjective,
         'two_column_sections': True,
         'forms': [
             {
@@ -4392,7 +4392,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'verbo en español',
         'language_item_id': Spanish,
         'language_code': 'es',
-        'lexical_category_item_id': 'Q24905',
+        'lexical_category_item_id': verb,
         'two_column_sections': True,
         'forms': [
             {
@@ -4723,7 +4723,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'adverbio en español',
         'language_item_id': Spanish,
         'language_code': 'es',
-        'lexical_category_item_id': 'Q380057',
+        'lexical_category_item_id': adverb,
         'forms': [
             {
                 'label': 'adverbio',
@@ -4738,7 +4738,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'interjección en español',
         'language_item_id': Spanish,
         'language_code': 'es',
-        'lexical_category_item_id': 'Q83034',
+        'lexical_category_item_id': interjection,
         'forms': [
             {
                 'label': 'interjección',
@@ -4753,7 +4753,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'locución sustantiva masculina en español',
         'language_item_id': Spanish,
         'language_code': 'es',
-        'lexical_category_item_id': 'Q29888377',
+        'lexical_category_item_id': nominal_locution,
         'forms': [
             {
                 'label': 'singular',
@@ -4774,7 +4774,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'locución sustantiva femenina en español',
         'language_item_id': Spanish,
         'language_code': 'es',
-        'lexical_category_item_id': 'Q29888377',
+        'lexical_category_item_id': nominal_locution,
         'forms': [
             {
                 'label': 'singular',
@@ -4795,7 +4795,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'locución adjetiva en español',
         'language_item_id': Spanish,
         'language_code': 'es',
-        'lexical_category_item_id': 'Q12734432',
+        'lexical_category_item_id': attributive_locution,
         'forms': [
             {
                 'label': 'masculino singular',
@@ -4831,7 +4831,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'locución preposicional en español',
         'language_item_id': Spanish,
         'language_code': 'es',
-        'lexical_category_item_id': 'Q10319522',
+        'lexical_category_item_id': prepositional_locution,
         'forms': [
             {
                 'label': 'locución preposicional',
@@ -4846,7 +4846,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'locución interjectiva en español',
         'language_item_id': Spanish,
         'language_code': 'es',
-        'lexical_category_item_id': 'Q10319520',
+        'lexical_category_item_id': interjectional_locution,
         'forms': [
             {
                 'label': 'locución interjectiva',
@@ -4861,7 +4861,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'locución adverbial en español',
         'language_item_id': Spanish,
         'language_code': 'es',
-        'lexical_category_item_id': 'Q5978303',
+        'lexical_category_item_id': adverbial_locution,
         'forms': [
             {
                 'label': 'locución adverbial',
@@ -4876,7 +4876,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'eesti keele nimisõna',
         'language_item_id': Estonian,
         'language_code': 'et',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'two_column_sections': True,
         'forms': [
             {
@@ -5040,7 +5040,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'euskal aditza',
         'language_item_id': Basque,
         'language_code': 'eu',
-        'lexical_category_item_id': 'Q24905',
+        'lexical_category_item_id': verb,
         'forms': [
             {
                 'label': 'partizipioa',
@@ -5075,7 +5075,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'euskal adjektibo konparatibo eta superlatiboak',
         'language_item_id': Basque,
         'language_code': 'eu',
-        'lexical_category_item_id': 'Q34698',
+        'lexical_category_item_id': adjective,
         'forms': [
             {
                 'label': 'oina',
@@ -5100,7 +5100,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'اسم فارسی',
         'language_item_id': Persian,
         'language_code': 'fa',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'forms': [
             {
                 'label': 'مفرد',
@@ -5120,7 +5120,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'فعل فارسی',
         'language_item_id': Persian,
         'language_code': 'fa',
-        'lexical_category_item_id': 'Q24905',
+        'lexical_category_item_id': verb,
         'two_column_sections': True,
         'forms': [
             {
@@ -5161,7 +5161,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'suomen kielen substantiivi',
         'language_item_id': Finnish,
         'language_code': 'fi',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'two_column_sections': True,
         'forms': [
             {
@@ -5309,7 +5309,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'nom commun masculin en français',
         'language_item_id': French,
         'language_code': 'fr',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'forms': [
             {
                 'label': 'singulier',
@@ -5330,7 +5330,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'nom commun féminin en français',
         'language_item_id': French,
         'language_code': 'fr',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'forms': [
             {
                 'label': 'singulier',
@@ -5351,7 +5351,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'adjectif en français',
         'language_item_id': French,
         'language_code': 'fr',
-        'lexical_category_item_id': 'Q34698',
+        'lexical_category_item_id': adjective,
         'two_column_sections': True,
         'forms': [
             {
@@ -5382,7 +5382,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'verbe en français',
         'language_item_id': French,
         'language_code': 'fr',
-        'lexical_category_item_id': 'Q24905',
+        'lexical_category_item_id': verb,
         'two_column_sections': True,
         'forms': [
             {
@@ -5658,7 +5658,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'שם עצם זכר',
         'language_item_id': Hebrew,
         'language_code': 'he',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'forms': [
             {
                 'label': 'יחיד',
@@ -5679,7 +5679,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'שם עצם נקבה',
         'language_item_id': Hebrew,
         'language_code': 'he',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'forms': [
             {
                 'label': 'יחידה',
@@ -5700,7 +5700,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'שם תואר עברי',
         'language_item_id': Hebrew,
         'language_code': 'he',
-        'lexical_category_item_id': 'Q34698',
+        'lexical_category_item_id': adjective,
         'forms': [
             {
                 'label': 'יחיד',
@@ -5730,7 +5730,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'हिंदुस्तानी नाउँ पुलिंग',
         'language_item_id': Hindustani,
         'language_code': 'hi',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'two_column_sections': True,
         'forms': [
             {
@@ -5781,7 +5781,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'हिंदुस्तानी नाउँ इसतरी लिंग',
         'language_item_id': Hindustani,
         'language_code': 'hi',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'two_column_sections': True,
         'forms': [
             {
@@ -5832,7 +5832,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'हिंदुस्तानी लाल गुन नाउँ',
         'language_item_id': Hindustani,
         'language_code': 'hi',
-        'lexical_category_item_id': 'Q34698',
+        'lexical_category_item_id': adjective,
         'forms': [
             {
                 'label': 'मुफरद',
@@ -5851,7 +5851,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'हिंदुस्तानी काला गुन नाउँ',
         'language_item_id': Hindustani,
         'language_code': 'hi',
-        'lexical_category_item_id': 'Q34698',
+        'lexical_category_item_id': adjective,
         'two_column_sections': True,
         'forms': [
             {
@@ -5931,7 +5931,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'हिंदुस्तानी गुन नाउँ तफजील',
         'language_item_id': Hindustani,
         'language_code': 'hi',
-        'lexical_category_item_id': 'Q34698',
+        'lexical_category_item_id': adjective,
         'forms': [
             {
                 'label': 'नफीस',
@@ -5960,7 +5960,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'हिंदुस्तानी आम गुन फैल',
         'language_item_id': Hindustani,
         'language_code': 'hi',
-        'lexical_category_item_id': 'Q380057',
+        'lexical_category_item_id': adverb,
         'forms': [
             {
                 'label': 'मुफरद',
@@ -5976,7 +5976,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'हिंदुस्तानी ऐसा बदल करता गुन फैल',
         'language_item_id': Hindustani,
         'language_code': 'hi',
-        'lexical_category_item_id': 'Q380057',
+        'lexical_category_item_id': adverb,
         'two_column_sections': True,
         'forms': [
             {
@@ -6029,7 +6029,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'हिंदुस्तानी फैल लाजमी',
         'language_item_id': Hindustani,
         'language_code': 'hi',
-        'lexical_category_item_id': 'Q24905',
+        'lexical_category_item_id': verb,
         'two_column_sections': False,
         'forms': [
             {
@@ -6325,7 +6325,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'हिंदुस्तानी फैल मुतदी',
         'language_item_id': Hindustani,
         'language_code': 'hi',
-        'lexical_category_item_id': 'Q24905',
+        'lexical_category_item_id': verb,
         'two_column_sections': False,
         'forms': [
             {
@@ -6621,7 +6621,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'हिंदुस्तानी फैल लाजम का तदिया',
         'language_item_id': Hindustani,
         'language_code': 'hi',
-        'lexical_category_item_id': 'Q24905',
+        'lexical_category_item_id': verb,
         'two_column_sections': False,
         'forms': [
             {
@@ -6916,7 +6916,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'हिंदुस्तानी फैल मुतदी का तदिया',
         'language_item_id': Hindustani,
         'language_code': 'hi',
-        'lexical_category_item_id': 'Q24905',
+        'lexical_category_item_id': verb,
         'two_column_sections': False,
         'forms': [
             {
@@ -7211,7 +7211,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'हिंदुस्तानी फैल मुतदी का दूसरा तदिया',
         'language_item_id': Hindustani,
         'language_code': 'hi',
-        'lexical_category_item_id': 'Q24905',
+        'lexical_category_item_id': verb,
         'two_column_sections': False,
         'forms': [
             {
@@ -7506,7 +7506,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'ہندوستانی ناؤں مذکر',
         'language_item_id': Hindustani,
         'language_code': 'ur',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'two_column_sections': True,
         'forms': [
             {
@@ -7557,7 +7557,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'ہندوستانی ناؤں مؤنث',
         'language_item_id': Hindustani,
         'language_code': 'ur',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'two_column_sections': True,
         'forms': [
             {
@@ -7608,7 +7608,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'ہندوستانی لال گن ناؤں',
         'language_item_id': Hindustani,
         'language_code': 'ur',
-        'lexical_category_item_id': 'Q34698',
+        'lexical_category_item_id': adjective,
         'forms': [
             {
                 'label': 'مفرد',
@@ -7627,7 +7627,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'ہندوستانی کالا گن ناؤں',
         'language_item_id': Hindustani,
         'language_code': 'ur',
-        'lexical_category_item_id': 'Q34698',
+        'lexical_category_item_id': adjective,
         'two_column_sections': True,
         'forms': [
             {
@@ -7707,7 +7707,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'ہندوستانی گن ناؤں تفضیل',
         'language_item_id': Hindustani,
         'language_code': 'ur',
-        'lexical_category_item_id': 'Q34698',
+        'lexical_category_item_id': adjective,
         'forms': [
             {
                 'label': 'نفسی',
@@ -7736,7 +7736,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'ہندوستانی عام گن فعل',
         'language_item_id': Hindustani,
         'language_code': 'ur',
-        'lexical_category_item_id': 'Q380057',
+        'lexical_category_item_id': adverb,
         'forms': [
             {
                 'label': 'مفرد',
@@ -7752,7 +7752,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'ہندوستانی ایسا بدل کرتا گن فعل',
         'language_item_id': Hindustani,
         'language_code': 'ur',
-        'lexical_category_item_id': 'Q380057',
+        'lexical_category_item_id': adverb,
         'two_column_sections': True,
         'forms': [
             {
@@ -7805,7 +7805,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'ہندوستانی فعل لازمی',
         'language_item_id': Hindustani,
         'language_code': 'ur',
-        'lexical_category_item_id': 'Q24905',
+        'lexical_category_item_id': verb,
         'two_column_sections': False,
         'forms': [
             {
@@ -8101,7 +8101,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'ہندوستانی فعل متعدی',
         'language_item_id': Hindustani,
         'language_code': 'ur',
-        'lexical_category_item_id': 'Q24905',
+        'lexical_category_item_id': verb,
         'two_column_sections': False,
         'forms': [
             {
@@ -8397,7 +8397,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'ہندوستانی فعل لازم کا تعدیہ',
         'language_item_id': Hindustani,
         'language_code': 'ur',
-        'lexical_category_item_id': 'Q24905',
+        'lexical_category_item_id': verb,
         'two_column_sections': False,
         'forms': [
             {
@@ -8692,7 +8692,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'ہندوستانی فعل متعدی کا تعدیہ',
         'language_item_id': Hindustani,
         'language_code': 'ur',
-        'lexical_category_item_id': 'Q24905',
+        'lexical_category_item_id': verb,
         'two_column_sections': False,
         'forms': [
             {
@@ -8987,7 +8987,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'ہندوستانی فعل متعدی کا دوسرا تعدیہ',
         'language_item_id': Hindustani,
         'language_code': 'ur',
-        'lexical_category_item_id': 'Q24905',
+        'lexical_category_item_id': verb,
         'two_column_sections': False,
         'forms': [
             {
@@ -9282,7 +9282,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'ہندکو اِسم مذکر',
         'language_item_id': Hindko,
         'language_code': 'hno',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'two_column_sections': True,
         'forms': [
             {
@@ -9314,7 +9314,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'ہندکو اِسم مونث',
         'language_item_id': Hindko,
         'language_code': 'hno',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'two_column_sections': True,
         'forms': [
             {
@@ -9346,7 +9346,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'hrvatske imenice (muški rod)',
         'language_item_id': Croatian,
         'language_code': 'hr',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'forms': [
             {
                 'label': 'nominativ jednine',
@@ -9427,7 +9427,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'hrvatske imenice (ženski rod)',
         'language_item_id': Croatian,
         'language_code': 'hr',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'forms': [
             {
                 'label': 'nominativ jednine',
@@ -9508,7 +9508,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'hrvatske imenice (srednji rod)',
         'language_item_id': Croatian,
         'language_code': 'hr',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'forms': [
             {
                 'label': 'nominativ jednine',
@@ -9589,7 +9589,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'հայերեն գոյական',
         'language_item_id': Armenian,
         'language_code': 'hy',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'two_column_sections': True,
         'forms': [
             {
@@ -9670,7 +9670,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'հայերեն հավաքական անհոգնական եզակի գոյական',
         'language_item_id': Armenian,
         'language_code': 'hy',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'forms': [
             {
                 'label': 'եզ․ թիվ, ուղղ․ հոլով',
@@ -9723,7 +9723,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'Aha n\'Igbo',
         'language_item_id': Igbo,
         'language_code': 'ig',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'forms': [
             {
                 'label': 'aha',
@@ -9738,7 +9738,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'Ngwaa n\'Igbo',
         'language_item_id': Igbo,
         'language_code': 'ig',
-        'lexical_category_item_id': 'Q24905',
+        'lexical_category_item_id': verb,
         'forms': [
             {
                 'label': 'ntimiwu',
@@ -9753,7 +9753,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'Nnọchiaha n\'Igbo',
         'language_item_id': Igbo,
         'language_code': 'ig',
-        'lexical_category_item_id': 'Q36224',
+        'lexical_category_item_id': pronoun,
         'forms': [
             {
                 'label': 'nnọchiaha',
@@ -9768,7 +9768,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'Nkọwaaha n\'Igbo',
         'language_item_id': Igbo,
         'language_code': 'ig',
-        'lexical_category_item_id': 'Q34698',
+        'lexical_category_item_id': adjective,
         'forms': [
             {
                 'label': 'nkọwaaha',
@@ -9783,7 +9783,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'sostantivo femminile italiano',
         'language_item_id': Italian,
         'language_code': 'it',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'forms': [
             {
                 'label': 'singolare',
@@ -9804,7 +9804,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'sostantivo maschile italiano',
         'language_item_id': Italian,
         'language_code': 'it',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'forms': [
             {
                 'label': 'singolare',
@@ -9825,7 +9825,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'aggettivo qualificativo italiano',
         'language_item_id': Italian,
         'language_code': 'it',
-        'lexical_category_item_id': 'Q34698',
+        'lexical_category_item_id': adjective,
         'two_column_sections': True,
         'forms': [
             {
@@ -9856,7 +9856,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'navdêra kurdî (mê)',
         'language_item_id': Kurmanji,
         'language_code': 'ku',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'two_column_sections': True,
         'forms': [
             {
@@ -9944,7 +9944,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'navdêra kurdî (nêr)',
         'language_item_id': Kurmanji,
         'language_code': 'ku',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'two_column_sections': True,
         'forms': [
             {
@@ -10032,7 +10032,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'nomen Latinum (masculinum)',
         'language_item_id': Latin,
         'language_code': 'la',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'two_column_sections': True,
         'forms': [
             {
@@ -10104,7 +10104,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'nomen Latinum (femininum)',
         'language_item_id': Latin,
         'language_code': 'la',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'two_column_sections': True,
         'forms': [
             {
@@ -10176,7 +10176,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'nomen Latinum (neutrum)',
         'language_item_id': Latin,
         'language_code': 'la',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'two_column_sections': True,
         'forms': [
             {
@@ -10248,7 +10248,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'latviešu valodas vīriešu dzimtes lietvārds',
         'language_item_id': Latvian,
         'language_code': 'lv',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'two_column_sections': True,
         'forms': [
             {
@@ -10336,7 +10336,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'latviešu valodas sieviešu dzimtes lietvārds',
         'language_item_id': Latvian,
         'language_code': 'lv',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'two_column_sections': True,
         'forms': [
             {
@@ -10424,7 +10424,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'മലയാളത്തിലെ സാധാരണ നാമം',
         'language_item_id': Malayalam,
         'language_code': 'ml',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'forms': [
             {
                 'label': 'ഏകവചനം',
@@ -10516,7 +10516,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'മലയാളം സംജ്ഞാനാമം (proper noun)',
         'language_item_id': Malayalam,
         'language_code': 'ml',
-        'lexical_category_item_id': 'Q147276',
+        'lexical_category_item_id': proper_noun,
         'forms': [
             {
                 'label': 'ഏകവചനം',
@@ -10567,7 +10567,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'മലയാളം ക്രിയ',
         'language_item_id': Malayalam,
         'language_code': 'ml',
-        'lexical_category_item_id': 'Q24905',
+        'lexical_category_item_id': verb,
         'forms': [
             {
                 'label': 'ഇൻഫിനിറ്റീവ്',
@@ -10597,7 +10597,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'bokmål hankjønnssubstantiv',
         'language_item_id': Bokmål,
         'language_code': 'nb',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'forms': [
             {
                 'label': 'ubestemt entall',
@@ -10628,7 +10628,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'bokmål hunkjønnssubstantiv',
         'language_item_id': Bokmål,
         'language_code': 'nb',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'forms': [
             {
                 'label': 'ubestemt entall',
@@ -10664,7 +10664,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'bokmål intetkjønnssubstantiv',
         'language_item_id': Bokmål,
         'language_code': 'nb',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'forms': [
             {
                 'label': 'ubestemt entall',
@@ -10695,7 +10695,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'bokmål han- og intetkjønnssubstantiv',
         'language_item_id': Bokmål,
         'language_code': 'nb',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'forms': [
             {
                 'label': 'ubestemt entall',
@@ -10748,7 +10748,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'bokmål adjektiv',
         'language_item_id': Bokmål,
         'language_code': 'nb',
-        'lexical_category_item_id': 'Q34698',
+        'lexical_category_item_id': adjective,
         'forms': [
             {
                 'label': 'ubestemt hankjønn og hunkjønn',
@@ -10796,7 +10796,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'bokmål verb',
         'language_item_id': Bokmål,
         'language_code': 'nb',
-        'lexical_category_item_id': 'Q24905',
+        'lexical_category_item_id': verb,
         'forms': [
             {
                 'label': 'infinitiv',
@@ -10866,7 +10866,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'bokmål s-verb',
         'language_item_id': Bokmål,
         'language_code': 'nb',
-        'lexical_category_item_id': 'Q24905',
+        'lexical_category_item_id': verb,
         'forms': [
             {
                 'label': 'infinitiv',
@@ -10902,7 +10902,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'bokmål interjeksjon',
         'language_item_id': Bokmål,
         'language_code': 'nb',
-        'lexical_category_item_id': 'Q83034',
+        'lexical_category_item_id': interjection,
         'forms': [
             {
                 'label': 'interjeksjon',
@@ -10917,7 +10917,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'bokmål adverb',
         'language_item_id': Bokmål,
         'language_code': 'nb',
-        'lexical_category_item_id': 'Q380057',
+        'lexical_category_item_id': adverb,
         'forms': [
             {
                 'label': 'adverb',
@@ -10933,7 +10933,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'Nederlands onzijdig zelfstandig naamwoord',
         'language_item_id': Dutch,
         'language_code': 'nl',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'two_column_sections': True,
         'forms': [
             {
@@ -10966,7 +10966,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'Nederlands strikt mannelijk zelfstandig naamwoord',
         'language_item_id': Dutch,
         'language_code': 'nl',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'two_column_sections': True,
         'forms': [
             {
@@ -10999,7 +10999,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'Nederlands strikt vrouwelijk zelfstandig naamwoord',
         'language_item_id': Dutch,
         'language_code': 'nl',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'two_column_sections': True,
         'forms': [
             {
@@ -11032,7 +11032,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'Nederlands v/m zelfstandig naamwoord',
         'language_item_id': Dutch,
         'language_code': 'nl',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'two_column_sections': True,
         'forms': [
             {
@@ -11064,7 +11064,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'nynorsk hokjønnssubstantiv',
         'language_item_id': Nynorsk,
         'language_code': 'nn',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'two_column_sections': True,
         'forms': [
             {
@@ -11096,7 +11096,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'nynorsk hankjønnssubstantiv',
         'language_item_id': Nynorsk,
         'language_code': 'nn',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'two_column_sections': True,
         'forms': [
             {
@@ -11128,7 +11128,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'nynorsk inkjekjønnssubstantiv',
         'language_item_id': Nynorsk,
         'language_code': 'nn',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'two_column_sections': True,
         'forms': [
             {
@@ -11160,7 +11160,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'nynorsk ho- og hankjønnssubstantiv',
         'language_item_id': Nynorsk,
         'language_code': 'nn',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'forms': [
             {
                 'label': 'ubunde eintal',
@@ -11211,7 +11211,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'nynorsk ho- og inkjekjønnssubstantiv',
         'language_item_id': Nynorsk,
         'language_code': 'nn',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'forms': [
             {
                 'label': 'ubunde eintal',
@@ -11262,7 +11262,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'nynorsk han- og inkjekjønnssubstantiv',
         'language_item_id': Nynorsk,
         'language_code': 'nn',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'forms': [
             {
                 'label': 'ubunde eintal',
@@ -11313,7 +11313,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'nynorsk adjektiv',
         'language_item_id': Nynorsk,
         'language_code': 'nn',
-        'lexical_category_item_id': 'Q34698',
+        'lexical_category_item_id': adjective,
         'forms': [
             {
                 'label': 'ubunde hankjønn og hokjønn',
@@ -11361,7 +11361,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'nynorsk verb',
         'language_item_id': Nynorsk,
         'language_code': 'nn',
-        'lexical_category_item_id': 'Q24905',
+        'lexical_category_item_id': verb,
         'forms': [
             {
                 'label': 'a-infinitiv',
@@ -11436,7 +11436,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'nynorsk st-verb',
         'language_item_id': Nynorsk,
         'language_code': 'nn',
-        'lexical_category_item_id': 'Q24905',
+        'lexical_category_item_id': verb,
         'forms': [
             {
                 'label': 'infinitiv',
@@ -11467,7 +11467,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'nynorsk interjeksjon',
         'language_item_id': Nynorsk,
         'language_code': 'nn',
-        'lexical_category_item_id': 'Q83034',
+        'lexical_category_item_id': interjection,
         'forms': [
             {
                 'label': 'interjeksjon',
@@ -11482,7 +11482,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'nynorsk adverb',
         'language_item_id': Nynorsk,
         'language_code': 'nn',
-        'lexical_category_item_id': 'Q380057',
+        'lexical_category_item_id': adverb,
         'forms': [
             {
                 'label': 'adverb',
@@ -11497,7 +11497,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'ବ୍ୟକ୍ତିବାଚକ ବିଶେଷ୍ୟ',
         'language_item_id': Odia,
         'language_code': 'or',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'forms': [
             {
                 'label': 'କର୍ତ୍ତୃବାଚ୍ଯ/କର୍ତ୍ତାକାରକ',
@@ -11542,7 +11542,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'ପ୍ରାଣୀବାଚକ ଓ ଅପ୍ରାଣୀବାଚକ ବିଶେଷ୍ୟ',
         'language_item_id': Odia,
         'language_code': 'or',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'forms': [
             {
                 'label': 'କର୍ତ୍ତୃବାଚ୍ଯ/କର୍ତ୍ତାକାରକ',
@@ -11592,7 +11592,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'ଲିଙ୍ଗବିହୀନ ବିଶେଷଣ',
         'language_item_id': Odia,
         'language_code': 'or',
-        'lexical_category_item_id': 'Q34698',
+        'lexical_category_item_id': adjective,
         'forms': [
             {
                 'label': 'ଅସ୍ତିବାଚକ',
@@ -11617,7 +11617,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'ଲିଙ୍ଗସୂଚକ ବିଶେଷଣ',
         'language_item_id': Odia,
         'language_code': 'or',
-        'lexical_category_item_id': 'Q34698',
+        'lexical_category_item_id': adjective,
         'forms': [
             {
                 'label': 'ବିଶେଷଣ-ମହିଳା',
@@ -11637,7 +11637,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'ଓଡ଼ିଆ କ୍ରିୟା ବିଶେଷଣ',
         'language_item_id': Odia,
         'language_code': 'or',
-        'lexical_category_item_id': 'Q380057',
+        'lexical_category_item_id': adverb,
         'forms': [
             {
                 'label': 'କ୍ରିୟା ବିଶେଷଣ',
@@ -11652,7 +11652,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'polski rzeczownik, prosta odmiana bez wariantów w żadnym z przypadków',
         'language_item_id': Polish,
         'language_code': 'pl',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'two_column_sections': True,
         'forms': [
             {
@@ -11733,7 +11733,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'polski rzeczownik, rodzaj męskoosobowy z formami ndepr. i depr. w M. i W. lm',
         'language_item_id': Polish,
         'language_code': 'pl',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'forms': [
             {
                 'label': 'mianownik, liczba pojedyncza',
@@ -11828,7 +11828,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'polski rzeczownik, potencjalna liczba mnoga',
         'language_item_id': Polish,
         'language_code': 'pl',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'two_column_sections': True,
         'forms': [
             {
@@ -11916,7 +11916,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'polski przymiotnik, stopień równy',
         'language_item_id': Polish,
         'language_code': 'pl',
-        'lexical_category_item_id': 'Q34698',
+        'lexical_category_item_id': adjective,
         'two_column_sections': False,
         'forms': [
             {
@@ -12142,7 +12142,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'substantivo biforme em português',
         'language_item_id': Portuguese,
         'language_code': 'pt',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'two_column_sections': True,
         'forms': [
             {
@@ -12223,7 +12223,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'substantivo masculino em português',
         'language_item_id': Portuguese,
         'language_code': 'pt',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'two_column_sections': True,
         'forms': [
             {
@@ -12271,7 +12271,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'substantivo feminino em português',
         'language_item_id': Portuguese,
         'language_code': 'pt',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'two_column_sections': True,
         'forms': [
             {
@@ -12332,7 +12332,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'substantivo uniforme em português',
         'language_item_id': Portuguese,
         'language_code': 'pt',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'two_column_sections': True,
         'forms': [
             {
@@ -12354,7 +12354,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'verbo em português',
         'language_item_id': Portuguese,
         'language_code': 'pt',
-        'lexical_category_item_id': 'Q24905',
+        'lexical_category_item_id': verb,
         'two_column_sections': True,
         'forms': [
             {
@@ -12747,7 +12747,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'adjetivo biforme em português',
         'language_item_id': Portuguese,
         'language_code': 'pt',
-        'lexical_category_item_id': 'Q34698',
+        'lexical_category_item_id': adjective,
         'two_column_sections': True,
         'forms': [
             {
@@ -12853,7 +12853,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'adjetivo uniforme em português',
         'language_item_id': Portuguese,
         'language_code': 'pt',
-        'lexical_category_item_id': 'Q34698',
+        'lexical_category_item_id': adjective,
         'two_column_sections': True,
         'forms': [
             {
@@ -12875,7 +12875,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'advérbio de modo em português',
         'language_item_id': Portuguese,
         'language_code': 'pt',
-        'lexical_category_item_id': 'Q380057',
+        'lexical_category_item_id': adverb,
         'forms': [
             {
                 'label': 'Advérbio de modo',
@@ -12898,7 +12898,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'frase nominal em português',
         'language_item_id': Portuguese,
         'language_code': 'pt',
-        'lexical_category_item_id': 'Q1401131',
+        'lexical_category_item_id': noun_phrase,
         'forms': [
             {
                 'label': 'Frase nominal',
@@ -12913,7 +12913,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'frase verbal em português',
         'language_item_id': Portuguese,
         'language_code': 'pt',
-        'lexical_category_item_id': 'Q1778442',
+        'lexical_category_item_id': verb_phrase,
         'forms': [
             {
                 'label': 'Frase verbal',
@@ -12928,7 +12928,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'frase adjetival em português',
         'language_item_id': Portuguese,
         'language_code': 'pt',
-        'lexical_category_item_id': 'Q357760',
+        'lexical_category_item_id': adjectival_phrase,
         'forms': [
             {
                 'label': 'Frase adjetival',
@@ -12943,7 +12943,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'frase adverbial em português',
         'language_item_id': Portuguese,
         'language_code': 'pt',
-        'lexical_category_item_id': 'Q3734650',
+        'lexical_category_item_id': adverbial_phrase,
         'forms': [
             {
                 'label': 'Frase adverbial',
@@ -12958,7 +12958,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'provérbio em português',
         'language_item_id': Portuguese,
         'language_code': 'pt',
-        'lexical_category_item_id': 'Q35102',
+        'lexical_category_item_id': proverb,
         'forms': [
             {
                 'label': 'Provérbio',
@@ -12973,7 +12973,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'русское существительное, мужской род',
         'language_item_id': Russian,
         'language_code': 'ru',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'two_column_sections': True,
         'forms': [
             {
@@ -13045,7 +13045,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'русское существительное, женский род',
         'language_item_id': Russian,
         'language_code': 'ru',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'two_column_sections': True,
         'forms': [
             {
@@ -13117,7 +13117,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'русское существительное, средний род',
         'language_item_id': Russian,
         'language_code': 'ru',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'two_column_sections': True,
         'forms': [
             {
@@ -13189,7 +13189,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'имя существительное (Pluralia tantum, без рода)',
         'language_item_id': Russian,
         'language_code': 'ru',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'forms': [
             {
                 'label': 'мн.ч. им.п.',
@@ -13236,7 +13236,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'русское прилагательное',
         'language_item_id': Russian,
         'language_code': 'ru',
-        'lexical_category_item_id': 'Q34698',
+        'lexical_category_item_id': adjective,
         'forms': [
             {
                 'label': 'ед.ч. м.р. им.п.',
@@ -13376,7 +13376,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'svenskt substantiv (utrum)',
         'language_item_id': Swedish,
         'language_code': 'sv',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'two_column_sections': True,
         'forms': [
             {
@@ -13429,7 +13429,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'svenskt substantiv (neutrum)',
         'language_item_id': Swedish,
         'language_code': 'sv',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'two_column_sections': True,
         'forms': [
             {
@@ -13482,7 +13482,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'svenskt egennamn',
         'language_item_id': Swedish,
         'language_code': 'sv',
-        'lexical_category_item_id': 'Q147276',
+        'lexical_category_item_id': proper_noun,
         'forms': [
             {
                 'label': 'nominativ',
@@ -13503,7 +13503,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'svenskt verb',
         'language_item_id': Swedish,
         'language_code': 'sv',
-        'lexical_category_item_id': 'Q24905',
+        'lexical_category_item_id': verb,
         'forms': [
             {
                 'label': 'infinitiv aktiv',
@@ -13559,7 +13559,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'svenskt adjektiv (utan komparativ)',
         'language_item_id': Swedish,
         'language_code': 'sv',
-        'lexical_category_item_id': 'Q34698',
+        'lexical_category_item_id': adjective,
         'forms': [
             {
                 'label': 'obestämd singular, utrum',
@@ -13600,7 +13600,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'svenskt adjektiv (med komparativ)',
         'language_item_id': Swedish,
         'language_code': 'sv',
-        'lexical_category_item_id': 'Q34698',
+        'lexical_category_item_id': adjective,
         'two_column_sections': False,
         'forms': [
             {
@@ -13663,7 +13663,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'український іменник, чоловічий рід',
         'language_item_id': Ukrainian,
         'language_code': 'uk',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'two_column_sections': True,
         'forms': [
             {
@@ -13745,7 +13745,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'український іменник, жіночий рід',
         'language_item_id': Ukrainian,
         'language_code': 'uk',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'two_column_sections': True,
         'forms': [
             {
@@ -13827,7 +13827,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'український іменник, середній рід',
         'language_item_id': Ukrainian,
         'language_code': 'uk',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'two_column_sections': True,
         'forms': [
             {
@@ -13909,7 +13909,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'український іменник, тільки множина (pluralia tantum)',
         'language_item_id': Ukrainian,
         'language_code': 'uk',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'forms': [
             {
                 'label': 'називний відмінок',
@@ -13964,7 +13964,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': 'Orúkọ Yorùbá',
         'language_item_id': Yoruba,
         'language_code': 'yo',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'forms': [
             {
                 'label': 'kan',
@@ -13979,7 +13979,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': '漢語名詞',
         'language_item_id': Standard_Mandarin,
         'language_code': 'zh',
-        'lexical_category_item_id': 'Q1084',
+        'lexical_category_item_id': noun,
         'forms': [
             {
                 'label': '形音一',
@@ -13994,7 +13994,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': '漢語代詞',
         'language_item_id': Standard_Mandarin,
         'language_code': 'zh',
-        'lexical_category_item_id': 'Q36224',
+        'lexical_category_item_id': pronoun,
         'forms': [
             {
                 'label': '形音一',
@@ -14009,7 +14009,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': '漢語動詞',
         'language_item_id': Standard_Mandarin,
         'language_code': 'zh',
-        'lexical_category_item_id': 'Q24905',
+        'lexical_category_item_id': verb,
         'forms': [
             {
                 'label': '形音一',
@@ -14024,7 +14024,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': '漢語形容詞',
         'language_item_id': Standard_Mandarin,
         'language_code': 'zh',
-        'lexical_category_item_id': 'Q34698',
+        'lexical_category_item_id': adjective,
         'forms': [
             {
                 'label': '形音一',
@@ -14039,7 +14039,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': '漢語區別詞',
         'language_item_id': Standard_Mandarin,
         'language_code': 'zh',
-        'lexical_category_item_id': 'Q34698',
+        'lexical_category_item_id': adjective,
         'forms': [
             {
                 'label': '形音一',
@@ -14055,7 +14055,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': '漢語副詞',
         'language_item_id': Standard_Mandarin,
         'language_code': 'zh',
-        'lexical_category_item_id': 'Q380057',
+        'lexical_category_item_id': adverb,
         'forms': [
             {
                 'label': '形音一',
@@ -14070,7 +14070,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': '漢語感歎詞',
         'language_item_id': Standard_Mandarin,
         'language_code': 'zh',
-        'lexical_category_item_id': 'Q83034',
+        'lexical_category_item_id': interjection,
         'forms': [
             {
                 'label': '形音一',
@@ -14085,7 +14085,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': '漢語介詞',
         'language_item_id': Standard_Mandarin,
         'language_code': 'zh',
-        'lexical_category_item_id': 'Q4833830',
+        'lexical_category_item_id': preposition,
         'forms': [
             {
                 'label': '形音一',
@@ -14100,7 +14100,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': '漢語量詞',
         'language_item_id': Standard_Mandarin,
         'language_code': 'zh',
-        'lexical_category_item_id': 'Q63153',
+        'lexical_category_item_id': classifier,
         'forms': [
             {
                 'label': '形音一',
@@ -14116,7 +14116,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': '漢語數詞',
         'language_item_id': Standard_Mandarin,
         'language_code': 'zh',
-        'lexical_category_item_id': 'Q63116',
+        'lexical_category_item_id': numeral,
         'forms': [
             {
                 'label': '形音一',
@@ -14131,7 +14131,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'label': '漢語助詞',
         'language_item_id': Standard_Mandarin,
         'language_code': 'zh',
-        'lexical_category_item_id': 'Q184943',
+        'lexical_category_item_id': particle,
         'forms': [
             {
                 'label': '形音一',

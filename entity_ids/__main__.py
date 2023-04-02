@@ -7,6 +7,7 @@ dir = os.path.dirname(os.path.realpath(__file__))
 files = [
     'property_ids.py',
     'language_item_ids.py',
+    'lexical_category_item_ids.py',
 ]
 for file in files:
     subprocess.run([sys.executable, file], cwd=dir, check=True)

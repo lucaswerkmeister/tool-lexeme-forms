@@ -15,8 +15,8 @@ def add_from_statements(statements):
 for template in templates.templates_without_redirects.values():
     if template.get('test', False):
         continue
-    all_entity_ids.add(template['language_item_id'])
-    # all_entity_ids.add(template['lexical_category_item_id'])
+    # all_entity_ids.add(template['language_item_id'])
+    all_entity_ids.add(template['lexical_category_item_id'])
     for form in template['forms']:
         pass
         # all_entity_ids.update(form['grammatical_features_item_ids'])
