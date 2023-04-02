@@ -6,7 +6,8 @@ all_entity_ids = set()
 
 def add_from_statements(statements):
     for property_id, statement_group in statements.items():
-        all_entity_ids.add(property_id)
+        pass
+        # all_entity_ids.add(property_id)
         # for statement in statement_group:
         #     if statement['mainsnak']['snaktype'] == 'value':
         #         all_entity_ids.add(statement['mainsnak']['datavalue']['value']['id'])
@@ -14,12 +15,13 @@ def add_from_statements(statements):
 for template in templates.templates_without_redirects.values():
     if template.get('test', False):
         continue
-    # all_entity_ids.add(template['language_item_id'])
+    all_entity_ids.add(template['language_item_id'])
     # all_entity_ids.add(template['lexical_category_item_id'])
     for form in template['forms']:
+        pass
         # all_entity_ids.update(form['grammatical_features_item_ids'])
-        add_from_statements(form.get('statements', {}))
-    add_from_statements(template.get('statements', {}))
+        # add_from_statements(form.get('statements', {}))
+    # add_from_statements(template.get('statements', {}))
 
 entity_ids = sorted(all_entity_ids, key=lambda id: int(id[1:]))
 

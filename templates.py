@@ -73,7 +73,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'asturian-noun-masculine': {
         '@attribution': {'users': ['Oriciu'], 'title': 'Wikidata:Wikidata Lexeme Forms/Asturian'},
         'label': 'nome común masculín asturianu',
-        'language_item_id': 'Q29507',
+        'language_item_id': Asturian,
         'language_code': 'ast',
         'lexical_category_item_id': 'Q1084',
         'forms': [
@@ -94,7 +94,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'asturian-noun-feminine': {
         '@attribution': {'users': ['Oriciu'], 'title': 'Wikidata:Wikidata Lexeme Forms/Asturian'},
         'label': 'nome común femenín asturianu',
-        'language_item_id': 'Q29507',
+        'language_item_id': Asturian,
         'language_code': 'ast',
         'lexical_category_item_id': 'Q1084',
         'forms': [
@@ -115,7 +115,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'bengali-noun-animate': {
         '@attribution': {'users': ['Bodhisattwa', 'Mahir256'], 'title': 'Wikidata:Wikidata Lexeme Forms/Bengali'},
         'label': 'প্রাণীবাচক বিশেষ্য',
-        'language_item_id': 'Q9610',
+        'language_item_id': Bengali,
         'language_code': 'bn',
         'lexical_category_item_id': 'Q1084',
         'forms': [
@@ -145,7 +145,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'bengali-noun-inanimate-othervowels': {
         '@attribution': {'users': ['Bodhisattwa', 'Mahir256'], 'title': 'Wikidata:Wikidata Lexeme Forms/Bengali'},
         'label': 'অপ্রাণীবাচক বিশেষ্য (-আ/এ/ও-কারান্ত শব্দ)',
-        'language_item_id': 'Q9610',
+        'language_item_id': Bengali,
         'language_code': 'bn',
         'lexical_category_item_id': 'Q1084',
         'forms': [
@@ -175,7 +175,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'bengali-noun-inanimate-highvowels': {
         '@attribution': {'users': ['Bodhisattwa', 'Mahir256'], 'title': 'Wikidata:Wikidata Lexeme Forms/Bengali'},
         'label': 'অপ্রাণীবাচক বিশেষ্য (-ই/ঈ/উ/ঊ/ঐ/ঔ-কারান্ত শব্দ)',
-        'language_item_id': 'Q9610',
+        'language_item_id': Bengali,
         'language_code': 'bn',
         'lexical_category_item_id': 'Q1084',
         'forms': [
@@ -205,7 +205,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'bengali-noun-inanimate-consonants': {
         '@attribution': {'users': ['Bodhisattwa', 'Mahir256'], 'title': 'Wikidata:Wikidata Lexeme Forms/Bengali'},
         'label': 'অপ্রাণীবাচক বিশেষ্য (ব্যঞ্জনান্ত শব্দ)',
-        'language_item_id': 'Q9610',
+        'language_item_id': Bengali,
         'language_code': 'bn',
         'lexical_category_item_id': 'Q1084',
         'forms': [
@@ -235,7 +235,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'bengali-adjective-tatsama-property': {
         '@attribution': {'users': ['Bodhisattwa', 'Mahir256'], 'title': 'Wikidata:Wikidata Lexeme Forms/Bengali'},
         'label': 'তৎসম গুণবাচক বিশেষণ',
-        'language_item_id': 'Q9610',
+        'language_item_id': Bengali,
         'language_code': 'bn',
         'lexical_category_item_id': 'Q34698',
         'forms': [
@@ -260,7 +260,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'bengali-adjective-others': {
         '@attribution': {'users': ['Bodhisattwa'], 'title': 'Wikidata:Wikidata Lexeme Forms/Bengali'},
         'label': 'অন্যান্য বিশেষণ',
-        'language_item_id': 'Q9610',
+        'language_item_id': Bengali,
         'language_code': 'bn',
         'lexical_category_item_id': 'Q34698',
         'forms': [
@@ -275,7 +275,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'bengali-adverb': {
         '@attribution': {'users': ['Mahir256', 'Bodhisattwa'], 'title': 'Wikidata:Wikidata Lexeme Forms/Bengali'},
         'label': 'ক্রিয়া বিশেষণ',
-        'language_item_id': 'Q9610',
+        'language_item_id': Bengali,
         'language_code': 'bn',
         'lexical_category_item_id': 'Q380057',
         'forms': [
@@ -290,7 +290,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'bengali-verb': {
         '@attribution': {'users': ['Bodhisattwa', 'Mahir256', 'Tanay barisha'], 'title': 'Wikidata:Wikidata Lexeme Forms/Bengali'},
         'label': 'ক্রিয়াপদ',
-        'language_item_id': 'Q9610',
+        'language_item_id': Bengali,
         'language_code': 'bn',
         'lexical_category_item_id': 'Q24905',
         'two_column_sections': True,
@@ -802,7 +802,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'bengali-verb-ano': {
         '@attribution': {'users': ['Bodhisattwa', 'Mahir256', 'Tanay barisha'], 'title': 'Wikidata:Wikidata Lexeme Forms/Bengali'},
         'label': 'ক্রিয়াপদ (সাধিত ধাতু)',
-        'language_item_id': 'Q9610',
+        'language_item_id': Bengali,
         'language_code': 'bn',
         'lexical_category_item_id': 'Q24905',
         'two_column_sections': True,
@@ -1314,7 +1314,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'manbhumi-adjective': {
         '@attribution': {'users': ['Bodhisattwa'], 'title': 'Wikidata:Wikidata Lexeme Forms/Manbhumi'},
         'label': 'বিশেষণ',
-        'language_item_id': 'Q6747180',
+        'language_item_id': Manbhumi,
         'language_code': 'bn-x-Q6747180',
         'lexical_category_item_id': 'Q34698',
         'forms': [
@@ -1329,7 +1329,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'manbhumi-adverb': {
         '@attribution': {'users': ['Bodhisattwa'], 'title': 'Wikidata:Wikidata Lexeme Forms/Manbhumi'},
         'label': 'ক্রিয়া বিশেষণ',
-        'language_item_id': 'Q6747180',
+        'language_item_id': Manbhumi,
         'language_code': 'bn-x-Q6747180',
         'lexical_category_item_id': 'Q380057',
         'forms': [
@@ -1344,7 +1344,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'manbhumi-verb': {
         '@attribution': {'users': ['Bodhisattwa'], 'title': 'Wikidata:Wikidata Lexeme Forms/Manbhumi'},
         'label': 'ক্রিয়াপদ',
-        'language_item_id': 'Q6747180',
+        'language_item_id': Manbhumi,
         'language_code': 'bn-x-Q6747180',
         'lexical_category_item_id': 'Q24905',
         'two_column_sections': True,
@@ -1626,7 +1626,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'breton-noun-without-mutation': {
         '@attribution': {'users': ['VIGNERON', 'Fulup'], 'title': 'Wikidata:Wikidata Lexeme Forms/Breton'},
         'label': 'anvioù-kadarn (hep kemmadur)',
-        'language_item_id': 'Q12107',
+        'language_item_id': Breton,
         'language_code': 'br',
         'lexical_category_item_id': 'Q1084',
         'forms': [
@@ -1646,7 +1646,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'breton-noun-without-mutation-collective': {
         '@attribution': {'users': ['VIGNERON'], 'title': 'Wikidata:Wikidata Lexeme Forms/Breton'},
         'label': 'anvioù-kadarn (strollder, hep kemmadur)',
-        'language_item_id': 'Q12107',
+        'language_item_id': Breton,
         'language_code': 'br',
         'lexical_category_item_id': 'Q1084',
         'forms': [
@@ -1666,7 +1666,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'breton-noun-with-mutation-ktp': {
         '@attribution': {'users': ['VIGNERON', 'Fulup'], 'title': 'Wikidata:Wikidata Lexeme Forms/Breton'},
         'label': 'anvioù-kadarn (gant kemmadur, ktp)',
-        'language_item_id': 'Q12107',
+        'language_item_id': Breton,
         'language_code': 'br',
         'lexical_category_item_id': 'Q1084',
         'forms': [
@@ -1706,7 +1706,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'breton-noun-with-mutation-gdb': {
         '@attribution': {'users': ['VIGNERON', 'Fulup'], 'title': 'Wikidata:Wikidata Lexeme Forms/Breton'},
         'label': 'anvioù-kadarn (gant kemmadur, gdb)',
-        'language_item_id': 'Q12107',
+        'language_item_id': Breton,
         'language_code': 'br',
         'lexical_category_item_id': 'Q1084',
         'forms': [
@@ -1746,7 +1746,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'breton-noun-with-mutation-m': {
         '@attribution': {'users': ['VIGNERON', 'Fulup'], 'title': 'Wikidata:Wikidata Lexeme Forms/Breton'},
         'label': 'anvioù-kadarn (gant kemmadur, m)',
-        'language_item_id': 'Q12107',
+        'language_item_id': Breton,
         'language_code': 'br',
         'lexical_category_item_id': 'Q1084',
         'forms': [
@@ -1776,7 +1776,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'breton-adjective-without-mutation': {
         '@attribution': {'users': ['VIGNERON', 'Fulup'], 'title': 'Wikidata:Wikidata Lexeme Forms/Breton'},
         'label': 'anvioù-gwan (hep kemmadur)',
-        'language_item_id': 'Q12107',
+        'language_item_id': Breton,
         'language_code': 'br',
         'lexical_category_item_id': 'Q34698',
         'forms': [
@@ -1806,7 +1806,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'breton-adverb': {
         '@attribution': {'users': ['VIGNERON'], 'title': 'Wikidata:Wikidata Lexeme Forms/Breton'},
         'label': 'adverb',
-        'language_item_id': 'Q12107',
+        'language_item_id': Breton,
         'language_code': 'br',
         'lexical_category_item_id': 'Q380057',
         'forms': [
@@ -1821,7 +1821,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'czech-noun-masculine-animate': {
         '@attribution': {'users': ['Lexicolover'], 'title': 'Wikidata:Wikidata Lexeme Forms/Czech'},
         'label': 'české podstatné jméno (rod mužský životný)',
-        'language_item_id': 'Q9056',
+        'language_item_id': Czech,
         'language_code': 'cs',
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
@@ -1908,7 +1908,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'czech-noun-masculine-inanimate': {
         '@attribution': {'users': ['Lexicolover'], 'title': 'Wikidata:Wikidata Lexeme Forms/Czech'},
         'label': 'české podstatné jméno (rod mužský neživotný)',
-        'language_item_id': 'Q9056',
+        'language_item_id': Czech,
         'language_code': 'cs',
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
@@ -1995,7 +1995,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'czech-noun-feminine': {
         '@attribution': {'users': ['Lexicolover'], 'title': 'Wikidata:Wikidata Lexeme Forms/Czech'},
         'label': 'české podstatné jméno (rod ženský)',
-        'language_item_id': 'Q9056',
+        'language_item_id': Czech,
         'language_code': 'cs',
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
@@ -2077,7 +2077,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'czech-noun-neuter': {
         '@attribution': {'users': ['Lexicolover'], 'title': 'Wikidata:Wikidata Lexeme Forms/Czech'},
         'label': 'české podstatné jméno (rod střední)',
-        'language_item_id': 'Q9056',
+        'language_item_id': Czech,
         'language_code': 'cs',
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
@@ -2159,7 +2159,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'czech-adverb': {
         '@attribution': {'users': ['Lexicolover'], 'title': 'Wikidata:Wikidata Lexeme Forms/Czech'},
         'label': 'české příslovce',
-        'language_item_id': 'Q9056',
+        'language_item_id': Czech,
         'language_code': 'cs',
         'lexical_category_item_id': 'Q380057',
         'forms': [
@@ -2184,7 +2184,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'czech-adjective': {
         '@attribution': {'users': ['Strepon', 'Adrijaned'], 'title': 'Wikidata:Wikidata Lexeme Forms/Czech'},
         'label': 'české přídavné jméno',
-        'language_item_id': 'Q9056',
+        'language_item_id': Czech,
         'language_code': 'cs',
         'lexical_category_item_id': 'Q34698',
         'two_column_sections': True,
@@ -3046,7 +3046,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'czech-verb-perfective': {
         '@attribution': {'users': ['Adrijaned', 'Strepon', 'Lexicolover'], 'title': 'Wikidata:Wikidata Lexeme Forms/Czech'},
         'label': 'české sloveso dokonavé',
-        'language_item_id': 'Q9056',
+        'language_item_id': Czech,
         'language_code': 'cs',
         'lexical_category_item_id': 'Q24905',
         'two_column_sections': False,
@@ -3239,7 +3239,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'czech-verb-imperfective': {
         '@attribution': {'users': ['Lexicolover'], 'title': 'Wikidata:Wikidata Lexeme Forms/Czech'},
         'label': 'české sloveso nedokonavé',
-        'language_item_id': 'Q9056',
+        'language_item_id': Czech,
         'language_code': 'cs',
         'lexical_category_item_id': 'Q24905',
         'two_column_sections': False,
@@ -3432,7 +3432,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'danish-noun-common': {
         '@attribution': {'users': ['So9q', 'Fnielsen'], 'title': 'Wikidata:Wikidata Lexeme Forms/Danish'},
         'label': 'dansk substantiv (fælleskøn)',
-        'language_item_id': 'Q9035',
+        'language_item_id': Danish,
         'language_code': 'da',
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
@@ -3484,7 +3484,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'danish-noun-neuter': {
         '@attribution': {'users': ['So9q', 'Fnielsen'], 'title': 'Wikidata:Wikidata Lexeme Forms/Danish'},
         'label': 'dansk substantiv (intetkøn)',
-        'language_item_id': 'Q9035',
+        'language_item_id': Danish,
         'language_code': 'da',
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
@@ -3536,7 +3536,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'danish-verb': {
         '@attribution': {'users': ['So9q'], 'title': 'Wikidata:Wikidata Lexeme Forms/Danish'},
         'label': 'dansk verb',
-        'language_item_id': 'Q9035',
+        'language_item_id': Danish,
         'language_code': 'da',
         'lexical_category_item_id': 'Q24905',
         'forms': [
@@ -3591,7 +3591,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'danish-adjective': {
         '@attribution': {'users': ['Fnielsen', 'So9q'], 'title': 'Wikidata:Wikidata Lexeme Forms/Danish'},
         'label': 'dansk adjektiv',
-        'language_item_id': 'Q9035',
+        'language_item_id': Danish,
         'language_code': 'da',
         'lexical_category_item_id': 'Q34698',
         'forms': [
@@ -3636,7 +3636,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'german-noun-masculine': {
         '@attribution': {'users': ['Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/German'},
         'label': 'deutsches Substantiv (Maskulinum)',
-        'language_item_id': 'Q188',
+        'language_item_id': German,
         'language_code': 'de',
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
@@ -3688,7 +3688,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'german-noun-feminine': {
         '@attribution': {'users': ['Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/German'},
         'label': 'deutsches Substantiv (Femininum)',
-        'language_item_id': 'Q188',
+        'language_item_id': German,
         'language_code': 'de',
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
@@ -3740,7 +3740,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'german-noun-neuter': {
         '@attribution': {'users': ['Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/German'},
         'label': 'deutsches Substantiv (Neutrum)',
-        'language_item_id': 'Q188',
+        'language_item_id': German,
         'language_code': 'de',
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
@@ -3792,7 +3792,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'german-noun-neuter-toponym': {
         '@attribution': {'users': ['Lucas Werkmeister', 'Nikki'], 'title': 'Wikidata:Wikidata Lexeme Forms/German'},
         'label': 'deutsches Substantiv (Neutrum, Toponym)',
-        'language_item_id': 'Q188',
+        'language_item_id': German,
         'language_code': 'de',
         'lexical_category_item_id': 'Q147276',
         'forms': [
@@ -3835,7 +3835,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'german-noun-pluraletantum': {
         '@attribution': {'users': ['Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/German'},
         'label': 'deutsches Substantiv (Pluraletantum, kein Genus)',
-        'language_item_id': 'Q188',
+        'language_item_id': German,
         'language_code': 'de',
         'lexical_category_item_id': 'Q1084',
         'forms': [
@@ -3870,7 +3870,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'german-verb': {
         '@attribution': {'users': ['Lucas Werkmeister', 'Andreasmperu', 'Nikki'], 'title': 'Wikidata:Wikidata Lexeme Forms/German'},
         'label': 'deutsches Verb',
-        'language_item_id': 'Q188',
+        'language_item_id': German,
         'language_code': 'de',
         'lexical_category_item_id': 'Q24905',
         'two_column_sections': True,
@@ -4063,7 +4063,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'german-adverb': {
         '@attribution': {'users': ['Nikki'], 'title': 'Wikidata:Wikidata Lexeme Forms/German'},
         'label': 'deutsches Adverb',
-        'language_item_id': 'Q188',
+        'language_item_id': German,
         'language_code': 'de',
         'lexical_category_item_id': 'Q380057',
         'forms': [
@@ -4078,7 +4078,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'english-noun': {
         '@attribution': {'users': ['Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/English'},
         'label': 'English noun',
-        'language_item_id': 'Q1860',
+        'language_item_id': English,
         'language_code': 'en',
         'lexical_category_item_id': 'Q1084',
         'forms': [
@@ -4098,7 +4098,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'english-adverb': {
         '@attribution': {'users': ['ArthurPSmith'], 'title': 'Wikidata:Wikidata Lexeme Forms/English'},
         'label': 'English adverb',
-        'language_item_id': 'Q1860',
+        'language_item_id': English,
         'language_code': 'en',
         'lexical_category_item_id': 'Q380057',
         'forms': [
@@ -4113,7 +4113,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'english-adjective': {
         '@attribution': {'users': ['ArthurPSmith'], 'title': 'Wikidata:Wikidata Lexeme Forms/English'},
         'label': 'English adjective',
-        'language_item_id': 'Q1860',
+        'language_item_id': English,
         'language_code': 'en',
         'lexical_category_item_id': 'Q34698',
         'forms': [
@@ -4138,7 +4138,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'english-verb': {
         '@attribution': {'users': ['ArthurPSmith', 'Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/English'},
         'label': 'English verb',
-        'language_item_id': 'Q1860',
+        'language_item_id': English,
         'language_code': 'en',
         'lexical_category_item_id': 'Q24905',
         'forms': [
@@ -4173,7 +4173,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'esperanto-noun': {
         '@attribution': {'users': ['KaMan', 'Jens Ohlig'], 'title': 'Wikidata:Wikidata Lexeme Forms/Esperanto'},
         'label': 'esperanta substantivo',
-        'language_item_id': 'Q143',
+        'language_item_id': Esperanto,
         'language_code': 'eo',
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
@@ -4204,7 +4204,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'esperanto-adjective': {
         '@attribution': {'users': ['Nikki'], 'title': 'Wikidata:Wikidata Lexeme Forms/Esperanto'},
         'label': 'esperanta adjektivo',
-        'language_item_id': 'Q143',
+        'language_item_id': Esperanto,
         'language_code': 'eo',
         'lexical_category_item_id': 'Q34698',
         'two_column_sections': True,
@@ -4235,7 +4235,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'esperanto-verb': {
         '@attribution': {'users': ['Nikki'], 'title': 'Wikidata:Wikidata Lexeme Forms/Esperanto'},
         'label': 'esperanta verbo',
-        'language_item_id': 'Q143',
+        'language_item_id': Esperanto,
         'language_code': 'eo',
         'lexical_category_item_id': 'Q24905',
         'two_column_sections': False,
@@ -4281,7 +4281,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'spanish-noun-masculine': {
         '@attribution': {'users': ['Andreasmperu', 'Hameryko'], 'title': 'Wikidata:Wikidata Lexeme Forms/Spanish'},
         'label': 'sustantivo masculino en español',
-        'language_item_id': 'Q1321',
+        'language_item_id': Spanish,
         'language_code': 'es',
         'lexical_category_item_id': 'Q1084',
         'forms': [
@@ -4302,7 +4302,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'spanish-noun-feminine': {
         '@attribution': {'users': ['Andreasmperu', 'Hameryko'], 'title': 'Wikidata:Wikidata Lexeme Forms/Spanish'},
         'label': 'sustantivo femenino en español',
-        'language_item_id': 'Q1321',
+        'language_item_id': Spanish,
         'language_code': 'es',
         'lexical_category_item_id': 'Q1084',
         'forms': [
@@ -4323,7 +4323,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'spanish-noun-masculine-feminine': {
         '@attribution': {'users': ['Hameryko'], 'title': 'Wikidata:Wikidata Lexeme Forms/Spanish'},
         'label': 'sustantivo masculino y femenino en español',
-        'language_item_id': 'Q1321',
+        'language_item_id': Spanish,
         'language_code': 'es',
         'lexical_category_item_id': 'Q1084',
         'forms': [
@@ -4359,7 +4359,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'spanish-adjective': {
         '@attribution': {'users': ['Andreasmperu'], 'title': 'Wikidata:Wikidata Lexeme Forms/Spanish'},
         'label': 'adjetivo en español',
-        'language_item_id': 'Q1321',
+        'language_item_id': Spanish,
         'language_code': 'es',
         'lexical_category_item_id': 'Q34698',
         'two_column_sections': True,
@@ -4390,7 +4390,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'spanish-verb': {
         '@attribution': {'users': ['DemonDays64', 'Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/Spanish'},
         'label': 'verbo en español',
-        'language_item_id': 'Q1321',
+        'language_item_id': Spanish,
         'language_code': 'es',
         'lexical_category_item_id': 'Q24905',
         'two_column_sections': True,
@@ -4721,7 +4721,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'spanish-adverb': {
         '@attribution': {'users': ['Hameryko'], 'title': 'Wikidata:Wikidata Lexeme Forms/Spanish'},
         'label': 'adverbio en español',
-        'language_item_id': 'Q1321',
+        'language_item_id': Spanish,
         'language_code': 'es',
         'lexical_category_item_id': 'Q380057',
         'forms': [
@@ -4736,7 +4736,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'spanish-interjection': {
         '@attribution': {'users': ['Hameryko'], 'title': 'Wikidata:Wikidata Lexeme Forms/Spanish'},
         'label': 'interjección en español',
-        'language_item_id': 'Q1321',
+        'language_item_id': Spanish,
         'language_code': 'es',
         'lexical_category_item_id': 'Q83034',
         'forms': [
@@ -4751,7 +4751,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'spanish-phrase-nominal-masculine': {
         '@attribution': {'users': ['Hameryko'], 'title': 'Wikidata:Wikidata Lexeme Forms/Spanish'},
         'label': 'locución sustantiva masculina en español',
-        'language_item_id': 'Q1321',
+        'language_item_id': Spanish,
         'language_code': 'es',
         'lexical_category_item_id': 'Q29888377',
         'forms': [
@@ -4772,7 +4772,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'spanish-phrase-nominal-feminine': {
         '@attribution': {'users': ['Hameryko'], 'title': 'Wikidata:Wikidata Lexeme Forms/Spanish'},
         'label': 'locución sustantiva femenina en español',
-        'language_item_id': 'Q1321',
+        'language_item_id': Spanish,
         'language_code': 'es',
         'lexical_category_item_id': 'Q29888377',
         'forms': [
@@ -4793,7 +4793,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'spanish-phrase-attributive': {
         '@attribution': {'users': ['Hameryko'], 'title': 'Wikidata:Wikidata Lexeme Forms/Spanish'},
         'label': 'locución adjetiva en español',
-        'language_item_id': 'Q1321',
+        'language_item_id': Spanish,
         'language_code': 'es',
         'lexical_category_item_id': 'Q12734432',
         'forms': [
@@ -4829,7 +4829,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'spanish-locution-prepositional': {
         '@attribution': {'users': ['Hameryko'], 'title': 'Wikidata:Wikidata Lexeme Forms/Spanish'},
         'label': 'locución preposicional en español',
-        'language_item_id': 'Q1321',
+        'language_item_id': Spanish,
         'language_code': 'es',
         'lexical_category_item_id': 'Q10319522',
         'forms': [
@@ -4844,7 +4844,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'spanish-locution-interjectional': {
         '@attribution': {'users': ['Hameryko'], 'title': 'Wikidata:Wikidata Lexeme Forms/Spanish'},
         'label': 'locución interjectiva en español',
-        'language_item_id': 'Q1321',
+        'language_item_id': Spanish,
         'language_code': 'es',
         'lexical_category_item_id': 'Q10319520',
         'forms': [
@@ -4859,7 +4859,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'spanish-locution-adverbial': {
         '@attribution': {'users': ['Hameryko'], 'title': 'Wikidata:Wikidata Lexeme Forms/Spanish'},
         'label': 'locución adverbial en español',
-        'language_item_id': 'Q1321',
+        'language_item_id': Spanish,
         'language_code': 'es',
         'lexical_category_item_id': 'Q5978303',
         'forms': [
@@ -4874,7 +4874,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'estonian-noun': {
         '@attribution': {'users': ['Reosarevok'], 'title': 'Wikidata:Wikidata Lexeme Forms/Estonian'},
         'label': 'eesti keele nimisõna',
-        'language_item_id': 'Q9072',
+        'language_item_id': Estonian,
         'language_code': 'et',
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
@@ -5038,7 +5038,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'basque-verb': {
         '@attribution': {'users': ['Theklan'], 'title': 'Wikidata:Wikidata Lexeme Forms/Basque'},
         'label': 'euskal aditza',
-        'language_item_id': 'Q8752',
+        'language_item_id': Basque,
         'language_code': 'eu',
         'lexical_category_item_id': 'Q24905',
         'forms': [
@@ -5073,7 +5073,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'basque-adjective-comparative': {
         '@attribution': {'users': ['Theklan'], 'title': 'Wikidata:Wikidata Lexeme Forms/Basque'},
         'label': 'euskal adjektibo konparatibo eta superlatiboak',
-        'language_item_id': 'Q8752',
+        'language_item_id': Basque,
         'language_code': 'eu',
         'lexical_category_item_id': 'Q34698',
         'forms': [
@@ -5098,7 +5098,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'persian-noun': {
         '@attribution': {'users': ['Ladsgroup'], 'title': 'Wikidata:Wikidata Lexeme Forms/Persian'},
         'label': 'اسم فارسی',
-        'language_item_id': 'Q9168',
+        'language_item_id': Persian,
         'language_code': 'fa',
         'lexical_category_item_id': 'Q1084',
         'forms': [
@@ -5118,7 +5118,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'persian-verb': {
         '@attribution': {'users': ['Ladsgroup'], 'title': 'Wikidata:Wikidata Lexeme Forms/Persian'},
         'label': 'فعل فارسی',
-        'language_item_id': 'Q9168',
+        'language_item_id': Persian,
         'language_code': 'fa',
         'lexical_category_item_id': 'Q24905',
         'two_column_sections': True,
@@ -5159,7 +5159,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'finnish-noun': {
         '@attribution': {'users': ['Shinnin'], 'title': 'Wikidata:Wikidata Lexeme Forms/Finnish'},
         'label': 'suomen kielen substantiivi',
-        'language_item_id': 'Q1412',
+        'language_item_id': Finnish,
         'language_code': 'fi',
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
@@ -5307,7 +5307,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'french-noun-masculine': {
         '@attribution': {'users': ['Djiboun'], 'title': 'Wikidata:Wikidata Lexeme Forms/French'},
         'label': 'nom commun masculin en français',
-        'language_item_id': 'Q150',
+        'language_item_id': French,
         'language_code': 'fr',
         'lexical_category_item_id': 'Q1084',
         'forms': [
@@ -5328,7 +5328,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'french-noun-feminine': {
         '@attribution': {'users': ['Djiboun'], 'title': 'Wikidata:Wikidata Lexeme Forms/French'},
         'label': 'nom commun féminin en français',
-        'language_item_id': 'Q150',
+        'language_item_id': French,
         'language_code': 'fr',
         'lexical_category_item_id': 'Q1084',
         'forms': [
@@ -5349,7 +5349,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'french-adjective': {
         '@attribution': {'users': ['Djiboun'], 'title': 'Wikidata:Wikidata Lexeme Forms/French'},
         'label': 'adjectif en français',
-        'language_item_id': 'Q150',
+        'language_item_id': French,
         'language_code': 'fr',
         'lexical_category_item_id': 'Q34698',
         'two_column_sections': True,
@@ -5380,7 +5380,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'french-verb': {
         '@attribution': {'users': ['Envlh', 'Djiboun', 'VIGNERON'], 'title': 'Wikidata:Wikidata Lexeme Forms/French'},
         'label': 'verbe en français',
-        'language_item_id': 'Q150',
+        'language_item_id': French,
         'language_code': 'fr',
         'lexical_category_item_id': 'Q24905',
         'two_column_sections': True,
@@ -5656,7 +5656,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'hebrew-noun-masculine': {
         '@attribution': {'users': ['Uziel302', 'Uzielbot'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hebrew'},
         'label': 'שם עצם זכר',
-        'language_item_id': 'Q9288',
+        'language_item_id': Hebrew,
         'language_code': 'he',
         'lexical_category_item_id': 'Q1084',
         'forms': [
@@ -5677,7 +5677,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'hebrew-noun-feminine': {
         '@attribution': {'users': ['Uziel302', 'Uzielbot'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hebrew'},
         'label': 'שם עצם נקבה',
-        'language_item_id': 'Q9288',
+        'language_item_id': Hebrew,
         'language_code': 'he',
         'lexical_category_item_id': 'Q1084',
         'forms': [
@@ -5698,7 +5698,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'hebrew-adjective': {
         '@attribution': {'users': ['Ijon'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hebrew'},
         'label': 'שם תואר עברי',
-        'language_item_id': 'Q9288',
+        'language_item_id': Hebrew,
         'language_code': 'he',
         'lexical_category_item_id': 'Q34698',
         'forms': [
@@ -5728,7 +5728,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'hindustani-noun-masculine-hi': {
         '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindustani'},
         'label': 'हिंदुस्तानी नाउँ पुलिंग',
-        'language_item_id': 'Q11051',
+        'language_item_id': Hindustani,
         'language_code': 'hi',
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
@@ -5779,7 +5779,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'hindustani-noun-feminine-hi': {
         '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindustani'},
         'label': 'हिंदुस्तानी नाउँ इसतरी लिंग',
-        'language_item_id': 'Q11051',
+        'language_item_id': Hindustani,
         'language_code': 'hi',
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
@@ -5830,7 +5830,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'hindustani-adjective-red-hi': {
         '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindustani'},
         'label': 'हिंदुस्तानी लाल गुन नाउँ',
-        'language_item_id': 'Q11051',
+        'language_item_id': Hindustani,
         'language_code': 'hi',
         'lexical_category_item_id': 'Q34698',
         'forms': [
@@ -5849,7 +5849,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'hindustani-adjective-black-hi': {
         '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindustani'},
         'label': 'हिंदुस्तानी काला गुन नाउँ',
-        'language_item_id': 'Q11051',
+        'language_item_id': Hindustani,
         'language_code': 'hi',
         'lexical_category_item_id': 'Q34698',
         'two_column_sections': True,
@@ -5929,7 +5929,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'hindustani-adjective-handsomest-hi': {
         '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindustani'},
         'label': 'हिंदुस्तानी गुन नाउँ तफजील',
-        'language_item_id': 'Q11051',
+        'language_item_id': Hindustani,
         'language_code': 'hi',
         'lexical_category_item_id': 'Q34698',
         'forms': [
@@ -5958,7 +5958,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'hindustani-adverb-indeclinable-hi': {
         '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindustani'},
         'label': 'हिंदुस्तानी आम गुन फैल',
-        'language_item_id': 'Q11051',
+        'language_item_id': Hindustani,
         'language_code': 'hi',
         'lexical_category_item_id': 'Q380057',
         'forms': [
@@ -5974,7 +5974,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'hindustani-adverb-declinable-hi': {
         '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindustani'},
         'label': 'हिंदुस्तानी ऐसा बदल करता गुन फैल',
-        'language_item_id': 'Q11051',
+        'language_item_id': Hindustani,
         'language_code': 'hi',
         'lexical_category_item_id': 'Q380057',
         'two_column_sections': True,
@@ -6027,7 +6027,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'hindustani-verb-basic-intransitive-hi': {
         '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindustani'},
         'label': 'हिंदुस्तानी फैल लाजमी',
-        'language_item_id': 'Q11051',
+        'language_item_id': Hindustani,
         'language_code': 'hi',
         'lexical_category_item_id': 'Q24905',
         'two_column_sections': False,
@@ -6323,7 +6323,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'hindustani-verb-basic-transitive-hi': {
         '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindustani'},
         'label': 'हिंदुस्तानी फैल मुतदी',
-        'language_item_id': 'Q11051',
+        'language_item_id': Hindustani,
         'language_code': 'hi',
         'lexical_category_item_id': 'Q24905',
         'two_column_sections': False,
@@ -6619,7 +6619,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'hindustani-verb-additive-transitive-hi': {
         '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindustani'},
         'label': 'हिंदुस्तानी फैल लाजम का तदिया',
-        'language_item_id': 'Q11051',
+        'language_item_id': Hindustani,
         'language_code': 'hi',
         'lexical_category_item_id': 'Q24905',
         'two_column_sections': False,
@@ -6914,7 +6914,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'hindustani-verb-additive-causative-hi': {
         '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindustani'},
         'label': 'हिंदुस्तानी फैल मुतदी का तदिया',
-        'language_item_id': 'Q11051',
+        'language_item_id': Hindustani,
         'language_code': 'hi',
         'lexical_category_item_id': 'Q24905',
         'two_column_sections': False,
@@ -7209,7 +7209,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'hindustani-verb-additive-causative-double-hi': {
         '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindustani'},
         'label': 'हिंदुस्तानी फैल मुतदी का दूसरा तदिया',
-        'language_item_id': 'Q11051',
+        'language_item_id': Hindustani,
         'language_code': 'hi',
         'lexical_category_item_id': 'Q24905',
         'two_column_sections': False,
@@ -7504,7 +7504,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'hindustani-noun-masculine-ur': {
         '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindustani'},
         'label': 'ہندوستانی ناؤں مذکر',
-        'language_item_id': 'Q11051',
+        'language_item_id': Hindustani,
         'language_code': 'ur',
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
@@ -7555,7 +7555,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'hindustani-noun-feminine-ur': {
         '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindustani'},
         'label': 'ہندوستانی ناؤں مؤنث',
-        'language_item_id': 'Q11051',
+        'language_item_id': Hindustani,
         'language_code': 'ur',
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
@@ -7606,7 +7606,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'hindustani-adjective-red-ur': {
         '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindustani'},
         'label': 'ہندوستانی لال گن ناؤں',
-        'language_item_id': 'Q11051',
+        'language_item_id': Hindustani,
         'language_code': 'ur',
         'lexical_category_item_id': 'Q34698',
         'forms': [
@@ -7625,7 +7625,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'hindustani-adjective-black-ur': {
         '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindustani'},
         'label': 'ہندوستانی کالا گن ناؤں',
-        'language_item_id': 'Q11051',
+        'language_item_id': Hindustani,
         'language_code': 'ur',
         'lexical_category_item_id': 'Q34698',
         'two_column_sections': True,
@@ -7705,7 +7705,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'hindustani-adjective-handsomest-ur': {
         '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindustani'},
         'label': 'ہندوستانی گن ناؤں تفضیل',
-        'language_item_id': 'Q11051',
+        'language_item_id': Hindustani,
         'language_code': 'ur',
         'lexical_category_item_id': 'Q34698',
         'forms': [
@@ -7734,7 +7734,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'hindustani-adverb-indeclinable-ur': {
         '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindustani'},
         'label': 'ہندوستانی عام گن فعل',
-        'language_item_id': 'Q11051',
+        'language_item_id': Hindustani,
         'language_code': 'ur',
         'lexical_category_item_id': 'Q380057',
         'forms': [
@@ -7750,7 +7750,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'hindustani-adverb-declinable-ur': {
         '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindustani'},
         'label': 'ہندوستانی ایسا بدل کرتا گن فعل',
-        'language_item_id': 'Q11051',
+        'language_item_id': Hindustani,
         'language_code': 'ur',
         'lexical_category_item_id': 'Q380057',
         'two_column_sections': True,
@@ -7803,7 +7803,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'hindustani-verb-basic-intransitive-ur': {
         '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindustani'},
         'label': 'ہندوستانی فعل لازمی',
-        'language_item_id': 'Q11051',
+        'language_item_id': Hindustani,
         'language_code': 'ur',
         'lexical_category_item_id': 'Q24905',
         'two_column_sections': False,
@@ -8099,7 +8099,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'hindustani-verb-basic-transitive-ur': {
         '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindustani'},
         'label': 'ہندوستانی فعل متعدی',
-        'language_item_id': 'Q11051',
+        'language_item_id': Hindustani,
         'language_code': 'ur',
         'lexical_category_item_id': 'Q24905',
         'two_column_sections': False,
@@ -8395,7 +8395,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'hindustani-verb-additive-transitive-ur': {
         '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindustani'},
         'label': 'ہندوستانی فعل لازم کا تعدیہ',
-        'language_item_id': 'Q11051',
+        'language_item_id': Hindustani,
         'language_code': 'ur',
         'lexical_category_item_id': 'Q24905',
         'two_column_sections': False,
@@ -8690,7 +8690,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'hindustani-verb-additive-causative-ur': {
         '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindustani'},
         'label': 'ہندوستانی فعل متعدی کا تعدیہ',
-        'language_item_id': 'Q11051',
+        'language_item_id': Hindustani,
         'language_code': 'ur',
         'lexical_category_item_id': 'Q24905',
         'two_column_sections': False,
@@ -8985,7 +8985,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'hindustani-verb-additive-causative-double-ur': {
         '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindustani'},
         'label': 'ہندوستانی فعل متعدی کا دوسرا تعدیہ',
-        'language_item_id': 'Q11051',
+        'language_item_id': Hindustani,
         'language_code': 'ur',
         'lexical_category_item_id': 'Q24905',
         'two_column_sections': False,
@@ -9280,7 +9280,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'hindko-noun-masculine': {
         '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindko'},
         'label': 'ہندکو اِسم مذکر',
-        'language_item_id': 'Q382273',
+        'language_item_id': Hindko,
         'language_code': 'hno',
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
@@ -9312,7 +9312,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'hindko-noun-feminine': {
         '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindko'},
         'label': 'ہندکو اِسم مونث',
-        'language_item_id': 'Q382273',
+        'language_item_id': Hindko,
         'language_code': 'hno',
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
@@ -9344,7 +9344,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'croatian-noun-masculine': {
         '@attribution': {'users': ['Ivi104'], 'title': 'Wikidata:Wikidata Lexeme Forms/Croatian'},
         'label': 'hrvatske imenice (muški rod)',
-        'language_item_id': 'Q6654',
+        'language_item_id': Croatian,
         'language_code': 'hr',
         'lexical_category_item_id': 'Q1084',
         'forms': [
@@ -9425,7 +9425,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'croatian-noun-feminine': {
         '@attribution': {'users': ['Ivi104'], 'title': 'Wikidata:Wikidata Lexeme Forms/Croatian'},
         'label': 'hrvatske imenice (ženski rod)',
-        'language_item_id': 'Q6654',
+        'language_item_id': Croatian,
         'language_code': 'hr',
         'lexical_category_item_id': 'Q1084',
         'forms': [
@@ -9506,7 +9506,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'croatian-noun-neuter': {
         '@attribution': {'users': ['Ivi104'], 'title': 'Wikidata:Wikidata Lexeme Forms/Croatian'},
         'label': 'hrvatske imenice (srednji rod)',
-        'language_item_id': 'Q6654',
+        'language_item_id': Croatian,
         'language_code': 'hr',
         'lexical_category_item_id': 'Q1084',
         'forms': [
@@ -9587,7 +9587,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'armenian-noun': {
         '@attribution': {'users': ['Emptyfear'], 'title': 'Wikidata:Wikidata Lexeme Forms/Armenian'},
         'label': 'հայերեն գոյական',
-        'language_item_id': 'Q8785',
+        'language_item_id': Armenian,
         'language_code': 'hy',
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
@@ -9668,7 +9668,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'armenian-noun-singulare-tantum': {
         '@attribution': {'users': ['Emptyfear'], 'title': 'Wikidata:Wikidata Lexeme Forms/Armenian'},
         'label': 'հայերեն հավաքական անհոգնական եզակի գոյական',
-        'language_item_id': 'Q8785',
+        'language_item_id': Armenian,
         'language_code': 'hy',
         'lexical_category_item_id': 'Q1084',
         'forms': [
@@ -9721,7 +9721,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'igbo-noun': {
         '@attribution': {'users': ['EnaldoSS', 'Tochiprecious'], 'title': 'Wikidata:Wikidata Lexeme Forms/Igbo'},
         'label': 'Aha n\'Igbo',
-        'language_item_id': 'Q33578',
+        'language_item_id': Igbo,
         'language_code': 'ig',
         'lexical_category_item_id': 'Q1084',
         'forms': [
@@ -9736,7 +9736,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'igbo-verb': {
         '@attribution': {'users': ['EnaldoSS', 'Tochiprecious'], 'title': 'Wikidata:Wikidata Lexeme Forms/Igbo'},
         'label': 'Ngwaa n\'Igbo',
-        'language_item_id': 'Q33578',
+        'language_item_id': Igbo,
         'language_code': 'ig',
         'lexical_category_item_id': 'Q24905',
         'forms': [
@@ -9751,7 +9751,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'igbo-pronoun': {
         '@attribution': {'users': ['EnaldoSS', 'Tochiprecious'], 'title': 'Wikidata:Wikidata Lexeme Forms/Igbo'},
         'label': 'Nnọchiaha n\'Igbo',
-        'language_item_id': 'Q33578',
+        'language_item_id': Igbo,
         'language_code': 'ig',
         'lexical_category_item_id': 'Q36224',
         'forms': [
@@ -9766,7 +9766,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'igbo-adjective': {
         '@attribution': {'users': ['EnaldoSS', 'Tochiprecious'], 'title': 'Wikidata:Wikidata Lexeme Forms/Igbo'},
         'label': 'Nkọwaaha n\'Igbo',
-        'language_item_id': 'Q33578',
+        'language_item_id': Igbo,
         'language_code': 'ig',
         'lexical_category_item_id': 'Q34698',
         'forms': [
@@ -9781,7 +9781,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'italian-noun-feminine': {
         '@attribution': {'users': ['Sannita'], 'title': 'Wikidata:Wikidata Lexeme Forms/Italian'},
         'label': 'sostantivo femminile italiano',
-        'language_item_id': 'Q652',
+        'language_item_id': Italian,
         'language_code': 'it',
         'lexical_category_item_id': 'Q1084',
         'forms': [
@@ -9802,7 +9802,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'italian-noun-masculine': {
         '@attribution': {'users': ['Sannita'], 'title': 'Wikidata:Wikidata Lexeme Forms/Italian'},
         'label': 'sostantivo maschile italiano',
-        'language_item_id': 'Q652',
+        'language_item_id': Italian,
         'language_code': 'it',
         'lexical_category_item_id': 'Q1084',
         'forms': [
@@ -9823,7 +9823,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'italian-adjective': {
         '@attribution': {'users': ['Sannita'], 'title': 'Wikidata:Wikidata Lexeme Forms/Italian'},
         'label': 'aggettivo qualificativo italiano',
-        'language_item_id': 'Q652',
+        'language_item_id': Italian,
         'language_code': 'it',
         'lexical_category_item_id': 'Q34698',
         'two_column_sections': True,
@@ -9854,7 +9854,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'kurmanji-noun-feminine': {
         '@attribution': {'users': ['Şêr'], 'title': 'Wikidata:Wikidata Lexeme Forms/Kurdish (Kurmancî)'},
         'label': 'navdêra kurdî (mê)',
-        'language_item_id': 'Q36163',
+        'language_item_id': Kurmanji,
         'language_code': 'ku',
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
@@ -9942,7 +9942,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'kurmanji-noun-masculine': {
         '@attribution': {'users': ['Şêr'], 'title': 'Wikidata:Wikidata Lexeme Forms/Kurdish (Kurmancî)'},
         'label': 'navdêra kurdî (nêr)',
-        'language_item_id': 'Q36163',
+        'language_item_id': Kurmanji,
         'language_code': 'ku',
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
@@ -10030,7 +10030,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'latin-noun-masculine': {
         '@attribution': {'users': ['Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/Latin'},
         'label': 'nomen Latinum (masculinum)',
-        'language_item_id': 'Q397',
+        'language_item_id': Latin,
         'language_code': 'la',
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
@@ -10102,7 +10102,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'latin-noun-feminine': {
         '@attribution': {'users': ['Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/Latin'},
         'label': 'nomen Latinum (femininum)',
-        'language_item_id': 'Q397',
+        'language_item_id': Latin,
         'language_code': 'la',
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
@@ -10174,7 +10174,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'latin-noun-neuter': {
         '@attribution': {'users': ['Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/Latin'},
         'label': 'nomen Latinum (neutrum)',
-        'language_item_id': 'Q397',
+        'language_item_id': Latin,
         'language_code': 'la',
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
@@ -10246,7 +10246,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'latvian-noun-masculine': {
         '@attribution': {'users': ['Papuass', 'Lucas Werkmeister', 'Nikki'], 'title': 'Wikidata:Wikidata Lexeme Forms/Latvian'},
         'label': 'latviešu valodas vīriešu dzimtes lietvārds',
-        'language_item_id': 'Q9078',
+        'language_item_id': Latvian,
         'language_code': 'lv',
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
@@ -10334,7 +10334,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'latvian-noun-feminine': {
         '@attribution': {'users': ['Papuass', 'Lucas Werkmeister', 'Nikki'], 'title': 'Wikidata:Wikidata Lexeme Forms/Latvian'},
         'label': 'latviešu valodas sieviešu dzimtes lietvārds',
-        'language_item_id': 'Q9078',
+        'language_item_id': Latvian,
         'language_code': 'lv',
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
@@ -10422,7 +10422,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'malayalam-noun': {
         '@attribution': {'users': ['Jsamwrites', 'Vis M', 'Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/Malayalam'},
         'label': 'മലയാളത്തിലെ സാധാരണ നാമം',
-        'language_item_id': 'Q36236',
+        'language_item_id': Malayalam,
         'language_code': 'ml',
         'lexical_category_item_id': 'Q1084',
         'forms': [
@@ -10514,7 +10514,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'malayalam-noun-proper': {
         '@attribution': {'users': ['Vis M'], 'title': 'Wikidata:Wikidata Lexeme Forms/Malayalam'},
         'label': 'മലയാളം സംജ്ഞാനാമം (proper noun)',
-        'language_item_id': 'Q36236',
+        'language_item_id': Malayalam,
         'language_code': 'ml',
         'lexical_category_item_id': 'Q147276',
         'forms': [
@@ -10565,7 +10565,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'malayalam-verb': {
         '@attribution': {'users': ['Vis M', 'Nikki'], 'title': 'Wikidata:Wikidata Lexeme Forms/Malayalam'},
         'label': 'മലയാളം ക്രിയ',
-        'language_item_id': 'Q36236',
+        'language_item_id': Malayalam,
         'language_code': 'ml',
         'lexical_category_item_id': 'Q24905',
         'forms': [
@@ -10595,7 +10595,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'bokmål-noun-masculine': {
         '@attribution': {'users': ['Danmichaelo'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Bokmål'},
         'label': 'bokmål hankjønnssubstantiv',
-        'language_item_id': 'Q25167',
+        'language_item_id': Bokmål,
         'language_code': 'nb',
         'lexical_category_item_id': 'Q1084',
         'forms': [
@@ -10626,7 +10626,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'bokmål-noun-feminine': {
         '@attribution': {'users': ['Danmichaelo', 'Jon Harald Søby'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Bokmål'},
         'label': 'bokmål hunkjønnssubstantiv',
-        'language_item_id': 'Q25167',
+        'language_item_id': Bokmål,
         'language_code': 'nb',
         'lexical_category_item_id': 'Q1084',
         'forms': [
@@ -10662,7 +10662,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'bokmål-noun-neuter': {
         '@attribution': {'users': ['Danmichaelo'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Bokmål'},
         'label': 'bokmål intetkjønnssubstantiv',
-        'language_item_id': 'Q25167',
+        'language_item_id': Bokmål,
         'language_code': 'nb',
         'lexical_category_item_id': 'Q1084',
         'forms': [
@@ -10693,7 +10693,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'bokmål-noun-masculine-neuter': {
         '@attribution': {'users': ['Jon Harald Søby'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Bokmål'},
         'label': 'bokmål han- og intetkjønnssubstantiv',
-        'language_item_id': 'Q25167',
+        'language_item_id': Bokmål,
         'language_code': 'nb',
         'lexical_category_item_id': 'Q1084',
         'forms': [
@@ -10746,7 +10746,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'bokmål-adjective': {
         '@attribution': {'users': ['Jon Harald Søby'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Bokmål'},
         'label': 'bokmål adjektiv',
-        'language_item_id': 'Q25167',
+        'language_item_id': Bokmål,
         'language_code': 'nb',
         'lexical_category_item_id': 'Q34698',
         'forms': [
@@ -10794,7 +10794,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'bokmål-verb': {
         '@attribution': {'users': ['Jon Harald Søby'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Bokmål'},
         'label': 'bokmål verb',
-        'language_item_id': 'Q25167',
+        'language_item_id': Bokmål,
         'language_code': 'nb',
         'lexical_category_item_id': 'Q24905',
         'forms': [
@@ -10864,7 +10864,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'bokmål-verb-passive': {
         '@attribution': {'users': ['Jon Harald Søby'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Bokmål'},
         'label': 'bokmål s-verb',
-        'language_item_id': 'Q25167',
+        'language_item_id': Bokmål,
         'language_code': 'nb',
         'lexical_category_item_id': 'Q24905',
         'forms': [
@@ -10900,7 +10900,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'bokmål-interjection': {
         '@attribution': {'users': ['Jon Harald Søby'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Bokmål'},
         'label': 'bokmål interjeksjon',
-        'language_item_id': 'Q25167',
+        'language_item_id': Bokmål,
         'language_code': 'nb',
         'lexical_category_item_id': 'Q83034',
         'forms': [
@@ -10915,7 +10915,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'bokmål-adverb': {
         '@attribution': {'users': ['Jon Harald Søby'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Bokmål'},
         'label': 'bokmål adverb',
-        'language_item_id': 'Q25167',
+        'language_item_id': Bokmål,
         'language_code': 'nb',
         'lexical_category_item_id': 'Q380057',
         'forms': [
@@ -10931,7 +10931,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'dutch-noun-neuter': {
         '@attribution': {'users': ['MarcoSwart'], 'title': 'Wikidata:Wikidata Lexeme Forms/Dutch'},
         'label': 'Nederlands onzijdig zelfstandig naamwoord',
-        'language_item_id': 'Q7411',
+        'language_item_id': Dutch,
         'language_code': 'nl',
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
@@ -10964,7 +10964,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'dutch-noun-masculine': {
         '@attribution': {'users': ['MarcoSwart'], 'title': 'Wikidata:Wikidata Lexeme Forms/Dutch'},
         'label': 'Nederlands strikt mannelijk zelfstandig naamwoord',
-        'language_item_id': 'Q7411',
+        'language_item_id': Dutch,
         'language_code': 'nl',
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
@@ -10997,7 +10997,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'dutch-noun-feminine': {
         '@attribution': {'users': ['MarcoSwart'], 'title': 'Wikidata:Wikidata Lexeme Forms/Dutch'},
         'label': 'Nederlands strikt vrouwelijk zelfstandig naamwoord',
-        'language_item_id': 'Q7411',
+        'language_item_id': Dutch,
         'language_code': 'nl',
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
@@ -11030,7 +11030,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'dutch-noun-fem2masc': {
         '@attribution': {'users': ['MarcoSwart'], 'title': 'Wikidata:Wikidata Lexeme Forms/Dutch'},
         'label': 'Nederlands v/m zelfstandig naamwoord',
-        'language_item_id': 'Q7411',
+        'language_item_id': Dutch,
         'language_code': 'nl',
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
@@ -11062,7 +11062,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'nynorsk-noun-feminine': {
         '@attribution': {'users': ['Njardarlogar'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Nynorsk'},
         'label': 'nynorsk hokjønnssubstantiv',
-        'language_item_id': 'Q25164',
+        'language_item_id': Nynorsk,
         'language_code': 'nn',
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
@@ -11094,7 +11094,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'nynorsk-noun-masculine': {
         '@attribution': {'users': ['Njardarlogar'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Nynorsk'},
         'label': 'nynorsk hankjønnssubstantiv',
-        'language_item_id': 'Q25164',
+        'language_item_id': Nynorsk,
         'language_code': 'nn',
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
@@ -11126,7 +11126,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'nynorsk-noun-neuter': {
         '@attribution': {'users': ['Njardarlogar'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Nynorsk'},
         'label': 'nynorsk inkjekjønnssubstantiv',
-        'language_item_id': 'Q25164',
+        'language_item_id': Nynorsk,
         'language_code': 'nn',
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
@@ -11158,7 +11158,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'nynorsk-noun-feminine-masculine': {
         '@attribution': {'users': ['Jon Harald Søby'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Nynorsk'},
         'label': 'nynorsk ho- og hankjønnssubstantiv',
-        'language_item_id': 'Q25164',
+        'language_item_id': Nynorsk,
         'language_code': 'nn',
         'lexical_category_item_id': 'Q1084',
         'forms': [
@@ -11209,7 +11209,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'nynorsk-noun-feminine-neuter': {
         '@attribution': {'users': ['Jon Harald Søby'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Nynorsk'},
         'label': 'nynorsk ho- og inkjekjønnssubstantiv',
-        'language_item_id': 'Q25164',
+        'language_item_id': Nynorsk,
         'language_code': 'nn',
         'lexical_category_item_id': 'Q1084',
         'forms': [
@@ -11260,7 +11260,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'nynorsk-noun-masculine-neuter': {
         '@attribution': {'users': ['Jon Harald Søby'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Nynorsk'},
         'label': 'nynorsk han- og inkjekjønnssubstantiv',
-        'language_item_id': 'Q25164',
+        'language_item_id': Nynorsk,
         'language_code': 'nn',
         'lexical_category_item_id': 'Q1084',
         'forms': [
@@ -11311,7 +11311,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'nynorsk-adjective': {
         '@attribution': {'users': ['Jon Harald Søby'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Nynorsk'},
         'label': 'nynorsk adjektiv',
-        'language_item_id': 'Q25164',
+        'language_item_id': Nynorsk,
         'language_code': 'nn',
         'lexical_category_item_id': 'Q34698',
         'forms': [
@@ -11359,7 +11359,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'nynorsk-verb': {
         '@attribution': {'users': ['Njardarlogar', 'Jon Harald Søby'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Nynorsk'},
         'label': 'nynorsk verb',
-        'language_item_id': 'Q25164',
+        'language_item_id': Nynorsk,
         'language_code': 'nn',
         'lexical_category_item_id': 'Q24905',
         'forms': [
@@ -11434,7 +11434,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'nynorsk-verb-passive': {
         '@attribution': {'users': ['Njardarlogar', 'Jon Harald Søby'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Nynorsk'},
         'label': 'nynorsk st-verb',
-        'language_item_id': 'Q25164',
+        'language_item_id': Nynorsk,
         'language_code': 'nn',
         'lexical_category_item_id': 'Q24905',
         'forms': [
@@ -11465,7 +11465,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'nynorsk-interjection': {
         '@attribution': {'users': ['Jon Harald Søby'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Nynorsk'},
         'label': 'nynorsk interjeksjon',
-        'language_item_id': 'Q25164',
+        'language_item_id': Nynorsk,
         'language_code': 'nn',
         'lexical_category_item_id': 'Q83034',
         'forms': [
@@ -11480,7 +11480,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'nynorsk-adverb': {
         '@attribution': {'users': ['Jon Harald Søby'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Nynorsk'},
         'label': 'nynorsk adverb',
-        'language_item_id': 'Q25164',
+        'language_item_id': Nynorsk,
         'language_code': 'nn',
         'lexical_category_item_id': 'Q380057',
         'forms': [
@@ -11495,7 +11495,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'odia-noun-human': {
         '@attribution': {'users': ['Psubhashish'], 'title': 'Wikidata:Wikidata Lexeme Forms/Odia'},
         'label': 'ବ୍ୟକ୍ତିବାଚକ ବିଶେଷ୍ୟ',
-        'language_item_id': 'Q33810',
+        'language_item_id': Odia,
         'language_code': 'or',
         'lexical_category_item_id': 'Q1084',
         'forms': [
@@ -11540,7 +11540,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'odia-noun-nonhuman': {
         '@attribution': {'users': ['Psubhashish'], 'title': 'Wikidata:Wikidata Lexeme Forms/Odia'},
         'label': 'ପ୍ରାଣୀବାଚକ ଓ ଅପ୍ରାଣୀବାଚକ ବିଶେଷ୍ୟ',
-        'language_item_id': 'Q33810',
+        'language_item_id': Odia,
         'language_code': 'or',
         'lexical_category_item_id': 'Q1084',
         'forms': [
@@ -11590,7 +11590,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'odia-adjective-nongendered': {
         '@attribution': {'users': ['Psubhashish'], 'title': 'Wikidata:Wikidata Lexeme Forms/Odia'},
         'label': 'ଲିଙ୍ଗବିହୀନ ବିଶେଷଣ',
-        'language_item_id': 'Q33810',
+        'language_item_id': Odia,
         'language_code': 'or',
         'lexical_category_item_id': 'Q34698',
         'forms': [
@@ -11615,7 +11615,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'odia-adjective-gendered': {
         '@attribution': {'users': ['Psubhashish'], 'title': 'Wikidata:Wikidata Lexeme Forms/Odia'},
         'label': 'ଲିଙ୍ଗସୂଚକ ବିଶେଷଣ',
-        'language_item_id': 'Q33810',
+        'language_item_id': Odia,
         'language_code': 'or',
         'lexical_category_item_id': 'Q34698',
         'forms': [
@@ -11635,7 +11635,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'odia-adverb': {
         '@attribution': {'users': ['Psubhashish'], 'title': 'Wikidata:Wikidata Lexeme Forms/Odia'},
         'label': 'ଓଡ଼ିଆ କ୍ରିୟା ବିଶେଷଣ',
-        'language_item_id': 'Q33810',
+        'language_item_id': Odia,
         'language_code': 'or',
         'lexical_category_item_id': 'Q380057',
         'forms': [
@@ -11650,7 +11650,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'polish-noun': {
         '@attribution': {'users': ['KaMan'], 'title': 'Wikidata:Wikidata Lexeme Forms/Polish'},
         'label': 'polski rzeczownik, prosta odmiana bez wariantów w żadnym z przypadków',
-        'language_item_id': 'Q809',
+        'language_item_id': Polish,
         'language_code': 'pl',
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
@@ -11731,7 +11731,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'polish-noun-masculine-personal-with-depreciative-forms': {
         '@attribution': {'users': ['KaMan'], 'title': 'Wikidata:Wikidata Lexeme Forms/Polish'},
         'label': 'polski rzeczownik, rodzaj męskoosobowy z formami ndepr. i depr. w M. i W. lm',
-        'language_item_id': 'Q809',
+        'language_item_id': Polish,
         'language_code': 'pl',
         'lexical_category_item_id': 'Q1084',
         'forms': [
@@ -11826,7 +11826,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'polish-noun-with-potential-plural-forms': {
         '@attribution': {'users': ['KaMan'], 'title': 'Wikidata:Wikidata Lexeme Forms/Polish'},
         'label': 'polski rzeczownik, potencjalna liczba mnoga',
-        'language_item_id': 'Q809',
+        'language_item_id': Polish,
         'language_code': 'pl',
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
@@ -11914,7 +11914,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'polish-adjective-positive': {
         '@attribution': {'users': ['Powerek38'], 'title': 'Wikidata:Wikidata Lexeme Forms/Polish'},
         'label': 'polski przymiotnik, stopień równy',
-        'language_item_id': 'Q809',
+        'language_item_id': Polish,
         'language_code': 'pl',
         'lexical_category_item_id': 'Q34698',
         'two_column_sections': False,
@@ -12140,7 +12140,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'portuguese-noun-biform': {
         '@attribution': {'users': ['EnaldoSS'], 'title': 'Wikidata:Wikidata Lexeme Forms/Portuguese'},
         'label': 'substantivo biforme em português',
-        'language_item_id': 'Q5146',
+        'language_item_id': Portuguese,
         'language_code': 'pt',
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
@@ -12221,7 +12221,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'portuguese-noun-masculine': {
         '@attribution': {'users': ['EnaldoSS'], 'title': 'Wikidata:Wikidata Lexeme Forms/Portuguese'},
         'label': 'substantivo masculino em português',
-        'language_item_id': 'Q5146',
+        'language_item_id': Portuguese,
         'language_code': 'pt',
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
@@ -12269,7 +12269,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'portuguese-noun-feminine': {
         '@attribution': {'users': ['EnaldoSS'], 'title': 'Wikidata:Wikidata Lexeme Forms/Portuguese'},
         'label': 'substantivo feminino em português',
-        'language_item_id': 'Q5146',
+        'language_item_id': Portuguese,
         'language_code': 'pt',
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
@@ -12330,7 +12330,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'portuguese-noun-uniform': {
         '@attribution': {'users': ['EnaldoSS'], 'title': 'Wikidata:Wikidata Lexeme Forms/Portuguese'},
         'label': 'substantivo uniforme em português',
-        'language_item_id': 'Q5146',
+        'language_item_id': Portuguese,
         'language_code': 'pt',
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
@@ -12352,7 +12352,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'portuguese-verb': {
         '@attribution': {'users': ['Carybe', 'EnaldoSS', 'Joalpe', 'Waldir'], 'title': 'Wikidata:Wikidata Lexeme Forms/Portuguese'},
         'label': 'verbo em português',
-        'language_item_id': 'Q5146',
+        'language_item_id': Portuguese,
         'language_code': 'pt',
         'lexical_category_item_id': 'Q24905',
         'two_column_sections': True,
@@ -12745,7 +12745,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'portuguese-adjective-biform': {
         '@attribution': {'users': ['EnaldoSS', 'Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/Portuguese'},
         'label': 'adjetivo biforme em português',
-        'language_item_id': 'Q5146',
+        'language_item_id': Portuguese,
         'language_code': 'pt',
         'lexical_category_item_id': 'Q34698',
         'two_column_sections': True,
@@ -12851,7 +12851,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'portuguese-adjective-uniform': {
         '@attribution': {'users': ['EnaldoSS', 'Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/Portuguese'},
         'label': 'adjetivo uniforme em português',
-        'language_item_id': 'Q5146',
+        'language_item_id': Portuguese,
         'language_code': 'pt',
         'lexical_category_item_id': 'Q34698',
         'two_column_sections': True,
@@ -12873,7 +12873,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'portuguese-adverb-modal': {
         '@attribution': {'users': ['EnaldoSS'], 'title': 'Wikidata:Wikidata Lexeme Forms/Portuguese'},
         'label': 'advérbio de modo em português',
-        'language_item_id': 'Q5146',
+        'language_item_id': Portuguese,
         'language_code': 'pt',
         'lexical_category_item_id': 'Q380057',
         'forms': [
@@ -12896,7 +12896,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'portuguese-phrase-nominal': {
         '@attribution': {'users': ['EnaldoSS'], 'title': 'Wikidata:Wikidata Lexeme Forms/Portuguese'},
         'label': 'frase nominal em português',
-        'language_item_id': 'Q5146',
+        'language_item_id': Portuguese,
         'language_code': 'pt',
         'lexical_category_item_id': 'Q1401131',
         'forms': [
@@ -12911,7 +12911,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'portuguese-phrase-verbal': {
         '@attribution': {'users': ['EnaldoSS'], 'title': 'Wikidata:Wikidata Lexeme Forms/Portuguese'},
         'label': 'frase verbal em português',
-        'language_item_id': 'Q5146',
+        'language_item_id': Portuguese,
         'language_code': 'pt',
         'lexical_category_item_id': 'Q1778442',
         'forms': [
@@ -12926,7 +12926,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'portuguese-phrase-adjectival': {
         '@attribution': {'users': ['EnaldoSS'], 'title': 'Wikidata:Wikidata Lexeme Forms/Portuguese'},
         'label': 'frase adjetival em português',
-        'language_item_id': 'Q5146',
+        'language_item_id': Portuguese,
         'language_code': 'pt',
         'lexical_category_item_id': 'Q357760',
         'forms': [
@@ -12941,7 +12941,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'portuguese-phrase-adverbial': {
         '@attribution': {'users': ['EnaldoSS'], 'title': 'Wikidata:Wikidata Lexeme Forms/Portuguese'},
         'label': 'frase adverbial em português',
-        'language_item_id': 'Q5146',
+        'language_item_id': Portuguese,
         'language_code': 'pt',
         'lexical_category_item_id': 'Q3734650',
         'forms': [
@@ -12956,7 +12956,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'portuguese-proverb': {
         '@attribution': {'users': ['EnaldoSS'], 'title': 'Wikidata:Wikidata Lexeme Forms/Portuguese'},
         'label': 'provérbio em português',
-        'language_item_id': 'Q5146',
+        'language_item_id': Portuguese,
         'language_code': 'pt',
         'lexical_category_item_id': 'Q35102',
         'forms': [
@@ -12971,7 +12971,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'russian-noun-masculine': {
         '@attribution': {'users': ['Infovarius'], 'title': 'Wikidata:Wikidata Lexeme Forms/Russian'},
         'label': 'русское существительное, мужской род',
-        'language_item_id': 'Q7737',
+        'language_item_id': Russian,
         'language_code': 'ru',
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
@@ -13043,7 +13043,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'russian-noun-feminine': {
         '@attribution': {'users': ['Infovarius'], 'title': 'Wikidata:Wikidata Lexeme Forms/Russian'},
         'label': 'русское существительное, женский род',
-        'language_item_id': 'Q7737',
+        'language_item_id': Russian,
         'language_code': 'ru',
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
@@ -13115,7 +13115,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'russian-noun-neuter': {
         '@attribution': {'users': ['Infovarius'], 'title': 'Wikidata:Wikidata Lexeme Forms/Russian'},
         'label': 'русское существительное, средний род',
-        'language_item_id': 'Q7737',
+        'language_item_id': Russian,
         'language_code': 'ru',
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
@@ -13187,7 +13187,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'russian-noun-pluraletantum': {
         '@attribution': {'users': ['Infovarius'], 'title': 'Wikidata:Wikidata Lexeme Forms/Russian'},
         'label': 'имя существительное (Pluralia tantum, без рода)',
-        'language_item_id': 'Q7737',
+        'language_item_id': Russian,
         'language_code': 'ru',
         'lexical_category_item_id': 'Q1084',
         'forms': [
@@ -13234,7 +13234,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'russian-adjective': {
         '@attribution': {'users': ['Infovarius'], 'title': 'Wikidata:Wikidata Lexeme Forms/Russian'},
         'label': 'русское прилагательное',
-        'language_item_id': 'Q7737',
+        'language_item_id': Russian,
         'language_code': 'ru',
         'lexical_category_item_id': 'Q34698',
         'forms': [
@@ -13374,7 +13374,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'swedish-noun-common': {
         '@attribution': {'users': ['Vesihiisi'], 'title': 'Wikidata:Wikidata Lexeme Forms/Swedish'},
         'label': 'svenskt substantiv (utrum)',
-        'language_item_id': 'Q9027',
+        'language_item_id': Swedish,
         'language_code': 'sv',
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
@@ -13427,7 +13427,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'swedish-noun-neuter': {
         '@attribution': {'users': ['Vesihiisi'], 'title': 'Wikidata:Wikidata Lexeme Forms/Swedish'},
         'label': 'svenskt substantiv (neutrum)',
-        'language_item_id': 'Q9027',
+        'language_item_id': Swedish,
         'language_code': 'sv',
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
@@ -13480,7 +13480,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'swedish-noun-proper': {
         '@attribution': {'users': ['LA2'], 'title': 'Wikidata:Wikidata Lexeme Forms/Swedish'},
         'label': 'svenskt egennamn',
-        'language_item_id': 'Q9027',
+        'language_item_id': Swedish,
         'language_code': 'sv',
         'lexical_category_item_id': 'Q147276',
         'forms': [
@@ -13501,7 +13501,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'swedish-verb': {
         '@attribution': {'users': ['Vesihiisi'], 'title': 'Wikidata:Wikidata Lexeme Forms/Swedish'},
         'label': 'svenskt verb',
-        'language_item_id': 'Q9027',
+        'language_item_id': Swedish,
         'language_code': 'sv',
         'lexical_category_item_id': 'Q24905',
         'forms': [
@@ -13557,7 +13557,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'swedish-adjective-absolute': {
         '@attribution': {'users': ['Vesihiisi'], 'title': 'Wikidata:Wikidata Lexeme Forms/Swedish'},
         'label': 'svenskt adjektiv (utan komparativ)',
-        'language_item_id': 'Q9027',
+        'language_item_id': Swedish,
         'language_code': 'sv',
         'lexical_category_item_id': 'Q34698',
         'forms': [
@@ -13598,7 +13598,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'swedish-adjective': {
         '@attribution': {'users': ['Belteshassar', 'Ainali'], 'title': 'Wikidata:Wikidata Lexeme Forms/Swedish'},
         'label': 'svenskt adjektiv (med komparativ)',
-        'language_item_id': 'Q9027',
+        'language_item_id': Swedish,
         'language_code': 'sv',
         'lexical_category_item_id': 'Q34698',
         'two_column_sections': False,
@@ -13661,7 +13661,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'ukrainian-noun-masculine': {
         '@attribution': {'users': ['Tohaomg'], 'title': 'Wikidata:Wikidata Lexeme Forms/Ukrainian'},
         'label': 'український іменник, чоловічий рід',
-        'language_item_id': 'Q8798',
+        'language_item_id': Ukrainian,
         'language_code': 'uk',
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
@@ -13743,7 +13743,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'ukrainian-noun-feminine': {
         '@attribution': {'users': ['Tohaomg'], 'title': 'Wikidata:Wikidata Lexeme Forms/Ukrainian'},
         'label': 'український іменник, жіночий рід',
-        'language_item_id': 'Q8798',
+        'language_item_id': Ukrainian,
         'language_code': 'uk',
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
@@ -13825,7 +13825,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'ukrainian-noun-neuter': {
         '@attribution': {'users': ['Tohaomg'], 'title': 'Wikidata:Wikidata Lexeme Forms/Ukrainian'},
         'label': 'український іменник, середній рід',
-        'language_item_id': 'Q8798',
+        'language_item_id': Ukrainian,
         'language_code': 'uk',
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
@@ -13907,7 +13907,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'ukrainian-noun-pluraletantum': {
         '@attribution': {'users': ['Tohaomg', 'Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/Ukrainian'},
         'label': 'український іменник, тільки множина (pluralia tantum)',
-        'language_item_id': 'Q8798',
+        'language_item_id': Ukrainian,
         'language_code': 'uk',
         'lexical_category_item_id': 'Q1084',
         'forms': [
@@ -13962,7 +13962,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'yoruba-noun': {
         '@attribution': {'users': ['T Cells'], 'title': 'Wikidata:Wikidata Lexeme Forms/Yoruba'},
         'label': 'Orúkọ Yorùbá',
-        'language_item_id': 'Q34311',
+        'language_item_id': Yoruba,
         'language_code': 'yo',
         'lexical_category_item_id': 'Q1084',
         'forms': [
@@ -13977,7 +13977,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'mandarin-noun': {
         '@attribution': {'users': ['白布飘扬'], 'title': 'Wikidata:Wikidata Lexeme Forms/Mandarin'},
         'label': '漢語名詞',
-        'language_item_id': 'Q727694',
+        'language_item_id': Standard_Mandarin,
         'language_code': 'zh',
         'lexical_category_item_id': 'Q1084',
         'forms': [
@@ -13992,7 +13992,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'mandarin-pronoun': {
         '@attribution': {'users': ['白布飘扬'], 'title': 'Wikidata:Wikidata Lexeme Forms/Mandarin'},
         'label': '漢語代詞',
-        'language_item_id': 'Q727694',
+        'language_item_id': Standard_Mandarin,
         'language_code': 'zh',
         'lexical_category_item_id': 'Q36224',
         'forms': [
@@ -14007,7 +14007,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'mandarin-verb': {
         '@attribution': {'users': ['白布飘扬'], 'title': 'Wikidata:Wikidata Lexeme Forms/Mandarin'},
         'label': '漢語動詞',
-        'language_item_id': 'Q727694',
+        'language_item_id': Standard_Mandarin,
         'language_code': 'zh',
         'lexical_category_item_id': 'Q24905',
         'forms': [
@@ -14022,7 +14022,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'mandarin-adjective': {
         '@attribution': {'users': ['白布飘扬'], 'title': 'Wikidata:Wikidata Lexeme Forms/Mandarin'},
         'label': '漢語形容詞',
-        'language_item_id': 'Q727694',
+        'language_item_id': Standard_Mandarin,
         'language_code': 'zh',
         'lexical_category_item_id': 'Q34698',
         'forms': [
@@ -14037,7 +14037,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'mandarin-adjective-non-predicative': {
         '@attribution': {'users': ['白布飘扬'], 'title': 'Wikidata:Wikidata Lexeme Forms/Mandarin'},
         'label': '漢語區別詞',
-        'language_item_id': 'Q727694',
+        'language_item_id': Standard_Mandarin,
         'language_code': 'zh',
         'lexical_category_item_id': 'Q34698',
         'forms': [
@@ -14053,7 +14053,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'mandarin-adverb': {
         '@attribution': {'users': ['白布飘扬'], 'title': 'Wikidata:Wikidata Lexeme Forms/Mandarin'},
         'label': '漢語副詞',
-        'language_item_id': 'Q727694',
+        'language_item_id': Standard_Mandarin,
         'language_code': 'zh',
         'lexical_category_item_id': 'Q380057',
         'forms': [
@@ -14068,7 +14068,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'mandarin-interjection': {
         '@attribution': {'users': ['白布飘扬'], 'title': 'Wikidata:Wikidata Lexeme Forms/Mandarin'},
         'label': '漢語感歎詞',
-        'language_item_id': 'Q727694',
+        'language_item_id': Standard_Mandarin,
         'language_code': 'zh',
         'lexical_category_item_id': 'Q83034',
         'forms': [
@@ -14083,7 +14083,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'mandarin-preposition': {
         '@attribution': {'users': ['白布飘扬'], 'title': 'Wikidata:Wikidata Lexeme Forms/Mandarin'},
         'label': '漢語介詞',
-        'language_item_id': 'Q727694',
+        'language_item_id': Standard_Mandarin,
         'language_code': 'zh',
         'lexical_category_item_id': 'Q4833830',
         'forms': [
@@ -14098,7 +14098,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'mandarin-classifier': {
         '@attribution': {'users': ['白布飘扬'], 'title': 'Wikidata:Wikidata Lexeme Forms/Mandarin'},
         'label': '漢語量詞',
-        'language_item_id': 'Q727694',
+        'language_item_id': Standard_Mandarin,
         'language_code': 'zh',
         'lexical_category_item_id': 'Q63153',
         'forms': [
@@ -14114,7 +14114,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'mandarin-numeral': {
         '@attribution': {'users': ['白布飘扬'], 'title': 'Wikidata:Wikidata Lexeme Forms/Mandarin'},
         'label': '漢語數詞',
-        'language_item_id': 'Q727694',
+        'language_item_id': Standard_Mandarin,
         'language_code': 'zh',
         'lexical_category_item_id': 'Q63116',
         'forms': [
@@ -14129,7 +14129,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
     'mandarin-particle': {
         '@attribution': {'users': ['白布飘扬'], 'title': 'Wikidata:Wikidata Lexeme Forms/Mandarin'},
         'label': '漢語助詞',
-        'language_item_id': 'Q727694',
+        'language_item_id': Standard_Mandarin,
         'language_code': 'zh',
         'lexical_category_item_id': 'Q184943',
         'forms': [
