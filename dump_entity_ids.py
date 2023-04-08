@@ -25,7 +25,7 @@ for template in templates.templates_without_redirects.values():
 
 entity_ids = sorted(all_entity_ids, key=lambda id: int(id[1:]))
 without_label = set()
-by_label = {}
+by_label: dict[str, set[str]] = {}
 
 session = mwapi.Session('https://www.wikidata.org', user_agent='lexeme-forms dump_entity_ids (https://lexeme-forms.toolforge.org/; mail@lucaswerkmeister.de)')
 while entity_ids:
@@ -43,16 +43,16 @@ while entity_ids:
             by_label.setdefault(label, set()).add(entity_id)
 
 ambiguous = {}
-for label, entity_ids in by_label.items():
-    if len(entity_ids) == 1:
+for label, entity_ids_of_label in by_label.items():
+    if len(entity_ids_of_label) == 1:
         variable_name = label\
             .replace(' ', '_')\
             .replace('/', '_')\
             .replace('-', '_')
-        (entity_id, ) = entity_ids
+        (entity_id, ) = entity_ids_of_label
         print(f'{variable_name} = {entity_id!r}')
     else:
-        ambiguous[label] = entity_ids
+        ambiguous[label] = entity_ids_of_label
 
 if without_label:
     print(f'Entity IDs without label: {without_label}', file=sys.stderr)

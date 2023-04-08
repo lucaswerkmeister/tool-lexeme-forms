@@ -5376,7 +5376,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
             },
         ],
     },
-    
+
     'french-verb': {
         '@attribution': {'users': ['Envlh', 'Djiboun', 'VIGNERON'], 'title': 'Wikidata:Wikidata Lexeme Forms/French'},
         'label': 'verbe en français',
