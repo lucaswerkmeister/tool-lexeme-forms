@@ -7809,7 +7809,7 @@ templates: Dict[str, Union[str, list[str], Template]] = {
         'forms': [
             {
                 'label': 'اسمِ مصدر، فاعلی',
-                'example': 'مجھے [پھَیلانا] پسند ہے۔',
+                'example': 'مجھے [پھَیلنا] پسند ہے۔',
                 'grammatical_features_item_ids': ['Q113330960', 'Q113330736', 'Q1923028', 'Q1751855'],
                 'grammatical_features_item_ids_optional': set(['Q113330960', 'Q113330736']),
                 'statements': statements('P7486', None),
