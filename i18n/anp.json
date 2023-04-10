@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Proabscorp!"
+		]
+	},
+	"create": "बनाबौ",
+	"advanced": "उन्नत स्तर",
+	"lexeme-id": "शब्दिम ID",
+	"bulk-link": "थोक बला मोड",
+	"bulk-format-help": "प्रारूपन मँ सहायता",
+	"edit-link": "संपादन करौ",
+	"title-create": "$1 (बनाबौ)",
+	"title-advanced": "$1 (उन्नत)",
+	"title-bulk": "$1 (थोक)",
+	"title-edit": "$1 (सम्पादन)"
+}
