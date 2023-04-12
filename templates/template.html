@@ -18,7 +18,7 @@
 {% endblock %}
 {% block main_tag_attributes %}{{ super() }} lang="{{ g.interface_language_code | lang_int2html }}" dir="{{ g.interface_language_code | text_direction }}" data-template='{{ template | tojson }}'{% endblock main_tag_attributes %}
 {% block main %}
-  <h1>{{ template.label }}</h1>
+  <h1 class="h2">{{ template.label }}</h1>
   {% if readonly %}
   <div class="alert alert-warning">
     {{ message_with_kwargs( 'login_hint', url=url_for( 'login' ) ) }}
