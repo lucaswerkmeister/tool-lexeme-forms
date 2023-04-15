@@ -36,3 +36,21 @@ def test_set_json_support():
         expected = flask.jsonify(['x'])
         actual = flask.jsonify(set(['x']))
     assert expected.get_data(as_text=True) == actual.get_data(as_text=True)
+
+
+def test_set_json_support_sorted_ints():
+    app = flask.Flask(__name__)
+    app.json = flask_utils.SetJSONProvider(app)
+    with app.test_request_context('/'):
+        expected = flask.jsonify([1, 2, 3, 5, 8])
+        actual = flask.jsonify(set([8, 1, 5, 1, 3, 2]))
+    assert expected.get_data(as_text=True) == actual.get_data(as_text=True)
+
+
+def test_set_json_support_sorted_strs():
+    app = flask.Flask(__name__)
+    app.json = flask_utils.SetJSONProvider(app)
+    with app.test_request_context('/'):
+        expected = flask.jsonify(['a', 'bc', 'def'])
+        actual = flask.jsonify(set(['def', 'a', 'bc']))
+    assert expected.get_data(as_text=True) == actual.get_data(as_text=True)
