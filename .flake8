@@ -10,5 +10,10 @@ ignore =
     E305
     # line too long
     E501
+    # various errors about the * imports
+    # that we use for entity ID variables
+    F401
+    F403
+    F405
     # line break after binary operator
     W504
