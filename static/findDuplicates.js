@@ -33,15 +33,29 @@ document.addEventListener('DOMContentLoaded', function() {
     /**
      * Get the lemma for the lexeme from the given form data.
      *
-     * The lemma is the first nonempty form representation variant.
-     * (Usually, the first representation variant of the first form,
-     * but in advanced mode, any form may be omitted, including the first one,
-     * which can be useful for e.g. pluralia tantum.)
+     * The lemma is the first nonempty form representation variant
+     * of a form that has 'lemma': true set,
+     * or else the first nonempty form representation variant of any form.
+     * (Supporting other froms to become the lemma is neeedd for advanced mode,
+     * where any form may be omitted, which is useful for e.g. pluralia tantum.)
      *
-     * This logic is duplicated in app.py::get_lemma –
-     * keep the two in sync!
+     * This logic is duplicated in app.py::get_lemma and app.py::update_lexeme() –
+     * keep the different versions in sync!
      */
     function getLemma(formRepresentationInputs) {
+        for (let i = 0; i < formRepresentationInputs.length; i++) {
+            const form = template.forms[i];
+            if (form.lemma !== true) {
+                continue;
+            }
+            const formRepresentationInput = formRepresentationInputs[i];
+            for (const formRepresentationVariant of formRepresentationInput.value.split('/')) {
+                if (formRepresentationVariant !== '') {
+                    return formRepresentationVariant;
+                }
+            }
+        }
+
         for (const formRepresentationInput of formRepresentationInputs) {
             for (const formRepresentationVariant of formRepresentationInput.value.split('/')) {
                 if (formRepresentationVariant !== '') {
@@ -49,6 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         }
+
         return null;
     }
 

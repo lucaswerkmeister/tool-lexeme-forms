@@ -710,26 +710,43 @@ def find_duplicates(
 ) -> list[Duplicate]:
     wiki = 'test' if 'test' in template else 'www'
     language_code = template['language_code']
-    lemma = get_lemma(form_data)
+    lemma = get_lemma(template, form_data)
     if lemma:
         return get_duplicates(wiki, language_code, lemma)
     else:
         flask.abort(400)
 
-def get_lemma(form_data: werkzeug.datastructures.MultiDict) -> Optional[str]:
+def get_lemma(
+        template: Template,
+        form_data: werkzeug.datastructures.MultiDict,
+) -> Optional[str]:
     """Get the lemma for the lexeme from the given form data.
 
-    The lemma is the first nonempty form representation variant.
-    (Usually, the first representation variant of the first form,
-    but in advanced mode, any form may be omitted, including the first one,
-    which can be useful for e.g. pluralia tantum.)
+    The lemma is the first nonempty form representation variant
+    of a form that has 'lemma': True set,
+    or else the first nonempty form representation variant of any form.
+    (Supporting other forms to become the lemma is needed for advanced mode,
+    where any form may be omitted, which is useful for e.g. pluralia tantum.)
 
-    This logic is duplicated in findDuplicates.js::getLemma –
-    keep the two in sync!"""
-    for form_representation in form_data.getlist('form_representation'):
+    This logic is duplicated in findDuplicates.js::getLemma
+    and in update_lexeme() (lemma_template_form) –
+    keep the different versions in sync!"""
+
+    forms = template['forms']
+    form_representations = form_data.getlist('form_representation')
+
+    for form, form_representation in zip(forms, form_representations):
+        if not form.get('lemma', False):
+            continue
         for form_representation_variant in form_representation.split('/'):
             if form_representation_variant != '':
                 return form_representation_variant
+
+    for form_representation in form_representations:
+        for form_representation_variant in form_representation.split('/'):
+            if form_representation_variant != '':
+                return form_representation_variant
+
     return None
 
 def build_lemmas(
@@ -740,7 +757,7 @@ def build_lemmas(
 
     The value returned by this function can contain at most one lemma,
     but its format can be used in contexts that also handle several lemmas."""
-    lemma = get_lemma(form_data)
+    lemma = get_lemma(template, form_data)
     if lemma is None:
         return None
     lang = template['language_code']
@@ -1041,7 +1058,7 @@ def update_lexeme(
             assert form_data_representation_variant, 'Representation cannot be empty'
             lexeme_form = build_form(template_form, representation_language_code, form_data_representation_variant)
             lexeme_data['forms'].append(lexeme_form)
-            template_form.setdefault('lexeme_forms', []).append(lexeme_form)  # so it can be found as first_form below
+            template_form.setdefault('lexeme_forms', []).append(lexeme_form)  # so it can be found as lemma_form below
         for lexeme_form in lexeme_forms:
             lexeme_form = find_form(lexeme_data, lexeme_form['id'])
             if representation_language_code in lexeme_form['representations']:
@@ -1054,16 +1071,22 @@ def update_lexeme(
     for property_id, statements in (missing_statements or {}).items():
         lexeme_data.setdefault('claims', {}).setdefault(property_id, []).extend(statements)
 
-    first_form = next(iter(cast(MatchedTemplateForm, template['forms'][0]).get('lexeme_forms', [])), None)
-    if first_form:
-        if first_form_id := first_form.get('id'):
-            first_form = find_form(lexeme_data, first_form_id)  # find edited version
-            assert first_form is not None
+    # same logic as get_lemma() but based on a different data representation
+    lemma_template_form = template['forms'][0]
+    for template_form in template['forms']:
+        if template_form.get('lemma', False):
+            lemma_template_form = template_form
+            break
+    lemma_form = next(iter(cast(MatchedTemplateForm, lemma_template_form).get('lexeme_forms', [])), None)
+    if lemma_form:
+        if lemma_form_id := lemma_form.get('id'):
+            lemma_form = find_form(lexeme_data, lemma_form_id)  # find edited version
+            assert lemma_form is not None
         else:
-            # it’s a new form, first_form is already the edited version
+            # it’s a new form, lemma_form is already the edited version
             pass
-        if representation_language_code in first_form['representations']:
-            lexeme_data['lemmas'][representation_language_code] = first_form['representations'][representation_language_code]
+        if representation_language_code in lemma_form['representations']:
+            lexeme_data['lemmas'][representation_language_code] = lemma_form['representations'][representation_language_code]
         else:
             lexeme_data['lemmas'].pop(representation_language_code, None)
 

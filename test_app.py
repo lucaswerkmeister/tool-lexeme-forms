@@ -191,22 +191,67 @@ def test_if_has_duplicates_redirect_submitted_form_representations(monkeypatch):
     ) == 'rendered duplicates'
 
 def test_get_lemma_first_form_representation():
+    template = templates_without_redirects['english-noun']
     form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', 'noun'), ('form_representation', 'nouns')])
-    lemma = lexeme_forms.get_lemma(form_data)
+    lemma = lexeme_forms.get_lemma(template, form_data)
     assert lemma == 'noun'
 
 def test_get_lemma_second_form_representation():
+    template = templates_without_redirects['english-noun']
     form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', ''), ('form_representation', 'nouns')])
-    lemma = lexeme_forms.get_lemma(form_data)
+    lemma = lexeme_forms.get_lemma(template, form_data)
     assert lemma == 'nouns'
 
 def test_get_lemma_no_form_representation():
+    template = templates_without_redirects['english-noun']
     form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', ''), ('form_representation', '')])
-    lemma = lexeme_forms.get_lemma(form_data)
+    lemma = lexeme_forms.get_lemma(template, form_data)
     assert lemma is None
 
+def test_get_lemma_first_marked_form_representation():
+    template = {'forms': [
+        {},
+        {'lemma': True},
+        {'lemma': True},
+    ]}
+    form_data = werkzeug.datastructures.ImmutableMultiDict([
+        ('form_representation', 'a'),
+        ('form_representation', 'b'),
+        ('form_representation', 'c'),
+    ])
+    lemma = lexeme_forms.get_lemma(template, form_data)
+    assert lemma == 'b'
+
+def test_get_lemma_second_marked_form_representation():
+    template = {'forms': [
+        {},
+        {'lemma': True},
+        {'lemma': True},
+    ]}
+    form_data = werkzeug.datastructures.ImmutableMultiDict([
+        ('form_representation', 'a'),
+        ('form_representation', ''),
+        ('form_representation', 'c'),
+    ])
+    lemma = lexeme_forms.get_lemma(template, form_data)
+    assert lemma == 'c'
+
+def test_get_lemma_no_marked_form_representation():
+    template = {'forms': [
+        {},
+        {'lemma': True},
+        {'lemma': True},
+    ]}
+    form_data = werkzeug.datastructures.ImmutableMultiDict([
+        ('form_representation', 'a'),
+        ('form_representation', ''),
+        ('form_representation', ''),
+    ])
+    lemma = lexeme_forms.get_lemma(template, form_data)
+    assert lemma == 'a'
+
 def test_build_lemmas():
-    template = {'language_code': 'en'}
+    template = templates_without_redirects['english-noun']
     form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', 'noun')])
     lemmas = lexeme_forms.build_lemmas(template, form_data)
     assert lemmas == {'en': {'language': 'en', 'value': 'noun'}}
@@ -940,6 +985,25 @@ def test_update_lexeme_edit_lemma_new_form():
         'lemmas': {'en': {'language': 'en', 'value': 'fuchsia'}},
         'forms': [
             {'add': '', 'claims': {}, 'representations': {'en': {'language': 'en', 'value': 'fuchsia'}}, 'grammaticalFeatures': ['Q3482678']},
+        ],
+        'base_revision_id': 123,
+    }
+
+def test_update_lexeme_edit_lemma_nonfirst_form():
+    lexeme_data = {
+        'lemmas': {'en': {'language': 'en', 'value': 'roofs'}},
+        'forms': [],
+    }
+    template = copy.deepcopy(templates_without_redirects['english-noun'])
+    template['forms'][1]['lemma'] = True
+    template['lexeme_revision'] = 123
+    form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', 'roof'), ('form_representation', 'rooves')])
+    updated_lexeme_data = lexeme_forms.update_lexeme(lexeme_data, template, form_data, 'en')
+    assert updated_lexeme_data == {
+        'lemmas': {'en': {'language': 'en', 'value': 'rooves'}},
+        'forms': [
+            {'add': '', 'claims': {}, 'representations': {'en': {'language': 'en', 'value': 'roof'}}, 'grammaticalFeatures': ['Q110786']},
+            {'add': '', 'claims': {}, 'representations': {'en': {'language': 'en', 'value': 'rooves'}}, 'grammaticalFeatures': ['Q146786']},
         ],
         'base_revision_id': 123,
     }

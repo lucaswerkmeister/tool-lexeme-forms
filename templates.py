@@ -7,6 +7,7 @@ from wikibase_types import Snak, Statement, Statements
 
 class TemplateForm(TypedDict):
     section_break: NotRequired[bool]
+    lemma: NotRequired[bool]
     label: str
     example: str
     grammatical_features_item_ids: List[str]
