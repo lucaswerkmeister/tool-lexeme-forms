@@ -10502,7 +10502,7 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
             },
             {
                 'label': 'ഏകവചനം ആധാരിക',
-                'example': '[പുഴയിൽ] കുളിച്ചു ',
+                'example': '[പുഴയിൽ] കുളിച്ചു',
                 'grammatical_features_item_ids': [singular, locative_case],
             },
             {
@@ -10532,7 +10532,7 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
                 'grammatical_features_item_ids': [plural, nominative_case],
             },
             {
-                'label': 'ബഹുവചനം പ്രതിഗ്രാഹിക ',
+                'label': 'ബഹുവചനം പ്രതിഗ്രാഹിക',
                 'example': 'ഞാൻ [പശുക്കളെ] മെയ്ച്ചു',
                 'grammatical_features_item_ids': [plural, accusative_case],
             },
@@ -12251,7 +12251,7 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
             },
             {
                 'label': 'واحد، مفعولی',
-                'example': ' میری [اکھّ] نوں ویکھو۔',
+                'example': 'میری [اکھّ] نوں ویکھو۔',
                 'grammatical_features_item_ids': [feminine, oblique_case, singular],
             },
             {

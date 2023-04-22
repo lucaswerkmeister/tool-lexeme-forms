@@ -279,6 +279,22 @@ def test_sections_declared(template_name):
         assert template.get('two_column_sections', True)
 
 
+@pytest.mark.parametrize('template_name', templates.templates_without_redirects.keys())
+def test_labels_examples_trimmed(template_name):
+    """Check that labels and examples have no surrounding whitespace.
+
+    These are usually in a <dd> element on the wiki page,
+    and Firefox prepends them with four spaces when copying them.
+    Those spaces should thus be removed during the transcription process
+    (usually with a blanket replace `'    ` → `'`).
+    """
+    template = templates.templates_without_redirects[template_name]
+    assert template['label'].strip() == template['label']
+    for form in template['forms']:
+        assert form['label'].strip() == form['label']
+        assert form['example'].strip() == form['example']
+
+
 @pytest.mark.parametrize('template_name', [
     template_name
     for template_name, template in templates.templates.items()
