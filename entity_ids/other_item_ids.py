@@ -3,6 +3,7 @@
 ezāfe = 'Q18794'
 imperative = 'Q22716'
 diminutive = 'Q108709'
+dual = 'Q110022'
 singular = 'Q110786'
 nominative_case = 'Q131105'
 plurale_tantum = 'Q138246'
