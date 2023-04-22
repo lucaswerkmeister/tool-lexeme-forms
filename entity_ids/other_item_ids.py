@@ -141,6 +141,8 @@ comparable_adjective = 'Q106394384'
 non_predicative_adjective = 'Q110106987'
 imperfect_participle = 'Q112785242'
 declinable_adjective = 'Q113064567'
+lāl_surakh_adjective = 'Q113064712'
+kāḷā_adjective = 'Q113064965'
 suggestive = 'Q113115684'
 perfect_participle = 'Q113115936'
 conjunctive_participle = 'Q113133303'
@@ -160,6 +162,8 @@ lāl_adjective = 'Q116767029'
 isam_ē_tafazīl = 'Q116767037'
 transitive = 'Q116946936'
 intransitive = 'Q116946937'
+comparable_adverb = 'Q117204153'
+lamera_adjective = 'Q117229347'
 
 def _main():
     for var, val in globals().items():
