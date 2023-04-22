@@ -12232,6 +12232,77 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
         'statements': statements(grammatical_gender, masculine),
     },
 
+    'punjabi-noun-feminine-shah': {
+        '@attribution': {'users': ['Satdeep Gill', 'عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Punjabi'},
+        'label': '    پنجابی ناؤں مونث',
+        'language': language_Shahmukhi,
+        'lexical_category_item_id': noun,
+        'two_column_sections': True,
+        'forms': [
+            {
+                'label': '    واحد، فاعلی',
+                'example': '    ایہہ [اکھّ] سوہݨی اے۔',
+                'grammatical_features_item_ids': [feminine, direct_case, singular],
+            },
+            {
+                'label': '    جمع، فاعلی',
+                'example': '    ایہہ [اکھّاں] سوہݨیاں ہن۔',
+                'grammatical_features_item_ids': [feminine, direct_case, plural],
+            },
+            {
+                'label': '    واحد، مفعولی',
+                'example': '     میری [اکھّ] نوں ویکھو۔',
+                'grammatical_features_item_ids': [feminine, oblique_case, singular],
+            },
+            {
+                'label': '    جمع، مفعولی',
+                'example': '    میریاں [اکھّاں] نوں ویکھو۔',
+                'grammatical_features_item_ids': [feminine, oblique_case, plural],
+            },
+            {
+                'section_break': True,
+                'label': '    واحد، اپادان',
+                'example': '    اوہ [اکھّوں] نظرا جاوݨ۔؜',
+                'grammatical_features_item_ids': [feminine, ablative_case, singular],
+                'optional': True,
+            },
+            {
+                'section_break': True,
+                'label': '    واحد، پکارن',
+                'example': '    وے او [اکھّے]!؜',
+                'grammatical_features_item_ids': [feminine, vocative_case, singular],
+                'optional': True,
+            },
+            {
+                'label': '    جمع، پکارن',
+                'example': '    ہے حسین [اکھّو]!؜',
+                'grammatical_features_item_ids': [feminine, vocative_case, plural],
+                'optional': True,
+            },
+            {
+                'section_break': True,
+                'label': '    واحد، وسنیک',
+                'example': '    اوہ [اکھِّیں] جاوݨ۔؜',
+                'grammatical_features_item_ids': [feminine, locative_case, singular],
+                'optional': True,
+            },
+            {
+                'label': '    جمع، وسنیک',
+                'example': '    اوہ [اکھِّیں] گھٹا پاۓگا۔؜',
+                'grammatical_features_item_ids': [feminine, locative_case, plural],
+                'optional': True,
+            },
+            {
+                'section_break': True,
+                'label': '    دو وچن، کرن',
+                'example': '    اوہ [اکھِّیں] دیکھیا سی۔؜',
+                'grammatical_features_item_ids': [feminine, instrumental_case, dual],
+                'optional': True,
+            },
+        ],
+        'statements': statements(grammatical_gender, feminine),
+    },
+
     'punjabi-noun-masculine-guru': {
         '@attribution': {'users': ['Satdeep Gill', 'عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Punjabi'},
         'label': 'ਪੰਜਾਬੀ ਨਾਂਵ ਪੁਲਿੰਗ',
@@ -12301,6 +12372,77 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
             },
         ],
         'statements': statements(grammatical_gender, masculine),
+    },
+
+    'punjabi-noun-feminine-guru': {
+        '@attribution': {'users': ['Satdeep Gill', 'عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Punjabi'},
+        'label': '    ਪੰਜਾਬੀ ਨਾਂਵ ਇਸਤਰੀ ਲਿੰਗ',
+        'language': language_Gurmukhi,
+        'lexical_category_item_id': noun,
+        'two_column_sections': True,
+        'forms': [
+            {
+                'label': '    ਇੱਕ ਵਚਨ, ਫਾਇਲੀ',
+                'example': '    ਇਹ [ਅੱਖ] ਸੋਹਣੀ ਏ।',
+                'grammatical_features_item_ids': [feminine, direct_case, singular],
+            },
+            {
+                'label': '    ਬਹੁ ਵਚਨ, ਫਾਇਲੀ',
+                'example': '    ਇਹ [ਅੱਖੀਆਂ] ਸੋਹਣੀਆਂ ਹਨ।',
+                'grammatical_features_item_ids': [feminine, direct_case, plural],
+            },
+            {
+                'label': '    ਇੱਕ ਵਚਨ, ਮਫਊਲੀ',
+                'example': '    ਮੇਰੀ [ਅੱਖ] ਨੂੰ ਵੇਖੋ।',
+                'grammatical_features_item_ids': [feminine, oblique_case, singular],
+            },
+            {
+                'label': '    ਬਹੁ ਵਚਨ, ਮਫਊਲੀ',
+                'example': '    ਮੇਰੀਆਂ [ਅੱਖੀਆਂ] ਨੂੰ ਵੇਖੋ।',
+                'grammatical_features_item_ids': [feminine, oblique_case, plural],
+            },
+            {
+                'section_break': True,
+                'label': '    ਇੱਕ ਵਚਨ, ਅਪਾਦਾਨ',
+                'example': '    ਉਹ [ਅੱਖਿਓਂ] ਨਜ਼ਰਾ ਜਾਵਣ।؜',
+                'grammatical_features_item_ids': [feminine, ablative_case, singular],
+                'optional': True,
+            },
+            {
+                'section_break': True,
+                'label': '    ਇੱਕ ਵਚਨ, ਪਕਾਰਨ',
+                'example': '    ਵੇ ਓ [ਅੱਖੇ]!؜',
+                'grammatical_features_item_ids': [feminine, vocative_case, singular],
+                'optional': True,
+            },
+            {
+                'label': '    ਬਹੁ ਵਚਨ, ਪਕਾਰਨ',
+                'example': '    ਹੇ ਹਸੀਨ [ਅੱਖੋ]!؜',
+                'grammatical_features_item_ids': [feminine, vocative_case, plural],
+                'optional': True,
+            },
+            {
+                'section_break': True,
+                'label': '    ਇੱਕ ਵਚਨ, ਵਸਨੀਕ',
+                'example': '    ਉਹ [ਅੱਖੀਂ] ਜਾਵਣ।',
+                'grammatical_features_item_ids': [feminine, locative_case, singular],
+                'optional': True,
+            },
+            {
+                'label': '    ਬਹੁ ਵਚਨ, ਵਸਨੀਕ',
+                'example': '    ਉਹ [ਅੱਖੀਂ] ਘੱਟਾ ਪਾਏਗਾ।؜',
+                'grammatical_features_item_ids': [feminine, locative_case, plural],
+                'optional': True,
+            },
+            {
+                'section_break': True,
+                'label': '    ਦੋ ਵਚਨ, ਕਰਨ',
+                'example': '    ਉਹ [ਅੱਖੀਂ] ਦੇਖਿਆ ਸੀ।؜',
+                'grammatical_features_item_ids': [feminine, instrumental_case, dual],
+                'optional': True,
+            },
+        ],
+        'statements': statements(grammatical_gender, feminine),
     },
 
     'portuguese-noun-biform': {
