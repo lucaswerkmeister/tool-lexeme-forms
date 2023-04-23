@@ -12557,6 +12557,116 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
         },
     },
 
+    'punjabi-adverb-indeclinable-shah': {
+        '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Punjabi'},
+        'label': 'پنجابی عام گݨ فعل',
+        'language': language_Shahmukhi,
+        'lexical_category_item_id': adverb,
+        'forms': [
+            {
+                'label': 'اِکلا',
+                'example': 'تسیں [اجّ] کیہہ کیتا؟',
+                'grammatical_features_item_ids': [],
+            },
+        ],
+        'statements': statements(instance_of, indeclinable_adverb),
+    },
+
+    'punjabi-adverb-declinable-shah': {
+        '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Punjabi'},
+        'label': 'پنجابی ایسا بدل کردا گݨ فعل',
+        'language': language_Shahmukhi,
+        'lexical_category_item_id': adverb,
+        'two_column_sections': True,
+        'forms': [
+            {
+                'label': 'مذکر، واحد، فاعلی',
+                'example': 'گھوڑا [بڑا] سوہݨا تردا۔',
+                'grammatical_features_item_ids': [masculine, direct_case, singular],
+            },
+            {
+                'label': 'مذکر، جمع، فاعلی',
+                'example': 'گھوڑے [بڑے] سوہݨے تردے۔',
+                'grammatical_features_item_ids': [masculine, direct_case, plural],
+            },
+            {
+                'label': 'مذکر، واحد، مفعولی',
+                'example': 'گھوڑے [بڑے] سوہݨے ترن لئی اوہ زور لوڑدا۔',
+                'grammatical_features_item_ids': [masculine, oblique_case, singular],
+            },
+            {
+                'label': 'مذکر، جمع، مفعولی',
+                'example': 'گھوڑیاں [بڑیاں] سوہݨیاں ترن لئی اوہ زور لوڑدا۔',
+                'grammatical_features_item_ids': [masculine, oblique_case, plural],
+            },
+            {
+                'section_break': True,
+                'label': 'مونث، واحد، فاعلی',
+                'example': 'گھوڑی [بڑی] سوہݨی تردی۔',
+                'grammatical_features_item_ids': [feminine, direct_case, singular],
+            },
+            {
+                'label': 'مونث، جمع، فاعلی',
+                'example': 'گھوڑیاں [بڑِیاں] سوہݨیاں تردیاں۔',
+                'grammatical_features_item_ids': [feminine, direct_case, plural],
+            },
+            {
+                'label': 'مونث، واحد، مفعولی',
+                'example': 'گھوڑی [بڑی] سوہݨی ترن لئی اوہ زور لوڑدا۔',
+                'grammatical_features_item_ids': [feminine, oblique_case, singular],
+            },
+            {
+                'label': 'مونث، جمع، مفعولی',
+                'example': 'گھوڑیاں [بڑِیاں] سوہݨیاں ترن لئی اوہ زور لوڑدا۔',
+                'grammatical_features_item_ids': [feminine, oblique_case, plural],
+            },
+        ],
+        'statements': statements(instance_of, declinable_adverb),
+    },
+
+    'punjabi-adverb-comparable-shah': {
+        '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Punjabi'},
+        'label': 'پنجابی گݨ فعل تفضیل',
+        'language': language_Shahmukhi,
+        'lexical_category_item_id': adverb,
+        'two_column_sections': False,
+        'forms': [
+            {
+                'label': 'نفسی، فاعلی',
+                'example': 'میں پھیر مونہہ [پرے] کردیاں چلیا۔',
+                'grammatical_features_item_ids': [positive, direct_case],
+            },
+            {
+                'label': 'نفسی، مفعولی',
+                'example': 'پاݨی نوں [پرے] کرن لئی آسا لاوندا اے۔',
+                'grammatical_features_item_ids': [positive, oblique_case],
+            },
+            {
+                'label': 'نفسی، اپادان',
+                'example': 'چوک توں [پریوں] ای میں اندازہ اے۔',
+                'grammatical_features_item_ids': [positive, ablative_case],
+                'optional': True,
+            },
+            {
+                'section_break': True,
+                'label': 'تشبیہہ، فاعلی',
+                'example': 'پیار ول [پریرے] جاندے ہن۔',
+                'grammatical_features_item_ids': [comparative, direct_case],
+            },
+            {
+                'label': 'تشبیہہ، مفعولی',
+                'example': 'پیار ول [پریرے] جاݨ دی آس بجھدی اے۔',
+                'grammatical_features_item_ids': [comparative, oblique_case],
+            },
+            {
+                'label': 'تشبیہہ، اپادان',
+                'example': 'میں پنج گز [پریریوں] جا کے پھل لیاوندا آں۔',
+                'grammatical_features_item_ids': [comparative, ablative_case],
+            },
+        ],
+        'statements': statements(instance_of, comparable_adverb),
+    },
+
     'punjabi-noun-masculine-guru': {
         '@attribution': {'users': ['Satdeep Gill', 'عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Punjabi'},
         'label': 'ਪੰਜਾਬੀ ਨਾਂਵ ਪੁਲਿੰਗ',
@@ -12951,6 +13061,116 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
             instance_of: [statement(instance_of, comparable_adjective)],
             paradigm_class: [statement(paradigm_class, lamera_adjective)],
         },
+    },
+
+    'punjabi-adverb-indeclinable-guru': {
+        '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Punjabi'},
+        'label': 'ਪੰਜਾਬੀ ਆਮ ਗੁਣ ਫ਼ੇਅਲ',
+        'language': language_Gurmukhi,
+        'lexical_category_item_id': adverb,
+        'forms': [
+            {
+                'label': 'ਇਕੱਲਾ',
+                'example': 'ਤੁਸੀਂ [ਅੱਜ] ਕੀਹ ਕੀਤਾ?',
+                'grammatical_features_item_ids': [],
+            },
+        ],
+        'statements': statements(instance_of, indeclinable_adverb),
+    },
+
+    'punjabi-adverb-declinable-guru': {
+        '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Punjabi'},
+        'label': 'ਪੰਜਾਬੀ ਐਸਾ ਬਦਲ ਕਰਦਾ ਗੁਣ ਫ਼ੇਅਲ',
+        'language': language_Gurmukhi,
+        'lexical_category_item_id': adverb,
+        'two_column_sections': True,
+        'forms': [
+            {
+                'label': 'ਪੁਲਿੰਗ, ਇੱਕ ਵਚਨ, ਫਾਇਲੀ',
+                'example': 'ਘੋੜਾ [ਬੜਾ] ਸੋਹਣਾ ਤੁਰਦਾ।',
+                'grammatical_features_item_ids': [masculine, direct_case, singular],
+            },
+            {
+                'label': 'ਪੁਲਿੰਗ, ਬਹੁ ਵਚਨ, ਫਾਇਲੀ',
+                'example': 'ਘੋੜੇ [ਬੜੇ] ਸੋਹਣੇ ਤੁਰਦੇ।',
+                'grammatical_features_item_ids': [masculine, direct_case, plural],
+            },
+            {
+                'label': 'ਪੁਲਿੰਗ, ਇੱਕ ਵਚਨ, ਮਫਊਲੀ',
+                'example': 'ਘੋੜੇ [ਬੜੇ] ਸੋਹਣੇ ਤੁਰਨ ਲਈ ਉਹ ਜ਼ੋਰ ਲੋੜਦਾ।',
+                'grammatical_features_item_ids': [masculine, oblique_case, singular],
+            },
+            {
+                'label': 'ਪੁਲਿੰਗ, ਬਹੁ ਵਚਨ, ਮਫਊਲੀ',
+                'example': 'ਘੋੜਿਆਂ [ਬੜਿਆਂ] ਸੋਹਣਿਆਂ ਤੁਰਨ ਲਈ ਉਹ ਜ਼ੋਰ ਲੋੜਦਾ।',
+                'grammatical_features_item_ids': [masculine, oblique_case, plural],
+            },
+            {
+                'section_break': True,
+                'label': 'ਇਸਤਰੀ ਲਿੰਗ, ਇੱਕ ਵਚਨ, ਫਾਇਲੀ',
+                'example': 'ਘੋੜੀ [ਬੜੀ] ਸੋਹਣੀ ਤੁਰਦੀ।',
+                'grammatical_features_item_ids': [feminine, direct_case, singular],
+            },
+            {
+                'label': 'ਇਸਤਰੀ ਲਿੰਗ, ਬਹੁ ਵਚਨ, ਫਾਇਲੀ',
+                'example': 'ਘੋੜੀਆਂ [ਬੜੀਆਂ] ਸੋਹਣੀਆਂ ਤੁਰਦੀਆਂ।',
+                'grammatical_features_item_ids': [feminine, direct_case, plural],
+            },
+            {
+                'label': 'ਇਸਤਰੀ ਲਿੰਗ, ਇੱਕ ਵਚਨ, ਮਫਊਲੀ',
+                'example': 'ਘੋੜੀ [ਬੜੀ] ਸੋਹਣੀ ਤੁਰਨ ਲਈ ਉਹ ਜ਼ੋਰ ਲੋੜਦਾ।',
+                'grammatical_features_item_ids': [feminine, oblique_case, singular],
+            },
+            {
+                'label': 'ਇਸਤਰੀ ਲਿੰਗ, ਬਹੁ ਵਚਨ, ਮਫਊਲੀ',
+                'example': 'ਘੋੜੀਆਂ [ਬੜੀਆਂ] ਸੋਹਣੀਆਂ ਤੁਰਨ ਲਈ ਉਹ ਜ਼ੋਰ ਲੋੜਦਾ।',
+                'grammatical_features_item_ids': [feminine, oblique_case, plural],
+            },
+        ],
+        'statements': statements(instance_of, declinable_adverb),
+    },
+
+    'punjabi-adverb-comparable-guru': {
+        '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Punjabi'},
+        'label': 'ਪੰਜਾਬੀ ਗੁਣ ਫ਼ੇਅਲ ਤਫ਼ਜ਼ੀਲ',
+        'language': language_Gurmukhi,
+        'lexical_category_item_id': adverb,
+        'two_column_sections': False,
+        'forms': [
+            {
+                'label': 'ਨਫ਼ਸੀ, ਫ਼ਾਇਲੀ',
+                'example': 'ਮੈਂ ਫੇਰ ਮੂੰਹ [ਪਰੇ] ਕਰਦਿਆਂ ਚਲਿਆ।',
+                'grammatical_features_item_ids': [positive, direct_case],
+            },
+            {
+                'label': 'ਨਫ਼ਸੀ, ਮਫ਼ਊਲੀ',
+                'example': 'ਪਾਣੀ ਨੂੰ [ਪਰੇ] ਕਰਨ ਲਈ ਆਸਾ ਲਾਉਂਦਾ ਏ।',
+                'grammatical_features_item_ids': [positive, oblique_case],
+            },
+            {
+                'label': 'ਨਫ਼ਸੀ, ਅਪਾਦਾਨ',
+                'example': 'ਚੌਕ ਤੋਂ [ਪਰਿਓਂ] ਈ ਮੈਂ ਅੰਦਾਜ਼ਾ ਏ।',
+                'grammatical_features_item_ids': [positive, ablative_case],
+                'optional': True,
+            },
+            {
+                'section_break': True,
+                'label': 'ਤਸ਼ਬੀਹ, ਫ਼ਾਇਲੀ',
+                'example': 'ਪਿਆਰ ਵਲ [ਪਰੇਰੇ] ਜਾਂਦੇ ਹਨ।',
+                'grammatical_features_item_ids': [comparative, direct_case],
+            },
+            {
+                'label': 'ਤਸ਼ਬੀਹ, ਮਫ਼ਊਲੀ',
+                'example': 'ਪਿਆਰ ਵਲ [ਪਰੇਰੇ] ਜਾਣ ਦੀ ਆਸ ਬੱਝਦੀ ਏ।',
+                'grammatical_features_item_ids': [comparative, oblique_case],
+            },
+            {
+                'label': 'ਤਸ਼ਬੀਹ, ਅਪਾਦਾਨ',
+                'example': 'ਮੈਂ ਪੰਜ ਗੁਜ਼ [ਪਰੇਰਿਓਂ] ਜਾ ਕੇ ਫਲ ਲਿਆਉਂਦਾ ਆਂ।',
+                'grammatical_features_item_ids': [comparative, ablative_case],
+            },
+        ],
+        'statements': statements(instance_of, comparable_adverb),
     },
 
     'portuguese-noun-biform': {
