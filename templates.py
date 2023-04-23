@@ -12303,6 +12303,260 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
         'statements': statements(grammatical_gender, feminine),
     },
 
+    'punjabi-adjective-red-shah': {
+        '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Punjabi'},
+        'label': 'پنجابی لال گݨ ناں',
+        'language': language_Shahmukhi,
+        'lexical_category_item_id': adjective,
+        'forms': [
+            {
+                'label': 'اِکلا',
+                'example': 'ہاں جی، میں [ٹھیک] آں۔',
+                'grammatical_features_item_ids': [],
+            },
+        ],
+        'statements': {
+            instance_of: [statement(instance_of, indeclinable_adjective)],
+            paradigm_class: [statement(paradigm_class, lāl_surakh_adjective)],
+        },
+    },
+
+    'punjabi-adjective-black-shah': {
+        '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Punjabi'},
+        'label': 'پنجابی کالا گݨ ناں',
+        'language': language_Shahmukhi,
+        'lexical_category_item_id': adjective,
+        'two_column_sections': False,
+        'forms': [
+            {
+                'label': 'مذکر، واحد، فاعلی',
+                'example': 'اوہ [وڈّا] گھوڑا اے۔',
+                'grammatical_features_item_ids': [masculine, direct_case, singular],
+            },
+            {
+                'label': 'مذکر، جمع، فاعلی',
+                'example': 'اوہ [وڈّے] گھوڑے ہن۔',
+                'grammatical_features_item_ids': [masculine, direct_case, plural],
+            },
+            {
+                'label': 'مذکر، واحد، مفعولی',
+                'example': 'اوس [وڈّے] گھوڑے نوں ویکھو۔',
+                'grammatical_features_item_ids': [masculine, oblique_case, singular],
+            },
+            {
+                'label': 'مذکر، جمع، مفعولی',
+                'example': 'اوہناں [وڈّیاں] گھوڑیاں نوں ویکھو۔',
+                'grammatical_features_item_ids': [masculine, oblique_case, plural],
+            },
+            {
+                'label': 'مذکر، واحد، پکارن',
+                'example': 'آہ میریا [وڈّیا] گھوڑیا، آ جاؤ!؜',
+                'grammatical_features_item_ids': [masculine, vocative_case, singular],
+                'optional': True,
+            },
+            {
+                'label': 'مذکر، جمع، پکارن',
+                'example': 'آہ میریو [وڈّیو] گھوڑیو، آ جاؤ!؜',
+                'grammatical_features_item_ids': [masculine, vocative_case, plural],
+                'optional': True
+            },
+            {
+                'section_break': True,
+                'label': 'مونث واحد، فاعلی',
+                'example': 'اوہ [وڈّی] گھوڑی اے۔',
+                'grammatical_features_item_ids': [feminine, direct_case, singular],
+            },
+            {
+                'label': 'مونث، جمع، فاعلی',
+                'example': 'اوہ [وڈِّیاں] گھوڑِیاں ہن۔',
+                'grammatical_features_item_ids': [feminine, direct_case, plural],
+            },
+            {
+                'label': 'مونث، واحد، مفعولی',
+                'example': 'اوس [وڈّی] گھوڑی نوں ویکھو۔',
+                'grammatical_features_item_ids': [feminine, oblique_case, singular],
+            },
+            {
+                'label': 'مونث، جمع، مفعولی',
+                'example': 'اوہناں [وڈِّیاں] گھوڑِیاں نوں ویکھو۔',
+                'grammatical_features_item_ids': [feminine, oblique_case, plural],
+            },
+            {
+                'label': 'مونث، واحد، پکارن',
+                'example': 'آہ میریئے [وڈّیئے] گھوڑیئے، آ جاؤ!؜',
+                'grammatical_features_item_ids': [feminine, vocative_case, singular],
+                'optional': True,
+            },
+            {
+                'label': 'مونث، جمع، پکارن',
+                'example': 'آہ میرِیو [وڈِّیو] گھوڑِیو، آ جاؤ!؜',
+                'grammatical_features_item_ids': [feminine, vocative_case, plural],
+                'optional': True,
+            },
+        ],
+        'statements': {
+            instance_of: [statement(instance_of, declinable_adjective)],
+            paradigm_class: [statement(paradigm_class, kālā_adjective)],
+        },
+    },
+
+    'punjabi-adjective-longer-shah': {
+        '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Punjabi'},
+        'label': 'پنجابی لمیرا گݨ ناں',
+        'language': language_Shahmukhi,
+        'lexical_category_item_id': adjective,
+        'two_column_sections': False,
+        'forms': [
+            {
+                'label': 'نفسی، مذکر، واحد، فاعلی',
+                'example': 'اوہ [لمّا] گھوڑا اے۔',
+                'grammatical_features_item_ids': [positive, masculine, direct_case, singular],
+                'grammatical_features_item_ids_optional': set([positive]),
+            },
+            {
+                'label': 'نفسی، مذکر، جمع، فاعلی',
+                'example': 'اوہ [لمّے] گھوڑے ہن۔',
+                'grammatical_features_item_ids': [positive, masculine, direct_case, plural],
+                'grammatical_features_item_ids_optional': set([positive]),
+            },
+            {
+                'label': 'نفسی، مذکر، واحد، مفعولی',
+                'example': 'اوس [لمّے] گھوڑے نوں ویکھو۔',
+                'grammatical_features_item_ids': [positive, masculine, oblique_case, singular],
+                'grammatical_features_item_ids_optional': set([positive]),
+            },
+            {
+                'label': 'نفسی، مذکر، جمع، مفعولی',
+                'example': 'اوہناں [لمّیاں] گھوڑیاں نوں ویکھو۔',
+                'grammatical_features_item_ids': [positive, masculine, oblique_case, plural],
+                'grammatical_features_item_ids_optional': set([positive]),
+            },
+            {
+                'label': 'نفسی، مذکر، واحد، پکارن',
+                'example': 'آہ میریا [لمّیا] گھوڑیا، آ جاؤ!؜',
+                'grammatical_features_item_ids': [positive, masculine, vocative_case, singular],
+                'grammatical_features_item_ids_optional': set([positive]),
+                'optional': True,
+            },
+            {
+                'label': 'نفسی، مذکر، جمع، پکارن',
+                'example': 'آہ میریو [لمّیو] گھوڑیو، آ جاؤ!؜',
+                'grammatical_features_item_ids': [positive, masculine, vocative_case, plural],
+                'grammatical_features_item_ids_optional': set([positive]),
+                'optional': True,
+            },
+            {
+                'section_break': True,
+                'label': 'نفسی، مونث واحد، فاعلی',
+                'example': 'اوہ [لمّی] گھوڑی اے۔',
+                'grammatical_features_item_ids': [positive, feminine, direct_case, singular],
+                'grammatical_features_item_ids_optional': set([positive]),
+            },
+            {
+                'label': 'نفسی، مونث، جمع، فاعلی',
+                'example': 'اوہ [لمِّیاں] گھوڑِیاں ہن۔',
+                'grammatical_features_item_ids': [positive, feminine, direct_case, plural],
+                'grammatical_features_item_ids_optional': set([positive]),
+            },
+            {
+                'label': 'نفسی، مونث، واحد، مفعولی',
+                'example': 'اوس [لمّی] گھوڑی نوں ویکھو۔',
+                'grammatical_features_item_ids': [positive, feminine, oblique_case, singular],
+                'grammatical_features_item_ids_optional': set([positive]),
+            },
+            {
+                'label': 'نفسی، مونث، جمع، مفعولی',
+                'example': 'اوہناں [لمِّیاں] گھوڑِیاں نوں ویکھو۔',
+                'grammatical_features_item_ids': [positive, feminine, oblique_case, plural],
+                'grammatical_features_item_ids_optional': set([positive]),
+            },
+            {
+                'label': 'نفسی، مونث، واحد، پکارن',
+                'example': 'آہ میریئے [لمّیئے] گھوڑیئے، آ جاؤ!؜',
+                'grammatical_features_item_ids': [positive, feminine, vocative_case, singular],
+                'grammatical_features_item_ids_optional': set([positive]),
+                'optional': True,
+            },
+            {
+                'label': 'نفسی، مونث، جمع، پکارن',
+                'example': 'آہ میرِیو [لمِّیو] گھوڑِیو، آ جاؤ!؜',
+                'grammatical_features_item_ids': [positive, feminine, vocative_case, plural],
+                'grammatical_features_item_ids_optional': set([positive]),
+                'optional': True,
+            },
+            {
+                'section_break': True,
+                'label': 'تشبیہہ، مذکر، واحد، فاعلی',
+                'example': 'اوہ [لمیرا] گھوڑا اے۔',
+                'grammatical_features_item_ids': [comparative, masculine, direct_case, singular],
+            },
+            {
+                'label': 'تشبیہہ، مذکر، جمع، فاعلی',
+                'example': 'اوہ [لمیرے] گھوڑے ہن۔',
+                'grammatical_features_item_ids': [comparative, masculine, direct_case, plural],
+            },
+            {
+                'label': 'تشبیہہ، مذکر، واحد، مفعولی',
+                'example': 'اوس [لمیرے] گھوڑے نوں ویکھو۔',
+                'grammatical_features_item_ids': [comparative, masculine, oblique_case, singular],
+            },
+            {
+                'label': 'تشبیہہ، مذکر، جمع، مفعولی',
+                'example': 'اوہناں [لمیریاں] گھوڑیاں نوں ویکھو۔',
+                'grammatical_features_item_ids': [comparative, masculine, oblique_case, plural],
+            },
+            {
+                'label': 'تشبیہہ، مذکر، واحد، پکارن',
+                'example': 'آہ میریا [لمیریا] گھوڑیا، آ جاؤ!؜',
+                'grammatical_features_item_ids': [comparative, masculine, vocative_case, singular],
+                'optional': True,
+            },
+            {
+                'label': 'تشبیہہ، مذکر، جمع، پکارن',
+                'example': 'آہ میریو [لمیریو] گھوڑیو، آ جاؤ!؜',
+                'grammatical_features_item_ids': [comparative, masculine, vocative_case, plural],
+                'optional': True,
+            },
+            {
+                'section_break': True,
+                'label': 'تشبیہہ، مونث واحد، فاعلی',
+                'example': 'اوہ [لمیری] گھوڑی اے۔',
+                'grammatical_features_item_ids': [comparative, feminine, direct_case, singular],
+            },
+            {
+                'label': 'تشبیہہ، مونث، جمع، فاعلی',
+                'example': 'اوہ [لمیرِیاں] گھوڑِیاں ہن۔',
+                'grammatical_features_item_ids': [comparative, feminine, direct_case, plural],
+            },
+            {
+                'label': 'تشبیہہ، مونث، واحد، مفعولی',
+                'example': 'اوس [لمیری] گھوڑی نوں ویکھو۔',
+                'grammatical_features_item_ids': [comparative, feminine, oblique_case, singular],
+            },
+            {
+                'label': 'تشبیہہ، مونث، جمع، مفعولی',
+                'example': 'اوہناں [لمیرِیاں] گھوڑِیاں نوں ویکھو۔',
+                'grammatical_features_item_ids': [comparative, feminine, oblique_case, plural],
+            },
+            {
+                'label': 'تشبیہہ، مونث، واحد، پکارن',
+                'example': 'آہ میریئے [لمیریئے] گھوڑیئے، آ جاؤ!؜',
+                'grammatical_features_item_ids': [comparative, feminine, vocative_case, singular],
+                'optional': True,
+            },
+            {
+                'label': 'تشبیہہ، مونث، جمع، پکارن',
+                'example': 'آہ میرِیو [لمیرِیو] گھوڑِیو، آ جاؤ!؜',
+                'grammatical_features_item_ids': [comparative, feminine, vocative_case, plural],
+                'optional': True,
+            },
+        ],
+        'statements': {
+            instance_of: [statement(instance_of, comparable_adjective)],
+            paradigm_class: [statement(paradigm_class, lamera_adjective)],
+        },
+    },
+
     'punjabi-noun-masculine-guru': {
         '@attribution': {'users': ['Satdeep Gill', 'عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Punjabi'},
         'label': 'ਪੰਜਾਬੀ ਨਾਂਵ ਪੁਲਿੰਗ',
@@ -12443,6 +12697,260 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
             },
         ],
         'statements': statements(grammatical_gender, feminine),
+    },
+
+    'punjabi-adjective-red-guru': {
+        '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Punjabi'},
+        'label': 'ਪੰਜਾਬੀ ਲਾਲ ਗੁਣ ਨਾਂ',
+        'language': language_Gurmukhi,
+        'lexical_category_item_id': adjective,
+        'forms': [
+            {
+                'label': 'ਇਕੱਲਾ',
+                'example': 'ਹਾਂ ਜੀ, ਮੈਂ [ਠੀਕ] ਆਂ।',
+                'grammatical_features_item_ids': [],
+            },
+        ],
+        'statements': {
+            instance_of: [statement(instance_of, indeclinable_adjective)],
+            paradigm_class: [statement(paradigm_class, lāl_surakh_adjective)],
+        },
+    },
+
+    'punjabi-adjective-black-guru': {
+        '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Punjabi'},
+        'label': 'ਪੰਜਾਬੀ ਕਾਲਾ ਗੁਣ ਨਾਂ',
+        'language': language_Gurmukhi,
+        'lexical_category_item_id': adjective,
+        'two_column_sections': False,
+        'forms': [
+            {
+                'label': 'ਪੁਲਿੰਗ, ਇੱਕ ਵਚਨ, ਫਾਇਲੀ',
+                'example': 'ਉਹ [ਵੱਡਾ] ਘੋੜਾ ਏ।',
+                'grammatical_features_item_ids': [masculine, direct_case, singular],
+            },
+            {
+                'label': 'ਪੁਲਿੰਗ, ਬਹੁ ਵਚਨ, ਫਾਇਲੀ',
+                'example': 'ਉਹ [ਵੱਡੇ] ਘੋੜੇ ਹਨ।',
+                'grammatical_features_item_ids': [masculine, direct_case, plural],
+            },
+            {
+                'label': 'ਪੁਲਿੰਗ, ਇੱਕ ਵਚਨ, ਮਫਊਲੀ',
+                'example': 'ਉਸ [ਵੱਡੇ] ਘੋੜੇ ਨੂੰ ਵੇਖੋ।',
+                'grammatical_features_item_ids': [masculine, oblique_case, singular],
+            },
+            {
+                'label': 'ਪੁਲਿੰਗ, ਬਹੁ ਵਚਨ, ਮਫਊਲੀ',
+                'example': 'ਉਸ [ਵੱਡਿਆਂ] ਘੋੜਿਆਂ ਨੂੰ ਵੇਖੋ।',
+                'grammatical_features_item_ids': [masculine, oblique_case, plural],
+            },
+            {
+                'label': 'ਪੁਲਿੰਗ, ਇੱਕ ਵਚਨ, ਪਕਾਰਨ',
+                'example': 'ਆਹ ਮੇਰਿਆ [ਵੱਡਿਆ] ਘੋੜਿਆ, ਆ ਜਾਓ!؜',
+                'grammatical_features_item_ids': [masculine, vocative_case, singular],
+                'optional': True,
+            },
+            {
+                'label': 'ਪੁਲਿੰਗ, ਬਹੁ ਵਚਨ, ਪਕਾਰਨ',
+                'example': 'ਆਹ ਮੇਰਿਓ [ਵੱਡਿਓ] ਘੋੜਿਓ, ਆ ਜਾਓ!؜',
+                'grammatical_features_item_ids': [masculine, vocative_case, plural],
+                'optional': True,
+            },
+            {
+                'section_break': True,
+                'label': 'ਇਸਤਰੀ ਲਿੰਗ, ਇੱਕ ਵਚਨ, ਫਾਇਲੀ',
+                'example': 'ਉਹ [ਵੱਡੀ] ਘੋੜੀ ਏ।',
+                'grammatical_features_item_ids': [feminine, direct_case, singular],
+            },
+            {
+                'label': 'ਇਸਤਰੀ ਲਿੰਗ, ਬਹੁ ਵਚਨ, ਫਾਇਲੀ',
+                'example': 'ਉਹ [ਵੱਡੀਆਂ] ਘੋੜੀਆਂ ਏ।',
+                'grammatical_features_item_ids': [feminine, direct_case, plural],
+            },
+            {
+                'label': 'ਇਸਤਰੀ ਲਿੰਗ, ਇੱਕ ਵਚਨ, ਮਫਊਲੀ',
+                'example': 'ਉਸ [ਵੱਡੀ] ਘੋੜੀ ਨੂੰ ਵੇਖੋ।',
+                'grammatical_features_item_ids': [feminine, oblique_case, singular],
+            },
+            {
+                'label': 'ਇਸਤਰੀ ਲਿੰਗ, ਬਹੁ ਵਚਨ, ਮਫਊਲੀ',
+                'example': 'ਉਸ [ਵੱਡੀਆਂ] ਘੋੜੀਆਂ ਨੂੰ ਵੇਖੋ।',
+                'grammatical_features_item_ids': [feminine, oblique_case, plural],
+            },
+            {
+                'label': 'ਇਸਤਰੀ ਲਿੰਗ, ਇੱਕ ਵਚਨ, ਪਕਾਰਨ',
+                'example': 'ਆਹ ਮੇਰੀਏ [ਵੱਡੀਏ] ਘੋੜੀਏ, ਆ ਜਾਓ!؜',
+                'grammatical_features_item_ids': [feminine, vocative_case, singular],
+                'optional': True,
+            },
+            {
+                'label': 'ਇਸਤਰੀ ਲਿੰਗ, ਬਹੁ ਵਚਨ, ਪਕਾਰਨ',
+                'example': 'ਆਹ ਮੇਰੀਓ [ਵੱਡੀਓ] ਘੋੜੀਓ, ਆ ਜਾਓ!؜',
+                'grammatical_features_item_ids': [feminine, vocative_case, plural],
+                'optional': True,
+            },
+        ],
+        'statements': {
+            instance_of: [statement(instance_of, declinable_adjective)],
+            paradigm_class: [statement(paradigm_class, kālā_adjective)],
+        },
+    },
+
+    'punjabi-adjective-longer-guru': {
+        '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Punjabi'},
+        'label': 'ਪੰਜਾਬੀ ਲਮੇਰਾ ਗੁਣ ਨਾਂ',
+        'language': language_Gurmukhi,
+        'lexical_category_item_id': adjective,
+        'two_column_sections': False,
+        'forms': [
+            {
+                'label': 'ਨਫ਼ਸੀ, ਪੁਲਿੰਗ, ਇੱਕ ਵਚਨ, ਫਾਇਲੀ',
+                'example': 'ਉਹ [ਲੰਮਾ] ਘੋੜਾ ਏ।',
+                'grammatical_features_item_ids': [positive, masculine, direct_case, singular],
+                'grammatical_features_item_ids_optional': set([positive]),
+            },
+            {
+                'label': 'ਨਫ਼ਸੀ, ਪੁਲਿੰਗ, ਬਹੁ ਵਚਨ, ਫਾਇਲੀ',
+                'example': 'ਉਹ [ਲੰਮੇ] ਘੋੜੇ ਹਨ।',
+                'grammatical_features_item_ids': [positive, masculine, direct_case, plural],
+                'grammatical_features_item_ids_optional': set([positive]),
+            },
+            {
+                'label': 'ਨਫ਼ਸੀ, ਪੁਲਿੰਗ, ਇੱਕ ਵਚਨ, ਮਫਊਲੀ',
+                'example': 'ਉਸ [ਲੰਮੇ] ਘੋੜੇ ਨੂੰ ਵੇਖੋ।',
+                'grammatical_features_item_ids': [positive, masculine, oblique_case, singular],
+                'grammatical_features_item_ids_optional': set([positive]),
+            },
+            {
+                'label': 'ਨਫ਼ਸੀ, ਪੁਲਿੰਗ, ਬਹੁ ਵਚਨ, ਮਫਊਲੀ',
+                'example': 'ਉਸ [ਲੰਮਿਆਂ] ਘੋੜਿਆਂ ਨੂੰ ਵੇਖੋ।',
+                'grammatical_features_item_ids': [positive, masculine, oblique_case, plural],
+                'grammatical_features_item_ids_optional': set([positive]),
+            },
+            {
+                'label': 'ਨਫ਼ਸੀ, ਪੁਲਿੰਗ, ਇੱਕ ਵਚਨ, ਪਕਾਰਨ',
+                'example': 'ਆਹ ਮੇਰਿਆ [ਲੰਮਿਆ] ਘੋੜਿਆ, ਆ ਜਾਓ!؜',
+                'grammatical_features_item_ids': [positive, masculine, vocative_case, singular],
+                'grammatical_features_item_ids_optional': set([positive]),
+                'optional': True,
+            },
+            {
+                'label': 'ਨਫ਼ਸੀ, ਪੁਲਿੰਗ, ਬਹੁ ਵਚਨ, ਪਕਾਰਨ',
+                'example': 'ਆਹ ਮੇਰਿਓ [ਲੰਮਿਓ] ਘੋੜਿਓ, ਆ ਜਾਓ!؜',
+                'grammatical_features_item_ids': [positive, masculine, vocative_case, plural],
+                'grammatical_features_item_ids_optional': set([positive]),
+                'optional': True,
+            },
+            {
+                'section_break': True,
+                'label': 'ਨਫ਼ਸੀ, ਇਸਤਰੀ ਲਿੰਗ, ਇੱਕ ਵਚਨ, ਫਾਇਲੀ',
+                'example': 'ਉਹ [ਲੰਮੀ] ਘੋੜੀ ਏ।',
+                'grammatical_features_item_ids': [positive, feminine, direct_case, singular],
+                'grammatical_features_item_ids_optional': set([positive]),
+            },
+            {
+                'label': 'ਨਫ਼ਸੀ, ਇਸਤਰੀ ਲਿੰਗ, ਬਹੁ ਵਚਨ, ਫਾਇਲੀ',
+                'example': 'ਉਹ [ਲੰਮੀਆਂ] ਘੋੜੀਆਂ ਏ।',
+                'grammatical_features_item_ids': [positive, feminine, direct_case, plural],
+                'grammatical_features_item_ids_optional': set([positive]),
+            },
+            {
+                'label': 'ਨਫ਼ਸੀ, ਇਸਤਰੀ ਲਿੰਗ, ਇੱਕ ਵਚਨ, ਮਫਊਲੀ',
+                'example': 'ਉਸ [ਲੰਮੀ] ਘੋੜੀ ਨੂੰ ਵੇਖੋ।',
+                'grammatical_features_item_ids': [positive, feminine, oblique_case, singular],
+                'grammatical_features_item_ids_optional': set([positive]),
+            },
+            {
+                'label': 'ਨਫ਼ਸੀ, ਇਸਤਰੀ ਲਿੰਗ, ਬਹੁ ਵਚਨ, ਮਫਊਲੀ',
+                'example': 'ਉਸ [ਲੰਮੀਆਂ] ਘੋੜੀਆਂ ਨੂੰ ਵੇਖੋ।',
+                'grammatical_features_item_ids': [positive, feminine, oblique_case, plural],
+                'grammatical_features_item_ids_optional': set([positive]),
+            },
+            {
+                'label': 'ਨਫ਼ਸੀ, ਇਸਤਰੀ ਲਿੰਗ, ਇੱਕ ਵਚਨ, ਪਕਾਰਨ',
+                'example': 'ਆਹ ਮੇਰੀਏ [ਲੰਮੀਏ] ਘੋੜੀਏ, ਆ ਜਾਓ!؜',
+                'grammatical_features_item_ids': [positive, feminine, vocative_case, singular],
+                'grammatical_features_item_ids_optional': set([positive]),
+                'optional': True,
+            },
+            {
+                'label': 'ਨਫ਼ਸੀ, ਇਸਤਰੀ ਲਿੰਗ, ਬਹੁ ਵਚਨ, ਪਕਾਰਨ',
+                'example': 'ਆਹ ਮੇਰੀਓ [ਲੰਮੀਓ] ਘੋੜੀਓ, ਆ ਜਾਓ!؜',
+                'grammatical_features_item_ids': [positive, feminine, vocative_case, plural],
+                'grammatical_features_item_ids_optional': set([positive]),
+                'optional': True,
+            },
+            {
+                'section_break': True,
+                'label': 'ਤਸ਼ਬੀਹ, ਪੁਲਿੰਗ, ਇੱਕ ਵਚਨ, ਫਾਇਲੀ',
+                'example': 'ਉਹ [ਲਮੇਰਾ] ਘੋੜਾ ਏ।',
+                'grammatical_features_item_ids': [comparative, masculine, direct_case, singular],
+            },
+            {
+                'label': 'ਤਸ਼ਬੀਹ, ਪੁਲਿੰਗ, ਬਹੁ ਵਚਨ, ਫਾਇਲੀ',
+                'example': 'ਉਹ [ਲਮੇਰੇ] ਘੋੜੇ ਹਨ।',
+                'grammatical_features_item_ids': [comparative, masculine, direct_case, plural],
+            },
+            {
+                'label': 'ਤਸ਼ਬੀਹ, ਪੁਲਿੰਗ, ਇੱਕ ਵਚਨ, ਮਫਊਲੀ',
+                'example': 'ਉਸ [ਲਮੇਰੇ] ਘੋੜੇ ਨੂੰ ਵੇਖੋ।',
+                'grammatical_features_item_ids': [comparative, masculine, oblique_case, singular],
+            },
+            {
+                'label': 'ਤਸ਼ਬੀਹ, ਪੁਲਿੰਗ, ਬਹੁ ਵਚਨ, ਮਫਊਲੀ',
+                'example': 'ਉਸ [ਲਮੇਰਿਆਂ] ਘੋੜਿਆਂ ਨੂੰ ਵੇਖੋ।',
+                'grammatical_features_item_ids': [comparative, masculine, oblique_case, plural],
+            },
+            {
+                'label': 'ਤਸ਼ਬੀਹ, ਪੁਲਿੰਗ, ਇੱਕ ਵਚਨ, ਪਕਾਰਨ',
+                'example': 'ਆਹ ਮੇਰਿਆ [ਲਮੇਰਿਆ] ਘੋੜਿਆ, ਆ ਜਾਓ!؜',
+                'grammatical_features_item_ids': [comparative, masculine, vocative_case, singular],
+                'optional': True,
+            },
+            {
+                'label': 'ਤਸ਼ਬੀਹ, ਪੁਲਿੰਗ, ਬਹੁ ਵਚਨ, ਪਕਾਰਨ',
+                'example': 'ਆਹ ਮੇਰਿਓ [ਲਮੇਰਿਓ] ਘੋੜਿਓ, ਆ ਜਾਓ!؜',
+                'grammatical_features_item_ids': [comparative, masculine, vocative_case, plural],
+                'optional': True,
+            },
+            {
+                'section_break': True,
+                'label': 'ਤਸ਼ਬੀਹ, ਇਸਤਰੀ ਲਿੰਗ, ਇੱਕ ਵਚਨ, ਫਾਇਲੀ',
+                'example': 'ਉਹ [ਲਮੇਰੀ] ਘੋੜੀ ਏ।',
+                'grammatical_features_item_ids': [comparative, feminine, direct_case, singular],
+            },
+            {
+                'label': 'ਤਸ਼ਬੀਹ, ਇਸਤਰੀ ਲਿੰਗ, ਬਹੁ ਵਚਨ, ਫਾਇਲੀ',
+                'example': 'ਉਹ [ਲਮੇਰੀਆਂ] ਘੋੜੀਆਂ ਏ।',
+                'grammatical_features_item_ids': [comparative, feminine, direct_case, plural],
+            },
+            {
+                'label': 'ਤਸ਼ਬੀਹ, ਇਸਤਰੀ ਲਿੰਗ, ਇੱਕ ਵਚਨ, ਮਫਊਲੀ',
+                'example': 'ਉਸ [ਲਮੇਰੀ] ਘੋੜੀ ਨੂੰ ਵੇਖੋ।',
+                'grammatical_features_item_ids': [comparative, feminine, oblique_case, singular],
+            },
+            {
+                'label': 'ਤਸ਼ਬੀਹ, ਇਸਤਰੀ ਲਿੰਗ, ਬਹੁ ਵਚਨ, ਮਫਊਲੀ',
+                'example': 'ਉਸ [ਲਮੇਰੀਆਂ] ਘੋੜੀਆਂ ਨੂੰ ਵੇਖੋ।',
+                'grammatical_features_item_ids': [comparative, feminine, oblique_case, plural],
+            },
+            {
+                'label': 'ਤਸ਼ਬੀਹ, ਇਸਤਰੀ ਲਿੰਗ, ਇੱਕ ਵਚਨ, ਪਕਾਰਨ',
+                'example': 'ਆਹ ਮੇਰੀਏ [ਲਮੇਰੀਏ] ਘੋੜੀਏ, ਆ ਜਾਓ!؜',
+                'grammatical_features_item_ids': [comparative, feminine, vocative_case, singular],
+                'optional': True,
+            },
+            {
+                'label': 'ਤਸ਼ਬੀਹ, ਇਸਤਰੀ ਲਿੰਗ, ਬਹੁ ਵਚਨ, ਪਕਾਰਨ',
+                'example': 'ਆਹ ਮੇਰੀਓ [ਲਮੇਰੀਓ] ਘੋੜੀਓ, ਆ ਜਾਓ!؜',
+                'grammatical_features_item_ids': [comparative, feminine, vocative_case, plural],
+                'optional': True,
+            },
+        ],
+        'statements': {
+            instance_of: [statement(instance_of, comparable_adjective)],
+            paradigm_class: [statement(paradigm_class, lamera_adjective)],
+        },
     },
 
     'portuguese-noun-biform': {
