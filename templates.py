@@ -14253,6 +14253,30 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
         ],
     },
 
+    'yoruba-adjective': {
+        '@attribution': {'users': ['T Cells'], 'title': 'Wikidata:Wikidata Lexeme Forms/Yoruba'},
+        'label': 'Ọ̀rọ̀ àpọ́nlé Yorùbá',
+        'language': language_Yoruba,
+        'lexical_category_item_id': adjective,
+        'forms': [
+            {
+                'label': 'ga',
+                'example': 'ọmọ mi [ga]',
+                'grammatical_features_item_ids': [positive],
+            },
+            {
+                'label': 'jù',
+                'example': 'ọmọ mi [ga ju tì ẹ] .',
+                'grammatical_features_item_ids': [comparative],
+            },
+            {
+                'label': 'jùlọ',
+                'example': 'ọmọ mi [ga jùlọ].',
+                'grammatical_features_item_ids': [superlative],
+            },
+        ],
+    },
+
     'mandarin-noun': {
         '@attribution': {'users': ['白布飘扬'], 'title': 'Wikidata:Wikidata Lexeme Forms/Mandarin'},
         'label': '漢語名詞',
