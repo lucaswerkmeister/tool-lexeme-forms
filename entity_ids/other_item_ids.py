@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 
+# 5 digits
 ezāfe = 'Q18794'
 imperative = 'Q22716'
+# 6 digits
 diminutive = 'Q108709'
 dual = 'Q110022'
 singular = 'Q110786'
@@ -45,6 +47,7 @@ comitative_case = 'Q838581'
 Chinese_classifier = 'Q849760'
 partitive_case = 'Q857325'
 translative_case = 'Q950170'
+# 7 digits
 non_finite_verb = 'Q1050494'
 voseo = 'Q1070730'
 passive = 'Q1194697'
@@ -82,6 +85,7 @@ ustedeo = 'Q6158182'
 present_continuous = 'Q7240943'
 prospective = 'Q7250831'
 toponym = 'Q7884789'
+# 8 digits
 present_participle = 'Q10345583'
 past_imperfect = 'Q12547192'
 past_participle = 'Q12717679'
@@ -133,6 +137,7 @@ habitual_past = 'Q75243920'
 future_imperative = 'Q75244800'
 exclamative = 'Q93868909'
 non_genitive = 'Q98946930'
+# 9 digits
 zu_infinitive = 'Q100952920'
 no_mutation = 'Q101252532'
 indeclinable_adverb = 'Q106086193'
