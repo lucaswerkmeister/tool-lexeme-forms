@@ -21,3 +21,18 @@ for entry in os.listdir(dir):
         missing_files.add(entry)
 if missing_files:
     sys.exit(f'You forgot to add these file(s) to entity_ids/__main__.py: {missing_files}')
+
+identifiers = set()
+ambiguous = set()
+for file in files:
+    with open(f'{dir}/{file}', 'r') as f:
+        while line := f.readline():
+            identifier, eq, value = line.partition(' = ')
+            if not identifier.isidentifier():
+                continue
+            if identifier in identifiers:
+                ambiguous.add(identifier)
+            else:
+                identifiers.add(identifier)
+if ambiguous:
+    sys.exit(f'The following variables are ambiguous: {ambiguous}')
