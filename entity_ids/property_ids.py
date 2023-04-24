@@ -5,6 +5,7 @@ has_quality = 'P1552'
 grammatical_gender = 'P5185'
 paradigm_class = 'P5911'
 language_style = 'P6191'
+variety_of_lexeme_form_or_sense = 'P7481'
 grammatical_aspect = 'P7486'
 transitivity = 'P9295'
 
