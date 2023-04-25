@@ -2,6 +2,7 @@ babel
 decorator
 flask >= 2.2.0
 jinja2 >= 3.0.0
+MarkupSafe
 mwapi
 mwoauth
 PyYAML

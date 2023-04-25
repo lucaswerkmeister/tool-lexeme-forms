@@ -5,6 +5,7 @@ import flask
 from flask.typing import ResponseReturnValue as RRV
 import jinja2
 import json
+from markupsafe import Markup
 import mwapi  # type: ignore
 import mwoauth  # type: ignore
 import os
@@ -100,12 +101,12 @@ def denyFrame(response: werkzeug.Response) -> werkzeug.Response:
     return response
 
 @app.template_filter()
-def form2label(form: TemplateForm) -> flask.Markup:
-    ret = flask.Markup.escape(form['label'])
+def form2label(form: TemplateForm) -> Markup:
+    ret = Markup.escape(form['label'])
     if form.get('optional', False):
-        ret += (flask.Markup(r'<span class="text-muted">') +
-                flask.Markup(message('form_optional')) +
-                flask.Markup(r'</span>'))
+        ret += (Markup(r'<span class="text-muted">') +
+                Markup(message('form_optional')) +
+                Markup(r'</span>'))
     return ret
 
 @app.template_filter()
@@ -117,19 +118,19 @@ def form2input(context, form, first=False, readonly=False, template_language_cod
                                for lexeme_form in form['lexeme_forms']
                                if template_language_code in lexeme_form['representations'])
     optional = context['advanced'] or form.get('optional', False)
-    return (flask.Markup.escape(prefix) +
-            flask.Markup(r'<input type="text" name="form_representation" placeholder="') +
-            flask.Markup.escape(placeholder) +
-            flask.Markup(r'"') +
-            flask.Markup(r' pattern="[^/]+(?:/[^/]+)*"') +
-            (flask.Markup(r' required') if not optional else flask.Markup('')) +
-            (flask.Markup(r' disabled') if readonly else flask.Markup('')) +
-            (flask.Markup(r' autofocus') if first else flask.Markup('')) +
-            (flask.Markup(r' value="') + flask.Markup.escape(form['value']) + flask.Markup(r'"') if 'value' in form else flask.Markup('')) +
-            flask.Markup(r' spellcheck="true"') +
-            (flask.Markup(r' lang="') + flask.Markup.escape(representation_language_code) + flask.Markup(r'"') if representation_language_code != template_language_code else flask.Markup('')) +
-            flask.Markup(r'>') +
-            flask.Markup.escape(suffix))
+    return (Markup.escape(prefix) +
+            Markup(r'<input type="text" name="form_representation" placeholder="') +
+            Markup.escape(placeholder) +
+            Markup(r'"') +
+            Markup(r' pattern="[^/]+(?:/[^/]+)*"') +
+            (Markup(r' required') if not optional else Markup('')) +
+            (Markup(r' disabled') if readonly else Markup('')) +
+            (Markup(r' autofocus') if first else Markup('')) +
+            (Markup(r' value="') + Markup.escape(form['value']) + Markup(r'"') if 'value' in form else Markup('')) +
+            Markup(r' spellcheck="true"') +
+            (Markup(r' lang="') + Markup.escape(representation_language_code) + Markup(r'"') if representation_language_code != template_language_code else Markup('')) +
+            Markup(r'>') +
+            Markup.escape(suffix))
 
 def split_example(form: TemplateForm) -> Tuple[str, str, str]:
     example = form['example']
@@ -182,61 +183,61 @@ def template_group(template: Template) -> str:
     return group
 
 @app.template_filter()
-def user_link(user_name: str) -> flask.Markup:
-    return (flask.Markup(r'<a href="https://www.wikidata.org/wiki/User:') +
-            flask.Markup.escape(user_name.replace(' ', '_')) +
-            flask.Markup(r'">') +
-            flask.Markup(r'<bdi>') +
-            flask.Markup.escape(user_name) +
-            flask.Markup(r'</bdi>') +
-            flask.Markup(r'</a>'))
+def user_link(user_name: str) -> Markup:
+    return (Markup(r'<a href="https://www.wikidata.org/wiki/User:') +
+            Markup.escape(user_name.replace(' ', '_')) +
+            Markup(r'">') +
+            Markup(r'<bdi>') +
+            Markup.escape(user_name) +
+            Markup(r'</bdi>') +
+            Markup(r'</a>'))
 
 @app.template_global()
-def authentication_area() -> flask.Markup:
+def authentication_area() -> Markup:
     if 'OAUTH' not in app.config:
-        return flask.Markup()
+        return Markup()
 
     userinfo = get_userinfo()
     if userinfo is None:
-        return (flask.Markup(r'<a id="login" class="navbar-text" href="') +
-                flask.Markup.escape(flask.url_for('login')) +
-                flask.Markup(r'">Log in</a>'))
+        return (Markup(r'<a id="login" class="navbar-text" href="') +
+                Markup.escape(flask.url_for('login')) +
+                Markup(r'">Log in</a>'))
 
-    return (flask.Markup(r'<span class="navbar-text">Logged in as ') +
+    return (Markup(r'<span class="navbar-text">Logged in as ') +
             user_link(userinfo['name']) +
-            flask.Markup(r'</span>'))
+            Markup(r'</span>'))
 
 @app.template_global()
-def message(message_code: str, language_code: Optional[str] = None) -> flask.Markup:
+def message(message_code: str, language_code: Optional[str] = None) -> Markup:
     message, language = message_with_language(message_code, language_code)
     return add_lang_if_needed(message, language)
 
-def message_with_language(message_code: str, language_code: Optional[str] = None) -> Tuple[flask.Markup, str]:
+def message_with_language(message_code: str, language_code: Optional[str] = None) -> Tuple[Markup, str]:
     if not language_code:
         language_code = cast(str, flask.g.interface_language_code)
     if message_code not in translations.get(language_code, {}):
         language_code = 'en'
     text = translations[language_code][message_code]
-    return flask.Markup(text), language_code
+    return Markup(text), language_code
 
 @app.template_global()
-def message_with_kwargs(message_code: str, **kwargs) -> flask.Markup:
+def message_with_kwargs(message_code: str, **kwargs) -> Markup:
     template, language = message_with_language(message_code)
     message = I18nFormatter(locale_identifier=lang_int2babel(language),
                             get_gender=get_gender).format(template, **kwargs)
-    message = cast(flask.Markup, message)  # I18nFormatter returns Markup given Markup
+    message = cast(Markup, message)  # I18nFormatter returns Markup given Markup
     return add_lang_if_needed(message, language)
 
-def add_lang_if_needed(message: flask.Markup, language_code: str) -> flask.Markup:
+def add_lang_if_needed(message: Markup, language_code: str) -> Markup:
     if language_code == flask.g.interface_language_code:
         return message
-    return (flask.Markup(r'<span lang="') +
-            flask.Markup.escape(lang_int2html(language_code)) +
-            flask.Markup(r'" dir="') +
-            flask.Markup.escape(text_direction(language_code)) +
-            flask.Markup(r'">') +
-            flask.Markup.escape(message) +
-            flask.Markup(r'</span>'))
+    return (Markup(r'<span lang="') +
+            Markup.escape(lang_int2html(language_code)) +
+            Markup(r'" dir="') +
+            Markup.escape(text_direction(language_code)) +
+            Markup(r'">') +
+            Markup.escape(message) +
+            Markup(r'</span>'))
 
 @app.template_filter()
 def text_direction(language_code: str) -> str:
@@ -251,41 +252,41 @@ def text_direction(language_code: str) -> str:
         return locale.text_direction
 
 @app.template_filter()
-def term_span(term: Term) -> flask.Markup:
+def term_span(term: Term) -> Markup:
     interface_language_code = lang_lex2int(term['language'])
-    return (flask.Markup(r'<span lang="') +
-            flask.Markup.escape(lang_int2html(interface_language_code)) +
-            flask.Markup(r'" dir="') +
-            flask.Markup.escape(text_direction(interface_language_code)) +
-            flask.Markup(r'">') +
-            flask.Markup.escape(term['value']) +
-            flask.Markup(r'</span>'))
+    return (Markup(r'<span lang="') +
+            Markup.escape(lang_int2html(interface_language_code)) +
+            Markup(r'" dir="') +
+            Markup.escape(text_direction(interface_language_code)) +
+            Markup(r'">') +
+            Markup.escape(term['value']) +
+            Markup(r'</span>'))
 
 @app.template_filter()
-def lemmas_spans(lemmas: LexemeLemmas) -> flask.Markup:
-    return flask.Markup(r'/').join(term_span(lemma)
-                                   for lemma in lemmas.values())
+def lemmas_spans(lemmas: LexemeLemmas) -> Markup:
+    return Markup(r'/').join(term_span(lemma)
+                             for lemma in lemmas.values())
 
 @app.template_filter()
-def language_name_with_code(language_code: str) -> flask.Markup:
-    code_zxx = (flask.Markup(r'<span lang=zxx>') +
-                flask.Markup.escape(language_code) +
-                flask.Markup(r'</span>'))
+def language_name_with_code(language_code: str) -> Markup:
+    code_zxx = (Markup(r'<span lang=zxx>') +
+                Markup.escape(language_code) +
+                Markup(r'</span>'))
     language_name = autonym(language_code)
     if language_name is None:
         language_name = label(language_code)
     if language_name is None:
         return code_zxx
     interface_language_code = lang_lex2int(language_code)
-    return (flask.Markup(r'<span lang="') +
-            flask.Markup.escape(lang_int2html(interface_language_code)) +
-            flask.Markup(r'" dir="') +
-            flask.Markup.escape(text_direction(interface_language_code)) +
-            flask.Markup(r'">') +
-            flask.Markup.escape(language_name) +
-            flask.Markup(r' (') +
+    return (Markup(r'<span lang="') +
+            Markup.escape(lang_int2html(interface_language_code)) +
+            Markup(r'" dir="') +
+            Markup.escape(text_direction(interface_language_code)) +
+            Markup(r'">') +
+            Markup.escape(language_name) +
+            Markup(r' (') +
             code_zxx +
-            flask.Markup(r')</span>'))
+            Markup(r')</span>'))
 
 @app.route('/')
 def index() -> RRV:
@@ -397,7 +398,7 @@ def process_template_bulk(template_name: str) -> RRV:
                 line_number=error.line_number,
             )
         except ValueError as error:
-            parse_error = flask.Markup.escape(error)
+            parse_error = Markup.escape(error)
         if parse_error is not None:
             return flask.render_template(
                 'bulk.html',
