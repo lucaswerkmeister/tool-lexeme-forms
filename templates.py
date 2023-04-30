@@ -1,4 +1,4 @@
-from typing import Dict, List, Literal, NewType, Optional, Set, TypedDict, Union
+from typing import Dict, List, Literal, NewType, Optional, Set, TypedDict, Union, overload
 from typing_extensions import NotRequired
 
 from entity_ids import *
@@ -83,12 +83,32 @@ def statement(property_id: str, item_id: StatementValue) -> Statement:
     }
 
 
+@overload
 def statements(property_id: str, item_id: StatementValue) -> Statements:
-    return {
-        property_id: [
-            statement(property_id, item_id),
-        ],
-    }
+    ...
+@overload
+def statements(statements: dict[str, Union[StatementValue, list[StatementValue]]]) -> Statements:
+    ...
+def statements(*args):
+    if len(args) == 1:
+        statements = args[0]
+        return {
+            property_id: [
+                statement(property_id, value)
+                for value in (values if isinstance(values, list) else [values])
+            ]
+            for property_id, values in statements.items()
+        }
+    elif len(args) == 2:
+        property_id = args[0]
+        value = args[1]
+        return {
+            property_id: [
+                statement(property_id, value),
+            ],
+        }
+    else:
+        raise TypeError(f'statements() takes 1 or 2 positional arguments but {len(args)} were given')
 
 
 language_Esperanto: Language = {
@@ -2060,12 +2080,9 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
                 'grammatical_features_item_ids': [instrumental_case, plural],
             },
         ],
-        'statements': {
-            grammatical_gender: [
-                statement(grammatical_gender, masculine),
-                statement(grammatical_gender, masculine_animate),
-            ],
-        },
+        'statements': statements({
+            grammatical_gender: [masculine, masculine_animate],
+        }),
     },
 
     'czech-noun-masculine-inanimate': {
@@ -2146,12 +2163,9 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
                 'grammatical_features_item_ids': [instrumental_case, plural],
             },
         ],
-        'statements': {
-            grammatical_gender: [
-                statement(grammatical_gender, masculine),
-                statement(grammatical_gender, masculine_inanimate),
-            ],
-        },
+        'statements': statements({
+            grammatical_gender: [masculine, masculine_inanimate],
+        }),
     },
 
     'czech-noun-feminine': {
@@ -3969,15 +3983,10 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
                 'grammatical_features_item_ids_optional': set([singular]),
             },
         ],
-        'statements': {
-            grammatical_gender: [
-                statement(grammatical_gender, neuter),
-            ],
-            instance_of: [
-                statement(instance_of, singulare_tantum),
-                statement(instance_of, toponym),
-            ],
-        },
+        'statements': statements({
+            grammatical_gender: neuter,
+            instance_of: [singulare_tantum, toponym],
+        }),
     },
 
     'german-noun-pluraletantum': {
@@ -4483,12 +4492,9 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
                 'grammatical_features_item_ids': [feminine, plural],
             },
         ],
-        'statements': {
-            grammatical_gender: [
-                statement(grammatical_gender, masculine),
-                statement(grammatical_gender, feminine),
-            ],
-        },
+        'statements': statements({
+            grammatical_gender: [masculine, feminine],
+        }),
     },
 
     'spanish-adjective': {
@@ -4946,12 +4952,9 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
                 'grammatical_features_item_ids': [plural, feminine],
             },
         ],
-        'statements': {
-            grammatical_gender: [
-                statement(grammatical_gender, masculine),
-                statement(grammatical_gender, feminine),
-            ],
-        },
+        'statements': statements({
+            grammatical_gender: [masculine, feminine],
+        }),
     },
 
     'spanish-locution-prepositional': {
@@ -5949,10 +5952,10 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
                 'grammatical_features_item_ids': [],
             },
         ],
-        'statements': {
-            instance_of: [statement(instance_of, indeclinable_adjective)],
-            paradigm_class: [statement(paradigm_class, lāl_adjective)],
-        },
+        'statements': statements({
+            instance_of: indeclinable_adjective,
+            paradigm_class: lāl_adjective,
+        }),
     },
 
     'hindustani-adjective-black-hi': {
@@ -6028,10 +6031,10 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
                 'optional': True,
             },
         ],
-        'statements': {
-            instance_of: [statement(instance_of, declinable_adjective)],
-            paradigm_class: [statement(paradigm_class, kālā_adjective)],
-        },
+        'statements': statements({
+            instance_of: declinable_adjective,
+            paradigm_class: kālā_adjective,
+        }),
     },
 
     'hindustani-adjective-handsomest-hi': {
@@ -6056,10 +6059,10 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
                 'grammatical_features_item_ids': [superlative],
             },
         ],
-        'statements': {
-            instance_of: [statement(instance_of, comparable_adjective)],
-            paradigm_class: [statement(paradigm_class, isam_ē_tafazīl)],
-        },
+        'statements': statements({
+            instance_of: comparable_adjective,
+            paradigm_class: isam_ē_tafazīl,
+        }),
     },
 
     'hindustani-adverb-indeclinable-hi': {
@@ -7713,10 +7716,10 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
                 'grammatical_features_item_ids': [],
             },
         ],
-        'statements': {
-            instance_of: [statement(instance_of, indeclinable_adjective)],
-            paradigm_class: [statement(paradigm_class, lāl_adjective)],
-        },
+        'statements': statements({
+            instance_of: indeclinable_adjective,
+            paradigm_class: lāl_adjective,
+        }),
     },
 
     'hindustani-adjective-black-ur': {
@@ -7792,10 +7795,10 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
                 'optional': True,
             },
         ],
-        'statements': {
-            instance_of: [statement(instance_of, declinable_adjective)],
-            paradigm_class: [statement(paradigm_class, kālā_adjective)],
-        },
+        'statements': statements({
+            instance_of: declinable_adjective,
+            paradigm_class: kālā_adjective,
+        }),
     },
 
     'hindustani-adjective-handsomest-ur': {
@@ -7820,10 +7823,10 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
                 'grammatical_features_item_ids': [superlative],
             },
         ],
-        'statements': {
-            instance_of: [statement(instance_of, comparable_adjective)],
-            paradigm_class: [statement(paradigm_class, isam_ē_tafazīl)],
-        },
+        'statements': statements({
+            instance_of: comparable_adjective,
+            paradigm_class: isam_ē_tafazīl,
+        }),
     },
 
     'hindustani-adverb-indeclinable-ur': {
@@ -10795,12 +10798,9 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
                 'grammatical_features_item_ids': [plural, definite, neuter],
             },
         ],
-        'statements': {
-            grammatical_gender: [
-                statement(grammatical_gender, masculine),
-                statement(grammatical_gender, neuter),
-            ],
-        },
+        'statements': statements({
+            grammatical_gender: [masculine, neuter],
+        }),
     },
 
     'bokmål-adjective': {
@@ -11245,12 +11245,9 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
                 'grammatical_features_item_ids': [plural, definite, masculine],
             },
         ],
-        'statements': {
-            grammatical_gender: [
-                statement(grammatical_gender, feminine),
-                statement(grammatical_gender, masculine),
-            ],
-        },
+        'statements': statements({
+            grammatical_gender: [feminine, masculine],
+        }),
     },
 
     'nynorsk-noun-feminine-neuter': {
@@ -11295,12 +11292,9 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
                 'grammatical_features_item_ids': [plural, definite, neuter],
             },
         ],
-        'statements': {
-            grammatical_gender: [
-                statement(grammatical_gender, feminine),
-                statement(grammatical_gender, neuter),
-            ],
-        },
+        'statements': statements({
+            grammatical_gender: [feminine, neuter],
+        }),
     },
 
     'nynorsk-noun-masculine-neuter': {
@@ -11345,12 +11339,9 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
                 'grammatical_features_item_ids': [plural, definite, neuter],
             },
         ],
-        'statements': {
-            grammatical_gender: [
-                statement(grammatical_gender, masculine),
-                statement(grammatical_gender, neuter),
-            ],
-        },
+        'statements': statements({
+            grammatical_gender: [masculine, neuter],
+        }),
     },
 
     'nynorsk-adjective': {
@@ -12322,10 +12313,10 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
                 'grammatical_features_item_ids': [],
             },
         ],
-        'statements': {
-            instance_of: [statement(instance_of, indeclinable_adjective)],
-            paradigm_class: [statement(paradigm_class, lāl_surakh_adjective)],
-        },
+        'statements': statements({
+            instance_of: indeclinable_adjective,
+            paradigm_class: lāl_surakh_adjective,
+        }),
     },
 
     'punjabi-adjective-black-shah': {
@@ -12401,10 +12392,10 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
                 'optional': True,
             },
         ],
-        'statements': {
-            instance_of: [statement(instance_of, declinable_adjective)],
-            paradigm_class: [statement(paradigm_class, kālā_adjective)],
-        },
+        'statements': statements({
+            instance_of: declinable_adjective,
+            paradigm_class: kālā_adjective,
+        }),
     },
 
     'punjabi-adjective-longer-shah': {
@@ -12558,10 +12549,10 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
                 'optional': True,
             },
         ],
-        'statements': {
-            instance_of: [statement(instance_of, comparable_adjective)],
-            paradigm_class: [statement(paradigm_class, lamera_adjective)],
-        },
+        'statements': statements({
+            instance_of: comparable_adjective,
+            paradigm_class: lamera_adjective,
+        }),
     },
 
     'punjabi-adverb-indeclinable-shah': {
@@ -12828,10 +12819,10 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
                 'grammatical_features_item_ids': [],
             },
         ],
-        'statements': {
-            instance_of: [statement(instance_of, indeclinable_adjective)],
-            paradigm_class: [statement(paradigm_class, lāl_surakh_adjective)],
-        },
+        'statements': statements({
+            instance_of: indeclinable_adjective,
+            paradigm_class: lāl_surakh_adjective,
+        }),
     },
 
     'punjabi-adjective-black-guru': {
@@ -12907,10 +12898,10 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
                 'optional': True,
             },
         ],
-        'statements': {
-            instance_of: [statement(instance_of, declinable_adjective)],
-            paradigm_class: [statement(paradigm_class, kālā_adjective)],
-        },
+        'statements': statements({
+            instance_of: declinable_adjective,
+            paradigm_class: kālā_adjective,
+        }),
     },
 
     'punjabi-adjective-longer-guru': {
@@ -13064,10 +13055,10 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
                 'optional': True,
             },
         ],
-        'statements': {
-            instance_of: [statement(instance_of, comparable_adjective)],
-            paradigm_class: [statement(paradigm_class, lamera_adjective)],
-        },
+        'statements': statements({
+            instance_of: comparable_adjective,
+            paradigm_class: lamera_adjective,
+        }),
     },
 
     'punjabi-adverb-indeclinable-guru': {

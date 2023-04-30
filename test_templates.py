@@ -8,6 +8,118 @@ import translations
 from wikibase_types import Statements
 
 
+def test_statement_value():
+    assert templates.statement('P1', 'Q1') == {
+        'type': 'statement',
+        'rank': 'normal',
+        'mainsnak': {
+            'snaktype': 'value',
+            'property': 'P1',
+            'datatype': 'wikibase-item',
+            'datavalue': {
+                'type': 'wikibase-entityid',
+                'value': {
+                    'entity-type': 'item',
+                    'id': 'Q1',
+                },
+            },
+        },
+    }
+
+
+def test_statement_somevalue():
+    assert templates.statement('P1', 'somevalue') == {
+        'type': 'statement',
+        'rank': 'normal',
+        'mainsnak': {
+            'snaktype': 'somevalue',
+            'property': 'P1',
+            'datatype': 'wikibase-item',
+        },
+    }
+
+
+def test_statement_novalue():
+    assert templates.statement('P1', 'novalue') == {
+        'type': 'statement',
+        'rank': 'normal',
+        'mainsnak': {
+            'snaktype': 'novalue',
+            'property': 'P1',
+            'datatype': 'wikibase-item',
+        },
+    }
+
+
+def test_statements_pair():
+    assert templates.statements('P1', 'Q1') == {
+        'P1': [
+            {
+                'type': 'statement',
+                'rank': 'normal',
+                'mainsnak': {
+                    'snaktype': 'value',
+                    'property': 'P1',
+                    'datatype': 'wikibase-item',
+                    'datavalue': {
+                        'type': 'wikibase-entityid',
+                        'value': {
+                            'entity-type': 'item',
+                            'id': 'Q1',
+                        },
+                    },
+                },
+            },
+        ],
+    }
+
+
+def test_statements_dict():
+    assert templates.statements({
+        'P1': 'somevalue',
+        'P2': ['novalue', 'Q2'],
+    }) == {
+        'P1': [
+            {
+                'type': 'statement',
+                'rank': 'normal',
+                'mainsnak': {
+                    'snaktype': 'somevalue',
+                    'property': 'P1',
+                    'datatype': 'wikibase-item',
+                },
+            },
+        ],
+        'P2': [
+            {
+                'type': 'statement',
+                'rank': 'normal',
+                'mainsnak': {
+                    'snaktype': 'novalue',
+                    'property': 'P2',
+                    'datatype': 'wikibase-item',
+                },
+            },
+            {
+                'type': 'statement',
+                'rank': 'normal',
+                'mainsnak': {
+                    'snaktype': 'value',
+                    'property': 'P2',
+                    'datatype': 'wikibase-item',
+                    'datavalue': {
+                        'type': 'wikibase-entityid',
+                        'value': {
+                            'entity-type': 'item',
+                            'id': 'Q2',
+                        },
+                    },
+                },
+            },
+        ],
+    }
+
+
 def test_entities_exist():
     entity_ids = set()
 
