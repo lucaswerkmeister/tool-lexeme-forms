@@ -78,18 +78,15 @@ def match_template_entity_to_lexeme_entity(  # may be template + lexeme or templ
             for lexeme_statement in lexeme_entity.get('claims', {}).get(property_id, []):
                 if match_statement(template_statement, lexeme_statement):
                     found_matching_statement = True
-                    if property_id not in matched_statements:
-                        matched_statements[property_id] = []
-                    matched_statements[property_id].append(lexeme_statement)
+                    matched_statements.setdefault(property_id, [])\
+                                      .append(lexeme_statement)
                 elif property_exclusive:
-                    if property_id not in conflicting_statements:
-                        conflicting_statements[property_id] = []
-                    conflicting_statements[property_id].append(lexeme_statement)
+                    conflicting_statements.setdefault(property_id, [])\
+                                          .append(lexeme_statement)
 
             if not found_matching_statement:
-                if property_id not in missing_statements:
-                    missing_statements[property_id] = []
-                missing_statements[property_id].append(template_statement)
+                missing_statements.setdefault(property_id, [])\
+                                  .append(template_statement)
 
     return matched_statements, missing_statements, conflicting_statements
 
