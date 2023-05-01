@@ -1,6 +1,7 @@
 import copy
 from typing import cast, TypedDict, Union
 
+from entity_ids.property_ids import *
 from templates import Template, TemplateForm
 from wikibase_types import Lexeme, LexemeForm, Statement, Statements
 
@@ -28,22 +29,13 @@ class OverallMatch(TypedDict):
 # with a different statement for that property
 properties_exclusive = {
     'www': {
-        # other “instance of” are likely unrelated and okay
-        'P31': False,
-        # other “has quality” are incompatible
-        # (used to distinguish between some templates in Mandarin)
-        'P1552': True,
-        # other “grammatical gender” are incompatible
-        'P5185': True,
-        # other “paradigm class” are incompatible
-        'P5911': True,
-        # other “language style” are incompatible
-        # (used to distinguish between two infinitive forms in Czech)
-        'P6191': True,
-        # other “grammatical aspect” are incompatible
-        'P7486': True,
-        # other “transitivity” are incompatible
-        'P9295': True,
+        instance_of: False,  # likely unrelated and okay
+        has_quality: True,  # distinguishes between some Mandarin templates
+        grammatical_gender: True,
+        paradigm_class: True,
+        language_style: True,  # distinguishes between two Czech infinitive forms
+        grammatical_aspect: True,
+        transitivity: True,
     },
     'test': {
         # other “instance of” are likely unrelated and okay
