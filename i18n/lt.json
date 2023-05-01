@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nokeoo"
+		]
+	},
+	"create": "Kurti",
+	"csrf-warning": "Atsiprašome, mums nepavyko apdoroti šios užklausos (<abbr title=\"Cross-site request forgery\">CSRF</abbr> apsauga nepavyko). Prašome pabandyti pateikti formą dar kartą.",
+	"form-optional": "&#32;(neprivaloma)",
+	"advanced": "Išplėstinis",
+	"advanced-general": "Esate „išplėstiniame“ režime.",
+	"generated-via": "sugeneruota per",
+	"bulk-format-help": "formato pagalba",
+	"edit-link": "redaguoti",
+	"no-grammatical-features": "nėra gramatinių funkcijų",
+	"title-create": "$1 (sukurti)",
+	"title-advanced": "$1 (išplėstinis)",
+	"title-edit": "$1 (redaguoti)",
+	"login-hint": "Turite [$1 prisijungti], kad galėtumėte atlikti keitimsu naudojant šį įrankį.",
+	"ambiguous-template": "Šablonas $1 nebeegzistuoja; jis buvo pakeistas šiais šablonais:"
+}
