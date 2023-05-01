@@ -73,6 +73,7 @@ def match_template_entity_to_lexeme_entity(  # may be template + lexeme or templ
     properties_exclusive_for_template_entity = properties_exclusive['test' if test else 'www']
     for property_id in template_entity.get('statements', {}):
         property_exclusive = properties_exclusive_for_template_entity[property_id]
+
         for template_statement in template_entity['statements'][property_id]:
             found_matching_statement = False
             for lexeme_statement in lexeme_entity.get('claims', {}).get(property_id, []):
@@ -80,13 +81,17 @@ def match_template_entity_to_lexeme_entity(  # may be template + lexeme or templ
                     found_matching_statement = True
                     matched_statements.setdefault(property_id, [])\
                                       .append(lexeme_statement)
-                elif property_exclusive:
-                    conflicting_statements.setdefault(property_id, [])\
-                                          .append(lexeme_statement)
+                    break
 
             if not found_matching_statement:
                 missing_statements.setdefault(property_id, [])\
                                   .append(template_statement)
+
+        if property_exclusive:
+            for lexeme_statement in lexeme_entity.get('claims', {}).get(property_id, []):
+                if lexeme_statement not in matched_statements.get(property_id, []):
+                    conflicting_statements.setdefault(property_id, [])\
+                                          .append(lexeme_statement)
 
     return matched_statements, missing_statements, conflicting_statements
 
@@ -149,7 +154,7 @@ def match_lexeme_form_to_template_form(test: bool, lexeme_form: LexemeForm, temp
     if missing_statements or conflicting_statements:
         return 0
     else:
-        matching_features += len(matched_statements)
+        matching_features += sum(len(statements) for statements in matched_statements.values())
 
     return matching_features
 

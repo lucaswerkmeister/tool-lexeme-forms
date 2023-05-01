@@ -333,6 +333,21 @@ def test_match_lexeme_form_to_template_form_counts_grammatical_features_and_stat
     }
     assert matching.match_lexeme_form_to_template_form(False, lexeme_form, template_form) == 4
 
+def test_match_lexeme_form_to_template_form_multiple_statements_for_exclusive_property():
+    lexeme_form = {
+        'grammaticalFeatures': ['Q1'],
+        'claims': {
+            'P7481': [templates.statement('P7481', 'Q113612554'), templates.statement('P7481', 'Q25592134')],
+        },
+    }
+    template_form = {
+        'grammatical_features_item_ids': ['Q1'],
+        'statements': {
+            'P7481': [templates.statement('P7481', 'Q113612554'), templates.statement('P7481', 'Q25592134')],
+        },
+    }
+    assert matching.match_lexeme_form_to_template_form(False, lexeme_form, template_form) == 3
+
 def test_match_lexeme_form_to_template_form_optional_features_undefined():
     lexeme_form = {
         'grammaticalFeatures': ['Q1']
