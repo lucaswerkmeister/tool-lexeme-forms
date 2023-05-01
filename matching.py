@@ -34,6 +34,7 @@ properties_exclusive = {
         grammatical_gender: True,
         paradigm_class: True,
         language_style: True,  # distinguishes between two Czech infinitive forms
+        variety_of_lexeme_form_or_sense: True,  # distinguishes between Punjabi forms
         grammatical_aspect: True,
         transitivity: True,
     },
