@@ -391,6 +391,39 @@ def test_sections_declared(template_name):
         assert template.get('two_column_sections', True)
 
 
+# exceptions from test_optional_forms_last_in_section
+template_names_with_mixed_optional_forms = {
+    'malayalam-noun',
+    'bokmål-noun-masculine-neuter',
+}
+
+
+@pytest.mark.parametrize('template_name', templates.templates_without_redirects.keys())
+def test_optional_forms_last_in_section(template_name):
+    """Check that within each section of a template,
+    optional forms come after all non-optional forms.
+
+    Templates don’t usually have non-optional forms
+    after optional forms until the next section break,
+    but forgetting to mark a form as optional
+    is a frequent mistake when transcribing templates.
+    """
+    if template_name in template_names_with_mixed_optional_forms:
+        return
+    template = templates.templates_without_redirects[template_name]
+    had_optional_form = False
+    index = 0
+    for form in template['forms']:
+        index += 1
+        if form.get('section_break', False):
+            had_optional_form = False
+        if form.get('optional', False):
+            had_optional_form = True
+        else:
+            assert not had_optional_form, \
+                f'form #{index} is non-optional but follows an optional form without a section break'
+
+
 @pytest.mark.parametrize('template_name', templates.templates_without_redirects.keys())
 def test_labels_examples_trimmed(template_name):
     """Check that labels and examples have no surrounding whitespace.
