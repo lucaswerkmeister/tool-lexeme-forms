@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kiathy"
+		]
+	},
+	"create": "Tao",
+	"form-optional": "&#32;(na khoh khiah)",
+	"advanced": "Riasâhpa",
+	"advanced-general": "\"Riasâhpa\" mode lia na y.",
+	"lexeme-id": "Lexeme ID",
+	"edit-link": "taopathi",
+	"title-create": "$1 (tao)",
+	"title-advanced": "$1 (riasâhpa)",
+	"title-bulk": "$1 (apô)",
+	"title-edit": "$1 (taopathi)"
+}
