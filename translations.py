@@ -140,6 +140,7 @@ skipped_language_codes = {
     'ban',
     'io',
     'krc',
+    'mrh',
     'pt-br',
     'qqq',
     'roa-tara',
