@@ -306,7 +306,7 @@ def index() -> RRV:
         can_use_bulk_mode=can_use_bulk_mode(),
     )
 
-@app.route('/settings/')
+@app.get('/settings/')
 def settings() -> RRV:
     return flask.render_template(
         'settings.html',
@@ -316,7 +316,7 @@ def settings() -> RRV:
         },
     )
 
-@app.route('/settings/', methods=['POST'])
+@app.post('/settings/')
 def settings_save() -> RRV:
     if 'interface-language-code' in flask.request.form:
         flask.session['interface_language_code'] = flask.request.form['interface-language-code'][:20]
