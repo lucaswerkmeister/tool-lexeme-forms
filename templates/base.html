@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ g.interface_language_code | lang_int2html }}" dir="{{ g.interface_language_code | text_direction }}">
+<html {{ push_html_lang( g.interface_language_code ) }}>
   <head>
     {% block head %}
     <meta charset="utf-8">
@@ -32,4 +32,4 @@
     </main>
     <script defer src="{{ url_for('static', filename='menu.js') }}"></script>
   </body>
-</html>
+</html{{ pop_html_lang( g.interface_language_code ) }}>

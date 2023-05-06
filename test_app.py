@@ -8,6 +8,7 @@ from translations import translations
 import werkzeug
 
 import app as lexeme_forms
+from language import lang_int2html
 import matching
 from templates import templates_without_redirects
 
@@ -96,6 +97,7 @@ def test_template_group_test():
 def test_message_with_kwargs(language_code, number):
     with lexeme_forms.app.test_request_context():
         flask.g.interface_language_code = language_code
+        flask.g.html_language_codes = [lang_int2html(language_code)]
         message = lexeme_forms.message_with_kwargs('description_with_forms_and_senses', description='', forms=number, senses=number)  # noqa:F841
     # should not have failed
 

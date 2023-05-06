@@ -31,7 +31,7 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='edit.css') }}">
 {% endblock %}
 {% block main %}
-  <h1 lang="{{ template.language_code | lang_lex2int | lang_int2html }}" dir="{{ template.language_code | lang_lex2int | text_direction }}">{{ template.label }}</h1>
+  <h1 {{ push_html_lang( template.language_code | lang_lex2int ) }}>{{ template.label }}</h1{{ pop_html_lang( template.language_code | lang_lex2int ) }}>
   <h2>
     <a href="https://{{ 'test' if template.test else 'www' }}.wikidata.org/wiki/Lexeme:{{ template.lexeme_id }}">
       {{ lemmas | lemmas_spans }}
@@ -80,7 +80,7 @@
     <input name="_csrf_token" type="hidden" value="{{ csrf_token() }}">
     <input name="_edit_mode" type="hidden" value="">
     <input name="_lexeme_revision" type="hidden" value="{{ template.lexeme_revision }}">
-    <dl{% if template.two_column_sections %} class="two-column-sections"{% endif %} lang="{{ template.language_code | lang_lex2int | lang_int2html }}" dir="{{ template.language_code | lang_lex2int | text_direction }}">
+    <dl{% if template.two_column_sections %} class="two-column-sections"{% endif %} {{ push_html_lang( template.language_code | lang_lex2int ) }}>
       <div class="section">
         {% for form in template.forms %}
         {% if form.section_break %}
@@ -96,7 +96,7 @@
         {% endfor %}
         <div class="section-spacer"></div>
       </div>
-    </dl>
+    </dl{{ pop_html_lang( template.language_code | lang_lex2int ) }}>
     {% if template.target_hash %}
     <input name="target_hash" type="hidden" value="{{ template.target_hash }}">
     {% endif %}

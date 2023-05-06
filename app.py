@@ -97,6 +97,25 @@ def init_interface_language_code():
     else:
         flask.g.interface_language_code = flask.request.accept_languages\
                                                        .best_match(translations.keys(), 'en')
+    flask.g.html_language_codes = []
+
+@app.template_global()
+def push_html_lang(language_code: str) -> Markup:
+    html_language_code = lang_int2html(language_code)
+    flask.g.html_language_codes.append(html_language_code)
+    return Markup(r'lang="{}" dir="{}"').format(html_language_code,
+                                                text_direction(language_code))
+
+@app.template_global()
+def pop_html_lang(language_code: str) -> Markup:
+    html_language_code = lang_int2html(language_code)
+    assert flask.g.html_language_codes.pop() == html_language_code
+    return Markup(r'')
+
+@app.after_request
+def assert_html_lang_empty(response: werkzeug.Response) -> werkzeug.Response:
+    assert flask.g.html_language_codes == []
+    return response
 
 @app.after_request
 def denyFrame(response: werkzeug.Response) -> werkzeug.Response:
@@ -241,15 +260,11 @@ def message_with_kwargs(message_code: str, **kwargs) -> Markup:
     return add_lang_if_needed(message, language)
 
 def add_lang_if_needed(message: Markup, language_code: str) -> Markup:
-    if language_code == flask.g.interface_language_code:
+    if flask.g.html_language_codes and flask.g.html_language_codes[-1] == language_code:
         return message
-    return (Markup(r'<span lang="') +
-            Markup.escape(lang_int2html(language_code)) +
-            Markup(r'" dir="') +
-            Markup.escape(text_direction(language_code)) +
-            Markup(r'">') +
-            Markup.escape(message) +
-            Markup(r'</span>'))
+    return Markup('<span {}>{}</span{}>').format(push_html_lang(language_code),
+                                                 message,
+                                                 pop_html_lang(language_code))
 
 @app.template_filter()
 def text_direction(language_code: str) -> str:
