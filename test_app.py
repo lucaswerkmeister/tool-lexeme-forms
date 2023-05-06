@@ -120,6 +120,7 @@ def test_if_no_such_template_redirect_renamed_template():
 def test_if_no_such_template_redirect_unknown_template():
     template_name = 'no-such-template'
     with lexeme_forms.app.test_request_context():
+        lexeme_forms.init_interface_language_code()  # manual call because we bypass @app.before_request below
         response = lexeme_forms.if_no_such_template_redirect(template_name)
     assert response is not None
     assert type(response) is str

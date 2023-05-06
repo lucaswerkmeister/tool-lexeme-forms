@@ -1,13 +1,11 @@
 {% extends "base.html" %}
-{% block title_tag_attributes %}{{ super() }} lang="{{ g.interface_language_code | lang_int2html }}" dir="{{ g.interface_language_code | text_direction }}"{% endblock title_tag_attributes %}
 {% block title %}{{ message_with_kwargs( 'title_bulk', template_label=template.label ) | striptags }} – {{ super() }}{% endblock title %}
 {% block head %}
 {{ super() }}
 <script defer src="{{ url_for('static', filename='preventDoubleSubmit.js') }}"></script>
 {% endblock %}
-{% block main_tag_attributes %}{{ super() }} lang="{{ g.interface_language_code | lang_int2html }}" dir="{{ g.interface_language_code | text_direction }}"{% endblock main_tag_attributes %}
 {% block main %}
-  <h1>{{ template.label }}</h1>
+  <h1 lang="{{ template.language_code | lang_lex2int | lang_int2html }}" dir="{{ template.language_code | lang_lex2int | text_direction }}">{{ template.label }}</h1>
   <h2>{{ message('bulk_heading') }}</h2>
   {% if readonly %}
   <div class="alert alert-warning">
@@ -36,7 +34,17 @@
     <input name="_csrf_token" type="hidden" value="{{ csrf_token() }}">
     <input name="_bulk_mode" type="hidden" value="">
     <div class="form-group">
-      <textarea name="lexemes" class="form-control" rows="10" placeholder="{{ placeholder }}" required autofocus spellcheck="true">{% if value %}{{ value }}{% endif %}</textarea>
+      <textarea
+        name="lexemes"
+        class="form-control"
+        rows="10"
+        placeholder="{{ placeholder }}"
+        required
+        autofocus
+        spellcheck="true"
+        lang="{{ template.language_code | lang_lex2int | lang_int2html }}"
+        dir="{{ template.language_code | lang_lex2int | text_direction }}"
+        >{% if value %}{{ value }}{% endif %}</textarea>
     </div>
     <!-- TODO generated_via should fit somewhere in here -->
     <button class="btn btn-danger"{% if readonly %} disabled title="{{ message_with_kwargs( 'login_hint', url=url_for( 'login' ) ) | striptags }}" {% endif %}>{{ message( 'create' ) }}</button>

@@ -211,7 +211,9 @@ def authentication_area() -> Markup:
     if userinfo is None:
         return (Markup(r'<a id="login" class="navbar-text" href="') +
                 Markup.escape(flask.url_for('login')) +
-                Markup(r'">Log in</a>'))
+                Markup(r'">') +
+                Markup(message('login')) +
+                Markup(r'</a>'))
 
     return (Markup(r'<span class="navbar-text">Logged in as ') +
             user_link(userinfo['name']) +
