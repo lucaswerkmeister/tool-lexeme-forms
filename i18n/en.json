@@ -46,5 +46,7 @@
 	"documentation": "Documentation",
 	"toolforge": "Wikimedia Toolforge",
 	"source-code": "Source code",
-	"login": "Log in"
+	"login": "Log in",
+	"settings-link": "Settings",
+	"settings-heading": "Settings"
 }

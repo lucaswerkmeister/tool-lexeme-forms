@@ -48,5 +48,7 @@
 	"documentation": "Text for a link to the tool’s documentation.",
 	"toolforge": "Text for a link to the tool’s hosting platform, Wikimedia Toolforge.",
 	"source-code": "Text for a link to the tool’s source code.",
-	"login": "Text for a link to log into the tool.\n{{Identical|Log in}}"
+	"login": "Text for a link to log into the tool.\n{{Identical|Log in}}",
+	"settings-link": "Text for a link to the tool’s settings in the navbar. Usually identical to {{msg-wm|wikdata-lexeme-forms-settings-heading}}.",
+	"settings-heading": "Heading for the settings page. Usually identical to {{msg-wm|wikdata-lexeme-forms-settings-link}}."
 }

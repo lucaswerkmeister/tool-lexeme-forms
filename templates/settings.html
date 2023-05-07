@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block main %}
+<h1>{{ message( 'settings_heading' ) }}</h1>
 <form method="post">
   <input name="csrf_token" type="hidden" value="{{ csrf_token() }}">
   <div class="form-group">

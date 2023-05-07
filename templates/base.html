@@ -12,7 +12,7 @@
   </head>
   <body>
     <a href="#main" class="sr-only sr-only-focusable">{{ message( 'skip_to_main_content' ) }}</a>
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
       <a href="{{ url_for('index') }}" class="navbar-brand">{{ message( 'tool_name' ) }}</a>
       <button hidden class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsible-menu" aria-controls="collapsible-menu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -23,6 +23,7 @@
           <li class="nav-item"><a href="//tools.wmflabs.org/" class="nav-link">{{ message( 'toolforge' ) }}</a></li>
           <li class="nav-item"><a href="https://gitlab.wikimedia.org/toolforge-repos/lexeme-forms" class="nav-link">{{ message( 'source_code' ) }}</a></li>
         </ul>
+        <span class="navbar-text"><a href="{{ url_for( 'settings' ) }}" class="nav-link">{{ message( 'settings_link' ) }}</a></span>
         {{ authentication_area() }}
       </div>
     </nav>
