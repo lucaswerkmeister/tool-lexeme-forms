@@ -192,7 +192,7 @@ def augment_description(description, forms_count, senses_count):
     if forms_count is None or senses_count is None:
         return description
     return message_with_kwargs(
-        'description_with_forms_and_senses',
+        'description-with-forms-and-senses',
         description=description,
         forms=int(forms_count),
         senses=int(senses_count),
@@ -414,7 +414,7 @@ def process_template_bulk(template_name: str) -> RRV:
             lexemes = parse_lexemes(form_data['lexemes'], template)
         except FirstFieldNotLexemeIdError as error:
             parse_error = message_with_kwargs(
-                'bulk_first_field_not_lexeme_id',
+                'bulk-first-field-not-lexeme-id',
                 num_forms=error.num_forms,
                 num_fields=error.num_fields,
                 first_field=error.first_field,
@@ -422,7 +422,7 @@ def process_template_bulk(template_name: str) -> RRV:
             )
         except FirstFieldLexemeIdError as error:
             parse_error = message_with_kwargs(
-                'bulk_first_field_lexeme_id',
+                'bulk-first-field-lexeme-id',
                 num_forms=error.num_forms,
                 num_fields=error.num_fields,
                 first_field=error.first_field,
@@ -431,7 +431,7 @@ def process_template_bulk(template_name: str) -> RRV:
         except WrongNumberOfFieldsError as error:
             show_optional_forms_hint = error.num_fields < error.num_forms
             parse_error = message_with_kwargs(
-                'bulk_wrong_number_of_fields',
+                'bulk-wrong-number-of-fields',
                 num_forms=error.num_forms,
                 num_fields=error.num_fields,
                 line_number=error.line_number,
