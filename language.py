@@ -44,14 +44,14 @@ def lang_int2babel(code: str) -> str:
         # Latin and Venetian are not in CLDR, Italian is similar for our purposes
         'la': 'it',
         'vec': 'it',
-        # pnb (Western Punjabi) is not in CLDR,
-        # and its replacement lah (Lahnda) is not in Babel;
-        # Urdu seems close for our purposes
-        'pnb': 'ur',
+        # pnb (Western Punjabi) is represented in Babel
+        # as pa_Arab (Punjabi in Arabic script);
+        # its replacement lah (Lahnda) is not in Babel
+        'pnb': 'pa_Arab',
         # Serbo-Croatian is not in CLDR, Croatian is closest for our purposes
         'sh': 'hr',
         # hno (Hindko) is not in Babel, nor is lah (Lahnda);
-        # use Urdu just like for pnb (Western Punjabi) above,
+        # use pa_Arab just like for pnb (Western Punjabi) above,
         # as pnb is said to be mutually intellegible (https://w.wiki/6Nu7)
-        'hno': 'ur',
+        'hno': 'pa_Arab',
     }.get(code, code)
