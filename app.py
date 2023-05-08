@@ -239,13 +239,12 @@ def authentication_area() -> Markup:
             Markup(r'</span>'))
 
 @app.template_global()
-def message(message_code: str, language_code: Optional[str] = None) -> Markup:
-    message, language = message_with_language(message_code, language_code)
+def message(message_code: str) -> Markup:
+    message, language = message_with_language(message_code)
     return add_lang_if_needed(message, language)
 
-def message_with_language(message_code: str, language_code: Optional[str] = None) -> Tuple[Markup, str]:
-    if not language_code:
-        language_code = cast(str, flask.g.interface_language_code)
+def message_with_language(message_code: str) -> Tuple[Markup, str]:
+    language_code = cast(str, flask.g.interface_language_code)
     if message_code not in translations.get(language_code, {}):
         language_code = 'en'
     text = translations[language_code][message_code]
