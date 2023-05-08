@@ -16,30 +16,30 @@ def identity(s: Any) -> Any:
 
 
 variables = {
-    'duplicates_warning': ['lexemes'],
-    'duplicates_instructions': ['lexemes'],
-    'description_with_forms_and_senses': ['description', 'forms', 'senses'],
-    'bulk_not_allowed': ['user'],
-    'bulk_first_field_not_lexeme_id': ['num_forms', 'num_fields', 'first_field', 'line_number'],
-    'bulk_first_field_lexeme_id': ['num_forms', 'num_fields', 'first_field', 'line_number'],
-    'bulk_wrong_number_of_fields': ['num_forms', 'num_fields', 'line_number'],
-    'edit_ambiguous_warning': ['forms'],
-    'edit_unmatched_warning': ['forms'],
-    'edit_form_list_item': ['form_link', 'grammatical_feature_labels', 'statements'],
-    'title_create': ['template_label'],
-    'title_advanced': ['template_label'],
-    'title_bulk': ['template_label'],
-    'title_edit': ['template_label'],
-    'login_hint': ['url'],
-    'ambiguous_template': ['template_name', 'replacement_templates_count'],
+    'duplicates-warning': ['lexemes'],
+    'duplicates-instructions': ['lexemes'],
+    'description-with-forms-and-senses': ['description', 'forms', 'senses'],
+    'bulk-not-allowed': ['user'],
+    'bulk-first-field-not-lexeme-id': ['num_forms', 'num_fields', 'first_field', 'line_number'],
+    'bulk-first-field-lexeme-id': ['num_forms', 'num_fields', 'first_field', 'line_number'],
+    'bulk-wrong-number-of-fields': ['num_forms', 'num_fields', 'line_number'],
+    'edit-ambiguous-warning': ['forms'],
+    'edit-unmatched-warning': ['forms'],
+    'edit-form-list-item': ['form_link', 'grammatical_feature_labels', 'statements'],
+    'title-create': ['template_label'],
+    'title-advanced': ['template_label'],
+    'title-bulk': ['template_label'],
+    'title-edit': ['template_label'],
+    'login-hint': ['url'],
+    'ambiguous-template': ['template_name', 'replacement_templates_count'],
 }
 lists = {
-    'edit_form_list_item': {'grammatical_feature_labels'},
+    'edit-form-list-item': {'grammatical_feature_labels'},
 }
 derived_messages = {
-    'bulk_button': ('bulk_link', initial_titlecase),
-    'bulk_heading': ('bulk_link', identity),
-    'edit_button': ('edit_link', initial_titlecase),
+    'bulk-button': ('bulk-link', initial_titlecase),
+    'bulk-heading': ('bulk-link', identity),
+    'edit-button': ('edit-link', initial_titlecase),
 }
 
 
@@ -163,13 +163,12 @@ for entry in os.scandir('i18n/'):
     with open(entry.path, 'r') as f:
         data = json.load(f)
     translations[language] = {}
-    for key_json in data:
-        if key_json.startswith('@'):
+    for key in data:
+        if key.startswith('@'):
             continue
-        key_py = key_json.replace('-', '_')
-        msg = mw2py(data[key_json], language, variables.get(key_py, []), lists.get(key_py, set()))
-        translations[language][key_py] = msg
-    for key_py in derived_messages:
-        source_key_py, transformation = derived_messages[key_py]
-        if source_key_py in translations[language]:
-            translations[language][key_py] = transformation(translations[language][source_key_py])
+        msg = mw2py(data[key], language, variables.get(key, []), lists.get(key, set()))
+        translations[language][key] = msg
+    for key in derived_messages:
+        source_key, transformation = derived_messages[key]
+        if source_key in translations[language]:
+            translations[language][key] = transformation(translations[language][source_key])

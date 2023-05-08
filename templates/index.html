@@ -1,13 +1,13 @@
 {% from 'template_li.html' import template_li %}
 {% extends "base.html" %}
 {% block main %}
-<h1>{{ message( 'tool_name' ) }}</h1>
+<h1>{{ message( 'tool-name' ) }}</h1>
 <ul>
   {% for template_name, template in templates.items() %}
   {% set group = template_group(template) %}
   {% if not(loop.previtem and template_group(loop.previtem[1]) == group) %}
   <li id="{{ template.language_code }}{% if template.test %}-test{% endif %}">
-    {{ group }}
+    {{ group }}l
     <ul>
       {% endif %}
       {{ template_li( template ) }}

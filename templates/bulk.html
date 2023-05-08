@@ -1,23 +1,23 @@
 {% extends "base.html" %}
-{% block title %}{{ message_with_kwargs( 'title_bulk', template_label=template.label ) | striptags }} – {{ super() }}{% endblock title %}
+{% block title %}{{ message_with_kwargs( 'title-bulk', template_label=template.label ) | striptags }} – {{ super() }}{% endblock title %}
 {% block head %}
 {{ super() }}
 <script defer src="{{ url_for('static', filename='preventDoubleSubmit.js') }}"></script>
 {% endblock %}
 {% block main %}
   <h1 {{ push_html_lang( template.language_code | lang_lex2int ) }}>{{ template.label }}</h1{{ pop_html_lang( template.language_code | lang_lex2int ) }}>
-  <h2>{{ message('bulk_heading') }}</h2>
+  <h2>{{ message('bulk-heading') }}</h2>
   {% if readonly %}
   <div class="alert alert-warning">
-    {{ message_with_kwargs( 'login_hint', url=url_for( 'login' ) ) }}
+    {{ message_with_kwargs( 'login-hint', url=url_for( 'login' ) ) }}
   </div>
   {% endif %}
   <p>
-    <a href="https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms#Bulk_mode">{{ message('bulk_format_help') }}</a>
+    <a href="https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms#Bulk_mode">{{ message('bulk-format-help') }}</a>
   </p>
   {% if csrf_error %}
   <div class="alert alert-warning">
-    {{ message( 'csrf_warning' ) }}
+    {{ message( 'csrf-warning' ) }}
   </div>
   {% endif %}
   {% if parse_error %}
@@ -27,7 +27,7 @@
   {% endif %}
   {% if show_optional_forms_hint %}
   <div class="alert alert-info">
-    {{ message( 'bulk_optional_forms_hint' ) }}
+    {{ message( 'bulk-optional-forms-hint' ) }}
   </div>
   {% endif %}
   <form method="post" autocapitalize="off">
@@ -46,6 +46,6 @@
         >{% if value %}{{ value }}{% endif %}</textarea{{ pop_html_lang( template.language_code | lang_lex2int ) }}>
     </div>
     <!-- TODO generated_via should fit somewhere in here -->
-    <button class="btn btn-danger"{% if readonly %} disabled title="{{ message_with_kwargs( 'login_hint', url=url_for( 'login' ) ) | striptags }}" {% endif %}>{{ message( 'create' ) }}</button>
+    <button class="btn btn-danger"{% if readonly %} disabled title="{{ message_with_kwargs( 'login-hint', url=url_for( 'login' ) ) | striptags }}" {% endif %}>{{ message( 'create' ) }}</button>
   </form>
 {% endblock main %}

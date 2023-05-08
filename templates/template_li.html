@@ -4,7 +4,7 @@
   <span {{ push_html_lang( template.language_code | lang_lex2int ) }}>
     <a href="{{ url_for('process_template', template_name=template_name) }}">{{ template.label }}</a>
     {% if can_use_bulk_mode %}
-    (<a href="{{ url_for('process_template_bulk', template_name=template_name) }}">{{ message('bulk_link') }}</a>)
+    (<a href="{{ url_for('process_template_bulk', template_name=template_name) }}">{{ message('bulk-link') }}</a>)
     {% endif %}
   </span{{ pop_html_lang( template.language_code | lang_lex2int ) }}>
 </li>

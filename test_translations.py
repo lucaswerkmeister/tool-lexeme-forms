@@ -80,8 +80,8 @@ def test_message_html_elements(language_code: str, message_key: str):
 
 
 def test_message_syntax_valid_duplicates_warning(language_code: str, number: int):
-    if 'duplicates_warning' in translations.translations[language_code]:
-        message = translations.translations[language_code]['duplicates_warning']
+    if 'duplicates-warning' in translations.translations[language_code]:
+        message = translations.translations[language_code]['duplicates-warning']
         formatters.I18nFormatter(
             locale_identifier=lang_int2babel(language_code),
             get_gender=unused,
@@ -92,8 +92,8 @@ def test_message_syntax_valid_duplicates_warning(language_code: str, number: int
 
 
 def test_message_syntax_valid_duplicates_instructions(language_code: str, number: int):
-    if 'duplicates_instructions' in translations.translations[language_code]:
-        message = translations.translations[language_code]['duplicates_instructions']
+    if 'duplicates-instructions' in translations.translations[language_code]:
+        message = translations.translations[language_code]['duplicates-instructions']
         formatters.I18nFormatter(
             locale_identifier=lang_int2babel(language_code),
             get_gender=unused,
@@ -104,8 +104,8 @@ def test_message_syntax_valid_duplicates_instructions(language_code: str, number
 
 
 def test_message_syntax_valid_description_with_forms_and_senses(language_code: str, number: int):
-    if 'description_with_forms_and_senses' in translations.translations[language_code]:
-        message = translations.translations[language_code]['description_with_forms_and_senses']
+    if 'description-with-forms-and-senses' in translations.translations[language_code]:
+        message = translations.translations[language_code]['description-with-forms-and-senses']
         formatters.I18nFormatter(
             locale_identifier=lang_int2babel(language_code),
             get_gender=unused,
@@ -118,8 +118,8 @@ def test_message_syntax_valid_description_with_forms_and_senses(language_code: s
 
 
 def test_message_syntax_valid_edit_ambiguous_warning(language_code: str, number: int):
-    if 'edit_ambiguous_warning' in translations.translations[language_code]:
-        message = translations.translations[language_code]['edit_ambiguous_warning']
+    if 'edit-ambiguous-warning' in translations.translations[language_code]:
+        message = translations.translations[language_code]['edit-ambiguous-warning']
         formatters.I18nFormatter(
             locale_identifier=lang_int2babel(language_code),
             get_gender=unused,
@@ -130,8 +130,8 @@ def test_message_syntax_valid_edit_ambiguous_warning(language_code: str, number:
 
 
 def test_message_syntax_valid_edit_unmatched_warning(language_code: str, number: int):
-    if 'edit_unmatched_warning' in translations.translations[language_code]:
-        message = translations.translations[language_code]['edit_unmatched_warning']
+    if 'edit-unmatched-warning' in translations.translations[language_code]:
+        message = translations.translations[language_code]['edit-unmatched-warning']
         formatters.I18nFormatter(
             locale_identifier=lang_int2babel(language_code),
             get_gender=unused,
@@ -142,8 +142,8 @@ def test_message_syntax_valid_edit_unmatched_warning(language_code: str, number:
 
 
 def test_message_syntax_valid_edit_form_list_item(language_code: str, list: builtins.list[str], number: int):
-    if 'edit_form_list_item' in translations.translations[language_code]:
-        message = translations.translations[language_code]['edit_form_list_item']
+    if 'edit-form-list-item' in translations.translations[language_code]:
+        message = translations.translations[language_code]['edit-form-list-item']
         formatters.I18nFormatter(
             locale_identifier=lang_int2babel(language_code),
             get_gender=unused,
@@ -156,8 +156,8 @@ def test_message_syntax_valid_edit_form_list_item(language_code: str, list: buil
 
 
 def test_message_syntax_valid_bulk_not_allowed(language_code: str, gender: str):
-    if 'bulk_not_allowed' in translations.translations[language_code]:
-        message = translations.translations[language_code]['bulk_not_allowed']
+    if 'bulk-not-allowed' in translations.translations[language_code]:
+        message = translations.translations[language_code]['bulk-not-allowed']
         formatters.I18nFormatter(
             locale_identifier=lang_int2babel(language_code),
             get_gender=lambda value: gender,

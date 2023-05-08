@@ -134,7 +134,7 @@ def form2label(form: TemplateForm) -> Markup:
     ret = Markup.escape(form['label'])
     if form.get('optional', False):
         ret += (Markup(r'<span class="text-muted">') +
-                Markup(message('form_optional')) +
+                Markup(message('form-optional')) +
                 Markup(r'</span>'))
     return ret
 
