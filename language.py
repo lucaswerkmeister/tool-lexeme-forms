@@ -54,4 +54,25 @@ def lang_int2babel(code: str) -> str:
         # use pa_Arab just like for pnb (Western Punjabi) above,
         # as pnb is said to be mutually intellegible (https://w.wiki/6Nu7)
         'hno': 'pa_Arab',
+        # anp (Angika) is not in Babel;
+        # hi (Hindi) is the MediaWiki fallback
+        'anp': 'hi',
+        # ban (Balinese) is not in Babel;
+        # id (Indonesian) is the MediaWiki fallback
+        'ban': 'id',
+        # io (Ido) is not in CLDR;
+        # eo (Esperanto) is the MediaWiki fallback
+        'io': 'eo',
+        # krc (Karachay-Balkar) is not in Babel;
+        # ru (Russian) is the MediaWiki fallback
+        'krc': 'ru',
+        # mrh (Mara) is not in CLDR;
+        # MediaWiki has no fallback, so I assume reusing plurals etc. from English is okay
+        'mrh': 'en',
+        # roa-tara (tarandíne) is not in CLDR;
+        # it (Italian) is the MediaWiki fallback
+        'roa': 'it',
+        # xmf (Mingrelian) is not in Babel;
+        # ka (Georgian) is the MediaWiki fallback
+        'xmf': 'ka',
     }.get(code, code)
