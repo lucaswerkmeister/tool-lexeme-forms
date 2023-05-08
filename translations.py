@@ -141,12 +141,9 @@ skipped_language_codes = {
     'io',
     'krc',
     'mrh',
-    'pt-br',
     'qqq',
     'roa-tara',
-    'sa',
     'xmf',
-    'zh-hant',
 }
 
 
