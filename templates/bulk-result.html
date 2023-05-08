@@ -1,7 +1,6 @@
 {% extends "base.html" %}
-{% block main_tag_attributes %}{{ super() }} lang="{{ g.interface_language_code | lang_int2html }}" dir="{{ g.interface_language_code | text_direction }}"{% endblock main_tag_attributes %}
 {% block main %}
-  <h1>{{ template.label }}</h1>
+  <h1 {{ push_html_lang( template.language_code | lang_lex2int ) }}>{{ template.label }}</h1{{ pop_html_lang( template.language_code | lang_lex2int ) }}>
   <ul>
     {% for result in results %}
     <li>

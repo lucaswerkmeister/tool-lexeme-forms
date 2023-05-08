@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html {{ push_html_lang( g.interface_language_code ) }}>
   <head>
     {% block head %}
     <meta charset="utf-8">
-    <title {% block title_tag_attributes %}{% endblock title_tag_attributes %}>{% block title %}Wikidata Lexeme Forms{% endblock title %}</title>
+    <title {% block title_tag_attributes %}{% endblock title_tag_attributes %}>{% block title %}{{ message( 'tool_name' ) | striptags }}{% endblock title %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://tools-static.wmflabs.org/cdnjs/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ url_for('static', filename='tool.css') }}">
@@ -11,18 +11,19 @@
     {% endblock head %}
   </head>
   <body>
-    <a href="#main" class="sr-only sr-only-focusable">Skip to main content</a>
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-      <a href="{{ url_for('index') }}" class="navbar-brand">Wikidata Lexeme Forms</a>
+    <a href="#main" class="sr-only sr-only-focusable">{{ message( 'skip_to_main_content' ) }}</a>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <a href="{{ url_for('index') }}" class="navbar-brand">{{ message( 'tool_name' ) }}</a>
       <button hidden class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsible-menu" aria-controls="collapsible-menu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div id="collapsible-menu" class="nojs">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item"><a href="https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms" class="nav-link">Documentation</a></li>
-          <li class="nav-item"><a href="//tools.wmflabs.org/" class="nav-link">Wikimedia Toolforge</a></li>
-          <li class="nav-item"><a href="https://gitlab.wikimedia.org/toolforge-repos/lexeme-forms" class="nav-link">Source code</a></li>
+          <li class="nav-item"><a href="https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms" class="nav-link">{{ message( 'documentation' ) }}</a></li>
+          <li class="nav-item"><a href="//tools.wmflabs.org/" class="nav-link">{{ message( 'toolforge' ) }}</a></li>
+          <li class="nav-item"><a href="https://gitlab.wikimedia.org/toolforge-repos/lexeme-forms" class="nav-link">{{ message( 'source_code' ) }}</a></li>
         </ul>
+        <span class="navbar-text"><a href="{{ url_for( 'settings' ) }}" class="nav-link">{{ message( 'settings_link' ) }}</a></span>
         {{ authentication_area() }}
       </div>
     </nav>
@@ -32,4 +33,4 @@
     </main>
     <script defer src="{{ url_for('static', filename='menu.js') }}"></script>
   </body>
-</html>
+</html{{ pop_html_lang( g.interface_language_code ) }}>

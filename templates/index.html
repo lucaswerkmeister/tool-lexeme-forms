@@ -1,7 +1,7 @@
 {% from 'template_li.html' import template_li %}
 {% extends "base.html" %}
 {% block main %}
-<h1>Wikidata Lexeme Forms</h1>
+<h1>{{ message( 'tool_name' ) }}</h1>
 <ul>
   {% for template_name, template in templates.items() %}
   {% set group = template_group(template) %}

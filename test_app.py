@@ -4,9 +4,11 @@ from html.parser import HTMLParser
 import json
 import pytest
 import re
+from translations import translations
 import werkzeug
 
 import app as lexeme_forms
+from language import lang_int2html
 import matching
 from templates import templates_without_redirects
 
@@ -90,12 +92,12 @@ def test_template_group_test():
     group = lexeme_forms.template_group({'language_code': 'de', 'test': True})
     assert group == '<span lang="de" dir="ltr">Deutsch (<span lang=zxx>de</span>)</span>, test.wikidata.org'
 
-@pytest.mark.parametrize('template_name', templates_without_redirects.keys())
+@pytest.mark.parametrize('language_code', translations.keys())
 @pytest.mark.parametrize('number', range(-1, 5))
-def test_message_with_kwargs(template_name, number):
-    template = templates_without_redirects[template_name]
+def test_message_with_kwargs(language_code, number):
     with lexeme_forms.app.test_request_context():
-        flask.g.interface_language_code = template['language_code']
+        flask.g.interface_language_code = language_code
+        flask.g.html_language_codes = [lang_int2html(language_code)]
         message = lexeme_forms.message_with_kwargs('description_with_forms_and_senses', description='', forms=number, senses=number)  # noqa:F841
     # should not have failed
 
@@ -120,6 +122,7 @@ def test_if_no_such_template_redirect_renamed_template():
 def test_if_no_such_template_redirect_unknown_template():
     template_name = 'no-such-template'
     with lexeme_forms.app.test_request_context():
+        lexeme_forms.init_interface_language_code()  # manual call because we bypass @app.before_request below
         response = lexeme_forms.if_no_such_template_redirect(template_name)
     assert response is not None
     assert type(response) is str
@@ -216,6 +219,8 @@ def test_get_duplicates_api_html_two(monkeypatch):
                   {'id': 'L2', 'uri': 'http://www.wikidata.org/wiki/Lexeme:L2', 'label': 'test2 lemma', 'description': 'a test2 lexeme', 'forms_count': None, 'senses_count': None}]
     monkeypatch.setattr(lexeme_forms, 'get_duplicates', lambda wiki, language_code, lemma: duplicates)
     with lexeme_forms.app.test_client() as client:
+        with client.session_transaction() as session:
+            session['interface_language_code'] = 'de'
         response = client.get('/api/v1/duplicates/www/de/lemma', headers={'Accept': 'text/html'})
     assert response.content_type == 'text/html; charset=utf-8'
     response_text = response.get_data(as_text=True)
@@ -230,6 +235,8 @@ def test_get_duplicates_api_html_one(monkeypatch):
     duplicates = [{'id': 'L1', 'uri': 'http://www.wikidata.org/wiki/Lexeme:L1', 'label': 'test lemma', 'description': 'a test lexeme', 'forms_count': None, 'senses_count': None}]
     monkeypatch.setattr(lexeme_forms, 'get_duplicates', lambda wiki, language_code, lemma: duplicates)
     with lexeme_forms.app.test_client() as client:
+        with client.session_transaction() as session:
+            session['interface_language_code'] = 'de'
         response = client.get('/api/v1/duplicates/www/de/lemma', headers={'Accept': 'text/html'})
     assert response.content_type == 'text/html; charset=utf-8'
     response_text = response.get_data(as_text=True)

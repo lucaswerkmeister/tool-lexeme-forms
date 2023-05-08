@@ -88,6 +88,35 @@ def enableCORS(func, *args, **kwargs):
     response.headers['Access-Control-Allow-Origin'] = '*'
     return response
 
+@app.before_request
+def init_interface_language_code():
+    if flask.session.get('interface_language_code') in translations:
+        flask.g.interface_language_code = flask.session['interface_language_code']
+        if flask.g.interface_language_code not in translations:
+            flask.g.interface_language_code = 'en'
+    else:
+        flask.g.interface_language_code = flask.request.accept_languages\
+                                                       .best_match(translations.keys(), 'en')
+    flask.g.html_language_codes = []
+
+@app.template_global()
+def push_html_lang(language_code: str) -> Markup:
+    html_language_code = lang_int2html(language_code)
+    flask.g.html_language_codes.append(html_language_code)
+    return Markup(r'lang="{}" dir="{}"').format(html_language_code,
+                                                text_direction(language_code))
+
+@app.template_global()
+def pop_html_lang(language_code: str) -> Markup:
+    html_language_code = lang_int2html(language_code)
+    assert flask.g.html_language_codes.pop() == html_language_code
+    return Markup(r'')
+
+@app.after_request
+def assert_html_lang_empty(response: werkzeug.Response) -> werkzeug.Response:
+    assert flask.g.html_language_codes == []
+    return response
+
 @app.after_request
 def denyFrame(response: werkzeug.Response) -> werkzeug.Response:
     """Disallow embedding the tool’s pages in other websites.
@@ -201,20 +230,21 @@ def authentication_area() -> Markup:
     if userinfo is None:
         return (Markup(r'<a id="login" class="navbar-text" href="') +
                 Markup.escape(flask.url_for('login')) +
-                Markup(r'">Log in</a>'))
+                Markup(r'">') +
+                Markup(message('login')) +
+                Markup(r'</a>'))
 
     return (Markup(r'<span class="navbar-text">Logged in as ') +
             user_link(userinfo['name']) +
             Markup(r'</span>'))
 
 @app.template_global()
-def message(message_code: str, language_code: Optional[str] = None) -> Markup:
-    message, language = message_with_language(message_code, language_code)
+def message(message_code: str) -> Markup:
+    message, language = message_with_language(message_code)
     return add_lang_if_needed(message, language)
 
-def message_with_language(message_code: str, language_code: Optional[str] = None) -> Tuple[Markup, str]:
-    if not language_code:
-        language_code = cast(str, flask.g.interface_language_code)
+def message_with_language(message_code: str) -> Tuple[Markup, str]:
+    language_code = cast(str, flask.g.interface_language_code)
     if message_code not in translations.get(language_code, {}):
         language_code = 'en'
     text = translations[language_code][message_code]
@@ -229,15 +259,11 @@ def message_with_kwargs(message_code: str, **kwargs) -> Markup:
     return add_lang_if_needed(message, language)
 
 def add_lang_if_needed(message: Markup, language_code: str) -> Markup:
-    if language_code == flask.g.interface_language_code:
+    if flask.g.html_language_codes and flask.g.html_language_codes[-1] == language_code:
         return message
-    return (Markup(r'<span lang="') +
-            Markup.escape(lang_int2html(language_code)) +
-            Markup(r'" dir="') +
-            Markup.escape(text_direction(language_code)) +
-            Markup(r'">') +
-            Markup.escape(message) +
-            Markup(r'</span>'))
+    return Markup('<span {}>{}</span{}>').format(push_html_lang(language_code),
+                                                 message,
+                                                 pop_html_lang(language_code))
 
 @app.template_filter()
 def text_direction(language_code: str) -> str:
@@ -290,12 +316,27 @@ def language_name_with_code(language_code: str) -> Markup:
 
 @app.route('/')
 def index() -> RRV:
-    flask.g.interface_language_code = 'en'
     return flask.render_template(
         'index.html',
         templates=templates_without_redirects,
         can_use_bulk_mode=can_use_bulk_mode(),
     )
+
+@app.get('/settings/')
+def settings() -> RRV:
+    return flask.render_template(
+        'settings.html',
+        languages={
+            language_code: autonym(language_code)
+            for language_code in translations
+        },
+    )
+
+@app.post('/settings/')
+def settings_save() -> RRV:
+    if 'interface-language-code' in flask.request.form:
+        flask.session['interface_language_code'] = flask.request.form['interface-language-code'][:20]
+    return flask.redirect(flask.url_for('index'))
 
 @app.route('/template/<template_name>/', methods=['GET', 'POST'])
 def process_template(template_name: str) -> RRV:
@@ -308,7 +349,6 @@ def process_template_advanced(template_name: str, advanced: bool = True) -> RRV:
         return response
 
     template = templates_without_redirects[template_name]
-    flask.g.interface_language_code = lang_lex2int(template['language_code'])
     form_data = flask.request.form  # type: werkzeug.datastructures.MultiDict
 
     readonly = 'OAUTH' in app.config and 'oauth_access_token' not in flask.session
@@ -354,7 +394,6 @@ def process_template_bulk(template_name: str) -> RRV:
         return response
 
     template = templates_without_redirects[template_name]
-    flask.g.interface_language_code = lang_lex2int(template['language_code'])
 
     readonly = 'OAUTH' in app.config and 'oauth_access_token' not in flask.session
 
@@ -491,7 +530,6 @@ def process_template_edit(template_name: str, lexeme_id: str) -> RRV:
 
     template = templates_without_redirects[template_name]
     template_language_code = template['language_code']
-    flask.g.interface_language_code = lang_lex2int(template_language_code)
     representation_language_code = flask.request.args.get('language_code', template_language_code)
     wiki = 'test' if 'test' in template else 'www'
 
@@ -579,7 +617,6 @@ def if_no_such_template_redirect(template_name: str) -> Optional[RRV]:
             templates_without_redirects[replacement_name]
             for replacement_name in templates[template_name]
         ]
-        flask.g.interface_language_code = lang_lex2int(replacement_templates[0]['language_code'])
         return flask.render_template(
             'ambiguous-template.html',
             template_name=template_name,
@@ -683,7 +720,6 @@ def build_lemmas(
 @app.route('/api/v1/duplicates/<any(www,test):wiki>/<language_code>/<path:lemma>')
 @enableCORS
 def get_duplicates_api(wiki: str, language_code: str, lemma: str) -> RRV:
-    flask.g.interface_language_code = lang_lex2int(language_code)
     matches = get_duplicates(wiki, language_code, lemma)
     if not matches:
         return flask.Response(status=204)
@@ -742,14 +778,12 @@ def get_duplicates(wiki: str, language_code: str, lemma: str) -> list[Duplicate]
 @app.route('/api/v1/no_duplicate/<language_code>')
 @app.template_global()
 def render_no_duplicate(language_code: str) -> RRV:
-    flask.g.interface_language_code = lang_lex2int(language_code)
     return flask.render_template(
         'no_duplicate.html',
     )
 
 @app.route('/api/v1/advanced_partial_forms_hint/<language_code>')
 def render_advanced_partial_forms_hint(language_code: str) -> RRV:
-    flask.g.interface_language_code = lang_lex2int(language_code)
     return flask.render_template(
         'advanced_partial_forms_hint.html',
     )

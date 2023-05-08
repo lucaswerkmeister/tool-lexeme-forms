@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title_tag_attributes %}{{ super() }} lang="{{ g.interface_language_code | lang_int2html }}" dir="{{ g.interface_language_code | text_direction }}"{% endblock title_tag_attributes %}
+{% block title_tag_attributes %}{{ super() }} {{ push_html_lang( g.interface_language_code ) }}{% endblock title_tag_attributes %}
 {% block title %}
 {% if lemmas %}
 {{ lemmas | lemmas_spans | striptags }} {% if lexeme_id %}({{ lexeme_id }}){% endif %} –
@@ -7,6 +7,7 @@
 {{ lexeme_id }} –
 {% endif %}
 {{ message_with_kwargs( 'title_advanced' if advanced else 'title_create', template_label=template.label ) | striptags }} – {{ super() }}
+{{ pop_html_lang( g.interface_language_code ) }}
 {% endblock title %}
 {% block head %}
 {{ super() }}
@@ -16,9 +17,9 @@
 <script defer src="{{ url_for('static', filename='preventDoubleSubmit.js') }}"></script>
 <link rel="stylesheet" href="{{ url_for('static', filename='template.css') }}">
 {% endblock %}
-{% block main_tag_attributes %}{{ super() }} lang="{{ g.interface_language_code | lang_int2html }}" dir="{{ g.interface_language_code | text_direction }}" data-template='{{ template | tojson }}'{% endblock main_tag_attributes %}
+{% block main_tag_attributes %}{{ super() }} data-template='{{ template | tojson }}'{% endblock main_tag_attributes %}
 {% block main %}
-  <h1 class="h2">{{ template.label }}</h1>
+  <h1 class="h2" {{ push_html_lang( template.language_code | lang_lex2int ) }}>{{ template.label }}</h1{{ pop_html_lang( template.language_code | lang_lex2int ) }}>
   {% if readonly %}
   <div class="alert alert-warning">
     {{ message_with_kwargs( 'login_hint', url=url_for( 'login' ) ) }}
@@ -48,7 +49,7 @@
       <input name="lexeme_id" pattern="^L[1-9][0-9]*$" placeholder="L123" {% if template.lexeme_id %}value="{{ template.lexeme_id }}"{% endif %}>
     </label>
     {% endif %}
-    <dl{% if template.two_column_sections %} class="two-column-sections"{% endif %}>
+    <dl{% if template.two_column_sections %} class="two-column-sections"{% endif %} {{ push_html_lang( template.language_code | lang_lex2int ) }}>
       <div class="section">
         {% for form in template.forms %}
         {% if form.section_break %}
@@ -64,7 +65,7 @@
         {% endfor %}
         <div class="section-spacer"></div>
       </div>
-    </dl>
+    </dl{{ pop_html_lang( template.language_code | lang_lex2int ) }}>
     {% if template.generated_via %}
     <div class="form-group">
       <label class="text-muted">
