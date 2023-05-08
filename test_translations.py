@@ -4,6 +4,7 @@ import re
 
 import formatters
 from language import lang_int2babel
+from language_names import autonym
 import translations
 
 
@@ -60,6 +61,12 @@ def test_message_keys(language_code: str):
     english_keys = set(translations.translations['en'].keys())
     extra_keys = language_keys.difference(english_keys)
     assert not extra_keys
+
+
+def test_autonym_exists(language_code: str) -> None:
+    """Autonyms are used e.g. in the settings page,
+    they should exist and be nonempty."""
+    assert autonym(language_code)
 
 
 def test_message_html_elements(language_code: str, message_key: str):
