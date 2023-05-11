@@ -39,5 +39,15 @@
 	"title-bulk": "$1（批量）",
 	"title-edit": "$1（編輯）",
 	"login-hint": "在您使用此工具來做出更改前，您需要[$1 登入]。",
-	"ambiguous-template": "模板 $1 已不存在，可能是被以下模板替換："
+	"ambiguous-template": "模板 $1 已不存在，可能是被以下模板替換：",
+	"settings-label-interface-language-code": "使用者介面語言",
+	"settings-save": "儲存",
+	"tool-name": "維基數據詞位形式",
+	"skip-to-main-content": "跳至主要內容",
+	"documentation": "文件",
+	"toolforge": "維基媒體 Toolforge",
+	"source-code": "原始碼",
+	"login": "登入",
+	"settings-link": "設定",
+	"settings-heading": "設定"
 }

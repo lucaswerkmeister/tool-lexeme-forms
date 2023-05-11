@@ -39,5 +39,15 @@
 	"title-bulk": "$1 (pukal)",
 	"title-edit": "$1 (sunting)",
 	"login-hint": "Anda perlu [$1 log masuk] sebelum anda boleh buat perubahan menggunakan alat ini.",
-	"ambiguous-template": "Templat $1 tidak lagi wujud; ia telah diganti oleh templat berikut:"
+	"ambiguous-template": "Templat $1 tidak lagi wujud; ia telah diganti oleh templat berikut:",
+	"settings-label-interface-language-code": "Bahasa antara muka pengguna",
+	"settings-save": "Simpan",
+	"tool-name": "Bentuk Leksem Wikidata",
+	"skip-to-main-content": "Langkau ke kandungan utama",
+	"documentation": "Pendokumenan",
+	"toolforge": "Wikimedia Toolforge",
+	"source-code": "Kod sumber",
+	"login": "Log masuk",
+	"settings-link": "Tetapan",
+	"settings-heading": "Tetapan"
 }

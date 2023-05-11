@@ -5,6 +5,7 @@
 			"Eugenia.Chudinova",
 			"Ice bulldog",
 			"Infovarius",
+			"Kareyac",
 			"Lucas Werkmeister",
 			"Okras"
 		]
@@ -43,5 +44,11 @@
 	"title-bulk": "$1 (массовый)",
 	"title-edit": "$1 (править)",
 	"login-hint": "Вам необходимо [$1 войти], прежде чем вы сможете вносить изменения с помощью этого инструмента.",
-	"ambiguous-template": "Шаблон $1 больше не существует; он был заменён следующими шаблонами:"
+	"ambiguous-template": "Шаблон $1 больше не существует; он был заменён следующими шаблонами:",
+	"settings-save": "Сохранить",
+	"tool-name": "Формы лексем Викиданных",
+	"documentation": "Документация",
+	"source-code": "Исходный код",
+	"settings-link": "Настройки",
+	"settings-heading": "Настройки"
 }

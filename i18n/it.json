@@ -31,5 +31,12 @@
 	"no-grammatical-features": "nessuna caratteristica grammaticale",
 	"title-create": "$1 (crea)",
 	"title-advanced": "$1 (avanzato)",
-	"title-edit": "$1 (modifica)"
+	"title-edit": "$1 (modifica)",
+	"settings-label-interface-language-code": "Lingua dell'interfaccia utente",
+	"settings-save": "Salva",
+	"documentation": "Documentazione",
+	"source-code": "Codice sorgente",
+	"login": "Entra",
+	"settings-link": "Impostazioni",
+	"settings-heading": "Impostazioni"
 }

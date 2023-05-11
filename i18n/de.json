@@ -1,7 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Lucas Werkmeister"
+			"Lucas Werkmeister",
+			"Mitgedanken",
+			"Nikki"
 		]
 	},
 	"create": "Anlegen",
@@ -38,5 +40,11 @@
 	"title-bulk": "$1 (Massen-Modus)",
 	"title-edit": "$1 (bearbeiten)",
 	"login-hint": "Du musst dich [$1 anmelden], bevor du mit diesem Werkzeug Änderungen vornehmen kannst.",
-	"ambiguous-template": "Die Vorlage $1 existiert nicht mehr; sie wurde durch die folgenden Vorlagen ersetzt:"
+	"ambiguous-template": "Die Vorlage $1 existiert nicht mehr; sie wurde durch die folgenden Vorlagen ersetzt:",
+	"settings-save": "Speichern",
+	"skip-to-main-content": "Zum Hauptinhalt springen.",
+	"documentation": "Dokumentation",
+	"login": "Anmelden",
+	"settings-link": "Einstellungen",
+	"settings-heading": "Einstellungen"
 }

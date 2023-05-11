@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Amire80",
+			"Shoko",
 			"Uziel302"
 		]
 	},
@@ -39,5 +40,15 @@
 	"title-bulk": "$1 (כמות גדולה)",
 	"title-edit": "$1 (עריכה)",
 	"login-hint": "יש [$1 להיכנס לחשבון] לפני שיהיה באפשרותך לעשות שינויים באמצעות הכלי הזה.",
-	"ambiguous-template": "התבנית $1 כבר אינה קיימת; היא הוחלפשה בתבניות הבאות:"
+	"ambiguous-template": "התבנית $1 כבר אינה קיימת; היא הוחלפשה בתבניות הבאות:",
+	"settings-label-interface-language-code": "שפת ממשק המשתמש",
+	"settings-save": "שמירה",
+	"tool-name": "צורות יחידות מילוניות של ויקינתונים",
+	"skip-to-main-content": "מעבר לתוכן הראשי",
+	"documentation": "תיעוד",
+	"toolforge": "Wikimedia Toolforge",
+	"source-code": "קוד מקור",
+	"login": "כניסה לחשבון",
+	"settings-link": "הגדרות",
+	"settings-heading": "הגדרות"
 }
