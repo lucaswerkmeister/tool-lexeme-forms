@@ -50,5 +50,6 @@
 	"source-code": "Text for a link to the tool’s source code.",
 	"login": "Text for a link to log into the tool.\n{{Identical|Log in}}",
 	"settings-link": "Text for a link to the tool’s settings in the navbar. Usually identical to {{msg-wm|wikdata-lexeme-forms-settings-heading}}.",
-	"settings-heading": "Heading for the settings page. Usually identical to {{msg-wm|wikdata-lexeme-forms-settings-link}}."
+	"settings-heading": "Heading for the settings page. Usually identical to {{msg-wm|wikdata-lexeme-forms-settings-link}}.",
+	"logged-in": "Indicator in the navbar that the user is logged in.\n\nParameters:\n* $1 – the user name as a link to the user page.\n* $2 – the user name as plain text. Can be used with the GENDER magic word."
 }
