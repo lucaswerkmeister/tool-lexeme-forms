@@ -75,4 +75,7 @@ def lang_int2babel(code: str) -> str:
         # xmf (Mingrelian) is not in Babel;
         # ka (Georgian) is the MediaWiki fallback
         'xmf': 'ka',
+        # skr-arab (Saraiki) is not in Babel;
+        # ur (Urdu) is the MediaWiki fallback and its .text_direction matches
+        'skr': 'ur',
     }.get(code, code)
