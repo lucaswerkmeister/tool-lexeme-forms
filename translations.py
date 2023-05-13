@@ -32,6 +32,7 @@ variables = {
     'title-edit': ['template_label'],
     'login-hint': ['url'],
     'ambiguous-template': ['template_name', 'replacement_templates_count'],
+    'logged-in': ['user_link', 'user_name'],
 }
 lists = {
     'edit-form-list-item': {'grammatical_feature_labels'},

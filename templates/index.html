@@ -7,7 +7,7 @@
   {% set group = template_group(template) %}
   {% if not(loop.previtem and template_group(loop.previtem[1]) == group) %}
   <li id="{{ template.language_code }}{% if template.test %}-test{% endif %}">
-    {{ group }}l
+    {{ group }}
     <ul>
       {% endif %}
       {{ template_li( template ) }}

@@ -234,8 +234,9 @@ def authentication_area() -> Markup:
                 Markup(message('login')) +
                 Markup(r'</a>'))
 
-    return (Markup(r'<span class="navbar-text">Logged in as ') +
-            user_link(userinfo['name']) +
+    user_name = userinfo['name']
+    return (Markup(r'<span class="navbar-text">') +
+            Markup(message_with_kwargs('logged-in', user_link=user_link(user_name), user_name=user_name)) +
             Markup(r'</span>'))
 
 @app.template_global()

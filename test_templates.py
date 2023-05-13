@@ -421,7 +421,7 @@ def test_optional_forms_last_in_section(template_name):
             had_optional_form = True
         else:
             assert not had_optional_form, \
-                f'form #{index} is non-optional but follows an optional form without a section break'
+                f'form #{index} ({form["label"]}) is non-optional but follows an optional form without a section break'
 
 
 @pytest.mark.parametrize('template_name', templates.templates_without_redirects.keys())
