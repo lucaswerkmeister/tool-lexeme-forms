@@ -3,7 +3,8 @@
 		"authors": [
 			"Ajeje Brazorf",
 			"Lucas Werkmeister",
-			"Robby"
+			"Robby",
+			"Verdy p"
 		]
 	},
 	"create": "Label for the button to create a new lexeme.\n\n{{Identical|Create}}",
@@ -42,14 +43,14 @@
 	"login-hint": "Message shown to the user when they are not logged in, but are looking at a page that would allow logged-in users to make edits (basically any page other than the index page).\n\nParameters:\n* $1 – the URL for the login link",
 	"ambiguous-template": "Message shown to the user when they follow a link to a template that was replaced by several other templates (or “split up” – if the template was renamed to a single other template, the user is redirected with no message). The message is followed by a list of the other templates.\n\nParameters:* $1 – the identifier of the former template.\n* $2 – the number of other templates; can be used with the PLURAL magic word if needed, but is guaranteed to be greater than one, so most languages will not use this (only ones with several plural forms)",
 	"settings-label-interface-language-code": "Label for a setting where users can set the interface language code.",
-	"settings-save": "Label of the save button on the settings page.",
+	"settings-save": "Label of the save button on the settings page.\n{{Identical|Save}}",
 	"tool-name": "The name of the tool.\n\nNote that the name is intentionally ambiguous: “forms” can refer to the parts of lexemes (as in e.g. {{msg-mw|datatypes-type-wikibase-form}}) or to the interactive page elements (as in e.g. {{msg-mw|forms}}). In languages that don’t use the same word for both, it’s probably better to go for the “parts of lexemes” meaning in the translation.",
 	"skip-to-main-content": "Text for a link that allows users of assistive technologies to skip unimportant parts of the page (the navigation section).",
-	"documentation": "Text for a link to the tool’s documentation.",
+	"documentation": "Text for a link to the tool’s documentation.\n{{Identical|Documentation}}",
 	"toolforge": "Text for a link to the tool’s hosting platform, Wikimedia Toolforge.",
 	"source-code": "Text for a link to the tool’s source code.",
 	"login": "Text for a link to log into the tool.\n{{Identical|Log in}}",
-	"settings-link": "Text for a link to the tool’s settings in the navbar. Usually identical to {{msg-wm|wikdata-lexeme-forms-settings-heading}}.",
-	"settings-heading": "Heading for the settings page. Usually identical to {{msg-wm|wikdata-lexeme-forms-settings-link}}.",
+	"settings-link": "Text for a link to the tool’s settings in the navbar. Usually identical to {{msg-wm|Wikidata-lexeme-forms-settings-heading}}.\n{{Identical|Settings}}",
+	"settings-heading": "Heading for the settings page. Usually identical to {{msg-wm|Wikidata-lexeme-forms-settings-link}}.\n{{Identical|Settings}}",
 	"logged-in": "Indicator in the navbar that the user is logged in.\n\nParameters:\n* $1 – the user name as a link to the user page.\n* $2 – the user name as plain text. Can be used with the GENDER magic word."
 }

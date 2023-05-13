@@ -40,5 +40,15 @@
 	"title-bulk": "$1 (množično)",
 	"title-edit": "$1 (uredi)",
 	"login-hint": "Pred spreminjanjem s tem orodjem se morate [$1 prijaviti].",
-	"ambiguous-template": "Predloga $1 ne obstaja več; zamenjana je bila z naslednjimi predlogami:"
+	"ambiguous-template": "Predloga $1 ne obstaja več; zamenjana je bila z naslednjimi predlogami:",
+	"settings-label-interface-language-code": "Jezik uporabniškega vmesnika",
+	"settings-save": "Shrani",
+	"tool-name": "Oblike leksema Wikipodatkov",
+	"skip-to-main-content": "Preskoči na glavno vsebino",
+	"documentation": "Dokumentacija",
+	"toolforge": "Wikimedia Toolforge",
+	"source-code": "Izvorna koda",
+	"login": "Prijava",
+	"settings-link": "Nastavitve",
+	"settings-heading": "Nastavitve"
 }

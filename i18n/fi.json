@@ -4,6 +4,7 @@
 			"Joquliina",
 			"MITO",
 			"Markus Mikkonen",
+			"Nike",
 			"Pyscowicz",
 			"Shinnin"
 		]
@@ -26,5 +27,7 @@
 	"title-create": "$1 (luo)",
 	"title-advanced": "$1 (kehittynyt)",
 	"title-edit": "$1 (muokkaa)",
-	"login-hint": "Sinun on [$1 kirjauduttava sisään] ennen kuin voit tehdä muutoksia käyttämällä tätä työkalua."
+	"login-hint": "Sinun on [$1 kirjauduttava sisään] ennen kuin voit tehdä muutoksia käyttämällä tätä työkalua.",
+	"skip-to-main-content": "Siirry pääsisältöön",
+	"login": "Kirjaudu sisään"
 }

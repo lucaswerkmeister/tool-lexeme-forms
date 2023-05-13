@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bgo eiu",
+			"Saraiki"
+		]
+	},
+	"create": "بݨاؤ",
+	"advanced": "ودھایا",
+	"lexeme-id": "لفظی آئی ڈی",
+	"bulk-link": "تھوک موڈ",
+	"edit-link": "تبدیلی کرو",
+	"title-create": "$1 (لفظ دیݨ)",
+	"title-advanced": "$1 (ودھایا)",
+	"title-edit": "$1 (تبدیلی کرݨ)",
+	"settings-save": "بچاؤ",
+	"documentation": "دستاویز کاری",
+	"toolforge": "وکی میڈیا ٹولفورج",
+	"source-code": "سورس کوڈ",
+	"login": "لاگ ان تھیوو",
+	"settings-link": "ترتیباں",
+	"settings-heading": "ترتیباں"
+}

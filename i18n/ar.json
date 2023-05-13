@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Alshamiri1",
 			"Dr-Taher",
 			"FiberAhmed",
 			"Kawayashu",
+			"Lucas Werkmeister",
 			"Mohanad Kh",
 			"أَحمد",
 			"زكريا"
@@ -42,6 +44,16 @@
 	"title-advanced": "$1 (متقدم)",
 	"title-bulk": "$1 (بالجملة)",
 	"title-edit": "$1 (عدّل)",
-	"login-hint": "تحتاج إلى [تسجيل دخول $1 ] قبل أن تتمكن من إجراء تغييرات باستخدام هذه الأداة.",
-	"ambiguous-template": "لم يعد القالب $1 موجودًا؛ تمجرى استبداله بالقوالب التالية:"
+	"login-hint": "تحتاج إلى [$1 تسجيل دخول] قبل أن تتمكن من إجراء تغييرات باستخدام هذه الأداة.",
+	"ambiguous-template": "لم يعد القالب $1 موجودًا؛ تمجرى استبداله بالقوالب التالية:",
+	"settings-label-interface-language-code": "لغة واجهة المستخدم",
+	"settings-save": "حفظ",
+	"tool-name": "ويكي بيانات ليكسيم أشكال",
+	"skip-to-main-content": "تخطي إلى المحتوى الرئيسي",
+	"documentation": "توثيق",
+	"toolforge": "أدوات ويكيميديا",
+	"source-code": "الكود المصدري",
+	"login": "تسجيل الدخول",
+	"settings-link": "الإعدادات",
+	"settings-heading": "إعدادات"
 }

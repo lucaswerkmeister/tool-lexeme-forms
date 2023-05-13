@@ -40,5 +40,15 @@
 	"title-bulk": "$1 (masseinnlegging)",
 	"title-edit": "$1 (rediger)",
 	"login-hint": "Du må [$1 logge inn] før du kan gjøre endringer med dette verktøyet.",
-	"ambiguous-template": "Malen $1 finnes ikke lenger; den har blitt erstattet av følgende maler:"
+	"ambiguous-template": "Malen $1 finnes ikke lenger; den har blitt erstattet av følgende maler:",
+	"settings-label-interface-language-code": "Grensesnittspråk",
+	"settings-save": "Lagre",
+	"tool-name": "Wikidata Lexeme Forms",
+	"skip-to-main-content": "Hopp til hovedinnholdet",
+	"documentation": "Dokumentasjon",
+	"toolforge": "Wikimedia Toolforge",
+	"source-code": "Kildekode",
+	"login": "Logg inn",
+	"settings-link": "Innstillinger",
+	"settings-heading": "Innstillinger"
 }

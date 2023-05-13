@@ -3,6 +3,7 @@
 		"authors": [
 			"Kkairri",
 			"Lucas Werkmeister",
+			"Nikki",
 			"RYU N",
 			"Sai10ukazuki",
 			"Tamaki Wakita",
@@ -20,5 +21,10 @@
 	"bulk-not-allowed": "あなたのバルクモードの使用は許可されていません。 申し訳ございません。",
 	"edit-link": "編集",
 	"no-grammatical-features": "文法的特徴がない",
-	"title-create": "$1 (作成)"
+	"title-create": "$1 (作成)",
+	"settings-save": "保存",
+	"source-code": "ソースコード",
+	"login": "ログイン",
+	"settings-link": "設定",
+	"settings-heading": "設定"
 }

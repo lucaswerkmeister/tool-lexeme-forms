@@ -24,5 +24,10 @@
 	"edit-form-list-item": "$1, $2, {{PLURAL:$3|0=neniu deklaro|unu deklaro|$3 deklaroj}}",
 	"no-grammatical-features": "neniu gramatika trajto",
 	"title-create": "$1 (krei)",
-	"title-edit": "$1 (redakti)"
+	"title-edit": "$1 (redakti)",
+	"settings-save": "Konservi",
+	"documentation": "Dokumentaro",
+	"login": "Ensaluti",
+	"settings-link": "Agordoj",
+	"settings-heading": "Agordoj"
 }

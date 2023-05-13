@@ -38,5 +38,15 @@
 	"title-bulk": "$1 (تھوک والا)",
 	"title-edit": "$1 (تبدیل کرنا)",
 	"login-hint": "تبدیل کرن واسطے پہلاں [$1 لاگ ان کرو]۔",
-	"ambiguous-template": "ہݨ تے فرما $1 مٹایا۔ موجود فرمے لاۓ گئے –"
+	"ambiguous-template": "ہݨ تے فرما $1 مٹایا۔ موجود فرمے لاۓ گئے –",
+	"settings-label-interface-language-code": "ورتوں دی بولی",
+	"settings-save": "سامبھو",
+	"tool-name": "وکیڈیٹے روپ دے فرمے",
+	"skip-to-main-content": "منصوبے نوں جاؤ",
+	"documentation": "دستاویز",
+	"toolforge": "وکیمیڈیا ٹول‌فرج",
+	"source-code": "ماخذ",
+	"login": "لاگ ان کرو",
+	"settings-link": "سیٹنگاں",
+	"settings-heading": "سیٹنگاں"
 }

@@ -16,5 +16,14 @@
 	"title-create": "$1 (만들기)",
 	"title-advanced": "$1 (고급)",
 	"title-bulk": "$1 (대량)",
-	"title-edit": "$1 (편집)"
+	"title-edit": "$1 (편집)",
+	"settings-label-interface-language-code": "사용자 인터페이스 언어",
+	"settings-save": "저장",
+	"skip-to-main-content": "본문 내용으로 건너뛰기",
+	"documentation": "설명문서",
+	"toolforge": "위키미디어 툴포지",
+	"source-code": "소스 코드",
+	"login": "로그인",
+	"settings-link": "설정",
+	"settings-heading": "설정"
 }

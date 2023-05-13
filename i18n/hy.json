@@ -26,5 +26,6 @@
 	"title-create": "$1 (ստեղծել)",
 	"title-advanced": "$1 (ընդլայնված)",
 	"title-bulk": "$1 (զանգվածային)",
-	"title-edit": "$1 (խմբագրել)"
+	"title-edit": "$1 (խմբագրել)",
+	"settings-save": "Հիշել"
 }

@@ -43,5 +43,15 @@
 	"title-bulk": "$1 (lot)",
 	"title-edit": "$1 (modifier)",
 	"login-hint": "Vous devez vous [$1 connecter] avant de pouvoir faire des modifications en utilisant cet outil.",
-	"ambiguous-template": "Le modèle $1 n’existe plus ; il a été remplacé par les modèles suivants :"
+	"ambiguous-template": "Le modèle $1 n’existe plus ; il a été remplacé par les modèles suivants :",
+	"settings-label-interface-language-code": "Langue de l’interface utilisateur",
+	"settings-save": "Enregistrer",
+	"tool-name": "Formes de lexème Wikidata",
+	"skip-to-main-content": "Passer au contenu principal",
+	"documentation": "Documentation",
+	"toolforge": "Wikimedia Toolforge",
+	"source-code": "Code source",
+	"login": "Se connecter",
+	"settings-link": "Paramètres",
+	"settings-heading": "Paramètres"
 }
