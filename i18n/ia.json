@@ -48,5 +48,6 @@
 	"source-code": "Codice fonte",
 	"login": "Aperir session",
 	"settings-link": "Parametros",
-	"settings-heading": "Parametros"
+	"settings-heading": "Parametros",
+	"logged-in": "{{GENDER:$2|In session}} como $1."
 }

@@ -53,5 +53,6 @@
 	"source-code": "Code source",
 	"login": "Se connecter",
 	"settings-link": "Paramètres",
-	"settings-heading": "Paramètres"
+	"settings-heading": "Paramètres",
+	"logged-in": "Connecté{{GENDER:$2||e}} en tant que $1."
 }

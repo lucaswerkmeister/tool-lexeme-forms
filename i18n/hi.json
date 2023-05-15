@@ -41,5 +41,16 @@
 	"title-bulk": "$1 (थोक वाला)",
 	"title-edit": "$1 (तरमीम करें)",
 	"login-hint": "इस संद के ज़रिए बदलाव लाने से पहले [$1 लौग इन] करें।",
-	"ambiguous-template": "साँचा $1 अब मौजूद नहीं है; इसे इन साँचों से बदल दिया गया है:"
+	"ambiguous-template": "साँचा $1 अब मौजूद नहीं है; इसे इन साँचों से बदल दिया गया है:",
+	"settings-label-interface-language-code": "इसतेमाल करने वाली जुबान",
+	"settings-save": "महफ़ूज़ करें",
+	"tool-name": "वीकीडाटे रूप के फ़रमे",
+	"skip-to-main-content": "मनसूबे को जाओ",
+	"documentation": "दसतावेज़",
+	"toolforge": "वीकीमीडिया टूलफ़रज",
+	"source-code": "सरोत",
+	"login": "लाग इन करें",
+	"settings-link": "तरतीबात",
+	"settings-heading": "तरतीबात",
+	"logged-in": "{{GENDER:$2|$1 बतौर लाग इन किया गया}}।"
 }

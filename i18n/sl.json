@@ -50,5 +50,6 @@
 	"source-code": "Izvorna koda",
 	"login": "Prijava",
 	"settings-link": "Nastavitve",
-	"settings-heading": "Nastavitve"
+	"settings-heading": "Nastavitve",
+	"logged-in": "{{GENDER:$2|Prijavljen|Prijavljena|Prijavljen_a}} kot $1."
 }
