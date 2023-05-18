@@ -48,5 +48,6 @@
 	"source-code": "ماخذ",
 	"login": "لاگ ان کرو",
 	"settings-link": "سیٹنگاں",
-	"settings-heading": "سیٹنگاں"
+	"settings-heading": "سیٹنگاں",
+	"logged-in": "{{GENDER:$2|$1 وجوں لاگ ان کیتا گیا}}۔"
 }

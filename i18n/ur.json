@@ -38,5 +38,16 @@
 	"title-bulk": "$1 (تھوک والا)",
 	"title-edit": "$1 (ترمیم کریں)",
 	"login-hint": "اس اپکرن کے ذریعے بدلاو لانے سے پہلے [$1 لوگ این] کریں۔",
-	"ambiguous-template": "سانچا $1 اب موجود نہیں ہے؛ اسے ان سانچوں سے بدل دیا گیا ہے:"
+	"ambiguous-template": "سانچا $1 اب موجود نہیں ہے؛ اسے ان سانچوں سے بدل دیا گیا ہے:",
+	"settings-label-interface-language-code": "استعمال کرنے والی زبان",
+	"settings-save": "محفوظ کریں",
+	"tool-name": "ویکیڈاٹے روپ کے فرمے",
+	"skip-to-main-content": "منصوبے کو جاؤ",
+	"documentation": "دستاویز",
+	"toolforge": "ویکیمیڈیا ٹول‌فرج",
+	"source-code": "ماخذ",
+	"login": "لاگ ان کریں",
+	"settings-link": "ترتیبات",
+	"settings-heading": "ترتیبات",
+	"logged-in": "{{GENDER:$2|$1 بطور لاگ ان کیا گیا}}۔"
 }

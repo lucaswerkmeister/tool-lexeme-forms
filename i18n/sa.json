@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Bgo eiu",
 			"Sayant Mahato"
 		]
 	},
@@ -26,5 +27,6 @@
 	"edit-ambiguous-warning": "परवर्तिपदस्य{{PLURAL:$1|रूपं|रूपाणि}} एकाधिकैः फलकैः सह सामञ्जस्यम् आवहति ।",
 	"edit-unmatched-warning": "परवर्तिपदस्य {{PLURAL:$1|रूपं|रूपाणि}} केनापि फलकेन सह सामञ्जस्यं न आवहति:् ।",
 	"edit-form-list-item": "$1, $2, {{PLURAL:$3|0=विवृतिः नास्ति|एका विवृतिः|$3 विवृतयः}}",
-	"no-grammatical-features": "किमपि व्यकरणगतं वैशिष्ट्यं नास्ति"
+	"no-grammatical-features": "किमपि व्यकरणगतं वैशिष्ट्यं नास्ति",
+	"settings-save": "रक्ष्यताम्"
 }

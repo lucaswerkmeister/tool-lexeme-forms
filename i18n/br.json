@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Adriendelucca",
 			"Fulup",
 			"Iriep",
 			"VIGNERON",
@@ -12,6 +13,7 @@
 	"duplicates-warning": "Al leksemoù da heul o deus an hevelep lemma, ha kod yezh, hag an hini emaoc'h o klask krouiñ:",
 	"duplicates-instructions": "Mard oc'h sur int disheñvel, askit al log e traoñ ar furm.",
 	"no-duplicate": "N'eo ket un eil eus ul leksem a zo anezhañ c'hoazh.",
+	"form-optional": "&#32;(diret)",
 	"advanced": "Araokaet",
 	"advanced-general": "Er mod “araokaet” emaoc'h.",
 	"advanced-lexeme-id": "Gallout a rit merkañ ID ul leksem evit ouzhpennañ furmoù d'ul leksem a zo anezhañ, kentoc'h eget krouiñ unan nevez. Lezit goullo kement furm a zo anezhi c'hoazh war al leksem a-hend-all e vint eilet!",
@@ -27,5 +29,15 @@
 	"edit-mismatch-warning": "Evit doare ne glot ket al leksem-mañ gant ar patrom! Gwiriit mat eo ar patrom a zere evit al leksem a-raok kenderc'hel ganti.",
 	"no-grammatical-features": "perzh yezhadurel ebet",
 	"title-create": "$1 (krouiñ)",
-	"title-edit": "$1 (kemmañ)"
+	"title-advanced": "$1 (araokaet)",
+	"title-edit": "$1 (kemmañ)",
+	"settings-label-interface-language-code": "Yezh an etrefas",
+	"settings-save": "Enrollañ",
+	"documentation": "Teuliadur",
+	"toolforge": "Wikimedia Toolforge",
+	"source-code": "Kod mammenn",
+	"login": "Kevreañ",
+	"settings-link": "Arventennoù",
+	"settings-heading": "Arventennoù",
+	"logged-in": "{{GENDER:$2|Kevreet}} evel $1."
 }

@@ -50,5 +50,6 @@
 	"source-code": "קוד מקור",
 	"login": "כניסה לחשבון",
 	"settings-link": "הגדרות",
-	"settings-heading": "הגדרות"
+	"settings-heading": "הגדרות",
+	"logged-in": "{{GENDER:$2|נכנס|נכנסה}} לחשבון $1."
 }
