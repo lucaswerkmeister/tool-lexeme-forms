@@ -49,5 +49,6 @@
 	"source-code": "原始碼",
 	"login": "登入",
 	"settings-link": "設定",
-	"settings-heading": "設定"
+	"settings-heading": "設定",
+	"logged-in": "以$1{{GENDER:$2|登入}}。"
 }

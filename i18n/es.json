@@ -7,6 +7,7 @@
 			"Jackiezelaya",
 			"Juan t2905",
 			"Lucas Werkmeister",
+			"No se",
 			"SpikeShroom",
 			"ZealousBlaze"
 		]
@@ -45,5 +46,7 @@
 	"title-bulk": "$1 (a granel)",
 	"title-edit": "$1 (editar)",
 	"login-hint": "Necesita [$1 iniciar sesión] antes de que pueda hacer cambios usando esta herramienta.",
-	"ambiguous-template": "La plantilla $1 ya no existe; ha sido reemplazada por las siguientes plantillas:"
+	"ambiguous-template": "La plantilla $1 ya no existe; ha sido reemplazada por las siguientes plantillas:",
+	"skip-to-main-content": "Saltar al contenido principal",
+	"login": "Iniciar sesión"
 }
