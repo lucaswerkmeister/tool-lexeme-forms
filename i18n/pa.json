@@ -51,5 +51,5 @@
 	"login": "ਲਾਗ ਇਨ ਕਰੋ",
 	"settings-link": "ਸੈਟਿੰਗਾਂ",
 	"settings-heading": "ਸੈਟਿੰਗਾਂ",
-	"logged-in": "{{GENDER:$2|$1 ਵਜੋਂ ਲਾਗ ਇਨ ਕੀਤਾ ਗਿਆ}}।"
+	"logged-in": "$1 ਵਜੋਂ ਲਾਗ ਇਨ ਕੀਤਾ ਗਿਆ।"
 }

@@ -49,5 +49,5 @@
 	"login": "لاگ ان کریں",
 	"settings-link": "ترتیبات",
 	"settings-heading": "ترتیبات",
-	"logged-in": "{{GENDER:$2|$1 بطور لاگ ان کیا گیا}}۔"
+	"logged-in": "$1 بطور لاگ ان کیا گیا۔"
 }

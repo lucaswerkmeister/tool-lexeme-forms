@@ -52,5 +52,5 @@
 	"login": "लाग इन करें",
 	"settings-link": "तरतीबात",
 	"settings-heading": "तरतीबात",
-	"logged-in": "{{GENDER:$2|$1 बतौर लाग इन किया गया}}।"
+	"logged-in": "$1 बतौर लाग इन किया गया।"
 }

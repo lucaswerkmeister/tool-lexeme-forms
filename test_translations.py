@@ -165,3 +165,25 @@ def test_message_syntax_valid_bulk_not_allowed(language_code: str, gender: str):
             message,
             user='some user',
         )
+
+
+def test_link_not_in_gender_logged_in(language_code: str, gender: str):
+    """Assert that a message with both {{GENDER:}} and a link renders correctly.
+
+    Currently, this means that the link must not appear inside the gender spec.
+    If it does, i.e. {{GENDER:$2|...$1...}} in wikitext or {user_name!g:m=...{user_link}...} in Python,
+    then the colon in http:// or https:// in the link will be misinterpreted as a m:f:n separator,
+    resulting in the rest of the link (including the closing tag!) being discarded."""
+    if 'logged-in' in translations.translations[language_code]:
+        user_name = 'some user'
+        user_link = f'<a href="https://example.com/">{user_name}</a>'
+        message = translations.translations[language_code]['logged-in']
+        formatted = formatters.I18nFormatter(
+            locale_identifier=lang_int2babel(language_code),
+            get_gender=lambda value: gender,
+        ).format(
+            message,
+            user_link=user_link,
+            user_name=user_name,
+        )
+        assert user_link in formatted
