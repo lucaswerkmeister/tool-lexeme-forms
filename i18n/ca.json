@@ -5,7 +5,8 @@
 			"Mguix",
 			"Qllach",
 			"Toniher",
-			"Vfc"
+			"Vfc",
+			"Yupik"
 		]
 	},
 	"create": "Crea",
@@ -42,5 +43,6 @@
 	"title-bulk": "$1 (massiu)",
 	"title-edit": "$1 (edita)",
 	"login-hint": "Cal que [$1 inicieu sessió] abans de poder fer canvis utilitzant aquesta eina.",
-	"ambiguous-template": "La plantilla $1 ja no existeix; s'ha substituït per les plantilles següents:"
+	"ambiguous-template": "La plantilla $1 ja no existeix; s'ha substituït per les plantilles següents:",
+	"source-code": "Codi font"
 }

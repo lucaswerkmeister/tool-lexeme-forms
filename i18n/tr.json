@@ -4,6 +4,7 @@
 			"Hedda",
 			"Joseph",
 			"Lucas Werkmeister",
+			"MrSchipunov",
 			"SaldırganSincap"
 		]
 	},
@@ -41,5 +42,6 @@
 	"title-bulk": "$1 (toplu)",
 	"title-edit": "$1 (düzenle)",
 	"login-hint": "Bu aracı kullanarak değişiklik yapmadan önce [$1 giriş yapmalısınız].",
-	"ambiguous-template": "$1 şablonu artık mevcut değil; şu şablonlarla değiştirilmiş:"
+	"ambiguous-template": "$1 şablonu artık mevcut değil; şu şablonlarla değiştirilmiş:",
+	"settings-link": "Ayarlar"
 }
