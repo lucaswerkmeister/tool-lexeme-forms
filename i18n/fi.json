@@ -6,7 +6,8 @@
 			"Markus Mikkonen",
 			"Nike",
 			"Pyscowicz",
-			"Shinnin"
+			"Shinnin",
+			"Yupik"
 		]
 	},
 	"create": "Julkaise",
@@ -29,5 +30,6 @@
 	"title-edit": "$1 (muokkaa)",
 	"login-hint": "Sinun on [$1 kirjauduttava sisään] ennen kuin voit tehdä muutoksia käyttämällä tätä työkalua.",
 	"skip-to-main-content": "Siirry pääsisältöön",
+	"source-code": "Lähdekoodi",
 	"login": "Kirjaudu sisään"
 }

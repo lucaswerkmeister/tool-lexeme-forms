@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Bgo eiu"
+			"Bgo eiu",
+			"Muhammad Shuaib"
 		]
 	},
 	"create": "بنائیں",
@@ -41,10 +42,10 @@
 	"ambiguous-template": "سانچا $1 اب موجود نہیں ہے؛ اسے ان سانچوں سے بدل دیا گیا ہے:",
 	"settings-label-interface-language-code": "استعمال کرنے والی زبان",
 	"settings-save": "محفوظ کریں",
-	"tool-name": "ویکیڈاٹے روپ کے فرمے",
-	"skip-to-main-content": "منصوبے کو جاؤ",
+	"tool-name": "ویکی ڈیٹا لغویے کے فارم",
+	"skip-to-main-content": "اصل مشمولات پر جائیں",
 	"documentation": "دستاویز",
-	"toolforge": "ویکیمیڈیا ٹول‌فرج",
+	"toolforge": "ویکیمیڈیا ٹول‌فورج",
 	"source-code": "ماخذ",
 	"login": "لاگ ان کریں",
 	"settings-link": "ترتیبات",

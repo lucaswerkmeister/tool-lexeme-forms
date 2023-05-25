@@ -9,6 +9,7 @@
 			"Lucas Werkmeister",
 			"No se",
 			"SpikeShroom",
+			"Yupik",
 			"ZealousBlaze"
 		]
 	},
@@ -48,5 +49,6 @@
 	"login-hint": "Necesita [$1 iniciar sesión] antes de que pueda hacer cambios usando esta herramienta.",
 	"ambiguous-template": "La plantilla $1 ya no existe; ha sido reemplazada por las siguientes plantillas:",
 	"skip-to-main-content": "Saltar al contenido principal",
+	"source-code": "Código fuente",
 	"login": "Iniciar sesión"
 }
