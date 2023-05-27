@@ -253,6 +253,7 @@ def test_labels_not_valid_examples(template_name, form):
     fake_form = {'example': form['label']}
     with pytest.raises(Exception):
         app.split_example(fake_form)
+        print(form['label'])  # unreachable, prints only if test fails
 
 
 @pytest.mark.parametrize('template_name, form', [
