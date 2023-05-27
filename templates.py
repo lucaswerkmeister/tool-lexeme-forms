@@ -13203,7 +13203,7 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
             },
             {
                 'label': 'پرتکلف امر',
-                'example': 'اوہناں نوں [وسایا] جے۔',
+                'example': 'اوہناں نوں [وسیا] جے۔',
                 'grammatical_features_item_ids': [basic_phase, intransitive_phase, imperative, allocutive, second_person, plural],
                 'statements': statements({
                     language_style: colloquial_language,
@@ -14507,7 +14507,7 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
             },
             {
                 'label': 'ਤਜਵੀਜ਼ ਦਾ ਅਮਰ, ਬਹੁ ਵਚਨ',
-                'example': 'ਤੁਸੀਂ [ਵੱਸੀਓ]।',
+                'example': 'ਤੁਸੀਂ [ਵੱਸਿਓ]।',
                 'grammatical_features_item_ids': [basic_phase, intransitive_phase, imperative, suggestive, second_person, plural],
                 'statements': statements(grammatical_aspect, 'novalue'),
                 'optional': True,
