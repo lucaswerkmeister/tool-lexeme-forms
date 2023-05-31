@@ -20034,12 +20034,12 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
             {
                 'label': 'ед.ч. м.р. неодушевл. вин.п.',
                 'example': 'Вижу [хороший] дом.',
-                'grammatical_features_item_ids': [accusative_case, masculine, inanimate, masculine_inanimate, singular],
+                'grammatical_features_item_ids': [accusative_case, masculine, inanimate, singular],
             },
             {
                 'label': 'ед.ч. м.р. одушевл. вин.п.',
                 'example': 'Вижу [хорошего] человека.',
-                'grammatical_features_item_ids': [accusative_case, masculine, animate, masculine_animate, singular],
+                'grammatical_features_item_ids': [accusative_case, masculine, animate, singular],
             },
             {
                 'label': 'ед.ч. м.р. твор.п.',
