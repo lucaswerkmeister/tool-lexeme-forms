@@ -29,7 +29,11 @@
 	"title-advanced": "$1 (kehittynyt)",
 	"title-edit": "$1 (muokkaa)",
 	"login-hint": "Sinun on [$1 kirjauduttava sisään] ennen kuin voit tehdä muutoksia käyttämällä tätä työkalua.",
+	"settings-save": "Tallenna",
 	"skip-to-main-content": "Siirry pääsisältöön",
+	"documentation": "Dokumentaatio",
 	"source-code": "Lähdekoodi",
-	"login": "Kirjaudu sisään"
+	"login": "Kirjaudu sisään",
+	"settings-link": "Asetukset",
+	"settings-heading": "Asetukset"
 }
