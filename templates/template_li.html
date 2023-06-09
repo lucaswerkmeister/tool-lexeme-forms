@@ -1,6 +1,6 @@
 {% macro template_li(template) %}
 {% set template_name = template['@template_name'] %}
-<li>
+<li class="template-li">
   <span {{ push_html_lang( template.language_code | lang_lex2int ) }}>
     <a href="{{ url_for('process_template', template_name=template_name) }}">{{ template.label }}</a>
     {% if can_use_bulk_mode %}
