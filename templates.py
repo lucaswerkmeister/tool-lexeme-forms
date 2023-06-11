@@ -15547,19 +15547,19 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
     },
 
     'punjabi-noun-masculine-guru': {
-        '@attribution': {'users': ['Satdeep Gill', 'عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Punjabi'},
+        '@attribution': {'users': ['Satdeep Gill', 'عُثمان', 'Satpal Dandiwal'], 'title': 'Wikidata:Wikidata Lexeme Forms/Punjabi'},
         'label': 'ਪੰਜਾਬੀ ਨਾਂਵ ਪੁਲਿੰਗ',
         'language': language_Gurmukhi,
         'lexical_category_item_id': 'Q1084',
         'two_column_sections': True,
         'forms': [
             {
-                'label': 'ਇੱਕ ਵਚਨ, ਫਾਇਲੀ',
-                'example': 'ਉਹ ਮੇਰਾ [ਹੱਥ] ਏ।',
+                'label': 'ਇੱਕ ਵਚਨ, ਸਾਧਾਰਣ',
+                'example': 'ਉਹ ਮੇਰਾ [ਹੱਥ] ਹੈ।',
                 'grammatical_features_item_ids': [masculine, direct_case, singular],
             },
             {
-                'label': 'ਬਹੁ ਵਚਨ, ਫਾਇਲੀ',
+                'label': 'ਬਹੁ ਵਚਨ, ਸਾਧਾਰਣ',
                 'example': 'ਉਹ ਮੇਰੇ [ਹੱਥ] ਹਨ।',
                 'grammatical_features_item_ids': [masculine, direct_case, plural],
             },
@@ -15576,7 +15576,7 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
             {
                 'section_break': True,
                 'label': 'ਇੱਕ ਵਚਨ, ਅਪਾਦਾਨ',
-                'example': 'ਉਹ [ਹੱਥੋਂ] ਭੇਜਾ ਜਾ ਸਕਦਾ ਏ।؜',
+                'example': 'ਉਹ [ਹੱਥੋਂ] ਭੇਜਾ ਜਾ ਸਕਦਾ ਹੈ।؜',
                 'grammatical_features_item_ids': [masculine, ablative_case, singular],
                 'optional': True,
             },
@@ -15609,7 +15609,7 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
             {
                 'section_break': True,
                 'label': 'ਦੋ ਵਚਨ, ਕਰਨ',
-                'example': 'ਉਹ [ਹੱਥੀਂ] ਕੀਤਾ ਕੰਮ ਏ।',
+                'example': 'ਉਹ [ਹੱਥੀਂ] ਕੀਤਾ ਕੰਮ ਹੈ।',
                 'grammatical_features_item_ids': [masculine, instrumental_case, dual],
                 'optional': True,
             },
