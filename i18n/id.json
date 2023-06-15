@@ -5,7 +5,8 @@
 			"Daud I.F. Argana",
 			"FenyMufyd",
 			"Lucas Werkmeister",
-			"Naufal06"
+			"Naufal06",
+			"Veracious"
 		]
 	},
 	"create": "Buat",
@@ -42,5 +43,9 @@
 	"title-bulk": "$1 (jumlah banyak)",
 	"title-edit": "$1 (sunting)",
 	"login-hint": "Anda perlu [$1 log masuk] sebelum Anda bisa mengubah alat ini.",
-	"ambiguous-template": "Templat $1 tidak lagi ada; ia telah digantikan oleh templat-templat berikut:"
+	"ambiguous-template": "Templat $1 tidak lagi ada; ia telah digantikan oleh templat-templat berikut:",
+	"login": "Masuk log",
+	"settings-link": "Setelan",
+	"settings-heading": "Setelan",
+	"logged-in": "{{GENDER:$2|Masuk}} sebagai $1 ."
 }
