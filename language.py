@@ -78,4 +78,8 @@ def lang_int2babel(code: str) -> str:
         # skr-arab (Saraiki) is not in Babel;
         # ur (Urdu) is the MediaWiki fallback and its .text_direction matches
         'skr': 'ur',
+        # ba (Bashkir) is not in Babel;
+        # tt (Tatar) is closely related, has the same plural forms,
+        # and its list formatting seems to match ba better than MediaWiki’s ba fallback ru (Russian)
+        'ba': 'tt',
     }.get(code, code)
