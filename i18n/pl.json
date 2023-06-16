@@ -31,5 +31,11 @@
 	"title-advanced": "$1 (zaawansowane)",
 	"title-edit": "$1 (edytuj)",
 	"login-hint": "Aby wprowadzić zmiany za pomocą tego narzędzia, musisz się [$1 zalogować].",
-	"ambiguous-template": "Szablon $1 już nie istnieje; został on zastąpiony przez następujące szablony"
+	"ambiguous-template": "Szablon $1 już nie istnieje; został on zastąpiony przez następujące szablony",
+	"settings-label-interface-language-code": "Język interfejsu użytkownika",
+	"settings-save": "Zapisz",
+	"documentation": "Dokumentacja",
+	"login": "Zaloguj się",
+	"settings-link": "Ustawienia",
+	"settings-heading": "Ustawienia"
 }
