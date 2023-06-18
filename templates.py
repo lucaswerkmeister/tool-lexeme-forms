@@ -10507,17 +10507,17 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
             },
             {
                 'label': 'ഏകവചനം ഉദ്ദേശിക',
-                'example': 'ഞാൻ [പശുവിന്] പുല്ലു കൊടുത്തു',
+                'example': 'അത് ഞാൻ [പശുവിന്] കൊടുത്തു',
                 'grammatical_features_item_ids': [singular, dative_case],
             },
             {
                 'label': 'ഏകവചനം ആധാരിക',
-                'example': '[പുഴയിൽ] കുളിച്ചു',
+                'example': '[പശുവിൽ] നന്മ ഉണ്ട്',
                 'grammatical_features_item_ids': [singular, locative_case],
             },
             {
                 'label': 'ഏകവചനം സംയോജിക',
-                'example': '[അമ്മയോട്] സംസാരിച്ചു',
+                'example': '[പശുവിനോട്] സംസാരിച്ചു',
                 'grammatical_features_item_ids': [singular, sociative_case],
             },
             {
@@ -10527,12 +10527,12 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
             },
             {
                 'label': 'ഏകവചനം സംബന്ധിക',
-                'example': '[അമ്മയുടെ] സ്നേഹം',
+                'example': '[പശുവിന്റെ] കിടാവ്',
                 'grammatical_features_item_ids': [singular, genitive_case],
             },
             {
                 'label': 'ഏകവചനം സംബോധിക',
-                'example': '[അമ്മേ]!, നോക്കൂ.',
+                'example': '[പശുവേ]!, കേൾക്കൂ.',
                 'grammatical_features_item_ids': [singular, vocative_case],
                 'optional': True,
             },
@@ -10548,17 +10548,17 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
             },
             {
                 'label': 'ബഹുവചനം ഉദ്ദേശിക',
-                'example': 'ഞാൻ [പശുക്കൾക്ക്] പുല്ലു കൊടുത്തു',
+                'example': 'അത് ഞാൻ [പശുക്കൾക്ക്] കൊടുത്തു',
                 'grammatical_features_item_ids': [plural, dative_case],
             },
             {
                 'label': 'ബഹുവചനം ആധാരിക',
-                'example': 'പല [വയലുകളിൽ] കളിച്ചു',
+                'example': '[പശുക്കളിൽ] നന്മ ഉണ്ട്',
                 'grammatical_features_item_ids': [plural, locative_case],
             },
             {
                 'label': 'ബഹുവചനം സംയോജിക',
-                'example': '[കുട്ടികളോട്] പറഞ്ഞു',
+                'example': '[പശുക്കളോട്] സംസാരിച്ചു',
                 'grammatical_features_item_ids': [plural, sociative_case],
             },
             {
@@ -10568,12 +10568,12 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
             },
             {
                 'label': 'ബഹുവചനം സംബന്ധിക',
-                'example': '[കുട്ടികളുടെ] പ്രവർത്തി',
+                'example': '[പശുക്കളുടെ] കിടാക്കൾ',
                 'grammatical_features_item_ids': [plural, genitive_case],
             },
             {
                 'label': 'ബഹുവചനം സംബോധിക',
-                'example': '[കുട്ടികളേ]!, അവിടെ പോകരുത്.',
+                'example': '[പശുക്കളേ]!, കേൾക്കൂ.',
                 'grammatical_features_item_ids': [plural, vocative_case],
                 'optional': True,
             },
@@ -10603,7 +10603,7 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
             },
             {
                 'label': 'ഏകവചനം ആധാരിക',
-                'example': 'ഞാൻ [കേരളത്തിൽ] എത്തി',
+                'example': '[സീതയിൽ] നന്മ ഉണ്ട്',
                 'grammatical_features_item_ids': [singular, locative_case],
             },
             {
@@ -10655,6 +10655,20 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
                 'label': 'സാമാന്യ ഭാവികാലം',
                 'example': 'അവൾ [എഴുതും]',
                 'grammatical_features_item_ids': ['Q1475560'],
+            },
+        ],
+    },
+
+    'malayalam-adjective': {
+        '@attribution': {'users': ['Vis M'], 'title': 'Wikidata:Wikidata Lexeme Forms/Malayalam'},
+        'label': 'മലയാളം നാമവിശേഷണം',
+        'language': language_Malayalam,
+        'lexical_category_item_id': adjective,
+        'forms': [
+            {
+                'label': 'നാമവിശേഷണം',
+                'example': 'ഒരു [വലിയ] മൃഗം',
+                'grammatical_features_item_ids': [],
             },
         ],
     },
