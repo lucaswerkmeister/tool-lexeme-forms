@@ -10,19 +10,19 @@ _labels: dict[str, str] = {}
 
 _user_agent = toolforge.set_user_agent('lexeme-forms', email='mail@lucaswerkmeister.de')
 
-def load_language_info():
+def load_language_info() -> dict[str, dict]:
     session = mwapi.Session(
         'https://meta.wikimedia.org',
         user_agent=_user_agent,
     )
-    response = session.get(action='query',
-                           meta='languageinfo',
-                           liprop='autonym',
-                           formatversion='2')
-    if 'continue' in response:
-        print('WARNING: MediaWiki languageinfo incomplete, continue={}'.format(response['continue']),
-              file=sys.stderr)
-    return response['query']['languageinfo']
+    language_info = {}
+    for response in session.get(continuation=True,
+                                action='query',
+                                meta='languageinfo',
+                                liprop='autonym',
+                                formatversion='2'):
+        language_info.update(response['query']['languageinfo'])
+    return language_info
 
 def autonym(code: str) -> Optional[str]:
     global _language_info
