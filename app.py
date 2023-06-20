@@ -90,7 +90,9 @@ def enableCORS(func, *args, **kwargs):
 
 @app.before_request
 def init_interface_language_code():
-    if flask.session.get('interface_language_code') in translations:
+    if 'uselang' in flask.request.args:
+        flask.g.interface_language_code = flask.request.args['uselang']
+    elif flask.session.get('interface_language_code') in translations:
         flask.g.interface_language_code = flask.session['interface_language_code']
         if flask.g.interface_language_code not in translations:
             flask.g.interface_language_code = 'en'
