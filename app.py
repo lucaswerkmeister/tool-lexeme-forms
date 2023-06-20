@@ -24,7 +24,7 @@ import yaml
 from flask_utils import OrderedFlask, TagOrderedMultiDict, TagImmutableOrderedMultiDict, SetJSONProvider
 from formatters import I18nFormatter
 from language import lang_lex2int, lang_int2html, lang_int2babel
-from language_names import autonym, label
+from language_info import autonym, label, fallbacks
 from matching import match_template_to_lexeme_data, match_lexeme_forms_to_template, match_template_entity_to_lexeme_entity, MatchedTemplate, MatchedTemplateForm
 from mwapi_utils import T272319RetryingSession
 from parse_tpsv import parse_lexemes, FirstFieldNotLexemeIdError, FirstFieldLexemeIdError, WrongNumberOfFieldsError
@@ -247,11 +247,18 @@ def message(message_code: str) -> Markup:
     return add_lang_if_needed(message, language)
 
 def message_with_language(message_code: str) -> Tuple[Markup, str]:
-    language_code = cast(str, flask.g.interface_language_code)
-    if message_code not in translations.get(language_code, {}):
-        language_code = 'en'
-    text = translations[language_code][message_code]
-    return Markup(text), language_code
+    interface_language_code = cast(str, flask.g.interface_language_code)
+    language_codes = ([interface_language_code] +
+                      fallbacks(interface_language_code) +
+                      ['en'])
+    for language_code in language_codes:
+        try:
+            text = translations[language_code][message_code]
+        except LookupError:
+            continue
+        else:
+            return Markup(text), language_code
+    raise ValueError(f'Message {message_code} not found in {language_codes}')
 
 @app.template_global()
 def message_with_kwargs(message_code: str, **kwargs) -> Markup:

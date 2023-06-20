@@ -4,7 +4,7 @@ import re
 
 import formatters
 from language import lang_int2babel
-from language_names import autonym
+from language_info import autonym
 import translations
 
 
