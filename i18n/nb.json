@@ -50,5 +50,6 @@
 	"source-code": "Kildekode",
 	"login": "Logg inn",
 	"settings-link": "Innstillinger",
-	"settings-heading": "Innstillinger"
+	"settings-heading": "Innstillinger",
+	"logged-in": "{{GENDER:$2|Innlogget}} som $1."
 }
