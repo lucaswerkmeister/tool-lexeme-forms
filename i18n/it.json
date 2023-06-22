@@ -32,6 +32,8 @@
 	"title-create": "$1 (crea)",
 	"title-advanced": "$1 (avanzato)",
 	"title-edit": "$1 (modifica)",
+	"login-hint": "Devi [$1 accedere] per poter apportare modifiche utilizzando questo strumento.",
+	"ambiguous-template": "Il template $1 non esiste più; è stato sostituito dai seguenti template:",
 	"settings-label-interface-language-code": "Lingua dell'interfaccia utente",
 	"settings-save": "Salva",
 	"documentation": "Documentazione",
