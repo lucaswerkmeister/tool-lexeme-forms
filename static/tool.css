@@ -7,6 +7,6 @@ body {
     flex-grow: 1;
 }
 
-.template-li a {
+.template-li a:not(:hover) {
     text-decoration-line: none;
 }
