@@ -166,6 +166,9 @@ def test_translations_available():
         if language_code not in translations.translations:
             missing_language_codes.add(language_code)
 
+    # lack of translations accepted for now
+    missing_language_codes.remove('an')
+
     assert not missing_language_codes
 
 

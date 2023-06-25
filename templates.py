@@ -167,6 +167,10 @@ language_Basque: Language = {
     'language_item_id': Basque,
     'language_code': 'eu',
 }
+language_Aragonese: Language = {
+    'language_item_id': Aragonese,
+    'language_code': 'an',
+}
 language_Armenian: Language = {
     'language_item_id': Armenian,
     'language_code': 'hy',
@@ -274,6 +278,78 @@ language_Manbhumi: Language = {
 
 
 _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
+
+    'aragonese-noun-common-masculine': {
+        '@attribution': {'users': ['Juanpabl'], 'title': 'Wikidata:Wikidata Lexeme Forms/Aragonese'},
+        'label': 'nombre común masculino aragonés',
+        'language': language_Aragonese,
+        'lexical_category_item_id': noun,
+        'two_column_sections': True,
+        'forms': [
+            {
+                'label': 'singular',
+                'example': 'Esto ye un [can].',
+                'grammatical_features_item_ids': [masculine, singular],
+            },
+            {
+                'label': 'plural',
+                'example': 'Estos son uns [cans].',
+                'grammatical_features_item_ids': [masculine, plural],
+            },
+        ],
+        'statements': statements(grammatical_gender, masculine),
+    },
+
+    'aragonese-noun-common-feminine': {
+        '@attribution': {'users': ['Juanpabl'], 'title': 'Wikidata:Wikidata Lexeme Forms/Aragonese'},
+        'label': 'nombre común femenino aragonés',
+        'language': language_Aragonese,
+        'lexical_category_item_id': noun,
+        'two_column_sections': True,
+        'forms': [
+            {
+                'label': 'singular',
+                'example': 'Esto ye una [fuella].',
+                'grammatical_features_item_ids': [feminine, singular],
+            },
+            {
+                'label': 'plural',
+                'example': 'Estos son unas [fuellas].',
+                'grammatical_features_item_ids': [feminine, plural],
+            },
+        ],
+        'statements': statements(grammatical_gender, feminine),
+    },
+
+    'aragonese-noun-common-masculine-feminine': {
+        '@attribution': {'users': ['Juanpabl'], 'title': 'Wikidata:Wikidata Lexeme Forms/Aragonese'},
+        'label': 'nombre común masculino-femenino aragonés',
+        'language': language_Aragonese,
+        'lexical_category_item_id': noun,
+        'two_column_sections': True,
+        'forms': [
+            {
+                'label': 'masculino singular',
+                'example': 'Este ye un [amigo].',
+                'grammatical_features_item_ids': [masculine, singular],
+            },
+            {
+                'label': 'femenino singular',
+                'example': 'Esta ye un [amiga].',
+                'grammatical_features_item_ids': [feminine, singular],
+            },
+            {
+                'label': 'masculino plural',
+                'example': 'Estos son uns [amigos].',
+                'grammatical_features_item_ids': [masculine, plural],
+            },
+            {
+                'label': 'femenino plural',
+                'example': 'Estas son unas [amigas].',
+                'grammatical_features_item_ids': [feminine, plural],
+            },
+        ],
+    },
 
     'asturian-noun-masculine': {
         '@attribution': {'users': ['Oriciu'], 'title': 'Wikidata:Wikidata Lexeme Forms/Asturian'},
