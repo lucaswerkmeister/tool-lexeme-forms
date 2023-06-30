@@ -90,10 +90,18 @@ def enableCORS(func, *args, **kwargs):
 
 @app.before_request
 def init_interface_language_code():
+    legacy_language_codes = {
+        'sh': 'sh-latn',  # T336606
+        'tt': 'tt-cyrl',  # T336606
+    }
+
     if 'uselang' in flask.request.args:
         flask.g.interface_language_code = flask.request.args['uselang']
-    elif flask.session.get('interface_language_code') in translations:
+    elif flask.session.get('interface_language_code') in translations | legacy_language_codes:
         flask.g.interface_language_code = flask.session['interface_language_code']
+        if flask.g.interface_language_code in legacy_language_codes:
+            flask.g.interface_language_code = legacy_language_codes[flask.g.interface_language_code]
+            flask.session['interface_language_code'] = flask.g.interface_language_code
         if flask.g.interface_language_code not in translations:
             flask.g.interface_language_code = 'en'
     else:
