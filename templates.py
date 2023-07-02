@@ -15648,12 +15648,12 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
         'two_column_sections': True,
         'forms': [
             {
-                'label': 'ਇੱਕ ਵਚਨ, ਸਾਧਾਰਣ',
-                'example': 'ਉਹ ਮੇਰਾ [ਹੱਥ] ਹੈ।',
+                'label': 'ਇੱਕ ਵਚਨ, ਫਾਇਲੀ',
+                'example': 'ਉਹ ਮੇਰਾ [ਹੱਥ] ਏ।',
                 'grammatical_features_item_ids': [masculine, direct_case, singular],
             },
             {
-                'label': 'ਬਹੁ ਵਚਨ, ਸਾਧਾਰਣ',
+                'label': 'ਬਹੁ ਵਚਨ, ਫਾਇਲੀ',
                 'example': 'ਉਹ ਮੇਰੇ [ਹੱਥ] ਹਨ।',
                 'grammatical_features_item_ids': [masculine, direct_case, plural],
             },
@@ -15670,7 +15670,7 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
             {
                 'section_break': True,
                 'label': 'ਇੱਕ ਵਚਨ, ਅਪਾਦਾਨ',
-                'example': 'ਉਹ [ਹੱਥੋਂ] ਭੇਜਾ ਜਾ ਸਕਦਾ ਹੈ।؜',
+                'example': 'ਉਹ [ਹੱਥੋਂ] ਭੇਜਾ ਜਾ ਸਕਦਾ ਏ।؜',
                 'grammatical_features_item_ids': [masculine, ablative_case, singular],
                 'optional': True,
             },
@@ -15703,7 +15703,7 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
             {
                 'section_break': True,
                 'label': 'ਦੋ ਵਚਨ, ਕਰਨ',
-                'example': 'ਉਹ [ਹੱਥੀਂ] ਕੀਤਾ ਕੰਮ ਹੈ।',
+                'example': 'ਉਹ [ਹੱਥੀਂ] ਕੀਤਾ ਕੰਮ ਏ।',
                 'grammatical_features_item_ids': [masculine, instrumental_case, dual],
                 'optional': True,
             },
