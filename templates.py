@@ -11091,6 +11091,7 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
                 'grammatical_features_item_ids': [plural],
             },
             {
+                'section_break': True,
                 'label': 'verkleinwoord, enkelvoud',
                 'example': 'Dit is het kleine [huisje].',
                 'grammatical_features_item_ids': [diminutive, singular, neuter],
@@ -11123,6 +11124,7 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
                 'grammatical_features_item_ids': [plural],
             },
             {
+                'section_break': True,
                 'label': 'verkleinwoord, enkelvoud',
                 'example': 'Dit is het kleine [mannetje].',
                 'grammatical_features_item_ids': [diminutive, singular, neuter],
@@ -11155,6 +11157,7 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
                 'grammatical_features_item_ids': [plural],
             },
             {
+                'section_break': True,
                 'label': 'verkleinwoord, enkelvoud',
                 'example': 'Dit is het kleine [vrouwtje].',
                 'grammatical_features_item_ids': [diminutive, singular, neuter],
@@ -11187,6 +11190,7 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
                 'grammatical_features_item_ids': [plural],
             },
             {
+                'section_break': True,
                 'label': 'verkleinwoord, enkelvoud',
                 'example': 'Dit is het kleine [tafeltje].',
                 'grammatical_features_item_ids': [diminutive, singular, neuter],
