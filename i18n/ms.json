@@ -49,5 +49,6 @@
 	"source-code": "Kod sumber",
 	"login": "Log masuk",
 	"settings-link": "Tetapan",
-	"settings-heading": "Tetapan"
+	"settings-heading": "Tetapan",
+	"logged-in": "{{GENDER:$2|Log masuk}} sebagai $1."
 }
