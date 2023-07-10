@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Al12si",
+			"Hello903hello",
 			"Z423x5c6"
 		]
 	},
@@ -14,5 +15,5 @@
 	"title-advanced": "$1（進階）",
 	"title-bulk": "$1（批量）",
 	"title-edit": "$1（編輯）",
-	"login-hint": "你要[$1 簽到]先可以用爾個架生改嘢。"
+	"login-hint": "你要[$1 簽到]先可以用呢個架生改嘢。"
 }
