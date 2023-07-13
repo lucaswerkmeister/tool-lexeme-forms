@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Chrumps",
+			"Czupirek",
 			"KaMan",
 			"Lucas Werkmeister",
 			"Luku123"
@@ -34,8 +35,12 @@
 	"ambiguous-template": "Szablon $1 już nie istnieje; został on zastąpiony przez następujące szablony",
 	"settings-label-interface-language-code": "Język interfejsu użytkownika",
 	"settings-save": "Zapisz",
+	"skip-to-main-content": "Przeskocz do głównej treści",
 	"documentation": "Dokumentacja",
+	"toolforge": "Wikimedia Toolforge",
+	"source-code": "Kod źródłowy",
 	"login": "Zaloguj się",
 	"settings-link": "Ustawienia",
-	"settings-heading": "Ustawienia"
+	"settings-heading": "Ustawienia",
+	"logged-in": "{{GENDER:$2| Zalogowany| Zalogowana| Zalogowano}} jako $1."
 }
