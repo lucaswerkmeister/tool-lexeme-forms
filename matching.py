@@ -1,5 +1,5 @@
 import copy
-from typing import cast, TypedDict, Union
+from typing import cast, TypedDict
 
 from entity_ids.property_ids import *
 from templates import Template, TemplateForm
@@ -63,8 +63,8 @@ def match_template_to_lexeme_data(template: Template, lexeme_data: Lexeme) -> Ov
 
 def match_template_entity_to_lexeme_entity(  # may be template + lexeme or template form + lexeme form
         test: bool,
-        template_entity: Union[Template, TemplateForm],
-        lexeme_entity: Union[Lexeme, LexemeForm],
+        template_entity: Template | TemplateForm,
+        lexeme_entity: Lexeme | LexemeForm,
 ) -> tuple[Statements, Statements, Statements]:
     matched_statements: Statements = {}
     missing_statements: Statements = {}

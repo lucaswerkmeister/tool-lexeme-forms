@@ -1,4 +1,4 @@
-from typing import Literal, TypedDict, Union
+from typing import Literal, TypeAlias, TypedDict
 from typing_extensions import NotRequired
 
 
@@ -40,7 +40,7 @@ class PropertyNoValueSnak(TypedDict):
     # no datavalue
 
 
-Snak = Union[PropertyValueSnak, PropertySomeValueSnak, PropertyNoValueSnak]
+Snak: TypeAlias = PropertyValueSnak | PropertySomeValueSnak | PropertyNoValueSnak
 
 
 class Statement(TypedDict):
@@ -50,12 +50,12 @@ class Statement(TypedDict):
     rank: Literal['normal']  # other ranks not used in this tool
 
 
-StatementGroup = list[Statement]
-Statements = dict[str, StatementGroup]
+StatementGroup: TypeAlias = list[Statement]
+Statements: TypeAlias = dict[str, StatementGroup]
 
 
-LexemeFormRepresentations = dict[str, Term]
-LexemeLemmas = dict[str, Term]
+LexemeFormRepresentations: TypeAlias = dict[str, Term]
+LexemeLemmas: TypeAlias = dict[str, Term]
 
 
 class LexemeForm(TypedDict):

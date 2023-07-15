@@ -1,4 +1,4 @@
-from typing import Dict, List, Literal, NewType, Optional, Set, TypedDict, Union, overload
+from typing import Dict, List, Literal, NewType, Optional, Set, TypeAlias, TypedDict, overload
 from typing_extensions import NotRequired
 
 from entity_ids import *
@@ -47,7 +47,7 @@ Template = TypedDict('Template', {
     '@template_name': NotRequired[str],
 })
 
-StatementValue = Union[str, Literal['somevalue'], Literal['novalue']]
+StatementValue: TypeAlias = str | Literal['somevalue'] | Literal['novalue']
 
 def statement(property_id: str, item_id: StatementValue) -> Statement:
     snak: Snak
@@ -87,7 +87,7 @@ def statement(property_id: str, item_id: StatementValue) -> Statement:
 def statements(property_id: str, item_id: StatementValue) -> Statements:
     ...
 @overload
-def statements(statements: dict[str, Union[StatementValue, list[StatementValue]]]) -> Statements:
+def statements(statements: dict[str, StatementValue | list[StatementValue]]) -> Statements:
     ...
 def statements(*args):
     if len(args) == 1:
@@ -277,7 +277,7 @@ language_Manbhumi: Language = {
 }
 
 
-_internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
+_internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
 
     'aragonese-noun-common-masculine': {
         '@attribution': {'users': ['Juanpabl'], 'title': 'Wikidata:Wikidata Lexeme Forms/Aragonese'},
@@ -21077,7 +21077,7 @@ _internal_templates: Dict[str, Union[str, list[str], _InternalTemplate]] = {
 # rewrite _internal_templates ('language' as one dict entry with a dict value)
 # into templates ('language_item_id' and 'language_code' as separate dict entries)
 # (using **language_English directly doesn’t work yet, python/mypy#9408)
-templates: Dict[str, Union[str, list[str], Template]] = {}
+templates: Dict[str, str | list[str] | Template] = {}
 for _template_name, _internal_template in _internal_templates.items():
     if not isinstance(_internal_template, dict):
         templates[_template_name] = _internal_template
