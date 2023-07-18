@@ -1986,7 +1986,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
             {
                 'label': 'unander',
                 'example': 'Ho [pag] zo amañ.',
-                'grammatical_features_item_ids': [singular, aspirate_mutation],
+                'grammatical_features_item_ids': [singular, hard_mutation],
             },
             {
                 'label': 'liester',
@@ -2001,7 +2001,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
             {
                 'label': 'liester',
                 'example': 'Ho [pagoù] zo amañ.',
-                'grammatical_features_item_ids': [plural, aspirate_mutation],
+                'grammatical_features_item_ids': [plural, hard_mutation],
             },
         ],
     },
