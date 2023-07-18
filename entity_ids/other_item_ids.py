@@ -145,6 +145,7 @@ habitual_past = 'Q75243920'
 future_imperative = 'Q75244800'
 exclamative = 'Q93868909'
 short_form = 'Q96406487'
+hard_mutation = 'Q97130345'
 non_genitive = 'Q98946930'
 # 9 digits
 zu_infinitive = 'Q100952920'
