@@ -5,7 +5,8 @@
 			"Eduardoaddad",
 			"EnaldoSS",
 			"Gustavo.moraes",
-			"Lucas Werkmeister"
+			"Lucas Werkmeister",
+			"Stephanyb76"
 		]
 	},
 	"create": "Criar",
@@ -42,5 +43,8 @@
 	"title-bulk": "$1 (em massa)",
 	"title-edit": "$1 (editar)",
 	"login-hint": "Você precisa [$1 entrar] antes de fazer alterações usando esta ferramenta.",
-	"ambiguous-template": "O modelo $1 já não existe; foi substituído pelos seguintes modelos:"
+	"ambiguous-template": "O modelo $1 já não existe; foi substituído pelos seguintes modelos:",
+	"documentation": "Documentação",
+	"settings-link": "Configurações",
+	"settings-heading": "Configurações"
 }
