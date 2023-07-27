@@ -8,6 +8,7 @@
 	"create": "Kardi",
 	"form-optional": "&#32;(dadi-dadi)",
 	"advanced": "Lanturan",
+	"advanced-general": "Ragané wénten ring mode \"lanturan\".",
 	"lexeme-id": "ID Léksém",
 	"generated-via": "kaasilang nganggén",
 	"bulk-link": "modé makéh",
@@ -19,5 +20,16 @@
 	"title-advanced": "$1 (lantur)",
 	"title-bulk": "$1 (makéh)",
 	"title-edit": "$1 (uah)",
-	"login-hint": "Ragané perlu [$1 manjing log] mangda ragané prasida ngentosin alat puniki."
+	"login-hint": "Ragané perlu [$1 manjing log] mangda ragané prasida ngentosin alat puniki.",
+	"ambiguous-template": "Mal $1 ten wénten malih; ipun sampun kaselia olih mal-mal puniki:",
+	"settings-label-interface-language-code": "Basa antarmuka anganggé",
+	"settings-save": "Raksa",
+	"skip-to-main-content": "Liwatin nuju kontén utama",
+	"documentation": "Dokuméntasi",
+	"toolforge": "Wikimédia Toolforge",
+	"source-code": "Kode wit",
+	"login": "Manjing log",
+	"settings-link": "Setélan",
+	"settings-heading": "Setélan",
+	"logged-in": "{{GENDER:$2|Manjing}} dados $1 ."
 }
