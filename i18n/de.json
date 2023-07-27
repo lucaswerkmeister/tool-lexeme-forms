@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Brettchenweber",
 			"Justman10000",
 			"Lucas Werkmeister",
 			"Mitgedanken",
@@ -51,5 +52,6 @@
 	"source-code": "Quellcode",
 	"login": "Anmelden",
 	"settings-link": "Einstellungen",
-	"settings-heading": "Einstellungen"
+	"settings-heading": "Einstellungen",
+	"logged-in": "{{GENDER:$2|Eingeloggt}} als $1."
 }
