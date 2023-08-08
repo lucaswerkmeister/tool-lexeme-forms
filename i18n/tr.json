@@ -43,5 +43,14 @@
 	"title-edit": "$1 (düzenle)",
 	"login-hint": "Bu aracı kullanarak değişiklik yapmadan önce [$1 giriş yapmalısınız].",
 	"ambiguous-template": "$1 şablonu artık mevcut değil; şu şablonlarla değiştirilmiş:",
-	"settings-link": "Ayarlar"
+	"settings-label-interface-language-code": "Kullanıcı arayüzü dili",
+	"settings-save": "Sakla",
+	"tool-name": "Vikiveri Sözlükbirim Formları",
+	"skip-to-main-content": "Ana içeriğe geç",
+	"documentation": "Belgeleme",
+	"source-code": "Kaynak kodu",
+	"login": "Oturum aç",
+	"settings-link": "Ayarlar",
+	"settings-heading": "Ayarlar",
+	"logged-in": "$1 olarak {{GENDER:$2|giriş yaptı}}."
 }
