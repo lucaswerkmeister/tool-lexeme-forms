@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Beta16",
+			"Luca.favorido",
 			"Sannita"
 		]
 	},
@@ -9,6 +10,7 @@
 	"csrf-warning": "Ops, non è possibile salvare la pagina (errore: <abbr title=\"Cross-site request forgery\">CSRF</abbr> protection failed). Per favore, riprova.",
 	"duplicates-warning": "Attenzione, {{PLURAL:$1|il seguente lessema ha|i seguenti lessemi hanno}} lo stesso lemma e codice linguistico di quello che hai appena tentato di creare:",
 	"duplicates-instructions": "Se sei sicuro che {{PLURAL:$1|sia diverso|siano diversi}}, spunta la casella alla fine di questo modulo.",
+	"duplicates-create": "Crea comunque un nuovo lessema.",
 	"no-duplicate": "Questo NON è un duplicato di un lessema esistente.",
 	"form-optional": "&#32;(facoltativo)",
 	"advanced": "Avanzate",
@@ -22,6 +24,10 @@
 	"bulk-link": "caricamento di massa",
 	"bulk-format-help": "aiuto formattazione",
 	"bulk-not-allowed": "Ci dispiace, ma non sei {{GENDER:$1|autorizzato|autorizzata|autorizzato/a}} a usare il caricamento di massa.",
+	"bulk-first-field-not-lexeme-id": "Poiché il template ha {{PLURAL:$1|una forma|$1 forme}} e la riga $4 dell'input ha {{PLURAL:$2|un campo|$2 campi}}, il primo campo non dovrebbe somigliare all'identificativo di un lessema, ma <q>$3</q> lo sembra. (Hai dimenticato una forma nell'input?)",
+	"bulk-first-field-lexeme-id": "Poiché il template ha {{PLURAL:$1|una forma|$1 forme}} e la riga $4 dell'input ha {{PLURAL:$2|un campo|$2 campi}}, il primo campo non dovrebbe somigliare all'identificativo di lessema, ma <q>$3</q> lo sembra. (Hai dimenticato una forma nell'input?)",
+	"bulk-wrong-number-of-fields": "Poiché il modello ha {{PLURAL:$1|una forma| $1 forme}}, ogni riga di input dovrebbe avere lo stesso numero di campi (quando si crea un nuovo lessema) o uno in più (quando si specifica l'ID di un lessema esistente da modificare), mentre invece, la riga $3 dell'input ha {{PLURAL:$2|un campo|$2 campi}}.",
+	"bulk-optional-forms-hint": "Se vuoi saltare alcune forme, specificale come vuote (es. <kbd>...|||</kbd> per tre forme vuote alla fine).",
 	"edit-link": "modifica",
 	"edit-general": "Ti trovi nella modalità “modifica”. Cambia uno dei valori per modificare, aggiungere o rimuovere forme dal lessema.",
 	"edit-mismatch-warning": "Questo lessema non combacia con questo template! Per favore, controlla che questo sia il giusto template per il lessema prima di continuare.",
@@ -31,14 +37,19 @@
 	"no-grammatical-features": "nessuna caratteristica grammaticale",
 	"title-create": "$1 (crea)",
 	"title-advanced": "$1 (avanzato)",
+	"title-bulk": "$ 1 (massivo)",
 	"title-edit": "$1 (modifica)",
 	"login-hint": "Devi [$1 accedere] per poter apportare modifiche utilizzando questo strumento.",
 	"ambiguous-template": "Il template $1 non esiste più; è stato sostituito dai seguenti template:",
 	"settings-label-interface-language-code": "Lingua dell'interfaccia utente",
 	"settings-save": "Salva",
+	"tool-name": "Forme del lessema di Wikidata",
+	"skip-to-main-content": "Passa al contenuto principale",
 	"documentation": "Documentazione",
+	"toolforge": "Wikimedia Toolforge",
 	"source-code": "Codice sorgente",
 	"login": "Entra",
 	"settings-link": "Impostazioni",
-	"settings-heading": "Impostazioni"
+	"settings-heading": "Impostazioni",
+	"logged-in": "{{GENDER:$2|Acceduto|Acceduta|Acceduto/a}} come $1."
 }
