@@ -4,6 +4,7 @@
 			"Lucas Werkmeister",
 			"Mguix",
 			"Qllach",
+			"SMP",
 			"Toniher",
 			"Vfc",
 			"Yupik"
@@ -44,5 +45,12 @@
 	"title-edit": "$1 (edita)",
 	"login-hint": "Cal que [$1 inicieu sessió] abans de poder fer canvis utilitzant aquesta eina.",
 	"ambiguous-template": "La plantilla $1 ja no existeix; s'ha substituït per les plantilles següents:",
-	"source-code": "Codi font"
+	"settings-save": "Desa",
+	"documentation": "Documentació",
+	"toolforge": "Wikimedia Toolforge",
+	"source-code": "Codi font",
+	"login": "Inicia la sessió",
+	"settings-link": "Configuració",
+	"settings-heading": "Configuració",
+	"logged-in": "{{GENDER:$2|S'ha iniciat la sessió}} com a $1."
 }
