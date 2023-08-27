@@ -86,7 +86,7 @@ def test_PluralFormatter_MarkupSafe(format_type, adjective_type, expected_str):
         adjective=adjective_type('<strong>cool</strong>'),
     )
     assert formatted == expected_str
-    assert type(formatted) == format_type
+    assert type(formatted) is format_type
 
 
 @pytest.mark.parametrize('list, expected', [
@@ -138,7 +138,7 @@ def test_CommaSeparatedListFormatter_MarkupSafe_one_item(format_type, item_type,
         ],
     )
     assert formatted == expected_str
-    assert type(formatted) == format_type
+    assert type(formatted) is format_type
 
 
 @pytest.mark.parametrize('format_type, item_one_type, item_two_type, expected_str', [
@@ -159,7 +159,7 @@ def test_CommaSeparatedListFormatter_MarkupSafe_two_items(format_type, item_one_
         ],
     )
     assert formatted == expected_str
-    assert type(formatted) == format_type
+    assert type(formatted) is format_type
 
 
 @pytest.mark.parametrize('format_type, item_one_type, item_two_type, item_three_type, expected_str', [
@@ -178,7 +178,7 @@ def test_CommaSeparatedListFormatter_MarkupSafe_three_items(format_type, item_on
         ],
     )
     assert formatted == expected_str
-    assert type(formatted) == format_type
+    assert type(formatted) is format_type
 
 
 @pytest.mark.parametrize('gender, expected', [
@@ -247,7 +247,7 @@ def test_GenderFormatter_MarkupSafe(format_type, adjective_type, expected_str):
         adjective=adjective_type('<strong>correct</strong>'),
     )
     assert formatted == expected_str
-    assert type(formatted) == format_type
+    assert type(formatted) is format_type
 
 
 def test_HyperlinkFormatter():
@@ -271,7 +271,7 @@ def test_HyperlinkFormatter_MarkupSafe(format_type, url_type, expected_str):
         url=url_type('/login"'),
     )
     assert formatted == expected_str
-    assert type(formatted) == format_type
+    assert type(formatted) is format_type
 
 
 flac = '<abbr title="Free Lossless Audio Codec">FLAC</abbr>'

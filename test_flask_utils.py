@@ -20,7 +20,7 @@ def test_serializer(value):
     value_ = serializer.loads(json)
 
     assert value == value_
-    assert type(value) == type(value_)
+    assert type(value) is type(value_)
 
 
 def test_ordered_request():
