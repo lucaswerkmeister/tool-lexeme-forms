@@ -9975,7 +9975,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
     },
 
     'italian-adjective': {
-        '@attribution': {'users': ['Sannita'], 'title': 'Wikidata:Wikidata Lexeme Forms/Italian'},
+        '@attribution': {'users': ['Sannita', 'Luca.favorido'], 'title': 'Wikidata:Wikidata Lexeme Forms/Italian'},
         'label': 'aggettivo qualificativo italiano',
         'language': language_Italian,
         'lexical_category_item_id': adjective,
@@ -10001,7 +10001,49 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Le maestre sono [buone].',
                 'grammatical_features_item_ids': [feminine, plural],
             },
+            {
+                'section_break': True,
+                'label': 'superlativo assoluto, maschile singolare',
+                'example': 'Il panino è [buonissimo].',
+                'grammatical_features_item_ids': [masculine, singular, superlative],
+            },
+            {
+                'label': 'superlativo assoluto, maschile plurale',
+                'example': 'I panini sono [buonissimi].',
+                'grammatical_features_item_ids': [masculine, plural, superlative],
+            },
+            {
+                'label': 'superlativo assoluto, femminile singolare',
+                'example': 'La maestra è [buonissima].',
+                'grammatical_features_item_ids': [feminine, singular, superlative],
+            },
+            {
+                'label': 'superlativo assoluto, femminile plurale',
+                'example': 'Le maestre sono [buonissime].',
+                'grammatical_features_item_ids': [feminine, plural, superlative],
+            },
         ],
+    },
+
+    'italian-adjective-invariant': {
+        '@attribution': {'users': ['Luca.favorido'], 'title': 'Wikidata:Wikidata Lexeme Forms/Italian'},
+        'label': 'aggettivo invariante italiano',
+        'language': language_Italian,
+        'lexical_category_item_id': adjective,
+        'two_column_sections': True,
+        'forms': [
+            {
+                'label': 'singolare',
+                'example': 'Il mondo è [speciale].',
+                'grammatical_features_item_ids': [singular],
+            },
+            {
+                'label': 'plurale',
+                'example': 'Le verdure sono [speciali].',
+                'grammatical_features_item_ids': [plural],
+            },
+        ],
+        'statements': statements(grammatical_gender, common_of_two_genders),
     },
 
     'kurmanji-noun-feminine': {
