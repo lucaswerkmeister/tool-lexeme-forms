@@ -9852,7 +9852,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
             },
             {
                 'label': 'եզ․ թիվ, հայց․ հոլով',
-                'example': 'ռեսնում եմ [կաթ]',
+                'example': 'տեսնում եմ [կաթ]',
                 'grammatical_features_item_ids': [accusative_case, singular],
                 'grammatical_features_item_ids_optional': set([singular]),
             },
