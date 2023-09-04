@@ -10046,6 +10046,21 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
         'statements': statements(grammatical_gender, common_of_two_genders),
     },
 
+    'italian-adverb': {
+        '@attribution': {'users': ['Sannita', 'Luca.favorido'], 'title': 'Wikidata:Wikidata Lexeme Forms/Italian'},
+        'label': 'avverbio italiano',
+        'language': language_Italian,
+        'lexical_category_item_id': adverb,
+        'two_column_sections': True,
+        'forms': [
+            {
+                'label': 'avverbio',
+                'example': 'Noi camminavamo [velocemente].',
+                'grammatical_features_item_ids': [],
+            },
+        ],
+    },
+
     'kurmanji-noun-feminine': {
         '@attribution': {'users': ['Şêr'], 'title': 'Wikidata:Wikidata Lexeme Forms/Kurdish (Kurmancî)'},
         'label': 'navdêra kurdî (mê)',
