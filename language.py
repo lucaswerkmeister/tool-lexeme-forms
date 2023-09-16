@@ -82,4 +82,9 @@ def lang_int2babel(code: str) -> str:
         # tt (Tatar) is closely related, has the same plural forms,
         # and its list formatting seems to match ba better than MediaWiki’s ba fallback ru (Russian)
         'ba': 'tt',
+        # kai (Karai-Karai or Karekare) is not in Babel;
+        # MediaWiki support is still in progress (T345807),
+        # so the fallback to ha (Hausa) here is just a total guess
+        # based on both languages being West Chadic according to Wikipedia
+        'kai': 'ha'
     }.get(code, code)
