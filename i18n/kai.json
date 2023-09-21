@@ -1,0 +1,29 @@
+{
+	"@metadata": {
+		"authors": [
+			"Musaddam Idriss"
+		]
+	},
+	"create": "Dàgoorìimà",
+	"duplicates-create": "Dàgoorìimà ciwan ta kalma a gi.",
+	"no-duplicate": "Ayam njoni ka kalma bai",
+	"form-optional": "&#32;(jìdèe)",
+	"advanced-general": "Ka àkau yanayi ma \"gàm\"",
+	"lexeme-id": "Kalma ID",
+	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=ka sùbà bai|sùbà wàaɗi|$2 sìbàa}} kà {{PLURAL:$3|0=ka sirìm bai|sirìm wàaɗi|$3 sirìm}}",
+	"bulk-link": "yànnayi gam",
+	"edit-link": "yawantu",
+	"edit-form-list-item": "$1, $2, {{PLURAL:$3|0=ka chàchā bai|chàchā waaɗi|$3 chàchā}}",
+	"title-create": "$1 (dàgòorīmà)",
+	"title-advanced": "$1 (men gàm)",
+	"title-bulk": "$1 (gàm)",
+	"title-edit": "$1 (yawantu)",
+	"settings-label-interface-language-code": "Bòo mà Ba wàanò",
+	"settings-save": "Zā",
+	"tool-name": "Sifa ma Kalma ka Wikidata",
+	"source-code": "Kood ta aroo",
+	"login": "Raa",
+	"settings-link": "Yawantaa",
+	"settings-heading": "Yawantaa",
+	"logged-in": "{{GENDER:$2|Gaɗaɗeti}} à $1."
+}

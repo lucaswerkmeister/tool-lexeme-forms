@@ -43,5 +43,14 @@
 	"title-bulk": "$1 (hromadně)",
 	"title-edit": "$1 (editace)",
 	"login-hint": "Než pomocí tohoto nástroje budete moci dělat změny, musíte se [$1 přihlásit].",
-	"ambiguous-template": "Šablona $1 už neexistuje; byla nahrazena následujícími šablonami:"
+	"ambiguous-template": "Šablona $1 už neexistuje; byla nahrazena následujícími šablonami:",
+	"settings-label-interface-language-code": "Jazyk uživatelského rozhraní",
+	"settings-save": "Uložit",
+	"skip-to-main-content": "Přeskočit na obsah",
+	"documentation": "Dokumentace",
+	"source-code": "Zdrojový kód",
+	"login": "Přihlásit se",
+	"settings-link": "Nastavení",
+	"settings-heading": "Nastavení",
+	"logged-in": "{{GENDER:$2|Přihlášen|Přihlášena}} jako $1."
 }
