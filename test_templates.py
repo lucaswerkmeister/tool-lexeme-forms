@@ -169,6 +169,11 @@ def test_translations_available():
     # lack of translations accepted for now
     missing_language_codes.remove('an')
 
+    # special case
+    if 'zh' in missing_language_codes:
+        if 'zh-hans' in translations.translations or 'zh-hant' in translations.translations:
+            missing_language_codes.remove('zh')
+
     assert not missing_language_codes
 
 
