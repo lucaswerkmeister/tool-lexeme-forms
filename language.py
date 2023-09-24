@@ -86,5 +86,8 @@ def lang_int2babel(code: str) -> str:
         # MediaWiki support is still in progress (T345807),
         # so the fallback to ha (Hausa) here is just a total guess
         # based on both languages being West Chadic according to Wikipedia
-        'kai': 'ha'
+        'kai': 'ha',
+        # an (Aragonese) is not in Babel;
+        # es (Spanish) is the MediaWiki fallback its .text_direction matches
+        'an': 'es',
     }.get(code, code)
