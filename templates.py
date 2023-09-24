@@ -3875,6 +3875,26 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
         ],
     },
 
+    'danish-noun-proper': {
+        '@attribution': {'users': ['Fnielsen'], 'title': 'Wikidata:Wikidata Lexeme Forms/Danish'},
+        'label': 'dansk egennavn',
+        'language': language_Danish,
+        'lexical_category_item_id': proper_noun,
+        'two_column_sections': True,
+        'forms': [
+            {
+                'label': 'ikke-ejefald',
+                'example': 'Det her er [London]',
+                'grammatical_features_item_ids': [non_genitive],
+            },
+            {
+                'label': 'ejefald',
+                'example': 'Det her er [Londons] måde',
+                'grammatical_features_item_ids': [genitive_case],
+            },
+        ],
+    },
+
     'german-noun-masculine': {
         '@attribution': {'users': ['Lucas Werkmeister'], 'title': 'Wikidata:Wikidata Lexeme Forms/German'},
         'label': 'deutsches Substantiv (Maskulinum)',
