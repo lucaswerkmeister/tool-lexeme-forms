@@ -649,7 +649,7 @@ def oauth_callback() -> RRV:
     if oauth_request_token is None:
         return flask.render_template('error-oauth-callback.html',
                                      already_logged_in='oauth_access_token' in flask.session,
-                                     query_string=flask.request.query_string.decode(flask.request.url_charset))
+                                     query_string=flask.request.query_string.decode('utf8'))
     access_token = mwoauth.complete('https://www.wikidata.org/w/index.php', consumer_token, mwoauth.RequestToken(**oauth_request_token), flask.request.query_string, user_agent=user_agent)
     flask.session['oauth_access_token'] = dict(zip(access_token._fields, access_token))
     flask.session.pop('_csrf_token', None)
