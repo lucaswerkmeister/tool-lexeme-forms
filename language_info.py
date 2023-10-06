@@ -22,10 +22,6 @@ def load_language_info() -> dict[str, dict]:
                                 liprop=['autonym', 'fallbacks'],
                                 formatversion='2'):
         language_info.update(response['query']['languageinfo'])
-    language_info.setdefault('kai', {
-        'autonym': 'Karai-karai',
-        'faked': 'by Wikidata Lexeme Forms (language_info.py)',
-    })
     return language_info
 
 def autonym(code: str) -> Optional[str]:

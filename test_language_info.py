@@ -35,12 +35,3 @@ def test_label(code: str, expected: Optional[str]):
 ])
 def test_fallbacks(code: str, expected: list[str]):
     assert fallbacks(code) == expected
-
-def test_fake_kai_info_used():
-    """We currently hard-code some fake data for Karai-karai (kai)
-    while upstream MediaWiki support is not available yet.
-    Once it becomes available, that fake data and this test should be removed."""
-    autonym('kai')  # load language date
-    import language_info
-    expected = 'by Wikidata Lexeme Forms (language_info.py)'
-    assert language_info._language_info['kai']['faked'] == expected
