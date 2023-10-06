@@ -21,5 +21,10 @@
 	"title-create": "$1（创建）",
 	"title-advanced": "$1（高级）",
 	"title-bulk": "$1（批量）",
-	"title-edit": "$1（编辑）"
+	"title-edit": "$1（编辑）",
+	"source-code": "源代码",
+	"login": "登录",
+	"settings-link": "设置",
+	"settings-heading": "设置",
+	"logged-in": "已以$1身份{{GENDER:$2|登录}}。"
 }
