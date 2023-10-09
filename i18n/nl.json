@@ -5,7 +5,8 @@
 			"MarcoSwart",
 			"Mbch331",
 			"Nickthijssen1994",
-			"Romaine"
+			"Romaine",
+			"Victor LP"
 		]
 	},
 	"create": "Aanmaken",
@@ -42,5 +43,12 @@
 	"title-bulk": "$1 (bulk)",
 	"title-edit": "$1 (bewerken)",
 	"login-hint": "U moet [$1 inloggen] om wijzigingen te kunnen maken met deze tool.",
-	"ambiguous-template": "Het sjabloon $1 bestaat niet meer; het is vervangen door de volgende sjablonen:"
+	"ambiguous-template": "Het sjabloon $1 bestaat niet meer; het is vervangen door de volgende sjablonen:",
+	"settings-label-interface-language-code": "Taal van de gebruikersinterface",
+	"settings-save": "Opslaan",
+	"documentation": "Documentatie",
+	"toolforge": "Wikimedia Toolforge",
+	"source-code": "Broncode",
+	"settings-link": "Instellingen",
+	"settings-heading": "Instellingen"
 }

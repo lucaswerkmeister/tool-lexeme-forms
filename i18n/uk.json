@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Base",
 			"DDPAT",
 			"Ice bulldog",
 			"Lucas Werkmeister",
+			"Renamerr",
 			"Tohaomg"
 		]
 	},
@@ -41,5 +43,13 @@
 	"title-bulk": "$1 (навалом)",
 	"title-edit": "$1 (редаговано)",
 	"login-hint": "Вам потрібно [$1 увійти], перш ніж ви зможете вносити зміни за допомогою цього інструменту.",
-	"ambiguous-template": "Шаблон $1 більше не існує; його замінено такими шаблонами:"
+	"ambiguous-template": "Шаблон $1 більше не існує; його замінено такими шаблонами:",
+	"settings-label-interface-language-code": "Мова інтерфейсу",
+	"settings-save": "Зберегти",
+	"tool-name": "Форми Лексем Вікіданих",
+	"skip-to-main-content": "Перейти до основного вмісту",
+	"documentation": "Документація",
+	"login": "Увійти",
+	"settings-link": "Налаштування",
+	"settings-heading": "Налаштування"
 }
