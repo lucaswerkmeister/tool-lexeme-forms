@@ -6,6 +6,7 @@
 			"LittlePaw365",
 			"Njzjz",
 			"Si109",
+			"Xyb",
 			"Zhang8569"
 		]
 	},
@@ -22,6 +23,10 @@
 	"title-advanced": "$1（高级）",
 	"title-bulk": "$1（批量）",
 	"title-edit": "$1（编辑）",
+	"settings-label-interface-language-code": "用户界面语言",
+	"settings-save": "保存",
+	"skip-to-main-content": "跳至主要内容",
+	"documentation": "文档",
 	"source-code": "源代码",
 	"login": "登录",
 	"settings-link": "设置",
