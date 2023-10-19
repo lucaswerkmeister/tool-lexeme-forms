@@ -39,5 +39,15 @@
 	"title-edit": "$1 (redaktez)",
 	"login-hint": "You need to [$1 log in] before you can make changes using this tool.",
 	"ambiguous-template": "Shablono $1 ne pluse existas; ol remplasesis da la sequanta shabloni:",
-	"settings-save": "Konservez"
+	"settings-label-interface-language-code": "Idiomo di vua interkonekto",
+	"settings-save": "Konservez",
+	"tool-name": "Formi di lexemi che Wikidata",
+	"skip-to-main-content": "Saltez a la precipua kontenajo",
+	"documentation": "Dokumentigo",
+	"toolforge": "''Toolforge'' di Wikimedia",
+	"source-code": "Kodexo-fonto",
+	"login": "Enirar",
+	"settings-link": "Ajusti",
+	"settings-heading": "Ajusti",
+	"logged-in": "{{GENDER:$2|Eniris}} kom $1."
 }
