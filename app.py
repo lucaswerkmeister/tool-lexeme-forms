@@ -161,7 +161,7 @@ def form2input(context, form, first=False, readonly=False, template_language_cod
             Markup(r'<input type="text" name="form_representation" placeholder="') +
             Markup.escape(placeholder) +
             Markup(r'"') +
-            Markup(r' pattern="[^/]+(?:/[^/]+)*"') +
+            Markup(r' pattern="[^\/]+(?:\/[^\/]+)*"') +
             (Markup(r' required') if not optional else Markup('')) +
             (Markup(r' disabled') if readonly else Markup('')) +
             (Markup(r' autofocus') if first else Markup('')) +
