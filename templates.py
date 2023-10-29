@@ -4441,6 +4441,9 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'label': 'multenombro, nominativo',
                 'example': 'Ĉi tiuj estas [substantivoj].',
                 'grammatical_features_item_ids': [nominative_case, plural],
+                'wikifunctions': {
+                    'Generu formojn!': 'Z10482',
+                },
             },
             {
                 'label': 'multenombro, akuzativo',
