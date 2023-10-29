@@ -338,7 +338,7 @@ def can_use_wikifunctions() -> bool:
     if userinfo is None:
         return False
     title = f'User:{userinfo["name"]}/wikidata-lexeme-forms-opt-into-wikifunctions.js'
-    session = authenticated_session('https://www.wikifunctions.org')
+    session = anonymous_session('https://www.wikifunctions.org')
     response = session.get(action='query',
                            titles=[title],
                            formatversion=2)
