@@ -5541,6 +5541,9 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'label': 'pluriel',
                 'example': 'Voici des [chiens].',
                 'grammatical_features_item_ids': [plural],
+                'wikifunctions': {
+                    '✨': 'Z11548',
+                },
             },
         ],
         'statements': statements(grammatical_gender, masculine),
@@ -5561,6 +5564,9 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'label': 'pluriel',
                 'example': 'Voici des [chiennes].',
                 'grammatical_features_item_ids': [plural],
+                'wikifunctions': {
+                    '✨': 'Z11548',
+                },
             },
         ],
         'statements': statements(grammatical_gender, feminine),
