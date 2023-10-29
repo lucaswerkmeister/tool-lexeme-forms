@@ -9770,7 +9770,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Vozim se s(a) [žirafama].',
                 'grammatical_features_item_ids': [instrumental_case, plural],
                 'wikifunctions': {
-                    '✨': 'Z11333',
+                    '✨': 'Z11332',
                 },
             },
         ],

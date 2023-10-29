@@ -1191,8 +1191,10 @@ def wikifunctions_api(template_name: str, function_name: str, lemma: str) -> RRV
             raise ValueError('Invalid Wikifunctions API response')
         inner_response = json.loads(response['query']['wikilambda_function_call']['data'])
         # TODO check whether the Z22 represents success or failure?
-        # TODO result can apparently be Z24?
-        result.append(inner_response['Z22K1'])
+        response_value = inner_response['Z22K1']
+        if response_value == 'Z24':  # void
+            response_value = None
+        result.append(response_value)
     return result
 
 @app.route('/healthz')
