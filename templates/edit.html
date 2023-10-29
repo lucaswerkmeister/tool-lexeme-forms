@@ -27,10 +27,17 @@
 {{ super() }}
 <script defer src="{{ url_for('static', filename='edit.js') }}"></script>
 <script defer src="{{ url_for('static', filename='preventDoubleSubmit.js') }}"></script>
+<script defer src="{{ url_for('static', filename='wikifunctions.js') }}"></script>
 <link rel="stylesheet" href="{{ url_for('static', filename='template.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='edit.css') }}">
 {% endblock %}
+{% block main_tag_attributes %}{{ super() }} data-template='{{ template | tojson }}'{% endblock main_tag_attributes %}
 {% block main %}
+  {% if can_use_wikifunctions() %}
+  <div id="wikifunctions" {{ push_html_lang( template.language_code | lang_lex2int ) }}>
+    <!-- buttons added by wikifunctions.js go here -->
+  </div{{ pop_html_lang( template.language_code | lang_lex2int ) }}>
+  {% endif %}
   <h1 {{ push_html_lang( template.language_code | lang_lex2int ) }}>{{ template.label }}</h1{{ pop_html_lang( template.language_code | lang_lex2int ) }}>
   <h2>
     <a href="https://{{ 'test' if template.test else 'www' }}.wikidata.org/wiki/Lexeme:{{ template.lexeme_id }}">
