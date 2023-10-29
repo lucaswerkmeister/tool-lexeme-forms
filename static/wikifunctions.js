@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     'use strict';
 
     const template = JSON.parse(document.getElementsByTagName('main')[0].dataset.template),
+          templateName = template['@template_name'],
           baseUrl = document.querySelector('link[rel=index]').href,
           form = document.forms[0],
           wikifunctionsContainer = document.getElementById('wikifunctions');
@@ -11,6 +12,9 @@ document.addEventListener('DOMContentLoaded', function() {
     let formRepresentationInputs = form.elements['form_representation'];
     if (formRepresentationInputs.length === undefined) {
         formRepresentationInputs = [ formRepresentationInputs ];
+    }
+    if (!formRepresentationInputs[0]) {
+        return; // no forms?
     }
 
     const functionNames = new Set();
@@ -25,11 +29,10 @@ document.addEventListener('DOMContentLoaded', function() {
         button.textContent = functionName;
         button.classList.add('btn', 'btn-outline-info');
         button.addEventListener('click', () => {
-            if (!formRepresentationInputs[0] || !formRepresentationInputs[0].value) {
-                return; // no first form to generate others from
+            const lemma = formRepresentationInputs[0].value.split('/').filter(s => s)[0];
+            if (!lemma) {
+                return; // no lemma (first form) to generate others from
             }
-            const templateName = template['@template_name'];
-            const lemma = formRepresentationInputs[0].value;
             fetch(`${baseUrl}/api/v1/wikifunctions/${templateName}/${functionName}/${lemma}`)
                 .then(r => r.json())
                 .then(response => {
