@@ -9545,66 +9545,105 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'label': 'genitiv jednine',
                 'example': 'Nema [miša].',
                 'grammatical_features_item_ids': [genitive_case, singular],
+                'wikifunctions': {
+                    '✨': 'Z11340',
+                },
             },
             {
                 'label': 'dativ jednine',
                 'example': 'Prilazim [mišu].',
                 'grammatical_features_item_ids': [dative_case, singular],
+                'wikifunctions': {
+                    '✨': 'Z11361',
+                },
             },
             {
                 'label': 'akuzativ jednine',
                 'example': 'Vidim [miša].',
                 'grammatical_features_item_ids': [accusative_case, singular],
+                'wikifunctions': {
+                    '✨': 'Z11366',
+                },
             },
             {
                 'label': 'vokativ jednine',
                 'example': 'Zar i ti, [mišu]?',
                 'grammatical_features_item_ids': [vocative_case, singular],
+                'wikifunctions': {
+                    '✨': 'Z11441',
+                },
             },
             {
                 'label': 'lokativ jednine',
                 'example': 'Govorim o [mišu].',
                 'grammatical_features_item_ids': [locative_case, singular],
+                'wikifunctions': {
+                    '✨': 'Z11370',
+                },
             },
             {
                 'label': 'instrumental jednine',
                 'example': 'Vozim se s(a) [mišem].',
                 'grammatical_features_item_ids': [instrumental_case, singular],
+                'wikifunctions': {
+                    '✨': 'Z11445',
+                },
             },
             {
                 'label': 'nominativ množine',
                 'example': 'Ovo su [miševi].',
                 'grammatical_features_item_ids': [nominative_case, plural],
+                'wikifunctions': {
+                    '✨': 'Z11449',
+                },
             },
             {
                 'label': 'genitiv množine',
                 'example': 'Nema [miševa].',
                 'grammatical_features_item_ids': [genitive_case, plural],
+                'wikifunctions': {
+                    '✨': 'Z11453',
+                },
             },
             {
                 'label': 'dativ množine',
                 'example': 'Prilazim [miševima].',
                 'grammatical_features_item_ids': [dative_case, plural],
+                'wikifunctions': {
+                    '✨': 'Z11457',
+                },
             },
             {
                 'label': 'akuzativ množine',
                 'example': 'Vidim [miševe].',
                 'grammatical_features_item_ids': [accusative_case, plural],
+                'wikifunctions': {
+                    '✨': 'Z11470',
+                },
             },
             {
                 'label': 'vokativ množine',
                 'example': 'Zar i vi, [miševi]?',
                 'grammatical_features_item_ids': [vocative_case, plural],
+                'wikifunctions': {
+                    '✨': 'Z11480',
+                },
             },
             {
                 'label': 'lokativ množine',
                 'example': 'Govorim o [miševima].',
                 'grammatical_features_item_ids': [locative_case, plural],
+                'wikifunctions': {
+                    '✨': 'Z11476',
+                },
             },
             {
                 'label': 'instrumental množine',
                 'example': 'Vozim se s(a) [miševima].',
                 'grammatical_features_item_ids': [instrumental_case, plural],
+                'wikifunctions': {
+                    '✨': 'Z11478',
+                },
             },
         ],
         'statements': statements(grammatical_gender, masculine),
@@ -9625,66 +9664,105 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'label': 'genitiv jednine',
                 'example': 'Nema [žirafe].',
                 'grammatical_features_item_ids': [genitive_case, singular],
+                'wikifunctions': {
+                    '✨': 'Z11165',
+                },
             },
             {
                 'label': 'dativ jednine',
                 'example': 'Prilazim [žirafi].',
                 'grammatical_features_item_ids': [dative_case, singular],
+                'wikifunctions': {
+                    '✨': 'Z11199',
+                },
             },
             {
                 'label': 'akuzativ jednine',
                 'example': 'Vidim [žirafu].',
                 'grammatical_features_item_ids': [accusative_case, singular],
+                'wikifunctions': {
+                    '✨': 'Z11204',
+                },
             },
             {
                 'label': 'vokativ jednine',
                 'example': 'Zar i ti, [žirafo]?',
                 'grammatical_features_item_ids': [vocative_case, singular],
+                'wikifunctions': {
+                    '✨': 'Z11245',
+                },
             },
             {
                 'label': 'lokativ jednine',
                 'example': 'Govorim o [žirafi].',
                 'grammatical_features_item_ids': [locative_case, singular],
+                'wikifunctions': {
+                    '✨': 'Z11231',
+                },
             },
             {
                 'label': 'instrumental jednine',
                 'example': 'Vozim se s(a) [žirafom].',
                 'grammatical_features_item_ids': [instrumental_case, singular],
+                'wikifunctions': {
+                    '✨': 'Z11254',
+                },
             },
             {
                 'label': 'nominativ množine',
                 'example': 'Ovo su [žirafe].',
                 'grammatical_features_item_ids': [nominative_case, plural],
+                'wikifunctions': {
+                    '✨': 'Z11284',
+                },
             },
             {
                 'label': 'genitiv množine',
                 'example': 'Nema [žirafa].',
                 'grammatical_features_item_ids': [genitive_case, plural],
+                'wikifunctions': {
+                    '✨': 'Z11288',
+                },
             },
             {
                 'label': 'dativ množine',
                 'example': 'Prilazim [žirafama].',
                 'grammatical_features_item_ids': [dative_case, plural],
+                'wikifunctions': {
+                    '✨': 'Z11298',
+                },
             },
             {
                 'label': 'akuzativ množine',
                 'example': 'Vidim [žirafe].',
                 'grammatical_features_item_ids': [accusative_case, plural],
+                'wikifunctions': {
+                    '✨': 'Z11308',
+                },
             },
             {
                 'label': 'vokativ množine',
                 'example': 'Zar i vi, [žirafe]?',
                 'grammatical_features_item_ids': [vocative_case, plural],
+                'wikifunctions': {
+                    '✨': 'Z11319',
+                },
             },
             {
                 'label': 'lokativ množine',
                 'example': 'Govorim o [žirafama].',
                 'grammatical_features_item_ids': [locative_case, plural],
+                'wikifunctions': {
+                    '✨': 'Z11314',
+                },
             },
             {
                 'label': 'instrumental množine',
                 'example': 'Vozim se s(a) [žirafama].',
                 'grammatical_features_item_ids': [instrumental_case, plural],
+                'wikifunctions': {
+                    '✨': 'Z11333',
+                },
             },
         ],
         'statements': statements(grammatical_gender, feminine),
