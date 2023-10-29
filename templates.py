@@ -13,6 +13,7 @@ class TemplateForm(TypedDict):
     grammatical_features_item_ids_optional: NotRequired[Set[str]]
     optional: NotRequired[bool]
     statements: NotRequired[Statements]
+    wikifunctions: NotRequired[dict[str, str]]
 
 class Attribution(TypedDict):
     users: List[str]
@@ -4340,6 +4341,9 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'label': 'plural',
                 'example': 'These are the [dogs].',
                 'grammatical_features_item_ids': [plural],
+                'wikifunctions': {
+                    'guess forms': 'Z11089',
+                },
             },
         ],
     },

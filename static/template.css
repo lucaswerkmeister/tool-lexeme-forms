@@ -26,3 +26,8 @@
         height: 1em;
     }
 }
+
+#wikifunctions {
+    float: right; /* for browsers without inline-end support */
+    float: inline-end;
+}

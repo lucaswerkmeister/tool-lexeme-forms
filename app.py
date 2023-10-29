@@ -332,6 +332,18 @@ def language_name_with_code(language_code: str) -> Markup:
             code_zxx +
             Markup(r')</span>'))
 
+@app.template_global()
+def can_use_wikifunctions() -> bool:
+    userinfo = get_userinfo()
+    if userinfo is None:
+        return False
+    title = f'User:{userinfo["name"]}/wikidata-lexeme-forms-opt-into-wikifunctions.js'
+    session = authenticated_session('https://www.wikifunctions.org')
+    response = session.get(action='query',
+                           titles=[title],
+                           formatversion=2)
+    return not response['query']['pages'][0].get('missing', False)
+
 @app.route('/')
 def index() -> RRV:
     return flask.render_template(
@@ -1151,6 +1163,36 @@ def get_template_api(template_name: str) -> RRV:
         ])
     else:
         return flask.jsonify(template)
+
+@app.route('/api/v1/wikifunctions/<template_name>/<function_name>/<path:lemma>')
+def wikifunctions_api(template_name: str, function_name: str, lemma: str) -> RRV:
+    template = templates.get(template_name)
+    if template is None:
+        return '"no such template"\n', 404
+    elif isinstance(template, str) or isinstance(template, list):
+        return '"must be a real template, not a redirect"\n', 400
+    result: list[Optional[str]] = []
+    # authenticated_session() would require a new grant (that doesn’t even exist yet, T349966) on the OAuth consumer
+    session = anonymous_session('https://www.wikifunctions.org')
+    for form in template['forms']:
+        wikifunction = form.get('wikifunctions', {}).get(function_name)
+        if not wikifunction:
+            result.append(None)
+            continue
+        response = session.get(action='wikilambda_function_call',
+                               wikilambda_function_call_zobject=json.dumps({
+                                   'Z1K1': 'Z7',
+                                   'Z7K1': wikifunction,
+                                   wikifunction + 'K1': lemma,
+                               }),
+                               formatversion=2)
+        if not response.get('query', {}).get('wikilambda_function_call', {}).get('success', False):
+            print(response)
+            raise ValueError('Invalid Wikifunctions API response')
+        inner_response = json.loads(response['query']['wikilambda_function_call']['data'])
+        # TODO check whether the Z22 represents success or failure?
+        result.append(inner_response['Z22K1'])
+    return result
 
 @app.route('/healthz')
 def health() -> RRV:
