@@ -5530,7 +5530,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
     },
 
     'french-noun-masculine': {
-        '@attribution': {'users': ['Djiboun'], 'title': 'Wikidata:Wikidata Lexeme Forms/French'},
+        '@attribution': {'users': ['Djiboun', 'VIGNERON'], 'title': 'Wikidata:Wikidata Lexeme Forms/French'},
         'label': 'nom commun masculin en français',
         'language': language_French,
         'lexical_category_item_id': noun,
@@ -5545,7 +5545,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Voici des [chiens].',
                 'grammatical_features_item_ids': [plural],
                 'wikifunctions': {
-                    '✨': 'Z11548',
+                    'Suggérer les formes': 'Z11548',
                 },
             },
         ],
@@ -5553,7 +5553,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
     },
 
     'french-noun-feminine': {
-        '@attribution': {'users': ['Djiboun'], 'title': 'Wikidata:Wikidata Lexeme Forms/French'},
+        '@attribution': {'users': ['Djiboun', 'VIGNERON'], 'title': 'Wikidata:Wikidata Lexeme Forms/French'},
         'label': 'nom commun féminin en français',
         'language': language_French,
         'lexical_category_item_id': noun,
@@ -5568,7 +5568,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Voici des [chiennes].',
                 'grammatical_features_item_ids': [plural],
                 'wikifunctions': {
-                    '✨': 'Z11548',
+                    'Suggérer les formes': 'Z11548',
                 },
             },
         ],
