@@ -8,6 +8,9 @@ import translations
 from wikibase_types import Statements
 
 
+test_user_agent = 'lexeme-forms test (https://lexeme-forms.toolforge.org/; mail@lucaswerkmeister.de)'
+
+
 def test_statement_value():
     assert templates.statement('P1', 'Q1') == {
         'type': 'statement',
@@ -141,7 +144,7 @@ def test_entities_exist():
         add_from_statements(template.get('statements', {}))
 
     entity_ids = list(entity_ids)
-    session = mwapi.Session('https://www.wikidata.org', user_agent='lexeme-forms test (https://lexeme-forms.toolforge.org/; mail@lucaswerkmeister.de)')
+    session = mwapi.Session('https://www.wikidata.org', user_agent=test_user_agent)
     missing_entity_ids = set()
     while entity_ids:
         chunk, entity_ids = entity_ids[:50], entity_ids[50:]
@@ -157,6 +160,54 @@ def test_entities_exist():
                 missing_entity_ids.add(entity_id)
 
     assert not missing_entity_ids
+
+
+def test_wikifunctions_signatures():
+    """Assert that all referenced Wikifunctions exist, are functions,
+    have exactly one string parameter and return a string."""
+    wikifunctions_ids = set()
+    for template in templates.templates_without_redirects.values():
+        for form in template['forms']:
+            for wikifunctions in form.get('wikifunctions', {}).values():
+                wikifunctions_ids.add(wikifunctions)
+
+    wikifunctions_ids = list(wikifunctions_ids)
+    session = mwapi.Session('https://www.wikifunctions.org', user_agent=test_user_agent)
+    missing_wikifunctions_ids = set()
+    non_function_wikifunctions_ids = set()
+    bad_params_wikifunctions_ids = {}
+    bad_return_wikifunctions_ids = {}
+    while wikifunctions_ids:
+        chunk, wikifunctions_ids = wikifunctions_ids[:50], wikifunctions_ids[50:]
+        result = session.get(action='query',
+                             list='wikilambdaload_zobjects',
+                             wikilambdaload_zids=chunk,
+                             formatversion=2)
+        for wikifunctions_id in chunk:
+            if not result['query']['wikilambdaload_zobjects'][wikifunctions_id]['success']:
+                missing_wikifunctions_ids.add(wikifunctions_id)
+                continue
+            zobject = result['query']['wikilambdaload_zobjects'][wikifunctions_id]['data']
+            zfunction = zobject['Z2K2']
+            if zfunction['Z1K1'] != 'Z8':
+                non_function_wikifunctions_ids.add(wikifunctions_id)
+                continue
+            assert zfunction['Z8K1'][0] == 'Z17'
+            parameter_types = [
+                parameter['Z17K1']
+                for parameter in zfunction['Z8K1'][1:]
+            ]
+            if parameter_types != ['Z6']:
+                bad_params_wikifunctions_ids[wikifunctions_id] = parameter_types
+                continue
+            return_type = zfunction['Z8K2']
+            if return_type != 'Z6':
+                bad_return_wikifunctions_ids[wikifunctions_id] = return_type
+
+    assert not missing_wikifunctions_ids
+    assert not non_function_wikifunctions_ids
+    assert not bad_params_wikifunctions_ids
+    assert not bad_return_wikifunctions_ids
 
 
 def test_translations_available():
