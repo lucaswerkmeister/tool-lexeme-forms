@@ -1906,6 +1906,9 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'label': 'liester',
                 'example': 'Ma [levrioù] zo amañ.',
                 'grammatical_features_item_ids': [plural],
+                'wikifunctions': {
+                    'kinnig furmoù': 'Z11611',
+                },
             },
         ],
     },
@@ -1925,6 +1928,9 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'label': 'unanderenn',
                 'example': 'Ma [steredenn] zo amañ.',
                 'grammatical_features_item_ids': [singulative],
+                'wikifunctions': {
+                    'kinnig furmoù': 'Z11616',
+                },
             },
         ],
     },
@@ -1944,26 +1950,41 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'label': 'unander',
                 'example': 'Da [dad] zo amañ.',
                 'grammatical_features_item_ids': [singular, soft_mutation],
+                'wikifunctions': {
+                    'kinnig furmoù': 'Z11619',
+                },
             },
             {
                 'label': 'unander',
                 'example': 'Ma [zad] zo amañ.',
                 'grammatical_features_item_ids': [singular, aspirate_mutation],
+                'wikifunctions': {
+                    'kinnig furmoù': 'Z11632',
+                },
             },
             {
                 'label': 'liester',
                 'example': 'Hon [tadoù] zo amañ.',
                 'grammatical_features_item_ids': [plural, no_mutation],
+                'wikifunctions': {
+                    'kinnig furmoù': 'Z11611',
+                },
             },
             {
                 'label': 'liester',
                 'example': 'Da [dadoù] zo amañ.',
                 'grammatical_features_item_ids': [plural, soft_mutation],
+                'wikifunctions': {
+                    'kinnig furmoù': 'Z11637',
+                },
             },
             {
                 'label': 'liester',
                 'example': 'Ma [zadoù] zo amañ.',
                 'grammatical_features_item_ids': [plural, aspirate_mutation],
+                'wikifunctions': {
+                    'kinnig furmoù': 'Z11663',
+                },
             },
         ],
     },
@@ -1983,26 +2004,41 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'label': 'unander',
                 'example': 'Da [vag] zo amañ.',
                 'grammatical_features_item_ids': [singular, soft_mutation],
+                'wikifunctions': {
+                    'kinnig furmoù': 'Z11619',
+                },
             },
             {
                 'label': 'unander',
                 'example': 'Ho [pag] zo amañ.',
                 'grammatical_features_item_ids': [singular, hard_mutation],
+                'wikifunctions': {
+                    'kinnig furmoù': 'Z11627',
+                },
             },
             {
                 'label': 'liester',
                 'example': 'Ma [bagoù] zo amañ.',
                 'grammatical_features_item_ids': [plural, no_mutation],
+                'wikifunctions': {
+                    'kinnig furmoù': 'Z11611',
+                },
             },
             {
                 'label': 'liester',
                 'example': 'Da [vagoù] zo amañ.',
                 'grammatical_features_item_ids': [plural, soft_mutation],
+                'wikifunctions': {
+                    'kinnig furmoù': 'Z11637',
+                },
             },
             {
                 'label': 'liester',
                 'example': 'Ho [pagoù] zo amañ.',
                 'grammatical_features_item_ids': [plural, hard_mutation],
+                'wikifunctions': {
+                    'kinnig furmoù': 'Z11660',
+                },
             },
         ],
     },
@@ -2022,16 +2058,25 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'label': 'unander',
                 'example': 'Ma [vamm] zo amañ.',
                 'grammatical_features_item_ids': [singular, soft_mutation],
+                'wikifunctions': {
+                    'kinnig furmoù': 'Z11619',
+                },
             },
             {
                 'label': 'liester',
                 'example': 'Ho [mammoù] zo amañ.',
                 'grammatical_features_item_ids': [plural, no_mutation],
+                'wikifunctions': {
+                    'kinnig furmoù': 'Z11611',
+                },
             },
             {
                 'label': 'liester',
                 'example': 'Ma [vammoù] zo amañ.',
                 'grammatical_features_item_ids': [plural, soft_mutation],
+                'wikifunctions': {
+                    'kinnig furmoù': 'Z11637',
+                },
             },
         ],
     },
