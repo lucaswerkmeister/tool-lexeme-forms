@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!lemma) {
                 return; // no lemma (first form) to generate others from
             }
-            fetch(`${baseUrl}/api/v1/wikifunctions/${templateName}/${functionName}/${lemma}`)
+            fetch(`${baseUrl}/api/v1/wikifunctions/${templateName}/${lemma}/${functionName}`)
                 .then(r => r.json())
                 .then(response => {
                     for (let i = 0; i < response.length; i++) {

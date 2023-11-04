@@ -4087,6 +4087,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
         'language': language_German,
         'lexical_category_item_id': noun,
         'two_column_sections': True,
+        'wikifunctions_intro': 'Formen generieren: ',
         'forms': [
             {
                 'label': 'Nominativ Singular',
@@ -4097,36 +4098,57 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'label': 'Genitiv Singular',
                 'example': 'Das Eigentum eines [Kindes/Kinds].',
                 'grammatical_features_item_ids': [genitive_case, singular],
+                'wikifunctions': {
+                    '-um/-en': 'Z11729',
+                },
             },
             {
                 'label': 'Dativ Singular',
                 'example': 'Das gehört einem [Kind/Kinde].',
                 'grammatical_features_item_ids': [dative_case, singular],
+                'wikifunctions': {
+                    '-um/-en': 'Z11602',
+                },
             },
             {
                 'label': 'Akkusativ Singular',
                 'example': 'Ich mag ein [Kind].',
                 'grammatical_features_item_ids': [accusative_case, singular],
+                'wikifunctions': {
+                    '-um/-en': 'Z11602',
+                },
             },
             {
                 'label': 'Nominativ Plural',
                 'example': 'Das sind mehrere [Kinder].',
                 'grammatical_features_item_ids': [nominative_case, plural],
+                'wikifunctions': {
+                    '-um/-en': 'Z11762',
+                },
             },
             {
                 'label': 'Genitiv Plural',
                 'example': 'Das Eigentum mehrerer [Kinder].',
                 'grammatical_features_item_ids': [genitive_case, plural],
+                'wikifunctions': {
+                    '-um/-en': 'Z11762',
+                },
             },
             {
                 'label': 'Dativ Plural',
                 'example': 'Das gehört mehreren [Kindern].',
                 'grammatical_features_item_ids': [dative_case, plural],
+                'wikifunctions': {
+                    '-um/-en': 'Z11762',
+                },
             },
             {
                 'label': 'Akkusativ Plural',
                 'example': 'Ich mag mehrere [Kinder].',
                 'grammatical_features_item_ids': [accusative_case, plural],
+                'wikifunctions': {
+                    '-um/-en': 'Z11762',
+                },
             },
         ],
         'statements': statements(grammatical_gender, neuter),

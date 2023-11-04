@@ -1163,8 +1163,8 @@ def get_template_api(template_name: str) -> RRV:
     else:
         return flask.jsonify(template)
 
-@app.route('/api/v1/wikifunctions/<template_name>/<function_name>/<path:lemma>')
-def wikifunctions_api(template_name: str, function_name: str, lemma: str) -> RRV:
+@app.route('/api/v1/wikifunctions/<template_name>/<lemma>/<path:function_name>')
+def wikifunctions_api(template_name: str, lemma: str, function_name: str) -> RRV:
     template = templates.get(template_name)
     if template is None:
         return '"no such template"\n', 404
