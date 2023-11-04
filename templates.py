@@ -4012,7 +4012,8 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Das Eigentum einer [Katze].',
                 'grammatical_features_item_ids': [genitive_case, singular],
                 'wikifunctions': {
-                    '-en': 'Z11602',
+                    '-(e)n': 'Z11602',
+                    '-¨e': 'Z11602',
                     '-s': 'Z11602',
                 },
             },
@@ -4021,7 +4022,8 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Das gehört einer [Katze].',
                 'grammatical_features_item_ids': [dative_case, singular],
                 'wikifunctions': {
-                    '-en': 'Z11602',
+                    '-(e)n': 'Z11602',
+                    '-¨e': 'Z11602',
                     '-s': 'Z11602',
                 },
             },
@@ -4030,7 +4032,8 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Ich mag eine [Katze].',
                 'grammatical_features_item_ids': [accusative_case, singular],
                 'wikifunctions': {
-                    '-en': 'Z11602',
+                    '-(e)n': 'Z11602',
+                    '-¨e': 'Z11602',
                     '-s': 'Z11602',
                 },
             },
@@ -4039,7 +4042,8 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Das sind mehrere [Katzen].',
                 'grammatical_features_item_ids': [nominative_case, plural],
                 'wikifunctions': {
-                    '-en': 'Z11722',
+                    '-(e)n': 'Z11722',
+                    '-¨e': 'Z11739',
                     '-s': 'Z11729',
                 }
             },
@@ -4048,7 +4052,8 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Das Eigentum mehrerer [Katzen].',
                 'grammatical_features_item_ids': [genitive_case, plural],
                 'wikifunctions': {
-                    '-en': 'Z11722',
+                    '-(e)n': 'Z11722',
+                    '-¨e': 'Z11739',
                     '-s': 'Z11729',
                 }
             },
@@ -4057,7 +4062,8 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Das gehört mehreren [Katzen].',
                 'grammatical_features_item_ids': [dative_case, plural],
                 'wikifunctions': {
-                    '-en': 'Z11722',
+                    '-(e)n': 'Z11722',
+                    '-¨e': 'Z11753',
                     '-s': 'Z11729',
                 }
             },
@@ -4066,7 +4072,8 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Ich mag mehrere [Katzen].',
                 'grammatical_features_item_ids': [accusative_case, plural],
                 'wikifunctions': {
-                    '-en': 'Z11722',
+                    '-(e)n': 'Z11722',
+                    '-¨e': 'Z11739',
                     '-s': 'Z11729',
                 }
             },
