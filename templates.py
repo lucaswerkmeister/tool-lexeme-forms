@@ -4013,6 +4013,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'grammatical_features_item_ids': [genitive_case, singular],
                 'wikifunctions': {
                     '-en': 'Z11602',
+                    '-s': 'Z11602',
                 },
             },
             {
@@ -4021,6 +4022,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'grammatical_features_item_ids': [dative_case, singular],
                 'wikifunctions': {
                     '-en': 'Z11602',
+                    '-s': 'Z11602',
                 },
             },
             {
@@ -4029,6 +4031,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'grammatical_features_item_ids': [accusative_case, singular],
                 'wikifunctions': {
                     '-en': 'Z11602',
+                    '-s': 'Z11602',
                 },
             },
             {
@@ -4037,6 +4040,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'grammatical_features_item_ids': [nominative_case, plural],
                 'wikifunctions': {
                     '-en': 'Z11722',
+                    '-s': 'Z11729',
                 }
             },
             {
@@ -4045,6 +4049,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'grammatical_features_item_ids': [genitive_case, plural],
                 'wikifunctions': {
                     '-en': 'Z11722',
+                    '-s': 'Z11729',
                 }
             },
             {
@@ -4053,6 +4058,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'grammatical_features_item_ids': [dative_case, plural],
                 'wikifunctions': {
                     '-en': 'Z11722',
+                    '-s': 'Z11729',
                 }
             },
             {
@@ -4061,6 +4067,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'grammatical_features_item_ids': [accusative_case, plural],
                 'wikifunctions': {
                     '-en': 'Z11722',
+                    '-s': 'Z11729',
                 }
             },
         ],
