@@ -30,6 +30,7 @@ _InternalTemplate = TypedDict('_InternalTemplate', {
     'language': Language,
     'lexical_category_item_id': str,
     'two_column_sections': NotRequired[bool],
+    'wikifunctions_intro': NotRequired[str],
     'forms': List[TemplateForm],
     'statements': NotRequired[Statements],
     '@template_name': NotRequired[str],
@@ -44,6 +45,7 @@ Template = TypedDict('Template', {
     'lexical_category_item_id': str,
     'two_column_sections': NotRequired[bool],
     'forms': List[TemplateForm],
+    'wikifunctions_intro': NotRequired[str],
     'statements': NotRequired[Statements],
     '@template_name': NotRequired[str],
 })
@@ -3998,6 +4000,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
         'language': language_German,
         'lexical_category_item_id': noun,
         'two_column_sections': True,
+        'wikifunctions_intro': 'Formen generieren: ',
         'forms': [
             {
                 'label': 'Nominativ Singular',
@@ -4008,36 +4011,57 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'label': 'Genitiv Singular',
                 'example': 'Das Eigentum einer [Katze].',
                 'grammatical_features_item_ids': [genitive_case, singular],
+                'wikifunctions': {
+                    '-en': 'Z11602',
+                },
             },
             {
                 'label': 'Dativ Singular',
                 'example': 'Das gehört einer [Katze].',
                 'grammatical_features_item_ids': [dative_case, singular],
+                'wikifunctions': {
+                    '-en': 'Z11602',
+                },
             },
             {
                 'label': 'Akkusativ Singular',
                 'example': 'Ich mag eine [Katze].',
                 'grammatical_features_item_ids': [accusative_case, singular],
+                'wikifunctions': {
+                    '-en': 'Z11602',
+                },
             },
             {
                 'label': 'Nominativ Plural',
                 'example': 'Das sind mehrere [Katzen].',
                 'grammatical_features_item_ids': [nominative_case, plural],
+                'wikifunctions': {
+                    '-en': 'Z11722',
+                }
             },
             {
                 'label': 'Genitiv Plural',
                 'example': 'Das Eigentum mehrerer [Katzen].',
                 'grammatical_features_item_ids': [genitive_case, plural],
+                'wikifunctions': {
+                    '-en': 'Z11722',
+                }
             },
             {
                 'label': 'Dativ Plural',
                 'example': 'Das gehört mehreren [Katzen].',
                 'grammatical_features_item_ids': [dative_case, plural],
+                'wikifunctions': {
+                    '-en': 'Z11722',
+                }
             },
             {
                 'label': 'Akkusativ Plural',
                 'example': 'Ich mag mehrere [Katzen].',
                 'grammatical_features_item_ids': [accusative_case, plural],
+                'wikifunctions': {
+                    '-en': 'Z11722',
+                }
             },
         ],
         'statements': statements(grammatical_gender, feminine),
@@ -21308,6 +21332,8 @@ for _template_name, _internal_template in _internal_templates.items():
         _template['test'] = _internal_template['test']
     if 'two_column_sections' in _internal_template:
         _template['two_column_sections'] = _internal_template['two_column_sections']
+    if 'wikifunctions_intro' in _internal_template:
+        _template['wikifunctions_intro'] = _internal_template['wikifunctions_intro']
     if 'statements' in _internal_template:
         _template['statements'] = _internal_template['statements']
     templates[_template_name] = _template

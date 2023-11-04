@@ -20,11 +20,6 @@
 {% endblock %}
 {% block main_tag_attributes %}{{ super() }} data-template='{{ template | tojson }}'{% endblock main_tag_attributes %}
 {% block main %}
-  {% if can_use_wikifunctions() %}
-  <div id="wikifunctions" {{ push_html_lang( template.language_code | lang_lex2int ) }}>
-    <!-- buttons added by wikifunctions.js go here -->
-  </div{{ pop_html_lang( template.language_code | lang_lex2int ) }}>
-  {% endif %}
   <h1 class="h2" {{ push_html_lang( template.language_code | lang_lex2int ) }}>{{ template.label }}</h1{{ pop_html_lang( template.language_code | lang_lex2int ) }}>
   {% if readonly %}
   <div class="alert alert-warning">
@@ -44,6 +39,15 @@
   <div class="alert alert-warning">
     {{ message( 'csrf-warning' ) }}
   </div>
+  {% endif %}
+  {% if can_use_wikifunctions() %}
+  <div id="wikifunctions" {{ push_html_lang( template.language_code | lang_lex2int ) }}>
+    <!-- buttons added by wikifunctions.js go here -->
+    {# note that this div is added even to templates without wikifunctions, so make sure it’s empty in that case #}
+    {% if template.wikifunctions_intro %}
+    {{ template.wikifunctions_intro }}<noscript {{ push_html_lang( g.interface_language_code ) }}>{{ message( 'requires-javascript' ) }}</noscript{{ pop_html_lang( g.interface_language_code ) }}>
+    {% endif %}
+  </div{{ pop_html_lang( template.language_code | lang_lex2int ) }}>
   {% endif %}
   <form method="post" autocapitalize="off">
     {{ duplicates | render_duplicates(in_bulk_mode=False, template_name=template['@template_name'], form_representations=submitted_form_representations, target_hash=template.target_hash) | safe }}

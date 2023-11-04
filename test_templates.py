@@ -485,6 +485,18 @@ def test_optional_forms_last_in_section(template_name):
 
 
 @pytest.mark.parametrize('template_name', templates.templates_without_redirects.keys())
+def test_wikifunctions_intro_requires_wikifunctions(template_name):
+    """Check that templates with a wikifunctions_intro have at least one form with wikifunctions."""
+    template = templates.templates_without_redirects[template_name]
+    if 'wikifunctions_intro' not in template:
+        return
+    for form in template['forms']:
+        if form.get('wikifunctions', {}):
+            return
+    assert False, "Template has wikifunctions_intro but no form has nonempty wikifunctions"
+
+
+@pytest.mark.parametrize('template_name', templates.templates_without_redirects.keys())
 def test_labels_examples_trimmed(template_name):
     """Check that labels and examples have no surrounding whitespace.
 

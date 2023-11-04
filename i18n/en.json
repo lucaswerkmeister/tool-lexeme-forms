@@ -49,5 +49,6 @@
 	"login": "Log in",
 	"settings-link": "Settings",
 	"settings-heading": "Settings",
-	"logged-in": "{{GENDER:$2|Logged in}} as $1."
+	"logged-in": "{{GENDER:$2|Logged in}} as $1.",
+	"requires-javascript": "This feature requires JavaScript."
 }
