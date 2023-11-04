@@ -1172,12 +1172,16 @@ def wikifunctions_api(template_name: str, function_name: str, lemma: str) -> RRV
     elif isinstance(template, str) or isinstance(template, list):
         return '"must be a real template, not a redirect"\n', 400
     result: list[Optional[str]] = []
+    result_cache: dict[str, Optional[str]] = {}  # map wikifunction ID to result of calling it with lemma
     # authenticated_session() would require a new grant (that doesn’t even exist yet, T349966) on the OAuth consumer
     session = anonymous_session('https://www.wikifunctions.org')
     for form in template['forms']:
         wikifunction = form.get('wikifunctions', {}).get(function_name)
         if not wikifunction:
             result.append(None)
+            continue
+        if wikifunction in result_cache:
+            result.append(result_cache[wikifunction])
             continue
         response = session.get(action='wikilambda_function_call',
                                wikilambda_function_call_zobject=json.dumps({
@@ -1194,6 +1198,7 @@ def wikifunctions_api(template_name: str, function_name: str, lemma: str) -> RRV
         response_value = inner_response['Z22K1']
         if response_value == 'Z24':  # void
             response_value = None
+        result_cache[wikifunction] = response_value
         result.append(response_value)
     return result
 
