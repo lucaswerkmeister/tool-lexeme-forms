@@ -41,7 +41,7 @@
   </div>
   {% endif %}
   {% if can_use_wikifunctions() %}
-  <div id="wikifunctions" {{ push_html_lang( template.language_code | lang_lex2int ) }}>
+  <div id="wikifunctions" class="my-3" {{ push_html_lang( template.language_code | lang_lex2int ) }}>
     <!-- buttons added by wikifunctions.js go here -->
     {# note that this div is added even to templates without wikifunctions, so make sure it’s empty in that case #}
     {% if template.wikifunctions_intro %}
