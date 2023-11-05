@@ -4099,6 +4099,8 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Das Eigentum eines [Kindes/Kinds].',
                 'grammatical_features_item_ids': [genitive_case, singular],
                 'wikifunctions': {
+                    '-s/-s': 'Z11729',
+                    '-s/-n': 'Z11729',
                     '-um/-en': 'Z11729',
                 },
             },
@@ -4107,6 +4109,8 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Das gehört einem [Kind/Kinde].',
                 'grammatical_features_item_ids': [dative_case, singular],
                 'wikifunctions': {
+                    '-s/-s': 'Z11602',
+                    '-s/-n': 'Z11602',
                     '-um/-en': 'Z11602',
                 },
             },
@@ -4115,6 +4119,8 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Ich mag ein [Kind].',
                 'grammatical_features_item_ids': [accusative_case, singular],
                 'wikifunctions': {
+                    '-s/-s': 'Z11602',
+                    '-s/-n': 'Z11602',
                     '-um/-en': 'Z11602',
                 },
             },
@@ -4123,6 +4129,8 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Das sind mehrere [Kinder].',
                 'grammatical_features_item_ids': [nominative_case, plural],
                 'wikifunctions': {
+                    '-s/-s': 'Z11729',
+                    '-s/-n': 'Z11602',
                     '-um/-en': 'Z11762',
                 },
             },
@@ -4131,6 +4139,8 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Das Eigentum mehrerer [Kinder].',
                 'grammatical_features_item_ids': [genitive_case, plural],
                 'wikifunctions': {
+                    '-s/-s': 'Z11729',
+                    '-s/-n': 'Z11602',
                     '-um/-en': 'Z11762',
                 },
             },
@@ -4139,6 +4149,8 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Das gehört mehreren [Kindern].',
                 'grammatical_features_item_ids': [dative_case, plural],
                 'wikifunctions': {
+                    '-s/-s': 'Z11729',
+                    '-s/-n': 'Z11834',
                     '-um/-en': 'Z11762',
                 },
             },
@@ -4147,6 +4159,8 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Ich mag mehrere [Kinder].',
                 'grammatical_features_item_ids': [accusative_case, plural],
                 'wikifunctions': {
+                    '-s/-s': 'Z11729',
+                    '-s/-n': 'Z11602',
                     '-um/-en': 'Z11762',
                 },
             },
