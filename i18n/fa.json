@@ -44,5 +44,6 @@
 	"login": "ورود",
 	"settings-link": "تنظیمات",
 	"settings-heading": "تنظیمات",
-	"logged-in": "{{GENDER:$2|وارد شده}} تحت نام $1."
+	"logged-in": "{{GENDER:$2|وارد شده}} تحت نام $1.",
+	"requires-javascript": "این ویژگی نیازمند جاوااسکریپت است."
 }

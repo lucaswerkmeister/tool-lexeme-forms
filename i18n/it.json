@@ -51,5 +51,6 @@
 	"login": "Entra",
 	"settings-link": "Impostazioni",
 	"settings-heading": "Impostazioni",
-	"logged-in": "{{GENDER:$2|Acceduto|Acceduta|Acceduto/a}} come $1."
+	"logged-in": "{{GENDER:$2|Acceduto|Acceduta|Acceduto/a}} come $1.",
+	"requires-javascript": "Questa funzionalità richiede JavaScript."
 }

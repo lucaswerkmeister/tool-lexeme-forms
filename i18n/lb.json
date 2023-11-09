@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Robby",
+			"Volvox"
+		]
+	},
+	"create": "Uleeën",
+	"advanced": "Erweidert",
+	"lexeme-id": "Lexeme ID",
+	"edit-link": "änneren",
+	"title-create": "$1 (uleeën)",
+	"title-advanced": "$1 (erweidert)",
+	"title-bulk": "$1 (Bulk)",
+	"title-edit": "$1 (änneren)",
+	"settings-save": "Späicheren",
+	"settings-link": "Astellungen",
+	"settings-heading": "Astellungen",
+	"requires-javascript": "Dës Funktioun brauch JavaScript."
+}
