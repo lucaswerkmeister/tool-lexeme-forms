@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Kly",
-			"Lucas Werkmeister"
+			"Lucas Werkmeister",
+			"Winston Sung"
 		]
 	},
 	"create": "建立",
@@ -50,5 +51,6 @@
 	"login": "登入",
 	"settings-link": "設定",
 	"settings-heading": "設定",
-	"logged-in": "以$1{{GENDER:$2|登入}}。"
+	"logged-in": "以$1{{GENDER:$2|登入}}。",
+	"requires-javascript": "此功能需要使用 JavaScript。"
 }

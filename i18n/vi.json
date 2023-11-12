@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Minh Nguyen"
+			"Minh Nguyen",
+			"Pisceskaze"
 		]
 	},
 	"create": "Tạo",
@@ -25,5 +26,6 @@
 	"title-bulk": "$1 (hàng loạt)",
 	"title-edit": "$1 (sửa đổi)",
 	"login-hint": "Bạn phải [$1 đăng nhập] trước khi có thể thực hiện sửa đổi dùng công cụ này.",
-	"ambiguous-template": "Bản mẫu $1 không còn tồn tại; nó đã được thay thế bằng các bản mẫu sau:"
+	"ambiguous-template": "Bản mẫu $1 không còn tồn tại; nó đã được thay thế bằng các bản mẫu sau:",
+	"requires-javascript": "Tính năng này cần JavaScript."
 }

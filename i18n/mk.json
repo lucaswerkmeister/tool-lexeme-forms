@@ -50,5 +50,6 @@
 	"login": "Најава",
 	"settings-link": "Нагодувања",
 	"settings-heading": "Нагодувања",
-	"logged-in": "{{GENDER:$2|Најавен|Најавена|Најавен}} како $1."
+	"logged-in": "{{GENDER:$2|Најавен|Најавена|Најавен}} како $1.",
+	"requires-javascript": "Оваа функција бара JavaScript."
 }

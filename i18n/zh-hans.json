@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Evesiesta",
+			"Googology",
 			"GuoPC",
 			"LittlePaw365",
 			"Njzjz",
@@ -31,5 +32,6 @@
 	"login": "登录",
 	"settings-link": "设置",
 	"settings-heading": "设置",
-	"logged-in": "已以$1身份{{GENDER:$2|登录}}。"
+	"logged-in": "已以$1身份{{GENDER:$2|登录}}。",
+	"requires-javascript": "该功能需要JavaScript。"
 }

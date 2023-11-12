@@ -49,5 +49,6 @@
 	"login": "Iniciar sesión",
 	"settings-link": "Axustes",
 	"settings-heading": "Axustes",
-	"logged-in": "{{GENDER:$2|Iniciou sesión}} como $1."
+	"logged-in": "{{GENDER:$2|Iniciou sesión}} como $1.",
+	"requires-javascript": "Esta característica necesita JavaScript."
 }

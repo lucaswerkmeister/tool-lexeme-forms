@@ -54,5 +54,6 @@
 	"login": "Se connecter",
 	"settings-link": "Paramètres",
 	"settings-heading": "Paramètres",
-	"logged-in": "Connecté{{GENDER:$2||e}} en tant que $1."
+	"logged-in": "Connecté{{GENDER:$2||e}} en tant que $1.",
+	"requires-javascript": "Cette fonctionnalité nécessite JavaScript."
 }

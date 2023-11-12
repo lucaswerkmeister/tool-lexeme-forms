@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Bodhisattwa",
+			"Borhan",
 			"Lucas Werkmeister",
 			"Mahir256",
 			"Meghmollar2017",
@@ -52,5 +53,6 @@
 	"source-code": "উৎস কোড",
 	"login": "প্রবেশ করুন",
 	"settings-link": "সেটিংস",
-	"settings-heading": "সেটিংস"
+	"settings-heading": "সেটিংস",
+	"requires-javascript": "এই বৈশিষ্ট্যের জন্য জাভাস্ক্রিপ্ট প্রয়োজন।"
 }
