@@ -3,7 +3,8 @@
 		"authors": [
 			"Amire80",
 			"Shoko",
-			"Uziel302"
+			"Uziel302",
+			"YaronSh"
 		]
 	},
 	"create": "יצירה",
@@ -51,5 +52,6 @@
 	"login": "כניסה לחשבון",
 	"settings-link": "הגדרות",
 	"settings-heading": "הגדרות",
-	"logged-in": "{{GENDER:$2|נכנס|נכנסה}} לחשבון $1."
+	"logged-in": "{{GENDER:$2|נכנס|נכנסה}} לחשבון $1.",
+	"requires-javascript": "היכולת הזאת דורשת JavaScript."
 }
