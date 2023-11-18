@@ -2,10 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Lucas Werkmeister",
-			"Ykhwong"
+			"Ykhwong",
+			"밥풀떼기"
 		]
 	},
 	"create": "만들기",
+	"csrf-warning": "죄송합니다. 이 요청을 처리할 수 없습니다( <abbr title=\"Cross-site request forgery\">CSRF</abbr> 보호 실패). 양식을 다시 제출해 보세요.",
 	"form-optional": "&#32;(선택 사항)",
 	"advanced": "고급",
 	"advanced-general": "\"고급\" 모드입니다.",
@@ -13,6 +15,7 @@
 	"bulk-format-help": "포맷 도움말",
 	"bulk-not-allowed": "대량 모드 사용 권한이 없습니다. 죄송합니다.",
 	"edit-link": "편집",
+	"no-grammatical-features": "문법적 특징 없음",
 	"title-create": "$1 (만들기)",
 	"title-advanced": "$1 (고급)",
 	"title-bulk": "$1 (대량)",
