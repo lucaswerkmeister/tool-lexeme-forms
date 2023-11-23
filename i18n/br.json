@@ -12,6 +12,7 @@
 	"csrf-warning": "N'eus ket bet gallet ober war-dro ar reked-mañ (gwarez <abbr title=\"Cross-site request forgery\">CSRF</abbr> c'hwitet). Klaskit adkas ar furm.",
 	"duplicates-warning": "Al {{PLURAL:$1|leksem da heul en deus|leksemoù da heul o deus}} an hevelep lemma, ha kod yezh, hag an hini emaoc'h o klask krouiñ:",
 	"duplicates-instructions": "Mard oc'h sur {{PLURAL:$1|eo|int}} disheñvel, askit al log e traoñ ar furm.",
+	"duplicates-create": "Krouiñ ul leksem nevez n'eus forzh penaos.",
 	"no-duplicate": "N'eo ket un eil eus ul leksem a zo anezhañ c'hoazh.",
 	"form-optional": "&#32;(diret)",
 	"advanced": "Araokaet",
@@ -33,6 +34,7 @@
 	"title-advanced": "$1 (araokaet)",
 	"title-bulk": "$1 (a-stroll)",
 	"title-edit": "$1 (kemmañ)",
+	"login-hint": "Ret eo deoc'h [$1 kennaskañ] a-raok ma c'hallfec'h ober kemmoù gant an ostilh-mañ.",
 	"settings-label-interface-language-code": "Yezh an etrefas",
 	"settings-save": "Enrollañ",
 	"documentation": "Teuliadur",
@@ -41,5 +43,6 @@
 	"login": "Kevreañ",
 	"settings-link": "Arventennoù",
 	"settings-heading": "Arventennoù",
-	"logged-in": "{{GENDER:$2|Kevreet}} evel $1."
+	"logged-in": "{{GENDER:$2|Kevreet}} evel $1.",
+	"requires-javascript": "Ezhomm zo eus JavaScript evit an arc'hweladur-mañ."
 }
