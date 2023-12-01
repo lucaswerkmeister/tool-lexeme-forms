@@ -9715,7 +9715,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
     },
 
     'croatian-noun-masculine': {
-        '@attribution': {'users': ['Ivi104'], 'title': 'Wikidata:Wikidata Lexeme Forms/Croatian'},
+        '@attribution': {'users': ['Ivi104', 'Denny'], 'title': 'Wikidata:Wikidata Lexeme Forms/Croatian'},
         'label': 'hrvatske imenice (muški rod)',
         'language': language_Croatian,
         'lexical_category_item_id': noun,
@@ -9730,7 +9730,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Nema [miša].',
                 'grammatical_features_item_ids': [genitive_case, singular],
                 'wikifunctions': {
-                    '✨': 'Z11340',
+                    'redovne oblike': 'Z11340',
                 },
             },
             {
@@ -9738,7 +9738,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Prilazim [mišu].',
                 'grammatical_features_item_ids': [dative_case, singular],
                 'wikifunctions': {
-                    '✨': 'Z11361',
+                    'redovne oblike': 'Z11361',
                 },
             },
             {
@@ -9746,7 +9746,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Vidim [miša].',
                 'grammatical_features_item_ids': [accusative_case, singular],
                 'wikifunctions': {
-                    '✨': 'Z11366',
+                    'redovne oblike': 'Z11366',
                 },
             },
             {
@@ -9754,7 +9754,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Zar i ti, [mišu]?',
                 'grammatical_features_item_ids': [vocative_case, singular],
                 'wikifunctions': {
-                    '✨': 'Z11441',
+                    'redovne oblike': 'Z11441',
                 },
             },
             {
@@ -9762,7 +9762,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Govorim o [mišu].',
                 'grammatical_features_item_ids': [locative_case, singular],
                 'wikifunctions': {
-                    '✨': 'Z11370',
+                    'redovne oblike': 'Z11370',
                 },
             },
             {
@@ -9770,7 +9770,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Vozim se s(a) [mišem].',
                 'grammatical_features_item_ids': [instrumental_case, singular],
                 'wikifunctions': {
-                    '✨': 'Z11445',
+                    'redovne oblike': 'Z11445',
                 },
             },
             {
@@ -9778,7 +9778,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Ovo su [miševi].',
                 'grammatical_features_item_ids': [nominative_case, plural],
                 'wikifunctions': {
-                    '✨': 'Z11449',
+                    'redovne oblike': 'Z11449',
                 },
             },
             {
@@ -9786,7 +9786,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Nema [miševa].',
                 'grammatical_features_item_ids': [genitive_case, plural],
                 'wikifunctions': {
-                    '✨': 'Z11453',
+                    'redovne oblike': 'Z11453',
                 },
             },
             {
@@ -9794,7 +9794,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Prilazim [miševima].',
                 'grammatical_features_item_ids': [dative_case, plural],
                 'wikifunctions': {
-                    '✨': 'Z11457',
+                    'redovne oblike': 'Z11457',
                 },
             },
             {
@@ -9802,7 +9802,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Vidim [miševe].',
                 'grammatical_features_item_ids': [accusative_case, plural],
                 'wikifunctions': {
-                    '✨': 'Z11470',
+                    'redovne oblike': 'Z11470',
                 },
             },
             {
@@ -9810,7 +9810,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Zar i vi, [miševi]?',
                 'grammatical_features_item_ids': [vocative_case, plural],
                 'wikifunctions': {
-                    '✨': 'Z11480',
+                    'redovne oblike': 'Z11480',
                 },
             },
             {
@@ -9818,7 +9818,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Govorim o [miševima].',
                 'grammatical_features_item_ids': [locative_case, plural],
                 'wikifunctions': {
-                    '✨': 'Z11476',
+                    'redovne oblike': 'Z11476',
                 },
             },
             {
@@ -9826,7 +9826,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Vozim se s(a) [miševima].',
                 'grammatical_features_item_ids': [instrumental_case, plural],
                 'wikifunctions': {
-                    '✨': 'Z11478',
+                    'redovne oblike': 'Z11478',
                 },
             },
         ],
@@ -9834,7 +9834,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
     },
 
     'croatian-noun-feminine': {
-        '@attribution': {'users': ['Ivi104'], 'title': 'Wikidata:Wikidata Lexeme Forms/Croatian'},
+        '@attribution': {'users': ['Ivi104', 'Denny'], 'title': 'Wikidata:Wikidata Lexeme Forms/Croatian'},
         'label': 'hrvatske imenice (ženski rod)',
         'language': language_Croatian,
         'lexical_category_item_id': noun,
@@ -9849,7 +9849,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Nema [žirafe].',
                 'grammatical_features_item_ids': [genitive_case, singular],
                 'wikifunctions': {
-                    '✨': 'Z11165',
+                    'redovne oblike': 'Z11165',
                 },
             },
             {
@@ -9857,7 +9857,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Prilazim [žirafi].',
                 'grammatical_features_item_ids': [dative_case, singular],
                 'wikifunctions': {
-                    '✨': 'Z11199',
+                    'redovne oblike': 'Z11199',
                 },
             },
             {
@@ -9865,7 +9865,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Vidim [žirafu].',
                 'grammatical_features_item_ids': [accusative_case, singular],
                 'wikifunctions': {
-                    '✨': 'Z11204',
+                    'redovne oblike': 'Z11204',
                 },
             },
             {
@@ -9873,7 +9873,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Zar i ti, [žirafo]?',
                 'grammatical_features_item_ids': [vocative_case, singular],
                 'wikifunctions': {
-                    '✨': 'Z11245',
+                    'redovne oblike': 'Z11245',
                 },
             },
             {
@@ -9881,7 +9881,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Govorim o [žirafi].',
                 'grammatical_features_item_ids': [locative_case, singular],
                 'wikifunctions': {
-                    '✨': 'Z11231',
+                    'redovne oblike': 'Z11231',
                 },
             },
             {
@@ -9889,7 +9889,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Vozim se s(a) [žirafom].',
                 'grammatical_features_item_ids': [instrumental_case, singular],
                 'wikifunctions': {
-                    '✨': 'Z11254',
+                    'redovne oblike': 'Z11254',
                 },
             },
             {
@@ -9897,7 +9897,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Ovo su [žirafe].',
                 'grammatical_features_item_ids': [nominative_case, plural],
                 'wikifunctions': {
-                    '✨': 'Z11284',
+                    'redovne oblike': 'Z11284',
                 },
             },
             {
@@ -9905,7 +9905,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Nema [žirafa].',
                 'grammatical_features_item_ids': [genitive_case, plural],
                 'wikifunctions': {
-                    '✨': 'Z11288',
+                    'redovne oblike': 'Z11288',
                 },
             },
             {
@@ -9913,7 +9913,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Prilazim [žirafama].',
                 'grammatical_features_item_ids': [dative_case, plural],
                 'wikifunctions': {
-                    '✨': 'Z11298',
+                    'redovne oblike': 'Z11298',
                 },
             },
             {
@@ -9921,7 +9921,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Vidim [žirafe].',
                 'grammatical_features_item_ids': [accusative_case, plural],
                 'wikifunctions': {
-                    '✨': 'Z11308',
+                    'redovne oblike': 'Z11308',
                 },
             },
             {
@@ -9929,7 +9929,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Zar i vi, [žirafe]?',
                 'grammatical_features_item_ids': [vocative_case, plural],
                 'wikifunctions': {
-                    '✨': 'Z11319',
+                    'redovne oblike': 'Z11319',
                 },
             },
             {
@@ -9937,7 +9937,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Govorim o [žirafama].',
                 'grammatical_features_item_ids': [locative_case, plural],
                 'wikifunctions': {
-                    '✨': 'Z11314',
+                    'redovne oblike': 'Z11314',
                 },
             },
             {
@@ -9945,7 +9945,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Vozim se s(a) [žirafama].',
                 'grammatical_features_item_ids': [instrumental_case, plural],
                 'wikifunctions': {
-                    '✨': 'Z11332',
+                    'redovne oblike': 'Z11332',
                 },
             },
         ],
@@ -9953,7 +9953,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
     },
 
     'croatian-noun-neuter': {
-        '@attribution': {'users': ['Ivi104'], 'title': 'Wikidata:Wikidata Lexeme Forms/Croatian'},
+        '@attribution': {'users': ['Ivi104', 'Denny'], 'title': 'Wikidata:Wikidata Lexeme Forms/Croatian'},
         'label': 'hrvatske imenice (srednji rod)',
         'language': language_Croatian,
         'lexical_category_item_id': noun,
@@ -9967,66 +9967,105 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'label': 'genitiv jednine',
                 'example': 'Nema [stakla].',
                 'grammatical_features_item_ids': [genitive_case, singular],
+                'wikifunctions': {
+                    'redovne oblike': 'Z11839',
+                },
             },
             {
                 'label': 'dativ jednine',
                 'example': 'Prilazim [staklu].',
                 'grammatical_features_item_ids': [dative_case, singular],
+                'wikifunctions': {
+                    'redovne oblike': 'Z11944',
+                },
             },
             {
                 'label': 'akuzativ jednine',
                 'example': 'Vidim [staklo].',
                 'grammatical_features_item_ids': [accusative_case, singular],
+                'wikifunctions': {
+                    'redovne oblike': 'Z11843',
+                },
             },
             {
                 'label': 'vokativ jednine',
                 'example': 'Zar i ti, [staklo]?',
                 'grammatical_features_item_ids': [vocative_case, singular],
+                'wikifunctions': {
+                    'redovne oblike': 'Z11954',
+                },
             },
             {
                 'label': 'lokativ jednine',
                 'example': 'Govorim o [staklu].',
                 'grammatical_features_item_ids': [locative_case, singular],
+                'wikifunctions': {
+                    'redovne oblike': 'Z11949',
+                },
             },
             {
                 'label': 'instrumental jednine',
                 'example': 'Vozim se s(a) [staklom].',
                 'grammatical_features_item_ids': [instrumental_case, singular],
+                'wikifunctions': {
+                    'redovne oblike': 'Z11960',
+                },
             },
             {
                 'label': 'nominativ množine',
                 'example': 'Ovo su [stakla].',
                 'grammatical_features_item_ids': [nominative_case, plural],
+                'wikifunctions': {
+                    'redovne oblike': 'Z11969',
+                },
             },
             {
                 'label': 'genitiv množine',
                 'example': 'Nema [stakala].',
                 'grammatical_features_item_ids': [genitive_case, plural],
+                'wikifunctions': {
+                    'redovne oblike': 'Z11973',
+                },
             },
             {
                 'label': 'dativ množine',
                 'example': 'Prilazim [staklima].',
                 'grammatical_features_item_ids': [dative_case, plural],
+                'wikifunctions': {
+                    'redovne oblike': 'Z11978',
+                },
             },
             {
                 'label': 'akuzativ množine',
                 'example': 'Vidim [stakla].',
                 'grammatical_features_item_ids': [accusative_case, plural],
+                'wikifunctions': {
+                    'redovne oblike': 'Z11983',
+                },
             },
             {
                 'label': 'vokativ množine',
                 'example': 'Zar i vi, [stakla]?',
                 'grammatical_features_item_ids': [vocative_case, plural],
+                'wikifunctions': {
+                    'redovne oblike': 'Z11985',
+                },
             },
             {
                 'label': 'lokativ množine',
                 'example': 'Govorim o [staklima].',
                 'grammatical_features_item_ids': [locative_case, plural],
+                'wikifunctions': {
+                    'redovne oblike': 'Z11987',
+                },
             },
             {
                 'label': 'instrumental množine',
                 'example': 'Vozim se s(a) [staklima].',
                 'grammatical_features_item_ids': [instrumental_case, plural],
+                'wikifunctions': {
+                    'redovne oblike': 'Z11989',
+                },
             },
         ],
         'statements': statements(grammatical_gender, neuter),
