@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Chqaz",
 			"Kkairri",
 			"Lucas Werkmeister",
 			"Nikki",
@@ -23,6 +24,7 @@
 	"no-grammatical-features": "文法的特徴がない",
 	"title-create": "$1 (作成)",
 	"settings-save": "保存",
+	"documentation": "ドキュメンテーション",
 	"source-code": "ソースコード",
 	"login": "ログイン",
 	"settings-link": "設定",

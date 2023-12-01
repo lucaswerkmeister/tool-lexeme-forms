@@ -167,6 +167,19 @@ def test_message_syntax_valid_bulk_not_allowed(language_code: str, gender: str):
         )
 
 
+def test_message_syntax_valid_login_hint(language_code: str):
+    if 'login-hint' in translations.translations[language_code]:
+        message = translations.translations[language_code]['login-hint']
+        formatted = formatters.I18nFormatter(
+            locale_identifier=lang_int2babel(language_code),
+            get_gender=unused,
+        ).format(
+            message,
+            url='https://example.com',
+        )
+        assert '<a href=' in formatted
+
+
 def test_link_not_in_gender_logged_in(language_code: str, gender: str):
     """Assert that a message with both {{GENDER:}} and a link renders correctly.
 
