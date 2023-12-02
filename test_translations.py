@@ -79,6 +79,47 @@ def test_message_html_elements(language_code: str, message_key: str):
     assert not html_element_names
 
 
+def test_message_variables(language_code: str, message_key: str):
+    """Test that the translation uses variables correctly.
+
+    See the comment above variables in translations.py
+    for the meaning of the different variable names / prefixes."""
+    message = translations.translations[language_code].get(message_key)
+    if message is None:
+        return
+    for variable in translations.variables.get(message_key, []):
+        if variable == 'url':
+            assert '{' + variable + '!h:' in message
+            assert '{' + variable + '!g:' not in message
+            assert '{' + variable + '!p:' not in message
+            assert '{' + variable + '!l}' not in message
+            assert '{' + variable + '}' not in message
+        elif variable == 'user_name':
+            assert '{' + variable + '!g:' in message or '{' + variable not in message
+            assert '{' + variable + '!h:' not in message
+            assert '{' + variable + '!p:' not in message
+            assert '{' + variable + '!l}' not in message
+            assert '{' + variable + '}' not in message
+        elif variable.startswith('num_'):
+            assert '{' + variable + '!p:' in message or '{' + variable not in message
+            assert '{' + variable + '!h:' not in message
+            assert '{' + variable + '!g:' not in message
+            assert '{' + variable + '!l}' not in message
+            # assert '{' + variable + '}' not in message  # allowed, e.g. {{PLURAL:$1||$1 forms}}
+        elif variable.startswith('list_'):
+            assert '{' + variable + '!l}' in message
+            assert '{' + variable + '!h:' not in message
+            assert '{' + variable + '!g:' not in message
+            assert '{' + variable + '!p:' not in message
+            assert '{' + variable + '}' not in message
+        else:
+            assert '{' + variable + '}' in message
+            assert '{' + variable + '!h:' not in message
+            assert '{' + variable + '!g:' not in message
+            assert '{' + variable + '!p:' not in message
+            assert '{' + variable + '!l}' not in message
+
+
 def test_message_syntax_valid_duplicates_warning(language_code: str, number: int):
     if 'duplicates-warning' in translations.translations[language_code]:
         message = translations.translations[language_code]['duplicates-warning']
