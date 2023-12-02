@@ -44,9 +44,6 @@ variables = {
     'ambiguous-template': ['template_name', 'num_replacement_templates'],
     'logged-in': ['user_link', 'user_name'],
 }
-lists = {
-    'edit-form-list-item': {'list_grammatical_feature_labels'},
-}
 derived_messages = {
     'bulk-button': ('bulk-link', initial_titlecase),
     'bulk-heading': ('bulk-link', identity),
@@ -54,7 +51,7 @@ derived_messages = {
 }
 
 
-def mw2py(mw: str, language: str, variables: list[str], lists: set[str]) -> str:
+def mw2py(mw: str, language: str, variables: list[str]) -> str:
     locale = babel.Locale(lang_int2babel(language))
 
     def replace_plural(match: re.Match) -> str:
@@ -103,7 +100,7 @@ def mw2py(mw: str, language: str, variables: list[str], lists: set[str]) -> str:
         nonlocal variables
         number = int(match[1])
         variable = variables[number - 1]
-        if variable in lists:
+        if variable.startswith('list_'):
             return '{' + variable + '!l}'
         else:
             return '{' + variable + '}'
@@ -132,7 +129,7 @@ for entry in os.scandir('i18n/'):
     for key in data:
         if key.startswith('@'):
             continue
-        msg = mw2py(data[key], language, variables.get(key, []), lists.get(key, set()))
+        msg = mw2py(data[key], language, variables.get(key, []))
         translations[language][key] = msg
     for key in derived_messages:
         source_key, transformation = derived_messages[key]
