@@ -44,41 +44,6 @@ derived_messages = {
 }
 
 
-def py2mw(py: str, variables: list[str], lists: set[str]) -> str:
-    def replace(match: re.Match) -> str:
-        nonlocal variables, lists
-        inner = match[0][1:-1]  # strip away braces
-        variable, _, rest = inner.partition('!')
-        number = variables.index(variable) + 1
-        if not rest:
-            return f'${number}'
-        conversion, _, format_spec = rest.partition(':')
-        format_spec = format_spec.replace('{' + variable + '}', f'${number}')
-        if conversion == 'p':
-            args = []
-            for plural in format_spec.split(':'):
-                key, _, text = plural.partition('=')
-                if key.isnumeric():
-                    args.append(plural)
-                else:
-                    args.append(text)
-            return '{{PLURAL:$' + str(number) + '|' + '|'.join(args) + '}}'
-        elif conversion == 'g':
-            args = []
-            for replacement in format_spec.split(':'):
-                gender, _, text = replacement.partition('=')
-                args.append(text)
-            return '{{GENDER:$' + str(number) + '|' + '|'.join(args) + '}}'
-        elif conversion == 'l':
-            assert variable in lists
-            return f'${number}'
-        elif conversion == 'h':
-            return f'[${number} {format_spec}]'
-        else:
-            raise ValueError(f'Unknown conversion {conversion}')
-    return re.sub(r'\{([^{}]|\{[^}]*\})*\}', replace, py)
-
-
 def mw2py(mw: str, language: str, variables: list[str], lists: set[str]) -> str:
     locale = babel.Locale(lang_int2babel(language))
 
