@@ -203,8 +203,8 @@ def augment_description(description, forms_count, senses_count):
     return message_with_kwargs(
         'description-with-forms-and-senses',
         description=description,
-        forms=int(forms_count),
-        senses=int(senses_count),
+        num_forms=int(forms_count),
+        num_senses=int(senses_count),
     )
 
 @app.template_global()

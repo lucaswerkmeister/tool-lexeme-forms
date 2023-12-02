@@ -98,7 +98,12 @@ def test_message_with_kwargs(language_code, number):
     with lexeme_forms.app.test_request_context():
         flask.g.interface_language_code = language_code
         flask.g.html_language_codes = [lang_int2html(language_code)]
-        message = lexeme_forms.message_with_kwargs('description-with-forms-and-senses', description='', forms=number, senses=number)  # noqa:F841
+        message = lexeme_forms.message_with_kwargs(  # noqa: F841
+            'description-with-forms-and-senses',
+            description='',
+            num_forms=number,
+            num_senses=number,
+        )
     # should not have failed
 
 @pytest.mark.parametrize('language_code, expected_direction', [

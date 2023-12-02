@@ -1,6 +1,6 @@
 {% if duplicates %}
 <div {% if not in_bulk_mode %} id="duplicates-warning" {% endif %} class="alert alert-warning">
-  {{ message_with_kwargs( 'duplicates-warning', lexemes=duplicates | length ) }}
+  {{ message_with_kwargs( 'duplicates-warning', num_lexemes=duplicates | length ) }}
   <ul>
     {% for duplicate in duplicates %}
     <li>
@@ -17,7 +17,7 @@
     {{ message( 'duplicates-create' ) }}
   </a>
   {% else %}
-  {{ message_with_kwargs( 'duplicates-instructions', lexemes=duplicates | length ) }}
+  {{ message_with_kwargs( 'duplicates-instructions', num_lexemes=duplicates | length ) }}
   {% endif %}
 </div>
 {% endif %}

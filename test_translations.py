@@ -87,7 +87,7 @@ def test_message_syntax_valid_duplicates_warning(language_code: str, number: int
             get_gender=unused,
         ).format(
             message,
-            lexemes=number,
+            num_lexemes=number,
         )
 
 
@@ -99,7 +99,7 @@ def test_message_syntax_valid_duplicates_instructions(language_code: str, number
             get_gender=unused,
         ).format(
             message,
-            lexemes=number,
+            num_lexemes=number,
         )
 
 
@@ -112,8 +112,8 @@ def test_message_syntax_valid_description_with_forms_and_senses(language_code: s
         ).format(
             message,
             description='description',
-            forms=number,
-            senses=number,
+            num_forms=number,
+            num_senses=number,
         )
 
 
@@ -125,7 +125,7 @@ def test_message_syntax_valid_edit_ambiguous_warning(language_code: str, number:
             get_gender=unused,
         ).format(
             message,
-            forms=number,
+            num_forms=number,
         )
 
 
@@ -137,7 +137,7 @@ def test_message_syntax_valid_edit_unmatched_warning(language_code: str, number:
             get_gender=unused,
         ).format(
             message,
-            forms=number,
+            num_forms=number,
         )
 
 
@@ -150,8 +150,8 @@ def test_message_syntax_valid_edit_form_list_item(language_code: str, list: buil
         ).format(
             message,
             form_link='',
-            grammatical_feature_labels=list,
-            statements=number,
+            list_grammatical_feature_labels=list,
+            num_statements=number,
         )
 
 
@@ -163,7 +163,7 @@ def test_message_syntax_valid_bulk_not_allowed(language_code: str, gender: str):
             get_gender=lambda value: gender,
         ).format(
             message,
-            user='some user',
+            user_name='some user',
         )
 
 

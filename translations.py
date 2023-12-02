@@ -15,27 +15,37 @@ def identity(s: Any) -> Any:
     return s
 
 
+# Variable names used in messages;
+# the source messages use $1, $2 etc., but the Python format strings use named variables.
+# The variable name encodes the type:
+# * url - hyperlink: [$1 text] => {url!h:text}
+# * user_name - gender: {{GENDER:$1|he|she|they}} => {user_name!g:m=he:f=she:n=they}
+# * num_* - plural: {{PLURAL:$1|one form|$1 forms}} => {num_forms!p:one=one form:other={num_forms} forms}
+# * list_* - list: $1 => {list_grammatical_feature_labels!l}
+# * anything else - markup without further formatting: $1 => {description}
+# (Note that e.g. form_link is an “anything else” variable:
+# the link is formatted separately and the message passes it through as-is.)
 variables = {
-    'duplicates-warning': ['lexemes'],
-    'duplicates-instructions': ['lexemes'],
-    'description-with-forms-and-senses': ['description', 'forms', 'senses'],
-    'bulk-not-allowed': ['user'],
+    'duplicates-warning': ['num_lexemes'],
+    'duplicates-instructions': ['num_lexemes'],
+    'description-with-forms-and-senses': ['description', 'num_forms', 'num_senses'],
+    'bulk-not-allowed': ['user_name'],
     'bulk-first-field-not-lexeme-id': ['num_forms', 'num_fields', 'first_field', 'line_number'],
     'bulk-first-field-lexeme-id': ['num_forms', 'num_fields', 'first_field', 'line_number'],
     'bulk-wrong-number-of-fields': ['num_forms', 'num_fields', 'line_number'],
-    'edit-ambiguous-warning': ['forms'],
-    'edit-unmatched-warning': ['forms'],
-    'edit-form-list-item': ['form_link', 'grammatical_feature_labels', 'statements'],
+    'edit-ambiguous-warning': ['num_forms'],
+    'edit-unmatched-warning': ['num_forms'],
+    'edit-form-list-item': ['form_link', 'list_grammatical_feature_labels', 'num_statements'],
     'title-create': ['template_label'],
     'title-advanced': ['template_label'],
     'title-bulk': ['template_label'],
     'title-edit': ['template_label'],
     'login-hint': ['url'],
-    'ambiguous-template': ['template_name', 'replacement_templates_count'],
+    'ambiguous-template': ['template_name', 'num_replacement_templates'],
     'logged-in': ['user_link', 'user_name'],
 }
 lists = {
-    'edit-form-list-item': {'grammatical_feature_labels'},
+    'edit-form-list-item': {'list_grammatical_feature_labels'},
 }
 derived_messages = {
     'bulk-button': ('bulk-link', initial_titlecase),
