@@ -53,5 +53,6 @@
 	"login": "Oturum aç",
 	"settings-link": "Ayarlar",
 	"settings-heading": "Ayarlar",
-	"logged-in": "$1 olarak {{GENDER:$2|giriş yaptı}}."
+	"logged-in": "$1 olarak {{GENDER:$2|giriş yaptı}}.",
+	"requires-javascript": "Bu özellik JavaScript gerektirir."
 }

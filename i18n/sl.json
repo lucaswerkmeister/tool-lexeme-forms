@@ -51,5 +51,6 @@
 	"login": "Prijava",
 	"settings-link": "Nastavitve",
 	"settings-heading": "Nastavitve",
-	"logged-in": "{{GENDER:$2|Prijavljen|Prijavljena|Prijavljen_a}} kot $1."
+	"logged-in": "{{GENDER:$2|Prijavljen|Prijavljena|Prijavljen_a}} kot $1.",
+	"requires-javascript": "Ta možnost zahteva JavaScript."
 }

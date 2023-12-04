@@ -28,7 +28,7 @@
 	"bulk-link": "mode massiu",
 	"bulk-format-help": "ajuda del format",
 	"bulk-not-allowed": "No teniu permisos per a utilitzar el mode massiu.",
-	"bulk-first-field-not-lexeme-id": "Com que la plantilla té {{PLURAL: $1|un formulari|$1 formularis}} i la línia $4 de l'entrada té {{PLURAL:$2|un camp|$2 camps}}, el primer camp hauria de semblar un identificador de lexema, però <q>$3</q> no sembla un identificador de lexema. (Heu especificat massa formularis a l'entrada?)",
+	"bulk-first-field-not-lexeme-id": "Com que la plantilla té {{PLURAL:$1|un formulari|$1 formularis}} i la línia $4 de l'entrada té {{PLURAL:$2|un camp|$2 camps}}, el primer camp hauria de semblar un identificador de lexema, però <q>$3</q> no sembla un identificador de lexema. (Heu especificat massa formularis a l'entrada?)",
 	"bulk-first-field-lexeme-id": "Com que la plantilla té {{PLURAL:$1|un formulari|$1 formularis}} i la línia $4 de l'entrada té {{PLURAL:$2|un camp|$2 camps}}, el primer camp no hauria de semblar un ID de lexema, però <q>$3</q> en sembla un. (Heu oblidat cap formulari a l'entrada?)",
 	"bulk-wrong-number-of-fields": "Com que la plantilla té {{PLURAL:$1|un formulari|$1 formularis}}, cada línia d'entrada hauria de tenir o bé molts camps (quan es crea un nou lexema) o un més (quan s'especifica l'ID d'un lexema existent per editar), però la línia $3 de l'entrada té {{PLURAL:$2|un camp|$2 camps}} en el seu lloc.",
 	"bulk-optional-forms-hint": "Si voleu saltar alguns formularis, especifiqueu-los com a buits (p. ex. <kbd>...|||</kbd> per a tres formularis buits al final).",
