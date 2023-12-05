@@ -3,6 +3,7 @@
 		"authors": [
 			"Beta16",
 			"Luca.favorido",
+			"Lucas Werkmeister",
 			"Sannita"
 		]
 	},
@@ -37,7 +38,7 @@
 	"no-grammatical-features": "nessuna caratteristica grammaticale",
 	"title-create": "$1 (crea)",
 	"title-advanced": "$1 (avanzato)",
-	"title-bulk": "$ 1 (massivo)",
+	"title-bulk": "$1 (massivo)",
 	"title-edit": "$1 (modifica)",
 	"login-hint": "Devi [$1 accedere] per poter apportare modifiche utilizzando questo strumento.",
 	"ambiguous-template": "Il template $1 non esiste più; è stato sostituito dai seguenti template:",

@@ -49,5 +49,6 @@
 	"login": "Enirar",
 	"settings-link": "Ajusti",
 	"settings-heading": "Ajusti",
-	"logged-in": "{{GENDER:$2|Eniris}} kom $1."
+	"logged-in": "{{GENDER:$2|Eniris}} kom $1.",
+	"requires-javascript": "Ca funciono bezonas JavaScript."
 }
