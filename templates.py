@@ -1909,7 +1909,10 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Ma [levrioù] zo amañ.',
                 'grammatical_features_item_ids': [plural],
                 'wikifunctions': {
-                    'kinnig furmoù': 'Z11611',
+                    '-où': 'Z11611',
+                    '-ioù': 'Z11770',
+                    '-ed': 'Z11775',
+                    '-ien': 'Z11779',
                 },
             },
         ],
