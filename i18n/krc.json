@@ -38,5 +38,17 @@
 	"title-bulk": "$1 (кёбчюлюк)",
 	"title-edit": "$1 (тюзет)",
 	"login-hint": "Бу адырны хайырланыб тюрлениу этгинчи [$1 кириу этерге керексиз].",
-	"ambiguous-template": "$1 энди джокъду; бу шаблонла бла алмашдырылгъанды:"
+	"ambiguous-template": "$1 энди джокъду; бу шаблонла бла алмашдырылгъанды:",
+	"settings-label-interface-language-code": "Хайырланыучу интерфейс тил",
+	"settings-save": "Сакъла",
+	"tool-name": "Викибилгилени Лексемаларыны Формалары",
+	"skip-to-main-content": "Баш контентге кёч",
+	"documentation": "Документация",
+	"toolforge": "Wikimedia Toolforge",
+	"source-code": "Къайнакъ код",
+	"login": "Кир",
+	"settings-link": "Джарашдырыўла",
+	"settings-heading": "Джарашдырыўла",
+	"logged-in": "$1 болуб {{GENDER:$2|кириш этди}}.",
+	"requires-javascript": "Бу функциягъа JavaScript керекди."
 }
