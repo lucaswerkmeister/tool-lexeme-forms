@@ -50,5 +50,6 @@
 	"login": "لاگ ان کرو",
 	"settings-link": "سیٹنگاں",
 	"settings-heading": "سیٹنگاں",
-	"logged-in": "$1 وجوں لاگ ان کیتا گیا۔"
+	"logged-in": "$1 وجوں لاگ ان کیتا گیا۔",
+	"requires-javascript": "ایس فیچر نوں جاوا سکریپٹ دی لوڑ اے۔"
 }

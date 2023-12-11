@@ -13,7 +13,9 @@
 	"title-advanced": "$1 (erweidert)",
 	"title-bulk": "$1 (Bulk)",
 	"title-edit": "$1 (änneren)",
+	"settings-label-interface-language-code": "Sprooch vun der Benotzeruewerfläch",
 	"settings-save": "Späicheren",
+	"documentation": "Dokumentatioun",
 	"settings-link": "Astellungen",
 	"settings-heading": "Astellungen",
 	"requires-javascript": "Dës Funktioun brauch JavaScript."
