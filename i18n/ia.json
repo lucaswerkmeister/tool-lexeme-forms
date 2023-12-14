@@ -49,5 +49,6 @@
 	"login": "Aperir session",
 	"settings-link": "Parametros",
 	"settings-heading": "Parametros",
-	"logged-in": "{{GENDER:$2|In session}} como $1."
+	"logged-in": "{{GENDER:$2|In session}} como $1.",
+	"requires-javascript": "Iste function require JavaScript."
 }
