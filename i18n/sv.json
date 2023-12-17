@@ -52,5 +52,6 @@
 	"login": "Logga in",
 	"settings-link": "Inställningar",
 	"settings-heading": "Inställningar",
-	"logged-in": "{{GENDER:$2|Loggade in}} som $1."
+	"logged-in": "{{GENDER:$2|Loggade in}} som $1.",
+	"requires-javascript": "Denna funktion kräver JavaScript."
 }
