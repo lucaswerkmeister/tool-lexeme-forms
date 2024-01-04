@@ -42,5 +42,6 @@
 	"login": "Zaloguj się",
 	"settings-link": "Ustawienia",
 	"settings-heading": "Ustawienia",
-	"logged-in": "{{GENDER:$2| Zalogowany| Zalogowana| Zalogowano}} jako $1."
+	"logged-in": "{{GENDER:$2| Zalogowany| Zalogowana| Zalogowano}} jako $1.",
+	"requires-javascript": "Ta funkcja wymaga JavaScriptu."
 }
