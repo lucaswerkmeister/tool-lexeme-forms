@@ -1197,6 +1197,11 @@ def wikifunctions_api(template_name: str, lemma: str, function_name: str) -> RRV
         response_value = inner_response['Z22K1']
         if response_value == 'Z24':  # void
             response_value = None
+        elif isinstance(response_value, list):
+            assert response_value[0] == 'Z6'  # list of strings
+            response_value = response_value[1:]
+        else:
+            assert isinstance(response_value, str)
         result_cache[wikifunction] = response_value
         result.append(response_value)
     return result

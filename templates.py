@@ -3965,8 +3965,8 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'wikifunctions': {
                     '-s/-n': 'Z11729',
                     '-s/-s': 'Z11729',
-                    '-(e)s-/¨er': 'Z11991',
-                    '-(e)s/-¨e': 'Z11991',
+                    '-(e)s-/¨er': 'Z12689',
+                    '-(e)s/-¨e': 'Z12689',
                 },
             },
             {
@@ -4144,8 +4144,8 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Das Eigentum eines [Kindes/Kinds].',
                 'grammatical_features_item_ids': [genitive_case, singular],
                 'wikifunctions': {
-                    '-(e)s-/¨er': 'Z11991',
-                    '-s/-e': 'Z11991',
+                    '-(e)s-/¨er': 'Z12689',
+                    '-s/-e': 'Z12689',
                     '-s/-s': 'Z11729',
                     '-s/-n': 'Z11729',
                     '-um/-en': 'Z11729',

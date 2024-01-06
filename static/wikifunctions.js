@@ -37,8 +37,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 .then(r => r.json())
                 .then(response => {
                     for (let i = 0; i < response.length; i++) {
+                        let value = response[i];
+                        if (value === null ) {
+                            continue;
+                        } else if (Array.isArray(value)) {
+                            value = value.join('/');
+                        }
                         if (formRepresentationInputs[i] && !formRepresentationInputs[i].value) {
-                            formRepresentationInputs[i].value = response[i];
+                            formRepresentationInputs[i].value = value;
                         }
                     }
                 });

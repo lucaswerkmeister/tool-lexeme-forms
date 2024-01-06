@@ -164,12 +164,18 @@ def test_entities_exist():
 
 def test_wikifunctions_signatures():
     """Assert that all referenced Wikifunctions exist, are functions,
-    have exactly one string parameter and return a string."""
+    have exactly one string parameter and return a string or list of strings."""
     wikifunctions_ids = set()
     for template in templates.templates_without_redirects.values():
         for form in template['forms']:
             for wikifunctions in form.get('wikifunctions', {}).values():
                 wikifunctions_ids.add(wikifunctions)
+    type_string = 'Z6'
+    type_list_of_strings = {
+        'Z1K1': 'Z7',
+        'Z7K1': 'Z881',  # list
+        'Z881K1': type_string,
+    }
 
     wikifunctions_ids = list(wikifunctions_ids)
     session = mwapi.Session('https://www.wikifunctions.org', user_agent=test_user_agent)
@@ -197,11 +203,11 @@ def test_wikifunctions_signatures():
                 parameter['Z17K1']
                 for parameter in zfunction['Z8K1'][1:]
             ]
-            if parameter_types != ['Z6']:
+            if parameter_types != [type_string]:
                 bad_params_wikifunctions_ids[wikifunctions_id] = parameter_types
                 continue
             return_type = zfunction['Z8K2']
-            if return_type != 'Z6':
+            if return_type != type_string and return_type != type_list_of_strings:
                 bad_return_wikifunctions_ids[wikifunctions_id] = return_type
 
     assert not missing_wikifunctions_ids
