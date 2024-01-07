@@ -29,9 +29,19 @@ document.addEventListener('DOMContentLoaded', function() {
         button.textContent = functionName;
         button.classList.add('btn', 'btn-outline-info');
         button.addEventListener('click', () => {
-            const lemma = formRepresentationInputs[0].value.split('/').filter(s => s)[0];
+            let lemma = formRepresentationInputs[0].value.split('/').filter(s => s)[0];
             if (!lemma) {
-                return; // no lemma (first form) to generate others from
+                // no first form to generate others from yet; can we fill it from the lemma?
+                if ('_edit_mode' in form.elements) {
+                    const lemmaInLanguage = document.querySelector(`#lemmas [lang="${template.language_code}"]`);
+                    if (lemmaInLanguage && lemmaInLanguage.textContent) {
+                        lemma = lemmaInLanguage.textContent;
+                        formRepresentationInputs[0].value = lemma;
+                    }
+                }
+            }
+            if (!lemma) {
+                return;
             }
             fetch(`${baseUrl}/api/v1/wikifunctions/${templateName}/${lemma}/${functionName}`)
                 .then(r => r.json())

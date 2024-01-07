@@ -40,7 +40,7 @@
   {% endif %}
   <h1 {{ push_html_lang( template.language_code | lang_lex2int ) }}>{{ template.label }}</h1{{ pop_html_lang( template.language_code | lang_lex2int ) }}>
   <h2>
-    <a href="https://{{ 'test' if template.test else 'www' }}.wikidata.org/wiki/Lexeme:{{ template.lexeme_id }}">
+    <a href="https://{{ 'test' if template.test else 'www' }}.wikidata.org/wiki/Lexeme:{{ template.lexeme_id }}" id="lemmas"> <!-- #lemmas used in wikifunctions.js -->
       {{ lemmas | lemmas_spans }}
       ({{ template.lexeme_id }})
     </a>
