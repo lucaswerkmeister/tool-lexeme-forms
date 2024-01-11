@@ -7,6 +7,7 @@
 			"Kawayashu",
 			"Lucas Werkmeister",
 			"Mohanad Kh",
+			"Sandra Hanbo",
 			"أَحمد",
 			"زكريا"
 		]
@@ -55,5 +56,7 @@
 	"source-code": "الكود المصدري",
 	"login": "تسجيل الدخول",
 	"settings-link": "الإعدادات",
-	"settings-heading": "إعدادات"
+	"settings-heading": "إعدادات",
+	"logged-in": "{{GENDER:$2| تم تسجيل الدخول}} كـ $1 .",
+	"requires-javascript": "هذه الميزة تتطلب جافاسكريبت."
 }
