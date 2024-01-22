@@ -11282,6 +11282,43 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
         }),
     },
 
+    'bokmål-noun-language-name': {
+        '@attribution': {'users': ['Jon Harald Søby'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Bokmål'},
+        'label': 'bokmål språknavn',
+        'language': language_Bokmål,
+        'lexical_category_item_id': noun,
+        'forms': [
+            {
+                'label': 'ubestemt entall, hankjønn',
+                'example': 'Han snakker [arabisk].',
+                'grammatical_features_item_ids': [singular, indefinite, masculine],
+            },
+            {
+                'label': 'bestemt entall, hankjønn',
+                'example': 'Hun synes at [arabisken] hennes er god.',
+                'grammatical_features_item_ids': [singular, definite, masculine],
+            },
+            {
+                'label': 'ubestemt flertall, hankjønn',
+                'example': 'Det finnes flere [arabisker].',
+                'grammatical_features_item_ids': [plural, indefinite, masculine],
+            },
+            {
+                'label': 'bestemt flertall, hankjønn',
+                'example': 'Alle [arabiskene] er vanskelige.',
+                'grammatical_features_item_ids': [plural, definite, masculine],
+            },
+            {
+                'label': 'enkeltform, intetkjønn',
+                'example': 'Hen snakker et godt [arabisk].',
+                'grammatical_features_item_ids': [neuter],
+            },
+        ],
+        'statements': statements({
+            grammatical_gender: [masculine, neuter],
+        }),
+    },
+
     'bokmål-adjective': {
         '@attribution': {'users': ['Jon Harald Søby'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Bokmål'},
         'label': 'bokmål adjektiv',
@@ -11820,6 +11857,43 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'label': 'binde fleirtal, inkjekjønn',
                 'example': 'Dei har brukt opp alle [sekunda].',
                 'grammatical_features_item_ids': [plural, definite, neuter],
+            },
+        ],
+        'statements': statements({
+            grammatical_gender: [masculine, neuter],
+        }),
+    },
+
+    'nynorsk-noun-language-name': {
+        '@attribution': {'users': ['Jon Harald Søby'], 'title': 'Wikidata:Wikidata Lexeme Forms/Norwegian Nynorsk'},
+        'label': 'nynorsk språknamn',
+        'language': language_Nynorsk,
+        'lexical_category_item_id': noun,
+        'forms': [
+            {
+                'label': 'ubunde eintal, hankjønn',
+                'example': 'Han snakkar [arabisk].',
+                'grammatical_features_item_ids': [singular, indefinite, masculine],
+            },
+            {
+                'label': 'bunde eintal, hankjønn',
+                'example': 'Ho synest at [arabisken] hennar er god.',
+                'grammatical_features_item_ids': [singular, definite, masculine],
+            },
+            {
+                'label': 'ubunde fleirtal, hankjønn',
+                'example': 'Det finst fleire [arabiskar].',
+                'grammatical_features_item_ids': [plural, indefinite, masculine],
+            },
+            {
+                'label': 'bunde fleirtal, hankjønn',
+                'example': 'Alle [arabiskane] er vanskelege.',
+                'grammatical_features_item_ids': [plural, definite, masculine],
+            },
+            {
+                'label': 'einskildform, inkjekjønn',
+                'example': 'Hen snakkar eit godt [arabisk].',
+                'grammatical_features_item_ids': [neuter],
             },
         ],
         'statements': statements({
