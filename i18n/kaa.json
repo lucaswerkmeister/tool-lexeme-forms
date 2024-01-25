@@ -1,0 +1,32 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ajiniyaz Nurniyazov",
+			"Inabat Allanova",
+			"Lucas Werkmeister"
+		]
+	},
+	"create": "Jaratıw",
+	"form-optional": "&#32;(qálegenshe)",
+	"advanced": "Keńeytilgen",
+	"advanced-general": "Siz “keńeyttirilgen” rejimdesiz.",
+	"lexeme-id": "Leksema ID",
+	"generated-via": "arqalı jaratılǵan",
+	"bulk-format-help": "format boyınsha járdem",
+	"bulk-not-allowed": "{{GENDER:$1|Siz}}ge ǵalabalıq rejimnen paydalanıwǵa ruxsat berilmegen. Keshirińiz.",
+	"edit-link": "redaktorlaw",
+	"no-grammatical-features": "Grammatikalıq ayrıqshalıqlar joq",
+	"title-create": "$1 (jaratıw)",
+	"title-advanced": "$1 (keńeyttirilgen)",
+	"title-bulk": "$1 (ǵalabalıq)",
+	"title-edit": "$1 (redaktorlaw)",
+	"settings-label-interface-language-code": "Paydalanıwshı interfeysiniń tili",
+	"settings-save": "Saqlaw",
+	"documentation": "Hújjet",
+	"toolforge": "Wikimedia Toolforge",
+	"source-code": "Derek kodı",
+	"login": "Kiriw",
+	"settings-link": "Sazlawlar",
+	"settings-heading": "Sazlawlar",
+	"logged-in": "$1 sıpatında Kiriw"
+}
