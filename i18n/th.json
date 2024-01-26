@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ekminarin",
+			"Patsagorn Y."
+		]
+	},
+	"create": "สร้าง",
+	"form-optional": "&#32;(ไม่บังคับ)",
+	"advanced": "ขั้นสูง",
+	"advanced-general": "คุณอยู่ในโหมด \"ขั้นสูง\"",
+	"edit-link": "แก้ไข",
+	"title-create": "$1 (สร้าง)",
+	"title-advanced": "$1 (ขั้นสูง)",
+	"title-edit": "$1 (แก้ไข)",
+	"settings-save": "บันทึก",
+	"login": "เข้าสู่ระบบ",
+	"settings-link": "การตั้งค่า",
+	"settings-heading": "การตั้งค่า"
+}

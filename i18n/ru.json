@@ -55,5 +55,6 @@
 	"login": "Войти",
 	"settings-link": "Настройки",
 	"settings-heading": "Настройки",
-	"logged-in": "{{GENDER:$2|Вы вошли в систему}} как $1."
+	"logged-in": "{{GENDER:$2|Вы вошли в систему}} как $1.",
+	"requires-javascript": "Эта функция требует JavaScript."
 }

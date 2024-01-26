@@ -90,4 +90,9 @@ def lang_int2babel(code: str) -> str:
         # an (Aragonese) is not in Babel;
         # es (Spanish) is the MediaWiki fallback its .text_direction matches
         'an': 'es',
+        # kaa (Karakalpak) is not in Babel;
+        # kk (Kazakh) is the closest match for MediaWiki’s first fallback,
+        # kk-latn (Kazahn in Latin script – Babel’s kk being in Cyrillic);
+        # we should change this to kk_Latn or kaa as soon as Babel lets us!
+        'kaa': 'kk',
     }.get(code, code)
