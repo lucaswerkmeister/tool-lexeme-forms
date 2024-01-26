@@ -4614,6 +4614,9 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'label': 'ununombro, akuzativo',
                 'example': 'Mi ŝatas tiun [substantivon].',
                 'grammatical_features_item_ids': [accusative_case, singular],
+                'wikifunctions': {
+                    'Generu formojn!': 'Z12630',
+                },
             },
             {
                 'label': 'multenombro, nominativo',
@@ -4627,6 +4630,9 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'label': 'multenombro, akuzativo',
                 'example': 'Mi ŝatas tiujn [substantivojn].',
                 'grammatical_features_item_ids': [accusative_case, plural],
+                'wikifunctions': {
+                    'Generu formojn!': 'Z12895',
+                },
             },
         ],
     },
