@@ -7,7 +7,7 @@
 			"Sannita"
 		]
 	},
-	"create": "Crea il lessema!",
+	"create": "Crea",
 	"csrf-warning": "Ops, non è possibile salvare la pagina (errore: <abbr title=\"Cross-site request forgery\">CSRF</abbr> protection failed). Per favore, riprova.",
 	"duplicates-warning": "Attenzione, {{PLURAL:$1|il seguente lessema ha|i seguenti lessemi hanno}} lo stesso lemma e codice linguistico di quello che hai appena tentato di creare:",
 	"duplicates-instructions": "Se sei sicuro che {{PLURAL:$1|sia diverso|siano diversi}}, spunta la casella alla fine di questo modulo.",
