@@ -1956,7 +1956,10 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Da [dad] zo amañ.',
                 'grammatical_features_item_ids': [singular, soft_mutation],
                 'wikifunctions': {
-                    'kinnig furmoù': 'Z11619',
+                    '-où': 'Z11619',
+                    '-ioù': 'Z11619',
+                    '-ed': 'Z11619',
+                    '-ien': 'Z11619',
                 },
             },
             {
@@ -1964,7 +1967,10 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Ma [zad] zo amañ.',
                 'grammatical_features_item_ids': [singular, aspirate_mutation],
                 'wikifunctions': {
-                    'kinnig furmoù': 'Z11632',
+                    '-où': 'Z11632',
+                    '-ioù': 'Z11632',
+                    '-ed': 'Z11632',
+                    '-ien': 'Z11632',
                 },
             },
             {
@@ -1972,7 +1978,10 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Hon [tadoù] zo amañ.',
                 'grammatical_features_item_ids': [plural, no_mutation],
                 'wikifunctions': {
-                    'kinnig furmoù': 'Z11611',
+                    '-où': 'Z11611',
+                    '-ioù': 'Z11770',
+                    '-ed': 'Z11775',
+                    '-ien': 'Z11779',
                 },
             },
             {
@@ -1980,7 +1989,10 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Da [dadoù] zo amañ.',
                 'grammatical_features_item_ids': [plural, soft_mutation],
                 'wikifunctions': {
-                    'kinnig furmoù': 'Z11637',
+                    '-où': 'Z11637',
+                    '-ioù': ' Z11786',
+                    '-ed': 'Z12288',
+                    '-ien': 'Z12298',
                 },
             },
             {
@@ -1988,7 +2000,10 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Ma [zadoù] zo amañ.',
                 'grammatical_features_item_ids': [plural, aspirate_mutation],
                 'wikifunctions': {
-                    'kinnig furmoù': 'Z11663',
+                    '-où': 'Z11663',
+                    '-ioù': ' Z12284',
+                    '-ed': 'Z12295',
+                    '-ien': 'Z12305',
                 },
             },
         ],
