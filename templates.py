@@ -4668,16 +4668,25 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'label': 'ununombro, akuzativo',
                 'example': 'Mi ŝatas [esperantan] vorton.',
                 'grammatical_features_item_ids': [accusative_case, singular],
+                'wikifunctions': {
+                    'Generu formojn!': 'Z12630',
+                },
             },
             {
                 'label': 'multenombro, nominativo',
                 'example': 'Ĉi tiuj estas [esperantaj] vortoj.',
                 'grammatical_features_item_ids': [nominative_case, plural],
+                'wikifunctions': {
+                    'Generu formojn!': 'Z10482',
+                },
             },
             {
                 'label': 'multenombro, akuzativo',
                 'example': 'Mi ŝatas [esperantajn] vortojn.',
                 'grammatical_features_item_ids': [accusative_case, plural],
+                'wikifunctions': {
+                    'Generu formojn!': 'Z12895',
+                },
             },
         ],
     },
@@ -4700,29 +4709,44 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'example': 'Ili nun [dormas].',
                 'grammatical_features_item_ids': [indicative, present_tense],
                 'grammatical_features_item_ids_optional': set([indicative]),
+                'wikifunctions': {
+                    'Generu formojn!': 'Z12930',
+                },
             },
             {
                 'label': 'indikativo, preterito',
                 'example': 'Ili [dormis] hieraŭ.',
                 'grammatical_features_item_ids': [indicative, past_tense],
                 'grammatical_features_item_ids_optional': set([indicative]),
+                'wikifunctions': {
+                    'Generu formojn!': 'Z12932',
+                },
             },
             {
                 'label': 'indikativo, futuro',
                 'example': 'Ili [dormos] morgaŭ.',
                 'grammatical_features_item_ids': [indicative, future_tense],
                 'grammatical_features_item_ids_optional': set([indicative]),
+                'wikifunctions': {
+                    'Generu formojn!': 'Z12934',
+                },
             },
             {
                 'section_break': True,
                 'label': 'kondicionalo',
                 'example': 'Estus bone, se ili [dormus].',
                 'grammatical_features_item_ids': [conditional],
+                'wikifunctions': {
+                    'Generu formojn!': 'Z12936',
+                },
             },
             {
                 'label': 'volitivo',
                 'example': 'Ne [dormu]!',
                 'grammatical_features_item_ids': [volitive],
+                'wikifunctions': {
+                    'Generu formojn!': 'Z12938',
+                },
             },
         ],
     },
