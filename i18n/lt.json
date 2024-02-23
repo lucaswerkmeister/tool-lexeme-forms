@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Hugo.arg",
 			"Nokeoo"
 		]
 	},
@@ -17,5 +18,10 @@
 	"title-advanced": "$1 (išplėstinis)",
 	"title-edit": "$1 (redaguoti)",
 	"login-hint": "Turite [$1 prisijungti], kad galėtumėte atlikti keitimsu naudojant šį įrankį.",
-	"ambiguous-template": "Šablonas $1 nebeegzistuoja; jis buvo pakeistas šiais šablonais:"
+	"ambiguous-template": "Šablonas $1 nebeegzistuoja; jis buvo pakeistas šiais šablonais:",
+	"settings-label-interface-language-code": "Naudotojo sąsajos kalba",
+	"settings-save": "Išsaugoti",
+	"source-code": "Išeities kodas",
+	"login": "Prisijungti",
+	"settings-link": "Nustatymai"
 }

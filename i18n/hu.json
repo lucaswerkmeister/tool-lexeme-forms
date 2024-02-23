@@ -1,0 +1,38 @@
+{
+	"@metadata": {
+		"authors": [
+			"Dj",
+			"Hanna Tardos",
+			"Luckylukee81"
+		]
+	},
+	"create": "Létrehozás",
+	"duplicates-create": "Mindenképpen hozz létre egy új lexémát.",
+	"no-duplicate": "Ez nem egy létező lexéma másolata.",
+	"form-optional": "&#32; (választható)",
+	"advanced": "Haladó, pl. fejlett",
+	"advanced-general": "\"Haladó\" módban vagy.",
+	"lexeme-id": "Lexéma ID",
+	"bulk-link": "tömeges mód",
+	"bulk-format-help": "formázási segítség",
+	"bulk-not-allowed": "{{GENDER:$1|Te}} nem használhatod a tömeges módot. Sajnálom.",
+	"edit-link": "szerkesztés",
+	"title-create": "$1 (létrehozás)",
+	"title-advanced": "$1 (haladó)",
+	"title-bulk": "$1 (tömeges)",
+	"title-edit": "$1 (szerkesztés)",
+	"login-hint": "Az eszközzel történő módosításokhoz [$1 bejelentkezés] szükséges.",
+	"ambiguous-template": "A $1 sablon már nem létezik; helyébe a következő sablonok kerültek:",
+	"settings-label-interface-language-code": "Felhasználói felület nyelve",
+	"settings-save": "Mentés",
+	"tool-name": "Wikidata Lexéma űrlapok",
+	"skip-to-main-content": "Ugrás a fő tartalomhoz",
+	"documentation": "Dokumentáció",
+	"toolforge": "Wikimedia Toolforge",
+	"source-code": "Forráskód",
+	"login": "Bejelentkezés",
+	"settings-link": "Beállítások",
+	"settings-heading": "Beállítások",
+	"logged-in": "{{GENDER:$2|Bejelentkezve}} $1 néven.",
+	"requires-javascript": "Ehhez a funkcióhoz JavaScript szükséges."
+}
