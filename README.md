@@ -17,7 +17,7 @@ To update the tool, assuming there were no changes in the Python environment:
 git fetch
 git log -p @..@{u} # inspect changes
 git rebase
-kubectl rollout restart deployment lexeme-forms
+webservice restart
 ```
 
 If there were new changes in the Python environment (e.g. new dependencies),
@@ -26,15 +26,6 @@ add the following steps after the `git rebase`:
 webservice shell
 source ~/www/python/venv/bin/activate
 pip-sync ~/www/python/src/requirements.txt
-```
-
-If you’re fully restarting the webservice,
-also update the Kubernetes deployment created by the `webservice` command afterwards:
-```
-webservice stop
-# do whatever you need to do (new Python version -> new venv?)
-webservice start
-kubectl patch deployment lexeme-forms -p "$(<~/www/python/src/patch-add-startup-probe.yml)"
 ```
 
 ## Local development setup
