@@ -95,4 +95,7 @@ def lang_int2babel(code: str) -> str:
         # kk-latn (Kazahn in Latin script – Babel’s kk being in Cyrillic);
         # we should change this to kk_Latn or kaa as soon as Babel lets us!
         'kaa': 'kk',
+        # ht (Haitian Creole) is Babel;
+        # fr (French) the MediaWiki fallback
+        'ht': 'fr',
     }.get(code, code)
