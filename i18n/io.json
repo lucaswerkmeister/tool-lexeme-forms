@@ -13,7 +13,7 @@
 	"form-optional": "&#32;(fakultativa)",
 	"advanced": "Plura utensili",
 	"advanced-general": "Vu esas en \"modo avancata\".",
-	"advanced-lexeme-id": "You can enter a lexeme ID to add forms to an existing lexeme instead of creating a new one. Leave any forms that already exist on the lexeme blank, otherwise they will be duplicated!",
+	"advanced-lexeme-id": "Vu povas informar ID DI lexemo* por adjuntar formularii ad existanta lexemo*, vice krear nova. Ne kompletigez irga formularii existanta en la lexemo*, o la formularii duopligesos!",
 	"advanced-partial-forms": "You can leave some forms blank so that they will not be added. Make sure you’re not accidentally leaving out any forms!",
 	"lexeme-id": "Lexemal idendifikilo (ID)",
 	"advanced-partial-forms-hint": "Por krear lexemi mankanta kelka formularii, komutez a la modo avancata.",
