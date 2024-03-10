@@ -53,6 +53,7 @@ translative_case = 'Q950170'
 # 7 digits
 non_finite_verb = 'Q1050494'
 voseo = 'Q1070730'
+broken_plural = 'Q1098772'
 passive = 'Q1194697'
 past_participle_in_English = 'Q1230649'
 oblique_case = 'Q1233197'

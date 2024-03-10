@@ -279,6 +279,10 @@ language_Manbhumi: Language = {
     'language_item_id': Manbhumi,
     'language_code': 'bn-x-Q6747180',
 }
+language_Maltese: Language = {
+    'language_item_id': Maltese,
+    'language_code': 'mt',
+}
 
 
 _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
@@ -11179,6 +11183,230 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
             {
                 'label': 'നാമവിശേഷണം',
                 'example': 'ഒരു [വലിയ] മൃഗം',
+                'grammatical_features_item_ids': [],
+            },
+        ],
+    },
+
+    'maltese-noun-masculine': {
+        '@attribution': {'users': ['Mtanti', 'Nikki'], 'title': 'Wikidata:Wikidata Lexeme Forms/Maltese'},
+        'label': 'nom maskil bil-Malti',
+        'language': language_Maltese,
+        'lexical_category_item_id': noun,
+        'forms': [
+            {
+                'label': 'singular',
+                'example': 'Dan huwa [tapit].',
+                'grammatical_features_item_ids': [singular],
+            },
+            {
+                'label': 'plural',
+                'example': 'Dawn huma [tapiti].',
+                'grammatical_features_item_ids': [plural],
+            },
+            {
+                'label': 'plural miksur',
+                'example': 'Dawn huma [twapet].',
+                'grammatical_features_item_ids': [plural, broken_plural],
+            },
+            {
+                'label': 'singular diminutive',
+                'example': 'Daqxejn ta\' [mnejħer] żgħir.',
+                'grammatical_features_item_ids': [singular, diminutive],
+                'optional': True,
+            },
+            {
+                'label': 'plural diminutive',
+                'example': 'Daqxejn ta\' [mnejħriet] żgħar.',
+                'grammatical_features_item_ids': [plural, diminutive],
+                'optional': True,
+            },
+        ],
+        'statements': statements(grammatical_gender, masculine),
+    },
+
+    'maltese-noun-feminine': {
+        '@attribution': {'users': ['Mtanti', 'Nikki'], 'title': 'Wikidata:Wikidata Lexeme Forms/Maltese'},
+        'label': 'nom feminil bil-Malti',
+        'language': language_Maltese,
+        'lexical_category_item_id': noun,
+        'forms': [
+            {
+                'label': 'singular',
+                'example': 'Din hija [tazza].',
+                'grammatical_features_item_ids': [singular],
+            },
+            {
+                'label': 'plural sħiħ',
+                'example': 'Dawn huma [tazzi].',
+                'grammatical_features_item_ids': [plural],
+            },
+            {
+                'label': 'plural miksur',
+                'example': 'Dawn huma [tazzez].',
+                'grammatical_features_item_ids': [plural, broken_plural],
+            },
+            {
+                'label': 'singular diminutive',
+                'example': 'Daqxejn ta\' [wejda] żgħira.',
+                'grammatical_features_item_ids': [singular, diminutive],
+                'optional': True,
+            },
+            {
+                'label': 'plural diminutive',
+                'example': 'Daqxejn ta\' [wejdiet] żgħar.',
+                'grammatical_features_item_ids': [plural, diminutive],
+                'optional': True,
+            },
+        ],
+        'statements': statements(grammatical_gender, feminine),
+    },
+
+    'maltese-adjective': {
+        '@attribution': {'users': ['Mtanti', 'Nikki'], 'title': 'Wikidata:Wikidata Lexeme Forms/Maltese'},
+        'label': 'aġġettiv bil-Malti',
+        'language': language_Maltese,
+        'lexical_category_item_id': adjective,
+        'forms': [
+            {
+                'label': 'maskil singular',
+                'example': 'Dan huwa kelb [kbir].',
+                'grammatical_features_item_ids': [masculine, singular],
+            },
+            {
+                'label': 'feminil singular',
+                'example': 'Din hija kelba [kbira].',
+                'grammatical_features_item_ids': [feminine, singular],
+            },
+            {
+                'label': 'plural',
+                'example': 'Dawn huma klieb [kbar].',
+                'grammatical_features_item_ids': [plural],
+            },
+            {
+                'label': 'kumparativ',
+                'example': 'Dan il-kleb huwa [ikbar].',
+                'grammatical_features_item_ids': [comparative],
+            },
+        ],
+    },
+
+    'maltese-adverb': {
+        '@attribution': {'users': ['Mtanti', 'Nikki'], 'title': 'Wikidata:Wikidata Lexeme Forms/Maltese'},
+        'label': 'avverb bil-Malti',
+        'language': language_Maltese,
+        'lexical_category_item_id': adverb,
+        'forms': [
+            {
+                'label': 'lemma',
+                'example': 'Dan il-kelb jiġri [ħafna].',
+                'grammatical_features_item_ids': [],
+            },
+        ],
+    },
+
+    'maltese-verb': {
+        '@attribution': {'users': ['Mtanti', 'Nikki'], 'title': 'Wikidata:Wikidata Lexeme Forms/Maltese'},
+        'label': 'verb bil-Malti',
+        'language': language_Maltese,
+        'lexical_category_item_id': verb,
+        'two_column_sections': True,
+        'forms': [
+            {
+                'label': 'l-ewwel persuna singular perfett',
+                'example': 'Il-bieraħ jiena [ħdimt].',
+                'grammatical_features_item_ids': [first_person, singular, perfective],
+            },
+            {
+                'label': 'it-tieni persuna singular perfect',
+                'example': 'Il-bieraħ inti [ħdimt].',
+                'grammatical_features_item_ids': [second_person, singular, perfective],
+            },
+            {
+                'lemma': True,
+                'label': 'it-tielet persuna singular maskil perfett',
+                'example': 'Il-bieraħ huwa [ħadem].',
+                'grammatical_features_item_ids': [third_person, singular, perfective, masculine],
+            },
+            {
+                'label': 'it-tielet persuna singular feminil perfett',
+                'example': 'Il-bieraħ hija [ħadmet].',
+                'grammatical_features_item_ids': [third_person, singular, perfective, feminine],
+            },
+            {
+                'label': 'l-ewwel persuna plural perfett',
+                'example': 'Il-bieraħ aħna [ħdimna].',
+                'grammatical_features_item_ids': [first_person, plural, perfective],
+            },
+            {
+                'label': 'it-tieni persuna plural perfett',
+                'example': 'Il-bieraħ intom [ħdimtu].',
+                'grammatical_features_item_ids': [second_person, plural, perfective],
+            },
+            {
+                'label': 'it-tielet persuna plural perfett',
+                'example': 'Il-bieraħ huma [ħadmu].',
+                'grammatical_features_item_ids': [third_person, plural, perfective],
+            },
+            {
+                'section_break': True,
+                'label': 'l-ewwel persuna singular imperfett',
+                'example': 'Bħalissa jiena qed [naħdem].',
+                'grammatical_features_item_ids': [first_person, singular, imperfective],
+            },
+            {
+                'label': 'it-tieni persuna singular imperfett',
+                'example': 'Bħalissa inti qed [taħdem].',
+                'grammatical_features_item_ids': [second_person, singular, imperfective],
+            },
+            {
+                'label': 'it-tielet persuna singular maskil imperfett',
+                'example': 'Bħalissa huwa qed [jaħdem].',
+                'grammatical_features_item_ids': [third_person, singular, imperfective, masculine],
+            },
+            {
+                'label': 'it-tielet persuna singular feminil imperfett',
+                'example': 'Bħalissa hija qed [taħdem].',
+                'grammatical_features_item_ids': [third_person, singular, imperfective, feminine],
+            },
+            {
+                'label': 'l-ewwel persuna plural imperfett',
+                'example': 'Bħalissa aħna qed [naħdmu].',
+                'grammatical_features_item_ids': [first_person, plural, imperfective],
+            },
+            {
+                'label': 'it-tieni persuna plural imperfett',
+                'example': 'Bħalissa intom qed [taħdmu].',
+                'grammatical_features_item_ids': [second_person, plural, imperfective],
+            },
+            {
+                'label': 'it-tielet persuna plural imperfett',
+                'example': 'Bħalissa huma qed [jaħdmu].',
+                'grammatical_features_item_ids': [third_person, plural, imperfective],
+            },
+            {
+                'section_break': True,
+                'label': 'singular imperattiv',
+                'example': 'Inti [aħdem]!',
+                'grammatical_features_item_ids': [second_person, singular, imperative],
+            },
+            {
+                'label': 'plural imperattiv',
+                'example': 'Intom [aħdmu]!',
+                'grammatical_features_item_ids': [second_person, plural, imperative],
+            },
+        ],
+    },
+
+    'maltese-root': {
+        '@attribution': {'users': ['Mtanti', 'Nikki'], 'title': 'Wikidata:Wikidata Lexeme Forms/Maltese'},
+        'label': 'għerq bil-Malti',
+        'language': language_Maltese,
+        'lexical_category_item_id': root,
+        'forms': [
+            {
+                'label': 'lemma',
+                'example': 'ktieb → [k-t-b]',
                 'grammatical_features_item_ids': [],
             },
         ],

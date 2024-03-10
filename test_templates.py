@@ -225,6 +225,7 @@ def test_translations_available():
 
     # lack of translations accepted for now
     missing_language_codes.remove('an')
+    missing_language_codes.remove('mt')
 
     # special case
     if 'zh' in missing_language_codes:
