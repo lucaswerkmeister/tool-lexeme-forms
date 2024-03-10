@@ -29,6 +29,7 @@
 	"title-advanced": "$1 (kehittynyt)",
 	"title-edit": "$1 (muokkaa)",
 	"login-hint": "Sinun on [$1 kirjauduttava sisään] ennen kuin voit tehdä muutoksia käyttämällä tätä työkalua.",
+	"settings-label-interface-language-code": "Käyttöliittymän kieli",
 	"settings-save": "Tallenna",
 	"skip-to-main-content": "Siirry pääsisältöön",
 	"documentation": "Dokumentaatio",
