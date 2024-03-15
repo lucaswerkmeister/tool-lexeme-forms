@@ -3946,6 +3946,30 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
         ],
     },
 
+    'danish-adverb': {
+        '@attribution': {'users': ['Fnielsen'], 'title': 'Wikidata:Wikidata Lexeme Forms/Danish'},
+        'label': 'dansk biord',
+        'language': language_Danish,
+        'lexical_category_item_id': adverb,
+        'forms': [
+            {
+                'label': '1. grad',
+                'example': 'Han løber [hurtigt]',
+                'grammatical_features_item_ids': [positive],
+            },
+            {
+                'label': '2. grad',
+                'example': 'Han løber [hurtigere] end sin bror',
+                'grammatical_features_item_ids': [comparative],
+            },
+            {
+                'label': '3. grad',
+                'example': 'Han løber [hurtigst] af alle på holdet',
+                'grammatical_features_item_ids': [superlative],
+            },
+        ],
+    },
+
     'danish-noun-proper': {
         '@attribution': {'users': ['Fnielsen'], 'title': 'Wikidata:Wikidata Lexeme Forms/Danish'},
         'label': 'dansk egennavn',
