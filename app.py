@@ -29,7 +29,7 @@ from matching import match_template_to_lexeme_data, match_lexeme_forms_to_templa
 from mwapi_utils import T272319RetryingSession
 from parse_tpsv import parse_lexemes, FirstFieldNotLexemeIdError, FirstFieldLexemeIdError, WrongNumberOfFieldsError
 from templates import templates, templates_without_redirects, Template, TemplateForm
-from translations import translations
+from toolforge_i18n.translations import translations
 from wikibase_types import Lexeme, LexemeForm, LexemeLemmas, Statements, Term
 
 app = OrderedFlask(__name__)

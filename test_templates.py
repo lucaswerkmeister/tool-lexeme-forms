@@ -4,7 +4,7 @@ import pytest
 import app
 from language import lang_lex2int
 import templates
-import translations
+import toolforge_i18n.translations as translations
 from wikibase_types import Statements
 
 

@@ -6,7 +6,7 @@ import re
 import formatters
 from language import lang_int2babel
 from language_info import autonym
-import translations
+import toolforge_i18n.translations as translations
 
 
 @pytest.fixture(scope="module", params=translations.translations.keys())

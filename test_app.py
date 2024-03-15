@@ -4,7 +4,7 @@ from html.parser import HTMLParser
 import json
 import pytest
 import re
-from translations import translations
+from toolforge_i18n.translations import translations
 import werkzeug
 
 import app as lexeme_forms
