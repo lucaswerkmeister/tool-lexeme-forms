@@ -4,7 +4,6 @@ from html.parser import HTMLParser
 import json
 import pytest
 import re
-from toolforge_i18n.translations import translations
 import werkzeug
 
 import app as lexeme_forms
@@ -96,7 +95,7 @@ def test_template_group_test():
         group = lexeme_forms.template_group({'language_code': 'de', 'test': True})
     assert group == '<span lang="de" dir="ltr">Deutsch (<span lang=zxx>de</span>)</span>, test.wikidata.org'
 
-@pytest.mark.parametrize('language_code', translations.keys())
+@pytest.mark.parametrize('language_code', lexeme_forms.translations.keys())
 @pytest.mark.parametrize('number', range(-1, 5))
 def test_message_with_kwargs(language_code, number):
     with lexeme_forms.app.test_request_context():

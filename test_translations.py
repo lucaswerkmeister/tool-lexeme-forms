@@ -3,18 +3,19 @@ import builtins
 import pytest
 import re
 
+from app import translations
 from language import lang_int2babel
 from language_info import autonym
 import toolforge_i18n.formatters as formatters
-import toolforge_i18n.translations as translations
+from toolforge_i18n.translations import variables
 
 
-@pytest.fixture(scope="module", params=translations.translations.keys())
+@pytest.fixture(scope="module", params=translations.keys())
 def language_code(request):
     return request.param
 
 
-@pytest.fixture(scope="module", params=translations.translations['en'].keys())
+@pytest.fixture(scope="module", params=translations['en'].keys())
 def message_key(request):
     return request.param
 
@@ -54,7 +55,7 @@ allowed_global_attributes: set[str] = {
 def test_english_messages_exist():
     """English is hard-coded as the final language fallback,
     so English messages must exist."""
-    assert 'en' in translations.translations
+    assert 'en' in translations
 
 
 def test_language_code_leq_20(language_code: str):
@@ -64,8 +65,8 @@ def test_language_code_leq_20(language_code: str):
 
 
 def test_message_keys(language_code: str):
-    language_keys = set(translations.translations[language_code].keys())
-    english_keys = set(translations.translations['en'].keys())
+    language_keys = set(translations[language_code].keys())
+    english_keys = set(translations['en'].keys())
     extra_keys = language_keys.difference(english_keys)
     assert not extra_keys
 
@@ -78,7 +79,7 @@ def test_autonym_exists(language_code: str) -> None:
 
 @pytest.mark.filterwarnings('ignore::bs4.MarkupResemblesLocatorWarning')
 def test_message_html_elements(language_code: str, message_key: str):
-    message = translations.translations[language_code].get(message_key)
+    message = translations[language_code].get(message_key)
     if message is None:
         return
     soup = BeautifulSoup(message, features='html.parser')
@@ -95,10 +96,10 @@ def test_message_variables(language_code: str, message_key: str):
 
     See the comment above variables in translations.py
     for the meaning of the different variable names / prefixes."""
-    message = translations.translations[language_code].get(message_key)
+    message = translations[language_code].get(message_key)
     if message is None:
         return
-    for variable in translations.variables.get(message_key, []):
+    for variable in variables.get(message_key, []):
         if variable == 'url':
             assert '{' + variable + '!h:' in message
             assert '{' + variable + '!g:' not in message
@@ -132,8 +133,8 @@ def test_message_variables(language_code: str, message_key: str):
 
 
 def test_message_syntax_valid_duplicates_warning(language_code: str, number: int):
-    if 'duplicates-warning' in translations.translations[language_code]:
-        message = translations.translations[language_code]['duplicates-warning']
+    if 'duplicates-warning' in translations[language_code]:
+        message = translations[language_code]['duplicates-warning']
         formatters.I18nFormatter(
             locale_identifier=lang_int2babel(language_code),
             get_gender=unused,
@@ -144,8 +145,8 @@ def test_message_syntax_valid_duplicates_warning(language_code: str, number: int
 
 
 def test_message_syntax_valid_duplicates_instructions(language_code: str, number: int):
-    if 'duplicates-instructions' in translations.translations[language_code]:
-        message = translations.translations[language_code]['duplicates-instructions']
+    if 'duplicates-instructions' in translations[language_code]:
+        message = translations[language_code]['duplicates-instructions']
         formatters.I18nFormatter(
             locale_identifier=lang_int2babel(language_code),
             get_gender=unused,
@@ -156,8 +157,8 @@ def test_message_syntax_valid_duplicates_instructions(language_code: str, number
 
 
 def test_message_syntax_valid_description_with_forms_and_senses(language_code: str, number: int):
-    if 'description-with-forms-and-senses' in translations.translations[language_code]:
-        message = translations.translations[language_code]['description-with-forms-and-senses']
+    if 'description-with-forms-and-senses' in translations[language_code]:
+        message = translations[language_code]['description-with-forms-and-senses']
         formatters.I18nFormatter(
             locale_identifier=lang_int2babel(language_code),
             get_gender=unused,
@@ -170,8 +171,8 @@ def test_message_syntax_valid_description_with_forms_and_senses(language_code: s
 
 
 def test_message_syntax_valid_edit_ambiguous_warning(language_code: str, number: int):
-    if 'edit-ambiguous-warning' in translations.translations[language_code]:
-        message = translations.translations[language_code]['edit-ambiguous-warning']
+    if 'edit-ambiguous-warning' in translations[language_code]:
+        message = translations[language_code]['edit-ambiguous-warning']
         formatters.I18nFormatter(
             locale_identifier=lang_int2babel(language_code),
             get_gender=unused,
@@ -182,8 +183,8 @@ def test_message_syntax_valid_edit_ambiguous_warning(language_code: str, number:
 
 
 def test_message_syntax_valid_edit_unmatched_warning(language_code: str, number: int):
-    if 'edit-unmatched-warning' in translations.translations[language_code]:
-        message = translations.translations[language_code]['edit-unmatched-warning']
+    if 'edit-unmatched-warning' in translations[language_code]:
+        message = translations[language_code]['edit-unmatched-warning']
         formatters.I18nFormatter(
             locale_identifier=lang_int2babel(language_code),
             get_gender=unused,
@@ -194,8 +195,8 @@ def test_message_syntax_valid_edit_unmatched_warning(language_code: str, number:
 
 
 def test_message_syntax_valid_edit_form_list_item(language_code: str, list: builtins.list[str], number: int):
-    if 'edit-form-list-item' in translations.translations[language_code]:
-        message = translations.translations[language_code]['edit-form-list-item']
+    if 'edit-form-list-item' in translations[language_code]:
+        message = translations[language_code]['edit-form-list-item']
         formatters.I18nFormatter(
             locale_identifier=lang_int2babel(language_code),
             get_gender=unused,
@@ -208,8 +209,8 @@ def test_message_syntax_valid_edit_form_list_item(language_code: str, list: buil
 
 
 def test_message_syntax_valid_bulk_not_allowed(language_code: str, gender: str):
-    if 'bulk-not-allowed' in translations.translations[language_code]:
-        message = translations.translations[language_code]['bulk-not-allowed']
+    if 'bulk-not-allowed' in translations[language_code]:
+        message = translations[language_code]['bulk-not-allowed']
         formatters.I18nFormatter(
             locale_identifier=lang_int2babel(language_code),
             get_gender=lambda value: gender,
@@ -220,8 +221,8 @@ def test_message_syntax_valid_bulk_not_allowed(language_code: str, gender: str):
 
 
 def test_message_syntax_valid_login_hint(language_code: str):
-    if 'login-hint' in translations.translations[language_code]:
-        message = translations.translations[language_code]['login-hint']
+    if 'login-hint' in translations[language_code]:
+        message = translations[language_code]['login-hint']
         formatted = formatters.I18nFormatter(
             locale_identifier=lang_int2babel(language_code),
             get_gender=unused,
@@ -239,10 +240,10 @@ def test_link_not_in_gender_logged_in(language_code: str, gender: str):
     If it does, i.e. {{GENDER:$2|...$1...}} in wikitext or {user_name!g:m=...{user_link}...} in Python,
     then the colon in http:// or https:// in the link will be misinterpreted as a m:f:n separator,
     resulting in the rest of the link (including the closing tag!) being discarded."""
-    if 'logged-in' in translations.translations[language_code]:
+    if 'logged-in' in translations[language_code]:
         user_name = 'some user'
         user_link = f'<a href="https://example.com/">{user_name}</a>'
-        message = translations.translations[language_code]['logged-in']
+        message = translations[language_code]['logged-in']
         formatted = formatters.I18nFormatter(
             locale_identifier=lang_int2babel(language_code),
             get_gender=lambda value: gender,

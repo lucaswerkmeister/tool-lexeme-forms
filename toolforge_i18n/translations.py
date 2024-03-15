@@ -113,25 +113,28 @@ skipped_language_codes = {
 }
 
 
-translations: dict[str, dict[str, str]] = {}
-for entry in os.scandir('i18n/'):
-    if not entry.is_file():
-        continue
-    match = re.match(r'(.*)\.json$', entry.name)
-    if not match:
-        continue
-    language = match[1]
-    if language in skipped_language_codes:
-        continue
-    with open(entry.path, 'r') as f:
-        data = json.load(f)
-    translations[language] = {}
-    for key in data:
-        if key.startswith('@'):
+def load_translations(
+) -> dict[str, dict[str, str]]:
+    translations: dict[str, dict[str, str]] = {}
+    for entry in os.scandir('i18n/'):
+        if not entry.is_file():
             continue
-        msg = mw2py(data[key], language, variables.get(key, []))
-        translations[language][key] = msg
-    for key in derived_messages:
-        source_key, transformation = derived_messages[key]
-        if source_key in translations[language]:
-            translations[language][key] = transformation(translations[language][source_key])
+        match = re.match(r'(.*)\.json$', entry.name)
+        if not match:
+            continue
+        language = match[1]
+        if language in skipped_language_codes:
+            continue
+        with open(entry.path, 'r') as f:
+            data = json.load(f)
+        translations[language] = {}
+        for key in data:
+            if key.startswith('@'):
+                continue
+            msg = mw2py(data[key], language, variables.get(key, []))
+            translations[language][key] = msg
+        for key in derived_messages:
+            source_key, transformation = derived_messages[key]
+            if source_key in translations[language]:
+                translations[language][key] = transformation(translations[language][source_key])
+    return translations
