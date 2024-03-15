@@ -3,9 +3,9 @@ import builtins
 import pytest
 import re
 
-import formatters
 from language import lang_int2babel
 from language_info import autonym
+import toolforge_i18n.formatters as formatters
 import toolforge_i18n.translations as translations
 
 
