@@ -7,7 +7,7 @@ from app import translations
 from language import lang_int2babel
 from language_info import autonym
 import toolforge_i18n.formatters as formatters
-from toolforge_i18n.translations import variables
+import tool_translations_config
 
 
 @pytest.fixture(scope="module", params=translations.keys())
@@ -94,12 +94,12 @@ def test_message_html_elements(language_code: str, message_key: str):
 def test_message_variables(language_code: str, message_key: str):
     """Test that the translation uses variables correctly.
 
-    See the comment above variables in translations.py
+    See the TranslationConfig.variables docstring
     for the meaning of the different variable names / prefixes."""
     message = translations[language_code].get(message_key)
     if message is None:
         return
-    for variable in variables.get(message_key, []):
+    for variable in tool_translations_config.config.variables.get(message_key, []):
         if variable == 'url':
             assert '{' + variable + '!h:' in message
             assert '{' + variable + '!g:' not in message

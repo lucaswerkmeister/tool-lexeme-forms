@@ -28,6 +28,7 @@ from matching import match_template_to_lexeme_data, match_lexeme_forms_to_templa
 from mwapi_utils import T272319RetryingSession
 from parse_tpsv import parse_lexemes, FirstFieldNotLexemeIdError, FirstFieldLexemeIdError, WrongNumberOfFieldsError
 from templates import templates, templates_without_redirects, Template, TemplateForm
+import tool_translations_config
 from toolforge_i18n.formatters import I18nFormatter
 from toolforge_i18n.translations import load_translations
 from wikibase_types import Lexeme, LexemeForm, LexemeLemmas, Statements, Term
@@ -65,7 +66,7 @@ else:
     print('config.yaml file not found, assuming local development setup')
     app.secret_key = 'fake'
 
-translations = load_translations()
+translations = load_translations(tool_translations_config.config)
 
 class BoundTemplate(MatchedTemplate):
     lexeme_id: str
