@@ -1,3 +1,4 @@
+from bs4 import BeautifulSoup
 import builtins
 import pytest
 import re
@@ -37,10 +38,16 @@ def unused(*args, **kwargs):
     raise RuntimeError('This function should not be called!')
 
 
-allowed_html_element_names = {
-    'abbr',
-    'kbd',
-    'q',
+# maps allowed element names to allowed attributes
+allowed_html_elements: dict[str, set[str]] = {
+    'abbr': {'title'},
+    'kbd': set(),
+    'q': set(),
+}
+# lists allowed attributes on any element
+allowed_global_attributes: set[str] = {
+    'dir',
+    'lang',
 }
 
 
@@ -69,14 +76,18 @@ def test_autonym_exists(language_code: str) -> None:
     assert autonym(language_code)
 
 
+@pytest.mark.filterwarnings('ignore::bs4.MarkupResemblesLocatorWarning')
 def test_message_html_elements(language_code: str, message_key: str):
     message = translations.translations[language_code].get(message_key)
     if message is None:
         return
-    html_element_names = {tag_name.lower()
-                          for tag_name in re.findall('</?([0-9A-Za-z]*)', message)}
-    html_element_names.difference_update(allowed_html_element_names)
-    assert not html_element_names
+    soup = BeautifulSoup(message, features='html.parser')
+    for element in soup.find_all():
+        assert element.name in allowed_html_elements
+        allowed_attributes = (allowed_html_elements[element.name] |
+                              allowed_global_attributes)
+        for attr in element.attrs:
+            assert attr in allowed_attributes
 
 
 def test_message_variables(language_code: str, message_key: str):

@@ -4,6 +4,8 @@
 #
 #    pip-compile dev-requirements.in
 #
+beautifulsoup4==4.12.3
+    # via -r dev-requirements.in
 flake8==6.1.0
     # via -r dev-requirements.in
 iniconfig==2.0.0
@@ -24,10 +26,16 @@ pyflakes==3.1.0
     # via flake8
 pytest==7.4.3
     # via -r dev-requirements.in
+soupsieve==2.5
+    # via beautifulsoup4
 types-babel==2.11.0.15
+    # via -r dev-requirements.in
+types-beautifulsoup4==4.12.0.20240229
     # via -r dev-requirements.in
 types-decorator==5.1.8.4
     # via -r dev-requirements.in
+types-html5lib==1.1.11.20240228
+    # via types-beautifulsoup4
 types-pytz==2023.3.1.1
     # via types-babel
 types-pyyaml==6.0.12.12
