@@ -5,10 +5,13 @@ import pytest
 import re
 from typing import Any
 
-from app import translations
 from language_info import autonym
 import toolforge_i18n.formatters as formatters
+from toolforge_i18n.translations import load_translations
 import tool_translations_config
+
+
+translations = load_translations(tool_translations_config.config)
 
 
 @pytest.fixture(scope="module", params=translations.keys())
