@@ -28,19 +28,6 @@ def unused(*args, **kwargs):
     raise RuntimeError('This function should not be called!')
 
 
-# maps allowed element names to allowed attributes
-allowed_html_elements: dict[str, set[str]] = {
-    'abbr': {'title'},
-    'kbd': set(),
-    'q': set(),
-}
-# lists allowed attributes on any element
-allowed_global_attributes: set[str] = {
-    'dir',
-    'lang',
-}
-
-
 def test_english_messages_exist():
     """English is hard-coded as the final language fallback,
     so English messages must exist."""
@@ -73,9 +60,9 @@ def test_message_html_elements(language_code: str, message_key: str):
         return
     soup = BeautifulSoup(message, features='html.parser')
     for element in soup.find_all():
-        assert element.name in allowed_html_elements
-        allowed_attributes = (allowed_html_elements[element.name] |
-                              allowed_global_attributes)
+        assert element.name in tool_translations_config.config.allowed_html_elements
+        allowed_attributes = (tool_translations_config.config.allowed_html_elements[element.name] |
+                              tool_translations_config.config.allowed_global_attributes)
         for attr in element.attrs:
             assert attr in allowed_attributes
 

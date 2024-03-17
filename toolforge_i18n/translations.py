@@ -51,6 +51,34 @@ class TranslationsConfig:
     skipped_language_codes: Container[str] = field(default_factory=lambda: {'qqq'})
     """Language codes for which translations should not be loaded."""
 
+    allowed_html_elements: dict[str, set[str]] = field(default_factory=lambda: {
+        'abbr': {'title'},
+        'kbd': set(),
+        'q': set(),
+    })
+    """HTML elements that should be allowed in messages.
+
+    The key is an element name,
+    and the value is a set of attributes that are allowed on that element.
+    All other elements and attributes will cause a test failure.
+    (See also allowed_global_attributes below.)
+
+    Note that this is only checked when running the tests,
+    not when loading the translations.
+    You *must* run the tests to ensure that malicious translations are not used.
+    """
+
+    allowed_global_attributes: set[str] = field(default_factory=lambda: {
+        'dir',
+        'lang',
+    })
+    """HTML attributes that should be allowed on any element in messages.
+
+    This is similar to allowed_html_elements above,
+    but the given attribute names are allowed regardless of element name.
+    Again, this is only checked when the tests are run.
+    """
+
 
 def mw2py(mw: str, babel_language: str, variables: Sequence[str]) -> str:
     locale = babel.Locale(babel_language)
