@@ -12,7 +12,7 @@
 {%- endmacro %}
 {% macro lexeme_form_list_item(wiki, lexeme_id, form, link_classes=[]) %}
   <li>
-    {{ message_with_kwargs( 'edit-form-list-item',
+    {{ message( 'edit-form-list-item',
                             form_link=lexeme_form_link(wiki, lexeme_id, form, classes=link_classes),
                             list_grammatical_feature_labels=form.grammaticalFeatures_labels | map('term_span') if form.grammaticalFeatures_labels else [message( 'no-grammatical-features' )],
                             num_statements=form.get('claims', {}) | length ) | safe }}
@@ -20,7 +20,7 @@
 {% endmacro %}
 {% block title %}
 {{ lemmas | lemmas_spans | striptags }} ({{ template.lexeme_id }}) –
-{{ message_with_kwargs( 'title-edit', template_label=template.label ) | striptags }} –
+{{ message( 'title-edit', template_label=template.label ) | striptags }} –
 {{ super() }}
 {% endblock title %}
 {% block head %}
@@ -47,7 +47,7 @@
   </h2>
   {% if readonly %}
   <div class="alert alert-warning">
-    {{ message_with_kwargs( 'login-hint', url=url_for( 'login' ) ) }}
+    {{ message( 'login-hint', url=url_for( 'login' ) ) }}
   </div>
   {% endif %}
   {% if not lexeme_matches_template %}
@@ -65,7 +65,7 @@
   {% endif %}
   {% if template.ambiguous_lexeme_forms %}
   <div class="alert alert-warning">
-    {{ message_with_kwargs( 'edit-ambiguous-warning', num_forms=template.ambiguous_lexeme_forms | length ) }}
+    {{ message( 'edit-ambiguous-warning', num_forms=template.ambiguous_lexeme_forms | length ) }}
     <ul>
       {% for lexeme_form in template.ambiguous_lexeme_forms %}
       {{ lexeme_form_list_item('test' if template.test else 'www', template.lexeme_id, lexeme_form, link_classes=['grabbable']) }}
@@ -75,7 +75,7 @@
   {% endif %}
   {% if template.unmatched_lexeme_forms %}
   <div class="alert alert-warning">
-    {{ message_with_kwargs( 'edit-unmatched-warning', num_forms=template.unmatched_lexeme_forms | length ) }}
+    {{ message( 'edit-unmatched-warning', num_forms=template.unmatched_lexeme_forms | length ) }}
     <ul>
       {% for lexeme_form in template.unmatched_lexeme_forms %}
       {{ lexeme_form_list_item('test' if template.test else 'www', template.lexeme_id, lexeme_form, link_classes=['grabbable']) }}
@@ -107,6 +107,6 @@
     {% if template.target_hash %}
     <input name="target_hash" type="hidden" value="{{ template.target_hash }}">
     {% endif %}
-    <button class="btn btn-primary"{% if readonly %} disabled title="{{ message_with_kwargs( 'login-hint', url=url_for( 'login' ) ) | striptags }}" {% endif %}>{{ message( 'edit-button' ) }}</button>
+    <button class="btn btn-primary"{% if readonly %} disabled title="{{ message( 'login-hint', url=url_for( 'login' ) ) | striptags }}" {% endif %}>{{ message( 'edit-button' ) }}</button>
   </form>
 {% endblock main %}

@@ -97,11 +97,11 @@ def test_template_group_test():
 
 @pytest.mark.parametrize('language_code', lexeme_forms.translations.keys())
 @pytest.mark.parametrize('number', range(-1, 5))
-def test_message_with_kwargs(language_code, number):
+def test_message(language_code, number):
     with lexeme_forms.app.test_request_context():
         flask.g.interface_language_code = language_code
         flask.g.html_language_codes = [lang_int2html(language_code)]
-        message = lexeme_forms.message_with_kwargs(  # noqa: F841
+        message = lexeme_forms.message(  # noqa: F841
             'description-with-forms-and-senses',
             description='',
             num_forms=number,

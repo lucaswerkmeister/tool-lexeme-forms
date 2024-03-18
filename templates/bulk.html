@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}{{ message_with_kwargs( 'title-bulk', template_label=template.label ) | striptags }} – {{ super() }}{% endblock title %}
+{% block title %}{{ message( 'title-bulk', template_label=template.label ) | striptags }} – {{ super() }}{% endblock title %}
 {% block head %}
 {{ super() }}
 <script defer src="{{ url_for('static', filename='preventDoubleSubmit.js') }}"></script>
@@ -9,7 +9,7 @@
   <h2>{{ message('bulk-heading') }}</h2>
   {% if readonly %}
   <div class="alert alert-warning">
-    {{ message_with_kwargs( 'login-hint', url=url_for( 'login' ) ) }}
+    {{ message( 'login-hint', url=url_for( 'login' ) ) }}
   </div>
   {% endif %}
   <p>
@@ -46,6 +46,6 @@
         >{% if value %}{{ value }}{% endif %}</textarea{{ pop_html_lang( template.language_code | lang_lex2int ) }}>
     </div>
     <!-- TODO generated_via should fit somewhere in here -->
-    <button class="btn btn-danger"{% if readonly %} disabled title="{{ message_with_kwargs( 'login-hint', url=url_for( 'login' ) ) | striptags }}" {% endif %}>{{ message( 'create' ) }}</button>
+    <button class="btn btn-danger"{% if readonly %} disabled title="{{ message( 'login-hint', url=url_for( 'login' ) ) | striptags }}" {% endif %}>{{ message( 'create' ) }}</button>
   </form>
 {% endblock main %}

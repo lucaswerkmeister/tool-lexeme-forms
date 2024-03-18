@@ -203,7 +203,7 @@ def render_duplicates(
 def augment_description(description, forms_count, senses_count):
     if forms_count is None or senses_count is None:
         return description
-    return message_with_kwargs(
+    return message(
         'description-with-forms-and-senses',
         description=description,
         num_forms=int(forms_count),
@@ -248,12 +248,17 @@ def authentication_area() -> Markup:
 
     user_name = userinfo['name']
     return (Markup(r'<span class="navbar-text">') +
-            Markup(message_with_kwargs('logged-in', user_link=user_link(user_name), user_name=user_name)) +
+            Markup(message('logged-in', user_link=user_link(user_name), user_name=user_name)) +
             Markup(r'</span>'))
 
 @app.template_global()
-def message(message_code: str) -> Markup:
+def message(message_code: str, **kwargs) -> Markup:
     message, language = message_with_language(message_code)
+    if kwargs:
+        formatter = I18nFormatter(locale_identifier=lang_int2babel(language),
+                                  get_gender=get_gender)
+        # I18nFormatter returns Markup given Markup
+        message = cast(Markup, formatter.format(message, **kwargs))
     return add_lang_if_needed(message, language)
 
 def message_with_language(message_code: str) -> Tuple[Markup, str]:
@@ -269,14 +274,6 @@ def message_with_language(message_code: str) -> Tuple[Markup, str]:
         else:
             return Markup(text), language_code
     raise ValueError(f'Message {message_code} not found in {language_codes}')
-
-@app.template_global()
-def message_with_kwargs(message_code: str, **kwargs) -> Markup:
-    template, language = message_with_language(message_code)
-    message = I18nFormatter(locale_identifier=lang_int2babel(language),
-                            get_gender=get_gender).format(template, **kwargs)
-    message = cast(Markup, message)  # I18nFormatter returns Markup given Markup
-    return add_lang_if_needed(message, language)
 
 def add_lang_if_needed(message: Markup, language_code: str) -> Markup:
     if flask.g.html_language_codes and flask.g.html_language_codes[-1] == language_code:
@@ -436,7 +433,7 @@ def process_template_bulk(template_name: str) -> RRV:
         try:
             lexemes = parse_lexemes(form_data['lexemes'], template)
         except FirstFieldNotLexemeIdError as error:
-            parse_error = message_with_kwargs(
+            parse_error = message(
                 'bulk-first-field-not-lexeme-id',
                 num_forms=error.num_forms,
                 num_fields=error.num_fields,
@@ -444,7 +441,7 @@ def process_template_bulk(template_name: str) -> RRV:
                 line_number=error.line_number,
             )
         except FirstFieldLexemeIdError as error:
-            parse_error = message_with_kwargs(
+            parse_error = message(
                 'bulk-first-field-lexeme-id',
                 num_forms=error.num_forms,
                 num_fields=error.num_fields,
@@ -453,7 +450,7 @@ def process_template_bulk(template_name: str) -> RRV:
             )
         except WrongNumberOfFieldsError as error:
             show_optional_forms_hint = error.num_fields < error.num_forms
-            parse_error = message_with_kwargs(
+            parse_error = message(
                 'bulk-wrong-number-of-fields',
                 num_forms=error.num_forms,
                 num_fields=error.num_fields,
