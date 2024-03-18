@@ -1,6 +1,5 @@
 from toolforge_i18n.translations_tests import *
-
-from language_info import autonym
+from toolforge_i18n.language_info import autonym
 
 
 def test_english_messages_exist():

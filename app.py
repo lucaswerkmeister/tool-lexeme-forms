@@ -23,13 +23,14 @@ import yaml
 
 from flask_utils import OrderedFlask, TagOrderedMultiDict, TagImmutableOrderedMultiDict, SetJSONProvider
 from language import lang_lex2int, lang_int2html, lang_int2babel
-from language_info import autonym, label, fallbacks
+from language_info import label
 from matching import match_template_to_lexeme_data, match_lexeme_forms_to_template, match_template_entity_to_lexeme_entity, MatchedTemplate, MatchedTemplateForm
 from mwapi_utils import T272319RetryingSession
 from parse_tpsv import parse_lexemes, FirstFieldNotLexemeIdError, FirstFieldLexemeIdError, WrongNumberOfFieldsError
 from templates import templates, templates_without_redirects, Template, TemplateForm
 import tool_translations_config
 from toolforge_i18n.formatters import I18nFormatter
+from toolforge_i18n.language_info import autonym, fallbacks
 from toolforge_i18n.translations import load_translations
 from wikibase_types import Lexeme, LexemeForm, LexemeLemmas, Statements, Term
 

@@ -1,16 +1,7 @@
 import pytest
 from typing import Optional
 
-from language_info import autonym, label, fallbacks
-
-@pytest.mark.parametrize('code, expected', [
-    ('en', 'English'),
-    ('de', 'Deutsch'),
-    ('fa', 'فارسی'),
-    ('bn-x-Q6747180', None)
-])
-def test_autonym(code: str, expected: Optional[str]):
-    assert autonym(code) == expected
+from language_info import label
 
 @pytest.mark.parametrize('code, expected', [
     ('bn-x-Q6747180', 'ঝাড়খণ্ডী উপভাষা'),
@@ -26,12 +17,3 @@ def test_autonym(code: str, expected: Optional[str]):
 ])
 def test_label(code: str, expected: Optional[str]):
     assert label(code) == expected
-
-@pytest.mark.parametrize('code, expected', [
-    ('en', []),
-    ('de', []),
-    ('de-at', ['de']),
-    ('sh', ['sh-latn', 'sh-cyrl', 'bs', 'sr-el', 'sr-latn', 'hr']),
-])
-def test_fallbacks(code: str, expected: list[str]):
-    assert fallbacks(code) == expected
