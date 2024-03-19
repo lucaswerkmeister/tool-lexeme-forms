@@ -1,7 +1,7 @@
 import pytest
 from typing import Optional
 
-from .language_info import autonym, fallbacks
+from .language_info import autonym, bcp47, directionality, fallbacks
 import toolforge_i18n.language_info
 
 
@@ -16,6 +16,24 @@ toolforge_i18n.language_info.user_agent = 'toolforge-i18n test (not published ye
 ])
 def test_autonym(code: str, expected: Optional[str]):
     assert autonym(code) == expected
+
+
+@pytest.mark.parametrize('code, expected', [
+    ('en', 'en'),
+    ('simple', 'en-simple'),
+    ('unknown', 'unknown')
+])
+def test_bcp47(code: str, expected: str):
+    assert bcp47(code) == expected
+
+
+@pytest.mark.parametrize('code, expected', [
+    ('en', 'ltr'),
+    ('fa', 'rtl'),
+    ('unknown', 'auto')
+])
+def test_directionality(code: str, expected: str):
+    assert directionality(code) == expected
 
 
 @pytest.mark.parametrize('code, expected', [

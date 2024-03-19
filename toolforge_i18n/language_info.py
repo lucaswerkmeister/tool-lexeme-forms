@@ -1,6 +1,6 @@
 import mwapi  # type: ignore
 import requests
-from typing import Optional
+from typing import Literal, Optional
 
 
 user_agent: Optional[str] = None
@@ -39,7 +39,7 @@ def _load_language_info() -> dict[str, dict]:
     for response in session.get(continuation=True,
                                 action='query',
                                 meta='languageinfo',
-                                liprop=['autonym', 'fallbacks'],
+                                liprop=['autonym', 'bcp47', 'dir', 'fallbacks'],
                                 formatversion='2'):
         language_info.update(response['query']['languageinfo'])
     return language_info
@@ -51,6 +51,22 @@ def autonym(code: str) -> Optional[str]:
     if _language_info is None:
         _language_info = _load_language_info()
     return _language_info.get(code, {}).get('autonym')
+
+
+def bcp47(code: str) -> str:
+    """Get the BCP-47 language code of the given MediaWiki language code."""
+    global _language_info
+    if _language_info is None:
+        _language_info = _load_language_info()
+    return _language_info.get(code, {}).get('bcp47', code)
+
+
+def directionality(code: str) -> Literal['ltr', 'rtl', 'auto']:
+    """Get the directionality of the given language code, according to MediaWiki."""
+    global _language_info
+    if _language_info is None:
+        _language_info = _load_language_info()
+    return _language_info.get(code, {}).get('dir', 'auto')
 
 
 def fallbacks(code: str) -> list[str]:
