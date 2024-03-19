@@ -22,7 +22,7 @@ import werkzeug
 import yaml
 
 from flask_utils import OrderedFlask, TagOrderedMultiDict, TagImmutableOrderedMultiDict, SetJSONProvider
-from language import lang_lex2int, lang_int2html, lang_int2babel
+from language import lang_lex2int, lang_int2babel
 from language_info import label
 from matching import match_template_to_lexeme_data, match_lexeme_forms_to_template, match_template_entity_to_lexeme_entity, MatchedTemplate, MatchedTemplateForm
 from mwapi_utils import T272319RetryingSession
@@ -30,7 +30,7 @@ from parse_tpsv import parse_lexemes, FirstFieldNotLexemeIdError, FirstFieldLexe
 from templates import templates, templates_without_redirects, Template, TemplateForm
 import tool_translations_config
 from toolforge_i18n.formatters import I18nFormatter
-from toolforge_i18n.language_info import autonym, directionality, fallbacks
+from toolforge_i18n.language_info import autonym, bcp47, directionality, fallbacks
 from toolforge_i18n.translations import load_translations
 from wikibase_types import Lexeme, LexemeForm, LexemeLemmas, Statements, Term
 
@@ -39,8 +39,8 @@ app.session_interface.serializer.register(TagOrderedMultiDict, index=0)
 app.session_interface.serializer.register(TagImmutableOrderedMultiDict, index=0)
 app.json = SetJSONProvider(app)
 app.add_template_filter(lang_lex2int)
-app.add_template_filter(lang_int2html)
 app.add_template_filter(lang_int2babel)
+app.add_template_filter(bcp47)
 
 user_agent = toolforge.set_user_agent('lexeme-forms', email='mail@lucaswerkmeister.de')
 
@@ -114,14 +114,14 @@ def init_interface_language_code():
 
 @app.template_global()
 def push_html_lang(language_code: str) -> Markup:
-    html_language_code = lang_int2html(language_code)
+    html_language_code = bcp47(language_code)
     flask.g.html_language_codes.append(html_language_code)
     return Markup(r'lang="{}" dir="{}"').format(html_language_code,
                                                 directionality(html_language_code))
 
 @app.template_global()
 def pop_html_lang(language_code: str) -> Markup:
-    html_language_code = lang_int2html(language_code)
+    html_language_code = bcp47(language_code)
     assert flask.g.html_language_codes.pop() == html_language_code
     return Markup(r'')
 

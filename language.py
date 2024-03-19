@@ -15,7 +15,10 @@ translations are given for user interface language codes.
 These language codes cannot be converted to one another losslessly,
 and this module does not provide functions for all possible
 conversions; rather, it only implements conversions to less specific
-codes, which may lose some information."""
+codes, which may lose some information. (The conversion from
+MediaWiki language codes to HTML language codes, previously called
+lang_int2html() in this module, is now bcp47() and lives in
+toolforge_i18n.language_info.)"""
 
 
 def lang_lex2int(code: str) -> str:
@@ -26,13 +29,6 @@ def lang_lex2int(code: str) -> str:
         # Manbhumi reuses the standard Bengali messages
         'bn-x-Q6747180': 'bn',
     }.get(code, code)
-
-
-def lang_int2html(code: str) -> str:
-    """Convert a MediaWiki user interface language code to an HTML one."""
-
-    # no changes needed so far
-    return code
 
 
 def lang_int2babel(code: str) -> str:

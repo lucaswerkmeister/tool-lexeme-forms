@@ -4,10 +4,10 @@ from html.parser import HTMLParser
 import json
 import pytest
 import re
+from toolforge_i18n.language_info import bcp47
 import werkzeug
 
 import app as lexeme_forms
-from language import lang_int2html
 import matching
 from templates import templates_without_redirects
 
@@ -100,7 +100,7 @@ def test_template_group_test():
 def test_message(language_code, number):
     with lexeme_forms.app.test_request_context():
         flask.g.interface_language_code = language_code
-        flask.g.html_language_codes = [lang_int2html(language_code)]
+        flask.g.html_language_codes = [bcp47(language_code)]
         message = lexeme_forms.message(  # noqa: F841
             'description-with-forms-and-senses',
             description='',
