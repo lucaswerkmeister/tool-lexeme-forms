@@ -297,13 +297,9 @@ def text_direction(language_code: str) -> str:
 @app.template_filter()
 def term_span(term: Term) -> Markup:
     interface_language_code = lang_lex2int(term['language'])
-    return (Markup(r'<span lang="') +
-            Markup.escape(lang_int2html(interface_language_code)) +
-            Markup(r'" dir="') +
-            Markup.escape(text_direction(interface_language_code)) +
-            Markup(r'">') +
-            Markup.escape(term['value']) +
-            Markup(r'</span>'))
+    return Markup('<span {}>{}</span{}>').format(push_html_lang(interface_language_code),
+                                                 term['value'],
+                                                 pop_html_lang(interface_language_code))
 
 @app.template_filter()
 def lemmas_spans(lemmas: LexemeLemmas) -> Markup:
@@ -321,15 +317,10 @@ def language_name_with_code(language_code: str) -> Markup:
     if language_name is None:
         return code_zxx
     interface_language_code = lang_lex2int(language_code)
-    return (Markup(r'<span lang="') +
-            Markup.escape(lang_int2html(interface_language_code)) +
-            Markup(r'" dir="') +
-            Markup.escape(text_direction(interface_language_code)) +
-            Markup(r'">') +
-            Markup.escape(language_name) +
-            Markup(r' (') +
-            code_zxx +
-            Markup(r')</span>'))
+    return Markup('<span {}>{} ({})</span{}>').format(push_html_lang(interface_language_code),
+                                                      language_name,
+                                                      code_zxx,
+                                                      pop_html_lang(interface_language_code))
 
 @app.template_global()
 def can_use_wikifunctions() -> bool:

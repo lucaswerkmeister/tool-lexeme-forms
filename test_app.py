@@ -85,11 +85,15 @@ def test_csrf_token_load():
         assert lexeme_forms.csrf_token() == 'test token'
 
 def test_template_group():
-    group = lexeme_forms.template_group({'language_code': 'de'})
+    with lexeme_forms.app.test_request_context():
+        flask.g.html_language_codes = []
+        group = lexeme_forms.template_group({'language_code': 'de'})
     assert group == '<span lang="de" dir="ltr">Deutsch (<span lang=zxx>de</span>)</span>'
 
 def test_template_group_test():
-    group = lexeme_forms.template_group({'language_code': 'de', 'test': True})
+    with lexeme_forms.app.test_request_context():
+        flask.g.html_language_codes = []
+        group = lexeme_forms.template_group({'language_code': 'de', 'test': True})
     assert group == '<span lang="de" dir="ltr">Deutsch (<span lang=zxx>de</span>)</span>, test.wikidata.org'
 
 @pytest.mark.parametrize('language_code', translations.keys())
