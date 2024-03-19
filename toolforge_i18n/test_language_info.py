@@ -5,7 +5,7 @@ from .language_info import autonym, bcp47, directionality, fallbacks
 import toolforge_i18n.language_info
 
 
-toolforge_i18n.language_info.user_agent = 'toolforge-i18n test (not published yet; mail@lucaswerkmeister.de)'
+toolforge_i18n.user_agent.set_user_agent('toolforge-i18n test (not published yet; mail@lucaswerkmeister.de)')
 
 
 @pytest.mark.parametrize('code, expected', [
