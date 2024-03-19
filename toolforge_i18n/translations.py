@@ -4,6 +4,9 @@ from dataclasses import dataclass, field
 import json
 import os
 import re
+from typing import Any, Literal
+
+from .get_gender import get_gender_by_user_name
 
 
 @dataclass
@@ -77,6 +80,16 @@ class TranslationsConfig:
     This is similar to allowed_html_elements above,
     but the given attribute names are allowed regardless of element name.
     Again, this is only checked when the tests are run.
+    """
+
+    get_gender: Callable[[Any], Literal['m', 'f', 'n']] = get_gender_by_user_name
+    """The get_gender function used by I18nFormatter.
+
+    Defaults to a function that expects the argument to be a user name,
+    and looks it up on Meta-Wiki.
+    You may specify a different function,
+    where the type (the value you pass as user_name= into messages)
+    can be anything you want.
     """
 
 

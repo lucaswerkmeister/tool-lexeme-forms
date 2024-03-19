@@ -257,7 +257,7 @@ def message(message_code: str, **kwargs) -> Markup:
     message, language = message_with_language(message_code)
     if kwargs:
         formatter = I18nFormatter(locale_identifier=lang_int2babel(language),
-                                  get_gender=get_gender)
+                                  get_gender=tool_translations_config.config.get_gender)
         # I18nFormatter returns Markup given Markup
         message = cast(Markup, formatter.format(message, **kwargs))
     return add_lang_if_needed(message, language)
@@ -407,8 +407,13 @@ def process_template_bulk(template_name: str) -> RRV:
     readonly = 'OAUTH' in app.config and 'oauth_access_token' not in flask.session
 
     if not can_use_bulk_mode() and not readonly:
+        user_name = None
+        userinfo = get_userinfo()
+        if userinfo is not None:
+            user_name = userinfo['name']
         return flask.render_template(
             'bulk-not-allowed.html',
+            user_name=user_name,
         )
 
     if (flask.request.method == 'POST' and
@@ -1212,33 +1217,6 @@ def wikifunctions_api(template_name: str, lemma: str, function_name: str) -> RRV
 @app.route('/healthz')
 def health() -> RRV:
     return ''
-
-def get_gender(user: Optional[str]) -> str:
-    if user is None:
-        gender_option = gender_option_of_user()
-    else:
-        gender_option = gender_option_of_user_name(user)
-    return {
-        'male': 'm',
-        'female': 'f',
-        'unknown': 'n',
-    }[gender_option]
-
-def gender_option_of_user_name(user_name: str) -> str:
-    session = anonymous_session('https://www.wikidata.org')
-    response = session.get(action='query',
-                           list=['users'],
-                           usprop=['gender'],
-                           ususers=[user_name],
-                           formatversion=2)
-    return response['query']['users'][0]['gender']
-
-def gender_option_of_user() -> str:
-    userinfo = get_userinfo()
-    if userinfo is None:
-        return 'unknown'
-
-    return userinfo['options']['gender']
 
 def authenticated_session(host: str) -> mwapi.Session:
     return T272319RetryingSession(
