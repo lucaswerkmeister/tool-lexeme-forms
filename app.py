@@ -30,7 +30,7 @@ from parse_tpsv import parse_lexemes, FirstFieldNotLexemeIdError, FirstFieldLexe
 from templates import templates, templates_without_redirects, Template, TemplateForm
 import tool_translations_config
 from toolforge_i18n.formatters import I18nFormatter
-from toolforge_i18n.language_info import autonym, fallbacks
+from toolforge_i18n.language_info import autonym, directionality, fallbacks
 from toolforge_i18n.translations import load_translations
 from wikibase_types import Lexeme, LexemeForm, LexemeLemmas, Statements, Term
 
@@ -117,7 +117,7 @@ def push_html_lang(language_code: str) -> Markup:
     html_language_code = lang_int2html(language_code)
     flask.g.html_language_codes.append(html_language_code)
     return Markup(r'lang="{}" dir="{}"').format(html_language_code,
-                                                text_direction(language_code))
+                                                directionality(html_language_code))
 
 @app.template_global()
 def pop_html_lang(language_code: str) -> Markup:
@@ -282,18 +282,6 @@ def add_lang_if_needed(message: Markup, language_code: str) -> Markup:
     return Markup('<span {}>{}</span{}>').format(push_html_lang(language_code),
                                                  message,
                                                  pop_html_lang(language_code))
-
-@app.template_filter()
-def text_direction(language_code: str) -> str:
-    babel_language_code = lang_int2babel(language_code)
-    try:
-        locale = babel.Locale.parse(babel_language_code)
-    except babel.UnknownLocaleError:
-        print(f'Unrecognized Babel language code {babel_language_code} '
-              f'for interface language code {language_code}')
-        return 'auto'
-    else:
-        return locale.text_direction
 
 @app.template_filter()
 def term_span(term: Term) -> Markup:
