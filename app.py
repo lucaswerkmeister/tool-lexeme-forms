@@ -256,7 +256,7 @@ def authentication_area() -> Markup:
 def message(message_code: str, **kwargs) -> Markup:
     message, language = message_with_language(message_code)
     if kwargs:
-        formatter = I18nFormatter(locale_identifier=lang_int2babel(language),
+        formatter = I18nFormatter(locale_identifier=tool_translations_config.config.language_code_to_babel(language),
                                   get_gender=tool_translations_config.config.get_gender)
         # I18nFormatter returns Markup given Markup
         message = cast(Markup, formatter.format(message, **kwargs))
