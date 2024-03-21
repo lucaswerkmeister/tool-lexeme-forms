@@ -36,5 +36,6 @@
 	"source-code": "Lähdekoodi",
 	"login": "Kirjaudu sisään",
 	"settings-link": "Asetukset",
-	"settings-heading": "Asetukset"
+	"settings-heading": "Asetukset",
+	"requires-javascript": "Tämä ominaisuus vaatii JavaScriptin olevan käytössä."
 }
