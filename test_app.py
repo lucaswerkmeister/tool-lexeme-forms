@@ -4,6 +4,7 @@ from html.parser import HTMLParser
 import json
 import pytest
 import re
+from toolforge_i18n.flask_things import init_html_language_codes
 from toolforge_i18n.language_info import bcp47
 import werkzeug
 
@@ -120,13 +121,10 @@ def test_if_no_such_template_redirect_renamed_template():
 
 def test_if_no_such_template_redirect_unknown_template():
     template_name = 'no-such-template'
-    with lexeme_forms.app.test_request_context():
-        lexeme_forms.init_interface_language_code()  # manual call because we bypass @app.before_request below
-        response = lexeme_forms.if_no_such_template_redirect(template_name)
-    assert response is not None
-    assert type(response) is str
-    assert 'alert' in response
-    assert template_name in response
+    with lexeme_forms.app.test_client() as client:
+        response = client.get(f'/template/{template_name}/')
+    assert 'alert' in response.text
+    assert template_name in response.text
 
 def test_if_has_duplicates_redirect_checkbox_checked():
     assert lexeme_forms.if_has_duplicates_redirect(

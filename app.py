@@ -29,7 +29,7 @@ from mwapi_utils import T272319RetryingSession
 from parse_tpsv import parse_lexemes, FirstFieldNotLexemeIdError, FirstFieldLexemeIdError, WrongNumberOfFieldsError
 from templates import templates, templates_without_redirects, Template, TemplateForm
 import tool_translations_config
-from toolforge_i18n.formatters import I18nFormatter
+from toolforge_i18n.flask_things import pop_html_lang, push_html_lang, setup_toolforge_i18n
 from toolforge_i18n.language_info import autonym, bcp47, directionality, fallbacks
 from toolforge_i18n.translations import load_translations
 from wikibase_types import Lexeme, LexemeForm, LexemeLemmas, Statements, Term
@@ -40,7 +40,26 @@ app.session_interface.serializer.register(TagImmutableOrderedMultiDict, index=0)
 app.json = SetJSONProvider(app)
 app.add_template_filter(lang_lex2int)
 app.add_template_filter(lang_int2babel)
-app.add_template_filter(bcp47)
+
+def interface_language_code(translations: dict[str, dict[str, str]]) -> str:
+    legacy_language_codes = {  # any pair here can be removed after a while, see b762a62db6
+        'yue': 'zh-hant',  # PR #187, 2023-11-12
+    }
+
+    if 'uselang' in flask.request.args:
+        return flask.request.args['uselang']
+    elif flask.session.get('interface_language_code') in translations | legacy_language_codes:
+        code = flask.session['interface_language_code']
+        if code in legacy_language_codes:
+            code = legacy_language_codes[code]
+            flask.session['interface_language_code'] = code
+        if code not in translations:
+            code = 'en'
+        return code
+    else:
+        return flask.request.accept_languages.best_match(translations.keys(), 'en')
+
+message = setup_toolforge_i18n(app, interface_language_code)
 
 user_agent = toolforge.set_user_agent('lexeme-forms', email='mail@lucaswerkmeister.de')
 
@@ -90,44 +109,6 @@ def enableCORS(func, *args, **kwargs):
     rv = func(*args, **kwargs)
     response = flask.make_response(rv)
     response.headers['Access-Control-Allow-Origin'] = '*'
-    return response
-
-@app.before_request
-def init_interface_language_code():
-    legacy_language_codes = {  # any pair here can be removed after a while, see b762a62db6
-        'yue': 'zh-hant',  # PR #187, 2023-11-12
-    }
-
-    if 'uselang' in flask.request.args:
-        flask.g.interface_language_code = flask.request.args['uselang']
-    elif flask.session.get('interface_language_code') in translations | legacy_language_codes:
-        flask.g.interface_language_code = flask.session['interface_language_code']
-        if flask.g.interface_language_code in legacy_language_codes:
-            flask.g.interface_language_code = legacy_language_codes[flask.g.interface_language_code]
-            flask.session['interface_language_code'] = flask.g.interface_language_code
-        if flask.g.interface_language_code not in translations:
-            flask.g.interface_language_code = 'en'
-    else:
-        flask.g.interface_language_code = flask.request.accept_languages\
-                                                       .best_match(translations.keys(), 'en')
-    flask.g.html_language_codes = []
-
-@app.template_global()
-def push_html_lang(language_code: str) -> Markup:
-    html_language_code = bcp47(language_code)
-    flask.g.html_language_codes.append(html_language_code)
-    return Markup(r'lang="{}" dir="{}"').format(html_language_code,
-                                                directionality(html_language_code))
-
-@app.template_global()
-def pop_html_lang(language_code: str) -> Markup:
-    html_language_code = bcp47(language_code)
-    assert flask.g.html_language_codes.pop() == html_language_code
-    return Markup(r'')
-
-@app.after_request
-def assert_html_lang_empty(response: werkzeug.Response) -> werkzeug.Response:
-    assert flask.g.html_language_codes == []
     return response
 
 @app.after_request
@@ -251,37 +232,6 @@ def authentication_area() -> Markup:
     return (Markup(r'<span class="navbar-text">') +
             Markup(message('logged-in', user_link=user_link(user_name), user_name=user_name)) +
             Markup(r'</span>'))
-
-@app.template_global()
-def message(message_code: str, **kwargs) -> Markup:
-    message, language = message_with_language(message_code)
-    if kwargs:
-        formatter = I18nFormatter(locale_identifier=tool_translations_config.config.language_code_to_babel(language),
-                                  get_gender=tool_translations_config.config.get_gender)
-        # I18nFormatter returns Markup given Markup
-        message = cast(Markup, formatter.format(message, **kwargs))
-    return add_lang_if_needed(message, language)
-
-def message_with_language(message_code: str) -> Tuple[Markup, str]:
-    interface_language_code = cast(str, flask.g.interface_language_code)
-    language_codes = ([interface_language_code] +
-                      fallbacks(interface_language_code) +
-                      ['en'])
-    for language_code in language_codes:
-        try:
-            text = translations[language_code][message_code]
-        except LookupError:
-            continue
-        else:
-            return Markup(text), language_code
-    raise ValueError(f'Message {message_code} not found in {language_codes}')
-
-def add_lang_if_needed(message: Markup, language_code: str) -> Markup:
-    if flask.g.html_language_codes and flask.g.html_language_codes[-1] == language_code:
-        return message
-    return Markup('<span {}>{}</span{}>').format(push_html_lang(language_code),
-                                                 message,
-                                                 pop_html_lang(language_code))
 
 @app.template_filter()
 def term_span(term: Term) -> Markup:
