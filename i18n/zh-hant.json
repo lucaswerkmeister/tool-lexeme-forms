@@ -12,7 +12,7 @@
 	"duplicates-instructions": "如果您確定{{PLURAL:$1|這個|它們}}不相同，請勾選在形式下方的方框。",
 	"duplicates-create": "無論如何，建立一個新的詞位。",
 	"no-duplicate": "這不是現有詞位的重複內容。",
-	"form-optional": "&#32;（選填）",
+	"form-optional": "（非必填）",
 	"advanced": "進階",
 	"advanced-general": "您目前在「進階」模式。",
 	"advanced-lexeme-id": "您可以透過輸入詞位 ID，取代用建立的方式來對現有詞位添加形式。對存在詞位上的任一形式留空，不然會出現重複內容！",

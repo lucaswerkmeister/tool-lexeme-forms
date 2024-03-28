@@ -3,13 +3,14 @@
 		"authors": [
 			"Darafsh",
 			"Darknessswamp8",
+			"Ebraminio",
 			"Jeeputer",
 			"Ladsgroup",
 			"LordProfo"
 		]
 	},
 	"create": "ایجاد",
-	"csrf-warning": "شرمنده، ما قادر به پردازش این درخواست نیستیم. (حفاظت <abbr title=\"Cross-site request forgery\" lang=\"en\" dir=\"ltr\">CSRF</abbr> به خطا خورد). لطفا دوباره این فرم را بفرستید.",
+	"csrf-warning": "شرمنده، ما قادر به پردازش این درخواست نیستیم. (حفاظت <abbr title=\"Cross-site request forgery\" lang=\"en\" dir=\"ltr\">CSRF</abbr> به خطا خورد). لطفاً دوباره این فرم را بفرستید.",
 	"duplicates-warning": "این {{PLURAL:$1|تکواژه‌|تکواژه‌‌ها}} مدخل و زبان یکسانی با تکواژه‌ای که قصد ساختنش را دارید دارند:",
 	"duplicates-instructions": "اگر مطمئنید که این {{PLURAL:$1|تکواژه‌|تکواژه‌ها}} متفاوتند، جعبهٔ پایین فُرم را علامت بزنید.",
 	"duplicates-create": "در هر حال تکواژه‌ تازه را ایجاد کن.",
