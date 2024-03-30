@@ -57,25 +57,25 @@ def test_message_variables(language_code: str, message_key: str):
     if message is None:
         return
     for variable in tool_translations_config.config.variables.get(message_key, []):
-        if variable == 'url':
+        if variable == 'url' or variable.startswith('url_'):
             assert '{' + variable + '!h:' in message
             assert '{' + variable + '!g:' not in message
             assert '{' + variable + '!p:' not in message
             assert '{' + variable + '!l}' not in message
             assert '{' + variable + '}' not in message
-        elif variable == 'user_name':
+        elif variable == 'user_name' or variable.startswith('user_name_'):
             assert '{' + variable + '!g:' in message or '{' + variable not in message
             assert '{' + variable + '!h:' not in message
             assert '{' + variable + '!p:' not in message
             assert '{' + variable + '!l}' not in message
             assert '{' + variable + '}' not in message
-        elif variable.startswith('num_'):
+        elif variable == 'num' or variable.startswith('num_'):
             assert '{' + variable + '!p:' in message or '{' + variable not in message
             assert '{' + variable + '!h:' not in message
             assert '{' + variable + '!g:' not in message
             assert '{' + variable + '!l}' not in message
             # assert '{' + variable + '}' not in message  # allowed, e.g. {{PLURAL:$1||$1 forms}}
-        elif variable.startswith('list_'):
+        elif variable == 'list' or variable.startswith('list_'):
             assert '{' + variable + '!l}' in message
             assert '{' + variable + '!h:' not in message
             assert '{' + variable + '!g:' not in message

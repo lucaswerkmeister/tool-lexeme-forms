@@ -22,11 +22,11 @@ class TranslationsConfig:
     The source messages use $1, $2 etc.,
     but the Python format strings use named variables,
     whose names are specified here.
-    The variable name encodes the type:
-    * url - hyperlink: [$1 text] => {url!h:text}
-    * user_name - gender: {{GENDER:$1|he|she|they}} => {user_name!g:m=he:f=she:n=they}
-    * num_* - plural: {{PLURAL:$1|one egg|$1 eggs}} => {num_eggs!p:one=one egg:other={num_eggs} eggs}
-    * list_* - list: $1 => {list_chicken_names!l}
+    The variable name (or its prefix) encodes the type:
+    * url, url_* - hyperlink: [$1 text] => {url!h:text}
+    * user_name, user_name_* - gender: {{GENDER:$1|he|she|they}} => {user_name!g:m=he:f=she:n=they}
+    * num, num_* - plural: {{PLURAL:$1|one egg|$1 eggs}} => {num_eggs!p:one=one egg:other={num_eggs} eggs}
+    * list, list_* - list: $1 => {list_chicken_names!l}
     * anything else - markup without further formatting: $1 => {description}
     """
 
