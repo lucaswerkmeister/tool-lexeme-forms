@@ -663,6 +663,7 @@ def oauth_callback() -> RRV:
                                      query_string=flask.request.query_string.decode('utf8'))
     access_token = mwoauth.complete('https://www.wikidata.org/w/index.php', consumer_token, mwoauth.RequestToken(**oauth_request_token), flask.request.query_string, user_agent=user_agent)
     flask.session['oauth_access_token'] = dict(zip(access_token._fields, access_token))
+    flask.session.permanent = True
     flask.session.pop('_csrf_token', None)
     redirect_target = flask.session.pop('oauth_redirect_target', None)
     return flask.redirect(redirect_target or flask.url_for('index'))
@@ -680,6 +681,7 @@ def login() -> RRV:
 @app.route('/logout')
 def logout() -> RRV:
     flask.session.pop('oauth_access_token', None)
+    flask.session.permanent = False
     return flask.redirect(flask.url_for('index'))
 
 def if_has_duplicates_redirect(
