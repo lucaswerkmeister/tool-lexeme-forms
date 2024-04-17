@@ -69,5 +69,5 @@ not sent as patches.
 ## License
 
 The code in this repository is released under the AGPL v3,
-the translations and templates under CC BY-SA 3.0.
+the translations and templates under CC BY-SA 4.0.
 See the LICENSE file for details.
