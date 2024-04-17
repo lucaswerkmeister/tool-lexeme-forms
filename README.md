@@ -49,9 +49,15 @@ Yay contributions! <3
 
 ### Templates
 
-To propose new templates for the tool,
-please head to [its page on Wikidata](https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms)
-and follow the instructions there.
+To propose new templates for the tool, or make changes to the existing templates,
+please head to [the tool’s page on Wikidata](https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms)
+and follow the instructions there (especially the “Language support” section).
+
+### Translations
+
+You can [translate the tool’s user interface](https://translatewiki.net/w/i.php?title=Special:Translate&group=wikidata-lexeme-forms)
+on translatewiki.net.
+(Links to the translations are also included on the wiki pages with the templates.)
 
 ### Code
 
@@ -62,9 +68,13 @@ To send a patch, you can submit a
 It’s best to reach out to the maintainer(s) in advance, though,
 to see if the contribution is likely to be accepted or not.
 
-Additions or changes to the templates or translations
-should always be made on-wiki (see [above](#templates)),
-not sent as patches.
+Additions or changes to the templates
+should always be made on-wiki, as mentioned [above](#templates).
+(If you really want to, you can send corresponding patches as well,
+but again, it’s best to reach out in advance.)
+
+The translations are automatically updated from translatewiki.net;
+only `en.json` and `qqq.json` should be changed directly in this source code repository.
 
 ## License
 
