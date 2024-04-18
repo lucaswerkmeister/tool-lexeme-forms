@@ -1207,17 +1207,16 @@ def wikifunctions_api(template_name: str, lemma: str, function_name: str) -> RRV
         if wikifunction in result_cache:
             result.append(result_cache[wikifunction])
             continue
-        response = session.get(action='wikilambda_function_call',
-                               wikilambda_function_call_zobject=json.dumps({
+        response = session.get(action='wikifunctions_run',
+                               function_call=json.dumps({
                                    'Z1K1': 'Z7',
                                    'Z7K1': wikifunction,
                                    wikifunction + 'K1': lemma,
                                }),
                                formatversion=2)
-        if not response.get('query', {}).get('wikilambda_function_call', {}).get('success', False):
-            print(response)
+        if not isinstance(response.get('wikifunctions_run', {}).get('data'), str):
             raise ValueError('Invalid Wikifunctions API response')
-        inner_response = json.loads(response['query']['wikilambda_function_call']['data'])
+        inner_response = json.loads(response['wikifunctions_run']['data'])
         # TODO check whether the Z22 represents success or failure?
         response_value = inner_response['Z22K1']
         if response_value == 'Z24':  # void
