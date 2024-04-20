@@ -29,7 +29,7 @@ from mwapi_utils import T272319RetryingSession
 from parse_tpsv import parse_lexemes, FirstFieldNotLexemeIdError, FirstFieldLexemeIdError, WrongNumberOfFieldsError
 from templates import templates, templates_without_redirects, Template, TemplateForm
 import tool_translations_config
-from toolforge_i18n.flask_things import pop_html_lang, push_html_lang, setup_toolforge_i18n
+from toolforge_i18n.flask_things import ToolforgeI18n, message, pop_html_lang, push_html_lang
 from toolforge_i18n.language_info import autonym, bcp47, directionality, fallbacks
 from toolforge_i18n.translations import load_translations
 from wikibase_types import Lexeme, LexemeForm, LexemeLemmas, Statements, Term
@@ -59,7 +59,7 @@ def interface_language_code(translations: dict[str, dict[str, str]]) -> str:
     else:
         return flask.request.accept_languages.best_match(translations.keys(), 'en')
 
-message = setup_toolforge_i18n(app, interface_language_code)
+ToolforgeI18n(app, interface_language_code)
 
 user_agent = toolforge.set_user_agent('lexeme-forms', email='mail@lucaswerkmeister.de')
 
