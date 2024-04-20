@@ -31,7 +31,6 @@ from templates import templates, templates_without_redirects, Template, Template
 import tool_translations_config
 from toolforge_i18n.flask_things import ToolforgeI18n, message, pop_html_lang, push_html_lang
 from toolforge_i18n.language_info import autonym, bcp47, directionality, fallbacks
-from toolforge_i18n.translations import load_translations
 from wikibase_types import Lexeme, LexemeForm, LexemeLemmas, Statements, Term
 
 app = OrderedFlask(__name__)
@@ -59,7 +58,7 @@ def interface_language_code(translations: dict[str, dict[str, str]]) -> str:
     else:
         return flask.request.accept_languages.best_match(translations.keys(), 'en')
 
-ToolforgeI18n(app, interface_language_code)
+i18n = ToolforgeI18n(app, interface_language_code)
 
 user_agent = toolforge.set_user_agent('lexeme-forms', email='mail@lucaswerkmeister.de')
 
@@ -85,8 +84,6 @@ if has_config:
 else:
     print('config.yaml file not found, assuming local development setup')
     app.secret_key = 'fake'
-
-translations = load_translations(tool_translations_config.config)
 
 class BoundTemplate(MatchedTemplate):
     lexeme_id: str
@@ -287,7 +284,7 @@ def settings() -> RRV:
         'settings.html',
         languages={
             language_code: autonym(language_code)
-            for language_code in translations
+            for language_code in i18n.translations
         },
     )
 
