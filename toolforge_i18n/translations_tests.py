@@ -34,6 +34,14 @@ def test_message_keys(language_code: str):
     assert not extra_keys
 
 
+def test_message_documentation():
+    documented_keys = list(documentation.keys())
+    expected_documented_keys = [key
+                                for key in translations['en']
+                                if key not in tool_translations_config.config.derived_messages]
+    assert documented_keys == expected_documented_keys
+
+
 @pytest.mark.filterwarnings('ignore::bs4.MarkupResemblesLocatorWarning')
 def test_message_html_elements(language_code: str, message_key: str):
     message = translations[language_code].get(message_key)
