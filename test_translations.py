@@ -1,5 +1,9 @@
+import toolforge
 from toolforge_i18n.translations_tests import *
 from toolforge_i18n.language_info import lang_autonym
+
+
+toolforge.set_user_agent('lexeme-forms', email='mail@lucaswerkmeister.de')
 
 
 def test_english_messages_exist():
