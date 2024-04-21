@@ -41,8 +41,8 @@ app.add_template_filter(lang_lex2int)
 app.add_template_filter(lang_int2babel)
 
 def interface_language_code(translations: dict[str, dict[str, str]]) -> str:
-    legacy_language_codes = {  # any pair here can be removed after a while, see b762a62db6
-        'yue': 'zh-hant',  # PR #187, 2023-11-12
+    legacy_language_codes: dict[str, str] = {  # any pair here can be removed after a while, see b762a62db6
+        # 'old_language_code': 'new_language_code',
     }
 
     if 'uselang' in flask.request.args:
