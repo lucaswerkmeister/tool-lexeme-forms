@@ -1,7 +1,7 @@
 import flask
 from markupsafe import Markup
 from toolforge_i18n.formatters import I18nFormatter
-from toolforge_i18n.language_info import lang_mw_to_bcp47, lang_dir, lang_fallbacks
+from toolforge_i18n.language_info import lang_bcp47_to_mw, lang_mw_to_bcp47, lang_dir, lang_fallbacks
 from toolforge_i18n.translations import load_translations
 import tool_translations_config
 from typing import Callable, Optional, Tuple, cast
@@ -39,8 +39,9 @@ def assert_html_language_codes_empty(response: werkzeug.Response) -> werkzeug.Re
 
 
 def interface_language_code_from_request(translations: dict[str, dict[str, str]]) -> str:
-    # TODO: this mixes HTML and MediaWiki language codes :/
-    return flask.request.accept_languages.best_match(translations.keys(), 'en')
+    available_bcp47_languages = [lang_mw_to_bcp47(code) for code in translations]
+    best_bcp47_language = flask.request.accept_languages.best_match(available_bcp47_languages, 'en')
+    return lang_bcp47_to_mw(best_bcp47_language)
 
 
 def _message_with_language(message_code: str) -> Tuple[Markup, str]:
