@@ -46,7 +46,7 @@ def interface_language_code(translations: dict[str, dict[str, str]]) -> str:
     }
 
     if 'uselang' in flask.request.args:
-        return flask.request.args['uselang']
+        return interface_language_code_from_request(translations)
     elif flask.session.get('interface_language_code') in translations | legacy_language_codes:
         code = flask.session['interface_language_code']
         if code in legacy_language_codes:

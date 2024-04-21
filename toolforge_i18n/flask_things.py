@@ -39,6 +39,8 @@ def assert_html_language_codes_empty(response: werkzeug.Response) -> werkzeug.Re
 
 
 def interface_language_code_from_request(translations: dict[str, dict[str, str]]) -> str:
+    if 'uselang' in flask.request.args:
+        return flask.request.args['uselang']
     available_bcp47_languages = [lang_mw_to_bcp47(code) for code in translations]
     best_bcp47_language = flask.request.accept_languages.best_match(available_bcp47_languages, 'en')
     return lang_bcp47_to_mw(best_bcp47_language)
