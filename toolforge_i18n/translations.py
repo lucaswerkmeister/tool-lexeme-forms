@@ -51,9 +51,6 @@ class TranslationsConfig:
     You will need to map these codes to a supported alternative
     if you have any translations for such language codes."""
 
-    skipped_language_codes: Container[str] = field(default_factory=lambda: {'qqq'})
-    """Language codes for which translations should not be loaded."""
-
     allowed_html_elements: dict[str, set[str]] = field(default_factory=lambda: {
         'abbr': {'title'},
         'kbd': set(),
@@ -150,8 +147,10 @@ def mw2py(mw: str, babel_language: str, variables: Sequence[str]) -> str:
     return py
 
 
-def load_translations(config: TranslationsConfig) -> dict[str, dict[str, str]]:
+def load_translations(config: TranslationsConfig) \
+        -> tuple[dict[str, dict[str, str]], dict[str, str]]:
     translations: dict[str, dict[str, str]] = {}
+    documentation: dict[str, str] = {}
     for entry in os.scandir(config.directory):
         if not entry.is_file():
             continue
@@ -159,10 +158,13 @@ def load_translations(config: TranslationsConfig) -> dict[str, dict[str, str]]:
         if not match:
             continue
         language = match[1]
-        if language in config.skipped_language_codes:
-            continue
         with open(entry.path, 'r') as f:
             data = json.load(f)
+        if language == 'qqq':
+            documentation = {key: value
+                             for key, value in data.items()
+                             if not key.startswith('@')}
+            continue
         translations[language] = {}
         for key in data:
             if key.startswith('@'):
@@ -173,4 +175,4 @@ def load_translations(config: TranslationsConfig) -> dict[str, dict[str, str]]:
             source_key, transformation = config.derived_messages[key]
             if source_key in translations[language]:
                 translations[language][key] = transformation(translations[language][source_key])
-    return translations
+    return translations, documentation

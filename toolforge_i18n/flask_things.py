@@ -78,7 +78,7 @@ class ToolforgeI18n:
             app: Optional[flask.Flask] = None,
             interface_language_code: Callable[[dict[str, dict[str, str]]], str] = interface_language_code_from_request,
     ):
-        self.translations = load_translations(tool_translations_config.config)
+        self.translations, self.documentation = load_translations(tool_translations_config.config)
         self.interface_language_code = interface_language_code
         if app is not None:
             self.init_app(app)

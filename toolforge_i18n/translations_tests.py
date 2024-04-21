@@ -10,7 +10,7 @@ from toolforge_i18n.translations import load_translations
 import tool_translations_config
 
 
-translations = load_translations(tool_translations_config.config)
+translations, documentation = load_translations(tool_translations_config.config)
 
 
 @pytest.fixture(scope="module", params=translations.keys())
