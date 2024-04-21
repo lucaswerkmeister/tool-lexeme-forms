@@ -5,7 +5,7 @@ import json
 import pytest
 import re
 from toolforge_i18n.flask_things import init_html_language_codes
-from toolforge_i18n.language_info import bcp47
+from toolforge_i18n.language_info import lang_mw_to_bcp47
 import werkzeug
 
 import app as lexeme_forms
@@ -101,7 +101,7 @@ def test_template_group_test():
 def test_message(language_code, number):
     with lexeme_forms.app.test_request_context():
         flask.g.interface_language_code = language_code
-        flask.g.html_language_codes = [bcp47(language_code)]
+        flask.g.html_language_codes = [lang_mw_to_bcp47(language_code)]
         message = lexeme_forms.message(  # noqa: F841
             'description-with-forms-and-senses',
             description='',

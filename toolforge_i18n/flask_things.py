@@ -1,7 +1,7 @@
 import flask
 from markupsafe import Markup
 from toolforge_i18n.formatters import I18nFormatter
-from toolforge_i18n.language_info import bcp47, directionality, fallbacks
+from toolforge_i18n.language_info import lang_mw_to_bcp47, lang_dir, lang_fallbacks
 from toolforge_i18n.translations import load_translations
 import tool_translations_config
 from typing import Callable, Optional, Tuple, cast
@@ -13,10 +13,10 @@ def init_html_language_codes() -> None:
 
 
 def push_html_lang(language_code: str) -> Markup:
-    html_language_code = bcp47(language_code)
+    html_language_code = lang_mw_to_bcp47(language_code)
     flask.g.html_language_codes.append(html_language_code)
     return Markup(r'lang="{}" dir="{}"').format(html_language_code,
-                                                directionality(html_language_code))
+                                                lang_dir(html_language_code))
 
 
 def add_lang_if_needed(message: Markup, language_code: str) -> Markup:
@@ -28,7 +28,7 @@ def add_lang_if_needed(message: Markup, language_code: str) -> Markup:
 
 
 def pop_html_lang(language_code: str) -> Markup:
-    html_language_code = bcp47(language_code)
+    html_language_code = lang_mw_to_bcp47(language_code)
     assert flask.g.html_language_codes.pop() == html_language_code
     return Markup(r'')
 
@@ -46,7 +46,7 @@ def interface_language_code_from_request(translations: dict[str, dict[str, str]]
 def _message_with_language(message_code: str) -> Tuple[Markup, str]:
     interface_language_code = cast(str, flask.g.interface_language_code)
     language_codes = ([interface_language_code] +
-                      fallbacks(interface_language_code) +
+                      lang_fallbacks(interface_language_code) +
                       ['en'])
     translations = flask.current_app.extensions['toolforge_i18n'].translations
     for language_code in language_codes:
@@ -83,7 +83,7 @@ class ToolforgeI18n:
     def init_app(self, app: flask.Flask) -> None:
         app.extensions['toolforge_i18n'] = self
         app.add_template_global(message)
-        app.add_template_filter(bcp47)
+        app.add_template_filter(lang_mw_to_bcp47)
         app.add_template_global(push_html_lang)
         app.add_template_global(pop_html_lang)
         app.before_request(init_html_language_codes)

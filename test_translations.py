@@ -1,5 +1,5 @@
 from toolforge_i18n.translations_tests import *
-from toolforge_i18n.language_info import autonym
+from toolforge_i18n.language_info import lang_autonym
 
 
 def test_english_messages_exist():
@@ -16,4 +16,4 @@ def test_language_code_leq_20(language_code: str):
 def test_autonym_exists(language_code: str) -> None:
     """Autonyms are used e.g. in the settings page,
     they should exist and be nonempty."""
-    assert autonym(language_code)
+    assert lang_autonym(language_code)

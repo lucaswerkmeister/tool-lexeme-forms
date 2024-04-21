@@ -1,7 +1,7 @@
 import pytest
 from typing import Optional
 
-from .language_info import autonym, bcp47, directionality, fallbacks
+from .language_info import lang_autonym, lang_mw_to_bcp47, lang_dir, lang_fallbacks
 import toolforge_i18n.language_info
 
 
@@ -14,8 +14,8 @@ toolforge_i18n.user_agent.set_user_agent('toolforge-i18n test (not published yet
     ('fa', 'فارسی'),
     ('bn-x-Q6747180', None)
 ])
-def test_autonym(code: str, expected: Optional[str]):
-    assert autonym(code) == expected
+def test_lang_autonym(code: str, expected: Optional[str]):
+    assert lang_autonym(code) == expected
 
 
 @pytest.mark.parametrize('code, expected', [
@@ -23,8 +23,8 @@ def test_autonym(code: str, expected: Optional[str]):
     ('simple', 'en-simple'),
     ('unknown', 'unknown')
 ])
-def test_bcp47(code: str, expected: str):
-    assert bcp47(code) == expected
+def test_lang_mw_to_bcp47(code: str, expected: str):
+    assert lang_mw_to_bcp47(code) == expected
 
 
 @pytest.mark.parametrize('code, expected', [
@@ -32,8 +32,8 @@ def test_bcp47(code: str, expected: str):
     ('fa', 'rtl'),
     ('unknown', 'auto')
 ])
-def test_directionality(code: str, expected: str):
-    assert directionality(code) == expected
+def test_lang_dir(code: str, expected: str):
+    assert lang_dir(code) == expected
 
 
 @pytest.mark.parametrize('code, expected', [
@@ -42,5 +42,5 @@ def test_directionality(code: str, expected: str):
     ('de-at', ['de']),
     ('sh', ['sh-latn', 'sh-cyrl', 'bs', 'sr-el', 'sr-latn', 'hr']),
 ])
-def test_fallbacks(code: str, expected: list[str]):
-    assert fallbacks(code) == expected
+def test_lang_fallbacks(code: str, expected: list[str]):
+    assert lang_fallbacks(code) == expected

@@ -30,7 +30,7 @@ from parse_tpsv import parse_lexemes, FirstFieldNotLexemeIdError, FirstFieldLexe
 from templates import templates, templates_without_redirects, Template, TemplateForm
 import tool_translations_config
 from toolforge_i18n.flask_things import ToolforgeI18n, message, pop_html_lang, push_html_lang
-from toolforge_i18n.language_info import autonym, bcp47, directionality, fallbacks
+from toolforge_i18n.language_info import lang_autonym
 from wikibase_types import Lexeme, LexemeForm, LexemeLemmas, Statements, Term
 
 app = OrderedFlask(__name__)
@@ -247,7 +247,7 @@ def language_name_with_code(language_code: str) -> Markup:
     code_zxx = (Markup(r'<span lang=zxx>') +
                 Markup.escape(language_code) +
                 Markup(r'</span>'))
-    language_name = autonym(language_code)
+    language_name = lang_autonym(language_code)
     if language_name is None:
         language_name = label(language_code)
     if language_name is None:
@@ -283,7 +283,7 @@ def settings() -> RRV:
     return flask.render_template(
         'settings.html',
         languages={
-            language_code: autonym(language_code)
+            language_code: lang_autonym(language_code)
             for language_code in i18n.translations
         },
     )
