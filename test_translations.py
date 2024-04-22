@@ -1,5 +1,5 @@
 import toolforge
-from toolforge_i18n.translations_tests import *
+from toolforge_i18n.translations_tests import *  # noqa: F401, F403
 from toolforge_i18n.language_info import lang_autonym
 
 

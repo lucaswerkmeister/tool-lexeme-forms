@@ -4,7 +4,6 @@ from html.parser import HTMLParser
 import json
 import pytest
 import re
-from toolforge_i18n.flask_things import init_html_language_codes
 from toolforge_i18n.language_info import lang_mw_to_bcp47
 import werkzeug
 

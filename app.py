@@ -1,4 +1,3 @@
-import babel
 import copy
 import decorator
 import flask
@@ -28,7 +27,6 @@ from matching import match_template_to_lexeme_data, match_lexeme_forms_to_templa
 from mwapi_utils import T272319RetryingSession
 from parse_tpsv import parse_lexemes, FirstFieldNotLexemeIdError, FirstFieldLexemeIdError, WrongNumberOfFieldsError
 from templates import templates, templates_without_redirects, Template, TemplateForm
-import tool_translations_config
 from toolforge_i18n.flask_things import ToolforgeI18n, interface_language_code_from_request, message, pop_html_lang, push_html_lang
 from toolforge_i18n.language_info import lang_autonym
 from wikibase_types import Lexeme, LexemeForm, LexemeLemmas, Statements, Term

@@ -1,7 +1,7 @@
-from typing import Dict, List, Literal, NewType, Optional, Set, TypeAlias, TypedDict, overload
+from typing import Dict, List, Literal, Optional, Set, TypeAlias, TypedDict, overload
 from typing_extensions import NotRequired
 
-from entity_ids import *
+from entity_ids import *  # noqa: F403
 from wikibase_types import Snak, Statement, Statements
 
 

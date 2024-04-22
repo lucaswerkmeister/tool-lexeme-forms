@@ -1,7 +1,7 @@
 import copy
 from typing import cast, TypedDict
 
-from entity_ids.property_ids import *
+from entity_ids.property_ids import *  # noqa: F403
 from templates import Template, TemplateForm
 from wikibase_types import Lexeme, LexemeForm, Statement, Statements
 
