@@ -10,10 +10,12 @@
 			"Tamaki Wakita",
 			"Tmv",
 			"バレロン",
-			"春春眠眠"
+			"春春眠眠",
+			"組曲師"
 		]
 	},
 	"create": "作成",
+	"csrf-warning": "申し訳ございませんが、このリクエストは処理できません。 (<abbr title =\" Cross - Site Request forgery \"> CSRF </abbr> Protection failed )。 もう一度フォームを送信してみてください。",
 	"duplicates-instructions": "それらが{{PLURAL:$1|別物|別人}}の場合、フォームの下のチェックボックスを埋めてください。",
 	"duplicates-create": "とにかく新しい語彙素を作成します。",
 	"no-duplicate": "既にある物のコピーではありません",
