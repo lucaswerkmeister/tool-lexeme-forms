@@ -1,5 +1,5 @@
 import babel
-from collections.abc import Callable, Container, Mapping, Sequence
+from collections.abc import Callable, Mapping, Sequence
 from dataclasses import dataclass, field
 import json
 import os

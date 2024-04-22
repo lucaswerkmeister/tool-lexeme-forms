@@ -2,7 +2,6 @@ from bs4 import BeautifulSoup
 from collections.abc import Callable
 from markupsafe import Markup
 import pytest
-import re
 from typing import Any
 
 import toolforge_i18n.formatters as formatters

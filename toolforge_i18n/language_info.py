@@ -1,5 +1,4 @@
 import mwapi  # type: ignore
-import requests
 from typing import Literal, Optional, TypedDict, cast
 
 from .user_agent import get_user_agent
