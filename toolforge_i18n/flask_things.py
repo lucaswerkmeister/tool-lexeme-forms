@@ -62,7 +62,27 @@ def _message_with_language(message_code: str) -> Tuple[Markup, str]:
     raise ValueError(f'Message {message_code} not found in {language_codes}')
 
 
+def _message_qqx(message_code: str, **kwargs) -> Markup:
+    message = Markup('(')
+    message += message_code
+    if kwargs:
+        message += ': '
+        first = True
+        for key, value in kwargs.items():
+            if first:
+                first = False
+            else:
+                message += ', '
+            message += key
+            message += '='
+            message += repr(value)
+    message += ')'
+    return message
+
+
 def message(message_code: str, **kwargs) -> Markup:
+    if flask.g.qqx:
+        return _message_qqx(message_code, **kwargs)
     message, language = _message_with_language(message_code)
     if kwargs:
         formatter = I18nFormatter(locale_identifier=tool_translations_config.config.language_code_to_babel(language),
@@ -94,4 +114,10 @@ class ToolforgeI18n:
 
         @app.before_request
         def init_interface_language_code() -> None:
-            flask.g.interface_language_code = self.interface_language_code(self.translations)
+            interface_language_code = self.interface_language_code(self.translations)
+            if interface_language_code == 'qqx':
+                flask.g.interface_language_code = 'en'
+                flask.g.qqx = True
+            else:
+                flask.g.interface_language_code = interface_language_code
+                flask.g.qqx = False

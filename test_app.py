@@ -100,6 +100,7 @@ def test_template_group_test():
 def test_message(language_code, number):
     with lexeme_forms.app.test_request_context():
         flask.g.interface_language_code = language_code
+        flask.g.qqx = False
         flask.g.html_language_codes = [lang_mw_to_bcp47(language_code)]
         message = lexeme_forms.message(  # noqa: F841
             'description-with-forms-and-senses',
