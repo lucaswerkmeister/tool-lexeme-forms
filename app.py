@@ -751,15 +751,17 @@ def get_duplicates(wiki: str, language_code: str, lemma: str) -> list[Duplicate]
 
     return list(matches.values())  # list() to turn odict_values (not JSON serializable) into plain list
 
-@app.route('/api/v1/no_duplicate/<language_code>')
+@app.route('/api/v1/no_duplicate')
+@app.route('/api/v1/no_duplicate/<_unused>')  # legacy URL
 @app.template_global()
-def render_no_duplicate(language_code: str) -> RRV:
+def render_no_duplicate(_unused: Optional[str] = None) -> RRV:
     return flask.render_template(
         'no_duplicate.html',
     )
 
-@app.route('/api/v1/advanced_partial_forms_hint/<language_code>')
-def render_advanced_partial_forms_hint(language_code: str) -> RRV:
+@app.route('/api/v1/advanced_partial_forms_hint')
+@app.route('/api/v1/advanced_partial_forms_hint/<_unused>')  # legacy URL
+def render_advanced_partial_forms_hint(_unused: Optional[str] = None) -> RRV:
     return flask.render_template(
         'advanced_partial_forms_hint.html',
     )

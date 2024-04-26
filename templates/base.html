@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html {{ push_html_lang( g.interface_language_code ) }}>
+<html {{ push_html_lang( g.interface_language_code ) }} data-interface-language-code="{{ g.interface_language_code }}" data-uselang="{{ 'qqx' if g.qqx else g.interface_language_code }}">
   <head>
     {% block head %}
     <meta charset="utf-8">

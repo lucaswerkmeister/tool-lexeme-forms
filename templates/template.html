@@ -88,7 +88,7 @@
     <input name="target_hash" type="hidden" value="{{ template.target_hash }}">
     {% endif %}
     {% if duplicates %}
-    {{ render_no_duplicate(g.interface_language_code) | safe }}
+    {{ render_no_duplicate() | safe }}
     {% endif %}
     <button id="submit" class="btn btn-{% if not advanced %}primary{% else %}danger{% endif %}"{% if readonly %} disabled title="{{ message( 'login-hint', url=url_for( 'login' ) ) | striptags }}" {% endif %}>{{ message( 'create' ) }}</button>
     {% if not advanced %}
