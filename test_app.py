@@ -4,11 +4,10 @@ from html.parser import HTMLParser
 import json
 import pytest
 import re
-from translations import translations
+from toolforge_i18n.language_info import lang_mw_to_bcp47
 import werkzeug
 
 import app as lexeme_forms
-from language import lang_int2html
 import matching
 from templates import templates_without_redirects
 
@@ -85,35 +84,31 @@ def test_csrf_token_load():
         assert lexeme_forms.csrf_token() == 'test token'
 
 def test_template_group():
-    group = lexeme_forms.template_group({'language_code': 'de'})
+    with lexeme_forms.app.test_request_context():
+        flask.g.html_language_codes = []
+        group = lexeme_forms.template_group({'language_code': 'de'})
     assert group == '<span lang="de" dir="ltr">Deutsch (<span lang=zxx>de</span>)</span>'
 
 def test_template_group_test():
-    group = lexeme_forms.template_group({'language_code': 'de', 'test': True})
+    with lexeme_forms.app.test_request_context():
+        flask.g.html_language_codes = []
+        group = lexeme_forms.template_group({'language_code': 'de', 'test': True})
     assert group == '<span lang="de" dir="ltr">Deutsch (<span lang=zxx>de</span>)</span>, test.wikidata.org'
 
-@pytest.mark.parametrize('language_code', translations.keys())
+@pytest.mark.parametrize('language_code', lexeme_forms.i18n.translations.keys())
 @pytest.mark.parametrize('number', range(-1, 5))
-def test_message_with_kwargs(language_code, number):
+def test_message(language_code, number):
     with lexeme_forms.app.test_request_context():
         flask.g.interface_language_code = language_code
-        flask.g.html_language_codes = [lang_int2html(language_code)]
-        message = lexeme_forms.message_with_kwargs(  # noqa: F841
+        flask.g.qqx = False
+        flask.g.html_language_codes = [lang_mw_to_bcp47(language_code)]
+        message = lexeme_forms.message(  # noqa: F841
             'description-with-forms-and-senses',
             description='',
             num_forms=number,
             num_senses=number,
         )
     # should not have failed
-
-@pytest.mark.parametrize('language_code, expected_direction', [
-    ('en', 'ltr'),
-    ('fa', 'rtl'),
-    ('mis', 'auto'),
-    ('mis-x-Q401', 'auto'),
-])
-def test_text_direction(language_code, expected_direction):
-    assert lexeme_forms.text_direction(language_code) == expected_direction
 
 def test_if_no_such_template_redirect_known_template():
     assert lexeme_forms.if_no_such_template_redirect('english-noun') is None
@@ -126,13 +121,10 @@ def test_if_no_such_template_redirect_renamed_template():
 
 def test_if_no_such_template_redirect_unknown_template():
     template_name = 'no-such-template'
-    with lexeme_forms.app.test_request_context():
-        lexeme_forms.init_interface_language_code()  # manual call because we bypass @app.before_request below
-        response = lexeme_forms.if_no_such_template_redirect(template_name)
-    assert response is not None
-    assert type(response) is str
-    assert 'alert' in response
-    assert template_name in response
+    with lexeme_forms.app.test_client() as client:
+        response = client.get(f'/template/{template_name}/')
+    assert 'alert' in response.text
+    assert template_name in response.text
 
 def test_if_has_duplicates_redirect_checkbox_checked():
     assert lexeme_forms.if_has_duplicates_redirect(
@@ -1253,17 +1245,6 @@ def test_update_lexeme_remove_main_form_representation():
         ],
         'base_revision_id': 123,
     }
-
-
-@pytest.mark.parametrize('user, expected', [
-    ('علاء', 'm'),
-    ('Harmonia Amanda', 'f'),
-    ('Nikki', 'n'),
-    (None, 'n'),
-])
-def test_get_gender(user, expected):
-    with lexeme_forms.app.test_request_context():
-        assert lexeme_forms.get_gender(user) == expected
 
 
 @pytest.mark.parametrize('template_name', templates_without_redirects.keys())

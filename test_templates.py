@@ -4,7 +4,6 @@ import pytest
 import app
 from language import lang_lex2int
 import templates
-import translations
 from wikibase_types import Statements
 
 
@@ -220,7 +219,7 @@ def test_translations_available():
     missing_language_codes = set()
     for template in templates.templates_without_redirects.values():
         language_code = lang_lex2int(template['language_code'])
-        if language_code not in translations.translations:
+        if language_code not in app.i18n.translations:
             missing_language_codes.add(language_code)
 
     # lack of translations accepted for now
@@ -229,7 +228,7 @@ def test_translations_available():
 
     # special case
     if 'zh' in missing_language_codes:
-        if 'zh-hans' in translations.translations or 'zh-hant' in translations.translations:
+        if 'zh-hans' in app.i18n.translations or 'zh-hant' in app.i18n.translations:
             missing_language_codes.remove('zh')
 
     assert not missing_language_codes

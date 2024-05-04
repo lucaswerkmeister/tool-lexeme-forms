@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     'use strict';
 
     const template = JSON.parse(document.getElementsByTagName('main')[0].dataset.template),
+          uselang = document.documentElement.dataset.uselang,
           baseUrl = document.querySelector('link[rel=index]').href,
           form = document.forms[0],
           lexemeIdInput = (form.elements['lexeme_id'] || [])[0],
@@ -72,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return Promise.resolve(cachedNoDuplicateHtml);
         }
 
-        const url = `${baseUrl}api/v1/no_duplicate/${template.language_code}`;
+        const url = `${baseUrl}api/v1/no_duplicate?uselang=${uselang}`;
         return fetch(url, initAcceptHtml).then(response => response.text()).then(noDuplicateHtml => {
             if (cachedNoDuplicateHtml === null) {
                 cachedNoDuplicateHtml = noDuplicateHtml;
@@ -107,6 +108,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (template.target_hash) {
             url += `&target_hash=${template.target_hash}`;
         }
+        url += `&uselang=${uselang}`;
         fetch(url, initAcceptHtml).then(response => {
             if (response.ok) {
                 return response.text();

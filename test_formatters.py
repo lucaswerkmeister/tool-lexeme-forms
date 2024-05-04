@@ -1,7 +1,7 @@
 from markupsafe import Markup
 import pytest
 
-import formatters
+import toolforge_i18n.formatters as formatters
 
 
 @pytest.mark.parametrize('count, expected', [

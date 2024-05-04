@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
     'use strict';
 
-    const template = JSON.parse(document.getElementsByTagName('main')[0].dataset.template),
+    const uselang = document.documentElement.dataset.uselang,
           baseUrl = document.querySelector('link[rel=index]').href,
           inputs = Array.from(document.querySelectorAll('input[name="form_representation"]')),
           addAlert = _.once(() => {
-              const url = `${baseUrl}api/v1/advanced_partial_forms_hint/${template.language_code}`,
+              const url = `${baseUrl}api/v1/advanced_partial_forms_hint?uselang=${uselang}`,
                     init = {
                         headers: {
                             Accept: 'text/html'

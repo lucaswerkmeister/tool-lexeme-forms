@@ -12,7 +12,7 @@
       <option
         {% if language_code == g.interface_language_code %} selected {% endif %}
         value="{{ language_code }}"
-        lang="{{ language_code | lang_int2html }}"
+        lang="{{ language_code | lang_mw_to_bcp47 }}"
         {# no dir=, all the options should be aligned on the same side #}
         >
         {{ autonym }}

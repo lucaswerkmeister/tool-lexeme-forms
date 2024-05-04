@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block main %}
   <div class="alert alert-info">
-    {{ message_with_kwargs('bulk-not-allowed', user_name=None) }}
+    {{ message('bulk-not-allowed', user_name=user_name) }}
   </div>
 {% endblock main %}

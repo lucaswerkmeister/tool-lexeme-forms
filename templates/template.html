@@ -6,7 +6,7 @@
 {% elif lexeme_id %}
 {{ lexeme_id }} –
 {% endif %}
-{{ message_with_kwargs( 'title-advanced' if advanced else 'title-create', template_label=template.label ) | striptags }} – {{ super() }}
+{{ message( 'title-advanced' if advanced else 'title-create', template_label=template.label ) | striptags }} – {{ super() }}
 {{ pop_html_lang( g.interface_language_code ) }}
 {% endblock title %}
 {% block head %}
@@ -23,7 +23,7 @@
   <h1 class="h2" {{ push_html_lang( template.language_code | lang_lex2int ) }}>{{ template.label }}</h1{{ pop_html_lang( template.language_code | lang_lex2int ) }}>
   {% if readonly %}
   <div class="alert alert-warning">
-    {{ message_with_kwargs( 'login-hint', url=url_for( 'login' ) ) }}
+    {{ message( 'login-hint', url=url_for( 'login' ) ) }}
   </div>
   {% endif %}
   {% if advanced %}
@@ -88,9 +88,9 @@
     <input name="target_hash" type="hidden" value="{{ template.target_hash }}">
     {% endif %}
     {% if duplicates %}
-    {{ render_no_duplicate(g.interface_language_code) | safe }}
+    {{ render_no_duplicate() | safe }}
     {% endif %}
-    <button id="submit" class="btn btn-{% if not advanced %}primary{% else %}danger{% endif %}"{% if readonly %} disabled title="{{ message_with_kwargs( 'login-hint', url=url_for( 'login' ) ) | striptags }}" {% endif %}>{{ message( 'create' ) }}</button>
+    <button id="submit" class="btn btn-{% if not advanced %}primary{% else %}danger{% endif %}"{% if readonly %} disabled title="{{ message( 'login-hint', url=url_for( 'login' ) ) | striptags }}" {% endif %}>{{ message( 'create' ) }}</button>
     {% if not advanced %}
     <button formnovalidate formaction="{{ url_for('process_template_advanced', template_name=template['@template_name']) }}" class="btn btn-secondary">{{ message( 'advanced' ) }}</button>
     {% endif %}

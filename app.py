@@ -1,4 +1,3 @@
-import babel
 import copy
 import decorator
 import flask
@@ -22,14 +21,14 @@ import werkzeug
 import yaml
 
 from flask_utils import OrderedFlask, TagOrderedMultiDict, TagImmutableOrderedMultiDict, SetJSONProvider
-from formatters import I18nFormatter
-from language import lang_lex2int, lang_int2html, lang_int2babel
-from language_info import autonym, label, fallbacks
+from language import lang_lex2int, lang_int2babel
+from language_info import label
 from matching import match_template_to_lexeme_data, match_lexeme_forms_to_template, match_template_entity_to_lexeme_entity, MatchedTemplate, MatchedTemplateForm
 from mwapi_utils import T272319RetryingSession
 from parse_tpsv import parse_lexemes, FirstFieldNotLexemeIdError, FirstFieldLexemeIdError, WrongNumberOfFieldsError
 from templates import templates, templates_without_redirects, Template, TemplateForm
-from translations import translations
+from toolforge_i18n.flask_things import ToolforgeI18n, interface_language_code_from_request, message, pop_html_lang, push_html_lang
+from toolforge_i18n.language_info import lang_autonym
 from wikibase_types import Lexeme, LexemeForm, LexemeLemmas, Statements, Term
 
 app = OrderedFlask(__name__)
@@ -37,8 +36,27 @@ app.session_interface.serializer.register(TagOrderedMultiDict, index=0)
 app.session_interface.serializer.register(TagImmutableOrderedMultiDict, index=0)
 app.json = SetJSONProvider(app)
 app.add_template_filter(lang_lex2int)
-app.add_template_filter(lang_int2html)
 app.add_template_filter(lang_int2babel)
+
+def interface_language_code(translations: dict[str, dict[str, str]]) -> str:
+    legacy_language_codes: dict[str, str] = {  # any pair here can be removed after a while, see b762a62db6
+        # 'old_language_code': 'new_language_code',
+    }
+
+    if 'uselang' in flask.request.args:
+        return interface_language_code_from_request(translations)
+    elif flask.session.get('interface_language_code') in translations | legacy_language_codes:
+        code = flask.session['interface_language_code']
+        if code in legacy_language_codes:
+            code = legacy_language_codes[code]
+            flask.session['interface_language_code'] = code
+        if code not in translations:
+            code = 'en'
+        return code
+    else:
+        return interface_language_code_from_request(translations)
+
+i18n = ToolforgeI18n(app, interface_language_code)
 
 user_agent = toolforge.set_user_agent('lexeme-forms', email='mail@lucaswerkmeister.de')
 
@@ -86,44 +104,6 @@ def enableCORS(func, *args, **kwargs):
     rv = func(*args, **kwargs)
     response = flask.make_response(rv)
     response.headers['Access-Control-Allow-Origin'] = '*'
-    return response
-
-@app.before_request
-def init_interface_language_code():
-    legacy_language_codes = {  # any pair here can be removed after a while, see b762a62db6
-        'yue': 'zh-hant',  # PR #187, 2023-11-12
-    }
-
-    if 'uselang' in flask.request.args:
-        flask.g.interface_language_code = flask.request.args['uselang']
-    elif flask.session.get('interface_language_code') in translations | legacy_language_codes:
-        flask.g.interface_language_code = flask.session['interface_language_code']
-        if flask.g.interface_language_code in legacy_language_codes:
-            flask.g.interface_language_code = legacy_language_codes[flask.g.interface_language_code]
-            flask.session['interface_language_code'] = flask.g.interface_language_code
-        if flask.g.interface_language_code not in translations:
-            flask.g.interface_language_code = 'en'
-    else:
-        flask.g.interface_language_code = flask.request.accept_languages\
-                                                       .best_match(translations.keys(), 'en')
-    flask.g.html_language_codes = []
-
-@app.template_global()
-def push_html_lang(language_code: str) -> Markup:
-    html_language_code = lang_int2html(language_code)
-    flask.g.html_language_codes.append(html_language_code)
-    return Markup(r'lang="{}" dir="{}"').format(html_language_code,
-                                                text_direction(language_code))
-
-@app.template_global()
-def pop_html_lang(language_code: str) -> Markup:
-    html_language_code = lang_int2html(language_code)
-    assert flask.g.html_language_codes.pop() == html_language_code
-    return Markup(r'')
-
-@app.after_request
-def assert_html_lang_empty(response: werkzeug.Response) -> werkzeug.Response:
-    assert flask.g.html_language_codes == []
     return response
 
 @app.after_request
@@ -200,7 +180,7 @@ def render_duplicates(
 def augment_description(description, forms_count, senses_count):
     if forms_count is None or senses_count is None:
         return description
-    return message_with_kwargs(
+    return message(
         'description-with-forms-and-senses',
         description=description,
         num_forms=int(forms_count),
@@ -245,65 +225,15 @@ def authentication_area() -> Markup:
 
     user_name = userinfo['name']
     return (Markup(r'<span class="navbar-text">') +
-            Markup(message_with_kwargs('logged-in', user_link=user_link(user_name), user_name=user_name)) +
+            Markup(message('logged-in', user_link=user_link(user_name), user_name=user_name)) +
             Markup(r'</span>'))
-
-@app.template_global()
-def message(message_code: str) -> Markup:
-    message, language = message_with_language(message_code)
-    return add_lang_if_needed(message, language)
-
-def message_with_language(message_code: str) -> Tuple[Markup, str]:
-    interface_language_code = cast(str, flask.g.interface_language_code)
-    language_codes = ([interface_language_code] +
-                      fallbacks(interface_language_code) +
-                      ['en'])
-    for language_code in language_codes:
-        try:
-            text = translations[language_code][message_code]
-        except LookupError:
-            continue
-        else:
-            return Markup(text), language_code
-    raise ValueError(f'Message {message_code} not found in {language_codes}')
-
-@app.template_global()
-def message_with_kwargs(message_code: str, **kwargs) -> Markup:
-    template, language = message_with_language(message_code)
-    message = I18nFormatter(locale_identifier=lang_int2babel(language),
-                            get_gender=get_gender).format(template, **kwargs)
-    message = cast(Markup, message)  # I18nFormatter returns Markup given Markup
-    return add_lang_if_needed(message, language)
-
-def add_lang_if_needed(message: Markup, language_code: str) -> Markup:
-    if flask.g.html_language_codes and flask.g.html_language_codes[-1] == language_code:
-        return message
-    return Markup('<span {}>{}</span{}>').format(push_html_lang(language_code),
-                                                 message,
-                                                 pop_html_lang(language_code))
-
-@app.template_filter()
-def text_direction(language_code: str) -> str:
-    babel_language_code = lang_int2babel(language_code)
-    try:
-        locale = babel.Locale.parse(babel_language_code)
-    except babel.UnknownLocaleError:
-        print(f'Unrecognized Babel language code {babel_language_code} '
-              f'for interface language code {language_code}')
-        return 'auto'
-    else:
-        return locale.text_direction
 
 @app.template_filter()
 def term_span(term: Term) -> Markup:
     interface_language_code = lang_lex2int(term['language'])
-    return (Markup(r'<span lang="') +
-            Markup.escape(lang_int2html(interface_language_code)) +
-            Markup(r'" dir="') +
-            Markup.escape(text_direction(interface_language_code)) +
-            Markup(r'">') +
-            Markup.escape(term['value']) +
-            Markup(r'</span>'))
+    return Markup('<span {}>{}</span{}>').format(push_html_lang(interface_language_code),
+                                                 term['value'],
+                                                 pop_html_lang(interface_language_code))
 
 @app.template_filter()
 def lemmas_spans(lemmas: LexemeLemmas) -> Markup:
@@ -315,21 +245,16 @@ def language_name_with_code(language_code: str) -> Markup:
     code_zxx = (Markup(r'<span lang=zxx>') +
                 Markup.escape(language_code) +
                 Markup(r'</span>'))
-    language_name = autonym(language_code)
+    language_name = lang_autonym(language_code)
     if language_name is None:
         language_name = label(language_code)
     if language_name is None:
         return code_zxx
     interface_language_code = lang_lex2int(language_code)
-    return (Markup(r'<span lang="') +
-            Markup.escape(lang_int2html(interface_language_code)) +
-            Markup(r'" dir="') +
-            Markup.escape(text_direction(interface_language_code)) +
-            Markup(r'">') +
-            Markup.escape(language_name) +
-            Markup(r' (') +
-            code_zxx +
-            Markup(r')</span>'))
+    return Markup('<span {}>{} ({})</span{}>').format(push_html_lang(interface_language_code),
+                                                      language_name,
+                                                      code_zxx,
+                                                      pop_html_lang(interface_language_code))
 
 @app.template_global()
 def can_use_wikifunctions() -> bool:
@@ -356,8 +281,8 @@ def settings() -> RRV:
     return flask.render_template(
         'settings.html',
         languages={
-            language_code: autonym(language_code)
-            for language_code in translations
+            language_code: lang_autonym(language_code)
+            for language_code in i18n.translations
         },
     )
 
@@ -427,8 +352,13 @@ def process_template_bulk(template_name: str) -> RRV:
     readonly = 'OAUTH' in app.config and 'oauth_access_token' not in flask.session
 
     if not can_use_bulk_mode() and not readonly:
+        user_name = None
+        userinfo = get_userinfo()
+        if userinfo is not None:
+            user_name = userinfo['name']
         return flask.render_template(
             'bulk-not-allowed.html',
+            user_name=user_name,
         )
 
     if (flask.request.method == 'POST' and
@@ -442,7 +372,7 @@ def process_template_bulk(template_name: str) -> RRV:
         try:
             lexemes = parse_lexemes(form_data['lexemes'], template)
         except FirstFieldNotLexemeIdError as error:
-            parse_error = message_with_kwargs(
+            parse_error = message(
                 'bulk-first-field-not-lexeme-id',
                 num_forms=error.num_forms,
                 num_fields=error.num_fields,
@@ -450,7 +380,7 @@ def process_template_bulk(template_name: str) -> RRV:
                 line_number=error.line_number,
             )
         except FirstFieldLexemeIdError as error:
-            parse_error = message_with_kwargs(
+            parse_error = message(
                 'bulk-first-field-lexeme-id',
                 num_forms=error.num_forms,
                 num_fields=error.num_fields,
@@ -459,7 +389,7 @@ def process_template_bulk(template_name: str) -> RRV:
             )
         except WrongNumberOfFieldsError as error:
             show_optional_forms_hint = error.num_fields < error.num_forms
-            parse_error = message_with_kwargs(
+            parse_error = message(
                 'bulk-wrong-number-of-fields',
                 num_forms=error.num_forms,
                 num_fields=error.num_fields,
@@ -823,15 +753,17 @@ def get_duplicates(wiki: str, language_code: str, lemma: str) -> list[Duplicate]
 
     return list(matches.values())  # list() to turn odict_values (not JSON serializable) into plain list
 
-@app.route('/api/v1/no_duplicate/<language_code>')
+@app.route('/api/v1/no_duplicate')
+@app.route('/api/v1/no_duplicate/<_unused>')  # legacy URL
 @app.template_global()
-def render_no_duplicate(language_code: str) -> RRV:
+def render_no_duplicate(_unused: Optional[str] = None) -> RRV:
     return flask.render_template(
         'no_duplicate.html',
     )
 
-@app.route('/api/v1/advanced_partial_forms_hint/<language_code>')
-def render_advanced_partial_forms_hint(language_code: str) -> RRV:
+@app.route('/api/v1/advanced_partial_forms_hint')
+@app.route('/api/v1/advanced_partial_forms_hint/<_unused>')  # legacy URL
+def render_advanced_partial_forms_hint(_unused: Optional[str] = None) -> RRV:
     return flask.render_template(
         'advanced_partial_forms_hint.html',
     )
@@ -1233,33 +1165,6 @@ def wikifunctions_api(template_name: str, lemma: str, function_name: str) -> RRV
 @app.route('/healthz')
 def health() -> RRV:
     return ''
-
-def get_gender(user: Optional[str]) -> str:
-    if user is None:
-        gender_option = gender_option_of_user()
-    else:
-        gender_option = gender_option_of_user_name(user)
-    return {
-        'male': 'm',
-        'female': 'f',
-        'unknown': 'n',
-    }[gender_option]
-
-def gender_option_of_user_name(user_name: str) -> str:
-    session = anonymous_session('https://www.wikidata.org')
-    response = session.get(action='query',
-                           list=['users'],
-                           usprop=['gender'],
-                           ususers=[user_name],
-                           formatversion=2)
-    return response['query']['users'][0]['gender']
-
-def gender_option_of_user() -> str:
-    userinfo = get_userinfo()
-    if userinfo is None:
-        return 'unknown'
-
-    return userinfo['options']['gender']
 
 def authenticated_session(host: str) -> mwapi.Session:
     return T272319RetryingSession(

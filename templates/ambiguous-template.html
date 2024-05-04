@@ -3,7 +3,7 @@
 {% block title %}Ambiguous template {{ template_name }} – {{ super() }}{% endblock title %}
 {% block main %}
 <div class="alert alert-primary" role="alert" {{ push_html_lang( g.interface_language_code ) }}>
-  <p>{{ message_with_kwargs( 'ambiguous-template', template_name=template_name, num_replacement_templates=replacement_templates | length ) }}</p>
+  <p>{{ message( 'ambiguous-template', template_name=template_name, num_replacement_templates=replacement_templates | length ) }}</p>
   <ul>
     {% for replacement_template in replacement_templates %}
     {{ template_li( replacement_template ) }}
