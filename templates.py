@@ -6201,6 +6201,21 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
         ],
     },
 
+    'hebrew-verb-paal': {
+        '@attribution': {'users': ['Amire80'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hebrew'},
+        'label': 'פועל בעברית בבניין פעל/קל',
+        'language': language_Hebrew,
+        'lexical_category_item_id': verb,
+        'forms': [
+            {
+                'label': 'שם הפועל',
+                'example': 'לפעמים אנשים צריכים [לאכול].',
+                'grammatical_features_item_ids': [infinitive],
+            },
+        ],
+        'statements': statements(conjugation_class, pa_al),
+    },
+
     'hindustani-noun-masculine-hi': {
         '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindustani'},
         'label': 'हिंदुस्तानी नाउँ पुलिंग',
