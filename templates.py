@@ -6208,6 +6208,11 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
         'lexical_category_item_id': verb,
         'forms': [
             {
+                'label': 'זכר יחיד גוף שלישי זמן עבר',
+                'example': 'אתמול הוא [אכל].',
+                'grammatical_features_item_ids': [past_tense, singular, masculine, third_person],
+            },
+            {
                 'label': 'שם הפועל',
                 'example': 'לפעמים אנשים צריכים [לאכול].',
                 'grammatical_features_item_ids': [infinitive],
