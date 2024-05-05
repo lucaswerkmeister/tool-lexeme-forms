@@ -92,6 +92,7 @@ ustedeo = 'Q6158182'
 nominative_absolute = 'Q7048616'
 present_continuous = 'Q7240943'
 prospective = 'Q7250831'
+pa_al = 'Q7265893'
 toponym = 'Q7884789'
 # 8 digits
 present_participle = 'Q10345583'

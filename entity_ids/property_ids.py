@@ -3,6 +3,7 @@
 instance_of = 'P31'
 has_quality = 'P1552'
 grammatical_gender = 'P5185'
+conjugation_class = 'P5186'
 paradigm_class = 'P5911'
 language_style = 'P6191'
 variety_of_lexeme_form_or_sense = 'P7481'
