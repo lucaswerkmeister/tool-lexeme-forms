@@ -421,7 +421,7 @@ def process_template_bulk(template_name: str) -> RRV:
             summary = build_summary(template, form_data)
 
             if 'OAUTH' in app.config:
-                lexeme_id, lexeme_uri = submit_lexeme(template, lexeme_data, summary)
+                lexeme_id, lexeme_uri = submit_lexeme(template, lexeme_data, summary, bot=True)
                 results.append({
                     'lexeme_data': lexeme_data,
                     'lexeme_id': lexeme_id,
@@ -1047,7 +1047,7 @@ def build_summary(template: Template, form_data: werkzeug.datastructures.MultiDi
 
     return summary
 
-def submit_lexeme(template: Template, lexeme_data: Lexeme, summary: str) -> tuple[str, str]:
+def submit_lexeme(template: Template, lexeme_data: Lexeme, summary: str, bot: bool = False) -> tuple[str, str]:
     if 'test' in template:
         host = 'https://test.wikidata.org'
     else:
@@ -1063,6 +1063,7 @@ def submit_lexeme(template: Template, lexeme_data: Lexeme, summary: str) -> tupl
         data=json.dumps(lexeme_data),
         summary=summary,
         token=token,
+        bot=bot,
         **selector
     )
     lexeme_id = response['entity']['id']
