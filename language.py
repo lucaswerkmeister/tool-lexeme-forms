@@ -21,6 +21,9 @@ lang_int2html() in this module, is now lang_mw_to_bcp47() and lives in
 toolforge_i18n.language_info.)"""
 
 
+from toolforge_i18n.translations import language_code_to_babel
+
+
 def lang_lex2int(code: str) -> str:
     """Convert a MediaWiki language code from lexicographical data usage
     to user interface usage."""
@@ -34,8 +37,10 @@ def lang_lex2int(code: str) -> str:
 def lang_int2babel(code: str) -> str:
     """Convert a MediaWiki user interface language code to a Babel one."""
 
-    # remove everything after -, interpreted differently by Babel
-    code, separator, rest = code.partition('-')
+    mapped = language_code_to_babel(code)
+    if mapped != code:
+        return mapped
+
     return {
         # Latin and Venetian are not in CLDR, Italian is similar for our purposes
         'la': 'it',
@@ -45,7 +50,7 @@ def lang_int2babel(code: str) -> str:
         # its replacement lah (Lahnda) is not in Babel
         'pnb': 'pa_Arab',
         # Serbo-Croatian is not in CLDR, Croatian is closest for our purposes
-        'sh': 'hr',
+        'sh-latn': 'hr',
         # hno (Hindko) is not in Babel, nor is lah (Lahnda);
         # use pa_Arab just like for pnb (Western Punjabi) above,
         # as pnb is said to be mutually intellegible (https://w.wiki/6Nu7)
@@ -67,13 +72,13 @@ def lang_int2babel(code: str) -> str:
         'mrh': 'en',
         # roa-tara (tarandíne) is not in CLDR;
         # it (Italian) is the MediaWiki fallback
-        'roa': 'it',
+        'roa-tara': 'it',
         # xmf (Mingrelian) is not in Babel;
         # ka (Georgian) is the MediaWiki fallback
         'xmf': 'ka',
         # skr-arab (Saraiki) is not in Babel;
         # ur (Urdu) is the MediaWiki fallback and its .text_direction matches
-        'skr': 'ur',
+        'skr-arab': 'ur',
         # ba (Bashkir) is not in Babel;
         # tt (Tatar) is closely related, has the same plural forms,
         # and its list formatting seems to match ba better than MediaWiki’s ba fallback ru (Russian)
@@ -94,4 +99,4 @@ def lang_int2babel(code: str) -> str:
         # ht (Haitian Creole) is Babel;
         # fr (French) the MediaWiki fallback
         'ht': 'fr',
-    }.get(code, code)
+    }.get(code, code.partition('-')[0])
