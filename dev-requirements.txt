@@ -30,7 +30,7 @@ soupsieve==2.5
     # via beautifulsoup4
 types-babel==2.11.0.15
     # via -r dev-requirements.in
-types-beautifulsoup4==4.12.0.20240229
+types-beautifulsoup4==4.12.0.20240504
     # via -r dev-requirements.in
 types-decorator==5.1.8.20240310
     # via -r dev-requirements.in
