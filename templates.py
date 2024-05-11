@@ -6221,6 +6221,116 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
         'statements': statements(conjugation_class, pa_al),
     },
 
+    'hebrew-verb-nifal': {
+        '@attribution': {'users': ['Amire80'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hebrew'},
+        'label': 'פועל בעברית בבניין נפעל',
+        'language': language_Hebrew,
+        'lexical_category_item_id': verb,
+        'forms': [
+            {
+                'label': 'זכר יחיד גוף שלישי זמן עבר',
+                'example': 'אתמול הוא [נשמר].',
+                'grammatical_features_item_ids': [past_tense, singular, masculine, third_person],
+            },
+            {
+                'label': 'שם הפועל',
+                'example': 'לפעמים אנשים צריכים [להישמר].',
+                'grammatical_features_item_ids': [infinitive],
+            },
+        ],
+        'statements': statements(conjugation_class, nif_al),
+    },
+
+    'hebrew-verb-piel': {
+        '@attribution': {'users': ['Amire80'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hebrew'},
+        'label': 'פועל בעברית בבניין פיעל',
+        'language': language_Hebrew,
+        'lexical_category_item_id': verb,
+        'forms': [
+            {
+                'label': 'זכר יחיד גוף שלישי זמן עבר',
+                'example': 'אתמול הוא [דיבר].',
+                'grammatical_features_item_ids': [past_tense, singular, masculine, third_person],
+            },
+            {
+                'label': 'שם הפועל',
+                'example': 'לפעמים אנשים צריכים [לדבר].',
+                'grammatical_features_item_ids': [infinitive],
+            },
+        ],
+        'statements': statements(conjugation_class, pi_el),
+    },
+
+    'hebrew-verb-pual': {
+        '@attribution': {'users': ['Amire80'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hebrew'},
+        'label': 'פועל בעברית בבניין פועל',
+        'language': language_Hebrew,
+        'lexical_category_item_id': verb,
+        'forms': [
+            {
+                'label': 'זכר יחיד גוף שלישי זמן עבר',
+                'example': 'אתמול הוא [קופל].',
+                'grammatical_features_item_ids': [past_tense, singular, masculine, third_person],
+            },
+        ],
+        'statements': statements(conjugation_class, pu_al),
+    },
+
+    'hebrew-verb-hifil': {
+        '@attribution': {'users': ['Amire80'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hebrew'},
+        'label': 'פועל בעברית בבניין הפעיל',
+        'language': language_Hebrew,
+        'lexical_category_item_id': verb,
+        'forms': [
+            {
+                'label': 'זכר יחיד גוף שלישי זמן עבר',
+                'example': 'אתמול הוא [הלביש].',
+                'grammatical_features_item_ids': [past_tense, singular, masculine, third_person],
+            },
+            {
+                'label': 'שם הפועל',
+                'example': 'לפעמים אנשים צריכים [להלביש].',
+                'grammatical_features_item_ids': [infinitive],
+            },
+        ],
+        'statements': statements(conjugation_class, hif_il),
+    },
+
+    'hebrew-verb-hufal': {
+        '@attribution': {'users': ['Amire80'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hebrew'},
+        'label': 'פועל בעברית בבניין הופעל',
+        'language': language_Hebrew,
+        'lexical_category_item_id': verb,
+        'forms': [
+            {
+                'label': 'זכר יחיד גוף שלישי זמן עבר',
+                'example': 'אתמול הוא [הולבש].',
+                'grammatical_features_item_ids': [past_tense, singular, masculine, third_person],
+            },
+        ],
+        'statements': statements(conjugation_class, huf_al),
+    },
+
+    'hebrew-verb-hitpael': {
+        '@attribution': {'users': ['Amire80'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hebrew'},
+        'label': 'פועל בעברית בבניין התפעל',
+        'language': language_Hebrew,
+        'lexical_category_item_id': verb,
+        'forms': [
+            {
+                'label': 'זכר יחיד גוף שלישי זמן עבר',
+                'example': 'אתמול הוא [התרחץ].',
+                'grammatical_features_item_ids': [past_tense, singular, masculine, third_person],
+            },
+            {
+                'label': 'שם הפועל',
+                'example': 'לפעמים אנשים צריכים [להתרחץ].',
+                'grammatical_features_item_ids': [infinitive],
+            },
+        ],
+        'statements': statements(conjugation_class, hitpa_el),
+    },
+
     'hindustani-noun-masculine-hi': {
         '@attribution': {'users': ['عُثمان'], 'title': 'Wikidata:Wikidata Lexeme Forms/Hindustani'},
         'label': 'हिंदुस्तानी नाउँ पुलिंग',
