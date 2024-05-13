@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"An13sa",
+			"Lucas Werkmeister",
 			"Theklan"
 		]
 	},
@@ -9,7 +10,9 @@
 	"csrf-warning": "Barkatu, ezin izan dugu zure eskaera prozesatu (<abbr title=\"Cross-site request forgery\">CSRF</abbr> babesak huts egin du). Saia zaitez berriro ere eskaera bidaltzen.",
 	"duplicates-warning": "Hurrengo {{PLURAL:$1|lexemak|lexemek}} lemma eta hizkuntza kode berdina dute:",
 	"duplicates-instructions": "Ziur bazaude {{PLURAL:$1|ezberdina dela|ezberdinak direla}}, klik egin goian dagoen formularioko kutxan.",
+	"duplicates-create": "Sortu lexema baerri bat, hala ere.",
 	"no-duplicate": "Hau ez da bikoiztutako lexema bat.",
+	"form-optional": "&#32;(aukerakoa)",
 	"advanced": "Aurreratua",
 	"advanced-general": "Modu \"aurrearatuan\" zaude.",
 	"advanced-lexeme-id": "Lexema ID bat sar dezakezu dagoeneko existitzen den lexema bati formak gehitzeko, berri bat sortu beharrean. Dagoeneko existitzen diren lexemen formak zuriz utzi, bestela bikoiztuko dira eta!",
@@ -18,5 +21,34 @@
 	"advanced-partial-forms-hint": "Forma batzuk falta dituzten lexemak sortzeko, aukeratu modu aurreratua",
 	"generated-via": "honen bidez sortua",
 	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=formarik ez|forma bat|$2 forma}} eta {{PLURAL:$3|0=esanahirik ez|esanahi bat|$3 esanahi}}",
-	"edit-link": "aldatu"
+	"bulk-link": "multzo modua",
+	"bulk-format-help": "formatuaren laguntza",
+	"bulk-not-allowed": "Ezin duzu multzo modua erabili, sentitzen dugu.",
+	"bulk-first-field-not-lexeme-id": "Txantiloiak {{PLURAL:$1|forma bat|$1 forma}} eta $4 lerroak {{PLURAL:$2|eremu bat|$2 eremu}} dituenez, lehenengo eremuak lexema ID baten forma izan beharko luke, baina <q>$3</q>-k ez du lexema ID baten itxurarik. (Gehitu al duzu forma bat gehiago sarreran?)",
+	"bulk-first-field-lexeme-id": "Txantiloiak {{PLURAL:$1|forma bat|$1 forma}} eta $4 lerroak {{PLURAL:$2|eremu bat|$2 eremu}} dituenez, lehenengo eremuak lexema ID baten forma izan beharko luke, baina <q>$3</q>-k ez du lexema ID baten itxurarik. (Ahaztu al duzu forma bat sartzea?)",
+	"bulk-wrong-number-of-fields": "Txantiloiak {{PLURAL:$1|forma bat|$1 forma}}, lerro bakoitzak izan beharko lituzke halako eremu kopurua (lexema berria sortzerakoan) edo bat gehiago (existitzen den lexema baten IDa sartzen duzunean), baina $3 lerroan sartu duzunak {{PLURAL:$2|eremu bat|$2 eremu ditu}} horren ordez.",
+	"bulk-optional-forms-hint": "Forma batzuk ez-ikusi egin nahi ditut, hutsik daudela esan (adb. <kbd>...|||</kbd> hiru forma hutsik baldin badaude amaieran).",
+	"edit-link": "aldatu",
+	"edit-general": "\"Aldatu\" moduan zaude. Azpiko balioek helburu lexeman formak aldatu, gehitu edo kenduko dituzte.",
+	"edit-mismatch-warning": "Ez du ematen lexema honek txantiloi honekin bat egiten duenik! Mesedez, begiratu bi aldiz ea txantiloi egokia ari zaren erabiltzen jarraitu aurretik.",
+	"edit-form-list-item": "$1, $2, {{PLURAL:$3|0=adierazpenik ez|adierazpen bat|$3 adierazpen}}",
+	"no-grammatical-features": "ezaugarri gramatikalik ez",
+	"title-create": "$1 (sortu)",
+	"title-advanced": "$1 (aurreratua)",
+	"title-bulk": "$1 (multzoa)",
+	"title-edit": "$1 (aldatu)",
+	"login-hint": "Tresna hau erabiliz aldaketak egin ahal izateko [$1 saioa hasi] behar duzu.",
+	"ambiguous-template": "$1 txantiloia jada ez dago; txantiloi hauekin ordezkatu da:",
+	"settings-label-interface-language-code": "Erabiltzailearen interfazearen hizkuntza",
+	"settings-save": "Gorde",
+	"tool-name": "Wikidata Lexema Formak",
+	"skip-to-main-content": "Eduki nagusira pasa",
+	"documentation": "Dokumentazioa",
+	"toolforge": "Wikimedia Toolforge",
+	"source-code": "Iturburu-kodea",
+	"login": "Hasi saioa",
+	"settings-link": "Ezarpenak",
+	"settings-heading": "Ezarpenak",
+	"logged-in": "$1 gisa hasi duzu saioa.",
+	"requires-javascript": "Funtzionalitate honek JavaScript behar du."
 }
