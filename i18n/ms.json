@@ -50,5 +50,6 @@
 	"login": "Log masuk",
 	"settings-link": "Tetapan",
 	"settings-heading": "Tetapan",
-	"logged-in": "{{GENDER:$2|Log masuk}} sebagai $1."
+	"logged-in": "{{GENDER:$2|Log masuk}} sebagai $1.",
+	"requires-javascript": "Ciri ini memerlukan JavaScript."
 }
