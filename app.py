@@ -265,8 +265,16 @@ def can_use_wikifunctions() -> bool:
     session = anonymous_session('https://www.wikifunctions.org')
     response = session.get(action='query',
                            titles=[title],
+                           prop=['revisions'],
+                           rvprop=['content'],
+                           rvslots=['main'],
                            formatversion=2)
-    return not response['query']['pages'][0].get('missing', False)
+    page = response['query']['pages'][0]
+    if page.get('missing', False):
+        return False
+    if page['revisions'][0]['slots']['main']['content'] == '/* DISABLED */':
+        return False
+    return True
 
 @app.route('/')
 def index() -> RRV:
