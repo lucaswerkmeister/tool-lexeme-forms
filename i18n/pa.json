@@ -2,6 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Bgo eiu",
+			"Cabal",
+			"Lucas Werkmeister",
 			"Satdeep Gill",
 			"ਗੁਰਪ੍ਰੀਤ ਹੁੰਦਲ"
 		]
@@ -34,13 +36,13 @@
 	"edit-ambiguous-warning": "{{PLURAL:$1|ਇਥੋਂ}} ਕੁਝ ਫਰਮੇ ਲਾਏ ਹਨ –",
 	"edit-unmatched-warning": "{{PLURAL:$1|ਇਥੋਂ}} ਕੋਈ ਨਹੀਂ ਫਰਮੇ ਲਾਏ ਹਨ –",
 	"edit-form-list-item": "$1, $2, {{PLURAL:$3|0=ਬਿਆਨ ਕੋਈ ਨਹੀਂ|ਇੱਕ ਬਿਆਨ|$3 ਬਿਆਨ}}",
-	"no-grammatical-features": "ਕੋਈ ਰੂਪ ਦੇ ਨਿਸ਼ਾਨ ਨਹੀਂ ਦਿੱਤੇ ਏ",
+	"no-grammatical-features": "ਕੋਈ ਵਿਆਕਰਣ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ ਨਹੀਂ",
 	"title-create": "$1 (ਬਣਾਓ)",
 	"title-advanced": "$1 (ਇਜ਼ਾਫ਼ੀ ਵਾਲਾ)",
-	"title-bulk": "$1 (ਥੋਕ ਵਾਲਾ)",
-	"title-edit": "$1 (ਤਬਦੀਲ ਕਰੋ)",
-	"login-hint": "ਤਬਦੀਲ ਕਰਨ ਵਸਤੇ ਪਹਿਲਾਂ [$1 ਲਾਗ ਇਨ ਕਰੋ]।",
-	"ambiguous-template": "ਹੁਣ‌ ਫਰਮਾ $1 ਮਿਟਾਇਆ ਹੈ। ਮੌਜੂਦ ਫਰਮੇ ਲਾਏ ਗਏ –",
+	"title-bulk": "$1 (ਥੋਕ)",
+	"title-edit": "$1 (ਸੋਧ)",
+	"login-hint": "ਇਸ ਸੰਦ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਤਬਦੀਲੀਆਂ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ ਤੁਹਾਨੂੰ [$1 ਦਾਖ਼ਲ ਹੋਨ] ਕਰਨ ਦੀ ਲੋੜ ਹੈ।",
+	"ambiguous-template": "ਫਰਮਾ $1 ਹੁਣ ਮੌਜੂਦ ਨਹੀਂ ਹੈ; ਇਸਨੂੰ ਹੇਠਾਂ ਦਿੱਤੇ ਫਰਮੇ ਦੁਆਰਾ ਬਦਲ ਦਿੱਤਾ ਗਿਆ ਹੈ:",
 	"settings-label-interface-language-code": "ਵਰਤੋਂ ਦੀ ਬੋਲੀ",
 	"settings-save": "ਸਾਂਭੋ",
 	"tool-name": "ਵਿਕੀਡੇਟੇ ਰੂਪ ਦੇ ਫ਼ਰਮੇ",
@@ -48,8 +50,9 @@
 	"documentation": "ਦਸਤਾਵੇਜ਼",
 	"toolforge": "ਵਿਕੀਮੀਡੀਆ ਟੂਲਫੋਰਜ",
 	"source-code": "ਸਰੋਤ",
-	"login": "ਲਾਗ ਇਨ ਕਰੋ",
+	"login": "ਦਾਖ਼ਲ ਹੋਵੋ",
 	"settings-link": "ਸੈਟਿੰਗਾਂ",
 	"settings-heading": "ਸੈਟਿੰਗਾਂ",
-	"logged-in": "$1 ਵਜੋਂ ਲਾਗ ਇਨ ਕੀਤਾ ਗਿਆ।"
+	"logged-in": "$1 ਵਜੋਂ ਦਾਖ਼ਲ ਹੋਇਆ।",
+	"requires-javascript": "ਇਸ ਵਿਸ਼ੇਸ਼ਤਾ ਲਈ JavaScript ਦੀ ਲੋੜ ਹੈ।"
 }
