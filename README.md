@@ -17,7 +17,6 @@ To update the tool, assuming there were no changes in the Python environment:
 git fetch
 git log -p @..@{u} # inspect changes
 git rebase
-git submodule update --init --recursive
 webservice restart
 ```
 
@@ -36,7 +35,7 @@ You can also run the tool locally, which is much more convenient for development
 Note that a local setup will not actually perform edits unless you create a `config.yaml` file.
 
 ```
-git clone --recurse-submodules https://gitlab.wikimedia.org/toolforge-repos/lexeme-forms.git
+git clone https://gitlab.wikimedia.org/toolforge-repos/lexeme-forms.git
 cd lexeme-forms
 pip3 install -r requirements.txt -r dev-requirements.txt
 flask --debug run --extra-files i18n/en.json
