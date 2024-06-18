@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Fitik",
 			"Jens Ohlig",
 			"Nikki",
 			"Robin van der Vliet"
@@ -27,6 +28,7 @@
 	"title-edit": "$1 (redakti)",
 	"settings-save": "Konservi",
 	"documentation": "Dokumentaro",
+	"source-code": "Fontkodo",
 	"login": "Ensaluti",
 	"settings-link": "Agordoj",
 	"settings-heading": "Agordoj"

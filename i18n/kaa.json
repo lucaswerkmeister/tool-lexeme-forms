@@ -28,5 +28,5 @@
 	"login": "Kiriw",
 	"settings-link": "Sazlawlar",
 	"settings-heading": "Sazlawlar",
-	"logged-in": "$1 sıpatında Kiriw"
+	"logged-in": "{{GENDER:$2|Siz sistemaǵa}} $1 sıpatında kirdińiz."
 }
