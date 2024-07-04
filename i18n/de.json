@@ -5,7 +5,8 @@
 			"Justman10000",
 			"Lucas Werkmeister",
 			"Mitgedanken",
-			"Nikki"
+			"Nikki",
+			"TMg"
 		]
 	},
 	"create": "Anlegen",
@@ -53,5 +54,6 @@
 	"login": "Anmelden",
 	"settings-link": "Einstellungen",
 	"settings-heading": "Einstellungen",
-	"logged-in": "{{GENDER:$2|Eingeloggt}} als $1."
+	"logged-in": "{{GENDER:$2|Eingeloggt}} als $1.",
+	"requires-javascript": "Diese Funktion erfordert JavaScript."
 }
