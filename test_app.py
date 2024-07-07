@@ -95,7 +95,6 @@ def test_template_group_test():
         group = lexeme_forms.template_group({'language_code': 'de', 'test': True})
     assert group == '<span lang="de" dir="ltr">Deutsch (<span lang=zxx>de</span>)</span>, test.wikidata.org'
 
-@pytest.mark.parametrize('language_code', lexeme_forms.i18n.translations.keys())
 @pytest.mark.parametrize('number', range(-1, 5))
 def test_message(language_code, number):
     with lexeme_forms.app.test_request_context():

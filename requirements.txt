@@ -82,7 +82,7 @@ requests-oauthlib==2.0.0
     #   mwoauth
 toolforge==4.4.0
     # via -r requirements.in
-toolforge-i18n==0.0.1
+toolforge-i18n==0.0.2
     # via -r requirements.in
 typing-extensions==4.11.0
     # via -r requirements.in
