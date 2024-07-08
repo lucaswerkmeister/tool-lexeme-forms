@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Chqaz",
+			"Foomin10",
 			"Kkairri",
 			"Lucas Werkmeister",
 			"Nikki",
@@ -40,5 +41,6 @@
 	"source-code": "ソースコード",
 	"login": "ログイン",
 	"settings-link": "設定",
-	"settings-heading": "設定"
+	"settings-heading": "設定",
+	"requires-javascript": "この機能はJavaScriptが必要です。"
 }
