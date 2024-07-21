@@ -41,5 +41,6 @@ _derived_messages = {
 config = TranslationsConfig(
     variables=_variables,
     derived_messages=_derived_messages,
-    language_code_to_babel=lang_int2babel
+    language_code_to_babel=lang_int2babel,
+    check_translations=False,
 )

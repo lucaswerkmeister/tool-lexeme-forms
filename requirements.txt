@@ -14,6 +14,8 @@ babel==2.15.0
     # via
     #   -r requirements.in
     #   toolforge-i18n
+beautifulsoup4==4.12.3
+    # via toolforge-i18n
 blinker==1.8.2
     # via flask
 certifi==2024.2.2
@@ -80,9 +82,11 @@ requests-oauthlib==2.0.0
     # via
     #   -r requirements.in
     #   mwoauth
+soupsieve==2.5
+    # via beautifulsoup4
 toolforge==4.4.0
     # via -r requirements.in
-toolforge-i18n==0.0.2
+toolforge-i18n==0.0.5
     # via -r requirements.in
 typing-extensions==4.11.0
     # via -r requirements.in

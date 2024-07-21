@@ -1,5 +1,4 @@
 -c requirements.txt
-beautifulsoup4
 flake8
 mypy >= 0.930
 pytest
