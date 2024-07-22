@@ -92,10 +92,11 @@ def lang_int2babel(code: str) -> str:
         # es (Spanish) is the MediaWiki fallback its .text_direction matches
         'an': 'es',
         # kaa (Karakalpak) is not in Babel;
-        # kk (Kazakh) is the closest match for MediaWiki’s first fallback,
-        # kk-latn (Kazahn in Latin script – Babel’s kk being in Cyrillic);
-        # we should change this to kk_Latn or kaa as soon as Babel lets us!
-        'kaa': 'kk',
+        # in MediaWiki, it’s in Latin script, but its closest relatives in Babel are all in Cyrillic script;
+        # uz (Uzbek) has the same plural forms,
+        # and its list formatting (“X and Y”) is probably intelligible to Karakalpak speakers for geopolitical reasons
+        # (kk_Latn would be even better, if it is added to Babel)
+        'kaa': 'uz',
         # ht (Haitian Creole) is Babel;
         # fr (French) the MediaWiki fallback
         'ht': 'fr',
