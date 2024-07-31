@@ -27,8 +27,7 @@ from matching import match_template_to_lexeme_data, match_lexeme_forms_to_templa
 from mwapi_utils import T272319RetryingSession
 from parse_tpsv import parse_lexemes, FirstFieldNotLexemeIdError, FirstFieldLexemeIdError, WrongNumberOfFieldsError
 from templates import templates, templates_without_redirects, Template, TemplateForm
-from toolforge_i18n.flask_things import ToolforgeI18n, interface_language_code_from_request, message, pop_html_lang, push_html_lang
-from toolforge_i18n.language_info import lang_autonym
+from toolforge_i18n import ToolforgeI18n, interface_language_code_from_request, lang_autonym, message, pop_html_lang, push_html_lang
 from wikibase_types import Lexeme, LexemeForm, LexemeLemmas, Statements, Term
 
 app = OrderedFlask(__name__)

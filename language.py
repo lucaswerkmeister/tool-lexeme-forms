@@ -18,10 +18,10 @@ conversions; rather, it only implements conversions to less specific
 codes, which may lose some information. (The conversion from
 MediaWiki language codes to HTML language codes, previously called
 lang_int2html() in this module, is now lang_mw_to_bcp47() and lives in
-toolforge_i18n.language_info.)"""
+toolforge_i18n.)"""
 
 
-from toolforge_i18n.translations import language_code_to_babel
+from toolforge_i18n import language_code_to_babel
 
 
 def lang_lex2int(code: str) -> str:

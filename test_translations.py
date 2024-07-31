@@ -1,5 +1,5 @@
 import toolforge
-from toolforge_i18n.language_info import lang_autonym
+from toolforge_i18n import lang_autonym
 
 
 toolforge.set_user_agent('lexeme-forms', email='mail@lucaswerkmeister.de')

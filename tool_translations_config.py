@@ -1,5 +1,5 @@
 from language import lang_int2babel
-from toolforge_i18n.translations import TranslationsConfig
+from toolforge_i18n import TranslationsConfig
 
 
 def _initial_titlecase(s: str) -> str:
