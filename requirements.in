@@ -9,6 +9,6 @@ PyYAML
 requests
 requests_oauthlib
 toolforge ~= 4.2
-toolforge_i18n == 0.0.6
+toolforge_i18n[Flask] == 0.0.7
 typing-extensions >= 4.1.0
 werkzeug >= 2.0.0
