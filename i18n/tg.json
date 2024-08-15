@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Farorud",
+			"Lucas Werkmeister",
 			"Tokyo Akademia"
 		]
 	},
@@ -19,7 +20,7 @@
 	"lexeme-id": "ID-и лексема",
 	"advanced-partial-forms-hint": "Барои эҷоди лексема бе ягон шакл ба режими васеъ гузаред.",
 	"generated-via": "карда шудааст бо",
-	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=шакл нест|як шакл|$2 шаклҳо}} ва {{PLURAL:$3|0=маъное нест|як маъно|$2 маъноҳо|$3 маъноҳо}}",
+	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=шакл нест|як шакл|$2 шаклҳо}} ва {{PLURAL:$3|0=маъное нест|як маъно|$3 маъноҳо|$3 маъноҳо}}",
 	"edit-link": "вироиш",
 	"title-create": "$1 (эҷод)",
 	"title-advanced": "$1 (пешрафта)",
