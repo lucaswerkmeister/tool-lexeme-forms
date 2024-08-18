@@ -10506,6 +10506,35 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
         'statements': statements(grammatical_gender, masculine),
     },
 
+    'italian-noun-masculine-feminine': {
+        '@attribution': {'users': ['Luca.favorido'], 'title': 'Wikidata:Wikidata Lexeme Forms/Italian'},
+        'label': 'sostantivo italiano maschile e femminile',
+        'language': language_Italian,
+        'lexical_category_item_id': noun,
+        'forms': [
+            {
+                'label': 'singolare maschile',
+                'example': 'Questo è un/uno [professore].',
+                'grammatical_features_item_ids': [singular, masculine],
+            },
+            {
+                'label': 'plurale maschile',
+                'example': 'Questi sono dei/degli [professori].',
+                'grammatical_features_item_ids': [plural, masculine],
+            },
+            {
+                'label': 'singolare femminile',
+                'example': 'Questa è una [professoressa].',
+                'grammatical_features_item_ids': [singular, feminine],
+            },
+            {
+                'label': 'plurale femminile',
+                'example': 'Queste sono delle [professoresse].',
+                'grammatical_features_item_ids': [plural, feminine]
+            },
+        ],
+    },
+
     'italian-adjective': {
         '@attribution': {'users': ['Sannita', 'Luca.favorido'], 'title': 'Wikidata:Wikidata Lexeme Forms/Italian'},
         'label': 'aggettivo qualificativo italiano',
