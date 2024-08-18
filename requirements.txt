@@ -86,7 +86,7 @@ soupsieve==2.5
     # via beautifulsoup4
 toolforge==4.4.0
     # via -r requirements.in
-toolforge-i18n[flask]==0.0.7
+toolforge-i18n[flask]==0.0.9
     # via
     #   -r requirements.in
     #   toolforge-i18n
