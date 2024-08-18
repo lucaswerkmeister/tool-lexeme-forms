@@ -3,6 +3,7 @@
 		"authors": [
 			"Chrumps",
 			"Czupirek",
+			"Isxoes",
 			"KaMan",
 			"Lucas Werkmeister",
 			"Luku123"
@@ -23,6 +24,7 @@
 	"advanced-partial-forms-hint": "Aby utworzyć leksemy z pominięciem niektórych form, przełącz się na tryb zaawansowany.",
 	"generated-via": "wygenerowane przez",
 	"bulk-link": "tryb zbiorczy",
+	"bulk-format-help": "pomoc w formatowaniu",
 	"bulk-not-allowed": "Nie {{GENDER:$1|możesz}} używać trybu zbiorczego.",
 	"edit-link": "edytuj",
 	"edit-general": "Jesteś w trybie „edycji”. Zmiana poniższych wartości spowoduje edycję, dodanie lub usunięcie form leksemu docelowego.",
