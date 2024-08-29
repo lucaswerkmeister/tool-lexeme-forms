@@ -51,10 +51,7 @@
 	"skip-to-main-content": "Перейти до основного вмісту",
 	"documentation": "Документація",
 	"toolforge": "Вікімедіа Toolforge",
-	"source-code": "Вихідний код",
 	"login": "Увійти",
 	"settings-link": "Налаштування",
-	"settings-heading": "Налаштування",
-	"logged-in": "{{GENDER:$2| Ви ввійшли}} як $1 .",
-	"requires-javascript": "Ця функція вимагає JavaScript."
+	"settings-heading": "Налаштування"
 }
