@@ -1995,7 +1995,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'grammatical_features_item_ids': [plural, soft_mutation],
                 'wikifunctions': {
                     '-où': 'Z11637',
-                    '-ioù': ' Z11786',
+                    '-ioù': 'Z11786',
                     '-ed': 'Z12288',
                     '-ien': 'Z12298',
                 },
@@ -2006,7 +2006,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'grammatical_features_item_ids': [plural, aspirate_mutation],
                 'wikifunctions': {
                     '-où': 'Z11663',
-                    '-ioù': ' Z12284',
+                    '-ioù': 'Z12284',
                     '-ed': 'Z12295',
                     '-ien': 'Z12305',
                 },
