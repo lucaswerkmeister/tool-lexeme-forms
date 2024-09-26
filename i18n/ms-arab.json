@@ -1,14 +1,19 @@
 {
 	"@metadata": {
 		"authors": [
+			"Bgo eiu",
 			"Tofeiku"
 		]
 	},
 	"create": "چيڤتا",
+	"csrf-warning": "معاف، كامي تيدق داڤت ممڤروسيسكن ڤرموهونن اين ﴿<abbr title=\"Cross-site request forgery\">CSRF</abbr> ڤرليندوڠن ڬاڬل﴾۔ سيلا چوبا مڽراهكن بورڠ لاڬي۔",
+	"duplicates-instructions": "جك اندا ڤستي {{PLURAL:$1|اي}} بربيذا، تندا كوتق د باوه بورڠ۔",
+	"duplicates-create": "چيڤتا ليكسم بارو سهاج۔",
 	"no-duplicate": "اين بوکن ڤندوا ليکسيم يڠ اد.",
 	"form-optional": "&#32;(ڤيليهن)",
 	"advanced": "ماجو",
 	"advanced-general": "اندا دالم مود “ماجو”.",
+	"advanced-lexeme-id": "اندا بوليه ماسوقكن ID ليكسم اونتوق منمبهكن بنتوق ك ليكسم يڠ اد درڤد منچيڤتا يڠ بارو۔ تيڠڬلكن سبارڠ بنتوق يڠ سوده وجود د ليكسم يڠ كوسوڠ۔ كالاو تيدق، اي اكن ددوڤليكسيكن!",
 	"lexeme-id": "اءي. دي. ليکسيم",
 	"advanced-partial-forms-hint": "اونتوق منچيڤتا ليکسيم دڠن ببراڤ بنتوق هيلڠ، اليه کمود ماجو.",
 	"generated-via": "ترجان ملالوءي",
