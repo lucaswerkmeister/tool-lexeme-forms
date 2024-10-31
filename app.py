@@ -20,7 +20,7 @@ import unicodedata
 import werkzeug
 import yaml
 
-from flask_utils import OrderedFlask, TagOrderedMultiDict, TagImmutableOrderedMultiDict, SetJSONProvider
+from flask_utils import SetJSONProvider
 from language import lang_lex2int, lang_int2babel
 from language_info import label
 from matching import match_template_to_lexeme_data, match_lexeme_forms_to_template, match_template_entity_to_lexeme_entity, MatchedTemplate, MatchedTemplateForm
@@ -30,9 +30,7 @@ from templates import templates, templates_without_redirects, Template, Template
 from toolforge_i18n import ToolforgeI18n, interface_language_code_from_request, lang_autonym, message, pop_html_lang, push_html_lang
 from wikibase_types import Lexeme, LexemeForm, LexemeLemmas, Statements, Term
 
-app = OrderedFlask(__name__)
-app.session_interface.serializer.register(TagOrderedMultiDict, index=0)
-app.session_interface.serializer.register(TagImmutableOrderedMultiDict, index=0)
+app = flask.Flask(__name__)
 app.json = SetJSONProvider(app)
 app.add_template_filter(lang_lex2int)
 app.add_template_filter(lang_int2babel)
