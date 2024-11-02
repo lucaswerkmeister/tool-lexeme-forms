@@ -50,5 +50,7 @@
 	"settings-link": "Settings",
 	"settings-heading": "Settings",
 	"logged-in": "{{GENDER:$2|Logged in}} as $1.",
-	"requires-javascript": "This feature requires JavaScript."
+	"requires-javascript": "This feature requires JavaScript.",
+	"wikifunctions-generating": "generating forms…",
+	"wikifunctions-error": "an error occurred while generating forms"
 }

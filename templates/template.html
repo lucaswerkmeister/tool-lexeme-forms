@@ -1,3 +1,4 @@
+{% from 'wikifunctions.html' import wikifunctions %}
 {% extends "base.html" %}
 {% block title_tag_attributes %}{{ super() }} {{ push_html_lang( g.interface_language_code ) }}{% endblock title_tag_attributes %}
 {% block title %}
@@ -40,15 +41,7 @@
     {{ message( 'csrf-warning' ) }}
   </div>
   {% endif %}
-  {% if can_use_wikifunctions() %}
-  <div id="wikifunctions" class="my-3" {{ push_html_lang( template.language_code | lang_lex2int ) }}>
-    <!-- buttons added by wikifunctions.js go here -->
-    {# note that this div is added even to templates without wikifunctions, so make sure it’s empty in that case #}
-    {% if template.wikifunctions_intro %}
-    {{ template.wikifunctions_intro }}<noscript {{ push_html_lang( g.interface_language_code ) }}>{{ message( 'requires-javascript' ) }}</noscript{{ pop_html_lang( g.interface_language_code ) }}>
-    {% endif %}
-  </div{{ pop_html_lang( template.language_code | lang_lex2int ) }}>
-  {% endif %}
+  {{ wikifunctions(template) }}
   <form method="post" autocapitalize="off">
     {{ duplicates | render_duplicates(in_bulk_mode=False, template_name=template['@template_name'], form_representations=submitted_form_representations, target_hash=template.target_hash) | safe }}
     <input name="_csrf_token" type="hidden" value="{{ csrf_token() }}">

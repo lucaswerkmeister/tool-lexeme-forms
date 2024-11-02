@@ -5,8 +5,10 @@ document.addEventListener('DOMContentLoaded', function() {
           templateName = template['@template_name'],
           baseUrl = document.querySelector('link[rel=index]').href,
           form = document.forms[0],
-          wikifunctionsContainer = document.getElementById('wikifunctions');
-    if (!wikifunctionsContainer) {
+          wikifunctionsButtonsContainer = document.getElementById('wikifunctions-buttons'),
+          wikifunctionsMessageGenerating = document.getElementById('wikifunctions-generating'),
+          wikifunctionsMessageError = document.getElementById('wikifunctions-error');
+    if (!wikifunctionsButtonsContainer) {
         return;
     }
     let formRepresentationInputs = form.elements['form_representation'];
@@ -24,6 +26,17 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    function setAllButtonsDisabled(disabled) {
+        for (const button of buttons) {
+            button.disabled = disabled;
+        }
+    }
+    function hideAllMessages() {
+        wikifunctionsMessageGenerating.style.display = 'none';
+        wikifunctionsMessageError.style.display = 'none';
+    }
+
+    const buttons = [];
     for (const functionName of functionNames) {
         const button = document.createElement('button');
         button.textContent = functionName;
@@ -43,6 +56,9 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!lemma) {
                 return;
             }
+            setAllButtonsDisabled(true);
+            hideAllMessages();
+            wikifunctionsMessageGenerating.style.display = 'inline';
             fetch(`${baseUrl}/api/v1/wikifunctions/${templateName}/${lemma}/${functionName}`)
                 .then(r => r.json())
                 .then(response => {
@@ -57,8 +73,16 @@ document.addEventListener('DOMContentLoaded', function() {
                             formRepresentationInputs[i].value = value;
                         }
                     }
-                });
+                    hideAllMessages();
+                })
+                .catch(e => {
+                    hideAllMessages();
+                    wikifunctionsMessageError.style.display = 'inline';
+                    console.error(e);
+                })
+                .then(() => setAllButtonsDisabled(false));
         });
-        wikifunctionsContainer.append(button);
+        wikifunctionsButtonsContainer.append(button);
+        buttons.push(button);
     }
 });

@@ -1,0 +1,18 @@
+{% macro wikifunctions(template) %}
+{% if can_use_wikifunctions() %}
+<div id="wikifunctions" class="my-3">
+  {# note that this div is added even to templates without wikifunctions, so make sure it’s empty in that case #}
+  {% if template.wikifunctions_intro %}
+  {{ template.wikifunctions_intro }}<noscript {{ push_html_lang( g.interface_language_code ) }}>{{ message( 'requires-javascript' ) }}</noscript{{ pop_html_lang( g.interface_language_code ) }}>
+  {% endif %}
+  <span id="wikifunctions-buttons" {{ push_html_lang( template.language_code | lang_lex2int ) }}>
+    <!-- buttons added by wikifunctions.js go here -->
+  </span{{ pop_html_lang( template.language_code | lang_lex2int ) }}>
+  <span id="wikifunctions-status">
+    {%- for msg in ['wikifunctions-generating', 'wikifunctions-error'] -%}
+    <span id="{{ msg }}" style="display: none">{{ message( msg ) }}</span>
+    {%- endfor -%}
+  </span>
+</div>
+{% endif %}
+{% endmacro %}

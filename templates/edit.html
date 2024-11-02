@@ -1,3 +1,4 @@
+{% from 'wikifunctions.html' import wikifunctions %}
 {% extends "base.html" %}
 {% macro lexeme_form_link(wiki, lexeme_id, form, classes=[]) -%}
   <a
@@ -33,11 +34,7 @@
 {% endblock %}
 {% block main_tag_attributes %}{{ super() }} data-template='{{ template | tojson }}'{% endblock main_tag_attributes %}
 {% block main %}
-  {% if can_use_wikifunctions() %}
-  <div id="wikifunctions" {{ push_html_lang( template.language_code | lang_lex2int ) }}>
-    <!-- buttons added by wikifunctions.js go here -->
-  </div{{ pop_html_lang( template.language_code | lang_lex2int ) }}>
-  {% endif %}
+  {{ wikifunctions(template) }}
   <h1 {{ push_html_lang( template.language_code | lang_lex2int ) }}>{{ template.label }}</h1{{ pop_html_lang( template.language_code | lang_lex2int ) }}>
   <h2>
     <a href="https://{{ 'test' if template.test else 'www' }}.wikidata.org/wiki/Lexeme:{{ template.lexeme_id }}" id="lemmas"> <!-- #lemmas used in wikifunctions.js -->
