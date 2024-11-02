@@ -20,6 +20,10 @@
       {% endfor %}
     </select>
   </div>
+  <div class="form-check mb-3">
+    <input class="form-check-input" type="checkbox" name="use-wikifunctions" id="use-wikifunctions" {% if use_wikifunctions %}checked{% endif %}>
+    <label class="form-check-label" for="use-wikifunctions">{{ message( 'settings-label-use-wikifunctions' ) }}</label>
+  </div>
   <button type="submit" class="btn btn-primary">{{ message( 'settings-save' ) }}</button>
 </form>
 {% endblock %}

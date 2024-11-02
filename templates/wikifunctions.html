@@ -1,5 +1,5 @@
 {% macro wikifunctions(template) %}
-{% if can_use_wikifunctions() %}
+{% if use_wikifunctions() %}
 <div id="wikifunctions" class="my-3">
   {# note that this div is added even to templates without wikifunctions, so make sure it’s empty in that case #}
   {% if template.wikifunctions_intro %}

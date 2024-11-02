@@ -40,6 +40,7 @@
 	"login-hint": "You need to [$1 log in] before you can make changes using this tool.",
 	"ambiguous-template": "The template $1 no longer exists; it has been replaced by the following templates:",
 	"settings-label-interface-language-code": "User interface language",
+	"settings-label-use-wikifunctions": "Use Wikifunctions to generate form suggestions",
 	"settings-save": "Save",
 	"tool-name": "Wikidata Lexeme Forms",
 	"skip-to-main-content": "Skip to main content",

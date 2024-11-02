@@ -254,11 +254,24 @@ def language_name_with_code(language_code: str) -> Markup:
                                                       pop_html_lang(interface_language_code))
 
 @app.template_global()
-def can_use_wikifunctions() -> bool:
+def use_wikifunctions() -> bool:
+    # “new way”: set via settings
+    from_session = flask.session.get('use_wikifunctions')
+    if from_session is not None:
+        return from_session
+    # “old way”: set via user JS page (move into session / new way)
     userinfo = get_userinfo()
     if userinfo is None:
         return False
-    title = f'User:{userinfo["name"]}/wikidata-lexeme-forms-opt-into-wikifunctions.js'
+    from_wikifunctions = opted_into_wikifunctions(userinfo["name"])
+    if from_wikifunctions is not None:
+        flask.session['use_wikifunctions'] = from_wikifunctions
+        return from_wikifunctions
+    else:
+        return False
+
+def opted_into_wikifunctions(username: str) -> Optional[bool]:
+    title = f'User:{username}/wikidata-lexeme-forms-opt-into-wikifunctions.js'
     session = anonymous_session('https://www.wikifunctions.org')
     response = session.get(action='query',
                            titles=[title],
@@ -268,7 +281,7 @@ def can_use_wikifunctions() -> bool:
                            formatversion=2)
     page = response['query']['pages'][0]
     if page.get('missing', False):
-        return False
+        return None
     if page['revisions'][0]['slots']['main']['content'] == '/* DISABLED */':
         return False
     return True
@@ -289,12 +302,14 @@ def settings() -> RRV:
             language_code: lang_autonym(language_code)
             for language_code in i18n.translations
         },
+        use_wikifunctions=use_wikifunctions(),
     )
 
 @app.post('/settings/')
 def settings_save() -> RRV:
     if 'interface-language-code' in flask.request.form:
         flask.session['interface_language_code'] = flask.request.form['interface-language-code'][:20]
+    flask.session['use_wikifunctions'] = 'use-wikifunctions' in flask.request.form
     return flask.redirect(flask.url_for('index'))
 
 @app.route('/template/<template_name>/', methods=['GET', 'POST'])
