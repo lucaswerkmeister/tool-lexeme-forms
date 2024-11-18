@@ -9,6 +9,7 @@
 			"Lucas Werkmeister",
 			"Njzjz",
 			"Si109",
+			"TFX202X",
 			"Xyb",
 			"Zhang8569",
 			"沈澄心"
@@ -50,6 +51,7 @@
 	"login-hint": "您需要 [$1 登录] 才能使用此工具进行更改。",
 	"ambiguous-template": "模板$1不再存在；它已被以下模板取代：",
 	"settings-label-interface-language-code": "用户界面语言",
+	"settings-label-use-wikifunctions": "使用Wikifunctions生成表单建议",
 	"settings-save": "保存",
 	"tool-name": "Wikidata词位形式",
 	"skip-to-main-content": "跳至主要内容",
@@ -60,5 +62,7 @@
 	"settings-link": "设置",
 	"settings-heading": "设置",
 	"logged-in": "已以$1身份{{GENDER:$2|登录}}。",
-	"requires-javascript": "该功能需要JavaScript。"
+	"requires-javascript": "该功能需要JavaScript。",
+	"wikifunctions-generating": "生成表格...",
+	"wikifunctions-error": "生成表单时发生错误"
 }

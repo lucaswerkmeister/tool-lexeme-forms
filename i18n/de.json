@@ -5,6 +5,7 @@
 			"Justman10000",
 			"Lucas Werkmeister",
 			"Mitgedanken",
+			"Mukeber",
 			"Nikki",
 			"TMg"
 		]
@@ -45,6 +46,7 @@
 	"login-hint": "Du musst dich [$1 anmelden], bevor du mit diesem Werkzeug Änderungen vornehmen kannst.",
 	"ambiguous-template": "Die Vorlage $1 existiert nicht mehr; sie wurde durch die folgenden Vorlagen ersetzt:",
 	"settings-label-interface-language-code": "Sprache der Benutzeroberfläche",
+	"settings-label-use-wikifunctions": "Verwende Wikifunktionen, um Formularvorschläge zu erstellen",
 	"settings-save": "Speichern",
 	"tool-name": "Wikidata Lexeme Forms",
 	"skip-to-main-content": "Zum Hauptinhalt springen.",
@@ -55,5 +57,7 @@
 	"settings-link": "Einstellungen",
 	"settings-heading": "Einstellungen",
 	"logged-in": "{{GENDER:$2|Eingeloggt}} als $1.",
-	"requires-javascript": "Diese Funktion erfordert JavaScript."
+	"requires-javascript": "Diese Funktion erfordert JavaScript.",
+	"wikifunctions-generating": "Formulare erstellen…",
+	"wikifunctions-error": "Beim Generieren der Formulare ist ein Fehler aufgetreten"
 }

@@ -41,6 +41,7 @@
 	"login-hint": "Ќе треба да [$1 се најавите] пред да можете да правите измени со алаткава.",
 	"ambiguous-template": "Предлошката $1 повеќе не постои; заменета е од следниве предлошки:",
 	"settings-label-interface-language-code": "Јазик на посредникот",
+	"settings-label-use-wikifunctions": "Послужете се Викифункции за да создадете предлози за обрасци",
 	"settings-save": "Зачувај",
 	"tool-name": "Облици на лексеми во Википодатоците",
 	"skip-to-main-content": "Прејди на главната содржина",
@@ -51,5 +52,7 @@
 	"settings-link": "Нагодувања",
 	"settings-heading": "Нагодувања",
 	"logged-in": "{{GENDER:$2|Најавен|Најавена|Најавен}} како $1.",
-	"requires-javascript": "Оваа функција бара JavaScript."
+	"requires-javascript": "Оваа функција бара JavaScript.",
+	"wikifunctions-generating": "создавам обрасци…",
+	"wikifunctions-error": "се јави грешка при создавањето на обрасци"
 }
