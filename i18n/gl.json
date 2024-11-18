@@ -40,6 +40,7 @@
 	"login-hint": "Debe [$1 acceder ao sistema] para facer cambios usando esta ferramenta.",
 	"ambiguous-template": "O modelo $1 xa non existe; substituíuse polos seguintes modelos:",
 	"settings-label-interface-language-code": "Lingua da interface de usuario",
+	"settings-label-use-wikifunctions": "Usa as funcións do wiki para xerar as suxestións dos formularios",
 	"settings-save": "Gardar",
 	"tool-name": "Formas de lexemas de Wikidata",
 	"skip-to-main-content": "Saltar ao contido",
@@ -50,5 +51,7 @@
 	"settings-link": "Axustes",
 	"settings-heading": "Axustes",
 	"logged-in": "{{GENDER:$2|Iniciou sesión}} como $1.",
-	"requires-javascript": "Esta característica necesita JavaScript."
+	"requires-javascript": "Esta característica necesita JavaScript.",
+	"wikifunctions-generating": "xerando os formularios…",
+	"wikifunctions-error": "produciuse un erro ao xerar os formularios"
 }

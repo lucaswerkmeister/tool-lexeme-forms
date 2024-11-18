@@ -4,6 +4,7 @@
 			"Djiboun",
 			"Gomoko",
 			"Lucas Werkmeister",
+			"Mahabarata",
 			"Scratcheur-2020Send",
 			"Thibaut120094",
 			"Verdy p"
@@ -45,6 +46,7 @@
 	"login-hint": "Vous devez vous [$1 connecter] avant de pouvoir faire des modifications en utilisant cet outil.",
 	"ambiguous-template": "Le modèle $1 n’existe plus ; il a été remplacé par les modèles suivants :",
 	"settings-label-interface-language-code": "Langue de l’interface utilisateur",
+	"settings-label-use-wikifunctions": "Utilisez Wikifunctions pour créer des suggestions de formulaires",
 	"settings-save": "Enregistrer",
 	"tool-name": "Formes de lexème Wikidata",
 	"skip-to-main-content": "Passer au contenu principal",
@@ -55,5 +57,7 @@
 	"settings-link": "Paramètres",
 	"settings-heading": "Paramètres",
 	"logged-in": "Connecté{{GENDER:$2||e}} en tant que $1.",
-	"requires-javascript": "Cette fonctionnalité nécessite JavaScript."
+	"requires-javascript": "Cette fonctionnalité nécessite JavaScript.",
+	"wikifunctions-generating": "Création des formulaires...",
+	"wikifunctions-error": "une erreur s'est produite lors de la création des formulaires"
 }

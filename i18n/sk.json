@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Lucas Werkmeister",
+			"Oujon",
 			"Yardom78"
 		]
 	},
@@ -39,5 +40,7 @@
 	"title-bulk": "$1 (hromadne)",
 	"title-edit": "$1 (upraviť)",
 	"login-hint": "Pred vykonaním zmien pomocou tohto nástroja sa musíte [$1 prihlásiť].",
-	"ambiguous-template": "Šablóna $1 už neexistuje; bola nahradená nasledovnou šablónou:"
+	"ambiguous-template": "Šablóna $1 už neexistuje; bola nahradená nasledovnou šablónou:",
+	"settings-label-interface-language-code": "Jazyk používateľského rozhrania",
+	"settings-save": "Uložiť"
 }

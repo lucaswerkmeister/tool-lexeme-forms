@@ -53,5 +53,7 @@
 	"settings-link": "הגדרות",
 	"settings-heading": "הגדרות",
 	"logged-in": "{{GENDER:$2|נכנס|נכנסה}} לחשבון $1.",
-	"requires-javascript": "היכולת הזאת דורשת JavaScript."
+	"requires-javascript": "היכולת הזאת דורשת JavaScript.",
+	"wikifunctions-generating": "נוצרות צורות דקדוקיות…",
+	"wikifunctions-error": "אירעה שגיאה ביצירת צורות דקדוקיות"
 }

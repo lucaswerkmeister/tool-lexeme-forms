@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Rooiratel",
 			"Taalvalk",
 			"Winstonza"
 		]
@@ -15,10 +16,14 @@
 	"advanced": "Gevorderd",
 	"advanced-general": "Jy is in \"gevorderde\" modus.",
 	"lexeme-id": "Lekseem-ID",
+	"generated-via": "gegenereer via",
+	"bulk-link": "grootmaatmodus",
 	"bulk-format-help": "formaathulp",
 	"edit-link": "redigeer",
 	"title-create": "$1 (skep)",
 	"title-advanced": "$1 (gevorderd)",
 	"title-edit": "$1 (redigeer)",
-	"login-hint": "Jy moet [$1 aanmeld] voordat jy veranderings met hierdie werktuig kan aanbring."
+	"login-hint": "Jy moet [$1 aanmeld] voordat jy veranderings met hierdie werktuig kan aanbring.",
+	"documentation": "Dokumentasie",
+	"source-code": "Bronkode"
 }

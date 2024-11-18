@@ -40,6 +40,7 @@
 	"login-hint": "Бу адырны хайырланыб тюрлениу этгинчи [$1 кириу этерге керексиз].",
 	"ambiguous-template": "$1 энди джокъду; бу шаблонла бла алмашдырылгъанды:",
 	"settings-label-interface-language-code": "Хайырланыучу интерфейс тил",
+	"settings-label-use-wikifunctions": "Форма теджеулени генерация этер ючюн Викифункцияланы хайырлан",
 	"settings-save": "Сакъландыр",
 	"tool-name": "Викибилгилени Лексемаларыны Формалары",
 	"skip-to-main-content": "Баш контентге кёч",
@@ -49,6 +50,8 @@
 	"login": "Кир",
 	"settings-link": "Джарашдырыўла",
 	"settings-heading": "Джарашдырыўла",
-	"logged-in": "$1 болуб {{GENDER:$2|кириш этди}}.",
-	"requires-javascript": "Бу функциягъа JavaScript керекди."
+	"logged-in": "$1 болуб {{GENDER:$2|кирди}}.",
+	"requires-javascript": "Бу функциягъа JavaScript керекди.",
+	"wikifunctions-generating": "формала генерация этиледиле...",
+	"wikifunctions-error": "формала генерация этилген заманда халат чыкъгъады"
 }

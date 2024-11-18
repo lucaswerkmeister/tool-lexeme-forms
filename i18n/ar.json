@@ -7,6 +7,7 @@
 			"Hubaishan",
 			"Kawayashu",
 			"Lucas Werkmeister",
+			"Meno25",
 			"Mohanad",
 			"Mohanad Kh",
 			"Sandra Hanbo",
@@ -50,6 +51,7 @@
 	"login-hint": "تحتاج إلى [$1 تسجيل دخول] قبل أن تتمكن من إجراء تغييرات باستخدام هذه الأداة.",
 	"ambiguous-template": "لم يعد القالب $1 موجودًا؛ تمجرى استبداله بالقوالب التالية:",
 	"settings-label-interface-language-code": "لغة واجهة المستخدم",
+	"settings-label-use-wikifunctions": "استخدم Wikifunctions لإنشاء اقتراحات النماذج",
 	"settings-save": "حفظ",
 	"tool-name": "تصريفات مفردة ويكي بيانات",
 	"skip-to-main-content": "تخطي إلى المحتوى الرئيسي",
@@ -60,5 +62,7 @@
 	"settings-link": "الإعدادات",
 	"settings-heading": "إعدادات",
 	"logged-in": "{{GENDER:$2| تم تسجيل الدخول}} كـ $1 .",
-	"requires-javascript": "هذه الميزة تتطلب جافاسكريبت."
+	"requires-javascript": "هذه الميزة تتطلب جافاسكريبت.",
+	"wikifunctions-generating": "إنشاء النماذج…",
+	"wikifunctions-error": "حدث خطأ أثناء إنشاء النماذج"
 }
