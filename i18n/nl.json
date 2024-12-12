@@ -7,6 +7,7 @@
 			"McDutchie",
 			"Nickthijssen1994",
 			"Romaine",
+			"Siebrand",
 			"Victor LP"
 		]
 	},
@@ -46,6 +47,7 @@
 	"login-hint": "U moet zich [$1 aanmelden] om wijzigingen te kunnen maken met deze tool.",
 	"ambiguous-template": "Het sjabloon $1 bestaat niet meer; het is vervangen door de volgende sjablonen:",
 	"settings-label-interface-language-code": "Taal van de gebruikersinterface",
+	"settings-label-use-wikifunctions": "Gebruik Wikifuncties om formuliersuggesties te genereren",
 	"settings-save": "Opslaan",
 	"tool-name": "Wikidata-lexeemvormen",
 	"skip-to-main-content": "Naar hoofdinhoud springen",
@@ -56,5 +58,7 @@
 	"settings-link": "Instellingen",
 	"settings-heading": "Instellingen",
 	"logged-in": "{{GENDER:$2|Aangemeld}} als $1.",
-	"requires-javascript": "Deze functie vereist JavaScript."
+	"requires-javascript": "Deze functie vereist JavaScript.",
+	"wikifunctions-generating": "formulieren genereren…",
+	"wikifunctions-error": "er is een fout opgetreden bij het genereren van formulieren"
 }
