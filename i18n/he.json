@@ -43,6 +43,7 @@
 	"login-hint": "יש [$1 להיכנס לחשבון] לפני שיהיה באפשרותך לעשות שינויים באמצעות הכלי הזה.",
 	"ambiguous-template": "התבנית $1 כבר אינה קיימת; היא הוחלפשה בתבניות הבאות:",
 	"settings-label-interface-language-code": "שפת ממשק המשתמש",
+	"settings-label-use-wikifunctions": "להשתמש בוויקיפונקציות כדי לייצר הצעות בטפסים",
 	"settings-save": "שמירה",
 	"tool-name": "צורות יחידות מילוניות של ויקינתונים",
 	"skip-to-main-content": "מעבר לתוכן הראשי",
