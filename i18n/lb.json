@@ -6,8 +6,10 @@
 		]
 	},
 	"create": "Uleeën",
+	"duplicates-create": "Trotzdeem en neie Lexeem uleeën.",
 	"advanced": "Erweidert",
 	"lexeme-id": "Lexeem-ID",
+	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=keng Form|eng Form|$2 Formen}} {{PLURAL:$3|0=a keng Bedeitung|an eng Bedeitung|a(n) $3 Bedeitungen}}",
 	"edit-link": "änneren",
 	"title-create": "$1 (uleeën)",
 	"title-advanced": "$1 (erweidert)",
@@ -16,6 +18,7 @@
 	"settings-label-interface-language-code": "Sprooch vun der Benotzeruewerfläch",
 	"settings-save": "Späicheren",
 	"documentation": "Dokumentatioun",
+	"toolforge": "Wikimedia Toolforge",
 	"source-code": "Quellcode",
 	"login": "Aloggen",
 	"settings-link": "Astellungen",
