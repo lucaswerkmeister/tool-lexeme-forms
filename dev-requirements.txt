@@ -10,11 +10,11 @@ iniconfig==2.0.0
     # via pytest
 mccabe==0.7.0
     # via flake8
-mypy==1.13.0
+mypy==1.14.0
     # via -r dev-requirements.in
 mypy-extensions==1.0.0
     # via mypy
-packaging==24.1
+packaging==24.2
     # via pytest
 pluggy==1.5.0
     # via pytest
@@ -22,7 +22,7 @@ pycodestyle==2.12.1
     # via flake8
 pyflakes==3.2.0
     # via flake8
-pytest==8.3.3
+pytest==8.3.4
     # via -r dev-requirements.in
 types-babel==2.11.0.15
     # via -r dev-requirements.in
@@ -32,13 +32,13 @@ types-decorator==5.1.8.20240310
     # via -r dev-requirements.in
 types-html5lib==1.1.11.20241018
     # via types-beautifulsoup4
-types-pytz==2024.2.0.20241003
+types-pytz==2024.2.0.20241221
     # via types-babel
-types-pyyaml==6.0.12.20240917
+types-pyyaml==6.0.12.20241221
     # via -r dev-requirements.in
 types-requests==2.32.0.20241016
     # via -r dev-requirements.in
-types-setuptools==75.2.0.20241025
+types-setuptools==75.6.0.20241126
     # via types-babel
 typing-extensions==4.12.2
     # via
