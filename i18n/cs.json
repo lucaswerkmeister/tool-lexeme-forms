@@ -6,7 +6,8 @@
 			"Lucas Werkmeister",
 			"Matěj Suchánek",
 			"Mormegil",
-			"Patrik L."
+			"Patrik L.",
+			"Spotter"
 		]
 	},
 	"create": "Vytvořit",
@@ -45,12 +46,18 @@
 	"login-hint": "Než pomocí tohoto nástroje budete moci dělat změny, musíte se [$1 přihlásit].",
 	"ambiguous-template": "Šablona $1 už neexistuje; byla nahrazena následujícími šablonami:",
 	"settings-label-interface-language-code": "Jazyk uživatelského rozhraní",
+	"settings-label-use-wikifunctions": "Pomocí Wikifunkcí generujte návrhy formulářů",
 	"settings-save": "Uložit",
+	"tool-name": "Tvary lexémů Wikidat",
 	"skip-to-main-content": "Přeskočit na obsah",
 	"documentation": "Dokumentace",
+	"toolforge": "Wikimedia Toolforge",
 	"source-code": "Zdrojový kód",
 	"login": "Přihlásit se",
 	"settings-link": "Nastavení",
 	"settings-heading": "Nastavení",
-	"logged-in": "{{GENDER:$2|Přihlášen|Přihlášena}} jako $1."
+	"logged-in": "{{GENDER:$2|Přihlášen|Přihlášena}} jako $1.",
+	"requires-javascript": "Tato funkce vyžaduje JavaScript.",
+	"wikifunctions-generating": "generování formulářů…",
+	"wikifunctions-error": "při generování formulářů došlo k chybě"
 }
