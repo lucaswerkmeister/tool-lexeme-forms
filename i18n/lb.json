@@ -23,6 +23,6 @@
 	"login": "Aloggen",
 	"settings-link": "Astellungen",
 	"settings-heading": "Astellungen",
-	"logged-in": "{{GENDER:$2|Ageloggt}} als $1 .",
+	"logged-in": "{{GENDER:$2|Ageloggt}} als $1.",
 	"requires-javascript": "Dës Funktioun brauch JavaScript."
 }
