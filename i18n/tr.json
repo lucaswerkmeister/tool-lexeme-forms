@@ -44,6 +44,7 @@
 	"login-hint": "Bu aracı kullanarak değişiklik yapmadan önce [$1 giriş yapmalısınız].",
 	"ambiguous-template": "$1 şablonu artık mevcut değil; şu şablonlarla değiştirilmiş:",
 	"settings-label-interface-language-code": "Kullanıcı arayüzü dili",
+	"settings-label-use-wikifunctions": "Form önerileri oluşturmak için Vikiişlev'i kullanın",
 	"settings-save": "Sakla",
 	"tool-name": "Vikiveri Sözlükbirim Formları",
 	"skip-to-main-content": "Ana içeriğe geç",
@@ -54,5 +55,7 @@
 	"settings-link": "Ayarlar",
 	"settings-heading": "Ayarlar",
 	"logged-in": "$1 olarak {{GENDER:$2|giriş yaptı}}.",
-	"requires-javascript": "Bu özellik JavaScript gerektirir."
+	"requires-javascript": "Bu özellik JavaScript gerektirir.",
+	"wikifunctions-generating": "formlar üretiliyor…",
+	"wikifunctions-error": "formlar oluşturulurken bir hata oluştu"
 }
