@@ -3,6 +3,7 @@
 		"authors": [
 			"Kly",
 			"Lucas Werkmeister",
+			"S8321414",
 			"Winston Sung"
 		]
 	},
@@ -42,6 +43,7 @@
 	"login-hint": "在您使用此工具來做出更改前，您需要[$1 登入]。",
 	"ambiguous-template": "模板 $1 已不存在，可能是被以下模板替換：",
 	"settings-label-interface-language-code": "使用者介面語言",
+	"settings-label-use-wikifunctions": "使用Wikifunctions產生詞形建議",
 	"settings-save": "儲存",
 	"tool-name": "維基數據詞位形式",
 	"skip-to-main-content": "跳至主要內容",
@@ -52,5 +54,7 @@
 	"settings-link": "設定",
 	"settings-heading": "設定",
 	"logged-in": "以$1{{GENDER:$2|登入}}。",
-	"requires-javascript": "此功能需要使用 JavaScript。"
+	"requires-javascript": "此功能需要使用 JavaScript。",
+	"wikifunctions-generating": "正在產生詞形……",
+	"wikifunctions-error": "產生詞形時發生錯誤"
 }
