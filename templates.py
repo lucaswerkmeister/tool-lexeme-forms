@@ -21163,6 +21163,90 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
         ],
     },
 
+    'russian-verb-perfective': {
+        '@attribution': {'users': ['GranD', 'Infovarius'], 'title': 'Wikidata:Wikidata Lexeme Forms/Russian'},
+        'label': 'русский глагол, совершенный вид',
+        'language': language_Russian,
+        'lexical_category_item_id': verb,
+        'two_column_sections': True,
+        'forms': [
+            {
+                'label': 'инфинитив',
+                'example': 'Нам удалось [взлететь].',
+                'grammatical_features_item_ids': [infinitive],
+            },
+            {
+                'section_break': True,
+                'label': 'прошедшее, ед. ч., м. р.',
+                'example': 'Вчера я/ты/он [взлетел].',
+                'grammatical_features_item_ids': [indicative, past_tense, singular, masculine],
+            },
+            {
+                'label': 'прошедшее, ед. ч., ж. р.',
+                'example': 'Вчера я/ты/она [взлетела].',
+                'grammatical_features_item_ids': [indicative, past_tense, singular, feminine],
+            },
+            {
+                'label': 'прошедшее, ед. ч., ср. р.',
+                'example': 'Вчера оно [взлетело].',
+                'grammatical_features_item_ids': [indicative, past_tense, singular, neuter],
+            },
+            {
+                'label': 'прошедшее, мн. ч.',
+                'example': 'Вчера мы/вы/они [взлетели].',
+                'grammatical_features_item_ids': [indicative, past_tense, plural],
+            },
+            {
+                'section_break': True,
+                'label': 'будущее, 1 л., ед. ч.',
+                'example': 'Завтра я [взлечу].',
+                'grammatical_features_item_ids': [indicative, future_tense, first_person, singular],
+            },
+            {
+                'label': 'будущее, 1 л., мн. ч.',
+                'example': 'Завтра мы [взлетим].',
+                'grammatical_features_item_ids': [indicative, future_tense, first_person, plural],
+            },
+            {
+                'label': 'будущее, 2 л., ед. ч.',
+                'example': 'Завтра ты [взлетишь].',
+                'grammatical_features_item_ids': [indicative, future_tense, second_person, singular],
+            },
+            {
+                'label': 'будущее, 2 л., мн. ч.',
+                'example': 'Завтра вы [взлетите].',
+                'grammatical_features_item_ids': [indicative, future_tense, second_person, plural],
+            },
+            {
+                'label': 'будущее, 3 л., ед. ч.',
+                'example': 'Завтра он/она/оно [взлетит].',
+                'grammatical_features_item_ids': [indicative, future_tense, third_person, singular],
+            },
+            {
+                'label': 'будущее, 3 л., мн. ч.',
+                'example': 'Завтра они [взлетят].',
+                'grammatical_features_item_ids': [indicative, future_tense, third_person, plural],
+            },
+            {
+                'section_break': True,
+                'label': 'императив, 1 л., мн. ч.',
+                'example': 'Давайте (мы) [взлетим/взлетимте] же!',
+                'grammatical_features_item_ids': [imperative, first_person, plural],
+            },
+            {
+                'label': 'императив, 2 л., ед. ч.',
+                'example': 'Просто возьми и [взлети].',
+                'grammatical_features_item_ids': [imperative, second_person, singular],
+            },
+            {
+                'label': 'императив, 2 л., мн. ч.',
+                'example': 'Просто возьмите и [взлетите].',
+                'grammatical_features_item_ids': [imperative, second_person, plural],
+            },
+        ],
+        'statements': statements(grammatical_aspect, perfective),
+    },
+
     'swedish-noun-common': {
         '@attribution': {'users': ['Vesihiisi'], 'title': 'Wikidata:Wikidata Lexeme Forms/Swedish'},
         'label': 'svenskt substantiv (utrum)',
