@@ -4,6 +4,7 @@
 			"Andreasmperu",
 			"Asierog",
 			"Destinid10 2",
+			"HylianAngel",
 			"Jackiezelaya",
 			"Juan t2905",
 			"Lucas Werkmeister",
@@ -53,5 +54,7 @@
 	"skip-to-main-content": "Saltar al contenido principal",
 	"documentation": "Documentación",
 	"source-code": "Código fuente",
-	"login": "Iniciar sesión"
+	"login": "Iniciar sesión",
+	"settings-link": "Configuración",
+	"settings-heading": "Configuración"
 }
