@@ -155,6 +155,10 @@ language_Portuguese: Language = {
     'language_item_id': Portuguese,
     'language_code': 'pt',
 }
+language_Quechua: Language = {
+    'language_item_id': Quechua,
+    'language_code': 'qu',
+}
 language_Croatian: Language = {
     'language_item_id': Croatian,
     'language_code': 'hr',
@@ -20761,6 +20765,57 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'label': 'Provérbio',
                 'example': 'Se ela estivesse aqui, diria que [em boca fechada não entra mosca].',
                 'grammatical_features_item_ids': [],
+            },
+        ],
+    },
+
+    'quechua-verb': {
+        '@attribution': {'users': ['Elwinlhq'], 'title': 'Wikidata:Wikidata Lexeme Forms/Quechua'},
+        'label': 'Qichwapi rimana',
+        'language': language_Quechua,
+        'lexical_category_item_id': verb,
+        'two_column_sections': False,  # the inclusive/exclusive split in the first person plural messes with the column distribution
+        'forms': [
+            {
+                'label': 'llakñichi',
+                'example': 'Ratu [puriy].',
+                'grammatical_features_item_ids': [infinitive],
+            },
+            {
+                'section_break': True,
+                'label': 'huk kaq runa sapan (kunan)',
+                'example': 'Ñuqa [purini] sapa p\'unchaw.',
+                'grammatical_features_item_ids': [present_tense, indicative, first_person, singular],
+            },
+            {
+                'label': 'iskay kaq runa sapan (kunan)',
+                'example': 'Qam [purinki] sapa p\'unchaw.',
+                'grammatical_features_item_ids': [present_tense, indicative, second_person, singular],
+            },
+            {
+                'label': 'kimsa kaq runa sapan (kunan)',
+                'example': 'Pay [purin] sapa p\'unchaw.',
+                'grammatical_features_item_ids': [present_tense, indicative, third_person, singular],
+            },
+            {
+                'label': 'huk kaq runa achka yupaq (kunan)',
+                'example': 'Ñuqanchik [purinchik] sapa p\'unchaw.',
+                'grammatical_features_item_ids': [present_tense, indicative, first_person, plural, inclusive],
+            },
+            {
+                'label': 'huk kaq runa achka mana yupaq (kunan)',
+                'example': 'Ñuqayku [puriyku] sapa p\'unchaw.',
+                'grammatical_features_item_ids': [present_tense, indicative, first_person, plural, exclusive],
+            },
+            {
+                'label': 'iskay kaq runa achka (kunan)',
+                'example': 'Qamkuna [purinkichik] sapa p\'unchaw.',
+                'grammatical_features_item_ids': [present_tense, indicative, second_person, plural],
+            },
+            {
+                'label': 'kimsa kaq runa achka (kunan)',
+                'example': 'Paykuna [purinku] sapa p\'unchaw.',
+                'grammatical_features_item_ids': [present_tense, indicative, third_person, plural],
             },
         ],
     },
