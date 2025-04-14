@@ -25,5 +25,11 @@
 	"title-edit": "$1 (redigeer)",
 	"login-hint": "Jy moet [$1 aanmeld] voordat jy veranderings met hierdie werktuig kan aanbring.",
 	"documentation": "Dokumentasie",
-	"source-code": "Bronkode"
+	"toolforge": "Wikimedia Toolforge",
+	"source-code": "Bronkode",
+	"login": "Meld aan",
+	"settings-link": "Instellings",
+	"settings-heading": "Instellings",
+	"logged-in": "{{GENDER:$2|Aangemeld}} as $1.",
+	"requires-javascript": "Hierdie kenmerk vereis JavaScript."
 }
