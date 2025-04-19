@@ -6,6 +6,7 @@
 			"Destinid10 2",
 			"HylianAngel",
 			"Jackiezelaya",
+			"JaimeDes",
 			"Juan t2905",
 			"Lucas Werkmeister",
 			"No se",
@@ -50,11 +51,19 @@
 	"title-edit": "$1 (editar)",
 	"login-hint": "Necesita [$1 iniciar sesión] antes de que pueda hacer cambios usando esta herramienta.",
 	"ambiguous-template": "La plantilla $1 ya no existe; ha sido reemplazada por las siguientes plantillas:",
+	"settings-label-interface-language-code": "Idioma de interfaz de usuario",
+	"settings-label-use-wikifunctions": "Utilice funciones wiki para generar sugerencias de formularios",
 	"settings-save": "Guardar",
+	"tool-name": "Forma de Lexema de Wikidata",
 	"skip-to-main-content": "Saltar al contenido principal",
 	"documentation": "Documentación",
+	"toolforge": "Wikimedia Toolforge",
 	"source-code": "Código fuente",
 	"login": "Iniciar sesión",
 	"settings-link": "Configuración",
-	"settings-heading": "Configuración"
+	"settings-heading": "Configuración",
+	"logged-in": "{{GENDER:$2|Inició sesión}} como $1.",
+	"requires-javascript": "Esta función requiere JavaScript.",
+	"wikifunctions-generating": "generando formas…",
+	"wikifunctions-error": "ocurrió un error al generar las formas"
 }
