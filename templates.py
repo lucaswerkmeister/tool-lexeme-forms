@@ -20786,36 +20786,57 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'label': 'huk kaq runa sapan (kunan)',
                 'example': 'Ñuqa [purini] sapa p\'unchaw.',
                 'grammatical_features_item_ids': [present_tense, indicative, first_person, singular],
+                'wikifunctions': {
+                    'hunt\'ay': 'Z23782',
+                },
             },
             {
                 'label': 'iskay kaq runa sapan (kunan)',
                 'example': 'Qam [purinki] sapa p\'unchaw.',
                 'grammatical_features_item_ids': [present_tense, indicative, second_person, singular],
+                'wikifunctions': {
+                    'hunt\'ay': 'Z23788',
+                },
             },
             {
                 'label': 'kimsa kaq runa sapan (kunan)',
                 'example': 'Pay [purin] sapa p\'unchaw.',
                 'grammatical_features_item_ids': [present_tense, indicative, third_person, singular],
+                'wikifunctions': {
+                    'hunt\'ay': 'Z23790',
+                },
             },
             {
                 'label': 'huk kaq runa achka yupaq (kunan)',
                 'example': 'Ñuqanchik [purinchik] sapa p\'unchaw.',
                 'grammatical_features_item_ids': [present_tense, indicative, first_person, plural, inclusive],
+                'wikifunctions': {
+                    'hunt\'ay': 'Z23792',
+                },
             },
             {
                 'label': 'huk kaq runa achka mana yupaq (kunan)',
                 'example': 'Ñuqayku [puriyku] sapa p\'unchaw.',
                 'grammatical_features_item_ids': [present_tense, indicative, first_person, plural, exclusive],
+                'wikifunctions': {
+                    'hunt\'ay': 'Z23795',
+                },
             },
             {
                 'label': 'iskay kaq runa achka (kunan)',
                 'example': 'Qamkuna [purinkichik] sapa p\'unchaw.',
                 'grammatical_features_item_ids': [present_tense, indicative, second_person, plural],
+                'wikifunctions': {
+                    'hunt\'ay': 'Z23798',
+                },
             },
             {
                 'label': 'kimsa kaq runa achka (kunan)',
                 'example': 'Paykuna [purinku] sapa p\'unchaw.',
                 'grammatical_features_item_ids': [present_tense, indicative, third_person, plural],
+                'wikifunctions': {
+                    'hunt\'ay': 'Z23800',
+                },
             },
         ],
     },
