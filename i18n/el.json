@@ -40,5 +40,7 @@
 	"settings-link": "Ρυθμίσεις",
 	"settings-heading": "Ρυθμίσεις",
 	"logged-in": "{{GENDER:$2|Συνδεθήκατε}} ως $1.",
-	"requires-javascript": "Αυτή η δυνατότητα απαιτεί JavaScript."
+	"requires-javascript": "Αυτή η δυνατότητα απαιτεί JavaScript.",
+	"wikifunctions-generating": "δημιουργία φορμών…",
+	"wikifunctions-error": "παρουσιάστηκε σφάλμα κατά τη δημιουργία φορμών"
 }
