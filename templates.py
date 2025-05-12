@@ -1,4 +1,4 @@
-from typing import Dict, List, Literal, Optional, Set, TypeAlias, TypedDict, overload
+from typing import Dict, List, Literal, Optional, Set, TypedDict, overload
 from typing_extensions import NotRequired
 
 from entity_ids import *  # noqa: F403
@@ -51,7 +51,7 @@ Template = TypedDict('Template', {
     '@template_name': NotRequired[str],
 })
 
-StatementValue: TypeAlias = str | Literal['somevalue'] | Literal['novalue']
+type StatementValue = str | Literal['somevalue'] | Literal['novalue']
 
 def statement(property_id: str, item_id: StatementValue) -> Statement:
     snak: Snak
