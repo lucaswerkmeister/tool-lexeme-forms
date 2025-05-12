@@ -21,7 +21,10 @@
 	"advanced-partial-forms-hint": "Барои эҷоди лексема бе ягон шакл ба режими васеъ гузаред.",
 	"generated-via": "карда шудааст бо",
 	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=шакл нест|як шакл|$2 шаклҳо}} ва {{PLURAL:$3|0=маъное нест|як маъно|$3 маъноҳо|$3 маъноҳо}}",
+	"bulk-link": "шакли вироиши омма",
+	"bulk-format-help": "роҳнамои қолаббандӣ",
 	"edit-link": "вироиш",
+	"no-grammatical-features": "нишонаҳои грамматикӣ нест",
 	"title-create": "$1 (эҷод)",
 	"title-advanced": "$1 (пешрафта)",
 	"title-bulk": "$1 (омма)",
@@ -37,5 +40,6 @@
 	"settings-link": "Танзимот",
 	"settings-heading": "Танзимот",
 	"logged-in": "{{GENDER:$2|Шумо ба система}} чун $1 ворид шудед.",
-	"requires-javascript": "Ин вижагӣ JavaScript-ро талаб мекунад."
+	"requires-javascript": "Ин вижагӣ JavaScript-ро талаб мекунад.",
+	"wikifunctions-generating": "шаклсозӣ..."
 }
