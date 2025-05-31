@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Fnielsen",
+			"Saederup92",
 			"So9q"
 		]
 	},
@@ -20,5 +21,11 @@
 	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=ingen forme|en form|$2 forme}} og {{PLURAL:$3|0=inge betydelser|en betydelse|$3 betydelser}}",
 	"bulk-link": "masseopret",
 	"bulk-format-help": "formateringshjælp",
-	"bulk-not-allowed": "Desværre har du ikke tilladelse til at oprette flere leksemer samtidigt."
+	"bulk-not-allowed": "Desværre har du ikke tilladelse til at oprette flere leksemer samtidigt.",
+	"settings-save": "Gem",
+	"documentation": "Dokumentation",
+	"source-code": "Kildekode",
+	"login": "Log på",
+	"settings-link": "Indstillinger",
+	"settings-heading": "Indstillinger"
 }
