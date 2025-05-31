@@ -1,0 +1,27 @@
+default:
+  image: python:3.11
+  cache:
+    - key: pip-python-3.11
+      paths:
+        - .cache/pip
+
+stages:
+  - test
+
+variables:
+  PYTHONDONTWRITEBYTECODE: "1"
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+
+test-job:
+  stage: test
+  script:
+    - python3 -m pip install -r requirements.txt -r dev-requirements.txt
+    - make check
+
+test-prod-requirements-job:
+  stage: test
+  script:
+    # only install prod requirements
+    - python3 -m pip install -r requirements.txt
+    # check that app.py runs without crashing on a missing import
+    - python3 app.py
