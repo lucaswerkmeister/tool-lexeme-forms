@@ -7,18 +7,15 @@ import json
 from markupsafe import Markup
 import mwapi  # type: ignore
 import mwoauth  # type: ignore
-import os
 import random
 import re
 import requests
 import requests_oauthlib  # type: ignore
-import stat
 import string
 import toolforge
 from typing import cast, Any, Optional, Tuple, TypedDict
 import unicodedata
 import werkzeug
-import yaml
 
 from flask_utils import SetJSONProvider
 from language import lang_lex2int, lang_int2babel
@@ -57,23 +54,7 @@ i18n = ToolforgeI18n(app, interface_language_code)
 
 user_agent = toolforge.set_user_agent('lexeme-forms', email='mail@lucaswerkmeister.de')
 
-@decorator.decorator
-def read_private(func, *args, **kwargs):
-    try:
-        f = args[0]
-        fd = f.fileno()
-    except AttributeError:
-        pass
-    except IndexError:
-        pass
-    else:
-        mode = os.stat(fd).st_mode
-        if (stat.S_IRGRP | stat.S_IROTH) & mode:
-            raise ValueError(f'{getattr(f, "name", "config file")} is readable to others, '
-                             'must be exclusively user-readable!')
-    return func(*args, **kwargs)
-
-has_config = app.config.from_file('config.yaml', load=read_private(yaml.safe_load), silent=True)
+has_config = app.config.from_file('config.yaml', load=toolforge.load_private_yaml, silent=True)
 if has_config:
     consumer_token = mwoauth.ConsumerToken(app.config['OAUTH']['consumer_key'], app.config['OAUTH']['consumer_secret'])
 else:

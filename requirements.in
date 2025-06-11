@@ -8,7 +8,7 @@ mwoauth
 PyYAML
 requests
 requests_oauthlib
-toolforge ~= 4.2
+toolforge >= 6.1
 toolforge_i18n[Flask] >= 0.1.0
 typing-extensions >= 4.1.0
 werkzeug >= 2.0.0
