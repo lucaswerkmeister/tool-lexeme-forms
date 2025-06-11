@@ -10,37 +10,41 @@ iniconfig==2.1.0
     # via pytest
 mccabe==0.7.0
     # via flake8
-mypy==1.15.0
+mypy==1.16.0
     # via -r dev-requirements.in
-mypy-extensions==1.0.0
+mypy-extensions==1.1.0
     # via mypy
 packaging==25.0
     # via pytest
-pluggy==1.5.0
+pathspec==0.12.1
+    # via mypy
+pluggy==1.6.0
     # via pytest
 pycodestyle==2.13.0
     # via flake8
 pyflakes==3.3.2
     # via flake8
-pytest==8.3.5
+pygments==2.19.1
+    # via pytest
+pytest==8.4.0
     # via -r dev-requirements.in
 types-babel==2.11.0.15
     # via -r dev-requirements.in
-types-beautifulsoup4==4.12.0.20250204
+types-beautifulsoup4==4.12.0.20250516
     # via -r dev-requirements.in
 types-decorator==5.2.0.20250324
     # via -r dev-requirements.in
-types-html5lib==1.1.11.20241018
+types-html5lib==1.1.11.20250516
     # via types-beautifulsoup4
-types-pytz==2025.2.0.20250326
+types-pytz==2025.2.0.20250516
     # via types-babel
-types-pyyaml==6.0.12.20250402
+types-pyyaml==6.0.12.20250516
     # via -r dev-requirements.in
-types-requests==2.32.0.20250328
+types-requests==2.32.4.20250611
     # via -r dev-requirements.in
-types-setuptools==78.1.0.20250329
+types-setuptools==80.9.0.20250529
     # via types-babel
-typing-extensions==4.13.2
+typing-extensions==4.14.0
     # via
     #   -c /home/lucas/git/lexeme-forms/requirements.txt
     #   mypy
@@ -48,6 +52,3 @@ urllib3==2.4.0
     # via
     #   -c /home/lucas/git/lexeme-forms/requirements.txt
     #   types-requests
-
-# The following packages are considered to be unsafe in a requirements file:
-# setuptools
