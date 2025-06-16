@@ -1090,7 +1090,7 @@ def add_labels_to_lexeme_forms_grammatical_features(session, language, lexeme_fo
                                ids=chunk,
                                props=['labels'],
                                languages=[lang_lex2int(language)],
-                               languagefallback=1,  # TODO use True once mediawiki-utilities/python-mwapi#38 is in a released version
+                               languagefallback=True,
                                formatversion=2)
         for item_id, item in response['entities'].items():
             labels_map[item_id] = item['labels'].get(language, {'language': 'zxx', 'value': item_id})
