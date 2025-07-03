@@ -9,6 +9,7 @@
 	"duplicates-warning": "Desse leksema finst frå før og har det samme lemmaet og den same språkkoden som leksemet du held på å oppretta.",
 	"duplicates-instructions": "Om du er viss på at dei er ulike, hak av boksen på botnen av skjemaet.",
 	"no-duplicate": "Dette er ikkje eit duplikat av eit leksem som finst frå før.",
+	"form-optional": "&#32;(valfri)",
 	"advanced": "Avansert",
 	"advanced-general": "Du er i avansert modus.",
 	"advanced-lexeme-id": "Du kan skriva inn ID-en til eit leksem som alt finst i staden for å oppretta eit nytt eit. La alle formene som alt er opppførte på leksemsida vera tomme, elles vert dei dupliserte.",

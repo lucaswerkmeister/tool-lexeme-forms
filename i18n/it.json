@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Beta16",
+			"Emabarto01",
 			"Luca.favorido",
 			"Lucas Werkmeister",
 			"Sannita"
@@ -53,5 +54,7 @@
 	"settings-link": "Impostazioni",
 	"settings-heading": "Impostazioni",
 	"logged-in": "{{GENDER:$2|Acceduto|Acceduta|Acceduto/a}} come $1.",
-	"requires-javascript": "Questa funzionalità richiede JavaScript."
+	"requires-javascript": "Questa funzionalità richiede JavaScript.",
+	"wikifunctions-generating": "generazione moduli…",
+	"wikifunctions-error": "si è verificato un errore durante la generazione dei moduli"
 }
