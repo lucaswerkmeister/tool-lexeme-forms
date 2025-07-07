@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"DDPAT",
+			"Engineer56",
 			"Eugenia.Chudinova",
 			"Ice bulldog",
 			"Infovarius",
@@ -46,6 +47,7 @@
 	"login-hint": "Вам необходимо [$1 войти], прежде чем вы сможете вносить изменения с помощью этого инструмента.",
 	"ambiguous-template": "Шаблон $1 больше не существует; он был заменён следующими шаблонами:",
 	"settings-label-interface-language-code": "Язык интерфейса",
+	"settings-label-use-wikifunctions": "Используйте Wikifunctions для генерации предложений форм",
 	"settings-save": "Сохранить",
 	"tool-name": "Формы лексем Викиданных",
 	"skip-to-main-content": "Перейти к основному содержанию",
@@ -56,5 +58,7 @@
 	"settings-link": "Настройки",
 	"settings-heading": "Настройки",
 	"logged-in": "{{GENDER:$2|Вы вошли в систему}} как $1.",
-	"requires-javascript": "Эта функция требует JavaScript."
+	"requires-javascript": "Эта функция требует JavaScript.",
+	"wikifunctions-generating": "создание форм…",
+	"wikifunctions-error": "произошла ошибка при создании форм"
 }

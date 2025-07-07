@@ -1,13 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
+			"Pikne",
 			"Reosarevok"
 		]
 	},
 	"create": "Loo",
 	"csrf-warning": "Vabandust, taotluse töötlemine ebaõnnestus (<abbr title=\"Cross-site request forgery\">CSRFi</abbr> vastane kaitse ebaõnnestus). Palun proovi vorm uuesti saata.",
-	"duplicates-warning": "Nendel olemasolevatel lekseemidel on sama lemma ja keel kui lekseemil, mida sa tahad luua:",
-	"duplicates-instructions": "Kui sa oled kindel, et nad on erinevad, märgi vormi lõpus olev märkeruut.",
+	"duplicates-warning": "{{PLURAL:$1|Sellel olemasoleval lekseemil|Nendel olemasolevatel lekseemidel}} on sama lemma ja keel kui lekseemil, mida tahad luua:",
+	"duplicates-instructions": "Kui oled kindel, et {{PLURAL:$1|see on erinev|need on erinevad}}, märgi vormi lõpus olev märkeruut.",
 	"no-duplicate": "See lekseem pole sama kui olemasolevad lekseemid.",
 	"advanced": "Laienda",
 	"advanced-general": "Oled laiendatud režiimis",
