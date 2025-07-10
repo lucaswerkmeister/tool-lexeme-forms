@@ -3,7 +3,8 @@
 		"authors": [
 			"Dj",
 			"Hanna Tardos",
-			"Luckylukee81"
+			"Luckylukee81",
+			"Urbalazs"
 		]
 	},
 	"create": "Létrehozás",
@@ -13,8 +14,8 @@
 	"duplicates-create": "Mindenképpen hozz létre egy új lexémát.",
 	"no-duplicate": "Ez nem egy létező lexéma másolata.",
 	"form-optional": "&#32; (választható)",
-	"advanced": "Haladó, pl. fejlett",
-	"advanced-general": "\"Haladó\" módban vagy.",
+	"advanced": "Speciális",
+	"advanced-general": "„Speciális” módban van.",
 	"advanced-lexeme-id": "Megadhatsz egy lexéma azonosítót, ha űrlapokat szeretnél hozzáadni egy meglévő lexémához, ahelyett, hogy újat hoznál létre. A lexémán már meglévő űrlapokat hagyd üresen, különben megkettőződnek!",
 	"advanced-partial-forms": "Néhány űrlapot üresen hagyhatysz, hogy ne kerüljön hozzáadásra. Ügyelj arra, hogy véletlenül ne hagyjál ki egy űrlapot sem!",
 	"lexeme-id": "Lexéma ID",
