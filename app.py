@@ -16,6 +16,7 @@ import toolforge
 from typing import cast, Any, Optional, Tuple, TypedDict
 import unicodedata
 import werkzeug
+import yaml
 
 from flask_utils import SetJSONProvider
 from language import lang_lex2int, lang_int2babel
@@ -54,12 +55,15 @@ i18n = ToolforgeI18n(app, interface_language_code)
 
 user_agent = toolforge.set_user_agent('lexeme-forms', email='mail@lucaswerkmeister.de')
 
-has_config = app.config.from_file('config.yaml', load=toolforge.load_private_yaml, silent=True)
-if has_config:
+app.config.from_file('config.yaml', load=toolforge.load_private_yaml, silent=True)
+app.config.from_prefixed_env('TOOL', loads=yaml.safe_load)
+if 'OAUTH' in app.config:
     consumer_token = mwoauth.ConsumerToken(app.config['OAUTH']['CONSUMER_KEY'], app.config['OAUTH']['CONSUMER_SECRET'])
+    assert app.secret_key is not None, 'If OAuth is configured, the SECRET_KEY must also be configured (a fixed random string)'
 else:
-    print('config.yaml file not found, assuming local development setup')
-    app.secret_key = 'fake'
+    print('No OAuth configuration found, assuming local development setup')
+    if app.secret_key is None:
+        app.secret_key = 'fake'
 
 class BoundTemplate(MatchedTemplate):
     lexeme_id: str
