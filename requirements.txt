@@ -38,6 +38,8 @@ frozenlist==1.7.0
     # via
     #   aiohttp
     #   aiosignal
+gunicorn==23.0.0
+    # via -r requirements.in
 idna==3.10
     # via
     #   requests
@@ -69,6 +71,8 @@ oauthlib==3.2.2
     # via
     #   mwoauth
     #   requests-oauthlib
+packaging==25.0
+    # via gunicorn
 propcache==0.3.2
     # via
     #   aiohttp
