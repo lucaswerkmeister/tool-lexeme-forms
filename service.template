@@ -1,5 +1,5 @@
 # Toolforge webservice template
 # Provide default arguments for `webservice start` commands for this tool.
-backend: kubernetes
 type: python3.11
 health-check-path: /healthz
+mount: none
