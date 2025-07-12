@@ -79,8 +79,10 @@ propcache==0.3.2
     #   yarl
 pyjwt==2.10.1
     # via mwoauth
-pymysql==1.1.1
-    # via toolforge
+pymysql @ git+https://github.com/PyMySQL/PyMySQL@main
+    # via
+    #   -r requirements.in
+    #   toolforge
 pyyaml==6.0.2
     # via -r requirements.in
 requests==2.32.4
