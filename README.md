@@ -5,27 +5,69 @@ such as the declensions of a noun or the conjugations of a verb.
 
 ## Toolforge setup
 
-On Wikimedia Toolforge, this tool runs under the `lexeme-forms` tool name.
-Source code resides in `~/www/python/src/`,
-a virtual environment is set up in `~/www/python/venv/`,
-logs end up in `~/uwsgi.log`.
-The `uwsgi.ini` configuration file in the source code repository
-is symlinked into `~/www/python/uwsgi.ini`.
+On Wikimedia Toolforge, this tool runs under the `lexeme-forms` tool name,
+from a container built using the [Toolforge Build Service](https://wikitech.wikimedia.org/wiki/Help:Toolforge/Building_container_images).
 
-To update the tool, assuming there were no changes in the Python environment:
+### Image build
+
+To build a new version of the image,
+run the following command on Toolforge after becoming the tool account:
+
+```sh
+toolforge build start --use-latest-versions https://gitlab.wikimedia.org/toolforge-repos/lexeme-forms
 ```
-git fetch
-git log -p @..@{u} # inspect changes
-git rebase
+
+The image will contain all the dependencies listed in `requirements.txt`,
+as well as the commands specified in the `Procfile`.
+
+### Webservice
+
+The web frontend of the tool runs as a webservice using the `buildpack` type.
+The web service runs the first command in the `Procfile` (`web`),
+which runs the Flask WSGI app using gunicorn.
+
+```
+webservice start
+```
+
+Or, if the `~/service.template` file went missing:
+
+```
+webservice --mount=none buildservice start
+```
+
+If it’s acting up, try the same command with `restart` instead of `start`.
+
+### Configuration
+
+The tool reads configuration from both the `config.yaml` file (if it exists)
+and from any environment variables starting with `TOOL_*`.
+The config file is more convenient for local development;
+the environment variables are used on Toolforge:
+list them with `toolforge envvars list`.
+Nested dicts are specified with envvar names where `__` separates the key components,
+and the tool lowercases keys in nested dicts,
+so that e.g. the following are equivalent:
+
+```sh
+toolforge envvars create TOOL_OAUTH__CONSUMER_KEY 1fdd6b7040497a2a942369fec07cd598
+```
+
+```yaml
+OAUTH:
+    CONSUMER_KEY: 1fdd6b7040497a2a942369fec07cd598
+```
+
+For the available configuration variables, see the `config.yaml.example` file.
+
+### Update
+
+To update the tool, build a new version of the image as described above,
+then restart the webservice:
+
+```sh
+toolforge build start --use-latest-versions https://gitlab.wikimedia.org/toolforge-repos/lexeme-forms
 webservice restart
-```
-
-If there were new changes in the Python environment (e.g. new dependencies),
-add the following steps after the `git rebase`:
-```
-webservice shell
-source ~/www/python/venv/bin/activate
-pip-sync ~/www/python/src/requirements.txt
 ```
 
 ## Local development setup
