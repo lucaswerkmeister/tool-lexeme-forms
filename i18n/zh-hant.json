@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Allenwang6212",
 			"Kly",
 			"Lucas Werkmeister",
 			"S8321414",
@@ -18,7 +19,7 @@
 	"advanced-general": "您目前在「進階」模式。",
 	"advanced-lexeme-id": "您可以透過輸入詞位 ID，取代用建立的方式來對現有詞位添加形式。對存在詞位上的任一形式留空，不然會出現重複內容！",
 	"advanced-partial-forms": "您可以對某些形式內容留空，這樣子它們就不會被添加。另外請確認您沒有意外遺漏掉任何形式！",
-	"lexeme-id": "詞位 ID",
+	"lexeme-id": "詞位識別碼",
 	"advanced-partial-forms-hint": "要建立缺少某些形式的詞位，請切換成進階模式。",
 	"generated-via": "產生透過",
 	"description-with-forms-and-senses": "$1，{{PLURAL:$2|0=沒有形式|1 個形式|$2 個形式}}，{{PLURAL:$3|0=沒有含意|1 個含意|$3 個含意}}",
