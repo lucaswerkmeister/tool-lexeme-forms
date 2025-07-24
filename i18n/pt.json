@@ -5,7 +5,8 @@
 			"GoEThe",
 			"Hamilton Abreu",
 			"JorgeLousa",
-			"Lucas Werkmeister"
+			"Lucas Werkmeister",
+			"Mansil alfalb"
 		]
 	},
 	"create": "Criar",
@@ -41,6 +42,8 @@
 	"title-advanced": "$1 (avançado)",
 	"title-bulk": "$1 (em massa)",
 	"title-edit": "$1 (editar)",
-	"login-hint": "Precisa [$1 iniciar sessão] antes de poder fazer mudanças com esta ferramenta.",
-	"ambiguous-template": "O modelo $1 já não existe; foi substituído pelos seguintes modelos:"
+	"login-hint": "Tem de [$1 iniciar a sessão] antes de poder efetuar alterações com esta ferramenta.",
+	"ambiguous-template": "O modelo $1 já não existe; foi substituído pelos seguintes modelos:",
+	"login": "Iniciar sessão",
+	"logged-in": "{{GENDER:$2|Autenticou-se}} como $1."
 }
