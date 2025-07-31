@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"ACheJu",
 			"Duke of Wikipädia",
 			"Eduardoaddad",
 			"EnaldoSS",
@@ -44,10 +45,19 @@
 	"title-edit": "$1 (editar)",
 	"login-hint": "Você precisa [$1 entrar] antes de fazer alterações usando esta ferramenta.",
 	"ambiguous-template": "O modelo $1 já não existe; foi substituído pelos seguintes modelos:",
+	"settings-label-interface-language-code": "Idioma da interface do(a) usuário(a)",
+	"settings-label-use-wikifunctions": "Use Wikifunctions para gerar sugestões de formulários",
 	"settings-save": "Salvar",
+	"tool-name": "Formulários do Lexema Wikidata",
+	"skip-to-main-content": "Pular para o conteúdo principal",
 	"documentation": "Documentação",
+	"toolforge": "Wikimedia Toolforge",
 	"source-code": "Código-fonte",
 	"login": "Entrar",
 	"settings-link": "Configurações",
-	"settings-heading": "Configurações"
+	"settings-heading": "Configurações",
+	"logged-in": "{{GENDER:$2|Autenticou-se}} como $1.",
+	"requires-javascript": "Este recurso requer JavaScript.",
+	"wikifunctions-generating": "gerando formulários...",
+	"wikifunctions-error": "ocorreu um erro ao gerar formulários"
 }
