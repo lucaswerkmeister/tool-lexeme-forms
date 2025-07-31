@@ -42,6 +42,7 @@
 	"login-hint": "Pred spreminjanjem s tem orodjem se morate [$1 prijaviti].",
 	"ambiguous-template": "Predloga $1 ne obstaja več; zamenjana je bila z naslednjimi predlogami:",
 	"settings-label-interface-language-code": "Jezik uporabniškega vmesnika",
+	"settings-label-use-wikifunctions": "Uporabi Wikifunkcije za ustvarjanje predlogov obrazcev",
 	"settings-save": "Shrani",
 	"tool-name": "Oblike leksema Wikipodatkov",
 	"skip-to-main-content": "Preskoči na glavno vsebino",
@@ -52,5 +53,7 @@
 	"settings-link": "Nastavitve",
 	"settings-heading": "Nastavitve",
 	"logged-in": "{{GENDER:$2|Prijavljen|Prijavljena|Prijavljen_a}} kot $1.",
-	"requires-javascript": "Ta možnost zahteva JavaScript."
+	"requires-javascript": "Ta možnost zahteva JavaScript.",
+	"wikifunctions-generating": "ustvarjanje obrazcev ...",
+	"wikifunctions-error": "pri ustvarjanju obrazcev je prišlo do napake"
 }
