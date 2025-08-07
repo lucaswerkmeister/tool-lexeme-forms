@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"JeffreyKim",
+			"Ktchankt",
 			"Winston Sung"
 		]
 	},
@@ -39,10 +40,10 @@
 	"title-bulk": "$1（批量）",
 	"title-edit": "$1（編輯）",
 	"login-hint": "你要[$1 簽到]先可以用呢個架生改嘢。",
-	"ambiguous-template": "模板 $1 已經唔存在；佢已經被以下模板取代：",
+	"ambiguous-template": "模 $1 已經唔存在；佢已經被以下嘅模取代：",
 	"settings-label-interface-language-code": "用戶介面語言",
 	"settings-label-use-wikifunctions": "用 Wiki 函數嚟產生表格建議",
-	"settings-save": "些乎",
+	"settings-save": "儲存",
 	"tool-name": "維基數據詞組形式",
 	"skip-to-main-content": "跳到主要內容",
 	"documentation": "文件",
@@ -51,7 +52,7 @@
 	"login": "簽到",
 	"settings-link": "設定",
 	"settings-heading": "設定",
-	"logged-in": "{{GENDER:$2|登入咗}} 作為 $1。",
+	"logged-in": "{{GENDER:$2|簽到咗}}做 $1。",
 	"requires-javascript": "呢個功能需要 JavaScript 。",
 	"wikifunctions-generating": "生成表格…",
 	"wikifunctions-error": "生成表格嗰陣發生錯誤"
