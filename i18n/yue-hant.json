@@ -30,7 +30,7 @@
 	"bulk-wrong-number-of-fields": "既然個範本有{{PLURAL:$1|one form|$1 表格}}, 每行輸入應該有咁多個欄位（喺建立新嘅詞組嗰陣）或者多一個（當指定要編輯嘅現有詞組嘅 ID 嗰陣），但係輸入嘅 $3 行就有{{PLURAL:$2|one field|$2 欄位}} 而唔係。",
 	"bulk-optional-forms-hint": "如果你想略過某啲表格，將佢哋指定為空 (e.g. <kbd>...|||</kbd> 最後三個空表格）。",
 	"edit-link": "改",
-	"edit-general": "你喺「編輯」模式。更改下面嘅值會編輯、加入或者移除目標詞組嘅形式。",
+	"edit-general": "你喺「編輯」模式。更改下面嘅值會編輯、加入或者剷走目標詞組嘅形式。",
 	"edit-mismatch-warning": "呢個詞組似乎唔啱呢個範本！請喺繼續之前再檢查佢係咪啱呢個詞典嘅範本。",
 	"edit-ambiguous-warning": "以下嘅詞彙 {{PLURAL:$1|form|表格}}同多個範本表格一樣咁啱：",
 	"edit-unmatched-warning": "以下嘅詞彙 {{PLURAL:$1|form|表格}} 唔啱任何範本表格：",
