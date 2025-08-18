@@ -4000,6 +4000,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
         'language': language_German,
         'lexical_category_item_id': noun,
         'two_column_sections': True,
+        'wikifunctions_intro': 'Formen generieren: ',
         'forms': [
             {
                 'label': 'Nominativ Singular',
