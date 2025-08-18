@@ -19958,6 +19958,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
         'language': language_Portuguese,
         'lexical_category_item_id': noun,
         'two_column_sections': True,
+        'wikifunctions_intro': 'Gerar formas: ',
         'forms': [
             {
                 'label': 'masculino singular normal',
@@ -19968,16 +19969,31 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'label': 'masculino plural normal',
                 'example': 'Eu vi uns [amigos] seus.',
                 'grammatical_features_item_ids': [masculine, plural, positive],
+                'wikifunctions': {
+                    '-o/-os/-a/-as': 'Z18020',
+                    '-ês/-eses/-esa/-esas': 'Z27535',
+                    '-r/-res/-ra/-ras': 'Z27529',
+                },
             },
             {
                 'label': 'feminino singular normal',
                 'example': 'Eu vi uma [amiga] sua.',
                 'grammatical_features_item_ids': [feminine, singular, positive],
+                'wikifunctions': {
+                    '-o/-os/-a/-as': 'Z27517',
+                    '-ês/-eses/-esa/-esas': 'Z27536',
+                    '-r/-res/-ra/-ras': 'Z17948',
+                },
             },
             {
                 'label': 'feminino plural normal',
                 'example': 'Eu vi umas [amigas] suas.',
                 'grammatical_features_item_ids': [feminine, plural, positive],
+                'wikifunctions': {
+                    '-o/-os/-a/-as': 'Z27522',
+                    '-ês/-eses/-esa/-esas': 'Z27537',
+                    '-r/-res/-ra/-ras': 'Z27528',
+                },
             },
             {
                 'section_break': True,
@@ -20038,6 +20054,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
         'language': language_Portuguese,
         'lexical_category_item_id': noun,
         'two_column_sections': True,
+        'wikifunctions_intro': 'Gerar formas: ',
         'forms': [
             {
                 'label': 'singular normal',
@@ -20048,6 +20065,13 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'label': 'plural normal',
                 'example': 'Eles têm uns [narizes].',
                 'grammatical_features_item_ids': [plural, positive],
+                'wikifunctions': {
+                    '+s': 'Z18020',
+                    '+es': 'Z27529',
+                    '-ão/-ões': 'Z27534',
+                    '-l/-is': 'Z27546',
+                    '-m/-ns': 'Z27525',
+                },
             },
             {
                 'section_break': True,
@@ -20085,6 +20109,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
         'language': language_Portuguese,
         'lexical_category_item_id': noun,
         'two_column_sections': True,
+        'wikifunctions_intro': 'Gerar formas: ',
         'forms': [
             {
                 'label': 'singular feminino normal',
@@ -20095,6 +20120,13 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'label': 'plural feminino normal',
                 'example': 'Elas têm umas [bocas].',
                 'grammatical_features_item_ids': [plural, positive],
+                'wikifunctions': {
+                    '+s': 'Z18020',
+                    '+es': 'Z27529',
+                    '-ão/-ões': 'Z27534',
+                    '-l/-is': 'Z27546',
+                    '-m/-ns': 'Z27525',
+                },
             },
             {
                 'section_break': True,
@@ -20145,6 +20177,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
         'language': language_Portuguese,
         'lexical_category_item_id': noun,
         'two_column_sections': True,
+        'wikifunctions_intro': 'Gerar formas: ',
         'forms': [
             {
                 'label': 'uniforme singular normal',
@@ -20155,6 +20188,13 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'label': 'uniforme plural normal',
                 'example': 'Nós temos que encontrar aqueles(as) [motoristas] hoje mesmo.',
                 'grammatical_features_item_ids': [plural, positive],
+                'wikifunctions': {
+                    '+s': 'Z18020',
+                    '+es': 'Z27529',
+                    '-ão/-ões': 'Z27534',
+                    '-l/-is': 'Z27546',
+                    '-m/-ns': 'Z27525',
+                },
             },
         ],
         'statements': statements(grammatical_gender, common_of_two_genders),
@@ -20558,6 +20598,7 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
         'language': language_Portuguese,
         'lexical_category_item_id': adjective,
         'two_column_sections': True,
+        'wikifunctions_intro': 'Gerar formas: ',
         'forms': [
             {
                 'label': 'singular masculino normal',
@@ -20568,16 +20609,31 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'label': 'plural masculino normal',
                 'example': 'Eu vi uns homens [altos].',
                 'grammatical_features_item_ids': [masculine, plural, positive],
+                'wikifunctions': {
+                    '-o/-os/-a/-as': 'Z18020',
+                    '-ês/-eses/-esa/-esas': 'Z27535',
+                    '-r/-res/-ra/-ras': 'Z27529',
+                },
             },
             {
                 'label': 'singular feminino normal',
                 'example': 'Eu vi uma mulher [alta].',
                 'grammatical_features_item_ids': [feminine, singular, positive],
+                'wikifunctions': {
+                    '-o/-os/-a/-as': 'Z27517',
+                    '-ês/-eses/-esa/-esas': 'Z27536',
+                    '-r/-res/-ra/-ras': 'Z17948',
+                },
             },
             {
                 'label': 'plural feminino normal',
                 'example': 'Eu vi umas mulheres [altas].',
                 'grammatical_features_item_ids': [feminine, plural, positive],
+                'wikifunctions': {
+                    '-o/-os/-a/-as': 'Z27522',
+                    '-ês/-eses/-esa/-esas': 'Z27537',
+                    '-r/-res/-ra/-ras': 'Z27528',
+                },
             },
             {
                 'section_break': True,
@@ -20663,16 +20719,24 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
         'language': language_Portuguese,
         'lexical_category_item_id': adjective,
         'two_column_sections': True,
+        'wikifunctions_intro': 'Gerar formas: ',
         'forms': [
             {
                 'label': 'uniforme singular normal',
-                'example': 'Acho sim que ele(a) é um(a) bom(a) [artista].',
+                'example': 'Acho ele(a) bem [realista].',
                 'grammatical_features_item_ids': [singular, positive],
             },
             {
                 'label': 'uniforme plural normal',
-                'example': 'Acho sim que eles(as) são bons(as) [artistas].',
+                'example': 'Acho eles(as) bem [realistas].',
                 'grammatical_features_item_ids': [plural, positive],
+                'wikifunctions': {
+                    '+s': 'Z18020',
+                    '+es': 'Z27529',
+                    '-ão/-ões': 'Z27534',
+                    '-l/-is': 'Z27546',
+                    '-m/-ns': 'Z27525',
+                },
             },
         ],
         'statements': statements(grammatical_gender, common_of_two_genders),
