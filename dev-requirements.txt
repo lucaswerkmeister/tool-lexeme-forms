@@ -4,29 +4,31 @@
 #
 #    pip-compile dev-requirements.in
 #
-flake8==7.2.0
+flake8==7.3.0
     # via -r dev-requirements.in
 iniconfig==2.1.0
     # via pytest
 mccabe==0.7.0
     # via flake8
-mypy==1.16.0
+mypy==1.17.1
     # via -r dev-requirements.in
 mypy-extensions==1.1.0
     # via mypy
 packaging==25.0
-    # via pytest
+    # via
+    #   -c /home/lucas/git/lexeme-forms/requirements.txt
+    #   pytest
 pathspec==0.12.1
     # via mypy
 pluggy==1.6.0
     # via pytest
-pycodestyle==2.13.0
+pycodestyle==2.14.0
     # via flake8
-pyflakes==3.3.2
+pyflakes==3.4.0
     # via flake8
-pygments==2.19.1
+pygments==2.19.2
     # via pytest
-pytest==8.4.0
+pytest==8.4.1
     # via -r dev-requirements.in
 types-babel==2.11.0.15
     # via -r dev-requirements.in
@@ -34,21 +36,21 @@ types-beautifulsoup4==4.12.0.20250516
     # via -r dev-requirements.in
 types-decorator==5.2.0.20250324
     # via -r dev-requirements.in
-types-html5lib==1.1.11.20250516
+types-html5lib==1.1.11.20250809
     # via types-beautifulsoup4
-types-pytz==2025.2.0.20250516
+types-pytz==2025.2.0.20250809
     # via types-babel
-types-pyyaml==6.0.12.20250516
+types-pyyaml==6.0.12.20250822
     # via -r dev-requirements.in
-types-requests==2.32.4.20250611
+types-requests==2.32.4.20250809
     # via -r dev-requirements.in
-types-setuptools==80.9.0.20250529
+types-setuptools==80.9.0.20250822
     # via types-babel
-typing-extensions==4.14.0
+typing-extensions==4.14.1
     # via
     #   -c /home/lucas/git/lexeme-forms/requirements.txt
     #   mypy
-urllib3==2.4.0
+urllib3==2.5.0
     # via
     #   -c /home/lucas/git/lexeme-forms/requirements.txt
     #   types-requests

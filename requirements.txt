@@ -6,9 +6,9 @@
 #
 aiohappyeyeballs==2.6.1
     # via aiohttp
-aiohttp==3.12.12
+aiohttp==3.12.15
     # via mwapi
-aiosignal==1.3.2
+aiosignal==1.4.0
     # via aiohttp
 attrs==25.3.0
     # via aiohttp
@@ -16,13 +16,13 @@ babel==2.17.0
     # via
     #   -r requirements.in
     #   toolforge-i18n
-beautifulsoup4==4.13.4
+beautifulsoup4==4.13.5
     # via toolforge-i18n
 blinker==1.9.0
     # via flask
-certifi==2025.4.26
+certifi==2025.8.3
     # via requests
-charset-normalizer==3.4.2
+charset-normalizer==3.4.3
     # via requests
 click==8.2.1
     # via flask
@@ -30,7 +30,7 @@ decorator==5.2.1
     # via
     #   -r requirements.in
     #   toolforge
-flask==3.1.1
+flask==3.1.2
     # via
     #   -r requirements.in
     #   toolforge-i18n
@@ -57,7 +57,7 @@ markupsafe==3.0.2
     #   jinja2
     #   toolforge-i18n
     #   werkzeug
-multidict==6.4.4
+multidict==6.6.4
     # via
     #   aiohttp
     #   yarl
@@ -67,7 +67,7 @@ mwapi==0.6.1
     #   toolforge-i18n
 mwoauth==0.4.0
     # via -r requirements.in
-oauthlib==3.2.2
+oauthlib==3.3.1
     # via
     #   mwoauth
     #   requests-oauthlib
@@ -79,13 +79,11 @@ propcache==0.3.2
     #   yarl
 pyjwt==2.10.1
     # via mwoauth
-pymysql @ git+https://github.com/PyMySQL/PyMySQL@main
-    # via
-    #   -r requirements.in
-    #   toolforge
+pymysql==1.1.2
+    # via toolforge
 pyyaml==6.0.2
     # via -r requirements.in
-requests==2.32.4
+requests==2.32.5
     # via
     #   -r requirements.in
     #   mwapi
@@ -105,11 +103,11 @@ toolforge-i18n[flask]==0.1.2
     # via
     #   -r requirements.in
     #   toolforge-i18n
-typing-extensions==4.14.0
+typing-extensions==4.14.1
     # via
     #   -r requirements.in
     #   beautifulsoup4
-urllib3==2.4.0
+urllib3==2.5.0
     # via requests
 werkzeug==3.1.3
     # via
