@@ -89,7 +89,7 @@ def lang_int2babel(code: str) -> str:
         # based on both languages being West Chadic according to Wikipedia
         'kai': 'ha',
         # an (Aragonese) is not in Babel;
-        # es (Spanish) is the MediaWiki fallback its .text_direction matches
+        # es (Spanish) is the MediaWiki fallback and its .text_direction matches
         'an': 'es',
         # kaa (Karakalpak) is not in Babel;
         # in MediaWiki, it’s in Latin script, but its closest relatives in Babel are all in Cyrillic script;
@@ -97,7 +97,10 @@ def lang_int2babel(code: str) -> str:
         # and its list formatting (“X and Y”) is probably intelligible to Karakalpak speakers for geopolitical reasons
         # (kk_Latn would be even better, if it is added to Babel)
         'kaa': 'uz',
-        # ht (Haitian Creole) is Babel;
-        # fr (French) the MediaWiki fallback
+        # ht (Haitian Creole) is not in Babel;
+        # fr (French) is the MediaWiki fallback
         'ht': 'fr',
+        # aig (Antiguan and Barbudan Creole) has no explicit fallbacks in MediaWiki,
+        # but is an English-based creole language and has the same plural forms
+        'aig': 'en',
     }.get(code, code.partition('-')[0])
