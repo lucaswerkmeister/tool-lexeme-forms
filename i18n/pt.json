@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Albertoleoncio",
 			"Ederporto",
 			"GoEThe",
 			"Hamilton Abreu",
@@ -47,10 +48,10 @@
 	"settings-label-interface-language-code": "Idioma da interface do utilizador",
 	"settings-label-use-wikifunctions": "Utilize a Wikifunções para gerar sugestões de formulários",
 	"settings-save": "Guardar",
-	"tool-name": "Formulários do Lexema da Wikidados",
+	"tool-name": "Formulários do Lexema do Wikidata",
 	"skip-to-main-content": "Ir para conteúdo principal",
 	"documentation": "Documentação",
-	"toolforge": "Wikimédia Toolforge",
+	"toolforge": "Wikimedia Toolforge",
 	"source-code": "Código fonte",
 	"login": "Iniciar sessão",
 	"settings-link": "Definições",
