@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Bapham123",
 			"Minh Nguyen",
 			"Pisceskaze",
 			"SongNgu.xyz"
@@ -28,5 +29,8 @@
 	"title-edit": "$1 (sửa đổi)",
 	"login-hint": "Bạn phải [$1 đăng nhập] trước khi có thể thực hiện sửa đổi dùng công cụ này.",
 	"ambiguous-template": "Bản mẫu $1 không còn tồn tại; nó đã được thay thế bằng các bản mẫu sau:",
+	"settings-save": "Lưu",
+	"login": "Đăng nhập",
+	"settings-link": "Cài đặt",
 	"requires-javascript": "Tính năng này cần JavaScript."
 }
