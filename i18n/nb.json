@@ -42,6 +42,7 @@
 	"login-hint": "Du må [$1 logge inn] før du kan gjøre endringer med dette verktøyet.",
 	"ambiguous-template": "Malen $1 finnes ikke lenger; den har blitt erstattet av følgende maler:",
 	"settings-label-interface-language-code": "Grensesnittspråk",
+	"settings-label-use-wikifunctions": "Bruk Wikifunctions for å generere formforslag",
 	"settings-save": "Lagre",
 	"tool-name": "Wikidata Lexeme Forms",
 	"skip-to-main-content": "Hopp til hovedinnholdet",
@@ -52,5 +53,7 @@
 	"settings-link": "Innstillinger",
 	"settings-heading": "Innstillinger",
 	"logged-in": "{{GENDER:$2|Innlogget}} som $1.",
-	"requires-javascript": "Denne funksjonen krever JavaScript."
+	"requires-javascript": "Denne funksjonen krever JavaScript.",
+	"wikifunctions-generating": "genererer former …",
+	"wikifunctions-error": "en feil oppsto under generering av former"
 }
