@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Tejoebāsa"
+		]
+	},
+	"create": "ဖန်တီးပါ",
+	"csrf-warning": "ဝမ်းနည်းပါရေ၊ ‌ဒေတောင်းဆိုချက်ကို အကျွန်ရို့ လုပ်ဆောင်လို့မရပါ (<abbr title=\"Cross-site request forgery\">CSRF</abbr> ကာကွယ်မှု မအောင်မြင်ပါ)။  ကျေးဇူးပြုပနာ ဖောင်ကို ထပ်ပနာတင်သွင်းကြေ့ပါ။",
+	"duplicates-warning": "အောက်ပါ ဟိပြီးသား {{PLURAL:$1|lexeme has|lexemes have}} စွာ သင်ဖန်တီးဖို့ကြိုးစားနီရေတစ်ခုနန့် တူညီရေ lemma နှင့် language code ဖြစ်တေ-",
+	"duplicates-instructions": "{{PLURAL:$1|‌‌‌‌‌ဒေချင့်|ယင်းရို့}} ကွဲပြားကြောင်း သေချာပါက၊ ဖောင်ဧ့အောက်ခြီက အကွက်ကို အမှန်ခြစ်ပါ။",
+	"duplicates-create": "ဇာပင်ဖြစ်ဖြစ် lexeme အသစ်တစ်ခုကို ဖန်တီးပါ။",
+	"no-duplicate": "ယင်းစော် ရှိပြီးသား lexeme ဧ့ ပွါးနီခြင်းမဟုတ်ပါ။",
+	"edit-link": "တီးဖြတ်",
+	"title-create": "$1 (ဖန်တီး)",
+	"title-advanced": "$1 (အဆင့်မြင့်)",
+	"title-edit": "$1 (တီးဖြတ်)",
+	"login-hint": "‌ဒေကိရိယာကိုအသုံးပြုပနာ ပြောင်းလဲမှုတိမပြုလုပ်နိုင်ခင် [$1 လော့ဂ်အင်ဝင်ရန်] လိုအပ်ပါရေ။",
+	"settings-save": "သိမ်းပါ",
+	"documentation": "မှတ်တမ်းမှတ်ရာတိ",
+	"source-code": "အရင်းအမြစ်ကုဒ်",
+	"login": "အကောင့်၀င်ပါ",
+	"settings-link": "အပြင်အဆင်တိ",
+	"settings-heading": "အပြင်အဆင်တိ"
+}
