@@ -103,4 +103,7 @@ def lang_int2babel(code: str) -> str:
         # aig (Antiguan and Barbudan Creole) has no explicit fallbacks in MediaWiki,
         # but is an English-based creole language and has the same plural forms
         'aig': 'en',
+        # rki (Rakhine / Arakanese) is closely related to my (Burmese)
+        # and has the same script and plural forms in MediaWiki
+        'rki': 'my',
     }.get(code, code.partition('-')[0])
