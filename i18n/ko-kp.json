@@ -1,0 +1,33 @@
+{
+	"@metadata": {
+		"authors": [
+			"Gminky"
+		]
+	},
+	"lexeme-id": "어휘소ID",
+	"advanced-partial-forms-hint": "일부 양식이 빠진 어휘소를 만들려면 고급방식으로 절환하십시오.",
+	"generated-via": "생성경로",
+	"bulk-link": "대량방식",
+	"bulk-format-help": "형식 도움말",
+	"bulk-not-allowed": "대량방식을 사용할 허가가 없습니다. 죄송합니다.",
+	"edit-link": "편집",
+	"no-grammatical-features": "문법적특징 없음",
+	"title-create": "$1 (만들기)",
+	"title-advanced": "$1 (고급)",
+	"title-bulk": "$1 (대량)",
+	"title-edit": "$1 (편집)",
+	"login-hint": "이 도구를 사용하여 변경하려면 먼저 [$1 가입]하여야 합니다.",
+	"ambiguous-template": "$1 형판은 더이상 존재하지 않습니다. 다음 형판으로 대체되였습니다:",
+	"settings-label-interface-language-code": "사용자대면부 언어",
+	"settings-save": "보관",
+	"tool-name": "위키자료 어휘소양식",
+	"skip-to-main-content": "본문내용으로 건너뛰기",
+	"documentation": "설명문서",
+	"toolforge": "위키매체 도구단조",
+	"source-code": "원천코드",
+	"login": "가입",
+	"settings-link": "설정",
+	"settings-heading": "설정",
+	"logged-in": "$1님으로 {{GENDER:$2|가입하였습니다}}.",
+	"requires-javascript": "이 기능은 Java각본이 필요합니다."
+}
