@@ -14,6 +14,7 @@
 	"lexeme-id": "Lexeem-ID",
 	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=keng Form|eng Form|$2 Formen}} {{PLURAL:$3|0=a keng Bedeitung|an eng Bedeitung|a(n) $3 Bedeitungen}}",
 	"edit-link": "änneren",
+	"no-grammatical-features": "keng grammatesch Funktiounen",
 	"title-create": "$1 (uleeën)",
 	"title-advanced": "$1 (erweidert)",
 	"title-bulk": "$1 (Bulk)",
