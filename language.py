@@ -106,4 +106,7 @@ def lang_int2babel(code: str) -> str:
         # rki (Rakhine / Arakanese) is closely related to my (Burmese)
         # and has the same script and plural forms in MediaWiki
         'rki': 'my',
+        # frp (Franco-Provençal, Latin script) falls back to fr (French) in MediaWiki,
+        # which also has the same plural forms
+        'frp': 'fr',
     }.get(code, code.partition('-')[0])
