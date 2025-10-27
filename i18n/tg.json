@@ -34,6 +34,7 @@
 	"title-bulk": "$1 (омма)",
 	"title-edit": "$1 (вироиш)",
 	"settings-label-interface-language-code": "Забони интерфейс",
+	"settings-label-use-wikifunctions": "Викифунксияҳоро барои эҷоди пешниҳоди шаклҳо истифода кунед",
 	"settings-save": "Захира",
 	"tool-name": "Шаклҳои лексемаҳои Викидода",
 	"skip-to-main-content": "Рафтан ба муҳтавои асосӣ",
@@ -45,5 +46,6 @@
 	"settings-heading": "Танзимот",
 	"logged-in": "{{GENDER:$2|Шумо ба система}} чун $1 ворид шудед.",
 	"requires-javascript": "Ин вижагӣ JavaScript-ро талаб мекунад.",
-	"wikifunctions-generating": "шаклсозӣ..."
+	"wikifunctions-generating": "шаклсозӣ...",
+	"wikifunctions-error": "ҳангоми эҷоди шаклҳо хато рӯх дод"
 }
