@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Dimitris131",
-			"Jimkats"
+			"Jimkats",
+			"Warudo"
 		]
 	},
 	"create": "Δημιουργία",
@@ -13,7 +14,7 @@
 	"no-duplicate": "Αυτό δεν είναι αντίγραφο υπάρχοντος λεξήματος.",
 	"form-optional": "&#32;(προαιρετικό)",
 	"advanced": "Για Προχωρημένους",
-	"advanced-general": "Είστε στην \"προχωρημένη\" λειτουργία.",
+	"advanced-general": "Είστε στην «προχωρημένη» λειτουργία.",
 	"lexeme-id": "Αναγνωστικό λεξήματος",
 	"advanced-partial-forms-hint": "Για να δημιουργήσετε λεξήματα με κάποιες φόρμες να λείπουν, μεταβείτε στην προχωρημένη λειτορυγία.",
 	"generated-via": "δημιουργήθηκε μέσω",
@@ -31,7 +32,7 @@
 	"ambiguous-template": "Το πρότυπο $1 δεν υπάρχει πλέον. Έχει αντικατασταθεί από τα ακόλουθα πρότυπα:",
 	"settings-label-interface-language-code": "Γλώσσα διεπαφής χρήστη",
 	"settings-save": "Αποθήκευση",
-	"tool-name": "Φόρμα Λεξημάτων Wikidata",
+	"tool-name": "Μορφές Λεξημάτων Wikidata",
 	"skip-to-main-content": "Μετάβαση στο κύριο περιεχόμενο",
 	"documentation": "Τεκμηρίωση",
 	"toolforge": "Wikimedia Toolforge",
@@ -41,6 +42,6 @@
 	"settings-heading": "Ρυθμίσεις",
 	"logged-in": "{{GENDER:$2|Συνδεθήκατε}} ως $1.",
 	"requires-javascript": "Αυτή η δυνατότητα απαιτεί JavaScript.",
-	"wikifunctions-generating": "δημιουργία φορμών…",
-	"wikifunctions-error": "παρουσιάστηκε σφάλμα κατά τη δημιουργία φορμών"
+	"wikifunctions-generating": "δημιουργία μορφών…",
+	"wikifunctions-error": "παρουσιάστηκε σφάλμα κατά τη δημιουργία μορφών"
 }
