@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"SZ475"
+		]
+	},
+	"create": "Creare",
+	"form-optional": "&#32;(opțional)",
+	"advanced": "Avansat",
+	"advanced-general": "Eşti acum în modul „avansat”.",
+	"bulk-format-help": "ajutor cu formatarea",
+	"edit-link": "editare",
+	"edit-general": "Vă aflați în modul „editare”. Modificarea valorilor de mai jos va edita, adăuga sau elimina forme ale lexemului țintă.",
+	"title-create": "$1 (creare)",
+	"title-advanced": "$1 (avansat)",
+	"settings-label-interface-language-code": "Limba interfeței de utilizator",
+	"settings-save": "Salvează",
+	"documentation": "Documentație",
+	"source-code": "Cod de sursă",
+	"login": "Autentificare",
+	"settings-link": "Setări",
+	"settings-heading": "Setări",
+	"requires-javascript": "Această funcție necesită JavaScript."
+}
