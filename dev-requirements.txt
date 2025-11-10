@@ -6,11 +6,11 @@
 #
 flake8==7.3.0
     # via -r dev-requirements.in
-iniconfig==2.1.0
+iniconfig==2.3.0
     # via pytest
 mccabe==0.7.0
     # via flake8
-mypy==1.17.1
+mypy==1.18.2
     # via -r dev-requirements.in
 mypy-extensions==1.1.0
     # via mypy
@@ -28,25 +28,25 @@ pyflakes==3.4.0
     # via flake8
 pygments==2.19.2
     # via pytest
-pytest==8.4.1
+pytest==9.0.0
     # via -r dev-requirements.in
 types-babel==2.11.0.15
     # via -r dev-requirements.in
 types-beautifulsoup4==4.12.0.20250516
     # via -r dev-requirements.in
-types-decorator==5.2.0.20250324
+types-decorator==5.2.0.20251101
     # via -r dev-requirements.in
-types-html5lib==1.1.11.20250809
+types-html5lib==1.1.11.20251014
     # via types-beautifulsoup4
-types-pytz==2025.2.0.20250809
+types-pytz==2025.2.0.20251108
     # via types-babel
-types-pyyaml==6.0.12.20250822
+types-pyyaml==6.0.12.20250915
     # via -r dev-requirements.in
-types-requests==2.32.4.20250809
+types-requests==2.32.4.20250913
     # via -r dev-requirements.in
 types-setuptools==80.9.0.20250822
     # via types-babel
-typing-extensions==4.14.1
+typing-extensions==4.15.0
     # via
     #   -c /home/lucas/git/lexeme-forms/requirements.txt
     #   mypy

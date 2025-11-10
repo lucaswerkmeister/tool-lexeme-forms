@@ -6,25 +6,25 @@
 #
 aiohappyeyeballs==2.6.1
     # via aiohttp
-aiohttp==3.12.15
+aiohttp==3.13.2
     # via mwapi
 aiosignal==1.4.0
     # via aiohttp
-attrs==25.3.0
+attrs==25.4.0
     # via aiohttp
 babel==2.17.0
     # via
     #   -r requirements.in
     #   toolforge-i18n
-beautifulsoup4==4.13.5
+beautifulsoup4==4.14.2
     # via toolforge-i18n
 blinker==1.9.0
     # via flask
-certifi==2025.8.3
+certifi==2025.10.5
     # via requests
-charset-normalizer==3.4.3
+charset-normalizer==3.4.4
     # via requests
-click==8.2.1
+click==8.3.0
     # via flask
 decorator==5.2.1
     # via
@@ -34,13 +34,13 @@ flask==3.1.2
     # via
     #   -r requirements.in
     #   toolforge-i18n
-frozenlist==1.7.0
+frozenlist==1.8.0
     # via
     #   aiohttp
     #   aiosignal
 gunicorn==23.0.0
     # via -r requirements.in
-idna==3.10
+idna==3.11
     # via
     #   requests
     #   yarl
@@ -50,14 +50,14 @@ jinja2==3.1.6
     # via
     #   -r requirements.in
     #   flask
-markupsafe==3.0.2
+markupsafe==3.0.3
     # via
     #   -r requirements.in
     #   flask
     #   jinja2
     #   toolforge-i18n
     #   werkzeug
-multidict==6.6.4
+multidict==6.7.0
     # via
     #   aiohttp
     #   yarl
@@ -73,7 +73,7 @@ oauthlib==3.3.1
     #   requests-oauthlib
 packaging==25.0
     # via gunicorn
-propcache==0.3.2
+propcache==0.4.1
     # via
     #   aiohttp
     #   yarl
@@ -81,7 +81,7 @@ pyjwt==2.10.1
     # via mwoauth
 pymysql==1.1.2
     # via toolforge
-pyyaml==6.0.2
+pyyaml==6.0.3
     # via -r requirements.in
 requests==2.32.5
     # via
@@ -95,7 +95,7 @@ requests-oauthlib==2.0.0
     # via
     #   -r requirements.in
     #   mwoauth
-soupsieve==2.7
+soupsieve==2.8
     # via beautifulsoup4
 toolforge==6.1.0
     # via -r requirements.in
@@ -103,7 +103,7 @@ toolforge-i18n[flask]==0.1.2
     # via
     #   -r requirements.in
     #   toolforge-i18n
-typing-extensions==4.14.1
+typing-extensions==4.15.0
     # via
     #   -r requirements.in
     #   beautifulsoup4
@@ -114,5 +114,5 @@ werkzeug==3.1.3
     #   -r requirements.in
     #   flask
     #   toolforge-i18n
-yarl==1.20.1
+yarl==1.22.0
     # via aiohttp
