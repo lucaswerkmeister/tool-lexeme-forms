@@ -13,5 +13,9 @@
 	"edit-link": "golygu",
 	"title-create": "$1 (creu)",
 	"title-advanced": "$1 (uwch)",
-	"title-edit": "$1 (golygu)"
+	"title-edit": "$1 (golygu)",
+	"settings-save": "Cadw",
+	"login": "Mewngofnodi",
+	"settings-link": "Gosodiadau",
+	"settings-heading": "Gosodiadau"
 }
