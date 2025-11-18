@@ -11,7 +11,7 @@
     {% endblock head %}
   </head>
   <body>
-    <a href="#main" class="visually-hidden visually-hidden-focusable">{{ message( 'skip-to-main-content' ) }}</a>
+    <a href="#main" class="visually-hidden-focusable">{{ message( 'skip-to-main-content' ) }}</a>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
       <div class="container-fluid">
         <a href="{{ url_for('index') }}" class="navbar-brand">{{ message( 'tool-name' ) }}</a>
