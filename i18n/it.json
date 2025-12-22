@@ -3,6 +3,7 @@
 		"authors": [
 			"Beta16",
 			"Emabarto01",
+			"GseSro",
 			"Luca.favorido",
 			"Lucas Werkmeister",
 			"Sannita"
@@ -44,6 +45,7 @@
 	"login-hint": "Devi [$1 accedere] per poter apportare modifiche utilizzando questo strumento.",
 	"ambiguous-template": "Il template $1 non esiste più; è stato sostituito dai seguenti template:",
 	"settings-label-interface-language-code": "Lingua dell'interfaccia utente",
+	"settings-label-use-wikifunctions": "Usa Wikifunctions per generare suggerimenti per i moduli",
 	"settings-save": "Salva",
 	"tool-name": "Forme del lessema di Wikidata",
 	"skip-to-main-content": "Passa al contenuto principale",

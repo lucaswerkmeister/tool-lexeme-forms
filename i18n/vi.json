@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Bapham123",
+			"Henrydat",
 			"Minh Nguyen",
 			"Pisceskaze",
 			"SongNgu.xyz"
@@ -30,6 +31,7 @@
 	"login-hint": "Bạn phải [$1 đăng nhập] trước khi có thể thực hiện sửa đổi dùng công cụ này.",
 	"ambiguous-template": "Bản mẫu $1 không còn tồn tại; nó đã được thay thế bằng các bản mẫu sau:",
 	"settings-save": "Lưu",
+	"documentation": "Tài liệu hướng dẫn",
 	"login": "Đăng nhập",
 	"settings-link": "Cài đặt",
 	"requires-javascript": "Tính năng này cần JavaScript."
