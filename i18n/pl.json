@@ -6,13 +6,14 @@
 			"Isxoes",
 			"KaMan",
 			"Lucas Werkmeister",
-			"Luku123"
+			"Luku123",
+			"Woytecr"
 		]
 	},
 	"create": "Utwórz",
 	"csrf-warning": "Niestety przetworzenie tego żądania było niemożliwe (ochrona <abbr title=\"Cross-site request forgery\">CSRF</abbr>). Proszę spróbować przesłać formularz ponownie.",
-	"duplicates-warning": "Następujące istniejące leksemy mają tę samą formę kanoniczną i kod języka jak ten, który próbujesz utworzyć:",
-	"duplicates-instructions": "Jeśli masz pewność, że one są różne, zaznacz kratkę u dołu formularza.",
+	"duplicates-warning": "{{PLURAL:$1|Następujący istniejący leksem ma|Następujące istniejące leksemy mają}} tę samą formę kanoniczną i kod języka jak ten, który próbujesz utworzyć:",
+	"duplicates-instructions": "Jeśli masz pewność, że {{PLURAL:$1|jest on inny|one są różne}}, zaznacz kratkę u dołu formularza.",
 	"duplicates-create": "Mimo to utwórz nowy leksem.",
 	"no-duplicate": "To nie jest duplikat istniejącego leksemu.",
 	"form-optional": "&#32;(opcjonalnie)",
@@ -23,6 +24,7 @@
 	"lexeme-id": "ID leksemu",
 	"advanced-partial-forms-hint": "Aby utworzyć leksemy z pominięciem niektórych form, przełącz się na tryb zaawansowany.",
 	"generated-via": "wygenerowane przez",
+	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=bez form|jedna forma|$2 formy|$2 form}} oraz {{PLURAL:$3|0=bez definicji|z jednym znaczeniem|z $3 znaczeniami}}",
 	"bulk-link": "tryb zbiorczy",
 	"bulk-format-help": "pomoc w formatowaniu",
 	"bulk-not-allowed": "Nie {{GENDER:$1|możesz}} używać trybu zbiorczego.",
@@ -36,6 +38,7 @@
 	"login-hint": "Aby wprowadzić zmiany za pomocą tego narzędzia, musisz się [$1 zalogować].",
 	"ambiguous-template": "Szablon $1 już nie istnieje; został on zastąpiony przez następujące szablony",
 	"settings-label-interface-language-code": "Język interfejsu użytkownika",
+	"settings-label-use-wikifunctions": "Użyj Wikifunkcji do generowania sugestii form",
 	"settings-save": "Zapisz",
 	"skip-to-main-content": "Przeskocz do głównej treści",
 	"documentation": "Dokumentacja",
@@ -45,5 +48,7 @@
 	"settings-link": "Ustawienia",
 	"settings-heading": "Ustawienia",
 	"logged-in": "{{GENDER:$2| Zalogowany| Zalogowana| Zalogowano}} jako $1.",
-	"requires-javascript": "Ta funkcja wymaga JavaScriptu."
+	"requires-javascript": "Ta funkcja wymaga JavaScriptu.",
+	"wikifunctions-generating": "generowanie form...",
+	"wikifunctions-error": "wystąpił błąd podczas generowania form"
 }
