@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"L'Arpetani",
 			"Lucas Werkmeister",
 			"Mguix",
 			"Qllach",
@@ -46,6 +47,7 @@
 	"login-hint": "Cal que [$1 inicieu sessió] abans de poder fer canvis utilitzant aquesta eina.",
 	"ambiguous-template": "La plantilla $1 ja no existeix; s'ha substituït per les plantilles següents:",
 	"settings-label-interface-language-code": "Idioma de la interfície d'usuari",
+	"settings-label-use-wikifunctions": "Utilitza Wikifunctions per generar suggeriments de formularis",
 	"settings-save": "Desa",
 	"tool-name": "Formes de lexemes de Wikidata",
 	"skip-to-main-content": "Salta al contingut principal",
@@ -56,5 +58,7 @@
 	"settings-link": "Configuració",
 	"settings-heading": "Configuració",
 	"logged-in": "{{GENDER:$2|S'ha iniciat la sessió}} com a $1.",
-	"requires-javascript": "Aquesta funcionalitat requereix JavaScript."
+	"requires-javascript": "Aquesta funcionalitat requereix JavaScript.",
+	"wikifunctions-generating": "s'estan generant els formularis...",
+	"wikifunctions-error": "s'ha produït un error mentre generant formularis"
 }

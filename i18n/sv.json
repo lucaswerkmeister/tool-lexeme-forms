@@ -5,6 +5,7 @@
 			"Belteshassar",
 			"Lucas Werkmeister",
 			"Sabelöga",
+			"Stefan2255",
 			"Vesihiisi",
 			"WikiPhoenix"
 		]
@@ -45,13 +46,18 @@
 	"login-hint": "Du måste [$1 logga in] innan du kan göra ändringar med detta verktyg.",
 	"ambiguous-template": "Mallen $1 finns inte längre. Den har ersatts av följande mallar:",
 	"settings-label-interface-language-code": "Användargränssnittets språk",
+	"settings-label-use-wikifunctions": "Använd Wikifunktioner för att generera formulärförslag",
 	"settings-save": "Spara",
+	"tool-name": "Wikidata Lexeme Formulär",
 	"skip-to-main-content": "Hoppa till innehållet",
 	"documentation": "Dokumentation",
+	"toolforge": "Wikimedia Toolforge",
 	"source-code": "Källkod",
 	"login": "Logga in",
 	"settings-link": "Inställningar",
 	"settings-heading": "Inställningar",
 	"logged-in": "{{GENDER:$2|Loggade in}} som $1.",
-	"requires-javascript": "Denna funktion kräver JavaScript."
+	"requires-javascript": "Denna funktion kräver JavaScript.",
+	"wikifunctions-generating": "genererar formulär …",
+	"wikifunctions-error": "ett fel uppstod under generering av formulär"
 }

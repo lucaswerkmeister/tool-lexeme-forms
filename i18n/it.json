@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Beta16",
+			"Dream Indigo",
 			"Emabarto01",
 			"GseSro",
 			"Luca.favorido",
@@ -12,7 +13,7 @@
 	"create": "Crea",
 	"csrf-warning": "Ops, non è possibile salvare la pagina (errore: <abbr title=\"Cross-site request forgery\">CSRF</abbr> protection failed). Per favore, riprova.",
 	"duplicates-warning": "Attenzione, {{PLURAL:$1|il seguente lessema ha|i seguenti lessemi hanno}} lo stesso lemma e codice linguistico di quello che hai appena tentato di creare:",
-	"duplicates-instructions": "Se sei sicuro che {{PLURAL:$1|sia diverso|siano diversi}}, spunta la casella alla fine di questo modulo.",
+	"duplicates-instructions": "Se sei sicuro/a che {{PLURAL:$1|sia diverso|siano diversi}}, spunta la casella alla fine di questo modulo.",
 	"duplicates-create": "Crea comunque un nuovo lessema.",
 	"no-duplicate": "Questo NON è un duplicato di un lessema esistente.",
 	"form-optional": "&#32;(facoltativo)",
@@ -26,7 +27,7 @@
 	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=nessuna forma|una forma|$2 forme}} e {{PLURAL:$3|0=nessun senso|un senso|$3 sensi}}",
 	"bulk-link": "caricamento di massa",
 	"bulk-format-help": "aiuto formattazione",
-	"bulk-not-allowed": "Ci dispiace, ma non sei {{GENDER:$1|autorizzato|autorizzata|autorizzato/a}} a usare il caricamento di massa.",
+	"bulk-not-allowed": "Ci dispiace, ma non {{GENDER:$1|hai l'autorizzazione}} a usare il caricamento di massa.",
 	"bulk-first-field-not-lexeme-id": "Poiché il template ha {{PLURAL:$1|una forma|$1 forme}} e la riga $4 dell'input ha {{PLURAL:$2|un campo|$2 campi}}, il primo campo non dovrebbe somigliare all'identificativo di un lessema, ma <q>$3</q> lo sembra. (Hai dimenticato una forma nell'input?)",
 	"bulk-first-field-lexeme-id": "Poiché il template ha {{PLURAL:$1|una forma|$1 forme}} e la riga $4 dell'input ha {{PLURAL:$2|un campo|$2 campi}}, il primo campo non dovrebbe somigliare all'identificativo di lessema, ma <q>$3</q> lo sembra. (Hai dimenticato una forma nell'input?)",
 	"bulk-wrong-number-of-fields": "Poiché il modello ha {{PLURAL:$1|una forma| $1 forme}}, ogni riga di input dovrebbe avere lo stesso numero di campi (quando si crea un nuovo lessema) o uno in più (quando si specifica l'ID di un lessema esistente da modificare), mentre invece, la riga $3 dell'input ha {{PLURAL:$2|un campo|$2 campi}}.",
@@ -55,7 +56,7 @@
 	"login": "Entra",
 	"settings-link": "Impostazioni",
 	"settings-heading": "Impostazioni",
-	"logged-in": "{{GENDER:$2|Acceduto|Acceduta|Acceduto/a}} come $1.",
+	"logged-in": "{{GENDER:$2|Accesso eseguito}} come $1.",
 	"requires-javascript": "Questa funzionalità richiede JavaScript.",
 	"wikifunctions-generating": "generazione moduli…",
 	"wikifunctions-error": "si è verificato un errore durante la generazione dei moduli"
