@@ -45,6 +45,7 @@
 	"login-hint": "Anda perlu [$1 log masuk] sebelum Anda bisa mengubah alat ini.",
 	"ambiguous-template": "Templat $1 tidak lagi ada; ia telah digantikan oleh templat-templat berikut:",
 	"settings-label-interface-language-code": "Bahasa antarmuka pengguna",
+	"settings-label-use-wikifunctions": "Gunakan Wikifunctions untuk menghasilkan saran bentuk.",
 	"settings-save": "Simpan",
 	"tool-name": "Bentuk Leksem Wikidata",
 	"skip-to-main-content": "Lewati ke konten utama",
@@ -55,5 +56,6 @@
 	"settings-link": "Setelan",
 	"settings-heading": "Setelan",
 	"logged-in": "{{GENDER:$2|Masuk}} sebagai $1 .",
-	"requires-javascript": "Fitur ini memerlukan JavaScript."
+	"requires-javascript": "Fitur ini memerlukan JavaScript.",
+	"wikifunctions-generating": "menghasilkan bentuk…"
 }
