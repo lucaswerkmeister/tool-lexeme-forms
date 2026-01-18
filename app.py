@@ -665,8 +665,8 @@ def get_lemma(
     (Supporting other forms to become the lemma is needed for advanced mode,
     where any form may be omitted, which is useful for e.g. pluralia tantum.)
 
-    This logic is duplicated in findDuplicates.js::getLemma
-    and in update_lexeme() (lemma_template_form) –
+    This logic is duplicated in findDuplicates.js::getLemma,
+    and update_lemma() has a more sophisticated version of it –
     keep the different versions in sync!"""
 
     forms = template['forms']
@@ -1010,26 +1010,67 @@ def update_lexeme(
     for property_id, statements in (missing_statements or {}).items():
         lexeme_data.setdefault('claims', {}).setdefault(property_id, []).extend(statements)
 
-    # same logic as get_lemma() but based on a different data representation
+    update_lemma(lexeme_data, template, representation_language_code)
+
+    return lexeme_data
+
+def update_lemma(
+        lexeme_data: Lexeme,
+        template: BoundTemplate,
+        representation_language_code: str,
+) -> None:
+    """As part of update_lexeme(), update the lemma of the lexeme_data,
+    based on the bound template and the existing lemmas.
+
+    We first identify the lemma template form,
+    which is the first template form that has 'lemma': True set,
+    or else just the first template form.
+    (Because this is edit mode, not advanced mode,
+    we don’t need to take into account whether
+    nonempty form representation variants are available or not.)
+
+    We then inspect the lexeme forms matched to that template form,
+    which at this point have already been updated by update_lexeme().
+    Based on representations / lemmas in different language codes,
+    we identify the lexeme form that best matches the lemma;
+    a notable special case is that one of the lexeme forms matches the existing lemma,
+    in which case we don’t want to edit the lemma
+    even if that form isn’t the first lemma form.
+
+    Having identified the best lemma form,
+    we update the lemma in the language code being edited to match it.
+
+    Similar (but simpler) logic is found in get_lemma();
+    try to keep them in sync."""
+
     lemma_template_form = template['forms'][0]
     for template_form in template['forms']:
         if template_form.get('lemma', False):
             lemma_template_form = template_form
             break
-    lemma_form = next(iter(cast(MatchedTemplateForm, lemma_template_form).get('lexeme_forms', [])), None)
-    if lemma_form:
+    lemma_forms = cast(MatchedTemplateForm, lemma_template_form).get('lexeme_forms', [])
+
+    best_lemma_form = None
+    best_lemma_form_equal_representations = -1
+    for lemma_form in lemma_forms:
         if lemma_form_id := lemma_form.get('id'):
             lemma_form = find_form(lexeme_data, lemma_form_id)  # find edited version
             assert lemma_form is not None
         else:
             # it’s a new form, lemma_form is already the edited version
             pass
-        if representation_language_code in lemma_form['representations']:
-            lexeme_data['lemmas'][representation_language_code] = lemma_form['representations'][representation_language_code]
+        equal_representations = 0
+        for language_code, representation in lemma_form['representations'].items():
+            if lexeme_data['lemmas'].get(language_code) == representation:
+                equal_representations += 1
+        if equal_representations > best_lemma_form_equal_representations:
+            best_lemma_form = lemma_form
+
+    if best_lemma_form:
+        if representation_language_code in best_lemma_form['representations']:
+            lexeme_data['lemmas'][representation_language_code] = best_lemma_form['representations'][representation_language_code]
         else:
             lexeme_data['lemmas'].pop(representation_language_code, None)
-
-    return lexeme_data
 
 def find_form(lexeme_data: Lexeme, form_id: str) -> LexemeForm:
     for form in lexeme_data['forms']:

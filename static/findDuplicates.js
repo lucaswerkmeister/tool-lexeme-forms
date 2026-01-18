@@ -40,7 +40,8 @@ document.addEventListener('DOMContentLoaded', function() {
      * (Supporting other froms to become the lemma is neeedd for advanced mode,
      * where any form may be omitted, which is useful for e.g. pluralia tantum.)
      *
-     * This logic is duplicated in app.py::get_lemma and app.py::update_lexeme() –
+     * This logic is duplicated in app.py::get_lemma,
+     * and app.py::update_lemma() has a more sophisticated version of it –
      * keep the different versions in sync!
      */
     function getLemma(formRepresentationInputs) {

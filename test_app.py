@@ -999,6 +999,105 @@ def test_update_lexeme_edit_lemma_nonfirst_form():
         'base_revision_id': 123,
     }
 
+def test_update_lexeme_dont_edit_lemma_new_forms():
+    lexeme_data = {
+        'lemmas': {'en': {'language': 'en', 'value': 'dwarf'}},
+        'forms': [],
+    }
+    template = copy.deepcopy(templates_without_redirects['english-noun'])
+    template['lexeme_revision'] = 123
+    form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', 'dwarrow/dwarf')])
+    updated_lexeme_data = lexeme_forms.update_lexeme(lexeme_data, template, form_data, 'en')
+    assert updated_lexeme_data == {
+        'lemmas': {'en': {'language': 'en', 'value': 'dwarf'}},
+        'forms': [
+            {'add': '', 'claims': {}, 'representations': {'en': {'language': 'en', 'value': 'dwarrow'}}, 'grammaticalFeatures': ['Q110786']},
+            {'add': '', 'claims': {}, 'representations': {'en': {'language': 'en', 'value': 'dwarf'}}, 'grammaticalFeatures': ['Q110786']},
+        ],
+        'base_revision_id': 123,
+    }
+
+def test_update_lexeme_dont_edit_lemma_existing_forms():
+    lexeme_data = {
+        'lemmas': {'en': {'language': 'en', 'value': 'dwarf'}},
+        'forms': [
+            {'id': 'L22936-F1', 'representations': {'en': {'language': 'en', 'value': 'dwarrow'}}, 'grammaticalFeatures': ['Q110786']},
+            {'id': 'L22936-F2', 'representations': {'en': {'language': 'en', 'value': 'dwarf'}}, 'grammaticalFeatures': ['Q110786']},
+        ],
+    }
+    template = copy.deepcopy(templates_without_redirects['english-noun'])
+    template['lexeme_revision'] = 123
+    template['forms'][0]['lexeme_forms'] = [lexeme_data['forms'][0], lexeme_data['forms'][1]]
+    form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', 'dwarrow/dwarf'), ('form_representation', 'dwarrows/dwarves/dwarfs')])
+    updated_lexeme_data = lexeme_forms.update_lexeme(lexeme_data, template, form_data, 'en')
+    assert updated_lexeme_data == {
+        'lemmas': {'en': {'language': 'en', 'value': 'dwarf'}},
+        'forms': [
+            {'id': 'L22936-F1', 'representations': {'en': {'language': 'en', 'value': 'dwarrow'}}, 'grammaticalFeatures': ['Q110786']},
+            {'id': 'L22936-F2', 'representations': {'en': {'language': 'en', 'value': 'dwarf'}}, 'grammaticalFeatures': ['Q110786']},
+            {'add': '', 'claims': {}, 'representations': {'en': {'language': 'en', 'value': 'dwarrows'}}, 'grammaticalFeatures': ['Q146786']},
+            {'add': '', 'claims': {}, 'representations': {'en': {'language': 'en', 'value': 'dwarves'}}, 'grammaticalFeatures': ['Q146786']},
+            {'add': '', 'claims': {}, 'representations': {'en': {'language': 'en', 'value': 'dwarfs'}}, 'grammaticalFeatures': ['Q146786']},
+        ],
+        'base_revision_id': 123,
+    }
+
+def test_update_lexeme_edit_lemma_best_form():
+    lexeme_data = {
+        'lemmas': {
+            'en': {'language': 'en', 'value': 'dwarf'},
+            'en-x-Q98912': {'language': 'en-x-Q98912', 'value': 'DWARf'},
+        },
+        'forms': [
+            {
+                'id': 'L22936-F1',
+                'representations': {
+                    'en': {'language': 'en', 'value': 'dwarrow'},
+                    'en-x-Q98912': {'language': 'en-x-Q98912', 'value': 'DWARROW'},
+                },
+                'grammaticalFeatures': ['Q110786'],
+            },
+            {
+                'id': 'L22936-F2',
+                'representations': {
+                    'en': {'language': 'en', 'value': 'dwarf'},
+                    'en-x-Q98912': {'language': 'en-x-Q98912', 'value': 'DWARf'},
+                },
+                'grammaticalFeatures': ['Q110786'],
+            },
+        ],
+    }
+    template = copy.deepcopy(templates_without_redirects['english-noun'])
+    template['lexeme_revision'] = 123
+    template['forms'][0]['lexeme_forms'] = [lexeme_data['forms'][0], lexeme_data['forms'][1]]
+    form_data = werkzeug.datastructures.ImmutableMultiDict([('form_representation', 'DWARROW/DWARF')])
+    updated_lexeme_data = lexeme_forms.update_lexeme(lexeme_data, template, form_data, 'en-x-Q98912')
+    assert updated_lexeme_data == {
+        'lemmas': {
+            'en': {'language': 'en', 'value': 'dwarf'},
+            'en-x-Q98912': {'language': 'en-x-Q98912', 'value': 'DWARF'},
+        },
+        'forms': [
+            {
+                'id': 'L22936-F1',
+                'representations': {
+                    'en': {'language': 'en', 'value': 'dwarrow'},
+                    'en-x-Q98912': {'language': 'en-x-Q98912', 'value': 'DWARROW'},
+                },
+                'grammaticalFeatures': ['Q110786'],
+            },
+            {
+                'id': 'L22936-F2',
+                'representations': {
+                    'en': {'language': 'en', 'value': 'dwarf'},
+                    'en-x-Q98912': {'language': 'en-x-Q98912', 'value': 'DWARF'},
+                },
+                'grammaticalFeatures': ['Q110786'],
+            },
+        ],
+        'base_revision_id': 123,
+    }
+
 def test_update_lexeme_different_language():
     lexeme_data = {
         'lemmas': {
