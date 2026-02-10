@@ -4,7 +4,7 @@ from typing import Optional
 from language_info import label
 
 @pytest.mark.parametrize('code, expected', [
-    ('bn-x-Q6747180', 'ঝাড়খণ্ডী উপভাষা'),
+    ('bn-x-Q6747180', 'মানভূমী বাংলা'),
     ('de-x-Q188', 'Deutsch'),
     ('en-x-Q188', 'German'),
     ('de-x-Q27860798', 'Protein structure comparison by alignment of distance matrices'),
