@@ -1,0 +1,32 @@
+{
+	"@metadata": {
+		"authors": [
+			"GrogeXaKaba"
+		]
+	},
+	"create": "Kiria",
+	"csrf-warning": "Skulpa, ka foi pusívi pursesa es pididu (purteson kóntra <abbr title=\"Cross-site request forgery\">CSRF</abbr> fadja). Di sumóla, tenta nvia es furmulári otu bes.",
+	"advanced": "Vansadu",
+	"advanced-general": "Bu sta na módi \"vansadu\".",
+	"lexeme-id": "Idintifikador di lekséma",
+	"advanced-partial-forms-hint": "Pa kiria leksémas ku alguns fórma ki sa-ta falta, altera pa módi vansadu.",
+	"generated-via": "jeradu trabés di",
+	"bulk-format-help": "djuda sobri furmatu",
+	"title-create": "$1 (kiria)",
+	"title-advanced": "$1 (vansadu)",
+	"title-edit": "$1 (idita)",
+	"ambiguous-template": "Mudelu pridifinidu $1 dja ka ta izisti; e foi subustituídu pa sigintis mudelu pridifinidu:",
+	"settings-label-interface-language-code": "Linga di interfasi di uzuári",
+	"settings-label-use-wikifunctions": "Uza Uikifunsons pa jera sujistons di furmulári",
+	"settings-save": "Garda",
+	"tool-name": "Furmuláris di Lekséma di Uikidadus",
+	"skip-to-main-content": "Bai pa kuntiúdu prinsipal",
+	"documentation": "Dukumentason",
+	"source-code": "Kódi-fonti",
+	"login": "Kuneta",
+	"settings-link": "Kunfigurasons",
+	"settings-heading": "Kunfigurasons",
+	"logged-in": "{{GENDER:$2|Kuneta}} kuma $1.",
+	"requires-javascript": "Es funsonalidadi ta iziji JavaScript.",
+	"wikifunctions-generating": "furmuláris sa-ta jeradu..."
+}
