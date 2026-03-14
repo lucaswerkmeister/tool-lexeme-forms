@@ -286,6 +286,10 @@ language_Maltese: Language = {
     'language_item_id': Maltese,
     'language_code': 'mt',
 }
+language_Moroccan_Arabic: Language = {
+    'language_item_id': Moroccan_Arabic,
+    'language_code': 'ary',
+}
 
 
 _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
@@ -358,6 +362,440 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
                 'label': 'femenino plural',
                 'example': 'Estas son unas [amigas].',
                 'grammatical_features_item_ids': [feminine, plural],
+            },
+        ],
+    },
+
+    'moroccan-arabic-noun-masculine': {
+        '@attribution': {'users': ['Ideophagous'], 'title': 'Wikidata:Wikidata Lexeme Forms/Moroccan Arabic'},
+        'label': 'سمية مدكرة ب الداريجة',
+        'language': language_Moroccan_Arabic,
+        'lexical_category_item_id': noun,
+        'forms': [
+            {
+                'label': 'واحد',
+                'example': 'راه [كتاب] ديالي.',
+                'grammatical_features_item_ids': [singular],
+            },
+            {
+                'label': 'جماعة',
+                'example': 'راهم [كتوبا] دياولي.',
+                'grammatical_features_item_ids': [plural],
+                'optional': True,
+            },
+            {
+                'label': 'تصغير د سمية ف صيغة د لواحد لمدكر',
+                'example': 'هادا [كتيّب] ديالي.',
+                'grammatical_features_item_ids': [masculine, singular, diminutive],
+                'optional': True,
+            },
+            {
+                'label': 'تصغير د سمية ف صيغة د لواحد لمؤنت',
+                'example': 'هادي [كتيّبة] ديالتي.',
+                'grammatical_features_item_ids': [feminine, singular, diminutive],
+                'optional': True,
+            },
+            {
+                'label': 'تصغير د سمية ف صيغة د الجماعة',
+                'example': 'هادو [كتيّبات] دياولي.',
+                'grammatical_features_item_ids': [plural, diminutive],
+                'optional': True,
+            },
+        ],
+        'statements': statements(grammatical_gender, masculine),
+    },
+
+    'moroccan-arabic-noun-feminine': {
+        '@attribution': {'users': ['Ideophagous'], 'title': 'Wikidata:Wikidata Lexeme Forms/Moroccan Arabic'},
+        'label': 'سمية مؤنتة ب الداريجة',
+        'language': language_Moroccan_Arabic,
+        'lexical_category_item_id': noun,
+        'forms': [
+            {
+                'label': 'وحدة',
+                'example': 'راها [ورقة] ديالي.',
+                'grammatical_features_item_ids': [singular],
+            },
+            {
+                'label': 'جماعة',
+                'example': 'راهم [وراق] دياولي.',
+                'grammatical_features_item_ids': [plural],
+                'optional': True,
+            },
+            {
+                'label': 'تصغير د سمية ف صيغة د لواحد',
+                'example': 'هادي [وريقة] ديالي.',
+                'grammatical_features_item_ids': [singular, diminutive],
+                'optional': True,
+            },
+            {
+                'label': 'تصغير د سمية ف صيغة د الجماعة',
+                'example': 'هادو [وريقات] دياولي.',
+                'grammatical_features_item_ids': [plural, diminutive],
+                'optional': True,
+            },
+        ],
+        'statements': statements(grammatical_gender, feminine),
+    },
+
+    'moroccan-arabic-noun-biform': {
+        '@attribution': {'users': ['Ideophagous'], 'title': 'Wikidata:Wikidata Lexeme Forms/Moroccan Arabic'},
+        'label': 'سمية مجاوجية ب الداريجة',
+        'language': language_Moroccan_Arabic,
+        'lexical_category_item_id': noun,
+        'two_column_sections': True,
+        'forms': [
+            {
+                'label': 'واحد مدكر',
+                'example': 'هادا [مش] ديالي.',
+                'grammatical_features_item_ids': [masculine, singular],
+            },
+            {
+                'label': 'جماعة مدكرين',
+                'example': 'هادو [مشاش] دياولي.',
+                'grammatical_features_item_ids': [masculine, plural],
+            },
+            {
+                'label': 'وحدة مؤنتة',
+                'example': 'هادي [مشة] ديالي.',
+                'grammatical_features_item_ids': [feminine, singular],
+            },
+            {
+                'label': 'جماعة مؤنتين',
+                'example': 'هادو [مشات] دياولي.',
+                'grammatical_features_item_ids': [feminine, plural],
+            },
+            {
+                'section_break': True,
+                'label': 'تصغير د سمية ف صيغة د لواحد لمدكر',
+                'example': 'هادا [مشيّش] ديالي.',
+                'grammatical_features_item_ids': [masculine, singular, diminutive],
+                'optional': True,
+            },
+            {
+                'label': 'تصغير د سمية ف صيغة د لواحد لمؤنت',
+                'example': 'هادي [مشيشة] ديالتي.',
+                'grammatical_features_item_ids': [feminine, singular, diminutive],
+                'optional': True,
+            },
+            {
+                'label': 'تصغير د سمية ف صيغة د الجماعة',
+                'example': 'هادو [مشيشات] دياولي.',
+                'grammatical_features_item_ids': [plural, diminutive],
+                'optional': True,
+            },
+        ],
+    },
+
+    'moroccan-arabic-adjective': {
+        '@attribution': {'users': ['Ideophagous'], 'title': 'Wikidata:Wikidata Lexeme Forms/Moroccan Arabic'},
+        'label': 'وصف ب الداريجة',
+        'language': language_Moroccan_Arabic,
+        'lexical_category_item_id': adjective,
+        'two_column_sections': True,
+        'forms': [
+            {
+                'label': 'واحد مدكر',
+                'example': 'كتاب [كبير].',
+                'grammatical_features_item_ids': [masculine, singular, positive],
+            },
+            {
+                'label': 'جماعة مدكرين',
+                'example': 'كتوبا [كبار].',
+                'grammatical_features_item_ids': [masculine, plural, positive],
+            },
+            {
+                'label': 'وحدة مؤنتة',
+                'example': 'شجرة [كبيرة].',
+                'grammatical_features_item_ids': [feminine, singular, positive],
+            },
+            {
+                'label': 'جماعة مؤنتين',
+                'example': 'شجرات [كبارات].',
+                'grammatical_features_item_ids': [feminine, plural, positive],
+            },
+            {
+                'section_break': True,
+                'label': 'مقارنة',
+                'example': 'شجرة د ؤكاليپتوس [كبر] من شجرة أرڭان.',
+                'grammatical_features_item_ids': [comparative],
+                'optional': True,
+            },
+            {
+                'label': 'تفضيل قصوي',
+                'example': 'هادا [أكبر] كتاب.',
+                'grammatical_features_item_ids': [superlative],
+                'optional': True,
+            },
+            {
+                'section_break': True,
+                'label': 'تصغير د وصف ف صيغة د لواحد لمدكر',
+                'example': 'هادا مشيّش [كبيبر].',
+                'grammatical_features_item_ids': [masculine, singular, diminutive],
+                'optional': True,
+            },
+            {
+                'label': 'تصغير د وصف ف صيغة د لواحد لمؤنت',
+                'example': 'هادي مشيشة [كبيبرة].',
+                'grammatical_features_item_ids': [feminine, singular, diminutive],
+                'optional': True,
+            },
+            {
+                'label': 'تصغير د وصف مدكر ف صيغة د الجماعة',
+                'example': 'هادو مشيشات [كبيبرين].',
+                'grammatical_features_item_ids': [masculine, plural, diminutive],
+                'optional': True,
+            },
+            {
+                'label': 'تصغير د وصف مؤنت ف صيغة د الجماعة',
+                'example': 'هادو مشيشات [كبيبرات].',
+                'grammatical_features_item_ids': [feminine, plural, diminutive],
+                'optional': True,
+            },
+        ],
+    },
+
+    'moroccan-arabic-adverb': {
+        '@attribution': {'users': ['Ideophagous'], 'title': 'Wikidata:Wikidata Lexeme Forms/Moroccan Arabic'},
+        'label': 'ظرف حال ب الداريجة',
+        'language': language_Moroccan_Arabic,
+        'lexical_category_item_id': adverb,
+        'forms': [
+            {
+                'label': 'ليكسيم',
+                'example': 'كلينا [بزاف].',
+                'grammatical_features_item_ids': [],
+            },
+        ],
+    },
+
+    'moroccan-arabic-verb': {
+        '@attribution': {'users': ['Ideophagous'], 'title': 'Wikidata:Wikidata Lexeme Forms/Moroccan Arabic'},
+        'label': 'فعلة ب الداريجة',
+        'language': language_Moroccan_Arabic,
+        'lexical_category_item_id': verb,
+        'two_column_sections': True,
+        'forms': [
+            {
+                'label': 'صيغة د لهاضر لواحد ف لفايت',
+                'example': 'أنا لبارح [كتبت].',
+                'grammatical_features_item_ids': [past_tense, singular, first_person],
+                'optional': True,
+            },
+            {
+                'label': 'صيغة د لمهضور ليه لواحد ف لفايت',
+                'example': 'نتا/نتي لبارح [كتبتي].',
+                'grammatical_features_item_ids': [past_tense, singular, second_person],
+                'optional': True,
+            },
+            {
+                'lemma': True,
+                'label': 'صيغة د لغايب لمدكر لواحد ف لفايت',
+                'example': 'هوّ لبارح [كتب].',
+                'grammatical_features_item_ids': [past_tense, singular, third_person, masculine],
+            },
+            {
+                'label': 'صيغة د لغايب لمؤنت لواحد ف لفايت',
+                'example': 'هيّ لبارح [كتبات].',
+                'grammatical_features_item_ids': [past_tense, singular, third_person, feminine],
+                'optional': True,
+            },
+            {
+                'label': 'صيغة د لهاضر الجماعة ف لفايت',
+                'example': 'حنا لبارح [كتبنا].',
+                'grammatical_features_item_ids': [past_tense, plural, first_person],
+                'optional': True,
+            },
+            {
+                'label': 'صيغة د لمهضور ليه الجماعة ف لفايت',
+                'example': 'نتوما لبارح [كتبتو].',
+                'grammatical_features_item_ids': [past_tense, plural, second_person],
+                'optional': True,
+            },
+            {
+                'label': 'صيغة د لغايب الجماعة ف لفايت',
+                'example': 'هوما لبارح [كتبو].',
+                'grammatical_features_item_ids': [past_tense, plural, third_person],
+                'optional': True,
+            },
+            {
+                'section_break': True,
+                'label': 'صيغة د لهاضر لواحد ف لحاضر',
+                'example': 'أنا ليوما بغيت [نكتب].',
+                'grammatical_features_item_ids': [present_tense, singular, first_person],
+                'optional': True,
+            },
+            {
+                'label': 'صيغة د لمهضور ليه لواحد لمدكر ف لحاضر',
+                'example': 'نتا ليوما بغيتي [تكتب].',
+                'grammatical_features_item_ids': [present_tense, singular, second_person, masculine],
+                'optional': True,
+            },
+            {
+                'label': 'صيغة د لمهضور ليه لواحد لمؤنت ف لحاضر',
+                'example': 'نتي ليوما بغيتي [تكتبي].',
+                'grammatical_features_item_ids': [present_tense, singular, second_person, feminine],
+                'optional': True,
+            },
+            {
+                'label': 'صيغة د لغايب لمدكر لواحد ف لحاضر',
+                'example': 'هوّ ليوما بغى [يكتب].',
+                'grammatical_features_item_ids': [present_tense, singular, third_person, masculine],
+                'optional': True,
+            },
+            {
+                'label': 'صيغة د لغايب لمؤنت لواحد ف لحاضر',
+                'example': 'هيّ ليوما بغات [تكتب].',
+                'grammatical_features_item_ids': [present_tense, singular, third_person, feminine],
+                'optional': True,
+            },
+            {
+                'label': 'صيغة د لهاضر الجماعة ف لحاضر',
+                'example': 'حنا ليوما بغينا [نكتبو].',
+                'grammatical_features_item_ids': [present_tense, plural, first_person],
+                'optional': True,
+            },
+            {
+                'label': 'صيغة د لمهضور ليه الجماعة ف لحاضر',
+                'example': 'نتوما ليوما بغيتو [تكتبو].',
+                'grammatical_features_item_ids': [present_tense, plural, second_person],
+                'optional': True,
+            },
+            {
+                'label': 'صيغة د لغايب الجماعة ف لحاضر',
+                'example': 'هوما ليوما بغاو [يكتبو].',
+                'grammatical_features_item_ids': [present_tense, plural, third_person],
+                'optional': True,
+            },
+            {
+                'section_break': True,
+                'label': 'صيغة د لهاضر لواحد ف لحاضر الطاري',
+                'example': 'أنا ليوما [كانكتب].',
+                'grammatical_features_item_ids': [present_continuous, singular, first_person],
+                'optional': True,
+            },
+            {
+                'label': 'صيغة د لمهضور ليه لواحد لمدكر ف لحاضر الطاري',
+                'example': 'نتا ليوما [كاتكتب].',
+                'grammatical_features_item_ids': [present_continuous, singular, second_person, masculine],
+                'optional': True,
+            },
+            {
+                'label': 'صيغة د لمهضور ليه لواحد لمؤنت ف لحاضر الطاري',
+                'example': 'نتي ليوما [كاتكتبي].',
+                'grammatical_features_item_ids': [present_continuous, singular, second_person, feminine],
+                'optional': True,
+            },
+            {
+                'label': 'صيغة د لغايب لمدكر لواحد ف لحاضر الطاري',
+                'example': 'هوّ ليوما [كايكتب].',
+                'grammatical_features_item_ids': [present_continuous, singular, third_person, masculine],
+                'optional': True,
+            },
+            {
+                'label': 'صيغة د لغايب لمؤنت لواحد ف لحاضر الطاري',
+                'example': 'هيّ ليوما [كاتكتب].',
+                'grammatical_features_item_ids': [present_continuous, singular, third_person, feminine],
+                'optional': True,
+            },
+            {
+                'label': 'صيغة د لهاضر الجماعة ف لحاضر الطاري',
+                'example': 'حنا ليوما [كانكتبو].',
+                'grammatical_features_item_ids': [present_continuous, plural, first_person],
+                'optional': True,
+            },
+            {
+                'label': 'صيغة د لمهضور ليه الجماعة ف لحاضر الطاري',
+                'example': 'نتوما ليوما [كاتكتبو].',
+                'grammatical_features_item_ids': [present_continuous, plural, second_person],
+                'optional': True,
+            },
+            {
+                'label': 'صيغة د لغايب الجماعة ف لحاضر الطاري',
+                'example': 'هوما ليوما [كايكتبو].',
+                'grammatical_features_item_ids': [present_continuous, plural, third_person],
+                'optional': True,
+            },
+            {
+                'section_break': True,
+                'label': 'صيغة د لهاضر لواحد ف الجاي',
+                'example': 'أنا ليوما [غانكتب].',
+                'grammatical_features_item_ids': [future_tense, singular, first_person],
+                'optional': True,
+            },
+            {
+                'label': 'صيغة د لمهضور ليه لواحد لمدكر ف الجاي',
+                'example': 'نتا غدا [غاتكتب].',
+                'grammatical_features_item_ids': [future_tense, singular, second_person, masculine],
+                'optional': True,
+            },
+            {
+                'label': 'صيغة د لمهضور ليه لواحد لمؤنت ف الجاي',
+                'example': 'نتي غدا [غاتكتبي].',
+                'grammatical_features_item_ids': [future_tense, singular, second_person, feminine],
+                'optional': True,
+            },
+            {
+                'label': 'صيغة د لغايب لمدكر لواحد ف الجاي',
+                'example': 'هوّ غدا [غايكتب].',
+                'grammatical_features_item_ids': [future_tense, singular, third_person, masculine],
+                'optional': True,
+            },
+            {
+                'label': 'صيغة د لغايب لمؤنت لواحد ف الجاي',
+                'example': 'هيّ غدا [غاتكتب].',
+                'grammatical_features_item_ids': [future_tense, singular, third_person, feminine],
+                'optional': True,
+            },
+            {
+                'label': 'صيغة د لهاضر الجماعة ف الجاي',
+                'example': 'حنا غدا [غانكتبو].',
+                'grammatical_features_item_ids': [future_tense, plural, first_person],
+                'optional': True,
+            },
+            {
+                'label': 'صيغة د لمهضور ليه الجماعة ف الجاي',
+                'example': 'نتوما غدا [غاتكتبو].',
+                'grammatical_features_item_ids': [future_tense, plural, second_person],
+                'optional': True,
+            },
+            {
+                'label': 'صيغة د لغايب الجماعة ف الجاي',
+                'example': 'هوما غدا [غايكتبو].',
+                'grammatical_features_item_ids': [future_tense, plural, third_person],
+                'optional': True,
+            },
+            {
+                'section_break': True,
+                'label': 'صيغة د لمهضور ليه لواحد لمدكر ف لأمر',
+                'example': 'نتا [كتب]!',
+                'grammatical_features_item_ids': [imperative, singular, third_person, masculine],
+            },
+            {
+                'label': 'صيغة د لمهضور ليه لواحد لمؤنت ف لأمر',
+                'example': 'نتي [كتبي]!',
+                'grammatical_features_item_ids': [imperative, singular, third_person, feminine],
+                'optional': True,
+            },
+            {
+                'label': 'صيغة د لمهضور ليه الجماعة ف لأمر',
+                'example': 'نتوما [كتبو]!',
+                'grammatical_features_item_ids': [imperative, plural, third_person],
+                'optional': True,
+            },
+        ],
+    },
+
+    'moroccan-arabic-interjection': {
+        '@attribution': {'users': ['Ideophagous'], 'title': 'Wikidata:Wikidata Lexeme Forms/Moroccan Arabic'},
+        'label': 'محاكية ب الداريجة',
+        'language': language_Moroccan_Arabic,
+        'lexical_category_item_id': interjection,
+        'forms': [
+            {
+                'label': 'لفورما اللولة',
+                'example': '[ناري]',
+                'grammatical_features_item_ids': [],
             },
         ],
     },

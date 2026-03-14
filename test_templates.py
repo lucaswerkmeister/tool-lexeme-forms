@@ -224,6 +224,7 @@ def test_translations_available():
 
     # lack of translations accepted for now
     missing_language_codes.remove('an')
+    missing_language_codes.remove('ary')
     missing_language_codes.remove('mt')
 
     # special case
@@ -459,6 +460,7 @@ def test_sections_declared(template_name):
 
 # exceptions from test_optional_forms_last_in_section
 template_names_with_mixed_optional_forms = {
+    'moroccan-arabic-verb',
     'malayalam-noun',
     'bokmål-noun-masculine-neuter',
 }
