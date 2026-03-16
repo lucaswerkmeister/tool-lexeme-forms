@@ -109,4 +109,7 @@ def lang_int2babel(code: str) -> str:
         # frp (Franco-Provençal, Latin script) falls back to fr (French) in MediaWiki,
         # which also has the same plural forms
         'frp': 'fr',
+        # ary (Moroccan Arabic) is not in Babel;
+        # ar (Arabic) is the MediaWiki fallback
+        'ary': 'ar',
     }.get(code, code.partition('-')[0])
