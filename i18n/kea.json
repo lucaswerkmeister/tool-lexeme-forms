@@ -16,7 +16,7 @@
 	"advanced-lexeme-id": "Bu podi dijita un idintifikador di lekséma pa kirsenta fórmas na un lekséma izistenti, nbes di kiria un lekséma nobu. Txa baziu tudu fórma dja izistenti na lekséma, sinon es ta ser duplikadu!",
 	"advanced-partial-forms": "Bu podi txa alguns fórma baziu pa es ka ser kirsentadu. Sirtifika ma bu kiria tudu fórma ki mestedu!",
 	"lexeme-id": "Idintifikador di lekséma",
-	"advanced-partial-forms-hint": "Pa kiria leksémas ku alguns fórma ki sa-ta falta, altera pa módi vansadu.",
+	"advanced-partial-forms-hint": "Pa kiria leksémas ku ozénsa di alguns fórma, altera pa módi vansadu.",
 	"generated-via": "jeradu trabés di",
 	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=niun fórma|un fórma|$2 fórma}} i {{PLURAL:$3|0=zér sintidu|un sintidu|$3 sintidu}}",
 	"bulk-format-help": "djuda sobri furmatu",
