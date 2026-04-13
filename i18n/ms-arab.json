@@ -25,6 +25,7 @@
 	"edit-unmatched-warning": "{{PLURAL:$1|بنتوق}} ليکسيم برايکوت تيدق سڤادن دڠن سبارڠ بنتوق تيمڤلت:",
 	"edit-form-list-item": "$1، $2، {{PLURAL:$3|0=تياد کڽاتاءن|ساتو کڽاتاءن|$3 کڽاتاءن}}",
 	"no-grammatical-features": "تياد چيري تاتابهاس",
+	"title-create": "$1 (چيڤتا)",
 	"title-edit": "$1 (سونتيڠ)",
 	"login-hint": "اندا ڤرلو [$1 لوݢ ماسوق] سبلوم اندا بوليه ممبوات ڤراوبهن مڠݢوناکن الت اين.",
 	"settings-label-interface-language-code": "بهاس انتارا موک ڤڠݢونا",
