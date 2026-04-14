@@ -50,6 +50,7 @@ comitative_case = 'Q838581'
 Chinese_classifier = 'Q849760'
 partitive_case = 'Q857325'
 colloquial_language = 'Q901711'
+transgressive = 'Q904896'
 translative_case = 'Q950170'
 # 7 digits
 non_finite_verb = 'Q1050494'

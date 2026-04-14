@@ -21825,6 +21825,117 @@ _internal_templates: Dict[str, str | list[str] | _InternalTemplate] = {
         'statements': statements(grammatical_aspect, perfective),
     },
 
+    'russian-verb-imperfective': {
+        '@attribution': {'users': ['Infovarius'], 'title': 'Wikidata:Wikidata Lexeme Forms/Russian'},
+        'label': 'русский глагол, несовершенный вид',
+        'language': language_Russian,
+        'lexical_category_item_id': verb,
+        'two_column_sections': True,  # TODO check
+        'forms': [
+            {
+                'label': 'инфинитив',
+                'example': 'Мы умеем [летать].',
+                'grammatical_features_item_ids': [infinitive],
+            },
+            {
+                'section_break': True,
+                'label': 'прошедшее, ед. ч., м. р.',
+                'example': 'Вчера я/ты/он [летал].',
+                'grammatical_features_item_ids': [indicative, past_tense, singular, masculine],
+            },
+            {
+                'label': 'прошедшее, ед. ч., ж. р.',
+                'example': 'Вчера я/ты/она [летала].',
+                'grammatical_features_item_ids': [indicative, past_tense, singular, feminine],
+            },
+            {
+                'label': 'прошедшее, ед. ч., ср. р.',
+                'example': 'Вчера оно [летало].',
+                'grammatical_features_item_ids': [indicative, past_tense, singular, neuter],
+            },
+            {
+                'label': 'прошедшее, мн. ч.',
+                'example': 'Вчера мы/вы/они [летали].',
+                'grammatical_features_item_ids': [indicative, past_tense, plural],
+            },
+            {
+                'section_break': True,
+                'label': 'настоящее, 1 л., ед. ч.',
+                'example': 'Сегодня я [летаю].',
+                'grammatical_features_item_ids': [indicative, present_tense, first_person, singular],
+            },
+            {
+                'label': 'настоящее, 1 л., мн. ч.',
+                'example': 'Сегодня мы [летаем].',
+                'grammatical_features_item_ids': [indicative, present_tense, first_person, plural],
+            },
+            {
+                'label': 'настоящее, 2 л., ед. ч.',
+                'example': 'Сегодня ты [летаешь].',
+                'grammatical_features_item_ids': [indicative, present_tense, second_person, singular],
+            },
+            {
+                'label': 'настоящее, 2 л., мн. ч.',
+                'example': 'Сегодня вы [летаете].',
+                'grammatical_features_item_ids': [indicative, present_tense, second_person, plural],
+            },
+            {
+                'label': 'настоящее, 3 л., ед. ч.',
+                'example': 'Сегодня он/она/оно [летает].',
+                'grammatical_features_item_ids': [indicative, present_tense, third_person, singular],
+            },
+            {
+                'label': 'настоящее, 3 л., мн. ч.',
+                'example': 'Сегодня они [летают].',
+                'grammatical_features_item_ids': [indicative, present_tense, third_person, plural],
+            },
+            {
+                'section_break': True,
+                'label': 'императив, 2 л., ед. ч.',
+                'example': 'Давай, (ты) [летай] почаще!',
+                'grammatical_features_item_ids': [imperative, second_person, singular],
+            },
+            {
+                'label': 'императив, 2 л., мн. ч.',
+                'example': 'Давате, (вы) [летайте] почаще.',
+                'grammatical_features_item_ids': [imperative, second_person, plural],
+            },
+            {
+                'section_break': True,
+                'label': 'действительное причастие настоящего времени',
+                'example': 'Какой [летающий] объект!',
+                'grammatical_features_item_ids': [present_tense, participle, active_participle],
+            },
+            {
+                'label': 'действительное причастие прошедшего времени',
+                'example': 'Перед нами [летавший] объект.',
+                'grammatical_features_item_ids': [past_tense, participle, active_participle],
+            },
+            {
+                'label': 'страдательное причастие настоящего времени (только у переходных глаголов)',
+                'example': 'Перед нами [носимый] объект.',
+                'grammatical_features_item_ids': [present_tense, participle, passive_participle],
+            },
+            {
+                'label': 'страдательное причастие прошедшего времени (только у переходных глаголов)',
+                'example': 'Перед нами [ношенный] объект.',
+                'grammatical_features_item_ids': [past_tense, participle, passive_participle],
+            },
+            {
+                'section_break': True,
+                'label': 'деепричастие настоящего времени',
+                'example': 'Двигаться [летая]',
+                'grammatical_features_item_ids': [present_tense, transgressive],
+            },
+            {
+                'label': 'деепричастие прошедшего времени',
+                'example': 'Он, [летав/летавши], устал.',
+                'grammatical_features_item_ids': [past_tense, transgressive],
+            },
+        ],
+        'statements': statements(grammatical_aspect, imperfective),
+    },
+
     'swedish-noun-common': {
         '@attribution': {'users': ['Vesihiisi'], 'title': 'Wikidata:Wikidata Lexeme Forms/Swedish'},
         'label': 'svenskt substantiv (utrum)',
