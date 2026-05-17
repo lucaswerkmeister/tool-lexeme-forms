@@ -6,10 +6,8 @@ import jinja2
 import json
 from markupsafe import Markup
 import mwapi  # type: ignore
-import mwoauth  # type: ignore
 import random
 import re
-import requests
 import requests_oauthlib
 import string
 import toolforge
@@ -57,12 +55,18 @@ user_agent = toolforge.set_user_agent('lexeme-forms', email='mail@lucaswerkmeist
 app.config.from_file('config.yaml', load=toolforge.load_private_yaml, silent=True)
 app.config.from_prefixed_env('TOOL', loads=yaml.safe_load)
 if 'OAUTH' in app.config:
-    consumer_token = mwoauth.ConsumerToken(app.config['OAUTH']['CONSUMER_KEY'], app.config['OAUTH']['CONSUMER_SECRET'])
+    assert 'CLIENT_ID' in app.config['OAUTH'], 'OAuth configuration must be complete'
+    assert 'CLIENT_SECRET' in app.config['OAUTH'], 'OAuth configuration must be complete'
     assert app.secret_key is not None, 'If OAuth is configured, the SECRET_KEY must also be configured (a fixed random string)'
 else:
     print('No OAuth configuration found, assuming local development setup')
     if app.secret_key is None:
         app.secret_key = 'fake'
+
+def oauth2session(**kwargs: Any) -> requests_oauthlib.OAuth2Session:
+    session = requests_oauthlib.OAuth2Session(app.config['OAUTH']['CLIENT_ID'], **kwargs)
+    session.headers['User-Agent'] = user_agent
+    return session
 
 class BoundTemplate(MatchedTemplate):
     lexeme_id: str
@@ -588,15 +592,26 @@ def if_no_such_template_redirect(template_name: str) -> Optional[RRV]:
     else:
         return None
 
+def oauth_token_updater(token: dict) -> None:
+    flask.session['oauth_access_token'] = token
+
 @app.route('/oauth/callback')
 def oauth_callback() -> RRV:
-    oauth_request_token = flask.session.pop('oauth_request_token', None)
-    if oauth_request_token is None:
+    oauth_state = flask.session.pop('oauth_state', None)
+    if oauth_state is None:
         return flask.render_template('error-oauth-callback.html',
                                      already_logged_in='oauth_access_token' in flask.session,
                                      query_string=flask.request.query_string.decode('utf8'))
-    access_token = mwoauth.complete('https://www.wikidata.org/w/index.php', consumer_token, mwoauth.RequestToken(**oauth_request_token), flask.request.query_string, user_agent=user_agent)
-    flask.session['oauth_access_token'] = dict(zip(access_token._fields, access_token))
+    access_token = oauth2session(state=oauth_state).fetch_token(
+        'https://www.wikidata.org/w/rest.php/oauth2/access_token',
+        client_secret=app.config['OAUTH']['CLIENT_SECRET'],
+        authorization_response=re.sub(
+            r'^http://localhost(?=:|/)',
+            'https://localhost',  # prevent OAuthLib InsecureTransportError
+            flask.request.url,
+        )
+    )
+    oauth_token_updater(access_token)
     flask.session.permanent = True
     flask.session.pop('_csrf_token', None)
     redirect_target = flask.session.pop('oauth_redirect_target', None)
@@ -605,8 +620,8 @@ def oauth_callback() -> RRV:
 @app.route('/login')
 def login() -> RRV:
     if 'OAUTH' in app.config:
-        (redirect, request_token) = mwoauth.initiate('https://www.wikidata.org/w/index.php', consumer_token, user_agent=user_agent)
-        flask.session['oauth_request_token'] = dict(zip(request_token._fields, request_token))
+        redirect, oauth_state = oauth2session().authorization_url('https://www.wikidata.org/w/rest.php/oauth2/authorize')
+        flask.session['oauth_state'] = oauth_state
         flask.session['oauth_redirect_target'] = flask.request.referrer
         return flask.redirect(redirect)
     else:
@@ -1175,7 +1190,7 @@ def wikifunctions_api(template_name: str, lemma: str, function_name: str) -> RRV
         return '"must be a real template, not a redirect"\n', 400
     result: list[Optional[str]] = []
     result_cache: dict[str, Optional[str]] = {}  # map wikifunction ID to result of calling it with lemma
-    # authenticated_session() would require a new grant (that doesn’t even exist yet, T349966) on the OAuth consumer
+    # authenticated_session() would require a new grant (that doesn’t even exist yet, T349966) on the OAuth client
     session = anonymous_session('https://www.wikifunctions.org')
     for form in template['forms']:
         wikifunction = form.get('wikifunctions', {}).get(function_name)
@@ -1215,23 +1230,22 @@ def health() -> RRV:
 def authenticated_session(host: str) -> mwapi.Session:
     return mwapi.Session(
         host=host,
-        auth=generate_auth(),
         user_agent=user_agent,
+        session=oauth2session(
+            token=flask.session['oauth_access_token'],
+            auto_refresh_url='https://www.wikidata.org/w/rest.php/oauth2/access_token',
+            auto_refresh_kwargs={
+                'client_id': app.config['OAUTH']['CLIENT_ID'],
+                'client_secret': app.config['OAUTH']['CLIENT_SECRET'],
+            },
+            token_updater=oauth_token_updater,
+        ),
     )
 
 def anonymous_session(host: str) -> mwapi.Session:
     return mwapi.Session(
         host=host,
         user_agent=user_agent,
-    )
-
-def generate_auth() -> requests.auth.AuthBase:
-    access_token = mwoauth.AccessToken(**flask.session['oauth_access_token'])
-    return requests_oauthlib.OAuth1(
-        client_key=consumer_token.key,
-        client_secret=consumer_token.secret,
-        resource_owner_key=access_token.key,
-        resource_owner_secret=access_token.secret,
     )
 
 def get_userinfo() -> Optional[dict]:
@@ -1242,6 +1256,9 @@ def get_userinfo() -> Optional[dict]:
 
 def query_userinfo() -> Optional[dict]:
     if 'oauth_access_token' not in flask.session:
+        return None
+    if 'key' in flask.session['oauth_access_token'] and 'secret' in flask.session['oauth_access_token']:
+        # old-format, OAuth 1 access token (OAuth 2 is a dict of access_token, expires_at, expires_in, refresh_token, token_type instead)
         return None
     session = authenticated_session('https://www.wikidata.org')
     userinfo = session.get(action='query',

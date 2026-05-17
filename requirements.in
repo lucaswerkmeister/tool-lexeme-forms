@@ -5,9 +5,7 @@ gunicorn
 jinja2 >= 3.0.0
 MarkupSafe
 mwapi >= 0.6.0
-mwoauth
 PyYAML
-requests
 requests_oauthlib
 toolforge >= 6.1
 toolforge_i18n[Flask] >= 0.1.0
