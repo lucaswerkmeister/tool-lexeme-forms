@@ -44,6 +44,8 @@ types-gunicorn==25.3.0.20260408
     # via -r dev-requirements.in
 types-html5lib==1.1.11.20251014
     # via types-beautifulsoup4
+types-oauthlib==3.3.0.20260518
+    # via types-requests-oauthlib
 types-psutil==7.2.2.20260408
     # via types-gevent
 types-pytz==2025.2.0.20251108
@@ -51,6 +53,10 @@ types-pytz==2025.2.0.20251108
 types-pyyaml==6.0.12.20250915
     # via -r dev-requirements.in
 types-requests==2.32.4.20250913
+    # via
+    #   -r dev-requirements.in
+    #   types-requests-oauthlib
+types-requests-oauthlib==2.0.0.20260518
     # via -r dev-requirements.in
 types-setuptools==80.9.0.20250822
     # via types-babel

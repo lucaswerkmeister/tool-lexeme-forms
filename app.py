@@ -10,7 +10,7 @@ import mwoauth  # type: ignore
 import random
 import re
 import requests
-import requests_oauthlib  # type: ignore
+import requests_oauthlib
 import string
 import toolforge
 from typing import cast, Any, Optional, Tuple, TypedDict
