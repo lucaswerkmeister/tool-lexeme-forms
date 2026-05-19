@@ -6,6 +6,7 @@ import jinja2
 import json
 from markupsafe import Markup
 import mwapi  # type: ignore
+import os
 import random
 import re
 import requests_oauthlib
@@ -58,6 +59,7 @@ if 'OAUTH' in app.config:
     assert 'CLIENT_ID' in app.config['OAUTH'], 'OAuth configuration must be complete'
     assert 'CLIENT_SECRET' in app.config['OAUTH'], 'OAuth configuration must be complete'
     assert app.secret_key is not None, 'If OAuth is configured, the SECRET_KEY must also be configured (a fixed random string)'
+    os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'  # prevent OAuthLib InsecureTransportError because it sees internal HTTP (or localhost) URLs
 else:
     print('No OAuth configuration found, assuming local development setup')
     if app.secret_key is None:
@@ -605,11 +607,7 @@ def oauth_callback() -> RRV:
     access_token = oauth2session(state=oauth_state).fetch_token(
         'https://www.wikidata.org/w/rest.php/oauth2/access_token',
         client_secret=app.config['OAUTH']['CLIENT_SECRET'],
-        authorization_response=re.sub(
-            r'^http://localhost(?=:|/)',
-            'https://localhost',  # prevent OAuthLib InsecureTransportError
-            flask.request.url,
-        )
+        authorization_response=flask.request.url,
     )
     oauth_token_updater(access_token)
     flask.session.permanent = True
