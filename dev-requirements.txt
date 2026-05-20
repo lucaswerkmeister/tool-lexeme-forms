@@ -4,21 +4,25 @@
 #
 #    pip-compile dev-requirements.in
 #
+ast-serialize==0.5.0
+    # via mypy
 flake8==7.3.0
     # via -r dev-requirements.in
 iniconfig==2.3.0
     # via pytest
+librt==0.11.0
+    # via mypy
 mccabe==0.7.0
     # via flake8
-mypy==1.18.2
+mypy==2.1.0
     # via -r dev-requirements.in
 mypy-extensions==1.1.0
     # via mypy
-packaging==25.0
+packaging==26.2
     # via
     #   -c requirements.txt
     #   pytest
-pathspec==0.12.1
+pathspec==1.1.1
     # via mypy
 pluggy==1.6.0
     # via pytest
@@ -26,43 +30,45 @@ pycodestyle==2.14.0
     # via flake8
 pyflakes==3.4.0
     # via flake8
-pygments==2.19.2
+pygments==2.20.0
     # via pytest
-pytest==9.0.0
+pytest==9.0.3
     # via -r dev-requirements.in
 types-babel==2.11.0.15
     # via -r dev-requirements.in
 types-beautifulsoup4==4.12.0.20250516
     # via -r dev-requirements.in
-types-decorator==5.2.0.20251101
+types-decorator==5.2.0.20260519
     # via -r dev-requirements.in
-types-gevent==26.4.0.20260409
+types-gevent==26.4.0.20260518
     # via types-gunicorn
-types-greenlet==3.4.0.20260409
+types-greenlet==3.5.0.20260518
     # via types-gevent
-types-gunicorn==25.3.0.20260408
+types-gunicorn==26.0.0.20260518
     # via -r dev-requirements.in
-types-html5lib==1.1.11.20251014
+types-html5lib==1.1.11.20260518
     # via types-beautifulsoup4
 types-oauthlib==3.3.0.20260518
     # via types-requests-oauthlib
-types-psutil==7.2.2.20260408
+types-psutil==7.2.2.20260518
     # via types-gevent
-types-pytz==2025.2.0.20251108
+types-pytz==2026.2.0.20260518
     # via types-babel
-types-pyyaml==6.0.12.20250915
+types-pyyaml==6.0.12.20260518
     # via -r dev-requirements.in
 types-requests==2.33.0.20260518
     # via types-requests-oauthlib
 types-requests-oauthlib==2.0.0.20260518
     # via -r dev-requirements.in
-types-setuptools==80.9.0.20250822
+types-setuptools==82.0.0.20260518
     # via types-babel
+types-webencodings==0.5.0.20260408
+    # via types-html5lib
 typing-extensions==4.15.0
     # via
     #   -c requirements.txt
     #   mypy
-urllib3==2.5.0
+urllib3==2.7.0
     # via
     #   -c requirements.txt
     #   types-requests
