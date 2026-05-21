@@ -86,6 +86,15 @@ class Duplicate(TypedDict):
     forms_count: str
     senses_count: str
 
+@app.before_request
+def discard_old_access_token() -> None:
+    access_token = flask.session.get('oauth_access_token')
+    if access_token is None:
+        return
+    if 'key' in access_token and 'secret' in access_token:
+        # old-format, OAuth 1 access token (OAuth 2 is a dict of access_token, expires_at, expires_in, refresh_token, token_type instead)
+        del flask.session['oauth_access_token']
+
 @decorator.decorator
 def enableCORS(func, *args, **kwargs):
     rv = func(*args, **kwargs)
@@ -1254,9 +1263,6 @@ def get_userinfo() -> Optional[dict]:
 
 def query_userinfo() -> Optional[dict]:
     if 'oauth_access_token' not in flask.session:
-        return None
-    if 'key' in flask.session['oauth_access_token'] and 'secret' in flask.session['oauth_access_token']:
-        # old-format, OAuth 1 access token (OAuth 2 is a dict of access_token, expires_at, expires_in, refresh_token, token_type instead)
         return None
     session = authenticated_session('https://www.wikidata.org')
     userinfo = session.get(action='query',
