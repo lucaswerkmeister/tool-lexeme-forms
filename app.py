@@ -6,10 +6,8 @@ import jinja2
 import json
 from markupsafe import Markup
 import mwapi  # type: ignore
-import os
 import random
 import re
-import requests_oauthlib
 import string
 import toolforge
 from typing import cast, Any, Optional, Tuple, TypedDict
@@ -21,6 +19,7 @@ from flask_utils import SetJSONProvider
 from language import lang_lex2int, lang_int2babel
 from language_info import label
 from matching import match_template_to_lexeme_data, match_lexeme_forms_to_template, match_template_entity_to_lexeme_entity, MatchedTemplate, MatchedTemplateForm
+from mwoauth2 import MWOAuth2FlaskMWApi
 from parse_tpsv import parse_lexemes, FirstFieldNotLexemeIdError, FirstFieldLexemeIdError, WrongNumberOfFieldsError
 from templates import templates, templates_without_redirects, Template, TemplateForm
 from toolforge_i18n import ToolforgeI18n, interface_language_code_from_request, lang_autonym, message, pop_html_lang, push_html_lang
@@ -56,19 +55,17 @@ user_agent = toolforge.set_user_agent('lexeme-forms', email='mail@lucaswerkmeist
 app.config.from_file('config.yaml', load=toolforge.load_private_yaml, silent=True)
 app.config.from_prefixed_env('TOOL', loads=yaml.safe_load)
 if 'OAUTH' in app.config:
-    assert 'CLIENT_ID' in app.config['OAUTH'], 'OAuth configuration must be complete'
-    assert 'CLIENT_SECRET' in app.config['OAUTH'], 'OAuth configuration must be complete'
     assert app.secret_key is not None, 'If OAuth is configured, the SECRET_KEY must also be configured (a fixed random string)'
-    os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'  # prevent OAuthLib InsecureTransportError because it sees internal HTTP (or localhost) URLs
+    oauth = MWOAuth2FlaskMWApi(
+        host='https://www.wikidata.org',
+        user_agent=user_agent,
+        app=app,
+        check_access_token_before_request=True,
+    )
 else:
     print('No OAuth configuration found, assuming local development setup')
     if app.secret_key is None:
         app.secret_key = 'fake'
-
-def oauth2session(**kwargs: Any) -> requests_oauthlib.OAuth2Session:
-    session = requests_oauthlib.OAuth2Session(app.config['OAUTH']['CLIENT_ID'], **kwargs)
-    session.headers['User-Agent'] = user_agent
-    return session
 
 class BoundTemplate(MatchedTemplate):
     lexeme_id: str
@@ -85,15 +82,6 @@ class Duplicate(TypedDict):
     description: str
     forms_count: str
     senses_count: str
-
-@app.before_request
-def discard_old_access_token() -> None:
-    access_token = flask.session.get('oauth_access_token')
-    if access_token is None:
-        return
-    if 'key' in access_token and 'secret' in access_token:
-        # old-format, OAuth 1 access token (OAuth 2 is a dict of access_token, expires_at, expires_in, refresh_token, token_type instead)
-        del flask.session['oauth_access_token']
 
 @decorator.decorator
 def enableCORS(func, *args, **kwargs):
@@ -324,7 +312,7 @@ def process_template_advanced(template_name: str, advanced: bool = True) -> RRV:
     template = templates_without_redirects[template_name]
     form_data = flask.request.form  # type: werkzeug.datastructures.MultiDict
 
-    readonly = 'OAUTH' in app.config and 'oauth_access_token' not in flask.session
+    readonly = 'OAUTH' in app.config and not oauth.has_access_token()
 
     if (flask.request.method == 'POST' and
             form_data.get('_advanced_mode', 'None') == str(advanced) and
@@ -368,7 +356,7 @@ def process_template_bulk(template_name: str) -> RRV:
 
     template = templates_without_redirects[template_name]
 
-    readonly = 'OAUTH' in app.config and 'oauth_access_token' not in flask.session
+    readonly = 'OAUTH' in app.config and not oauth.has_access_token()
 
     if not can_use_bulk_mode() and not readonly:
         user_name = None
@@ -529,7 +517,7 @@ def process_template_edit(template_name: str, lexeme_id: str) -> RRV:
     template['lexeme_id'] = lexeme_id
     template['lexeme_revision'] = lexeme_revision
 
-    readonly = 'OAUTH' in app.config and 'oauth_access_token' not in flask.session
+    readonly = 'OAUTH' in app.config and not oauth.has_access_token()
 
     if (flask.request.method == 'POST' and
             '_edit_mode' in flask.request.form and
@@ -603,22 +591,14 @@ def if_no_such_template_redirect(template_name: str) -> Optional[RRV]:
     else:
         return None
 
-def oauth_token_updater(token: dict) -> None:
-    flask.session['oauth_access_token'] = token
-
 @app.route('/oauth/callback')
 def oauth_callback() -> RRV:
-    oauth_state = flask.session.pop('oauth_state', None)
-    if oauth_state is None:
+    try:
+        oauth.fetch_token()
+    except KeyError:
         return flask.render_template('error-oauth-callback.html',
-                                     already_logged_in='oauth_access_token' in flask.session,
+                                     already_logged_in=oauth.has_access_token(),
                                      query_string=flask.request.query_string.decode('utf8'))
-    access_token = oauth2session(state=oauth_state).fetch_token(
-        'https://www.wikidata.org/w/rest.php/oauth2/access_token',
-        client_secret=app.config['OAUTH']['CLIENT_SECRET'],
-        authorization_response=flask.request.url,
-    )
-    oauth_token_updater(access_token)
     flask.session.permanent = True
     flask.session.pop('_csrf_token', None)
     redirect_target = flask.session.pop('oauth_redirect_target', None)
@@ -627,8 +607,7 @@ def oauth_callback() -> RRV:
 @app.route('/login')
 def login() -> RRV:
     if 'OAUTH' in app.config:
-        redirect, oauth_state = oauth2session().authorization_url('https://www.wikidata.org/w/rest.php/oauth2/authorize')
-        flask.session['oauth_state'] = oauth_state
+        redirect = oauth.authorization_url()
         flask.session['oauth_redirect_target'] = flask.request.referrer
         return flask.redirect(redirect)
     else:
@@ -636,7 +615,10 @@ def login() -> RRV:
 
 @app.route('/logout')
 def logout() -> RRV:
-    flask.session.pop('oauth_access_token', None)
+    try:
+        oauth.del_access_token()
+    except KeyError:
+        pass
     flask.session.permanent = False
     return flask.redirect(flask.url_for('index'))
 
@@ -1120,6 +1102,8 @@ def submit_lexeme(template: Template, lexeme_data: Lexeme, summary: str, bot: bo
     else:
         host = 'https://www.wikidata.org'
     session = authenticated_session(host)
+    if session is None:
+        flask.abort(403)  # this should never happen, submit_lexeme() should only be called if user is logged in
 
     token = session.get(action='query', meta='tokens')['query']['tokens']['csrftoken']
     selector = {'id': lexeme_data['id']} if 'id' in lexeme_data else {'new': 'lexeme'}
@@ -1234,20 +1218,8 @@ def wikifunctions_api(template_name: str, lemma: str, function_name: str) -> RRV
 def health() -> RRV:
     return ''
 
-def authenticated_session(host: str) -> mwapi.Session:
-    return mwapi.Session(
-        host=host,
-        user_agent=user_agent,
-        session=oauth2session(
-            token=flask.session['oauth_access_token'],
-            auto_refresh_url='https://www.wikidata.org/w/rest.php/oauth2/access_token',
-            auto_refresh_kwargs={
-                'client_id': app.config['OAUTH']['CLIENT_ID'],
-                'client_secret': app.config['OAUTH']['CLIENT_SECRET'],
-            },
-            token_updater=oauth_token_updater,
-        ),
-    )
+def authenticated_session(host: str) -> Optional[mwapi.Session]:
+    return oauth.mwapi_session(host=host)
 
 def anonymous_session(host: str) -> mwapi.Session:
     return mwapi.Session(
@@ -1262,9 +1234,11 @@ def get_userinfo() -> Optional[dict]:
     return flask.g.userinfo
 
 def query_userinfo() -> Optional[dict]:
-    if 'oauth_access_token' not in flask.session:
+    if 'OAUTH' not in app.config:
         return None
     session = authenticated_session('https://www.wikidata.org')
+    if session is None:
+        return None
     userinfo = session.get(action='query',
                            meta='userinfo',
                            uiprop=['groups', 'options'],
