@@ -5,7 +5,8 @@
 			"Henrydat",
 			"Minh Nguyen",
 			"Pisceskaze",
-			"SongNgu.xyz"
+			"SongNgu.xyz",
+			"Trần Xuân"
 		]
 	},
 	"create": "Tạo",
@@ -32,7 +33,9 @@
 	"ambiguous-template": "Bản mẫu $1 không còn tồn tại; nó đã được thay thế bằng các bản mẫu sau:",
 	"settings-save": "Lưu",
 	"documentation": "Tài liệu hướng dẫn",
+	"source-code": "Mã nguồn",
 	"login": "Đăng nhập",
 	"settings-link": "Cài đặt",
+	"settings-heading": "Tùy chọn",
 	"requires-javascript": "Tính năng này cần JavaScript."
 }
