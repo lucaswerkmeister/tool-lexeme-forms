@@ -10,13 +10,13 @@ class MWOAuth2:
             host: str,
             client_id: str,
             client_secret: str,
-            pop_oauth_state: Callable[[], dict],
-            set_oauth_state: Callable[[dict], None],
-            get_access_token: Callable[[], Optional[dict]],
-            set_access_token: Callable[[dict], None],
+            pop_oauth_state: Callable[[], dict[str, Any]],
+            set_oauth_state: Callable[[dict[str, Any]], None],
+            get_access_token: Callable[[], Optional[dict[str, Any]]],
+            set_access_token: Callable[[dict[str, Any]], None],
             del_access_token: Callable[[], None],
             user_agent: str,
-            api_path='/w/api.php',
+            api_path: str = '/w/api.php',
     ):
         self.host = host
         self.client_id = client_id
@@ -115,16 +115,16 @@ try:
 except ModuleNotFoundError:
     pass
 else:
-    def _pop_oauth_state_flask_session() -> dict:
-        return flask.session.pop('oauth_state')
+    def _pop_oauth_state_flask_session() -> dict[str, Any]:
+        return cast(dict[str, Any], flask.session.pop('oauth_state'))
 
-    def _set_oauth_state_flask_session(oauth_state: dict) -> None:
+    def _set_oauth_state_flask_session(oauth_state: dict[str, Any]) -> None:
         flask.session['oauth_state'] = oauth_state
 
-    def _get_access_token_flask_session() -> Optional[dict]:
+    def _get_access_token_flask_session() -> Optional[dict[str, Any]]:
         return flask.session.get('oauth_access_token')
 
-    def _set_access_token_flask_session(access_token: dict) -> None:
+    def _set_access_token_flask_session(access_token: dict[str, Any]) -> None:
         flask.session['oauth_access_token'] = access_token
 
     def _del_access_token_flask_session() -> None:
@@ -156,12 +156,12 @@ else:
                 check_access_token_before_request: bool = False,
                 client_id: Optional[str] = None,
                 client_secret: Optional[str] = None,
-                pop_oauth_state: Optional[Callable[[], dict]] = None,
-                set_oauth_state: Optional[Callable[[dict], None]] = None,
-                get_access_token: Optional[Callable[[], Optional[dict]]] = None,
-                set_access_token: Optional[Callable[[dict], None]] = None,
+                pop_oauth_state: Optional[Callable[[], dict[str, Any]]] = None,
+                set_oauth_state: Optional[Callable[[dict[str, Any]], None]] = None,
+                get_access_token: Optional[Callable[[], Optional[dict[str, Any]]]] = None,
+                set_access_token: Optional[Callable[[dict[str, Any]], None]] = None,
                 del_access_token: Optional[Callable[[], None]] = None,
-                api_path='/w/api.php',
+                api_path: str = '/w/api.php',
         ):
             super().__init__(
                 host=host,
