@@ -65,6 +65,8 @@ mwapi==0.6.1
     # via
     #   -r requirements.in
     #   toolforge-i18n
+mwoauth2 @ git+https://gitlab.wikimedia.org/toolforge-repos/python-mwoauth2@a5bcb807cf
+    # via -r requirements.in
 oauthlib==3.3.1
     # via requests-oauthlib
 packaging==26.2
@@ -84,7 +86,7 @@ requests==2.34.2
     #   toolforge
     #   toolforge-i18n
 requests-oauthlib==2.0.0
-    # via -r requirements.in
+    # via mwoauth2
 soupsieve==2.8.3
     # via beautifulsoup4
 toolforge==6.1.0

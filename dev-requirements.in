@@ -7,4 +7,3 @@ types-beautifulsoup4
 types-decorator
 types-gunicorn
 types-PyYAML
-types-requests-oauthlib
