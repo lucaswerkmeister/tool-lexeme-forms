@@ -65,7 +65,7 @@ mwapi==0.6.1
     # via
     #   -r requirements.in
     #   toolforge-i18n
-mwoauth2 @ git+https://gitlab.wikimedia.org/toolforge-repos/python-mwoauth2@a5bcb807cf
+mwoauth2 @ git+https://gitlab.wikimedia.org/toolforge-repos/python-mwoauth2.git@9ae0a5ed55
     # via -r requirements.in
 oauthlib==3.3.1
     # via requests-oauthlib

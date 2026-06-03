@@ -616,7 +616,7 @@ def login() -> RRV:
 @app.route('/logout')
 def logout() -> RRV:
     try:
-        oauth.del_access_token()
+        oauth.pop_access_token()
     except KeyError:
         pass
     flask.session.permanent = False
