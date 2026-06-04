@@ -44,7 +44,7 @@
 	"title-advanced": "$1 (geavanceerd)",
 	"title-bulk": "$1 (bulk)",
 	"title-edit": "$1 (bewerken)",
-	"login-hint": "U moet zich [$1 aanmelden] om wijzigingen te kunnen maken met deze tool.",
+	"login-hint": "U moet zich [$1 aanmelden] om wijzigingen te kunnen maken met dit hulpmiddel.",
 	"ambiguous-template": "Het sjabloon $1 bestaat niet meer; het is vervangen door de volgende sjablonen:",
 	"settings-label-interface-language-code": "Taal van de gebruikersinterface",
 	"settings-label-use-wikifunctions": "Gebruik Wikifuncties om formuliersuggesties te genereren",
