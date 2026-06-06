@@ -12,7 +12,7 @@ def _identity(s: str) -> str:
 
 _variables = {
     'duplicates-warning': ['num_lexemes'],
-    'duplicates-instructions': ['num_lexemes'],
+    'duplicates-instructions': ['num_lexemes', 'user_name'],
     'description-with-forms-and-senses': ['description', 'num_forms', 'num_senses'],
     'bulk-not-allowed': ['user_name'],
     'bulk-first-field-not-lexeme-id': ['num_forms', 'num_fields', 'first_field', 'line_number'],

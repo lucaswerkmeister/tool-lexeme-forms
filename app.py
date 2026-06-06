@@ -151,6 +151,10 @@ def render_duplicates(
         form_representations: list[str] = [],
         target_hash: Optional[str] = None,
 ) -> RRV:
+    user_name = None
+    userinfo = get_userinfo()
+    if userinfo is not None:
+        user_name = userinfo['name']
     return flask.render_template(
         'duplicates.html',
         duplicates=duplicates,
@@ -158,6 +162,7 @@ def render_duplicates(
         template_name=template_name,
         form_representations=form_representations,
         target_hash=target_hash,
+        user_name=user_name,
     )
 
 @app.template_filter()

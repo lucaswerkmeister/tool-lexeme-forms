@@ -17,7 +17,7 @@
     {{ message( 'duplicates-create' ) }}
   </a>
   {% else %}
-  {{ message( 'duplicates-instructions', num_lexemes=duplicates | length ) }}
+  {{ message( 'duplicates-instructions', num_lexemes=duplicates | length, user_name=user_name ) }}
   {% endif %}
 </div>
 {% endif %}
