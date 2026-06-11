@@ -8,13 +8,14 @@
 			"Pyscowicz",
 			"Samoasambia",
 			"Shinnin",
+			"Wikipeedikko",
 			"Yupik"
 		]
 	},
 	"create": "Julkaise",
 	"csrf-warning": "Pahoittelut, pyynnön käsittely ei onnistunut (<abbr title=\"Cross-site request forgery\">CSRF</abbr> suojaus epäonnistui). Yritä lähettää lomake uudelleen.",
 	"duplicates-warning": "{{PLURAL:$1|Seuraavalla lekseemillä|Seuraavilla lekseemeillä}} on sama lemma ja kieli kuin sillä, jota yrität luoda:",
-	"duplicates-instructions": "Jos olet varma, että {{PLURAL:$1|se on eri lekseemi|ne ovat eri lekseemeitä}}, laita rasti lomakkeen lopussa olevaan laatikkoon.",
+	"duplicates-instructions": "Jos {{GENDER:$2|olet}} varma, että {{PLURAL:$1|kyseessä on eri lekseemi|kyseessä ovat eri lekseemit}}, merkitse lomakkeen lopussa oleva ruutu.",
 	"duplicates-create": "Luo uusi lekseemi joka tapauksessa.",
 	"no-duplicate": "Tämä ei ole kaksoiskappale olemassa olevasta lekseemistä.",
 	"form-optional": "&#32;(valinnainen)",

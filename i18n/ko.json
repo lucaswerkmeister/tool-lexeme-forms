@@ -10,7 +10,7 @@
 	"create": "만들기",
 	"csrf-warning": "죄송합니다. 이 요청을 처리할 수 없습니다( <abbr title=\"Cross-site request forgery\">CSRF</abbr> 보호 실패). 양식을 다시 제출해 보세요.",
 	"duplicates-warning": "다음은 생성하려는 것과 동일한 어휘소 및 언어 코드를 가진 기존 {{PLURAL:$1|어휘소}}입니다:",
-	"duplicates-instructions": "{{PLURAL:$1|이것이|그것들이}} 다르다고 확신한다면 형태 하단의 확인란을 체크하세요.",
+	"duplicates-instructions": "{{GENDER:$2|당신이}} {{PLURAL:$1|이것이|이것들이}} 다르다고 확신한다면 형태 하단의 확인란을 체크하세요.",
 	"duplicates-create": "아무튼 새 어휘소를 만듭니다.",
 	"no-duplicate": "기존 어휘소와 중복되지 않습니다.",
 	"form-optional": "&#32;(선택 사항)",

@@ -3,13 +3,14 @@
 		"authors": [
 			"Lucas Werkmeister",
 			"Oujon",
+			"Wizzard",
 			"Yardom78"
 		]
 	},
 	"create": "Vytvoriť",
 	"csrf-warning": "Je nám ľúto, ale túto požiadavku nebolo možné spracovať ( <abbr title=\"Cross-site žiadosť o falšovanie\">ochrana CSRF</abbr> zlyhala). Skúste formulár odoslať znova.",
 	"duplicates-warning": "Nasledujúce existujúce {{PLURAL:$1| lexéma má | lexémy majú}} rovnakú lemmu a jazykový kód ako ten, ktorý sa pokúšate vytvoriť:",
-	"duplicates-instructions": "Ak ste si istí, že {{PLURAL:$1| je to | sú}} odlišné, začiarknite políčko v dolnej časti formulára.",
+	"duplicates-instructions": "Ak {{GENDER:$2|ste si istí}}, že {{PLURAL:$1|to je|sú}} odlišné, začiarknite políčko v dolnej časti formulára.",
 	"duplicates-create": "Vytvoriť novú lexému aj tak.",
 	"no-duplicate": "Nejde o duplikát existujúcej lexémy.",
 	"form-optional": "&#32;(voliteľné)",
@@ -42,5 +43,18 @@
 	"login-hint": "Pred vykonaním zmien pomocou tohto nástroja sa musíte [$1 prihlásiť].",
 	"ambiguous-template": "Šablóna $1 už neexistuje; bola nahradená nasledovnou šablónou:",
 	"settings-label-interface-language-code": "Jazyk používateľského rozhrania",
-	"settings-save": "Uložiť"
+	"settings-label-use-wikifunctions": "Použiť Wikifunctions na generovanie návrhov tvarov",
+	"settings-save": "Uložiť",
+	"tool-name": "Wikidata Lexeme Forms",
+	"skip-to-main-content": "Preskočiť na hlavný obsah",
+	"documentation": "Dokumentácia",
+	"toolforge": "Wikimedia Toolforge",
+	"source-code": "Zdrojový kód",
+	"login": "Prihlásiť sa",
+	"settings-link": "Nastavenia",
+	"settings-heading": "Nastavenia",
+	"logged-in": "{{GENDER:$2|Prihlásený|Prihlásená|Prihlásený}} ako $1.",
+	"requires-javascript": "Táto funkcia vyžaduje JavaScript.",
+	"wikifunctions-generating": "generujú sa tvary…",
+	"wikifunctions-error": "pri generovaní tvarov sa vyskytla chyba"
 }

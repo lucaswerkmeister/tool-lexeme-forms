@@ -8,7 +8,7 @@
 	"create": "Fâre",
 	"csrf-warning": "Dèsolâ, nos ens pas possu trètar cela requéta (la protèccion anti-<abbr title=\"Cross-site request forgery\">CSRF</abbr> at pas reussi). Se vos plét, tâchiéd de tornar mandar lo formulèro.",
 	"duplicates-warning": "{{PLURAL:$1|Ceti lèxèmo qu’ègziste at|Cetos lèxèmos qu’ègzistont ant}} ja un lèmo et pués un code de lengoua pariérs a celos que vos tâchiéd de fâre :",
-	"duplicates-instructions": "Se vos éte de sûr {{PLURAL:$1|qu’est difèrent|que sont difèrents}}, pouentâd la câsa que sè trôve d’avâl lo formulèro.",
+	"duplicates-instructions": "Se vos éte de {{GENDER:$2|sûr|sûra}} {{PLURAL:$1|qu’est difèrent|que sont difèrents}}, pouentâd la câsa que sè trôve d’avâl lo formulèro.",
 	"duplicates-create": "Fâre un lèxèmo novél tot de mémo.",
 	"no-duplicate": "O est pas un doblo d’un lèxèmo ègzistent.",
 	"form-optional": "&#32;(u chouèx)",
