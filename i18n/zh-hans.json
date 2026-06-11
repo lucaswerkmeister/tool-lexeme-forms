@@ -18,7 +18,7 @@
 	"create": "创建",
 	"csrf-warning": "抱歉，我们无法处理此请求（<abbr title=\"Cross-site request forgery\">CSRF</abbr>保护失败）。请尝试再次提交表单。",
 	"duplicates-warning": "以下现存的{{PLURAL:$1|词位}}与您现在创建的词位拥有相同的词目与语言代码：",
-	"duplicates-instructions": "如果您确定{{PLURAL:$1|这是|它们}}不同，请选中表格底部的复选框。",
+	"duplicates-instructions": "如果{{GENDER:$2|您}}确定{{PLURAL:$1|这是|它们}}不同，请选中表格底部的复选框。",
 	"duplicates-create": "无论怎么样，创造一个新的词位。",
 	"no-duplicate": "这不是现有词位的重复。",
 	"form-optional": "（可选）",
