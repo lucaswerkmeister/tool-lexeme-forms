@@ -1186,8 +1186,7 @@ def wikifunctions_api(template_name: str, lemma: str, function_name: str) -> RRV
         return '"must be a real template, not a redirect"\n', 400
     result: list[Optional[str]] = []
     result_cache: dict[str, Optional[str]] = {}  # map wikifunction ID to result of calling it with lemma
-    # authenticated_session() would require a new grant (that doesn’t even exist yet, T349966) on the OAuth client
-    session = anonymous_session('https://www.wikifunctions.org')
+    session = authenticated_session('https://www.wikifunctions.org')
     for form in template['forms']:
         wikifunction = form.get('wikifunctions', {}).get(function_name)
         if not wikifunction:
