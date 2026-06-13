@@ -1187,6 +1187,8 @@ def wikifunctions_api(template_name: str, lemma: str, function_name: str) -> RRV
     result: list[Optional[str]] = []
     result_cache: dict[str, Optional[str]] = {}  # map wikifunction ID to result of calling it with lemma
     session = authenticated_session('https://www.wikifunctions.org')
+    if session is None:
+        return '"must be logged in"\n', 403
     for form in template['forms']:
         wikifunction = form.get('wikifunctions', {}).get(function_name)
         if not wikifunction:
