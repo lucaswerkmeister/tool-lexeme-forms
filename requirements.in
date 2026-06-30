@@ -5,7 +5,7 @@ gunicorn
 jinja2 >= 3.0.0
 MarkupSafe
 mwapi >= 0.6.0
-mwoauth2 @ git+https://gitlab.wikimedia.org/toolforge-repos/python-mwoauth2.git@9ae0a5ed55
+mwoauth2
 PyYAML
 toolforge >= 6.1
 toolforge_i18n[Flask] >= 0.1.0
