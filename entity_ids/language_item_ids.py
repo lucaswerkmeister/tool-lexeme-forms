@@ -41,7 +41,7 @@ Moroccan_Arabic = 'Q56426'
 Punjabi = 'Q58635'
 Hindko = 'Q382273'
 Standard_Mandarin = 'Q727694'
-Manbhumi = 'Q6747180'
+Manbhumi = 'Q2758874'
 
 def _main():
     for var, val in globals().items():

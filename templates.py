@@ -280,7 +280,7 @@ language_Standard_Mandarin: Language = {
 }
 language_Manbhumi: Language = {
     'language_item_id': Manbhumi,
-    'language_code': 'bn-x-Q6747180',
+    'language_code': 'bn-x-Q2758874',
 }
 language_Maltese: Language = {
     'language_item_id': Maltese,

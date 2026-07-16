@@ -30,7 +30,7 @@ def lang_lex2int(code: str) -> str:
 
     return {
         # Manbhumi reuses the standard Bengali messages
-        'bn-x-Q6747180': 'bn',
+        'bn-x-Q2758874': 'bn',
     }.get(code, code)
 
 
