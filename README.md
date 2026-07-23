@@ -46,7 +46,6 @@ The config file is more convenient for local development;
 the environment variables are used on Toolforge:
 list them with `toolforge envvars list`.
 Nested dicts are specified with envvar names where `__` separates the key components,
-and the tool lowercases keys in nested dicts,
 so that e.g. the following are equivalent:
 
 ```sh
