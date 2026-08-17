@@ -39,5 +39,8 @@
 	"login": "Kirjaudu sisään",
 	"settings-link": "Asetukset",
 	"settings-heading": "Asetukset",
-	"requires-javascript": "Tämä ominaisuus vaatii JavaScriptin olevan käytössä."
+	"logged-in": "{{GENDER:$2|Kirjautunut sisään}} nimellä $1.",
+	"requires-javascript": "Tämä ominaisuus vaatii JavaScriptin olevan käytössä.",
+	"wikifunctions-generating": "luodaan muotoja…",
+	"wikifunctions-error": "muotojen luonnissa tapahtui virhe"
 }

@@ -3,6 +3,7 @@
 		"authors": [
 			"Hedda",
 			"Joseph",
+			"Leo",
 			"Lucas Werkmeister",
 			"MrSchipunov",
 			"SaldırganSincap"
@@ -11,7 +12,7 @@
 	"create": "Oluştur",
 	"csrf-warning": "Üzgünüz, bu isteği işleyemedik (<abbr title=\"Cross-site request forgery\">CSRF</abbr> koruması başarısız oldu). Lütfen formu tekrar göndermeyi deneyin.",
 	"duplicates-warning": "Aşağıdaki {{PLURAL:$1|sözcük birimi|sözcük birimleri}} oluşturmaya çalıştığınızla aynı başsözcük ve dil koduna sahip:",
-	"duplicates-instructions": "Eğer farklı {{PLURAL:$1|olduğuna|olduklarına}} eminseniz formun altındaki kutucuğu işaretleyin.",
+	"duplicates-instructions": "Eğer {{PLURAL:$1|farklı olduğundan|farklı olduklarından}} {{GENDER:$2|eminseniz}}, formun altındaki kutuyu işaretleyin.",
 	"duplicates-create": "Yine de yeni bir sözcük birimi oluşturun.",
 	"no-duplicate": "Bu, mevcut bir sözcük biriminin kopyası değil.",
 	"form-optional": "&#32;(isteğe bağlı)",

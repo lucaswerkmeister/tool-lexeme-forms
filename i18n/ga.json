@@ -7,7 +7,7 @@
 	"create": "Cruthaigh",
 	"csrf-warning": "Ár leithscéal, ní raibh muid in ann an t-iarratas seo a phróiseáil (theip ar chosaint <abbr title=\"Cross-site request forgery\">CSRF</abbr>). Déan iarracht an fhoirm a chur isteach arís.",
 	"duplicates-warning": "Tá an lema agus an cód teanga céanna ag an {{PLURAL:$1|leicséim seo a leanas atá ann cheana|leicséimeanna seo a leanas atá ann cheana}} agus atá ag an gceann atá tú ag iarraidh a chruthú:",
-	"duplicates-instructions": "Má tá tú cinnte go bhfuil {{PLURAL:$1|sé difriúil|siad difriúil}}, cuir tic sa bhosca ag bun na foirme.",
+	"duplicates-instructions": "Más {{GENDER:$2|tá}} cinnte go bhfuil {{PLURAL:$1|sé|difriúil}}, seiceáil an bosca ag bun na foirme.",
 	"duplicates-create": "Cruthaigh leicséim nua ar aon nós.",
 	"no-duplicate": "Ní dúblach de leicséim atá ann cheana é seo.",
 	"form-optional": "&#32;(roghnach)",

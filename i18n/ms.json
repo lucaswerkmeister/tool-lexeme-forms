@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Hakimi97",
 			"Lucas Werkmeister",
 			"Tofeiku"
 		]
@@ -8,7 +9,7 @@
 	"create": "Cipta",
 	"csrf-warning": "Maaf, kami tidak dapat memproseskan permohonan ini (<abbr title=\"Cross-site request forgery\">CSRF</abbr> perlindungan gagal). Sila cuba menyerahkan borang lagi.",
 	"duplicates-warning": "The following existing {{PLURAL:$1|Leksem}} yang ada berikut mempunyai lema dan kod bahasa yang sama seperti yang anda cuba cipta:",
-	"duplicates-instructions": "Jika anda pasti {{PLURAL:$1|ia}} berbeza, tanda kotak di bawah borang.",
+	"duplicates-instructions": "Jika {{GENDER:$2|anda}} memang pasti {{PLURAL:$1|ia|semua itu}} berbeza, tanda kotak di bawah borang.",
 	"duplicates-create": "Cipta leksem baru sahaja.",
 	"no-duplicate": "Ini bukan pendua leksem yang ada.",
 	"form-optional": "&#32;(pilihan)",

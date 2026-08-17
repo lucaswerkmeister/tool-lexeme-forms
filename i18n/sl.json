@@ -3,13 +3,14 @@
 		"authors": [
 			"Eleassar",
 			"GeographieMan",
+			"JanezPavelZebovec",
 			"Lucas Werkmeister"
 		]
 	},
 	"create": "Ustvari",
 	"csrf-warning": "Tega zahtevka žal ni bilo mogoče obdelati (neuspešna zaščita <abbr title=\"Cross-site request forgery\">CSRF</abbr>). Prosimo, poskusite obrazec poslati znova.",
 	"duplicates-warning": "{{PLURAL:$1|Naslednji obstoječi leksem ima|Naslednja obstoječa leksema imata|Naslednji obstoječi leksemi imajo}} enako lemo in oznako jezika kot tisti, ki ga poskušate ustvariti:",
-	"duplicates-instructions": "Če ste prepričani, da se {{PLURAL:$1|razlikuje|razlikujeta|razlikujejo}}, obkljukajte polje na koncu oblike.",
+	"duplicates-instructions": "Če {{GENDER:$2|ste}} prepričani, da {{PLURAL:$1|je različen|sta različna|so različni}}, obkljukajte polje na dnu obrazca.",
 	"duplicates-create": "Vseeno ustvari nov leksem.",
 	"no-duplicate": "To ni podvojitev obstoječega leksema.",
 	"form-optional": "&#32;(izbirno)",

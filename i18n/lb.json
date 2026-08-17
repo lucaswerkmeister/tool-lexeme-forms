@@ -14,6 +14,7 @@
 	"lexeme-id": "Lexeem-ID",
 	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=keng Form|eng Form|$2 Formen}} {{PLURAL:$3|0=a keng Bedeitung|an eng Bedeitung|a(n) $3 Bedeitungen}}",
 	"edit-link": "änneren",
+	"edit-form-list-item": "$1, $2, {{PLURAL:$3|0=keng Ausso|eng Ausso|$3 Aussoen}}",
 	"no-grammatical-features": "keng grammatesch Funktiounen",
 	"title-create": "$1 (uleeën)",
 	"title-advanced": "$1 (erweidert)",
@@ -22,8 +23,9 @@
 	"login-hint": "Dir musst Iech [$1 aloggen], ier Dir mat dësem Geschier Ännerunge maache kënnt.",
 	"ambiguous-template": "D'Schabloun $1 gëtt et net méi; se gouf duerch déi follgend Schablounen ersat:",
 	"settings-label-interface-language-code": "Sprooch vun der Benotzeruewerfläch",
+	"settings-label-use-wikifunctions": "Wikifunctions benotzer fir Formvirschléi ze generéieren",
 	"settings-save": "Späicheren",
-	"tool-name": "Wikidata Lexeme Forms",
+	"tool-name": "Wikidata-Lexeem-Formulairen",
 	"skip-to-main-content": "Op den Haaptinhalt wiesselen",
 	"documentation": "Dokumentatioun",
 	"toolforge": "Wikimedia Toolforge",
@@ -32,5 +34,7 @@
 	"settings-link": "Astellungen",
 	"settings-heading": "Astellungen",
 	"logged-in": "{{GENDER:$2|Ageloggt}} als $1.",
-	"requires-javascript": "Dës Funktioun brauch JavaScript."
+	"requires-javascript": "Dës Funktioun brauch JavaScript.",
+	"wikifunctions-generating": "Forme gi generéiert...",
+	"wikifunctions-error": "beim Generéiere vun de Formen ass e Feeler geschitt"
 }
