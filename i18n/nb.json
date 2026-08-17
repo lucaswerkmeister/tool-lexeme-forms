@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Danmichaelo",
+			"EdoAug",
 			"Jon Harald Søby",
 			"Lucas Werkmeister"
 		]
@@ -9,7 +10,7 @@
 	"create": "Opprett",
 	"csrf-warning": "Forespørselen din ble ikke behandlet på grunn av et <abbr title=\"Cross-site request forgery\">CSRF</abbr>-problem. Prøv gjerne om igjen.",
 	"duplicates-warning": "Følgende eksisterende {{PLURAL:$1|leksem|leksemer}} har samme lemma og språkkode som de du holder på å opprette:",
-	"duplicates-instructions": "Hvis du er sikker på at {{PLURAL:$1|de}} er ulike kan du hake av i avkrysningsboksen i skjemaet.",
+	"duplicates-instructions": "Hvis {{GENDER:$2|du}} er sikker på at {{PLURAL:$1|de}} er ulike, kan du hake av i avkrysningsboksen i bunnen av skjemaet.",
 	"duplicates-create": "Opprett et nytt leksem likevel.",
 	"no-duplicate": "Dette er ikke et duplikat av et leksem som finnes fra før.",
 	"form-optional": "&#32;(valgfritt)",
