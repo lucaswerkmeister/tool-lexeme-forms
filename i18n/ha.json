@@ -1,0 +1,36 @@
+{
+	"@metadata": {
+		"authors": [
+			"Lucas Werkmeister",
+			"M Bash Ne"
+		]
+	},
+	"create": "Ƙirƙira",
+	"duplicates-warning": "Waɗannan lambobin {{PLURAL:$1|lexeme suna da|lexeme suna da}} iri ɗaya da lambar harshe kamar wanda kake ƙoƙarin ƙirƙira:",
+	"duplicates-instructions": "Idan {{GENDER:$2|kun}} tabbata cewa {{PLURAL:$1|ya bambanta|sun bambanta}}, duba akwatin da ke ƙasan fom ɗin.",
+	"duplicates-create": "Ƙirƙiri sabon lexeme ko ta yaya.",
+	"no-duplicate": "Wannan ba kwafin lexeme bane da ke akwai.",
+	"form-optional": "(zaɓi ne)",
+	"advanced": "Na Ci Gaba",
+	"advanced-general": "Kana cikin yanayin \"ci gaba\".",
+	"advanced-lexeme-id": "Za ka iya shigar da ID na lexeme don ƙara fom zuwa lexeme da ke akwai maimakon ƙirƙirar sabo. A bar duk wani fom da ya riga ya kasance a kan lexeme babu komai, in ba haka ba za a kwafi su.!",
+	"advanced-partial-forms": "Za ka iya barin wasu fom ɗin babu komai don kada a ƙara su. Tabbatar ba ka yi kuskuren barin kowace fom ba.",
+	"lexeme-id": "ID na Lexeme",
+	"advanced-partial-forms-hint": "Don ƙirƙirar lexemes waɗanda wasu fom ɗin suka ɓace, canza zuwa yanayin ci gaba.",
+	"generated-via": "an samar ta hanyar",
+	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=babu fom|fom ɗaya|fom $2}} da kuma {{PLURAL:$3|0=babu fom|fom ɗaya|fom $3}}",
+	"bulk-link": "yanayin girma",
+	"bulk-format-help": "taimakon tsari",
+	"edit-link": "Gyara",
+	"settings-save": "Ajiye",
+	"skip-to-main-content": "Tsallake zuwa babban shiri",
+	"documentation": "Takardu",
+	"toolforge": "Kayan aikin Wikimedia",
+	"login": "Shiga",
+	"settings-link": "Saituna",
+	"settings-heading": "Saituna",
+	"logged-in": "{{GENDER:$2|An shiga}} a matsayin $1",
+	"requires-javascript": "Wannan fasalin yana buƙatar JavaScript.",
+	"wikifunctions-generating": "samar da fom",
+	"wikifunctions-error": "an sami kuskure yayin samar da fom ɗin"
+}
