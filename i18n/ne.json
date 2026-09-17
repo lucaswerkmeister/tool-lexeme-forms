@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nirajan pant",
+			"पर्वत सुबेदी",
+			"बडा काजी"
+		]
+	},
+	"create": "सृजना गर्नुहोस्",
+	"form-optional": "&#32;(ऐच्छिक)",
+	"advanced": "उन्नत",
+	"edit-link": "सम्पादन",
+	"title-create": "$1 (सिर्जना गर्नुहोस्)",
+	"title-edit": "$1 (सम्पादन)",
+	"settings-label-interface-language-code": "प्रयोगकर्ता इन्टरफेस भाषा",
+	"tool-name": "विकिडाटा लेक्सीम फारामहरू",
+	"documentation": "दस्तावेज",
+	"toolforge": "विकिमीडिया टूलफोर्ज",
+	"source-code": "स्रोत कोड",
+	"login": "लग इन",
+	"settings-link": "सेटिङहरू",
+	"settings-heading": "सेटिङहरू",
+	"wikifunctions-generating": "फाराम बनाउँदै..."
+}
