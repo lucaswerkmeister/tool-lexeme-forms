@@ -5,8 +5,13 @@ default:
       paths:
         - .cache/pip
 
+include:
+  - project: "repos/cloud/cicd/gitlab-ci"
+    file: "toolforge-cd/deploy-to-toolforge.yaml"
+
 stages:
   - test
+  - deploy
 
 variables:
   PYTHONDONTWRITEBYTECODE: "1"

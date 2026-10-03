@@ -6,37 +6,45 @@ such as the declensions of a noun or the conjugations of a verb.
 ## Toolforge setup
 
 On Wikimedia Toolforge, this tool runs under the `lexeme-forms` tool name,
-from a container built using the [Toolforge Build Service](https://wikitech.wikimedia.org/wiki/Help:Toolforge/Building_container_images).
+using the [Toolforge Components Service](https://wikitech.wikimedia.org/wiki/Help:Toolforge/Deploy_your_tool) to coordinate
+building a container with the [Toolforge Build Service](https://wikitech.wikimedia.org/wiki/Help:Toolforge/Build_Service)
+and then deploying that for the webservice.
+The components configuration is in the `toolforge.yaml` file.
 
-### Image build
-
-To build a new version of the image,
+To start a new deployment,
 run the following command on Toolforge after becoming the tool account:
 
 ```sh
-toolforge build start --use-latest-versions https://gitlab.wikimedia.org/toolforge-repos/lexeme-forms
+toolforge components deployment create
 ```
 
-The image will contain all the dependencies listed in `requirements.txt`,
-as well as the commands specified in the `Procfile`.
+This should automatically kick off an image build and restart the webservice at the end.
 
-### Webservice
+### Details and troubleshooting
 
-The web frontend of the tool runs as a webservice using the `buildpack` type.
-The web service runs the first command in the `Procfile` (`web`),
-which runs the Flask WSGI app using gunicorn.
+To inspect the overall deployment status, run:
 
-```
-webservice start
+```sh
+toolforge components deployment show
 ```
 
-Or, if the `~/service.template` file went missing:
+To debug the image build step, it may be useful to trigger an image build explicitly –
+you can add `--ref=foobar` to build from the `foobar` branch instead of the `main` branch:
 
-```
-webservice --mount=none buildservice start
+```sh
+toolforge build start https://gitlab.wikimedia.org/toolforge-repos/lexeme-forms
 ```
 
-If it’s acting up, try the same command with `restart` instead of `start`.
+The web frontent is a Flask WSGI app using gunicorn,
+and runs as the `lexeme-forms` job,
+which you may inspect with commands like these:
+
+```sh
+toolforge jobs show lexeme-forms
+toolforge jobs logs lexeme-forms
+kubectl get deployment lexeme-forms
+kubectl exec -it deployment/lexeme-forms -- bash
+```
 
 ### Configuration
 
@@ -61,13 +69,8 @@ For the available configuration variables, see the `config.yaml.example` file.
 
 ### Update
 
-To update the tool, build a new version of the image as described above,
-then restart the webservice:
-
-```sh
-toolforge build start --use-latest-versions https://gitlab.wikimedia.org/toolforge-repos/lexeme-forms
-webservice restart
-```
+The tool should automatically be updated on every push to the `main` branch.
+To trigger a manual update, run `toolforge components deployment create` as described above.
 
 ## Local development setup
 

@@ -1,1 +1,1 @@
-web: gunicorn --forwarded-allow-ips=192.168.0.0/16
+web: gunicorn --forwarded-allow-ips=192.168.0.0/16 --bind 0.0.0.0:8000

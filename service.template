@@ -1,5 +1,0 @@
-# Toolforge webservice template
-# Provide default arguments for `webservice start` commands for this tool.
-type: buildservice
-health-check-path: /healthz
-mount: none
