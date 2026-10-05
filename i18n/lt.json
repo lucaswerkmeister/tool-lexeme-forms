@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Hugo.arg",
+			"Mindaur",
 			"Nokeoo"
 		]
 	},
@@ -21,7 +22,7 @@
 	"ambiguous-template": "Šablonas $1 nebeegzistuoja; jis buvo pakeistas šiais šablonais:",
 	"settings-label-interface-language-code": "Naudotojo sąsajos kalba",
 	"settings-save": "Išsaugoti",
-	"source-code": "Išeities kodas",
+	"source-code": "Pirminis programos tekstas",
 	"login": "Prisijungti",
 	"settings-link": "Nustatymai"
 }
