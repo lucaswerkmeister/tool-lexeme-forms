@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Blackisnewyellow",
-			"Ерней"
+			"Ерней",
+			"Ильгиз"
 		]
 	},
 	"create": "Төзү",
@@ -37,5 +38,19 @@
 	"title-bulk": "$1 (массакүләм)",
 	"title-edit": "$1 (үзгәртү)",
 	"login-hint": "Бу корал ярдәмендә үзгәртүләр кертә алу алдыннан сезгә баштан [$1 керергә] кирәк.",
-	"ambiguous-template": "$1 калыпы бүтән юк; аны түбәндәге калыплар алыштырды:"
+	"ambiguous-template": "$1 калыпы бүтән юк; аны түбәндәге калыплар алыштырды:",
+	"settings-label-interface-language-code": "Кулланучы интерфейсының теле",
+	"settings-save": "Саклау",
+	"tool-name": "Викимәгълүматлар лексемалары формалары",
+	"skip-to-main-content": "Төп эчтәлеккә күч",
+	"documentation": "Документация",
+	"toolforge": "Wikimedia Toolforge",
+	"source-code": "Башлангыч код",
+	"login": "Керү",
+	"settings-link": "Көйләнмәләр",
+	"settings-heading": "Көйләнмәләр",
+	"logged-in": "$1, {{GENDER:$2|Сез системага кердегез}}.",
+	"requires-javascript": "Бу функция өчен JavaScript кирәк.",
+	"wikifunctions-generating": "формаларны төзү...",
+	"wikifunctions-error": "формаларны төзегәндә хата чыкты"
 }
