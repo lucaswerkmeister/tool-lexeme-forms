@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"ऐक्टिवेटेड्"
+		]
+	},
+	"create": "बनावी",
+	"advanced": "उन्नत",
+	"lexeme-id": "शब्दिम आइडि",
+	"generated-via": "एकरा द्वारा जनित्र",
+	"edit-link": "सम्पादित करी",
+	"title-create": "$1 (बनावी)",
+	"title-advanced": "$1 (उन्नत)",
+	"settings-save": "सहेजी",
+	"source-code": "स्रोत कोड",
+	"login": "प्रवेश करी",
+	"settings-link": "सेटिङ्ग",
+	"settings-heading": "सेटिङ्ग",
+	"logged-in": "$1 के रूपमे {{GENDER:$2|सम्प्रवेशित}} ।",
+	"requires-javascript": "ई सुविधा लागि जावास्क्रिप्ट चाही ।"
+}
