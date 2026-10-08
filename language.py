@@ -112,4 +112,8 @@ def lang_int2babel(code: str) -> str:
         # ary (Moroccan Arabic) is not in Babel;
         # ar (Arabic) is the MediaWiki fallback
         'ary': 'ar',
+        # mag (Magahi) has no explicit fallbacks in MediaWiki, and has the same plural forms as English;
+        # of the other Bihari languages in English Wikipedia, only two are in Babel –
+        # bho (Bhojpuri) and mai (Maithili) – and both of those have different plural forms
+        'mag': 'en',
     }.get(code, code.partition('-')[0])
