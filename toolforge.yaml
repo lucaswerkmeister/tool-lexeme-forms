@@ -12,3 +12,6 @@ components:
       port: 8000
       publish: /
       health_check_http: /healthz
+defaults:
+  alerts:
+    notify: true
